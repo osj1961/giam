@@ -1,0 +1,25 @@
+Version 2.0  (9/2010) Initial version released with hardcopy also available through Lulu.com.
+  A huge number of typos were corrected and many new exercises added.
+
+Version 2.1  (5/2012) 
+  Page xviii "Principle" -> "Principal"
+  Page 361  Fixed mangled equation near bottom of page. 
+  Put exercises into seperate files
+  In Section 2.3 exercise 7 part b: proof was entirely wrong.
+  Exercise #9 in Section 3.3 the hypotheses should have included that the
+real numbers a,b,c and d are positive.
+  Exercise #7 in Section 3.5 The correct number of integers in [1,100] that
+can't be written using fewer than 4 squares is 15 (not 17).
+  Exercise #9 in Section 5.3 The statement had a typo, the correct statement
+to prove is 6|(2n^3 - 2n - 12).
+
+Version 3.0 (12/2012)
+  Dealt with the whole "Is 0 in the Naturals?" issue.
+  Fixed many typographical errors.
+  Reformatted to allow for creating a workbook for exercises.
+  Fixed errors in several exercises:
+    Exercise #7 (part b) in Section 2.3.
+    Exercise #9 in Section 3.3.
+    Exercise #7 in Section 3.5.
+    Exercise #9 in Section 5.3. 
+

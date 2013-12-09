@@ -1,0 +1,93 @@
+\begin{enumerate}
+\item Consider the sequence of number that are 1 greater than a multiple of 4.
+(Such numbers are of the form $4j+1$.)
+
+\[ 1, 5, 9, 13, 17, 21, 25, 29, \ldots \]
+
+The sum of the first several numbers in this sequence can be expressed as
+a polynomial.
+
+\[ \sum_{j=0}^n 4j+1 = 2n^2 + 3n + 1 \]
+
+Complete the following table in order to provide evidence that the formula
+above is correct.
+
+\begin{center}
+\begin{tabular}{c|c|c}
+$n$ & $\sum_{j=0}^n 4j+1$ & $2n^2 + 3n + 1$ \\ \hline
+ 0 & $1$ & $1$ \\
+ 1 & $1 + 5 = 6$ &  $2 \cdot 1^2 + 3 \cdot 1 + 1 = 6$ \\
+ 2 & $1 + 5 + 9 = \rule{15pt}{0pt}$ & \\
+ 3 & & \\
+ 4 & & \\
+\end{tabular}
+\end{center}
+
+
+
+\item \label{ex:horses} What is wrong with the following inductive proof of
+``all horses are the same color.''?
+
+{\bf Theorem} Let $H$ be a set of $n$ horses, all horses in $H$ 
+are the same color.
+
+\begin{proof}
+We proceed by induction on $n$.
+
+\noindent {\bf Basis: } Suppose $H$ is a set containing 1 horse.  Clearly
+this horse is the same color as itself.
+
+\noindent {\bf Inductive step: } Given a set of $k+1$ horses $H$ we can 
+construct two sets of $k$ horses.  Suppose $H = \{ h_1, h_2, h_3, \ldots h_{k+1} \}$.  Define $H_a = \{ h_1, h_2, h_3, \ldots h_{k} \}$ (i.e. $H_a$ contains
+just the first $k$ horses) and $H_b = \{ h_2, h_3, h_4, \ldots h_{k+1} \}$ 
+(i.e. $H_b$ contains the last $k$ horses).  By the inductive hypothesis
+both these sets contain horses that are ``all the same color.''  Also,
+all the horses from $h_2$ to $h_k$ are in both sets so both $H_a$ and
+$H_b$ contain only horses of this (same) color.  Finally, we conclude that
+all the horses in $H$ are the same color.
+
+\end{proof}
+\medskip
+   
+\item For each of the following theorems, write the statement that must be
+proved for the basis -- then prove it, if you can!
+
+\begin{enumerate}
+\item The sum of the first $n$ positive integers is $(n^2+n)/2$.
+\item The sum of the first $n$ (positive) odd numbers is $n^2$.
+\item If $n$ coins are flipped, the probability that all of them 
+are ``heads'' is $1/2^n$
+\item Every $2^n \times 2^n$ chessboard -- with one square removed -- can 
+be tiled perfectly\footnote{Here, ``perfectly tiled'' means that every trominoe
+covers 3 squares of the chessboard (nothing hangs over the edge) and that every
+square of the chessboard is covered by some trominoe.} by L-shaped trominoes.  
+(A trominoe is like a domino but 
+made up of $3$ little squares.  There are two kinds, straight 
+\input{figures/straight_trominoe.tex} and L-shaped 
+\input{figures/L-shaped_trominoe.tex}. This problem is only concerned with
+the L-shaped trominoes.)
+\end{enumerate}
+
+\item Suppose that the rules of the game for PMI were changed so that one
+did the following:
+\begin{itemize}
+\item Basis.  Prove that $P(0)$ is true.
+\item Inductive step.  Prove that for all $k$, $P_k$ implies $P_{k+2}$
+\end{itemize}
+
+\noindent Explain why this would not constitute a valid proof that $P_n$ holds 
+for all natural numbers $n$. 
+\noindent How could we change the basis in this outline to obtain a valid proof?
+
+\end{enumerate}
+
+
+%% Emacs customization
+%% 
+%% Local Variables: ***
+%% TeX-master: "GIAM-hw.tex" ***
+%% comment-column:0 ***
+%% comment-start: "%% "  ***
+%% comment-end:"***" ***
+%% End: ***
+

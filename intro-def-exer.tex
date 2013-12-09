@@ -1,0 +1,88 @@
+\begin{enumerate}
+
+\item Find the prime factorizations of the following integers.
+
+  \begin{enumerate}
+  \item 105
+  \item 414
+  \item 168
+  \item 1612
+  \item 9177
+  \end{enumerate}
+
+\item Use the sieve of Eratosthenes to find all prime numbers
+up to 100.
+
+\begin{tabular}{cccccccccc}
+\rule{14pt}{0pt} & \rule{14pt}{0pt} & \rule{14pt}{0pt} &
+\rule{14pt}{0pt} & \rule{14pt}{0pt} & \rule{14pt}{0pt} & 
+\rule{14pt}{0pt} & \rule{14pt}{0pt} & \rule{14pt}{0pt} &
+\rule{14pt}{0pt} \\
+ 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+ 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 \\
+ 21 & 22 & 23 & 24 & 25 & 26 & 27 & 28 & 29 & 30 \\
+ 31 & 32 & 33 & 34 & 35 & 36 & 37 & 38 & 39 & 40 \\
+ 41 & 42 & 43 & 44 & 45 & 46 & 47 & 48 & 49 & 50 \\
+ 51 & 52 & 53 & 54 & 55 & 56 & 57 & 58 & 59 & 60 \\ 
+ 61 & 62 & 63 & 64 & 65 & 66 & 67 & 68 & 69 & 70 \\
+ 71 & 72 & 73 & 74 & 75 & 76 & 77 & 78 & 79 & 80 \\
+ 81 & 82 & 83 & 84 & 85 & 86 & 87 & 88 & 89 & 90 \\
+ 91 & 92 & 93 & 94 & 95 & 96 & 97 & 98 & 99 & 100
+\end{tabular}
+
+\item What would be the largest prime one would sieve with
+in order to find all primes up to 400?
+
+\newpage
+
+\item Complete the following table which is related to 
+\ifthenelse{\boolean{InTextBook}}{Conjecture~\ref{conj:ferm}}{the conjecture that whenever $p$ is a prime number, $2^p-1$ is also a prime}.
+
+\begin{tabular}{c|c|c|c}
+$p$ & $2^p-1$ & prime? & factors \\ \hline
+2 & 3 & yes & 1 and 3 \\
+3 & 7 & yes & 1 and 7 \\
+5 & 31 & yes &  \\
+7 & 127   &     &    \\
+11 &   &     &    
+\end{tabular}
+
+\item Characterize the prime factorizations of numbers that are
+  perfect squares.
+
+\item Find a counterexample for \ifthenelse{\boolean{InTextBook}}{Conjecture~\ref{conj:poly}}{the conjecture that $x^2-31x+257$ evaluates to a prime number
+whenever $x$ is a natural number}.
+
+\item Use the second definition of ``prime'' to see that $6$ is
+not a prime.  In other words, find two numbers (the $a$ and $b$ 
+that appear in the definition) such that $6$ is not a factor of
+either, but {\em is} a factor of their product.
+
+\item Use the second definition of ``prime'' to show that $35$ is
+not a prime.
+
+\item A famous conjecture that is thought to be true (but
+for which no proof is known) is the  \index{Twin Prime conjecture}
+Twin Prime conjecture.
+A pair of primes is said to be twin if they differ by 2.
+For example, 11 and 13 are twin primes, as are 431 and 433.
+The Twin Prime conjecture states that there are an infinite
+number of such twins.  Try to come up with an argument as
+to why 3, 5 and 7 are the only prime triplets.
+
+\newpage
+
+\item Another famous conjecture, also thought to be true -- but
+as yet unproved, is \index{Goldbach's conjecture}
+Goldbach's conjecture.  Goldbach's conjecture
+states that every even number greater than 4 is the sum of two odd
+primes.  There is a function $g(n)$, known as the Goldbach function, defined
+on the positive integers, that gives the number of different ways to 
+write a given number as the sum of two odd primes.  For example $g(10) = 2$
+since $10=5+5=7+3$.  Thus another version of Goldbach's conjecture
+is that $g(n)$ is positive whenever $n$ is an even number greater than
+4.
+
+Graph $g(n)$ for $6 \leq n \leq 20$.
+
+\end{enumerate}

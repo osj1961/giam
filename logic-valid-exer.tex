@@ -1,0 +1,96 @@
+\begin{enumerate}
+\item Determine the logical form of the following arguments.  Use symbols
+to express that form and determine whether the form is valid or invalid.
+If the form is invalid, determine the type of error made.  Comment on the 
+soundness of the argument as well, in particular, determine whether any of
+the premises are questionable.
+\begin{enumerate}
+\item All who are guilty are in prison. \newline
+  George is not in prison.  \newline
+  Therefore, George is not guilty.
+\item If one eats oranges one will have high levels of vitamin C. \newline
+  You do have high levels of vitamin C. \newline
+  Therefore, you must eat oranges.
+\item All fish live in water. \newline
+  The mackerel is a fish. \newline
+  Therefore, the mackerel lives in water. 
+\item If you're lazy, don't take math courses.\newline
+  Everyone is lazy. \newline
+  Therefore, no one should take math courses.
+\item All fish live in water. \newline
+  The octopus lives in water. \newline
+  Therefore, the octopus is a fish.
+\item If a person goes into politics, they are a scoundrel.\newline
+  Harold has gone into politics. \newline
+  Therefore, Harold is a scoundrel. 
+\end{enumerate}
+
+\item Below is a rule of inference that we call extended elimination.
+
+\begin{tabular}{cl}
+ & $(A \lor B) \lor C$ \\
+ & $\lnot A$ \\
+ & $\lnot B$ \\ \hline
+$\therefore$ & $C$ \\
+\end{tabular}
+
+Use a truth table to verify that this rule is valid.
+
+\item If we allow quantifiers and open sentences in an argument form we
+get arguments that are termed ``universal'' and ``particular.''
+
+For example  \begin{tabular}{cl}
+ & $\forall x, A(x) \implies B(x)$ \\
+ & $A(p)$ \\ \hline
+$\therefore$ & $B(p)$ \\
+\end{tabular}  is the particular form of modus ponens (here, $p$
+is not a variable -- it stands for some particular element of the universe of
+discourse)
+and \begin{tabular}{cl}
+ & $\forall x, A(x) \implies B(x)$ \\
+ & $\forall x, \lnot B(x)$ \\ \hline
+$\therefore$ & $\forall x, \lnot A(x)$ \\
+\end{tabular} is the universal form of modus tollens.
+
+Reexamine the arguments from problem (1), determine their forms
+(including quantifiers) and whether they are universal or particular.
+
+\item Identify the rule of inference being used.
+
+\begin{enumerate}
+\item The Buley Library is very tall.\\
+Therefore, either the Buley Library is very tall or it has many
+levels underground.
+
+\item The grass is green.\\
+The sky is blue.\\
+Therefore, the grass is green and the sky is blue.
+
+\item $g$ has order 3 or it has order 4.\\
+If $g$ has order 3, then $g$ has an inverse.\\
+If $g$ has order 4, then $g$ has an inverse.\\
+Therefore, $g$ has an inverse.
+
+\item $x$ is greater than 5 and $x$ is less than 53.\\
+Therefore, $x$ is less than 53.
+
+\item If $a|b$, then $a$ is a perfect square.\\
+If $a|b$, then $b$ is a perfect square.\\
+Therefore, if $a|b$, then $a$ is a perfect square and $b$ is
+a perfect square.
+
+\end{enumerate}
+
+\item Read the following proof that the sum of two odd numbers is even.
+Discuss the rules of inference used.\\
+\begin{proof}
+Let $x$ and $y$ be odd numbers. Then $x=2k+1$
+and $y=2j+1$ for some integers $j$ and $k$. By algebra,
+\[
+x+y = 2k+1 + 2j+1 = 2(k+j+1).
+\]
+
+Note that $k+j+1$ is an integer because $k$ and $j$ are integers.
+Hence $x+y$ is even. 
+\end{proof}
+\end{enumerate}
