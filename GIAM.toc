@@ -1,0 +1,67 @@
+\select@language {english}
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Introduction and notation}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Basic sets}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Definitions: Prime numbers}{12}{section.1.2}
+\contentsline {section}{\numberline {1.3}More scary notation}{21}{section.1.3}
+\contentsline {section}{\numberline {1.4}Definitions of elementary number theory}{24}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Even and odd}{24}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Decimal and base-\emph {n} notation}{25}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.3}Divisibility}{27}{subsection.1.4.3}
+\contentsline {subsection}{\numberline {1.4.4}Floor and ceiling}{28}{subsection.1.4.4}
+\contentsline {subsection}{\numberline {1.4.5}Div and mod}{29}{subsection.1.4.5}
+\contentsline {subsection}{\numberline {1.4.6}Binomial coefficients}{30}{subsection.1.4.6}
+\contentsline {section}{\numberline {1.5}Some algorithms}{38}{section.1.5}
+\contentsline {section}{\numberline {1.6}Rational and irrational numbers}{48}{section.1.6}
+\contentsline {section}{\numberline {1.7}Relations}{53}{section.1.7}
+\contentsline {chapter}{\numberline {2}Logic and quantifiers}{59}{chapter.2}
+\contentsline {section}{\numberline {2.1}Predicates and Logical Connectives}{59}{section.2.1}
+\contentsline {section}{\numberline {2.2}Implication}{73}{section.2.2}
+\contentsline {section}{\numberline {2.3}Logical equivalences}{79}{section.2.3}
+\contentsline {section}{\numberline {2.4}Two-column proofs}{93}{section.2.4}
+\contentsline {section}{\numberline {2.5}Quantified statements}{97}{section.2.5}
+\contentsline {section}{\numberline {2.6}Deductive reasoning and Argument forms}{106}{section.2.6}
+\contentsline {section}{\numberline {2.7}Validity of arguments and common errors}{115}{section.2.7}
+\contentsline {chapter}{\numberline {3}Proof techniques I}{123}{chapter.3}
+\contentsline {section}{\numberline {3.1}Direct proofs of universal statements}{123}{section.3.1}
+\contentsline {section}{\numberline {3.2}More direct proofs}{136}{section.3.2}
+\contentsline {section}{\numberline {3.3}Contradiction and contraposition}{141}{section.3.3}
+\contentsline {section}{\numberline {3.4}Disproofs}{147}{section.3.4}
+\contentsline {section}{\numberline {3.5}By cases and By exhaustion}{152}{section.3.5}
+\contentsline {section}{\numberline {3.6}Existential statements}{161}{section.3.6}
+\contentsline {chapter}{\numberline {4}Sets}{169}{chapter.4}
+\contentsline {section}{\numberline {4.1}Basic notions of set theory}{169}{section.4.1}
+\contentsline {section}{\numberline {4.2}Containment}{176}{section.4.2}
+\contentsline {section}{\numberline {4.3}Set operations}{181}{section.4.3}
+\contentsline {section}{\numberline {4.4}Venn diagrams}{193}{section.4.4}
+\contentsline {section}{\numberline {4.5}Russell's Paradox}{203}{section.4.5}
+\contentsline {chapter}{\numberline {5}Proof techniques II --- Induction}{207}{chapter.5}
+\contentsline {section}{\numberline {5.1}The principle of mathematical induction}{207}{section.5.1}
+\contentsline {section}{\numberline {5.2}Formulas for sums and products}{217}{section.5.2}
+\contentsline {section}{\numberline {5.3}Other proofs using PMI}{228}{section.5.3}
+\contentsline {section}{\numberline {5.4}The strong form of mathematical induction}{236}{section.5.4}
+\contentsline {chapter}{\numberline {6}Relations and functions}{239}{chapter.6}
+\contentsline {section}{\numberline {6.1}Relations}{239}{section.6.1}
+\contentsline {section}{\numberline {6.2}Properties of relations}{249}{section.6.2}
+\contentsline {section}{\numberline {6.3}Equivalence relations}{257}{section.6.3}
+\contentsline {section}{\numberline {6.4}Ordering relations}{267}{section.6.4}
+\contentsline {section}{\numberline {6.5}Functions}{277}{section.6.5}
+\contentsline {section}{\numberline {6.6}Special functions}{291}{section.6.6}
+\contentsline {chapter}{\numberline {7}Proof techniques III --- Combinatorics}{301}{chapter.7}
+\contentsline {section}{\numberline {7.1}Counting}{301}{section.7.1}
+\contentsline {section}{\numberline {7.2}Parity and Counting arguments}{318}{section.7.2}
+\contentsline {section}{\numberline {7.3}The pigeonhole principle}{333}{section.7.3}
+\contentsline {section}{\numberline {7.4}The algebra of combinations}{339}{section.7.4}
+\contentsline {chapter}{\numberline {8}Cardinality}{351}{chapter.8}
+\contentsline {section}{\numberline {8.1}Equivalent sets}{351}{section.8.1}
+\contentsline {section}{\numberline {8.2}Examples of set equivalence}{357}{section.8.2}
+\contentsline {section}{\numberline {8.3}Cantor's theorem}{369}{section.8.3}
+\contentsline {section}{\numberline {8.4}Dominance}{378}{section.8.4}
+\contentsline {section}{\numberline {8.5}CH and GCH}{387}{section.8.5}
+\contentsline {chapter}{\numberline {9}Proof techniques IV --- Magic}{393}{chapter.9}
+\contentsline {section}{\numberline {9.1}Morley's miracle}{395}{section.9.1}
+\contentsline {section}{\numberline {9.2}Five steps into the void}{403}{section.9.2}
+\contentsline {section}{\numberline {9.3}Monge's circle theorem}{415}{section.9.3}
+\contentsline {chapter}{References}{424}{chapter*.6}
+\contentsline {chapter}{GNU Free Documentation License}{425}{section*.9}
+\contentsline {chapter}{Index}{439}{section*.22}

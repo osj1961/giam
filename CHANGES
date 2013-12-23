@@ -23,3 +23,53 @@ Version 3.0 (12/2012)
     Exercise #7 in Section 3.5.
     Exercise #9 in Section 5.3. 
 
+Notes for 3.1:
+
+Exercise: Show that $(A \cap B) \cup C \neq A \cap (B \cup C)$.  I.e. the associative 
+law doesn't work if two different operators are involved.
+
+Exercise: The distributive laws of $\cap$ over $\cap$ and $\cup$ over $\cup$ aren't invalid
+but they are redundant...  Show that $A \cup (B \cup C) = (A \cup B) \cup (A \cup C)$ can be
+derived using other rules.
+
+Check the section on induction regarding the quantification status of P(k) in proving P(k)=>P(k+1)
+
+Add double negation laws (resp. double complementation) to Logic and Set Theory sections (esp. the 
+tables summarizing the rules).
+
+Need a discussion on which axioms are acceptable for use in our first "proofs" chapter.
+
+
+Karl Crisman's email:
+
+  Dear Joe,
+
+  Thanks for your book - I appreciate it!  You never know if it might be appropriate for 
+  our Transition course... and it looks fun :)
+
+  And while perusing it I already found several typos, which of course is par for the course without
+  huge companies at your back, or probably is also par for the course then - 10000 words make for a
+  heavy time editing :(  But I hope these below will help.  I need to get back to class prep but
+  reading this is more interesting :)
+
+  Have a great semester,
+  Karl-Dieter
+
+  Page xix, line 4:
+    Is it "advisor" or "adviser"?  I usually use "advisor", but maybe I'm mistaken...
+(Wiktionary claims the er form is more prevalent, but either is correct -- JEF)
+
+  Page xix, toward the bottom:
+    If I'm not mistaken, Deborah Hughes-Hallett is one person.
+
+  Page 1, footnote:
+    Probably "shuf" is "schuf".  I haven't seen the Kronecker quote in German before, though, so it
+  could be some now-antiquated spelling.
+
+  Page 2, toward the bottom:
+    The integers are ... with a $\mathbb{Z}$ because of the German word \emph{zahlen} which means
+   ``to count.''
+    Either you need to change it to "Zahlen" (cap) which means "numbers" or to "zählen" (with
+  umlaut); "zahlen" means to pay.
+
+

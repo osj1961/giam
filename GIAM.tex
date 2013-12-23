@@ -40,10 +40,19 @@
 \usepackage{color}
 
 \usepackage{ifthen}
+
 \newboolean{InTextBook}
 \setboolean{InTextBook}{true}
-\newcommand{\workbookpagebreak}{\ifthenelse{\boolean{InTextBook}}{}{\newpage}}
+\newboolean{InWorkBook}
+\setboolean{InWorkBook}{false}
+\newboolean{InHints}
+\setboolean{InHints}{false}
+
 \newcommand{\textbookpagebreak}{\ifthenelse{\boolean{InTextBook}}{\newpage}{}}
+\newcommand{\workbookpagebreak}{\ifthenelse{\boolean{InWorkBook}}{\newpage}{}}
+\newcommand{\manualpagebreak}{\ifthenelse{\boolean{InHints}}{\newpage}{}}
+
+\newcommand{\hint}[1]{\ifthenelse{\boolean{InHints}}{{ \color[rgb]{0,0,1} #1} }{}}
 
 %\usepackage[sectionbib]{chapterbib}
 

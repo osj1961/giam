@@ -1,0 +1,78 @@
+\chapter*{To the student}
+\chaptermark{To the student}
+
+You are at the right place in your mathematical career to be
+reading this book if you liked Trigonometry and Calculus,
+were able to solve all the problems, but felt mildly annoyed
+with the text when it put in these verbose, incomprehensible 
+things called ``proofs.''   Those things probably bugged you
+because a whole lot of verbiage (not to mention a sprinkling 
+of epsilons and deltas) was wasted on showing that a thing 
+was true, which was {\em obviously true!}  Your physical intuition
+is sufficient to convince you that a statement like the 
+Intermediate Value Theorem just {\em has} to be true -- how 
+can a function move from one value at $a$ to a different value
+at $b$ without passing through all the values in between?
+
+Mathematicians discovered something fundamental hundreds of
+years before other scientists -- physical intuition is worthless
+in certain extreme situations.  Probably you've heard of some
+of the odd behavior of particles in Quantum Mechanics or General
+Relativity.  Physicists have learned, the hard way, not to trust
+their intuitions.  At least, not until those intuitions have
+been retrained to fit reality!  Go back to your Calculus textbook
+and look up the Intermediate Value Theorem.  You'll probably
+be surprised to find that it doesn't say anything about {\em all}
+functions, only those that are continuous.  So what, you say,
+aren't most functions continuous?  Actually, the number of functions
+that aren't continuous represents an infinity so huge that it
+outweighs the infinity of the real numbers! 
+
+The point of this book is to help you with the transition from
+doing math at an elementary level (which is concerned mostly with 
+solving problems) to doing math at an advanced level (which is 
+much more concerned with axiomatic systems and proving statements
+within those systems).  There are several books that already propose
+to aid with this transition, all have various strengths and
+weaknesses.  In this text we hope to avoid some of those pitfalls
+by keeping certain major themes in mind:
+
+\begin{enumerate}
+\item Mathematics is alive!  Math is not just something to be studied from
+ancient tomes.  A mathematician must have a sense of playfulness.  One
+needs to ``monkey around'' with numbers and other mathematical
+structures, make discoveries and conjectures and uncover truths.
+\item Math is not scary!  There is an incredibly terse and compact
+language that is used in mathematics -- on first sight it looks
+like hieroglyphics.  That language is actually easy to master, and once
+mastered, the power that one gains by expressing ideas rigorously with
+those symbols is truly astonishing.
+\item Good proofs are everything!  No matter how important a fact one
+discovers, if others don't become convinced of the truth of the
+statement it does not become a part of the edifice of human knowledge.
+It's been said that a proof is simply an argument that convinces.  In
+mathematics, one ``convinces'' by using one of a handful of argument
+forms and developing one's argument in a clear, step-by-step fashion.
+Within those constraints there is actually quite a lot of room for 
+individual style -- there is no one right way to write a proof. 
+\item You have two cerebral hemispheres -- use them both!  In perhaps
+no other field is the left/right-brain dichotomy more evident than in
+math.  Some believe that mathematical thought, deductive reasoning, is
+synonymous with left-brain function.  In truth, doing mathematics is
+often a creative, organic, visual, right-brain sort of process --
+however, in communicating one's results one must find that linear,
+deductive, step-by-step, left-brain argument.  You must use your whole
+mind to master advanced mathematics.
+\end{enumerate}
+
+Also, there are amusing quotations at the start of every chapter.
+
+%% Emacs customization
+%% 
+%% Local Variables: ***
+%% TeX-master: "GIAM.tex" ***
+%% comment-column:0 ***
+%% comment-start: "%% "  ***
+%% comment-end:"***" ***
+%% End: ***
+ 

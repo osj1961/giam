@@ -1,0 +1,511 @@
+
+\chapter{Introduction and notation}
+\label{ch:intro}
+
+\section{Basic sets}
+\label{sec:basic}
+
+\noindent{\large \bf Exercises --- \thesection\ }
+
+\begin{enumerate}
+
+\item Each of the quantities indexing the rows of the following table
+is in one or more of the sets which index the columns.  Place a 
+check mark in a table entry if the quantity is in the set.
+
+\begin{tabular}{|c||c|c|c|c|c|} \hline
+ & $\Naturals$ & $\Integers$ & $\Rationals$ & $\Reals$ & $\Complexes$
+ \\ \hline\hline
+\rule{0pt}{15pt} $17$ & & & & & \\ \hline
+\rule{0pt}{15pt} $\pi$ & & & & & \\ \hline
+\rule{0pt}{15pt} $22/7$ & & & & & \\ \hline
+\rule{0pt}{15pt} $-6$ & & & & & \\ \hline
+\rule{0pt}{15pt} $e^0$ & & & & & \\ \hline
+\rule{0pt}{15pt} $1+i$ & & & & & \\ \hline
+\rule{0pt}{15pt} $\sqrt{3}$ & & & & & \\ \hline
+\rule{0pt}{15pt} $i^2$ & & & & & \\  \hline
+\end{tabular}
+
+\item Write the set $\Integers$ of integers using a singly infinite
+listing.
+
+\item Identify each as rational or irrational.
+\begin{enumerate}
+\item $5021.2121212121\ldots$
+\item $0.2340000000\ldots$
+\item $12.31331133311133331111\ldots$
+\item $\pi$
+\item $2.987654321987654321987654321\ldots$
+\end{enumerate}
+
+\item The ``see and say'' sequence is produced by first writing a 1, 
+then iterating the following procedure:  look at the previous entry 
+and say how many entries there are of each integer and write down what 
+you just said.  The first several terms of the ``see and say'' sequence 
+are $1, 11, 21, 1112, 3112, 211213, 312213, 212223, \ldots$.  Comment on the
+rationality (or irrationality) the the number whose decimal digits are got 
+by concatenating the ``see and say'' sequence.
+
+\item Give a description of the set of rational numbers whose decimal
+expansions terminate.  (Alternatively, you may think of their decimal
+expansions ending in an infinitely-long string of zeros.)
+
+\item Find the first 20 decimal places of $\pi$, $3/7$, $\sqrt{2}$, 
+  $2/5$, $16/17$, $\sqrt{3}$, $1/2$ and $42/100$.  Classify each of
+these quantity's decimal expansion as: terminating, having a repeating
+pattern, or showing no discernible pattern.
+ 
+\item Consider the process of long division.  Does this algorithm give
+any insight as to why rational numbers have terminating or repeating
+decimal expansions?  Explain.
+
+\item Give an argument as to why the product of two rational numbers
+is again a rational.
+
+
+
+\item Perform the following computations with complex numbers
+
+  \begin{enumerate}
+  \item \rule{0pt}{20pt}$ (4 + 3i) - (3 + 2i) $
+  \item \rule{0pt}{20pt}$ (1 + i) + (1 - i) $
+  \item \rule{0pt}{20pt}$ (1 + i) \cdot (1 - i) $
+  \item \rule{0pt}{20pt}$ (2 - 3i) \cdot (3 - 2i) $
+  \end{enumerate}
+
+\item The {\em conjugate} of a complex number is denoted with a
+  superscript star, and is formed by negating the imaginary part.
+  Thus if $z = 3+ 4i$ then the conjugate of $z$ is  $z^\ast = 3-4i$.
+  Give an argument as to why the product of a complex number and its
+  conjugate is a real quantity.  (I.e. the imaginary part of
+  $z\cdot z^\ast$ is necessarily 0, no matter what complex number is
+  used for $z$.) 
+\end{enumerate}
+
+\newpage
+
+
+\section{Definitions: Prime numbers}
+\label{sec:def}
+
+\noindent{\large\bf Exercises --- \thesection\ }
+
+\begin{enumerate}
+
+\item Find the prime factorizations of the following integers.
+
+  \begin{enumerate}
+  \item 105
+  \item 414
+  \item 168
+  \item 1612
+  \item 9177
+  \end{enumerate}
+
+\item Use the sieve of Eratosthenes to find all prime numbers
+up to 100.
+
+\begin{tabular}{cccccccccc}
+\rule{14pt}{0pt} & \rule{14pt}{0pt} & \rule{14pt}{0pt} &
+\rule{14pt}{0pt} & \rule{14pt}{0pt} & \rule{14pt}{0pt} & 
+\rule{14pt}{0pt} & \rule{14pt}{0pt} & \rule{14pt}{0pt} &
+\rule{14pt}{0pt} \\
+ 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+ 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 \\
+ 21 & 22 & 23 & 24 & 25 & 26 & 27 & 28 & 29 & 30 \\
+ 31 & 32 & 33 & 34 & 35 & 36 & 37 & 38 & 39 & 40 \\
+ 41 & 42 & 43 & 44 & 45 & 46 & 47 & 48 & 49 & 50 \\
+ 51 & 52 & 53 & 54 & 55 & 56 & 57 & 58 & 59 & 60 \\ 
+ 61 & 62 & 63 & 64 & 65 & 66 & 67 & 68 & 69 & 70 \\
+ 71 & 72 & 73 & 74 & 75 & 76 & 77 & 78 & 79 & 80 \\
+ 81 & 82 & 83 & 84 & 85 & 86 & 87 & 88 & 89 & 90 \\
+ 91 & 92 & 93 & 94 & 95 & 96 & 97 & 98 & 99 & 100
+\end{tabular}
+
+\item What would be the largest prime one would sieve with
+in order to find all primes up to 400?
+
+\item Complete the following table which is related to 
+Conjecture~\ref{conj:ferm}.
+
+\begin{tabular}{c|c|c|c}
+$p$ & $2^p-1$ & prime? & factors \\ \hline
+2 & 3 & yes & 1 and 3 \\
+3 & 7 & yes & 1 and 7 \\
+5 & 31 & yes &  \\
+7 & 127   &     &    \\
+11 &   &     &    
+\end{tabular}
+
+\item Characterize the prime factorizations of numbers that are
+  perfect squares.
+
+\item Find a counterexample for Conjecture~\ref{conj:poly}.
+
+\item Use the second definition of ``prime'' to see that $6$ is
+not a prime.  In other words, find two numbers (the $a$ and $b$ 
+that appear in the definition) such that $6$ is not a factor of
+either, but {\em is} a factor of their product.
+
+\item Use the second definition of ``prime'' to show that $35$ is
+not a prime.
+
+\item A famous conjecture that is thought to be true (but
+for which no proof is known) is the  \index{Twin Prime conjecture}
+Twin Prime conjecture.
+A pair of primes is said to be twin if they differ by 2.
+For example, 11 and 13 are twin primes, as are 431 and 433.
+The Twin Prime conjecture states that there are an infinite
+number of such twins.  Try to come up with an argument as
+to why 3, 5 and 7 are the only prime triplets.
+
+\item Another famous conjecture, also thought to be true -- but
+as yet unproved, is \index{Goldbach's conjecture}
+Goldbach's conjecture.  Goldbach's conjecture
+states that every even number greater than 4 is the sum of two odd
+primes.  There is a function $g(n)$, known as the Goldbach function, defined
+on the positive integers, that gives the number of different ways to 
+write a given number as the sum of two odd primes.  For example $g(10) = 2$
+since $10=5+5=7+3$.  Thus another version of Goldbach's conjecture
+is that $g(n)$ is positive whenever $n$ is an even number greater than
+4.
+
+Graph $g(n)$ for $6 \leq n \leq 20$.
+
+\end{enumerate}
+\newpage
+
+\section{More scary notation}
+\label{sec:scary}
+
+\noindent{\large\bf Exercises --- \thesection\ }
+
+\begin{enumerate}
+
+\item How many quantifiers (and what sorts) are in the following sentence?
+
+``Everybody has \emph{some} friend that thinks they know everything about 
+a sport.''
+  
+
+\item The sentence ``Every metallic element is a solid at room temperature.'' 
+is false.  Why?
+
+\item The sentence ``For every pair of (distinct) real numbers there is 
+another real number between them.'' is true.  Why?
+
+\item Write your own sentences containing four quantifiers.  One
+sentence in which the quantifiers appear ($\forall \exists \forall \exists$)
+and another in which they appear ($\exists \forall \exists \forall$).
+
+\end{enumerate}
+
+\newpage
+
+\section{Definitions of elementary number theory}
+\label{sec:num_thry}
+
+\noindent{\large\bf Exercises --- \thesection\ }
+
+\begin{enumerate}
+
+\item An integer $n$ is \index{doubly-even} \emph{doubly-even} 
+if it is even, and the integer $m$ guaranteed to exist because 
+$n$ is even is itself even.  Is 0 doubly-even?  What are the 
+first 3 positive, doubly-even integers?
+
+\item Dividing an integer by two has an interesting interpretation
+when using binary notation: simply shift the digits to the right.
+Thus, $22 = 10110_2$ when divided by two gives $1011_2$ which is
+$8+2+1=11$.  How can you recognize a doubly-even integer from
+its binary representation?
+
+\item The \index{octal representation} \emph{octal} representation 
+of an integer uses powers of 8 in place notation.  The digits of an 
+octal number run from 0 to 7, one never sees 8's or 9's.  How would 
+you represent 8 and 9 as octal numbers?  What octal number comes 
+immediately after $777_8$?  What (decimal) number is $777_8$?
+
+\item One method of converting from decimal to some other base is
+called \index{repeated division algorithm} \emph{repeated division}.  
+One divides the number by the base
+and records the remainder -- one then divides the quotient obtained
+by the base and records the remainder.  Continue dividing the 
+successive quotients by the base until the quotient is smaller than
+the base.  Convert 3267 to base-7 using repeated division.  Check 
+your answer by using the meaning of base-7 place notation.  (For
+example $54321_7$ means $5\cdot7^4 + 4\cdot7^3 + 3 \cdot7^2 +
+2\cdot7^1 + 1\cdot7^0$.)
+
+\item State a theorem about the octal representation of even numbers.
+
+\item In hexadecimal (base-16) notation one needs 16 ``digits,'' the
+  ordinary digits are used for 0 through 9, and the letters A through
+  F are used to give single symbols for 10 through 15.  The first  32
+  natural number in hexadecimal are:
+  1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,10,11,12,13,14,15,16,\newline 17,18,19,1A,
+  1B,1C,1D,1E,1F,20. 
+
+  Write the next 10 hexadecimal numbers after $AB$.
+
+  Write the next 10 hexadecimal numbers after $FA$.
+
+\item For conversion between the three bases used most often in 
+Computer Science we can take binary as the ``standard'' base and 
+convert using a table look-up.  Each octal digit will correspond 
+to a binary triple, and each hexadecimal digit will correspond to 
+a 4-tuple of binary numbers.  Complete the following tables.  
+(As a check, the 4-tuple next to $A$ in the table for
+hexadecimal should be 1010 -- which is nice since $A$ 
+is really 10 so if you read that as ``ten-ten'' it is a good 
+aid to memory.)
+
+\begin{center}
+\begin{tabular}{ccc}
+\begin{tabular}{|c|c|} \hline
+octal & binary \\ \hline \hline
+\rule{0pt}{14pt} 0 & 000 \\ \hline
+\rule{0pt}{14pt} 1 & 001 \\ \hline
+\rule{0pt}{14pt} 2 & \\ \hline
+\rule{0pt}{14pt} 3 & \\ \hline
+\rule{0pt}{14pt} 4 & \\ \hline
+\rule{0pt}{14pt} 5 & \\ \hline
+\rule{0pt}{14pt} 6 & \\ \hline
+\rule{0pt}{14pt} 7 & \\ \hline
+\end{tabular}
+ & \rule{72pt}{0pt} &
+\begin{tabular}{|c|c|} \hline
+hexadecimal & binary \\ \hline \hline
+\rule{0pt}{14pt} 0 & 0000 \\ \hline
+\rule{0pt}{14pt} 1 & 0001 \\ \hline
+\rule{0pt}{14pt} 2 & 0010 \\ \hline
+\rule{0pt}{14pt} 3 & \\ \hline
+\rule{0pt}{14pt} 4 & \\ \hline
+\rule{0pt}{14pt} 5 & \\ \hline
+\rule{0pt}{14pt} 6 & \\ \hline
+\rule{0pt}{14pt} 7 & \\ \hline
+\rule{0pt}{14pt} 8 & \\ \hline
+\rule{0pt}{14pt} 9 & \\ \hline
+\rule{0pt}{14pt} A & \\ \hline
+\rule{0pt}{14pt} B & \\ \hline
+\rule{0pt}{14pt} C & \\ \hline
+\rule{0pt}{14pt} D & \\ \hline
+\rule{0pt}{14pt} E & \\ \hline
+\rule{0pt}{14pt} F & \\ \hline
+\end{tabular}
+\end{tabular}
+\end{center}
+ 
+\item Use the tables above to make the following conversions.
+
+\begin{enumerate}
+\item Convert $757_8$ to binary.
+\item Convert $1007_8$ to hexadecimal.
+\item Convert $100101010110_2$ to octal.
+\item Convert $1111101000110101$ to hexadecimal.
+\item Convert $FEED_{16}$ to binary.
+\item Convert $FFFFFF_{16}$ to octal.
+\end{enumerate}
+
+\item It is a well known fact that if a number is divisible by 3, then 3
+  divides the sum of the (decimal) digits of that number.  Is this
+  result true in base 7?  Do you think this result is true in {\em
+  any} base? 
+ 
+\item Suppose that 340 pounds of sand must be placed into bags having
+  a 50 pound capacity.  Write an expression using either floor or
+  ceiling notation for the number of bags required.
+
+\item True or false? 
+
+\[ \left\lfloor \frac{n}{d}\right\rfloor < \left\lceil \frac{n}{d}\right\rceil \]
+ 
+\noindent for all integers $n$ and $d>0$. Support your claim.
+
+\item What is the value of $\lceil\pi\rceil^{2}-\lceil\pi^{2}\rceil$?
+
+\item Assuming the symbols $n$,$d$,$q$ and $r$ have meanings as in the
+  quotient-remainder theorem (Theorem~\ref{quo-rem}).  Write
+  expressions for $q$ and $r$, in terms of $n$ and $d$ using floor
+  and/or ceiling notation.
+
+\item Calculate the following quantities:
+
+\begin{enumerate}
+\item $3 \mod 5$
+\item $37 \mod 7$
+\item $1000001 \mod 100000$
+\item $6 \tdiv 6$
+\item $7 \tdiv 6$
+\item $1000001 \tdiv 2$
+\end{enumerate}
+
+\item Calculate the following binomial coefficients:
+
+\begin{enumerate}
+\item $\binom{3}{0}$
+\item $\binom{7}{7}$
+\item $\binom{13}{5}$
+\item $\binom{13}{8}$
+\item $\binom{52}{7}$
+\end{enumerate}
+
+\item An ice cream shop sells the following flavors: chocolate, vanilla, 
+strawberry, coffee, butter pecan, mint chocolate chip and raspberry.
+How many different bowls of ice cream -- with three scoops -- can they make?  
+\end{enumerate}
+
+\newpage
+
+\section[Some algorithms]{Some algorithms of elementary number theory}
+\label{sec:alg}
+
+\noindent{\large\bf Exercises --- \thesection\ }
+
+\begin{enumerate}
+
+\item Trace through the division algorithm with inputs $n=27$ and
+  $d=5$, each time an assignment statement is encountered write it
+  out.  How many assignments are involved in this particular
+  computation?
+
+\item Find the gcd's and lcm's of the following pairs of numbers.
+
+\centerline{
+\begin{tabular}{|c|c|c|c|} \hline
+$a$ & $b$ & $\gcd{a}{b}$ & $\lcm{a}{b}$ \\ \hline
+110 & 273 & & \\ \hline
+105 & 42 & & \\ \hline
+168 & 189 & & \\ \hline
+\end{tabular}
+}
+
+\item Formulate a description of the gcd of two numbers in terms of
+  their prime factorizations in the general case (when the
+  factorizations may include powers of the primes involved).
+
+\item Trace through the Euclidean algorithm with inputs $a=3731$ and
+  $b=2730$, each time the assignment statement that calls the division
+  algorithm is encountered write out the expression $a=qb+r$.   (With the
+  actual values involved !) 
+
+\end{enumerate}
+
+\newpage
+
+\section{Rational and irrational numbers}
+\label{sec:rat}
+
+\noindent{\large\bf Exercises --- \thesection\ }
+
+\begin{enumerate}
+
+\item \index{Rational approximation} Rational Approximation is 
+a field of mathematics that has received much study.  The main idea 
+is to find rational numbers that are very good approximations to
+given irrationals.  For example, $22/7$ is a well-known rational 
+approximation to $\pi$.  Find good rational approximations to 
+$\sqrt{2}, \sqrt{3}, \sqrt{5}$ and $e$.
+
+\item The theory of base-$n$ notation that we looked at in 
+sub-section\ref{base-n} can be extended to deal with real and 
+rational numbers by introducing a decimal point (which should 
+probably be re-named in accordance with the base) and adding 
+digits to the right of it.  For instance $1.1011$ is binary notation
+for $1 \cdot 2^0 + 1 \cdot 2^{-1} + 0 \cdot 2^{-2} + 
+1\cdot 2^{-3} + 1\cdot 2^{-4}$ or $\displaystyle 1 + \frac{1}{2} + 
+\frac{1}{8} + \frac{1}{16} = 1 \frac{11}{16}$.
+
+Consider the binary number $.1010010001000010000010000001\ldots$, 
+is this number rational or irrational?  Why?
+
+\item If a number $x$ is even, it's easy to show that its square $x^2$
+is even.  The lemma that went unproved in this section asks us to
+start with a square ($x^2$) that is even and deduce that the unsquared
+number ($x$) is even.  Perform some numerical experimentation to
+check whether this assertion is reasonable.  Can you give an argument
+that would prove it?
+
+\item The proof that $\sqrt{2}$ is irrational can be generalized 
+to show that $\sqrt{p}$ is irrational for every prime number $p$.
+What statement would be equivalent to the lemma about the parity
+of $x$ and $x^2$ in such a generalization?
+
+\item Write a proof that $\sqrt{3}$ is irrational.
+
+\end{enumerate}
+
+\newpage
+
+\section{Relations}
+\label{sec:rel_intro}
+
+
+\noindent{\large\bf Exercises --- \thesection\ }
+
+\begin{enumerate}
+
+\item Consider the numbers from 1 to 10.  Give the set of pairs of these numbers that 
+corresponds to the divisibility relation.
+
+\item The \index{domain}\emph{domain} of a function (or binary relation) 
+is the set of numbers appearing in the first coordinate.  The \index{range} 
+\emph{range} of a function (or binary relation) is the set of numbers 
+appearing in the second coordinate.  
+
+Consider the set $\{0,1,2,3,4,5,6\}$ and the function $f(x) = x^2 \pmod{7}$.
+Express this function as a relation by explicitly writing out the set of
+ordered pairs it contains.  What is the range of this function?
+ 
+\item What relation on the numbers from 1 to 10 does the following set of ordered pairs
+represent?
+
+\begin{gather*}
+\{ (1,1), (1,2), (1,3), (1,4), (1,5), (1,6), (1,7), (1,8), (1,9), (1,10), \\
+(2,2), (2,3), (2,4), (2,5), (2,6), (2,7), (2,8), (2,9), (2,10), \\
+(3,3), (3,4), (3,5), (3,6), (3,7), (3,8), (3,9), (3,10), \\
+(4,4), (4,5), (4,6), (4,7), (4,8), (4,9), (4,10), \\
+(5,5), (5,6), (5,7), (5,8), (5,9), (5,10), \\
+(6,6), (6,7), (6,8), (6,9), (6,10), \\
+(7,7), (7,8), (7,9), (7,10), \\
+(8,8), (8,9), (8,10), \\
+(9,9), (9,10), \\
+(10,10) \} 
+\end{gather*}
+
+\item Draw a five-pointed star, label all 10 points. There are 40 triples of these 
+labels that satisfy the betweenness relation.  List them.
+
+\item Sketch a graph of the relation 
+\[
+\{ (x,y) \suchthat x,y \in \Reals \mbox{and} y > x^2 \}.
+\]
+
+\item A function $f(x)$ is said to be \index{invertible function} 
+\emph{invertible} if there is another function $g(x)$ such that 
+$g(f(x)) = x$ for all values of $x$.  (Usually, the inverse function,
+$g(x)$ would be denoted $f^{-1}(x)$.)   Suppose a function is presented 
+to you as a relation -- that is, you are just given a set of pairs.  
+How can you distinguish whether the function represented by this list 
+of input/output pairs is invertible?  How can you produce the inverse 
+(as a set of ordered pairs)?
+ 
+\item There is a relation known as ``has color'' which goes from the
+set $F = \{orange, cherry, pumpkin, banana\}$ to the set $C = \{orange, red, green, yellow\}$.  What pairs are in ``has color''?
+   
+\end{enumerate}
+
+%\newpage
+%\renewcommand{\bibname}{References for chapter 1}
+%\bibliographystyle{plain}
+%\bibliography{main}
+
+%% Emacs customization
+%% 
+%% Local Variables: ***
+%% TeX-master: "GIAM-hw.tex" ***
+%% comment-column:0 ***
+%% comment-start: "%% "  ***
+%% comment-end:"***" ***
+%% End: ***
+

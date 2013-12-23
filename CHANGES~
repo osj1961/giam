@@ -1,0 +1,70 @@
+Version 2.0  (9/2010) Initial version released with hardcopy also available through Lulu.com.
+  A huge number of typos were corrected and many new exercises added.
+
+Version 2.1  (5/2012) 
+  Page xviii "Principle" -> "Principal"
+  Page 361  Fixed mangled equation near bottom of page. 
+  Put exercises into seperate files
+  In Section 2.3 exercise 7 part b: proof was entirely wrong.
+  Exercise #9 in Section 3.3 the hypotheses should have included that the
+real numbers a,b,c and d are positive.
+  Exercise #7 in Section 3.5 The correct number of integers in [1,100] that
+can't be written using fewer than 4 squares is 15 (not 17).
+  Exercise #9 in Section 5.3 The statement had a typo, the correct statement
+to prove is 6|(2n^3 - 2n - 12).
+
+Version 3.0 (12/2012)
+  Dealt with the whole "Is 0 in the Naturals?" issue.
+  Fixed many typographical errors.
+  Reformatted to allow for creating a workbook for exercises.
+  Fixed errors in several exercises:
+    Exercise #7 (part b) in Section 2.3.
+    Exercise #9 in Section 3.3.
+    Exercise #7 in Section 3.5.
+    Exercise #9 in Section 5.3. 
+
+Notes for 3.1:
+
+Exercise: Show that $(A \cap B) \cup C \neq A \cap (B \cup C)$.  I.e. the associative 
+law doesn't work if two different operators are involved.
+
+Check the section on induction regarding the quantification status of P(k) in proving P(k)=>P(k+1)
+
+Add double negation laws (resp. double complementation) to Logic and Set Theory sections.
+
+Need a discussion on which axioms are acceptable for use in our first "proofs" chapter.
+
+
+Karl Crisman's email:
+
+  Dear Joe,
+
+  Thanks for your book - I appreciate it!  You never know if it might be appropriate for 
+  our Transition course... and it looks fun :)
+
+  And while perusing it I already found several typos, which of course is par for the course without
+  huge companies at your back, or probably is also par for the course then - 10000 words make for a
+  heavy time editing :(  But I hope these below will help.  I need to get back to class prep but
+  reading this is more interesting :)
+
+  Have a great semester,
+  Karl-Dieter
+
+  Page xix, line 4:
+    Is it "advisor" or "adviser"?  I usually use "advisor", but maybe I'm mistaken...
+(Wiktionary claims the er form is more prevalent, but either is correct -- JEF)
+
+  Page xix, toward the bottom:
+    If I'm not mistaken, Deborah Hughes-Hallett is one person.
+
+  Page 1, footnote:
+    Probably "shuf" is "schuf".  I haven't seen the Kronecker quote in German before, though, so it
+  could be some now-antiquated spelling.
+
+  Page 2, toward the bottom:
+    The integers are ... with a $\mathbb{Z}$ because of the German word \emph{zahlen} which means
+   ``to count.''
+    Either you need to change it to "Zahlen" (cap) which means "numbers" or to "zählen" (with
+  umlaut); "zahlen" means to pay.
+
+

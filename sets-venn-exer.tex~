@@ -1,0 +1,45 @@
+\begin{enumerate}
+\item  Venn diagrams are usually made using simple closed curves 
+with no further restrictions.  Try creating Venn diagrams for 3, 4 and
+5 sets (in general position) using rectangular simple closed curves.
+\item  We call a curve \emph{rectilinear} if it is made
+of line segments that meet at right angles.  Use rectilinear
+simple closed curves to create a Venn diagram for 5 sets.
+\item  Argue as to why rectilinear curves will suffice to build
+any Venn diagram.
+\item  Find the disjunctive normal form of $A \cap (B \cup C)$.
+\item  Find the disjunctive normal form of $(A \triangle B) \triangle C$
+\item The prototypes for the \emph{modus ponens} and \emph{modus tollens}
+argument forms are the following:
+
+\begin{tabular}{lcl}
+\begin{minipage}{.3\textwidth}All men are mortal. \newline %
+Socrates is a man. \newline
+Therefore Socrates is mortal.\end{minipage} & \rule{16pt}{0pt} and \rule{16pt}{0pt} & %
+ \begin{minipage}{.3\textwidth}All men are mortal. \newline %
+Zeus is not mortal. \newline
+Therefore Zeus is not a man.\end{minipage}
+\end{tabular}
+
+Illustrate these arguments using Venn diagrams.
+
+\item Use Venn diagrams to convince yourself of the validity of
+the following containment statement
+
+\[ (A \cap B) \cup (C \cap D) \; \subseteq \; (A \cup C) \cap (B \cup D).\]
+
+Now prove it!
+ 
+\end{enumerate}
+
+
+
+%% Emacs customization
+%% 
+%% Local Variables: ***
+%% TeX-master: "GIAM-hw.tex" ***
+%% comment-column:0 ***
+%% comment-start: "%% "  ***
+%% comment-end:"***" ***
+%% End: ***
+

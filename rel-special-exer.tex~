@@ -1,0 +1,54 @@
+
+\begin{enumerate}
+
+\item The $n$-th triangular number, denoted $T(n)$, is given by the formula
+$T(n) = (n^2 + n)/2$. If we regard this formula as a function from $\Reals$ to
+$\Reals$, it fails the horizontal line test and so it is not invertible. Find a
+suitable restriction so that T is invertible.
+
+\item The usual algebraic procedure for inverting $T(x) = (x^2+x)/2$ fails. Use
+your knowledge of the geometry of functions and their inverses to find
+a formula for the inverse. (Hint: it may be instructive to first invert
+the simpler formula $S(x) = x^2/2$ --- this will get you the right vertical
+scaling factor.)
+
+\item What is $\pi_2(W(t))$?  
+
+\item Find a right inverse for $f(x) = |x|$.
+
+\item In three-dimensional space we have projection functions that go onto
+the three coordinate axes ($\pi_1$, $\pi_2$ and $\pi_3$) and we also have
+projections onto coordinate planes.  For example,
+$\pi_{12}: \Reals \times \Reals \times \Reals \longrightarrow \Reals \times \Reals$, defined by
+
+\[ \pi_{12}((x,y,z)) = (x,y) \]
+
+\noindent is the projection onto the $x$--$y$ coordinate plane.
+
+The triple of functions  $(\cos{t}, \sin{t}, t)$ is a parametric
+expression for a helix.  Let 
+$H = \{ (\cos{t}, \sin{t}, t) \suchthat t \in \Reals \}$ be the set of all
+points on the helix.  What is the set $\pi_{12}(H)$ ?  What are the
+sets $\pi_{13}(H)$ and $\pi_{23}(H)$?
+
+\item Consider the set $\{1, 2, 3, \ldots, 10\}$.  Express the characteristic
+function of the subset $S = \{1, 2, 3 \}$ as a set of ordered pairs.
+
+\item If $S$ and $T$ are subsets of a set $D$, what is the product of
+their characteristic functions $1_S \cdot 1_T$ ?
+
+\item Evaluate the sum
+
+\[ \sum_{i=1}^{10} \frac{1}{i} \cdot [ i \; \mbox{is prime} ]. \]
+
+
+\end{enumerate}
+
+%% Emacs customization
+%% 
+%% Local Variables: ***
+%% TeX-master: "GIAM-hw.tex" ***
+%% comment-column:0 ***
+%% comment-start: "%% "  ***
+%% comment-end:"***" ***
+%% End: ***
