@@ -55,9 +55,9 @@
 \contentsline {chapter}{\numberline {8}Cardinality}{339}{chapter.8}
 \contentsline {section}{\numberline {8.1}Equivalent sets}{339}{section.8.1}
 \contentsline {section}{\numberline {8.2}Examples of set equivalence}{345}{section.8.2}
-\contentsline {section}{\numberline {8.3}Cantor's theorem}{356}{section.8.3}
-\contentsline {section}{\numberline {8.4}Dominance}{365}{section.8.4}
-\contentsline {section}{\numberline {8.5}CH and GCH}{374}{section.8.5}
+\contentsline {section}{\numberline {8.3}Cantor's theorem}{357}{section.8.3}
+\contentsline {section}{\numberline {8.4}Dominance}{366}{section.8.4}
+\contentsline {section}{\numberline {8.5}CH and GCH}{375}{section.8.5}
 \contentsline {chapter}{\numberline {9}Proof techniques IV --- Magic}{381}{chapter.9}
 \contentsline {section}{\numberline {9.1}Morley's miracle}{383}{section.9.1}
 \contentsline {section}{\numberline {9.2}Five steps into the void}{390}{section.9.2}

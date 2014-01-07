@@ -1,14 +1,14 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  7 JAN 2014 17:20
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2013.12.21)  7 JAN 2014 18:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**GIAM.tex
+**GIAM
 (./GIAM.tex
 LaTeX2e <2011/06/27>
-Babel <3.9f> and hyphenation patterns for 78 languages loaded.
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/book.cls
+Babel <3.9f> and hyphenation patterns for 2 languages loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/bk12.clo
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk12.clo
 File: bk12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -24,14 +24,14 @@ File: bk12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
 Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
 
 
-(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
 Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
@@ -72,29 +72,29 @@ Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/keyval.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/usr/local/texlive/2013/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/auxhook.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen103
 \Hy@linkcounter=\count88
 \Hy@pagecounter=\count89
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/pd1enc.def
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count90
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Hyper figures OFF on input line 4443.
@@ -106,7 +106,7 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
 \c@Hy@tempcnt=\count91
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/url/url.sty
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
@@ -131,12 +131,12 @@ LaTeX Info: Redefining \pageref on input line 6369.
 
 Package hyperref Message: Driver: hpdftex.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count96
 \c@bookmark@seq@number=\count97
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
@@ -151,49 +151,51 @@ Package hyperref Warning: Option `pdfpagelabels' has already been used,
 (hyperref)                setting the option has no effect on input line 24.
 
 Use 'fig4latex -p' then 'make' to format graphics for pdflatex.
-(/usr/local/texlive/2013/texmf-dist/tex/generic/babel/babel.sty
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2013/05/16 v3.9f The Babel package
 
-(/usr/local/texlive/2013/texmf-dist/tex/generic/babel-english/english.ldf
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2012/08/20 v3.3p English support from the babel system
 
-(/usr/local/texlive/2013/texmf-dist/tex/generic/babel/babel.def
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2013/05/16 v3.9f Babel common definitions
 \babel@savecnt=\count98
 \U@D=\dimen107
 )
+\l@british = a dialect from \language\l@english 
+\l@UKenglish = a dialect from \language\l@english 
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 ))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/makeidx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty
 Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/trig.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/graphics.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 \Gread@gobject=\count99
 ))
 \Gin@req@height=\dimen108
 \Gin@req@width=\dimen109
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/rotating/rotating.sty
+(/usr/share/texlive/texmf-dist/tex/latex/rotating/rotating.sty
 Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/ifthen.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \c@r@tfl@t=\count100
@@ -202,10 +204,10 @@ Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 \rot@float@box=\box26
 \rot@mess@toks=\toks15
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks16
 \symAMSa=\mathgroup4
@@ -213,24 +215,24 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsmath.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip46
 
 For additional information on amsmath, use the `?' option.
-(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsgen.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks17
 \ex@=\dimen110
 ))
-(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsbsy.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen111
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsopn.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count101
@@ -271,7 +273,7 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/amscls/amsthm.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2004/08/06 v2.20
 \thm@style=\toks22
 \thm@bodyfont=\toks23
@@ -283,10 +285,10 @@ Package: amsthm 2004/08/06 v2.20
 \thm@headsep=\skip51
 \dth@everypar=\toks27
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/color.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
@@ -324,10 +326,10 @@ LaTeX Font Info:    ... okay on input line 102.
 \AtBeginShipoutBox=\box29
 Package hyperref Info: Link coloring ON on input line 102.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count116
@@ -341,7 +343,7 @@ LaTeX Info: Redefining \nameref on input line 102.
 \openout4 = `GIAM.out'.
 
 
-(/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count117
 \scratchdimen=\dimen119
@@ -354,10 +356,10 @@ LaTeX Info: Redefining \nameref on input line 102.
 \MPnumerator=\count121
 \makeMPintoPDFobject=\count122
 \everyMPtoPDFconversion=\toks29
-) (/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/oberdiek/grfext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 )
 Package grfext Info: Graphics extension search list:
@@ -365,28 +367,28 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    Try loading font information for U+msa on input line 111.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 111.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 
 
-{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 119.
 
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
@@ -447,7 +449,7 @@ Underfull \vbox (badness 1057) has occurred while \output is active []
 
  [12]
 [13] (./figures/Eratosthenes.tex
-<figures/Eratosthenes.pdf, id=642, 360.34625pt x 183.68625pt>
+<figures/Eratosthenes.pdf, id=643, 360.34625pt x 183.68625pt>
 File: figures/Eratosthenes.pdf Graphic file (type pdf)
 
 <use figures/Eratosthenes.pdf>
@@ -488,7 +490,7 @@ n/12 ^^A \OT1/cmr/m/n/12 49 + 6 \OMS/cmsy/m/n/12 ^^A \OT1/cmr/m/n/12 7 + 3 = 79
 
 [25] [26] [27] [28] [29] [30] [31] (./intro/num_thry-exer.tex [32] [33]
 [34]) [35] [36] (./figures/if-then_flowchart.tex
-<figures/if-then_flowchart.pdf, id=827, 172.645pt x 199.74625pt>
+<figures/if-then_flowchart.pdf, id=828, 172.645pt x 199.74625pt>
 File: figures/if-then_flowchart.pdf Graphic file (type pdf)
 
 <use figures/if-then_flowchart.pdf>
@@ -523,7 +525,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1202--1215
  []
 
 (./figures/div_alg_flowchart.tex
-<figures/div_alg_flowchart.pdf, id=839, 294.09875pt x 375.4025pt>
+<figures/div_alg_flowchart.pdf, id=840, 294.09875pt x 375.4025pt>
 File: figures/div_alg_flowchart.pdf Graphic file (type pdf)
 
 <use figures/div_alg_flowchart.pdf>
@@ -540,7 +542,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1274--1286
  []
 
 (./figures/Euc_alg_flowchart.tex
-<figures/Euc_alg_flowchart.pdf, id=852, 212.795pt x 357.335pt>
+<figures/Euc_alg_flowchart.pdf, id=853, 212.795pt x 357.335pt>
 File: figures/Euc_alg_flowchart.pdf Graphic file (type pdf)
 
 <use figures/Euc_alg_flowchart.pdf>
@@ -555,7 +557,7 @@ Overfull \hbox (2.2445pt too wide) in paragraph at lines 27--29
  []
 
 ) [49] [50] [51] (./figures/betweenness_example.tex
-<figures/betweenness_example.pdf, id=919, 216.81pt x 197.73875pt>
+<figures/betweenness_example.pdf, id=920, 216.81pt x 197.73875pt>
 File: figures/betweenness_example.pdf Graphic file (type pdf)
 
 <use figures/betweenness_example.pdf>
@@ -571,21 +573,21 @@ Chapter 2.
 
 
 ] [56] [57] [58] [59] (./figures/transistor.tex
-<figures/transistor.pdf, id=973, 212.795pt x 113.42375pt>
+<figures/transistor.pdf, id=974, 212.795pt x 113.42375pt>
 File: figures/transistor.pdf Graphic file (type pdf)
 
 <use figures/transistor.pdf>
 Package pdftex.def Info: figures/transistor.pdf used on input line 2.
 (pdftex.def)             Requested size: 212.79446pt x 113.42346pt.
 ) (./figures/series.tex
-<figures/series.pdf, id=975, 344.28625pt x 118.4425pt>
+<figures/series.pdf, id=976, 344.28625pt x 118.4425pt>
 File: figures/series.pdf Graphic file (type pdf)
 
 <use figures/series.pdf>
 Package pdftex.def Info: figures/series.pdf used on input line 2.
 (pdftex.def)             Requested size: 344.2854pt x 118.4422pt.
 ) (./figures/parallel.tex
-<figures/parallel.pdf, id=977, 371.3875pt x 181.67876pt>
+<figures/parallel.pdf, id=978, 371.3875pt x 181.67876pt>
 File: figures/parallel.pdf Graphic file (type pdf)
 
 <use figures/parallel.pdf>
@@ -593,12 +595,12 @@ Package pdftex.def Info: figures/parallel.pdf used on input line 2.
 (pdftex.def)             Requested size: 371.38658pt x 181.6783pt.
 ) [60 <./figures/transistor.pdf>] [61 <./figures/series.pdf> <./figures/paralle
 l.pdf>] (./figures/gates.tex
-<figures/gates.pdf, id=993, 253.94875pt x 163.61125pt>
+<figures/gates.pdf, id=994, 253.94875pt x 163.61125pt>
 File: figures/gates.pdf Graphic file (type pdf)
  <use figures/gates.pdf>
 Package pdftex.def Info: figures/gates.pdf used on input line 2.
 (pdftex.def)             Requested size: 253.94812pt x 163.61084pt.
-) (./figures/3_ands.tex <figures/3_ands.pdf, id=995, 402.50375pt x 281.05pt>
+) (./figures/3_ands.tex <figures/3_ands.pdf, id=996, 402.50375pt x 281.05pt>
 File: figures/3_ands.pdf Graphic file (type pdf)
 
 <use figures/3_ands.pdf>
@@ -606,7 +608,7 @@ Package pdftex.def Info: figures/3_ands.pdf used on input line 2.
 (pdftex.def)             Requested size: 402.50276pt x 281.0493pt.
 ) [62 <./figures/gates.pdf>] [63 <./figures/3_ands.pdf>] (./figures/recognizers
 .tex
-<figures/recognizers.pdf, id=1009, 380.42125pt x 199.74625pt>
+<figures/recognizers.pdf, id=1010, 380.42125pt x 199.74625pt>
 File: figures/recognizers.pdf Graphic file (type pdf)
 
 <use figures/recognizers.pdf>
@@ -614,7 +616,7 @@ Package pdftex.def Info: figures/recognizers.pdf used on input line 2.
 (pdftex.def)             Requested size: 380.4203pt x 199.74576pt.
 ) [64 <./figures/recognizers.pdf>]
 (./figures/logic_circuit.tex
-<figures/logic_circuit.pdf, id=1017, 398.48875pt x 299.1175pt>
+<figures/logic_circuit.pdf, id=1018, 398.48875pt x 299.1175pt>
 File: figures/logic_circuit.pdf Graphic file (type pdf)
 
 <use figures/logic_circuit.pdf>
@@ -629,14 +631,14 @@ Overfull \hbox (7.61496pt too wide) in paragraph at lines 3--340
 Underfull \vbox (badness 1496) has occurred while \output is active []
 
  [68]
-[69] [70] <figures/horiz_arrows.pdf, id=1052, 73.27374pt x 6.0225pt>
+[69] [70] <figures/horiz_arrows.pdf, id=1053, 73.27374pt x 6.0225pt>
 File: figures/horiz_arrows.pdf Graphic file (type pdf)
 
 <use figures/horiz_arrows.pdf>
 Package pdftex.def Info: figures/horiz_arrows.pdf used on input line 502.
 (pdftex.def)             Requested size: 73.27354pt x 6.02248pt.
 
-<figures/vert_arrows.pdf, id=1053, 6.0225pt x 73.27374pt>
+<figures/vert_arrows.pdf, id=1054, 6.0225pt x 73.27374pt>
 File: figures/vert_arrows.pdf Graphic file (type pdf)
 
 <use figures/vert_arrows.pdf>
@@ -650,7 +652,7 @@ Overfull \hbox (11.63203pt too wide) in paragraph at lines 81--83
  []
 
 [72]) [73] [74] (./figures/comm_conj.tex
-<figures/comm_conj.pdf, id=1092, 308.15125pt x 158.5925pt>
+<figures/comm_conj.pdf, id=1093, 308.15125pt x 158.5925pt>
 File: figures/comm_conj.pdf Graphic file (type pdf)
 
 <use figures/comm_conj.pdf>
@@ -661,7 +663,7 @@ Underfull \vbox (badness 1762) has occurred while \output is active []
 
  [75]
 (./figures/comm_disj.tex
-<figures/comm_disj.pdf, id=1098, 312.16624pt x 154.5775pt>
+<figures/comm_disj.pdf, id=1099, 312.16624pt x 154.5775pt>
 File: figures/comm_disj.pdf Graphic file (type pdf)
 
 <use figures/comm_disj.pdf>
@@ -669,7 +671,7 @@ Package pdftex.def Info: figures/comm_disj.pdf used on input line 2.
 (pdftex.def)             Requested size: 312.16548pt x 154.5771pt.
 ) [76 <./figures/comm_conj.pdf> <./figures/comm_disj.pdf>] (./figures/assoc_con
 j.tex
-<figures/assoc_conj.pdf, id=1107, 411.5375pt x 203.76125pt>
+<figures/assoc_conj.pdf, id=1108, 411.5375pt x 203.76125pt>
 File: figures/assoc_conj.pdf Graphic file (type pdf)
 
 <use figures/assoc_conj.pdf>
@@ -681,7 +683,7 @@ Overfull \hbox (21.16591pt too wide) in paragraph at lines 3--657
  []
 
 (./figures/assoc_disj.tex
-<figures/assoc_disj.pdf, id=1108, 366.36874pt x 194.7275pt>
+<figures/assoc_disj.pdf, id=1109, 366.36874pt x 194.7275pt>
 File: figures/assoc_disj.pdf Graphic file (type pdf)
 
 <use figures/assoc_disj.pdf>
@@ -689,14 +691,14 @@ Package pdftex.def Info: figures/assoc_disj.pdf used on input line 2.
 (pdftex.def)             Requested size: 366.36784pt x 194.727pt.
 ) [77 <./figures/assoc_conj.pdf> <./figures/assoc_disj.pdf>] (./figures/dist_2x
 3+4.tex
-<figures/dist_2x3+4.pdf, id=1118, 194.7275pt x 95.35625pt>
+<figures/dist_2x3+4.pdf, id=1119, 194.7275pt x 95.35625pt>
 File: figures/dist_2x3+4.pdf Graphic file (type pdf)
 
 <use figures/dist_2x3+4.pdf>
 Package pdftex.def Info: figures/dist_2x3+4.pdf used on input line 2.
 (pdftex.def)             Requested size: 194.727pt x 95.356pt.
 ) (./figures/dist_and_o_or.tex
-<figures/dist_and_o_or.pdf, id=1119, 447.6725pt x 221.82875pt>
+<figures/dist_and_o_or.pdf, id=1120, 447.6725pt x 221.82875pt>
 File: figures/dist_and_o_or.pdf Graphic file (type pdf)
 
 <use figures/dist_and_o_or.pdf>
@@ -709,7 +711,7 @@ Overfull \hbox (57.30177pt too wide) in paragraph at lines 3--694
 
 [78 <./figures/dist_2x3+4.pdf> <./figures/dist_and_o_or.pdf>]
 (./figures/dist_or_o_and.tex
-<figures/dist_or_o_and.pdf, id=1128, 447.6725pt x 217.81375pt>
+<figures/dist_or_o_and.pdf, id=1129, 447.6725pt x 217.81375pt>
 File: figures/dist_or_o_and.pdf Graphic file (type pdf)
 
 <use figures/dist_or_o_and.pdf>
@@ -771,10 +773,10 @@ Underfull \hbox (badness 2521) in paragraph at lines 1586--1587
  []
 
 [110] [111] [112] [113]
-Overfull \hbox (6.49135pt too wide) in paragraph at lines 1747--1752
+Overfull \hbox (5.158pt too wide) in paragraph at lines 1747--1752
 []\OT1/cmr/m/n/12 If we re-placed the con-di-tional in this ar-gu-ment form by 
-its \OT1/cmr/m/it/12 in-verse \OT1/cmr/m/n/12 ($[]\OML/cmm/m/it/12 A  \OT1/cmr/
-m/n/12 =[]\OMS/cmsy/m/n/12 )
+its \OT1/cmr/m/it/12 in-verse \OT1/cmr/m/n/12 ($\OMS/cmsy/m/n/12 :\OML/cmm/m/it
+/12 A  \OT1/cmr/m/n/12 =[]\OMS/cmsy/m/n/12 )
  []
 
 [114] (./logic/valid-exer.tex [115
@@ -801,7 +803,7 @@ Chapter 3.
 
 ]) [136] [137] [138] [139] [140]
 (./figures/Non-isosceles.tex
-<figures/Non-isosceles.pdf, id=1534, 234.8775pt x 237.88875pt>
+<figures/Non-isosceles.pdf, id=1535, 234.8775pt x 237.88875pt>
 File: figures/Non-isosceles.pdf Graphic file (type pdf)
 
 <use figures/Non-isosceles.pdf>
@@ -813,21 +815,21 @@ Package pdftex.def Info: figures/Non-isosceles.pdf used on input line 2.
 ] [143] [144] [145] (./proof1/disproofs-exer.tex [146
 
 ]) [147] [148] (./figures/Luxembourg.tex
-<figures/Luxembourg.pdf, id=1606, 163.61125pt x 118.4425pt>
+<figures/Luxembourg.pdf, id=1607, 163.61125pt x 118.4425pt>
 File: figures/Luxembourg.pdf Graphic file (type pdf)
 
 <use figures/Luxembourg.pdf>
 Package pdftex.def Info: figures/Luxembourg.pdf used on input line 2.
 (pdftex.def)             Requested size: 163.61084pt x 118.4422pt.
 ) [149 <./figures/Luxembourg.pdf>] [150] [151]
-(./figures/pebbling.tex <figures/pebbling.pdf, id=1629, 381.425pt x 196.735pt>
+(./figures/pebbling.tex <figures/pebbling.pdf, id=1630, 381.425pt x 196.735pt>
 File: figures/pebbling.pdf Graphic file (type pdf)
 
 <use figures/pebbling.pdf>
 Package pdftex.def Info: figures/pebbling.pdf used on input line 2.
 (pdftex.def)             Requested size: 381.42406pt x 196.7345pt.
 ) (./figures/pebbling_move.tex
-<figures/pebbling_move.pdf, id=1630, 381.425pt x 191.71625pt>
+<figures/pebbling_move.pdf, id=1631, 381.425pt x 191.71625pt>
 File: figures/pebbling_move.pdf Graphic file (type pdf)
 
 <use figures/pebbling_move.pdf>
@@ -838,7 +840,7 @@ roof1/cases-exer.tex [155
 
 ]) [156] [157] [158]
 [159] (./figures/Z-module.tex
-<figures/Z-module.pdf, id=1692, 366.36874pt x 327.2225pt>
+<figures/Z-module.pdf, id=1693, 366.36874pt x 327.2225pt>
 File: figures/Z-module.pdf Graphic file (type pdf)
 
 <use figures/Z-module.pdf>
@@ -846,7 +848,7 @@ Package pdftex.def Info: figures/Z-module.pdf used on input line 2.
 (pdftex.def)             Requested size: 366.36784pt x 327.2217pt.
 ) [160] [161 <./figures/Z-module.pdf>] [162] [163]
 (./proof1/exist-exer.tex (./figures/sci-pap-roc.tex
-<figures/sci-pap-roc.pdf, id=1715, 201.75375pt x 134.5025pt>
+<figures/sci-pap-roc.pdf, id=1716, 201.75375pt x 134.5025pt>
 File: figures/sci-pap-roc.pdf Graphic file (type pdf)
 
 <use figures/sci-pap-roc.pdf>
@@ -896,7 +898,7 @@ y you haven't thought
  []
 
 (./figures/first_Venn.tex
-<figures/first_Venn.pdf, id=1884, 367.3725pt x 218.8175pt>
+<figures/first_Venn.pdf, id=1885, 367.3725pt x 218.8175pt>
 File: figures/first_Venn.pdf Graphic file (type pdf)
 
 <use figures/first_Venn.pdf>
@@ -904,7 +906,7 @@ Package pdftex.def Info: figures/first_Venn.pdf used on input line 2.
 (pdftex.def)             Requested size: 367.37158pt x 218.81696pt.
 ) [188 <./figures/first_Venn.pdf>]
 (./figures/4set_Venn.tex
-<figures/4set_Venn.pdf, id=1891, 367.3725pt x 322.20375pt>
+<figures/4set_Venn.pdf, id=1892, 367.3725pt x 322.20375pt>
 File: figures/4set_Venn.pdf Graphic file (type pdf)
 
 <use figures/4set_Venn.pdf>
@@ -912,14 +914,14 @@ Package pdftex.def Info: figures/4set_Venn.pdf used on input line 2.
 (pdftex.def)             Requested size: 367.37158pt x 322.20296pt.
 ) [189 <./figures/4set_Venn.pdf>]
 (./figures/silly_universe.tex
-<figures/silly_universe.pdf, id=1899, 363.3575pt x 236.885pt>
+<figures/silly_universe.pdf, id=1900, 363.3575pt x 236.885pt>
 File: figures/silly_universe.pdf Graphic file (type pdf)
 
 <use figures/silly_universe.pdf>
 Package pdftex.def Info: figures/silly_universe.pdf used on input line 2.
 (pdftex.def)             Requested size: 363.3566pt x 236.88441pt.
 ) (./figures/silly_w_sets.tex
-<figures/silly_w_sets.pdf, id=1900, 363.3575pt x 236.885pt>
+<figures/silly_w_sets.pdf, id=1901, 363.3575pt x 236.885pt>
 File: figures/silly_w_sets.pdf Graphic file (type pdf)
 
 <use figures/silly_w_sets.pdf>
@@ -929,7 +931,7 @@ Package pdftex.def Info: figures/silly_w_sets.pdf used on input line 2.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [190 <./figures/silly_universe.pdf>] (./figures/silly_w_counter_ex.tex
-<figures/silly_w_counter_ex.pdf, id=1907, 363.3575pt x 236.885pt>
+<figures/silly_w_counter_ex.pdf, id=1908, 363.3575pt x 236.885pt>
 File: figures/silly_w_counter_ex.pdf Graphic file (type pdf)
 
 <use figures/silly_w_counter_ex.pdf>
@@ -940,7 +942,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [191 <./figures/silly_w_sets.pdf> <./figures/silly_w_counter_ex.pdf>]
 (./figures/Venn_showing_implies.tex
-<figures/Venn_showing_implies.pdf, id=1916, 254.9525pt x 146.5475pt>
+<figures/Venn_showing_implies.pdf, id=1917, 254.9525pt x 146.5475pt>
 File: figures/Venn_showing_implies.pdf Graphic file (type pdf)
 
 <use figures/Venn_showing_implies.pdf>
@@ -948,7 +950,7 @@ Package pdftex.def Info: figures/Venn_showing_implies.pdf used on input line 2.
 
 (pdftex.def)             Requested size: 254.95186pt x 146.54712pt.
 ) (./figures/disjoint_Venn.tex
-<figures/disjoint_Venn.pdf, id=1917, 254.9525pt x 146.5475pt>
+<figures/disjoint_Venn.pdf, id=1918, 254.9525pt x 146.5475pt>
 File: figures/disjoint_Venn.pdf Graphic file (type pdf)
 
 <use figures/disjoint_Venn.pdf>
@@ -958,14 +960,14 @@ Package pdftex.def Info: figures/disjoint_Venn.pdf used on input line 2.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [192 <./figures/Venn_showing_implies.pdf>] (./figures/containment_Venn.tex
-<figures/containment_Venn.pdf, id=1924, 254.9525pt x 146.5475pt>
+<figures/containment_Venn.pdf, id=1925, 254.9525pt x 146.5475pt>
 File: figures/containment_Venn.pdf Graphic file (type pdf)
 
 <use figures/containment_Venn.pdf>
 Package pdftex.def Info: figures/containment_Venn.pdf used on input line 2.
 (pdftex.def)             Requested size: 254.95186pt x 146.54712pt.
 ) (./figures/general_Venn.tex
-<figures/general_Venn.pdf, id=1925, 254.9525pt x 146.5475pt>
+<figures/general_Venn.pdf, id=1926, 254.9525pt x 146.5475pt>
 File: figures/general_Venn.pdf Graphic file (type pdf)
 
 <use figures/general_Venn.pdf>
@@ -976,7 +978,7 @@ Underfull \vbox (badness 7308) has occurred while \output is active []
 
  [193 <./figures/disjoint_Venn.pdf> <./figures/containment_Venn.pdf>]
 (./figures/3set_Venn_gen_pos.tex
-<figures/3set_Venn_gen_pos.pdf, id=1934, 367.3725pt x 322.20375pt>
+<figures/3set_Venn_gen_pos.pdf, id=1935, 367.3725pt x 322.20375pt>
 File: figures/3set_Venn_gen_pos.pdf Graphic file (type pdf)
 
 <use figures/3set_Venn_gen_pos.pdf>
@@ -1004,7 +1006,7 @@ Chapter 5.
 
 
 
-] <photos/domino_row.jpg, id=1991, 864.22874pt x 1352.05125pt>
+] <photos/domino_row.jpg, id=1992, 864.22874pt x 1352.05125pt>
 File: photos/domino_row.jpg Graphic file (type jpg)
 
 <use photos/domino_row.jpg>
@@ -1028,14 +1030,14 @@ Overfull \hbox (2.45457pt too wide) in paragraph at lines 41--49
  []
 
 [208] (./figures/straight_trominoe.tex
-<figures/straight_trominoe.pdf, id=2031, 56.21pt x 20.075pt>
+<figures/straight_trominoe.pdf, id=2032, 56.21pt x 20.075pt>
 File: figures/straight_trominoe.pdf Graphic file (type pdf)
 
 <use figures/straight_trominoe.pdf>
 Package pdftex.def Info: figures/straight_trominoe.pdf used on input line 2.
 (pdftex.def)             Requested size: 56.20985pt x 20.07494pt.
 ) (./figures/L-shaped_trominoe.tex
-<figures/L-shaped_trominoe.pdf, id=2032, 38.1425pt x 38.1425pt>
+<figures/L-shaped_trominoe.pdf, id=2033, 38.1425pt x 38.1425pt>
 File: figures/L-shaped_trominoe.pdf Graphic file (type pdf)
 
 <use figures/L-shaped_trominoe.pdf>
@@ -1047,7 +1049,7 @@ Underfull \vbox (badness 1189) has occurred while \output is active []
 
  [216]
 [217] [218] [219] (./proof2/sums-exer.tex (./figures/triangular_numbers.tex
-<figures/triangular_numbers.pdf, id=2100, 359.3425pt x 66.2475pt>
+<figures/triangular_numbers.pdf, id=2102, 359.3425pt x 66.2475pt>
 File: figures/triangular_numbers.pdf Graphic file (type pdf)
 
 <use figures/triangular_numbers.pdf>
@@ -1083,7 +1085,7 @@ Chapter 6.
 
 
 ] (./figures/first_relation.tex
-<figures/first_relation.pdf, id=2196, 262.9825pt x 208.78pt>
+<figures/first_relation.pdf, id=2197, 262.9825pt x 208.78pt>
 File: figures/first_relation.pdf Graphic file (type pdf)
 
 <use figures/first_relation.pdf>
@@ -1091,14 +1093,14 @@ Package pdftex.def Info: figures/first_relation.pdf used on input line 2.
 (pdftex.def)             Requested size: 262.98184pt x 208.77946pt.
 ) [234 <./figures/first_relation.pdf>]
 (./figures/2nd_relation.tex
-<figures/2nd_relation.pdf, id=2205, 262.9825pt x 208.78pt>
+<figures/2nd_relation.pdf, id=2206, 262.9825pt x 208.78pt>
 File: figures/2nd_relation.pdf Graphic file (type pdf)
 
 <use figures/2nd_relation.pdf>
 Package pdftex.def Info: figures/2nd_relation.pdf used on input line 2.
 (pdftex.def)             Requested size: 262.98184pt x 208.77946pt.
 ) (./figures/2nd_relation_v2.tex
-<figures/2nd_relation_v2.pdf, id=2207, 127.47626pt x 217.81375pt>
+<figures/2nd_relation_v2.pdf, id=2208, 127.47626pt x 217.81375pt>
 File: figures/2nd_relation_v2.pdf Graphic file (type pdf)
 
 <use figures/2nd_relation_v2.pdf>
@@ -1110,14 +1112,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [235 <./figures/2nd_relation.pdf>] [236 <./figures/2nd_relation_v2.pdf>] [237]
 
 (./figures/less_than_on_RxR.tex
-<figures/less_than_on_RxR.pdf, id=2228, 200.75pt x 200.75pt>
+<figures/less_than_on_RxR.pdf, id=2229, 200.75pt x 200.75pt>
 File: figures/less_than_on_RxR.pdf Graphic file (type pdf)
 
 <use figures/less_than_on_RxR.pdf>
 Package pdftex.def Info: figures/less_than_on_RxR.pdf used on input line 2.
 (pdftex.def)             Requested size: 200.7495pt x 200.7495pt.
 ) (./figures/divides_on_NxN.tex
-<figures/divides_on_NxN.pdf, id=2230, 200.75pt x 200.75pt>
+<figures/divides_on_NxN.pdf, id=2231, 200.75pt x 200.75pt>
 File: figures/divides_on_NxN.pdf Graphic file (type pdf)
 
 <use figures/divides_on_NxN.pdf>
@@ -1125,7 +1127,7 @@ Package pdftex.def Info: figures/divides_on_NxN.pdf used on input line 2.
 (pdftex.def)             Requested size: 200.7495pt x 200.7495pt.
 ) [238] [239 <./figures/less_than_on_RxR.pdf> <./figures/divides_on_NxN.pdf>] [
 240] (./figures/composite_relation.tex
-<figures/composite_relation.pdf, id=2247, 376.40625pt x 227.85126pt>
+<figures/composite_relation.pdf, id=2248, 376.40625pt x 227.85126pt>
 File: figures/composite_relation.pdf Graphic file (type pdf)
 
 <use figures/composite_relation.pdf>
@@ -1169,7 +1171,7 @@ Overfull \hbox (2.61108pt too wide) in paragraph at lines 331--333
 [244
 
 ] (./figures/vacuously_symmetric.tex
-<figures/vacuously_symmetric.pdf, id=2279, 217.81375pt x 110.4125pt>
+<figures/vacuously_symmetric.pdf, id=2280, 217.81375pt x 110.4125pt>
 File: figures/vacuously_symmetric.pdf Graphic file (type pdf)
 
 <use figures/vacuously_symmetric.pdf>
@@ -1191,21 +1193,21 @@ Overfull \hbox (58.74939pt too wide) in paragraph at lines 433--435
  []
 
 [247] (./figures/not_reflexive.tex
-<figures/not_reflexive.pdf, id=2294, 217.81375pt x 110.4125pt>
+<figures/not_reflexive.pdf, id=2295, 217.81375pt x 110.4125pt>
 File: figures/not_reflexive.pdf Graphic file (type pdf)
 
 <use figures/not_reflexive.pdf>
 Package pdftex.def Info: figures/not_reflexive.pdf used on input line 2.
 (pdftex.def)             Requested size: 217.8132pt x 110.41222pt.
 ) (./figures/not_irreflexive.tex
-<figures/not_irreflexive.pdf, id=2295, 217.81375pt x 128.48pt>
+<figures/not_irreflexive.pdf, id=2296, 217.81375pt x 128.48pt>
 File: figures/not_irreflexive.pdf Graphic file (type pdf)
 
 <use figures/not_irreflexive.pdf>
 Package pdftex.def Info: figures/not_irreflexive.pdf used on input line 2.
 (pdftex.def)             Requested size: 217.8132pt x 128.47968pt.
 ) (./figures/not_symmetric.tex
-<figures/not_symmetric.pdf, id=2296, 217.81375pt x 123.46124pt>
+<figures/not_symmetric.pdf, id=2297, 217.81375pt x 123.46124pt>
 File: figures/not_symmetric.pdf Graphic file (type pdf)
 
 <use figures/not_symmetric.pdf>
@@ -1214,14 +1216,14 @@ Package pdftex.def Info: figures/not_symmetric.pdf used on input line 2.
 ) [248 <./figures/not_reflexive.pdf> <./figures/not_irreflexive.pdf> <./figures
 /not_symmetric.pdf>]
 (./figures/not_anti-symmetric.tex
-<figures/not_anti-symmetric.pdf, id=2307, 217.81375pt x 123.46124pt>
+<figures/not_anti-symmetric.pdf, id=2308, 217.81375pt x 123.46124pt>
 File: figures/not_anti-symmetric.pdf Graphic file (type pdf)
 
 <use figures/not_anti-symmetric.pdf>
 Package pdftex.def Info: figures/not_anti-symmetric.pdf used on input line 2.
 (pdftex.def)             Requested size: 217.8132pt x 123.46092pt.
 ) (./figures/not_transitive.tex
-<figures/not_transitive.pdf, id=2308, 217.81375pt x 119.44624pt>
+<figures/not_transitive.pdf, id=2309, 217.81375pt x 119.44624pt>
 File: figures/not_transitive.pdf Graphic file (type pdf)
 
 <use figures/not_transitive.pdf>
@@ -1236,7 +1238,7 @@ Overfull \hbox (72.9494pt too wide) in paragraph at lines 5--8
  []
 
 ) [250] [251] [252] [253] [254] [255] (./figures/graph_examples.tex
-<figures/graph_examples.pdf, id=2353, 371.3875pt x 124.465pt>
+<figures/graph_examples.pdf, id=2354, 371.3875pt x 124.465pt>
 File: figures/graph_examples.pdf Graphic file (type pdf)
 
 <use figures/graph_examples.pdf>
@@ -1251,7 +1253,7 @@ Overfull \hbox (72.9494pt too wide) in paragraph at lines 2--5
  []
 
 (./figures/petersen_iso.tex
-<figures/petersen_iso.pdf, id=2364, 431.6125pt x 207.77625pt>
+<figures/petersen_iso.pdf, id=2365, 431.6125pt x 207.77625pt>
 File: figures/petersen_iso.pdf Graphic file (type pdf)
 
 <use figures/petersen_iso.pdf>
@@ -1267,14 +1269,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [258])
 [259 <./figures/petersen_iso.pdf>] [260] (./figures/total_order.tex
-<figures/total_order.pdf, id=2388, 248.93pt x 152.57pt>
+<figures/total_order.pdf, id=2389, 248.93pt x 152.57pt>
 File: figures/total_order.pdf Graphic file (type pdf)
 
 <use figures/total_order.pdf>
 Package pdftex.def Info: figures/total_order.pdf used on input line 2.
 (pdftex.def)             Requested size: 248.92938pt x 152.56963pt.
 ) (./figures/partial_order.tex
-<figures/partial_order.pdf, id=2389, 239.89626pt x 189.70876pt>
+<figures/partial_order.pdf, id=2390, 239.89626pt x 189.70876pt>
 File: figures/partial_order.pdf Graphic file (type pdf)
 
 <use figures/partial_order.pdf>
@@ -1282,14 +1284,14 @@ Package pdftex.def Info: figures/partial_order.pdf used on input line 2.
 (pdftex.def)             Requested size: 239.89566pt x 189.70828pt.
 ) [261 <./figures/total_order.pdf> <./figures/partial_order.pdf>] (./figures/Ha
 sse_diagram.tex
-<figures/Hasse_diagram.pdf, id=2400, 330.23375pt x 239.89626pt>
+<figures/Hasse_diagram.pdf, id=2401, 330.23375pt x 239.89626pt>
 File: figures/Hasse_diagram.pdf Graphic file (type pdf)
 
 <use figures/Hasse_diagram.pdf>
 Package pdftex.def Info: figures/Hasse_diagram.pdf used on input line 2.
 (pdftex.def)             Requested size: 330.23293pt x 239.89566pt.
 ) [262] (./figures/Hasse_for_subsets.tex
-<figures/Hasse_for_subsets.pdf, id=2406, 253.94875pt x 224.84pt>
+<figures/Hasse_for_subsets.pdf, id=2407, 253.94875pt x 224.84pt>
 File: figures/Hasse_for_subsets.pdf Graphic file (type pdf)
 
 <use figures/Hasse_for_subsets.pdf>
@@ -1297,7 +1299,7 @@ Package pdftex.def Info: figures/Hasse_for_subsets.pdf used on input line 2.
 (pdftex.def)             Requested size: 253.94812pt x 224.83945pt.
 ) [263 <./figures/Hasse_diagram.pdf>]
 (./figures/divisors_of_72.tex
-<figures/divisors_of_72.pdf, id=2414, 370.38374pt x 248.93pt>
+<figures/divisors_of_72.pdf, id=2415, 370.38374pt x 248.93pt>
 File: figures/divisors_of_72.pdf Graphic file (type pdf)
 
 <use figures/divisors_of_72.pdf>
@@ -1309,7 +1311,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [264 <./figures/Hasse_for_subsets.pdf>] [265 <./figures/divisors_of_72.pdf>] [
 266]
 (./rel/order-exer.tex (./figures/ecosystem.tex
-<figures/ecosystem.pdf, id=2431, 246.9225pt x 168.63pt>
+<figures/ecosystem.pdf, id=2432, 246.9225pt x 168.63pt>
 File: figures/ecosystem.pdf Graphic file (type pdf)
 
 <use figures/ecosystem.pdf>
@@ -1331,7 +1333,7 @@ Overfull \hbox (12.28134pt too wide) in paragraph at lines 50--51
  []
 
 (./figures/0-3_dim_cubes.tex
-<figures/0-3_dim_cubes.pdf, id=2440, 302.12875pt x 93.34875pt>
+<figures/0-3_dim_cubes.pdf, id=2441, 302.12875pt x 93.34875pt>
 File: figures/0-3_dim_cubes.pdf Graphic file (type pdf)
 
 <use figures/0-3_dim_cubes.pdf>
@@ -1339,7 +1341,7 @@ Package pdftex.def Info: figures/0-3_dim_cubes.pdf used on input line 2.
 (pdftex.def)             Requested size: 302.128pt x 93.34851pt.
 ) [268 <./figures/0-3_dim_cubes.pdf>]) [269]
 [270] (./figures/generic_function.tex
-<figures/generic_function.pdf, id=2464, 313.17pt x 217.81375pt>
+<figures/generic_function.pdf, id=2465, 313.17pt x 217.81375pt>
 File: figures/generic_function.pdf Graphic file (type pdf)
 
 <use figures/generic_function.pdf>
@@ -1347,7 +1349,7 @@ Package pdftex.def Info: figures/generic_function.pdf used on input line 2.
 (pdftex.def)             Requested size: 313.16922pt x 217.8132pt.
 ) [271 <./figures/generic_function.pdf>]
 [272] [273] (./figures/square_n_squareroot.tex
-<figures/square_n_squareroot.pdf, id=2483, 341.275pt x 146.5475pt>
+<figures/square_n_squareroot.pdf, id=2484, 341.275pt x 146.5475pt>
 File: figures/square_n_squareroot.pdf Graphic file (type pdf)
 
 <use figures/square_n_squareroot.pdf>
@@ -1356,7 +1358,7 @@ Package pdftex.def Info: figures/square_n_squareroot.pdf used on input line 2.
 ) [274 <./figures/square_n_squareroot.pdf>] [275] [276] [277] [278] [279] (./re
 l/functions-exer.tex [280]
 (./figures/Cantor_snake.tex
-<figures/Cantor_snake.pdf, id=2527, 358.33875pt x 316.18124pt>
+<figures/Cantor_snake.pdf, id=2528, 358.33875pt x 316.18124pt>
 File: figures/Cantor_snake.pdf Graphic file (type pdf)
 
 <use figures/Cantor_snake.pdf>
@@ -1367,7 +1369,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [281])
 [282 <./figures/Cantor_snake.pdf>] [283] (./figures/graph_o_sine.tex
-<figures/graph_o_sine.pdf, id=2545, 291.0875pt x 263.98625pt>
+<figures/graph_o_sine.pdf, id=2546, 291.0875pt x 263.98625pt>
 File: figures/graph_o_sine.pdf Graphic file (type pdf)
 
 <use figures/graph_o_sine.pdf>
@@ -1395,7 +1397,7 @@ Chapter 7.
 
 
 ] [294] (./figures/full_house_w_small_pair.tex
-<figures/full_house_w_small_pair.pdf, id=2607, 254.9525pt x 38.1425pt>
+<figures/full_house_w_small_pair.pdf, id=2608, 254.9525pt x 38.1425pt>
 File: figures/full_house_w_small_pair.pdf Graphic file (type pdf)
 
 <use figures/full_house_w_small_pair.pdf>
@@ -1404,7 +1406,7 @@ Package pdftex.def Info: figures/full_house_w_small_pair.pdf used on input line
 (pdftex.def)             Requested size: 254.95186pt x 38.1424pt.
 )
 (./figures/full_house_w_large_pair.tex
-<figures/full_house_w_large_pair.pdf, id=2608, 254.9525pt x 38.1425pt>
+<figures/full_house_w_large_pair.pdf, id=2609, 254.9525pt x 38.1425pt>
 File: figures/full_house_w_large_pair.pdf Graphic file (type pdf)
 
 <use figures/full_house_w_large_pair.pdf>
@@ -1425,14 +1427,14 @@ rs, $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 a; b; c; d; e; f\OMS/cmsy/m/n/12 g$\OT1
 ]) [308] [309
 
 ] [310] [311] [312] (./figures/konigsberg.tex
-<figures/konigsberg.pdf, id=2718, 308.15125pt x 207.77625pt>
+<figures/konigsberg.pdf, id=2719, 308.15125pt x 207.77625pt>
 File: figures/konigsberg.pdf Graphic file (type pdf)
 
 <use figures/konigsberg.pdf>
 Package pdftex.def Info: figures/konigsberg.pdf used on input line 2.
 (pdftex.def)             Requested size: 308.15048pt x 207.77573pt.
 ) (./figures/kon_graph.tex
-<figures/kon_graph.pdf, id=2719, 83.31125pt x 146.5475pt>
+<figures/kon_graph.pdf, id=2720, 83.31125pt x 146.5475pt>
 File: figures/kon_graph.pdf Graphic file (type pdf)
 
 <use figures/kon_graph.pdf>
@@ -1440,7 +1442,7 @@ Package pdftex.def Info: figures/kon_graph.pdf used on input line 2.
 (pdftex.def)             Requested size: 83.31104pt x 146.54712pt.
 ) [313 <./figures/konigsberg.pdf>] [314 <./figures/kon_graph.pdf>] [315] [316] 
 (./figures/odd_pruned_chessboards.tex
-<figures/odd_pruned_chessboards.pdf, id=2747, 337.26pt x 138.5175pt>
+<figures/odd_pruned_chessboards.pdf, id=2748, 337.26pt x 138.5175pt>
 File: figures/odd_pruned_chessboards.pdf Graphic file (type pdf)
 
 <use figures/odd_pruned_chessboards.pdf>
@@ -1450,7 +1452,7 @@ Package pdftex.def Info: figures/odd_pruned_chessboards.pdf used on input line
 ) [317 <./figures/odd_pruned_chessboards.pdf>] [318] [319] (./proof3/parity-exe
 r.tex
 (./figures/Euler_circuit_problems_a.tex
-<figures/Euler_circuit_problems_a.pdf, id=2767, 316.18124pt x 168.63pt>
+<figures/Euler_circuit_problems_a.pdf, id=2768, 316.18124pt x 168.63pt>
 File: figures/Euler_circuit_problems_a.pdf Graphic file (type pdf)
 
 <use figures/Euler_circuit_problems_a.pdf>
@@ -1459,7 +1461,7 @@ e 2.
 (pdftex.def)             Requested size: 316.18047pt x 168.62958pt.
 )
 (./figures/Euler_circuit_problems_b.tex
-<figures/Euler_circuit_problems_b.pdf, id=2768, 363.3575pt x 165.61874pt>
+<figures/Euler_circuit_problems_b.pdf, id=2769, 363.3575pt x 165.61874pt>
 File: figures/Euler_circuit_problems_b.pdf Graphic file (type pdf)
 
 <use figures/Euler_circuit_problems_b.pdf>
@@ -1475,7 +1477,7 @@ Overfull \hbox (2.239pt too wide) in paragraph at lines 3--19
 
  <./figures/Euler_circuit_problems_a.pdf> <./figures/Euler_circuit_problems_b.p
 df>] (./figures/five_tetrominoes.tex
-<figures/five_tetrominoes.pdf, id=2778, 254.9525pt x 114.4275pt>
+<figures/five_tetrominoes.pdf, id=2779, 254.9525pt x 114.4275pt>
 File: figures/five_tetrominoes.pdf Graphic file (type pdf)
 
 <use figures/five_tetrominoes.pdf>
@@ -1483,7 +1485,7 @@ Package pdftex.def Info: figures/five_tetrominoes.pdf used on input line 2.
 (pdftex.def)             Requested size: 254.95186pt x 114.42722pt.
 ) [321 <./figures/five_tetrominoes.pdf>]
 (./figures/magic_hexagon.tex
-<figures/magic_hexagon.pdf, id=2792, 137.51375pt x 137.51375pt>
+<figures/magic_hexagon.pdf, id=2793, 137.51375pt x 137.51375pt>
 File: figures/magic_hexagon.pdf Graphic file (type pdf)
 
 <use figures/magic_hexagon.pdf>
@@ -1491,7 +1493,7 @@ Package pdftex.def Info: figures/magic_hexagon.pdf used on input line 2.
 (pdftex.def)             Requested size: 137.51341pt x 137.51341pt.
 )) [322 <./figures/magic_hexagon.pdf>]
 (./figures/RollTopDesk.tex
-<figures/RollTopDesk.pdf, id=2803, 380.42125pt x 399.4925pt>
+<figures/RollTopDesk.pdf, id=2804, 380.42125pt x 399.4925pt>
 File: figures/RollTopDesk.pdf Graphic file (type pdf)
 
 <use figures/RollTopDesk.pdf>
@@ -1521,7 +1523,7 @@ t/12 n$ \OT1/cmr/m/it/12 con-tain-ers hav-ing ca-pac-i-ties $\OML/cmm/m/it/12 m
 ] [329] [330] [331] [332]
 [333] [334] [335] [336] (./proof3/combinations-exer.tex
 (./figures/Pascals_tetrahedron.tex
-<figures/Pascals_tetrahedron.pdf, id=2881, 191.71625pt x 239.89626pt>
+<figures/Pascals_tetrahedron.pdf, id=2882, 191.71625pt x 239.89626pt>
 File: figures/Pascals_tetrahedron.pdf Graphic file (type pdf)
 
 <use figures/Pascals_tetrahedron.pdf>
@@ -1545,7 +1547,7 @@ Underfull \vbox (badness 2582) has occurred while \output is active []
 
  [345]
 [346] [347] (./figures/Cantor_snake_again.tex
-<figures/Cantor_snake_again.pdf, id=2953, 408.52625pt x 394.47375pt>
+<figures/Cantor_snake_again.pdf, id=2954, 408.52625pt x 394.47375pt>
 File: figures/Cantor_snake_again.pdf Graphic file (type pdf)
 
 <use figures/Cantor_snake_again.pdf>
@@ -1556,18 +1558,9 @@ Overfull \hbox (17.9739pt too wide) in paragraph at lines 3--321
 [][][] 
  []
 
-[348]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [349 <./figures/Cantor_snake_again.pdf>] [350]
-Overfull \hbox (0.9635pt too wide) in paragraph at lines 398--416
-[]\OT1/cmr/m/n/12 When re-stricted to the ap-pro-pri-ate sets ($\OML/cmm/m/it/1
-2 f$\OT1/cmr/m/n/12 's do-main is re-stricted to $\U/msb/m/n/12 Z[] \OMS/cmsy/m
-/n/12 ^^B
- []
-
-[351] (./figures/equiv_intervals.tex
-<figures/equiv_intervals.pdf, id=2978, 218.8175pt x 218.8175pt>
+[348] [349 <./figures/Cantor_snake_again.pdf>] [350] [351]
+(./figures/equiv_intervals.tex
+<figures/equiv_intervals.pdf, id=2979, 218.8175pt x 218.8175pt>
 File: figures/equiv_intervals.pdf Graphic file (type pdf)
 
 <use figures/equiv_intervals.pdf>
@@ -1575,50 +1568,50 @@ Package pdftex.def Info: figures/equiv_intervals.pdf used on input line 2.
 (pdftex.def)             Requested size: 218.81696pt x 218.81696pt.
 ) [352 <./figures/equiv_intervals.pdf>]
 (./figures/interval_n_semicircle.tex
-<figures/interval_n_semicircle.pdf, id=2985, 218.8175pt x 164.615pt>
+<figures/interval_n_semicircle.pdf, id=2986, 218.8175pt x 164.615pt>
 File: figures/interval_n_semicircle.pdf Graphic file (type pdf)
 
 <use figures/interval_n_semicircle.pdf>
 Package pdftex.def Info: figures/interval_n_semicircle.pdf used on input line 2
 .
 (pdftex.def)             Requested size: 218.81696pt x 164.6146pt.
-) [353 <./figures/interval_n_semicircle.pdf>] [354] (./card/examples-exer.tex) 
-[355
+) [353 <./figures/interval_n_semicircle.pdf>] [354] [355] (./card/examples-exer
+.tex) [356
 
-] [356]
+] [357]
 Overfull \hbox (5.57103pt too wide) in paragraph at lines 577--596
 []\OT1/cmr/m/n/12 Rather than writ-ing some-thing like ``$\OML/cmm/m/it/12 e \O
 MS/cmsy/m/n/12 ^^@ \OT1/cmr/m/n/12 2$'' or ``0.7182818284590452354...'',
  []
 
-[357] (./figures/binary_reps.tex
-<figures/binary_reps.pdf, id=3016, 220.825pt x 217.81375pt>
+[358] (./figures/binary_reps.tex
+<figures/binary_reps.pdf, id=3021, 220.825pt x 217.81375pt>
 File: figures/binary_reps.pdf Graphic file (type pdf)
 
 <use figures/binary_reps.pdf>
 Package pdftex.def Info: figures/binary_reps.pdf used on input line 2.
 (pdftex.def)             Requested size: 220.82445pt x 217.8132pt.
-) [358 <./figures/binary_reps.pdf>] [359] [360]
-[361] [362] (./card/cantors-exer.tex) [363
+) [359 <./figures/binary_reps.pdf>] [360] [361]
+[362] [363] (./card/cantors-exer.tex) [364
 
-] [364] [365]
+] [365] [366]
 Overfull \hbox (5.73618pt too wide) in paragraph at lines 808--817
 []\OT1/cmr/m/n/12 Naturally, we want to prove the Cantor-Bernstein-Schr^^?oder 
 the-o-rem (which
  []
 
-[366]
+[367]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [367]
+ [368]
 (./figures/CBS_setup.tex
-<figures/CBS_setup.pdf, id=3071, 214.8025pt x 457.71pt>
+<figures/CBS_setup.pdf, id=3076, 214.8025pt x 457.71pt>
 File: figures/CBS_setup.pdf Graphic file (type pdf)
 
 <use figures/CBS_setup.pdf>
 Package pdftex.def Info: figures/CBS_setup.pdf used on input line 2.
 (pdftex.def)             Requested size: 214.80197pt x 457.7089pt.
-) [368] [369 <./figures/CBS_setup.pdf>]
+) [369] [370 <./figures/CBS_setup.pdf>]
 Overfull \hbox (53.38307pt too wide) detected at line 942
 []  \OML/cmm/m/it/12 g[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\
 OML/cmm/m/it/12 g[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a\OT1/cmr/m/n/12 )))\OML/c
@@ -1632,31 +1625,31 @@ mr/m/n/12 (\OML/cmm/m/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f\OT1/cmr/m/n/12
  []
 
 (./figures/A-stopper.tex
-<figures/A-stopper.pdf, id=3087, 214.8025pt x 457.71pt>
+<figures/A-stopper.pdf, id=3092, 214.8025pt x 457.71pt>
 File: figures/A-stopper.pdf Graphic file (type pdf)
 
 <use figures/A-stopper.pdf>
 Package pdftex.def Info: figures/A-stopper.pdf used on input line 2.
 (pdftex.def)             Requested size: 214.80197pt x 457.7089pt.
-) [370] [371 <./figures/A-stopper.pdf>] [372]
-(./card/dominance-exer.tex) [373
+) [371] [372 <./figures/A-stopper.pdf>] [373]
+(./card/dominance-exer.tex) [374
 
 ]
 Missing character: There is no â in font cmr12!
- [374] [375] [376] [377] [378]) [379]
+ [375] [376] [377] [378] [379]) [380]
 \openout2 = `proof4/proof4.aux'.
 
 
-(./proof4/proof4.tex [380
-
-
-
-]
+(./proof4/proof4.tex
 Chapter 9.
-[381] [382] [383
+[381
+
+
+
+] [382] [383
 
 ] (./figures/Morley_setup.tex
-<figures/Morley_setup.pdf, id=3167, 372.39125pt x 186.6975pt>
+<figures/Morley_setup.pdf, id=3168, 372.39125pt x 186.6975pt>
 File: figures/Morley_setup.pdf Graphic file (type pdf)
 
 <use figures/Morley_setup.pdf>
@@ -1664,7 +1657,7 @@ Package pdftex.def Info: figures/Morley_setup.pdf used on input line 2.
 (pdftex.def)             Requested size: 372.39034pt x 186.69704pt.
 ) [384 <./figures/Morley_setup.pdf>]
 (./figures/Morley_1st_triangle.tex
-<figures/Morley_1st_triangle.pdf, id=3175, 372.39125pt x 186.6975pt>
+<figures/Morley_1st_triangle.pdf, id=3176, 372.39125pt x 186.6975pt>
 File: figures/Morley_1st_triangle.pdf Graphic file (type pdf)
 
 <use figures/Morley_1st_triangle.pdf>
@@ -1674,7 +1667,7 @@ Package pdftex.def Info: figures/Morley_1st_triangle.pdf used on input line 2.
 
  <./figures/Morley_1st_triangle.pdf>] [386] (./figures/Morley_Conway_puzzle.tex
 
-<figures/Morley_Conway_puzzle.pdf, id=3195, 386.44376pt x 161.60374pt>
+<figures/Morley_Conway_puzzle.pdf, id=3196, 386.44376pt x 161.60374pt>
 File: figures/Morley_Conway_puzzle.pdf Graphic file (type pdf)
 
 <use figures/Morley_Conway_puzzle.pdf>
@@ -1683,7 +1676,7 @@ Package pdftex.def Info: figures/Morley_Conway_puzzle.pdf used on input line 2.
 (pdftex.def)             Requested size: 386.44281pt x 161.60335pt.
 ) [387]
 (./figures/Morley_Conway_puzzle_scaling.tex
-<figures/Morley_Conway_puzzle_scaling.pdf, id=3204, 363.3575pt x 42.1575pt>
+<figures/Morley_Conway_puzzle_scaling.pdf, id=3205, 363.3575pt x 42.1575pt>
 File: figures/Morley_Conway_puzzle_scaling.pdf Graphic file (type pdf)
 
 <use figures/Morley_Conway_puzzle_scaling.pdf>
@@ -1693,7 +1686,7 @@ Package pdftex.def Info: figures/Morley_Conway_puzzle_scaling.pdf used on input
 ) [388 <./figures/Morley_Conway_puzzle.pdf> <./figures/Morley_Conway_puzzle_sca
 ling.pdf>]
 (./proof4/morley-exer.tex (./figures/Morley_finished.tex
-<figures/Morley_finished.pdf, id=3213, 362.35374pt x 136.51pt>
+<figures/Morley_finished.pdf, id=3214, 362.35374pt x 136.51pt>
 File: figures/Morley_finished.pdf Graphic file (type pdf)
 
 <use figures/Morley_finished.pdf>
@@ -1707,7 +1700,7 @@ Overfull \hbox (1.51628pt too wide) in paragraph at lines 3--8
 ) [389
 
  <./figures/Morley_finished.pdf>] (./figures/The_Army.tex
-<figures/The_Army.pdf, id=3224, 408.52625pt x 394.47375pt>
+<figures/The_Army.pdf, id=3225, 408.52625pt x 394.47375pt>
 File: figures/The_Army.pdf Graphic file (type pdf)
 
 <use figures/The_Army.pdf>
@@ -1719,7 +1712,7 @@ Overfull \hbox (17.9739pt too wide) in paragraph at lines 3--296
  []
 
 [390] [391 <./figures/The_Army.pdf>] (./figures/One_step_into_void.tex
-<figures/One_step_into_void.pdf, id=3235, 448.67625pt x 394.47375pt>
+<figures/One_step_into_void.pdf, id=3236, 448.67625pt x 394.47375pt>
 File: figures/One_step_into_void.pdf Graphic file (type pdf)
 
 <use figures/One_step_into_void.pdf>
@@ -1731,7 +1724,7 @@ Overfull \hbox (58.38585pt too wide) in paragraph at lines 3--352
  []
 
 (./figures/Two_steps_into_void.tex
-<figures/Two_steps_into_void.pdf, id=3236, 448.67625pt x 394.47375pt>
+<figures/Two_steps_into_void.pdf, id=3237, 448.67625pt x 394.47375pt>
 File: figures/Two_steps_into_void.pdf Graphic file (type pdf)
 
 <use figures/Two_steps_into_void.pdf>
@@ -1743,7 +1736,7 @@ Overfull \hbox (58.38585pt too wide) in paragraph at lines 3--361
  []
 
 (./figures/Three_steps_into_void.tex
-<figures/Three_steps_into_void.pdf, id=3237, 462.72874pt x 394.47375pt>
+<figures/Three_steps_into_void.pdf, id=3238, 462.72874pt x 394.47375pt>
 File: figures/Three_steps_into_void.pdf Graphic file (type pdf)
 
 <use figures/Three_steps_into_void.pdf>
@@ -1758,7 +1751,7 @@ Overfull \hbox (71.9368pt too wide) in paragraph at lines 3--374
 [392] [393 <./figures/One_step_into_void.pdf>] [394 <./figures/Two_steps_into_v
 oid.pdf>] [395 <./figures/Three_steps_into_void.pdf>]
 (./figures/Taxicab_distance.tex
-<figures/Taxicab_distance.pdf, id=3261, 408.52625pt x 394.47375pt>
+<figures/Taxicab_distance.pdf, id=3262, 408.52625pt x 394.47375pt>
 File: figures/Taxicab_distance.pdf Graphic file (type pdf)
 
 <use figures/Taxicab_distance.pdf>
@@ -1770,7 +1763,7 @@ Overfull \hbox (17.9739pt too wide) in paragraph at lines 3--418
  []
 
 [396] [397 <./figures/Taxicab_distance.pdf>] (./figures/Void-finding_r.tex
-<figures/Void-finding_r.pdf, id=3273, 383.4325pt x 190.7125pt>
+<figures/Void-finding_r.pdf, id=3274, 383.4325pt x 190.7125pt>
 File: figures/Void-finding_r.pdf Graphic file (type pdf)
 
 <use figures/Void-finding_r.pdf>
@@ -1780,7 +1773,7 @@ Package pdftex.def Info: figures/Void-finding_r.pdf used on input line 2.
 [400] (./proof4/five-exer.tex) [401
 
 ] (./figures/matchstick_puzzle.tex
-<figures/matchstick_puzzle.pdf, id=3296, 288.07625pt x 315.1775pt>
+<figures/matchstick_puzzle.pdf, id=3297, 288.07625pt x 315.1775pt>
 File: figures/matchstick_puzzle.pdf Graphic file (type pdf)
 
 <use figures/matchstick_puzzle.pdf>
@@ -1788,7 +1781,7 @@ Package pdftex.def Info: figures/matchstick_puzzle.pdf used on input line 2.
 (pdftex.def)             Requested size: 288.07553pt x 315.17673pt.
 ) [402 <./figures/matchstick_puzzle.pdf>]
 (./figures/Monge_circle_setup.tex
-<figures/Monge_circle_setup.pdf, id=3304, 197.73875pt x 190.7125pt>
+<figures/Monge_circle_setup.pdf, id=3305, 197.73875pt x 190.7125pt>
 File: figures/Monge_circle_setup.pdf Graphic file (type pdf)
 
 <use figures/Monge_circle_setup.pdf>
@@ -1798,7 +1791,7 @@ Package pdftex.def Info: figures/Monge_circle_setup.pdf used on input line 2.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [403 <./figures/Monge_circle_setup.pdf>] (./figures/Monge_circle_setup_2.tex
-<figures/Monge_circle_setup_2.pdf, id=3313, 361.35pt x 248.93pt>
+<figures/Monge_circle_setup_2.pdf, id=3314, 361.35pt x 248.93pt>
 File: figures/Monge_circle_setup_2.pdf Graphic file (type pdf)
 
 <use figures/Monge_circle_setup_2.pdf>
@@ -1806,7 +1799,7 @@ Package pdftex.def Info: figures/Monge_circle_setup_2.pdf used on input line 2.
 
 (pdftex.def)             Requested size: 361.34912pt x 248.92938pt.
 ) [404] [405 <./figures/Monge_circle_setup_2.pdf>] [406]
-<photos/pencil_tetrahedron.jpg, id=3333, 361.35pt x 268.8444pt>
+<photos/pencil_tetrahedron.jpg, id=3334, 361.35pt x 268.8444pt>
 File: photos/pencil_tetrahedron.jpg Graphic file (type jpg)
 
 <use photos/pencil_tetrahedron.jpg>
@@ -1866,52 +1859,45 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 216.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 216.
 Package rerunfilecheck Info: File `GIAM.out' has not changed.
 (rerunfilecheck)             Checksum: 3B8E7FCA3B34780DEDA93D81702FBD62;4253.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 216.
  ) 
 Here is how much of TeX's memory you used:
- 8911 strings out of 493315
- 129506 string characters out of 6137904
- 279494 words of memory out of 5000000
- 10606 multiletter control sequences out of 15000+600000
- 18753 words of font info for 70 fonts, out of 8000000 for 9000
- 957 hyphenation exceptions out of 8191
- 29i,18n,30p,808b,622s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
-></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
-usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></us
-r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
-local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/lo
-cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
-l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/
-texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/te
-xlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texli
-ve/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/
-2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/201
-3/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2013/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/local/texlive/2013/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2013/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/local/texlive/2013/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2013/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2013/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2013/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2013/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2013/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2013/texmf-dist/fo
-nts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2013/texmf-dis
-t/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on GIAM.pdf (438 pages, 2632816 bytes).
+ 8911 strings out of 495031
+ 129009 string characters out of 6181530
+ 275241 words of memory out of 5000000
+ 10361 multiletter control sequences out of 15000+600000
+ 18404 words of font info for 69 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 29i,18n,30p,804b,622s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmssi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+ti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on GIAM.pdf (438 pages, 2624384 bytes).
 PDF statistics:
- 4069 PDF objects out of 4296 (max. 8388607)
- 3466 compressed objects within 35 object streams
- 1139 named destinations out of 1200 (max. 500000)
+ 4067 PDF objects out of 4296 (max. 8388607)
+ 3465 compressed objects within 35 object streams
+ 1140 named destinations out of 1200 (max. 500000)
  1003 words of extra memory for PDF output out of 10000 (max. 10000000)
 
