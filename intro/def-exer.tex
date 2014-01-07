@@ -1,0 +1,138 @@
+\begin{enumerate}
+
+\item Find the prime factorizations of the following integers.
+
+  \begin{enumerate}
+  \item 105
+  \item 414
+  \item 168
+  \item 1612
+  \item 9177
+  \end{enumerate}
+
+\hint{Divide out the obvious factors in order to reduce the complexity of the remaining problem. The first number is divisible by 5. The next three are all even. Recall that a number is divisible by 3 if and only if the sum of its digits is divisible by 3.
+}
+
+\item Use the sieve of Eratosthenes to find all prime numbers
+up to 100.
+
+\begin{tabular}{cccccccccc}
+\rule{14pt}{0pt} & \rule{14pt}{0pt} & \rule{14pt}{0pt} &
+\rule{14pt}{0pt} & \rule{14pt}{0pt} & \rule{14pt}{0pt} & 
+\rule{14pt}{0pt} & \rule{14pt}{0pt} & \rule{14pt}{0pt} &
+\rule{14pt}{0pt} \\
+ 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+ 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 \\
+ 21 & 22 & 23 & 24 & 25 & 26 & 27 & 28 & 29 & 30 \\
+ 31 & 32 & 33 & 34 & 35 & 36 & 37 & 38 & 39 & 40 \\
+ 41 & 42 & 43 & 44 & 45 & 46 & 47 & 48 & 49 & 50 \\
+ 51 & 52 & 53 & 54 & 55 & 56 & 57 & 58 & 59 & 60 \\ 
+ 61 & 62 & 63 & 64 & 65 & 66 & 67 & 68 & 69 & 70 \\
+ 71 & 72 & 73 & 74 & 75 & 76 & 77 & 78 & 79 & 80 \\
+ 81 & 82 & 83 & 84 & 85 & 86 & 87 & 88 & 89 & 90 \\
+ 91 & 92 & 93 & 94 & 95 & 96 & 97 & 98 & 99 & 100
+\end{tabular}
+
+\hint{The primes used in this instance of the sieve are just 2, 3, 5 and 7. Any number less than 100 that isn't a multiple of 2, 3, 5 or 7 will not be crossed off during the sieving process. If you're still unclear about the process, try a web search for {\tt "Sieve of Eratosthenes" +applet}, there are several interactive applets that will help you to understand how to sieve.
+}
+
+\item What would be the largest prime one would sieve with
+in order to find all primes up to 400?
+
+\hint{Remember that if a number factors into two multiplicands, the smaller of them will be less than the square root of the original number.}
+
+\wbvfill
+
+\workbookpagebreak
+
+\item Characterize the prime factorizations of numbers that are
+  perfect squares.
+
+\wbvfill
+
+\hint{It might be helpful to write down a bunch of examples. Think about how the prime factorization of a number gets transformed when we square it.}
+
+\textbookpagebreak
+
+\item Complete the following table which is related to 
+\ifthenelse{\boolean{InTextBook}}{Conjecture~\ref{conj:ferm}}{the conjecture that whenever $p$ is a prime number, $2^p-1$ is also a prime}.
+
+\begin{tabular}{c|c|c|c}
+$p$ & $2^p-1$ & prime? & factors \\ \hline
+2 & 3 & yes & 1 and 3 \\
+3 & 7 & yes & 1 and 7 \\
+5 & 31 & yes &  \\
+7 & 127   &     &    \\
+11 &   &     &    
+\end{tabular}
+
+\hint{
+You'll need to determine if $2^{11}-1 = 2047$ is prime or not. If you never figured out how to read the table of primes on page 15, here's a hint: If 2047 was a prime there would be a 7 in the cell at row 20, column 4.
+
+A quick way to find the factors of a not-too-large number is to use the "table" feature of your graphing calculator. If you enter y1=2047/X and select the table view (2ND GRAPH). Now, just scan down the entries until you find one with nothing after the decimal point. That's an X that evenly divides 2047!
+
+An even quicker way is to type {\tt factor(2047)} in Sage.
+}
+
+
+
+\hintspagebreak
+
+\item Find a counterexample for \ifthenelse{\boolean{InTextBook}}{Conjecture~\ref{conj:poly}}{the conjecture that $x^2-31x+257$ evaluates to a prime number
+whenever $x$ is a natural number}.
+
+\wbvfill
+
+\hint{Part of what makes the "prime-producing-power" of that polynomial impressive is that it gives each prime twice -- once on the descending arm of the parabola and once on the ascending arm. In other words, the polynomial gives prime values on a set of contiguous natural numbers {0,1,2, ..., N} and the vertex of the parabola that is its graph lies dead in the middle of that range. You can figure out what N is by thinking about the other end of the range: (-1)2 + 31 · (-1) + 257 = 289 (289 is not a prime, you should recognize it as a perfect square.)}
+
+\item Use the second definition of ``prime'' to see that $6$ is
+not a prime.  In other words, find two numbers (the $a$ and $b$ 
+that appear in the definition) such that $6$ is not a factor of
+either, but {\em is} a factor of their product.
+
+\wbvfill
+
+\hint{Well, we know that 6 really isn't a prime... Maybe its factors enter into this somehow\ldots}
+
+\item Use the second definition of ``prime'' to show that $35$ is
+not a prime.
+
+\wbvfill
+
+\hint{How about $a=2\cdot5$ and $b=3\cdot7$.  Now you come up with a different pair!}
+
+\workbookpagebreak
+
+\item A famous conjecture that is thought to be true (but
+for which no proof is known) is the  \index{Twin Prime conjecture}
+Twin Prime conjecture.
+A pair of primes is said to be twin if they differ by 2.
+For example, 11 and 13 are twin primes, as are 431 and 433.
+The Twin Prime conjecture states that there are an infinite
+number of such twins.  Try to come up with an argument as
+to why 3, 5 and 7 are the only prime triplets.
+
+\wbvfill
+
+\hint{It has to do with one of the numbers being divisible by 3. (Why is this forced to be the case?) If that number isn't actually 3, then you know it's composite.}
+
+
+
+\item Another famous conjecture, also thought to be true -- but
+as yet unproved, is \index{Goldbach's conjecture}
+Goldbach's conjecture.  Goldbach's conjecture
+states that every even number greater than 4 is the sum of two odd
+primes.  There is a function $g(n)$, known as the Goldbach function, defined
+on the positive integers, that gives the number of different ways to 
+write a given number as the sum of two odd primes.  For example $g(10) = 2$
+since $10=5+5=7+3$.  Thus another version of Goldbach's conjecture
+is that $g(n)$ is positive whenever $n$ is an even number greater than
+4.
+
+Graph $g(n)$ for $6 \leq n \leq 20$.
+
+\wbvfill
+
+\hint{If you don't like making graphs, a table of the values of g(n) would suffice. Note that we don't count sums twice that only differ by order. For example, 16 = 13+3 and 11+5 (and 5+11 and 3+13) but g(16)=2.}
+
+\end{enumerate}

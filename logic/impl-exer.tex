@@ -1,0 +1,177 @@
+\begin{enumerate}
+
+\item The transitive property of equality says that if $a=b$ and $b=c$
+then $a=c$.  Does the implication arrow satisfy a transitive property?
+If so, state it.
+
+\wbvfill
+
+\hint{
+I sometimes like to rephrase the implication $X \implies Y$ as ``X's truth forces Y to be true.''  Does that help?
+If we know that X being true forces Y to be true, and we also know that Y being true will force Z to be true, what can we conclude?
+
+\vfill
+
+}
+
+\item Complete truth tables for the compound sentences $A \implies B$ and
+  ${\lnot}A \lor B$.
+  
+  \wbvfill
+  
+\hint{
+You should definitely be able to do this one on your own, but anyway, here's an outline of the table:
+
+\begin{tabular}{|c|c|c|c|} \hline
+\rule[-6pt]{0pt}{24pt}  $A$ & $B$ & $A \implies B$ & ${\lnot}A \lor B$ \\ \hline
+\rule[-6pt]{0pt}{24pt}  $T$ &  $T$ & & \\ \hline
+\rule[-6pt]{0pt}{24pt}  $T$ & $\phi$ & & \\ \hline	 	 
+\rule[-6pt]{0pt}{24pt}  $\phi$ & $T$ & & \\ \hline
+\rule[-6pt]{0pt}{24pt}  $\phi$ & $\phi$ & & \\ \hline
+\end{tabular}
+
+\vfill
+
+}
+
+\item Complete a truth table for the compound sentence $A \implies (B \implies C)$ and for the sentence $(A \implies B) \implies C$.  What can you conclude
+about conditionals and the associative property?
+
+\wbvfill
+
+\hint{
+No help on this one other than to say that the associative property {\bf does not} hold for implications.
+
+\vfill
+
+}
+
+\workbookpagebreak
+\hintspagebreak
+
+\item Determine a sentence using the {\em and} connector ($\land$) that
+gives the negation of $A \implies B$.
+
+\wbvfill
+
+\hint{Hmmm\ldots This will seem like a strange hint, but if you were to hear a kid at the playground say ``Oh yeah? Well, I did call your mom a fatty and you still haven't clobbered me! Owww! OWWW!!! Stop hitting me!!''
+
+What conditional sentence was he attempting to negate?
+}
+
+\item Rewrite the sentence ``Fix the toilet or I won't pay the rent!'' as
+a conditional.
+
+\wbvfill
+
+\hint{The way I see it there are eight possible ways to arrange "You fix the toilet" and "I'll pay the rent" (or their respective negations) around an implication arrow.
+Here they all are. You decide which one sounds best.
+
+If you fix the toilet, then I'll pay the rent.\newline
+If you fix the toilet, then I won't pay the rent.\newline
+If you don't fix the toilet, I'll pay the rent.\newline
+If you don't fix the toilet, then I won't pay the rent.\newline
+If I payed the rent, then you must have fixed the toilet.\newline
+If I payed the rent, then you must not have fixed the toilet.\newline
+If I didn't pay the rent, then you must have fixed the toilet.\newline
+If I didn't pay the rent, then you must not have fixed the toilet.\newline
+
+Some of those are truly strange\ldots
+}
+\item Why is it that the sentence ``If pigs can fly, I am the king
+of Mesopotamia.'' true?
+
+\wbvfill
+
+\hint{Unless we're talking about some celebrity bringing their pet Vietnamese pot-bellied pig into first class with them, or possibly a catapult of some type... The antecedant (the if part) is false, so Yay! I AM the king of Mesopotamia!! Whoo-hooh! What? I'm not? Oh. But the if-then sentence is true. Bummer.}
+
+\item Express the statement $A \implies B$ using the Peirce arrow and/or the
+Scheffer stroke. (See Exercise~\ref{ex:nand_nor} in the previous section.)
+
+\wbvfill
+
+\hint{You'll want to use $\vert$, the Scheffer stroke, aka NAND, because it's truth table contains three $T$'s and one $\phi$ -- you'll just need to figure out which of its inputs to negate so as to make that one $\phi$ occur in the second row of the table instead of the first.}
+
+\workbookpagebreak
+
+\item Find the contrapositives of the following sentences.
+  \begin{enumerate}
+  \item If you can't do the time, don't do the crime.
+  \item If you do well in school, you'll get a good job.
+  \item If you wish others to treat you in a certain way, you must 
+    treat others in that fashion.
+  \item If it's raining, there must be clouds.
+  \item If $a_n \leq b_n$, for all $n$ and $\sum_{n=0}^\infty b_n$ is a 
+convergent series, then $\sum_{n=0}^\infty a_n$ is a convergent series.
+  \end{enumerate}
+
+\wbvfill
+
+\hint{
+\begin{enumerate}
+\item If you do the crime, you must do the time.
+\item If you don't have a good job, you must've done poorly in school.
+\item If you don't treat others in a certain way, you can't hope for others to treat you in that fashion,
+\item If there are no clouds, it can't be raining.
+\item If  $\sum_{n=0}^\infty a_n$ is not a convergent series, then either $a_n \leq b_n$, for some $n$ or 
+$\sum_{n=0}^\infty b_n$ is not a convergent series.
+\end{enumerate}
+}
+\rule{0pt}{0pt}
+
+\wbvfill
+
+\item What are the converse and inverse of ``If you watch my back, I'll 
+watch your back.''?
+
+\wbvfill
+
+\hint{
+The converse is ``If I watch your back, then you'll watch my back.''  (Sounds a little dopey doesn't it -- likes its sort of a wishful thinking\ldots)
+The inverse is ``If you don't watch my back, then I won't watch your back.''  (Sounds less vapid, but it means the same thing\ldots)
+}
+
+\workbookpagebreak
+
+\item The integral test in Calculus is used to determine whether an
+infinite series converges or diverges:   Suppose that $f(x)$ is a positive,
+decreasing, 
+real-valued function with $\lim_{x \longrightarrow \infty} f(x) = 0$, if
+the improper integral
+$\int_0^\infty f(x)$ has a finite value, then the infinite series 
+$\sum_{n=1}^\infty f(n)$ converges.
+
+The integral test should be envisioned by letting the series correspond
+to a right-hand Riemann sum for the integral, since the function is decreasing,
+a right-hand Riemann sum is an underestimate for the value of the integral,
+thus
+
+\[ \sum_{n=1}^\infty f(n) < \int_0^\infty f(x). \]
+
+Discuss the meanings of and (where possible) provide justifications for
+the inverse, converse and contrapositive of the conditional statement 
+in the integral test.
+
+\wbvfill
+
+\hint{
+The inverse says -- if the integral isn't finite, then the series doesn't converge. You can cook-up a function that shows this to be false by (for example) creating one with vertical asymptotes that occur in between the integer $x$-values. Even one such pole can be enough to make the integral go infinite.
+The converse says that if the series converges, the integral must be finite. The counter-example we just discussed would work here too.
+
+The contrapositive says that if the series doesn't converge, then the integral must not be finite. If we were allowed to use discontinuous functions, it isn't too hard to come up with an $f$ that actually has zero area under it -- just make f be identically zero except at the integer x-values where it will take the same values as the terms of the series. But wait, the function we just described isn't ``decreasing'' -- which is probably why that hypothesis was put in there!
+}
+
+\workbookpagebreak
+
+\item On the Island of Knights and Knaves (see page~\pageref{IKK}) you encounter two individuals named Locke and Demosthenes.  
+
+Locke says, ``Demosthenes is a knave.'' \newline
+Demosthenes says ``Locke and I are knights.''
+
+Who is a knight and who a knave?
+
+\wbvfill
+
+\hint{Could Demosthenes be telling the truth?}
+
+\end{enumerate}

@@ -2,55 +2,55 @@
 \select@language {english}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces The sieve of Eratosthenes.}}{15}{figure.1.1}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Pascal's triangle.}}{31}{figure.1.2}
-\contentsline {figure}{\numberline {1.3}{\ignorespaces A small example in pseudocode and as a flowchart}}{40}{figure.1.3}
-\contentsline {figure}{\numberline {1.4}{\ignorespaces The division algorithm in flowchart form.}}{42}{figure.1.4}
-\contentsline {figure}{\numberline {1.5}{\ignorespaces The Euclidean algorithm in flowchart form.}}{45}{figure.1.5}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Pascal's triangle.}}{30}{figure.1.2}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces A small example in pseudocode and as a flowchart}}{38}{figure.1.3}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces The division algorithm in flowchart form.}}{40}{figure.1.4}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces The Euclidean algorithm in flowchart form.}}{42}{figure.1.5}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces A schematic representation of a transistor.}}{64}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Series connections implement \emph {and}.}}{65}{figure.2.2}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Parallel connections implement \emph {or}.}}{65}{figure.2.3}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Parenthesizations expressed as digital logic circuits.}}{67}{figure.2.4}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Disjunctive normal form.}}{70}{figure.2.5}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces A schematic representation of a transistor.}}{60}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Series connections implement \emph {and}.}}{61}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Parallel connections implement \emph {or}.}}{61}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Parenthesizations expressed as digital logic circuits.}}{63}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Disjunctive normal form.}}{65}{figure.2.5}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces A four-color map.}}{153}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Graph pebbling.}}{156}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Graph pebbling move.}}{157}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces A ${\mathbb Z}$-module.}}{166}{figure.3.4}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces A four-color map.}}{149}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Graph pebbling.}}{152}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Graph pebbling move.}}{153}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces A ${\mathbb Z}$-module.}}{161}{figure.3.4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces An example of a relation.}}{240}{figure.6.1}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces An example of the ``divides'' relation.}}{241}{figure.6.2}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces The graph of the ``less than'' relation.}}{245}{figure.6.3}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces The graph of the divisibility relation.}}{245}{figure.6.4}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Some simple Hasse diagrams.}}{270}{figure.6.5}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Hasse diagram for $({\mathcal P}(\{1,2,3\}), \subseteq )$.}}{271}{figure.6.6}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Hasse diagram of divisors of 72.}}{272}{figure.6.7}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces The sets related to an arbitrary function.}}{278}{figure.6.8}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces An example of a relation.}}{234}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces An example of the ``divides'' relation.}}{235}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces The graph of the ``less than'' relation.}}{239}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces The graph of the divisibility relation.}}{239}{figure.6.4}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Some simple Hasse diagrams.}}{263}{figure.6.5}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Hasse diagram for $({\mathcal P}(\{1,2,3\}), \subseteq )$.}}{264}{figure.6.6}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Hasse diagram of divisors of 72.}}{265}{figure.6.7}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces The sets related to an arbitrary function.}}{271}{figure.6.8}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Full houses in Yahtzee.}}{304}{figure.7.1}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces K\"{o}nigsberg, Prussia.}}{322}{figure.7.2}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces K\"{o}nigsberg, Prussia as a graph.}}{323}{figure.7.3}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces A desk with pigeonholes.}}{334}{figure.7.4}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Full houses in Yahtzee.}}{296}{figure.7.1}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces K\"{o}nigsberg, Prussia.}}{313}{figure.7.2}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces K\"{o}nigsberg, Prussia as a graph.}}{314}{figure.7.3}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces A desk with pigeonholes.}}{323}{figure.7.4}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Cantor's snake.}}{361}{figure.8.1}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Equivalent intervals.}}{365}{figure.8.2}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces An interval is equivalent to a semi-circle.}}{366}{figure.8.3}
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Binary representations in the unit interval.}}{371}{figure.8.4}
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Setup for proving the C-B-S theorem.}}{382}{figure.8.5}
-\contentsline {figure}{\numberline {8.6}{\ignorespaces An \emph {A}-stopper in the proof of C-B-S.}}{385}{figure.8.6}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Cantor's snake.}}{349}{figure.8.1}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Equivalent intervals.}}{352}{figure.8.2}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces An interval is equivalent to a semi-circle.}}{353}{figure.8.3}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Binary representations in the unit interval.}}{358}{figure.8.4}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Setup for proving the C-B-S theorem.}}{369}{figure.8.5}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces An \emph {A}-stopper in the proof of C-B-S.}}{371}{figure.8.6}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces The setup for Morley's Miracle.}}{396}{figure.9.1}
-\contentsline {figure}{\numberline {9.2}{\ignorespaces The first Morley triangle.}}{397}{figure.9.2}
-\contentsline {figure}{\numberline {9.3}{\ignorespaces Conway's puzzle proof.}}{400}{figure.9.3}
-\contentsline {figure}{\numberline {9.4}{\ignorespaces Scaling in Conway's puzzle proof.}}{401}{figure.9.4}
-\contentsline {figure}{\numberline {9.5}{\ignorespaces An infinite army in the lower half-plane.}}{404}{figure.9.5}
-\contentsline {figure}{\numberline {9.6}{\ignorespaces Moving one step into the void is trivial.}}{406}{figure.9.6}
-\contentsline {figure}{\numberline {9.7}{\ignorespaces Moving two steps into the void is more difficult.}}{407}{figure.9.7}
-\contentsline {figure}{\numberline {9.8}{\ignorespaces Moving three steps into the void takes 8 men.}}{408}{figure.9.8}
-\contentsline {figure}{\numberline {9.9}{\ignorespaces The taxicab distance to $(0,5)$.}}{410}{figure.9.9}
-\contentsline {figure}{\numberline {9.10}{\ignorespaces Finding $r$.}}{411}{figure.9.10}
-\contentsline {figure}{\numberline {9.11}{\ignorespaces Setup for Monge's circle theorem.}}{416}{figure.9.11}
-\contentsline {figure}{\numberline {9.12}{\ignorespaces Example of Monge's circle theorem.}}{418}{figure.9.12}
-\contentsline {figure}{\numberline {9.13}{\ignorespaces Four triangles bounded by 6 line segments}}{420}{figure.9.13}
+\contentsline {figure}{\numberline {9.1}{\ignorespaces The setup for Morley's Miracle.}}{384}{figure.9.1}
+\contentsline {figure}{\numberline {9.2}{\ignorespaces The first Morley triangle.}}{385}{figure.9.2}
+\contentsline {figure}{\numberline {9.3}{\ignorespaces Conway's puzzle proof.}}{388}{figure.9.3}
+\contentsline {figure}{\numberline {9.4}{\ignorespaces Scaling in Conway's puzzle proof.}}{388}{figure.9.4}
+\contentsline {figure}{\numberline {9.5}{\ignorespaces An infinite army in the lower half-plane.}}{391}{figure.9.5}
+\contentsline {figure}{\numberline {9.6}{\ignorespaces Moving one step into the void is trivial.}}{393}{figure.9.6}
+\contentsline {figure}{\numberline {9.7}{\ignorespaces Moving two steps into the void is more difficult.}}{394}{figure.9.7}
+\contentsline {figure}{\numberline {9.8}{\ignorespaces Moving three steps into the void takes 8 men.}}{395}{figure.9.8}
+\contentsline {figure}{\numberline {9.9}{\ignorespaces The taxicab distance to $(0,5)$.}}{397}{figure.9.9}
+\contentsline {figure}{\numberline {9.10}{\ignorespaces Finding $r$.}}{398}{figure.9.10}
+\contentsline {figure}{\numberline {9.11}{\ignorespaces Setup for Monge's circle theorem.}}{403}{figure.9.11}
+\contentsline {figure}{\numberline {9.12}{\ignorespaces Example of Monge's circle theorem.}}{405}{figure.9.12}
+\contentsline {figure}{\numberline {9.13}{\ignorespaces Four triangles bounded by 6 line segments}}{407}{figure.9.13}

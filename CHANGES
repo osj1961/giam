@@ -23,53 +23,28 @@ Version 3.0 (12/2012)
     Exercise #7 in Section 3.5.
     Exercise #9 in Section 5.3. 
 
-Notes for 3.1:
+Version 3.1 (1/7/2014)
 
-Exercise: Show that $(A \cap B) \cup C \neq A \cap (B \cup C)$.  I.e. the associative 
-law doesn't work if two different operators are involved.
+Added boolean switches to allow creating the text, a workbook and the hints/solutions guide all
+using the same source files.
 
-Exercise: The distributive laws of $\cap$ over $\cap$ and $\cup$ over $\cup$ aren't invalid
-but they are redundant...  Show that $A \cup (B \cup C) = (A \cup B) \cup (A \cup C)$ can be
-derived using other rules.
+Added boolean switches to allow for four versions: plain, S, N and SN.  The S flag means that logical
+negation is denoted using $\sim$ rather than $\lnot$.  The N flag distinguishes a version in which
+the convention that $1$ is the smallest natural number is followed throughout.  The absence
+of the N flag indicates the original version of the text in which the naturals do not contain $0$
+in chapters 1 through 4 and (after the Peano axioms are introduced) that convention is changed
+to the more modern rule. 
 
-Check the section on induction regarding the quantification status of P(k) in proving P(k)=>P(k+1)
+Reorganized source files into subdirectories for each chapter.
 
-Add double negation laws (resp. double complementation) to Logic and Set Theory sections (esp. the 
+Repaired a major gaff in the discussion of  the quantification status of P(k) in proving \forall k, P(k)=>P(k+1)
+
+Added double negation laws (resp. double complementation) to Logic and Set Theory sections (esp. the 
 tables summarizing the rules).
 
-Need a discussion on which axioms are acceptable for use in our first "proofs" chapter.
+Fixed several German language typos noticed by Karl-Dieter Crisman from Gordon College.
 
+Added a short discussion on which axioms are acceptable for use at the end of the first "proofs" chapter.
 
-Karl Crisman's email:
-
-  Dear Joe,
-
-  Thanks for your book - I appreciate it!  You never know if it might be appropriate for 
-  our Transition course... and it looks fun :)
-
-  And while perusing it I already found several typos, which of course is par for the course without
-  huge companies at your back, or probably is also par for the course then - 10000 words make for a
-  heavy time editing :(  But I hope these below will help.  I need to get back to class prep but
-  reading this is more interesting :)
-
-  Have a great semester,
-  Karl-Dieter
-
-  Page xix, line 4:
-    Is it "advisor" or "adviser"?  I usually use "advisor", but maybe I'm mistaken...
-(Wiktionary claims the er form is more prevalent, but either is correct -- JEF)
-
-  Page xix, toward the bottom:
-    If I'm not mistaken, Deborah Hughes-Hallett is one person.
-
-  Page 1, footnote:
-    Probably "shuf" is "schuf".  I haven't seen the Kronecker quote in German before, though, so it
-  could be some now-antiquated spelling.
-
-  Page 2, toward the bottom:
-    The integers are ... with a $\mathbb{Z}$ because of the German word \emph{zahlen} which means
-   ``to count.''
-    Either you need to change it to "Zahlen" (cap) which means "numbers" or to "zählen" (with
-  umlaut); "zahlen" means to pay.
 
 

@@ -1,0 +1,60 @@
+\begin{enumerate}
+
+\item Trace through the division algorithm with inputs $n=27$ and
+  $d=5$, each time an assignment statement is encountered write it
+  out.  How many assignments are involved in this particular
+  computation?
+\hint{r=27 \newline
+q=0  \newline
+r=27-5=22  \newline
+q=0+1=1  \newline
+r=22-5=17  \newline
+q=1+1=2  \newline
+r=17-5=12  \newline
+q=2+1=3  \newline
+r=12-5=7  \newline
+q=3+1=4  \newline
+r=7-5=2  \newline
+q=4+1=5  \newline
+return r is 2 and q is 5.
+}
+
+\wbvfill
+
+\item Find the gcd's and lcm's of the following pairs of numbers.
+\medskip
+
+\centerline{
+\begin{tabular}{|c|c|c|c|} \hline
+\rule[-3pt]{0pt}{18pt} $a$ & $b$ & $\gcd{a}{b}$ & $\lcm{a}{b}$ \\ \hline
+\rule[-3pt]{0pt}{18pt} 110 & 273 & & \\ \hline
+\rule[-3pt]{0pt}{18pt}105 & 42 & & \\ \hline
+\rule[-3pt]{0pt}{18pt}168 & 189 & & \\ \hline
+\end{tabular}
+}
+
+\hint{For such small numbers you can just find their prime factorizations and use that, although it might be useful to practice your understanding of the Euclidean algorithm by tracing through it to find the gcd's and then using the formula
+\[ \lcm (a,b) = \frac{ab}{\gcd (a,b).} \]
+}
+
+\workbookpagebreak
+
+\item Formulate a description of the gcd of two numbers in terms of
+  their prime factorizations in the general case (when the
+  factorizations may include powers of the primes involved).
+
+\wbvfill
+
+\hint{Suppose that one number's prime factorization contains $p^e$ and the other
+contains $p^f$, where $e < f$. What power of $p$ will divide both, $p^e$ or $p^f$ ?}
+
+\item Trace through the Euclidean algorithm with inputs $a=3731$ and
+  $b=2730$, each time the assignment statement that calls the division
+  algorithm is encountered write out the expression $a=qb+r$.   (With the
+  actual values involved !) 
+
+\wbvfill
+
+\hint{The quotients you obtain should alternate between 1 and 2.}
+
+\end{enumerate}

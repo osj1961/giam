@@ -1,0 +1,187 @@
+\begin{enumerate}
+\item Every prime number greater than 3 is of one of the two forms
+$6k+1$ or $6k+5$.  What statement(s) could be used as hypotheses in
+proving this theorem?
+
+\hint{
+
+\vfill
+
+Fill in the blanks:
+\begin{itemize}
+\item $p$ is a \underline{\rule{1.5in}{0in}} number, and
+\item $p$ is greater than \underline{\rule{1in}{0in}}.
+\end{itemize}
+
+\vfill
+
+}
+
+\item Prove that 129 is odd.
+
+\hint{
+
+\vfill
+
+\rule{12pt}{0pt} All you have to do to show that some number is odd, is produce the integer $k$ that the definition
+of ``odd'' says has to exist.  Hint: the same number could be used to prove that $128$ is even.
+
+\vfill
+
+}
+
+\item Prove that the sum of two rational numbers is a rational number.
+
+\hint{
+
+\vfill
+
+\rule{12pt}{0pt} You want to argue about the sum of two generic rational numbers. Maybe call them $a/b$ and $c/d$. The definition of ``rational number'' then tells you that $a$, $b$, $c$ and $d$ are integers and that neither $b$ nor $d$ are zero. You add these generic rational numbers in the usual way -- put them over a common denominator and then add the numerators. One possible common denominator is $bd$, so we can express the sum as $(ad+bc)/(bd)$.  You can finish off the argument from here: you need to show that this expression for the sum satisfies the definition of a rational number (quotient of integers w/ non-zero denominator). Also, write it all up a bit more formally\ldots
+
+\vfill
+
+}
+
+\hintspagebreak
+
+\item Prove that the sum of an odd number and an even number is odd.
+
+
+\hint{
+
+\vfill
+
+\begin{proof}
+Suppose that $x$ is an odd number and $y$ is an even number.  Since $x$ is odd there is an 
+integer $k$ such that $x=2k+1$.  Furthermore, since $y$ is even, there is an integer $m$ such that
+$y=2m$.  By substitution, we can express the sum $x+y$ as $x+y = (2k+1) + (2m) = 2(k+m) + 1$.
+Since $k+m$ is an integer (the sum of integers is an integer) it follows that $x+y$ is odd.
+\end{proof}
+
+\vfill
+
+}
+
+\item Prove that if the sum of two integers is even, then so is their
+difference.
+
+\hint{
+
+\vfill
+
+Hint: If we write $x+y$ for the sum of two integers that is even (so $x+y = 2k$ for some integer $k$), then we could subtract \underline{\rule{1in}{0in}} from it in order to obtain $x-y$. Once you fill in that blank properly the flow of the argument should become apparent to you.
+
+\vfill
+
+}
+
+\item Prove that for every real number $x$, $\frac{2}{3} < x < \frac{3}{4} \; \implies \; \lfloor 12x \rfloor = 8$.
+
+\hint{
+
+\vfill
+
+Begin your proof like so:
+
+``Suppose that $x$ is a real number such that $\frac{2}{3} < x < \frac{3}{4}$.''
+
+You need to multiply all three parts of the inequality by something in order to ``clear'' the fractions.
+What should that be?
+
+
+The definition for the floor of $12x$ will be satisfied if $8 \leq 12x < 9$ but unfortunately the work done 
+previously will have deduced that $8 < 12x < 9$ is true.  Don't just gloss over this discrepancy.  Explain why
+one of these inequlities is implied by the other.
+
+\vfill
+
+}
+
+\hintspagebreak
+
+\item Prove that if $x$ is an odd integer, then $x^2$ is of the form
+$4k+1$ for some integer $k$.
+
+\hint{
+
+\vfill
+
+\rule{12pt}{0pt} You may be tempted to write ``Since x is odd, it can be expressed as $x = 2k+1$ where $k$ is an integer.'' This is slightly wrong since the variable $k$ is already being used in the statement of the theorem. But, except for replacing $k$ with some other variable (maybe $m$ or $j$?) that {\em is} a good way to get started. From there it's really just algebra until, eventually, you'll find out what $k$ really is.
+
+\vfill
+
+}
+
+\item Prove that for all integers $a$ and $b$, if $a$ is odd and $6 \divides (a+b)$, then $b$ is odd.
+
+\hint{
+
+\vfill
+
+\rule{12pt}{0pt} The premise that $6 \divides (a+b)$ is a bit of a red herring (a clue that is designed to mislead).  The premise that you really need is that $a+b$ is even.  Can you deduce that from what's given?
+
+\vfill
+
+}
+
+\item Prove that $\forall x\in\Reals \, x\not\in\Integers \, \implies \, \lfloor x\rfloor+\lfloor-x\rfloor=-1$.
+
+\hint{
+
+\vfill
+
+\begin{proof}
+Suppose that $x$ is a real number and $x\not\in\Integers$.  Let $a = \lfloor x \rfloor$.  By the definition
+of the floor function we have $a \in\Integers$ and $ a \leq x < a+1$.   Since $x \not\in\Integers$ we
+know that $x \neq a$ so we may strengthen the inequality to $a < x < a+1$.  Multiplying this inequality
+by $-1$ we obtain $-a > -x > -a - 1$.  This inequlity may be weakened to $-a > -x \geq -a - 1$.  Finally, note that (since $-a-1 \in\Integers$ and $-a = (-a-1)+1$ we
+have shown that $\lfloor -x \rfloor \, = \, -a-1$.  Thus, by substitution we have $\lfloor x \rfloor+\lfloor -x \rfloor \; = \; a + (-a-1) \; = \; -1$ as desired.
+\end{proof}
+
+\vfill
+
+}
+
+\hintspagebreak
+
+\item Define the \index{evenness}\emph{evenness} of an integer $n$ by:
+
+\[ \mbox{evenness} (n) = k \; \iff \;  
+ 2^k \divides n \, \land \, 2^{k+1} \nmid n \]
+
+State and prove a theorem concerning the evenness of products.
+
+\hint{Well, the statement is that the evenness of a product is the sum of the evennesses of the factors\ldots}
+
+
+\item Suppose that $a$, $b$ and $c$ are integers such that $a \divides b$
+and $b \divides c$.  Prove that $a \divides c$.
+
+\hint{
+This one is pretty straightforward. Be sure to not reuse any variables. Particularly, the fact that $a \divides b$ tells us (because of the definition of divisibility) that there is an integer $k$ such that $b = ak$.  It is not okay to also use $k$ when converting the statement ``$b \divides c$.''
+}
+
+\textbookpagebreak
+
+\item Suppose that $a$, $b$, $c$ and $d$ are integers with $a \neq c$.
+Further, suppose that $x$ is a real number satisfying the equation
+
+\[ \frac{ax+b}{cx+d} = 1. \]
+
+
+\noindent Show that $x$ is rational.  Where is the hypothesis $a \neq c$
+used?
+
+\hint{Cross multiply and solve for $x$.  If you need to divide by an expression, it had 
+better be non-zero!}
+
+\item Show that if two positive integers $a$ and $b$ satisfy $a \divides b$ \emph{and}
+$b \divides a$ then they are equal.
+
+\hint{From the definition of divisibility, you get two integers $j$ and $k$, such that 
+$a = jb$ and $b = ka$. Substitute one of those into the other and ask yourself what 
+the resulting equation says about $j$ and $k$.  Can they be any old integers?  Or, are 
+there restrictions on their values?
+}
+
+\end{enumerate}

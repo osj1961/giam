@@ -1,0 +1,189 @@
+\begin{enumerate}
+\item Determine the logical form of the following arguments.  Use symbols
+to express that form and determine whether the form is valid or invalid.
+If the form is invalid, determine the type of error made.  Comment on the 
+soundness of the argument as well, in particular, determine whether any of
+the premises are questionable.
+\begin{enumerate}
+\item All who are guilty are in prison. \newline
+  George is not in prison.  \newline
+  Therefore, George is not guilty.
+ 
+  \hint{ 
+  This looks like modus tollens. Let $G$ refer to ``guilt'' and $P$ refer to ``in prison''
+  
+\begin{center}
+\begin{tabular}{cl}
+ & $\forall x, G(x) \implies P(x)$ \\
+ & ${\lnot}P(\mbox{George}) $ \\ \hline
+$\therefore$ & ${\lnot}G(\mbox{George})$ \\
+\end{tabular}
+\end{center}
+
+You should note that while the form is valid, there is something terribly wrong with this argument. Is it really true that everyone who is guilty of a crime is in prison?
+}
+
+\item If one eats oranges one will have high levels of vitamin C. \newline
+  You do have high levels of vitamin C. \newline
+  Therefore, you must eat oranges.
+\item All fish live in water. \newline
+  The mackerel is a fish. \newline
+  Therefore, the mackerel lives in water. 
+\item If you're lazy, don't take math courses.\newline
+  Everyone is lazy. \newline
+  Therefore, no one should take math courses.
+\item All fish live in water. \newline
+  The octopus lives in water. \newline
+  Therefore, the octopus is a fish.
+\item If a person goes into politics, they are a scoundrel.\newline
+  Harold has gone into politics. \newline
+  Therefore, Harold is a scoundrel. 
+\end{enumerate}
+
+\item Below is a rule of inference that we call extended elimination.
+
+\begin{tabular}{cl}
+ & $(A \lor B) \lor C$ \\
+ & ${\lnot}A$ \\
+ & ${\lnot}B$ \\ \hline
+$\therefore$ & $C$ \\
+\end{tabular}
+
+Use a truth table to verify that this rule is valid.
+
+\hint{
+
+\vfill
+
+In the following truth table the predicate variables occupy the first 3 columns, the argument's 
+premises are in the next three columns and the conclusion is in the right-most column.  The
+truth values have already been filled-in.  You only need to identify the critical rows and 
+verify that the conclusion is true in those rows.
+
+\vfill
+
+ \newpage
+ 
+\begin{tabular}{|c|c|c||c|c|c||c|} \hline
+\rule[-8pt]{0pt}{30pt}$A$ & $B$ & $C$ & $(A \lor B) \lor C$ & \rule{20pt}{0pt} ${\lnot}A$ \rule{20pt}{0pt} & \rule{20pt}{0pt} ${\lnot}B$ \rule{20pt}{0pt} & \rule{20pt}{0pt} $C$ \rule{20pt}{0pt} \\ \hline
+\rule[-8pt]{0pt}{30pt}$T$ & $T$ & $T$ & $T$ & $\phi$ & $\phi$ & $T$  \\ \hline
+\rule[-8pt]{0pt}{30pt}$T$ & $T$ & $\phi$  & $T$ & $\phi$ & $\phi$ & $\phi$   \\ \hline
+\rule[-8pt]{0pt}{30pt}$T$ & $\phi$  & $T$ & $T$ & $\phi$ & $T$  & $T$  \\ \hline
+\rule[-8pt]{0pt}{30pt}$T$ & $\phi$  & $\phi$  & $T$ & $\phi$ & $T$ & $\phi$   \\  \hline
+\rule[-8pt]{0pt}{30pt}$\phi$  & $T$ & $T$ & $T$ & $T$ & $\phi$ &  $T$ \\ \hline
+\rule[-8pt]{0pt}{30pt}$\phi$  & $T$ & $\phi$  & $T$ & $T$ & $\phi$ & $\phi$  \\ \hline
+\rule[-8pt]{0pt}{30pt}$\phi$  & $\phi$  & $T$ & $T$ & $T$ & $T$ & $T$  \\ \hline
+\rule[-8pt]{0pt}{30pt}$\phi$  & $\phi$  & $\phi$  & $\phi$ & $T$ & $T$ & $\phi$  \\  \hline
+\end{tabular}
+
+\vfill
+}
+
+\item If we allow quantifiers and open sentences in an argument form we
+get a couple of new argument forms.  Arguments involving existentially quantified 
+premises are rare -- the new forms we are speaking of are called ``universal modus 
+ponens'' and ``universal modus tollens.''   The minor premises may also be quantified
+or they may involve particular elements of the universe of discourse -- this leads
+us to distinguish argument subtypes that are termed ``universal'' and ``particular.''
+
+For example  \begin{tabular}{cl}
+ & $\forall x, A(x) \implies B(x)$ \\
+ & $A(p)$ \\ \hline
+$\therefore$ & $B(p)$ \\
+\end{tabular}  is the particular form of universal modus ponens (here, $p$
+is not a variable -- it stands for some particular element of the universe of
+discourse)
+and \begin{tabular}{cl}
+ & $\forall x, A(x) \implies B(x)$ \\
+ & $\forall x, {\lnot}B(x)$ \\ \hline
+$\therefore$ & $\forall x, {\lnot}A(x)$ \\
+\end{tabular} is the universal form of (universal) modus tollens.
+
+Reexamine the arguments from problem (1), determine their forms
+(including quantifiers) and whether they are universal or particular.
+
+\hint{
+Hint: All of them except for one are the particular form -- number 4 is the exception.
+
+Here's an analysis of number 5:
+
+All fish live in water. \newline
+The octopus lives in water.  \newline
+Therefore, the octopus is a fish. \newline
+
+Let $F(x)$ be the open sentence ``x is a fish'' and let $W(x)$ be the open sentence ``x lives in water.''
+
+Our argument has the form
+
+ \begin{center}
+\begin{tabular}{cl}
+ & $\forall x, F(x) \implies W(x)$ \\
+ & $W(\mbox{the octopus}) $ \\ \hline
+$\therefore$ & $F(\mbox{the octopus})$ \\
+\end{tabular}
+\end{center}
+
+Clearly something is wrong -- a converse error has been made -- if everything that lived in water was necessarily a fish the argument would be OK (in fact it would then be the particular form of universal modus ponens).  But that is the converse of the major premise given.    
+}
+
+\item Identify the rule of inference being used.
+
+\begin{enumerate}
+\item The Buley Library is very tall.\\
+Therefore, either the Buley Library is very tall or it has many
+levels underground.
+
+\hint{disjunctive addition}
+
+\item The grass is green.\\
+The sky is blue.\\
+Therefore, the grass is green and the sky is blue.
+
+\hint{conjunctive addition}
+
+\item $g$ has order 3 or it has order 4.\\
+If $g$ has order 3, then $g$ has an inverse.\\
+If $g$ has order 4, then $g$ has an inverse.\\
+Therefore, $g$ has an inverse.
+
+\hint{constructive dilemma}
+
+\item $x$ is greater than 5 and $x$ is less than 53.\\
+Therefore, $x$ is less than 53.
+
+\hint{conjunctive simplification}
+
+\item If $a|b$, then $a$ is a perfect square.\\
+If $a|b$, then $b$ is a perfect square.\\
+Therefore, if $a|b$, then $a$ is a perfect square and $b$ is
+a perfect square.
+
+\hint{Note that the conclusion could be re-expressed as the conjunction of the two conditionals that
+are found in the premises.  This is conjunctive addition with a bit of ``window dressing.''}
+\end{enumerate}
+
+\item Read the following proof that the sum of two odd numbers is even.
+Discuss the rules of inference used.\\
+\begin{proof}
+Let $x$ and $y$ be odd numbers. Then $x=2k+1$
+and $y=2j+1$ for some integers $j$ and $k$. By algebra,
+\[
+x+y = 2k+1 + 2j+1 = 2(k+j+1).
+\]
+
+Note that $k+j+1$ is an integer because $k$ and $j$ are integers.
+Hence $x+y$ is even. 
+\end{proof}
+
+\hint{The definition for ``odd'' only involves the oddness of a single integer, but the first line of our
+proof is a conjunction claiming that $x$ and $y$ are both odd.  It seems that two conjunctive simplifications, followed by applications of the definition, followed by a conjunctive addition have been used in order to
+go from the first sentence to the second.}
+ 
+\item Sometimes in constructing a proof we find it necessary to ``weaken'' an inequality.  For example,
+we might have already deduced that $x < y$ but what we need in our argument is that $x \leq y$.  It is
+okay to deduce $x \leq y$ from $x < y$ because the former is just shorthand for $x<y \lor x=y$.  What
+rule of inference are we using in order to deduce that $x \leq y$ is true in this situation?
+
+\hint{disjunctive addition}
+
+\end{enumerate}

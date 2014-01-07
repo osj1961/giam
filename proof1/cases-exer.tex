@@ -1,0 +1,118 @@
+\begin{enumerate}
+\item Prove that if $n$ is an odd number then $n^4 \pmod{16} = 1$.
+
+\hint{
+
+\rule{12pt}{0pt} While one could perform fairly complicated arithmetic, expanding expression like
+$(16k+13)^4$ and then regrouping to put it in the form $16q+1$ (and one would need 
+to do that work for each of the odd remainders modulo $16$),  that would be missing out
+on the true power of modular notation.  In a ``$\pmod{16}$'' calculation one can simply ignore
+summands like $16k$ because they are $0 \pmod{16}$.  Thus, for example,
+
+  \[ (16k+7)^4 \pmod{16} \; = \; 7^4 \pmod{16} \; = \; 2401 \pmod{16}  \; = \; 1. \]
+  
+So, essentially one just needs to compute the $4$th powers of $1, 3, 5, 7, 9, 11, 13$  and $15$, and
+then reduce them modulo 16.  An even greater economy is possible if one notes that (modulo 16) many
+of those cases are negatives of one another -- so their $4$th powers are equal.
+
+}
+      
+\item Prove that every prime number other than 2 and 3 has the form
+$6q+1$ or $6q+5$ for some integer $q$.  (Hint: this problem involves
+thinking about cases as well as contrapositives.)
+
+\hint{It is probably obvious that the "cases" will be the possible remainders mod 6. Numbers of the form 6q+0 will be multiples of 6, so clearly not prime. The other forms that need to be eliminated are 6q+2, 6q+3, and 6q+4.
+}
+
+\item Show that the sum of any three consecutive integers is divisible
+by 3.
+
+\hint{Write the sum as $n + (n+1) + (n+2)$.}
+
+\item There is a graph known as $K_4$ that has $4$ nodes and there is an edge between every pair of nodes.
+The pebbling number of $K_4$ has to be at least $4$ since it would be possible to put one pebble on each of
+$3$ nodes and not be able to reach the remaining node using pebbling moves.  Show that the pebbling number of $K_4$ is actually $4$.
+
+\hint{If there are two pebbles on any node we will be able to reach all the other nodes using pebbling moves
+(since every pair of nodes is connected).}
+
+\item Find the pebbling number of a graph whose nodes are the corners and 
+whose edges are the, uhmm, edges of a cube.
+
+\hint{It should be clear that the pebbling number is at least $8$ -- $7$ pebbles could be distributed, 
+one to a node, and the $8$th node would be unreachable.  It will be easier to play around with this if
+you figure out how to draw the cube graph ``flattened-out'' in the plane.}
+
+\item A \index{vampire number}\emph{vampire number} is a $2n$ digit number $v$ that factors as $v=xy$
+where $x$ and $y$ are $n$ digit numbers and the digits of $v$ are the 
+union of the digits in $x$ and $y$ in some order.  The numbers $x$ and $y$
+are known as the ``fangs'' of $v$.  To eliminate trivial
+cases, pairs of trailing zeros are disallowed.  
+
+Show that there are no 2-digit vampire numbers.
+
+Show that there are seven 4-digit vampire numbers.
+
+\hint{The 2-digit challenge is do-able by hand (just barely).  The $4$ digit question certainly requires 
+some computer assistance!}
+
+\item Lagrange's theorem on representation of integers as sums of squares
+says that every positive integer can be expressed as the sum of at most 
+$4$ squares.  For example, $79 = 7^2 + 5^2 + 2^2 + 1^2$.  Show (exhaustively) 
+that $15$ can not be represented using fewer than $4$ squares.
+
+\hint{Note that $15 = 3^2 + 2^2 + 1^2 + 1^2$.  Also, if $15$ were expressible as a sum of fewer than $4$ squares, the squares involved would be $1$, $4$ and $9$.  It's really not that hard to try all the possibilities.}
+
+\item Show that there are exactly $15$ numbers $x$ in the range $1 \leq x \leq 100$ that can't be represented using fewer than $4$ squares.
+
+
+
+\hint{The following Sage code generates all the numbers up to $100$ that {\em can} be written
+as the sum of at most $3$ squares.
+
+{\tt
+var('x y z') \newline
+a=[s$\caret$2 for s in [1..10]]  \newline
+b=[s$\caret$2 for s in [0..10]]  \newline
+s = []  \newline
+for x in a:  \newline
+\tab for y in b:  \newline
+\tab \tab for z in b:  \newline
+\tab \tab \tab s = union(s,[x+y+z])  \newline
+s = Set(s)  \newline
+H=Set([1..100]) \newline
+show(H.intersection(s))  \newline
+}
+}
+
+\item The \index{trichotomy property}\emph{trichotomy property} of the real 
+numbers simply states that every real number is either positive or negative 
+or zero.  Trichotomy can be used to prove many statements by looking at the
+three cases that it guarantees.  Develop a proof (by cases) that the square of
+any real number is non-negative.
+
+\hint{By trichotomy, x is either zero, negative, or positive. If x is zero, its square is zero. If x is negative, its square is positive. If x is positive, its square is also positive.}
+
+\item Consider the game called ``binary determinant tic-tac-toe''\footnote{ %
+This question was problem A4 in the 63rd annual %
+\index{William Lowell Putnam Mathematics Competition} %
+William Lowell Putnam Mathematics Competition (2002).  %
+There are three collections of questions %
+and answers  from previous Putnam exams available from the MAA % 
+\cite{putnam1,putnam2,putnam3}% 
+}
+which is played by two players who alternately fill in the entries of a 
+$3 \times 3$ array.  Player One goes first, placing 1's in the array and 
+player Zero goes second, placing 0's.  Player One's goal is that the 
+final array have determinant 1, and player Zero's goal is that the 
+determinant be 0.  The determinant calculations are carried out mod 2.
+
+Show that player Zero can always win a game of binary determinant tic-tac-toe
+by the method of exhaustion.
+
+\hint{If you know something about determinants it would help here.  The determinant will be
+0 if there are two identical rows (or columns) in the finished array.  Also, if there is a row or column
+that is all zeros, player Zero wins too.  Also, cyclically permuting either rows or columns has no effect
+on the determinant of a binary array.  This means we lose no generality in assuming player One's
+first move goes (say) in the upper-left corner.}
+\end{enumerate}

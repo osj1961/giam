@@ -1,0 +1,144 @@
+\begin{enumerate}
+\item Write an inductive proof of the formula for the sum 
+of the first $n$ cubes.
+
+\hint{
+\begin{thm*}
+\[ \forall n \in \Naturals, \; \sum_{k=1}^n k^3 \;= \; \left( \frac{n(n+1)}{2} \right)^2 \]
+\end{thm*}
+
+\begin{proof} (By mathematical induction)
+
+{\bf Base case:} ($n=1$)
+For the base case, note that when $n=1$ we have
+
+\[ \sum_{k=1}^n k^3 \; = \; 1 \]
+
+\noindent and 
+
+\[ \left( \frac{n(n+1)}{2} \right)^2  \; = \; 1.\]
+
+{\bf Inductive step:}
+
+Suppose that $m>1$ is an integer such that 
+
+\[ \sum_{k=1}^m k^3 \; = \; \left( \frac{m(m+1)}{2} \right)^2 \]
+
+\noindent Add $(m+1)^3$ to both sides to obtain
+
+\[ (m+1)^3 + \sum_{k=1}^m k^3 \;= \; \left( \frac{m(m+1)}{2} \right)^2 + (m+1)^3. \]
+
+\noindent Thus
+
+\begin{gather*} 
+\sum_{k=1}^{m+1} k^3 \;= \; \left( \frac{m^2(m+1)^2}{4} \right) + \frac{4(m+1)^3}{4} \\
+\;= \; \left( \frac{m^2(m+1)^2 + 4 (m+1)^3}{4} \right)\\
+\; = \; \left( \frac{(m+1)^2 (m^2 + 4(m+1))}{4} \right)\\
+\; = \; \left( \frac{(m+1)^2 (m^2 + 4m +4)}{4} \right)\\
+\; = \; \left( \frac{(m+1)^2 (m+2)^2}{4} \right)\\
+\; = \; \left( \frac{(m+1)(m+2)}{2} \right)^2
+\end{gather*}
+
+ \end{proof}
+}
+ 
+\item Find a formula for the sum of the first $n$ fourth powers.
+
+\hint{\[ \frac{n\cdot(n+1)\cdot(2n+1)\cdot(3n^2+3n-1)}{30}\] } 
+
+\item The sum of the first $n$ natural numbers is sometimes called
+the $n$-th triangular number \index{triangular numbers}$T_n$.  Triangular numbers are so-named
+because one can represent them with triangular shaped arrangements 
+of dots. 
+
+\begin{center} \input{figures/triangular_numbers.tex} \end{center}
+
+The first several triangular numbers are 1, 3, 6, 10, 15, et cetera.
+
+Determine a formula for the sum of the first $n$ triangular numbers $\displaystyle \left( \sum_{i=1}^n T_i \right)$ and prove it using PMI.
+
+\hint{The formula is $\frac{n(n+1)(n+2)}{6}$.}
+
+\item Consider the alternating sum of squares:
+\begin{gather*}
+1 \\
+1 - 4 = -3 \\
+1 - 4 + 9 = 6 \\
+1 - 4 + 9 - 16 = -10 \\
+\mbox{et cetera}
+\end{gather*}
+Guess a general formula for $\sum_{i=1}^n (-1)^{i-1} i^2$, and prove it using PMI.
+
+\hint{
+\begin{thm*}
+\[ \forall n \in \Naturals, \; \sum_{i=1}^n (-1)^{i-1} i^2 \;= \; (-1)^{n-1} \frac{n(n+1)}{2}  \]
+\end{thm*}
+
+\begin{proof} (By mathematical induction)
+
+{\bf Base case:} ($n=1$)
+For the base case, note that when $n=1$ we have
+
+\[\sum_{i=1}^n (-1)^{i-1} i^2 \;= \; 1 \]
+
+\noindent and also
+
+\[ (-1)^{n-1} \frac{n(n+1)}{2} \;= \; 1. \]
+
+{\bf Inductive step:}
+
+Suppose that $k>1$ is an integer such that 
+
+\[ \sum_{i=1}^k (-1)^{i-1} i^2 \;= \; (-1)^{k-1} \frac{k(k+1)}{2}.  \]
+
+Adding $(-1)^{k} (k+1)^2$ to both sides gives
+
+\begin{gather*} 
+\sum_{i=1}^{k+1} (-1)^{i-1} i^2 \;= \; (-1)^{k-1} \frac{k(k+1)}{2} + (-1)^{k} (k+1)^2 \\
+\;= \; (-1)^{k-1} \frac{k(k+1)}{2} - (-1)^{k-1} (k+1)^2 \\ 
+\;= \; (-1)^{k-1} \left( \frac{k(k+1)}{2} -  \frac{2(k+1)^2}{2} \right) \\ 
+\;= \; (-1)^{k} \left( \frac{2(k+1)^2}{2} - \frac{k(k+1)}{2} \right) \\
+\;= \; (-1)^{k} \frac{(k+1)(2(k+1)-k)}{2} \\
+\;= \; (-1)^{k} \frac{(k+1)(k+2)}{2} \\
+\end{gather*}
+\end{proof}
+}
+
+\item Prove the following formula for a product.
+
+\[ \prod_{i=2}^n \left(1 - \frac{1}{i}\right) =  \frac{1}{n} \]
+
+\item Prove $\displaystyle \sum_{j=0}^{n}(4j+1) \; = \; 2n^{2}+3n+1$ for all
+integers $n \geq 0$.
+
+\item Prove $\displaystyle \sum_{i=1}^{n}\frac{1}{(2i-1)(2i+1)} \; = \; \frac{n}{2n+1}$ for all natural numbers $n$.
+
+\item The \index{Fibonacci numbers} \emph{Fibonacci numbers} are a sequence of integers defined by
+the rule that a number in the sequence is the sum of the two that 
+precede it.
+
+\[ F_{n+2} = F_n + F_{n+1}  \]
+
+\noindent The first two Fibonacci numbers (actually the zeroth and the first) 
+are both 1.  
+
+\noindent Thus, the first several Fibonacci numbers are
+
+\[ F_0 = 1, F_1=1, F_2=2, F_3=3, F_4=5, F_5=8, F_6=13, F_7=21, \; \mbox{et cetera} \]
+
+Use mathematical induction to prove the following formula involving
+Fibonacci numbers.
+
+\[ \sum_{i=0}^n (F_i)^2 \, = \, F_n \cdot F_{n+1} \]
+
+\end{enumerate}
+
+%% Emacs customization
+%% 
+%% Local Variables: ***
+%% TeX-master: "GIAM-hw.tex" ***
+%% comment-column:0 ***
+%% comment-start: "%% "  ***
+%% comment-end:"***" ***
+%% End: ***
+

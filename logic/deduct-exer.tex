@@ -1,0 +1,97 @@
+\begin{enumerate}
+
+\item In the movie ``Monty Python and the Holy Grail'' we encounter
+a medieval villager who (with a bit of prompting) makes the 
+following argument.
+
+\begin{quote}
+If she weighs the same as a duck, then she's made of wood. \newline
+If she's made of wood then she's a witch. \newline
+Therefore, if she weighs the same as a duck, she's a witch.
+\end{quote} 
+
+Which rule of inference is he using?
+
+\hint{
+This is what many people refer to as the transitive rule of implication.  As an argument form it's known as ``hypothetical syllogism.''
+}
+
+\item In constructive dilemma, the antecedent of the conditional 
+sentences are usually chosen to represent opposite alternatives. 
+This allows us to introduce their disjunction as a tautology. 
+Consider the following proof that there is never any reason to worry
+(found on the walls of an Irish pub).
+
+\begin{quote}
+Either you are sick or you are well. \newline
+If you are well there's nothing to worry about. \newline
+If you are sick there are just two possibilities: \newline
+Either you will get better or you will die. \newline
+If you are going to get better there's nothing to worry about. \newline
+If you are going to die there are just two possibilities:\newline
+Either you will go to Heaven or to Hell. \newline
+If you go to Heaven there is nothing to worry about.
+If you go to Hell, you'll be so busy shaking hands with all your friends there won't be time to worry \ldots
+\end{quote}
+
+Identify the three tautologies that are introduced in this ``proof.''
+
+\hint{Look at the lines that start with the word "Either."}
+
+\textbookpagebreak
+
+\item For each of the following arguments, write it in symbolic form and determine 
+which rules of inference are used.
+
+\begin{enumerate}
+\item \rule{0pt}{24pt} You are either with us, or you're against us.  And you don't appear to be with us.
+So, that means you're against us!
+
+\hint{
+\begin{center}
+\begin{tabular}{cl}
+ & $W \lor A$ \\
+ & ${\lnot}W$ \\ \hline
+$\therefore$ & $A$ \\
+\end{tabular}
+\end{center}
+
+This is ``disjunctive syllogism.''
+}
+
+
+\item \rule{0pt}{24pt} All those who had cars escaped the flooding.  Sandra had a car -- therefore, Sandra
+escaped the flooding.
+
+\hint{
+Let $C(x)$ be the open sentence ``x has a car'' and let $E(x)$ be the open sentence ``x escaped the flooding.''
+This argument is actually the particular form of universal modus ponens: (See the final question in the next set of exercises.)
+
+\begin{center}
+\begin{tabular}{cl}
+ & $\forall x, C(x) \implies E(x)$ \\
+ & $C(\mbox{Sandra}) $ \\ \hline
+$\therefore$ & $E(\mbox{Sandra})$ \\
+\end{tabular}
+\end{center}
+
+At this stage in the game it would be perfectly fine to just identify this as modus ponens and not worry about the quantifiers that appear.
+}
+
+\item \rule{0pt}{24pt}  When Johnny goes to the casino, he always gambles 'til he goes broke.  Today, Johnny
+has money, so Johnny hasn't been to the casino recently.
+\item \rule{0pt}{24pt} (A non-constructive proof that there are 
+irrational numbers $a$ and $b$ such that $a^b$ is rational.)  
+Either $\sqrt{2}^{\sqrt{2}}$ is rational or it is irrational.
+If $\sqrt{2}^{\sqrt{2}}$ is rational, we let $a=b=\sqrt{2}$.
+Otherwise, we let $a=\sqrt{2}^{\sqrt{2}}$ and $b=\sqrt{2}$.
+(Since $\sqrt{2}^{\sqrt{2}^{\sqrt{2}}} = 2$, which is rational.) It follows that in either case, there
+are irrational numbers $a$ and $b$ such that $a^b$ is rational.
+
+
+\end{enumerate}
+
+\hint{I'm leaving the last two for you to do. One small hint: both are valid forms.}
+
+
+\end{enumerate}

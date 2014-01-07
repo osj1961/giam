@@ -1,16 +1,21 @@
 \relax 
-\ifx\hyper@anchor\@undefined
-\global \let \oldcontentsline\contentsline
-\gdef \contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
-\global \let \oldnewlabel\newlabel
-\gdef \newlabel#1#2{\newlabelxx{#1}#2}
-\gdef \newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
-\AtEndDocument{\let \contentsline\oldcontentsline
-\let \newlabel\oldnewlabel}
-\else
-\global \let \hyper@last\relax 
-\fi
-
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
 \select@language{english}
 \@writefile{toc}{\select@language{english}}
 \@writefile{lof}{\select@language{english}}
@@ -19,14 +24,12 @@
 \@writefile{toc}{\select@language{english}}
 \@writefile{lof}{\select@language{english}}
 \@writefile{lot}{\select@language{english}}
-\@input{intro-hw.aux}
-\@input{logic-hw.aux}
-\@input{proof1-hw.aux}
-\@input{sets-hw.aux}
-\@input{proof2-hw.aux}
-\@input{rel-hw.aux}
-\@input{proof3-hw.aux}
-\@input{card-hw.aux}
-\@input{proof4-hw.aux}
-\@input{fdl-1.3.aux}
-\@writefile{toc}{\contentsline {chapter}{GNU Free Documentation License}{103}{Item.426}}
+\@input{intro/intro-hw.aux}
+\@input{logic/logic-hw.aux}
+\@input{proof1/proof1-hw.aux}
+\@input{sets/sets-hw.aux}
+\@input{proof2/proof2-hw.aux}
+\@input{rel/rel-hw.aux}
+\@input{proof3/proof3-hw.aux}
+\@input{card/card-hw.aux}
+\@input{proof4/proof4-hw.aux}

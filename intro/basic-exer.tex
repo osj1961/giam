@@ -1,0 +1,168 @@
+\begin{enumerate}
+
+\item Each of the quantities indexing the rows of the following table
+is in one or more of the sets which index the columns.  Place a 
+check mark in a table entry if the quantity is in the set.
+
+\begin{tabular}{|c||c|c|c|c|c|} \hline
+ & $\Naturals$ & $\Integers$ & $\Rationals$ & $\Reals$ & $\Complexes$
+ \\ \hline\hline
+\rule{0pt}{15pt} $17$ & & & & & \\ \hline
+\rule{0pt}{15pt} $\pi$ & & & & & \\ \hline
+\rule{0pt}{15pt} $22/7$ & & & & & \\ \hline
+\rule{0pt}{15pt} $-6$ & & & & & \\ \hline
+\rule{0pt}{15pt} $e^0$ & & & & & \\ \hline
+\rule{0pt}{15pt} $1+i$ & & & & & \\ \hline
+\rule{0pt}{15pt} $\sqrt{3}$ & & & & & \\ \hline
+\rule{0pt}{15pt} $i^2$ & & & & & \\  \hline
+\end{tabular}
+
+\hint{Note that these sets contain one another, so if %
+you determine that a number is a natural number it is automatically %
+an integer and a rational number and a real number and a complex number\ldots}
+
+\vfill
+
+\hintspagebreak
+\workbookpagebreak
+
+\item Write the set $\Integers$ of integers using a singly infinite
+listing.
+
+\twsvspace{.25in}{1in}{.15in}
+
+\hint{What the heck is meant by a ``singly infinite listing''?  To help you figure this out, note that 
+\[ \ldots -3, -2, -1, 0, 1, 2, 3, \ldots \] 
+\noindent is a doubly infinite listing.}
+
+\vfill
+
+
+\item Identify each as rational or irrational.
+\begin{enumerate}
+\item $5021.2121212121\ldots$
+\item $0.2340000000\ldots$
+\item $12.31331133311133331111\ldots$
+\item $\pi$
+\item $2.987654321987654321987654321\ldots$
+\end{enumerate}
+
+\vfill
+
+\hint{rat,rat,irr,irr,rat}
+
+\vfill
+
+\textbookpagebreak
+
+\item The ``see and say'' sequence is produced by first writing a 1, 
+then iterating the following procedure:  look at the previous entry 
+and say how many entries there are of each integer and write down what 
+you just said.  The first several terms of the ``see and say'' sequence 
+are $1, 11, 21, 1112, 3112, 211213, 312213, 212223, \ldots$.  Comment on the
+rationality (or irrationality) of the number whose decimal digits are obtained 
+by concatenating the ``see and say'' sequence.
+
+\[ 0.1112111123112211213... \]
+
+\vfill
+
+\hint{
+Experiment!
+
+What would it mean for this number to be rational?  If we were to
+run into an element of the ``see and say'' sequence that is its own description, then
+from that point onward the sequence would get stuck repeating the same thing over and over
+(and the number whose digits are found by concatenating the elements of the ``see and say'' 
+sequence will enter into a repeating pattern.)
+} 
+\vfill
+
+\workbookpagebreak
+
+\item Give a description of the set of rational numbers whose decimal
+expansions terminate.  (Alternatively, you may think of their decimal
+expansions ending in an infinitely-long string of zeros.)
+
+\hint{If a decimal expansion terminates after, say, k digits, can you figure out how to produce an integer from that number? Think about multiplying by something \ldots}
+
+\vfill
+
+\item Find the first 20 decimal places of $\pi$, $3/7$, $\sqrt{2}$, 
+  $2/5$, $16/17$, $\sqrt{3}$, $1/2$ and $42/100$.  Classify each of
+these quantity's decimal expansion as: terminating, having a repeating
+pattern, or showing no discernible pattern.
+
+\hint{A calculator will generally be inadequate for this problem. You should try using a CAS (Computer Algebra System).  I  would recommend the Sage computer algebra system because
+like this book it is free -- you can download sage and run it on your own system or you can try it out online without installing.  Check it out at www.sagemath.org.
+
+You can get sage to output $\pi$ to high accuracy by typing {\tt pi.N(digits=21)}
+at the sage$>$ prompt.}
+
+\vfill
+
+\workbookpagebreak
+ 
+\item Consider the process of long division.  Does this algorithm give
+any insight as to why rational numbers have terminating or repeating
+decimal expansions?  Explain.
+
+\hint{You really need to actually sit down and do some long division problems.  When in the process do you suddenly realize that the digits are going to repeat?  Must this decision point always occur? Why?}
+
+\vfill
+
+\item Give an argument as to why the product of two rational numbers
+is again a rational.
+
+\hint{Take for granted that the usual rule for multiplying two fractions is okay to use:
+
+\[ \frac{a}{b} * \frac{c}{d} \; = \; \frac{ac}{bd}. \]
+
+\noindent How do you know that the result is actually a rational number?}
+
+\vfill
+
+\textbookpagebreak
+
+\hintspagebreak
+
+\item Perform the following computations with complex numbers
+
+  \begin{enumerate}
+  \item \rule{0pt}{20pt}$ (4 + 3i) - (3 + 2i) $
+  \item \rule{0pt}{20pt}$ (1 + i) + (1 - i) $
+  \item \rule{0pt}{20pt}$ (1 + i) \cdot (1 - i) $
+  \item \rule{0pt}{20pt}$ (2 - 3i) \cdot (3 - 2i) $
+  \end{enumerate}
+
+\hint{These are straightforward. If you really must verify these somehow, you can go to a CAS like Sage, or you can learn how to enter complex numbers on your graphing calculator. (On my TI-84, you get i by hitting the 2nd key and then the decimal point.)
+}
+
+\item The {\em conjugate} of a complex number is denoted with a
+  superscript star, and is formed by negating the imaginary part.
+  Thus if $z = 3+ 4i$ then the conjugate of $z$ is  $z^\ast = 3-4i$.
+  Give an argument as to why the product of a complex number and its
+  conjugate is a real quantity.  (I.e. the imaginary part of
+  $z\cdot z^\ast$ is necessarily 0, no matter what complex number is
+  used for $z$.) 
+
+\hint{This is really easy, but be sure to do it generically. In other words, don't just use examples -- do the calculation with variables for the real and imaginary parts of the complex number.
+}
+
+\vfill
+
+\workbookpagebreak
+
+\end{enumerate}
+
+
+
+%% Emacs customization
+%% 
+%% Local Variables: ***
+%% TeX-master: "GIAM.tex" ***
+%% comment-column:0 ***
+%% comment-start: "%% "  ***
+%% comment-end:"***" ***
+%% End: ***
+

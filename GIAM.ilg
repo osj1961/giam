@@ -1,6 +1,6 @@
-This is makeindex, version 2.15 [TeX Live 2009] (kpathsea + Thai support).
-Scanning input file GIAM.idx....done (344 entries accepted, 0 rejected).
-Sorting entries......done (3190 comparisons).
+This is makeindex, version 2.15 [TeX Live 2013] (kpathsea + Thai support).
+Scanning input file GIAM.idx....done (343 entries accepted, 0 rejected).
+Sorting entries......done (3175 comparisons).
 Generating output file GIAM.ind....done (392 lines written, 0 warnings).
 Output written in GIAM.ind.
 Transcript written in GIAM.ilg.
