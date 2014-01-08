@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2013.12.21)  7 JAN 2014 18:43
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2013.12.21)  7 JAN 2014 19:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -866,16 +866,10 @@ Chapter 4.
 
 
 
-] [166] [167] [168] [169] [170] (./sets/basic-exer.tex
-Overfull \hbox (54.86035pt too wide) in paragraph at lines 42--44
-[]\OT1/cmr/m/n/12 How many 8 el-e-ment sub-sets are there in $\OMS/cmsy/m/n/12 
-P\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 a; b; c; d; e; f; g; h; i;
- j; k; l; m; n; o; p\OMS/cmsy/m/n/12 g\OT1/cmr/m/n/12 )$? 
- []
+] [166] [167] [168] [169] [170] (./sets/basic-exer.tex) [171
 
-) [171
-
-] [172] [173] [174] [175] (./sets/contain-exer.tex) [176
+] [172]
+[173] [174] [175] (./sets/contain-exer.tex) [176
 
 ] [177] [178]
 (./set-theoretic-equivalences.tex
@@ -1245,14 +1239,7 @@ File: figures/graph_examples.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/graph_examples.pdf used on input line 2.
 (pdftex.def)             Requested size: 371.38658pt x 124.46469pt.
 ) [256 <./figures/graph_examples.pdf>] [257]
-(./rel/equiv-exer.tex
-Overfull \hbox (72.9494pt too wide) in paragraph at lines 2--5
-[]\OT1/cmr/m/n/12 Consider the re-la-tion $[]$ de-fined by $[] = \OMS/cmsy/m/n/
-12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 ) []  \OML/cmm/m/it/1
-2 x [] y\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 .
- []
-
-(./figures/petersen_iso.tex
+(./rel/equiv-exer.tex (./figures/petersen_iso.tex
 <figures/petersen_iso.pdf, id=2365, 431.6125pt x 207.77625pt>
 File: figures/petersen_iso.pdf Graphic file (type pdf)
 
@@ -1260,12 +1247,12 @@ File: figures/petersen_iso.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/petersen_iso.pdf used on input line 2.
 (pdftex.def)             Requested size: 431.61143pt x 207.77573pt.
 )
-Overfull \hbox (21.55545pt too wide) in paragraph at lines 21--22
+Overfull \hbox (21.55545pt too wide) in paragraph at lines 23--24
 [][]   [][] 
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1694) has occurred while \output is active []
 
  [258])
 [259 <./figures/petersen_iso.pdf>] [260] (./figures/total_order.tex
@@ -1894,7 +1881,7 @@ ti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on GIAM.pdf (438 pages, 2624384 bytes).
+Output written on GIAM.pdf (438 pages, 2624329 bytes).
 PDF statistics:
  4067 PDF objects out of 4296 (max. 8388607)
  3465 compressed objects within 35 object streams
