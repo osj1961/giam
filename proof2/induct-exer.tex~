@@ -107,7 +107,7 @@ for all natural numbers $n$.
 
 \hint{In this modified version, $P(0)$ is not going to imply $P(1)$. and in fact, none of the odd numbered
 statements will be proven.  If we change the 
-basis so that we prove both $P(0)$ and $P(1)$, all the even statements will be implied by
+basis so that we prove both $P(0$ and $P(1)$, all the even statements will be implied by
 $P(0$ being true and all the odd statements get forced because $P(1)$ is true.}
 
 \item If we wanted to prove statements that were indexed by the integers,
