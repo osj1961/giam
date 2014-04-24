@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  7 JAN 2014 16:25
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  8 JAN 2014 23:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -287,31 +287,34 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-(./switches.tex) (./my_latex_definitions.tex
+(./my_latex_definitions.tex (./switches.tex)
 \cwidth=\skip52
 \c@thm=\count113
 \c@cor=\count114
 \c@conj=\count115
-)
-No file GIAM-hw.aux.
+) (./GIAM-hw.aux
+(./intro/intro-hw.aux) (./logic/logic-hw.aux) (./proof1/proof1-hw.aux)
+(./sets/sets-hw.aux) (./proof2/proof2-hw.aux) (./rel/rel-hw.aux)
+(./proof3/proof3-hw.aux) (./card/card-hw.aux) (./proof4/proof4-hw.aux))
 \openout1 = `GIAM-hw.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 101.
-LaTeX Font Info:    ... okay on input line 101.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
 \AtBeginShipoutBox=\box29
-Package hyperref Info: Link coloring ON on input line 101.
+Package hyperref Info: Link coloring ON on input line 65.
+
 (/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -320,9 +323,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count116
 )
-LaTeX Info: Redefining \ref on input line 101.
-LaTeX Info: Redefining \pageref on input line 101.
-LaTeX Info: Redefining \nameref on input line 101.
+LaTeX Info: Redefining \ref on input line 65.
+LaTeX Info: Redefining \pageref on input line 65.
+LaTeX Info: Redefining \nameref on input line 65.
 
 (./GIAM-hw.out) (./GIAM-hw.out)
 \@outlinefile=\write3
@@ -357,12 +360,12 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 112.
+LaTeX Font Info:    Try loading font information for U+msa on input line 76.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 112.
+LaTeX Font Info:    Try loading font information for U+msb on input line 76.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -371,14 +374,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 120.
-
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 84.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 120.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 84.
  [2
 
 ]
@@ -392,44 +394,37 @@ Chapter 1.
 
 
 
-] [2] [3] [4]) (./intro/def-exer.tex [5]
+] [2] [3] [4] [5]) (./intro/def-exer.tex [6]
 Overfull \hbox (8.45142pt too wide) in paragraph at lines 48--50
 []\OT1/cmr/m/n/12 Characterize the prime fac-tor-iza-tions of num-bers that are
  per-fect squares. 
  []
 
-[6]) [7] (./intro/scary-exer.tex) [8] (./intro/num_thry-exer.tex [9] [10]
-[11] [12] [13]) [14] (./intro/algo-exer.tex [15]) [16] (./intro/rat-exer.tex
+[7]) [8] (./intro/scary-exer.tex) [9] (./intro/num_thry-exer.tex [10] [11]
+[12] [13] [14]) [15] (./intro/algo-exer.tex [16]) [17] (./intro/rat-exer.tex
 Overfull \hbox (2.2445pt too wide) in paragraph at lines 27--29
 []\OT1/cmr/m/n/12 Consider the bi-nary num-ber $\OML/cmm/m/it/12 :\OT1/cmr/m/n/
 12 1010010001000010000010000001 []$, is this
  []
 
-[17]) [18] (./intro/rel-exer.tex [19] [20] [21] [22])) [23]
+[18] [19]) [20] (./intro/rel-exer.tex [21] [22] [23] [24])) [25]
 \openout2 = `logic/logic-hw.aux'.
 
 
-(./logic/logic-hw.tex [24
+(./logic/logic-hw.tex [26
 
 
 
 ]
 Chapter 2.
-(./logic/pred-exer.tex [25] [26] [27] [28]) [29] (./logic/impl-exer.tex
-[30]
-Overfull \hbox (11.63203pt too wide) in paragraph at lines 81--83
+(./logic/pred-exer.tex [27] [28] [29] [30]) [31] (./logic/impl-exer.tex
+[32] [33]
+Overfull \hbox (11.63203pt too wide) in paragraph at lines 85--87
 []\OT1/cmr/m/n/12 Why is it that the sen-tence ``If pigs can fly, I am the king
  of Mesopotamia.''
  []
 
-
-LaTeX Warning: Reference `ex:nand_nor' on page 31 undefined on input line 89.
-
-[31] [32] [33]
-
-LaTeX Warning: Reference `IKK' on page 34 undefined on input line 166.
-
-) [34] (./logic/le-exer.tex [35] [36] [37] [38] [39]
+[34] [35]) [36] (./logic/le-exer.tex [37] [38] [39] [40] [41]
 Underfull \hbox (badness 10000) in paragraph at lines 167--169
 
  []
@@ -439,93 +434,70 @@ Underfull \hbox (badness 10000) in paragraph at lines 172--173
 
  []
 
-[40]) [41] (./logic/2_col-exer.tex) [42] (./logic/quant-exer.tex [43]
-
-LaTeX Warning: Reference `entree' on page 44 undefined on input line 92.
-
-
-LaTeX Warning: Reference `negated' on page 44 undefined on input line 93.
-
-
-LaTeX Warning: Reference `compare' on page 44 undefined on input line 94.
-
-
-LaTeX Warning: Reference `negated' on page 44 undefined on input line 95.
-
-
-LaTeX Warning: Reference `compare' on page 44 undefined on input line 96.
-
-) [44]
+[42]) [43] (./logic/2_col-exer.tex [44] [45]) (./logic/quant-exer.tex [46]
+[47]) [48]
 Overfull \hbox (2.0358pt too wide) in paragraph at lines 48--48
 []\OT1/cmr/bx/n/17.28 Deductive rea-son-ing and Ar-gu-ment forms 
  []
 
-(./logic/deduct-exer.tex [45]) [46] (./logic/valid-exer.tex [47] [48]
-Underfull \hbox (badness 10000) in paragraph at lines 165--167
+(./logic/deduct-exer.tex [49]) [50] (./logic/valid-exer.tex [51] [52] [53]
+[54] [55] [56]
+Underfull \hbox (badness 10000) in paragraph at lines 201--203
 
  []
 
-)) [49]
+)) [57]
 \openout2 = `proof1/proof1-hw.aux'.
 
- (./proof1/proof1-hw.tex [50
+ (./proof1/proof1-hw.tex [58
 
 
 
 ]
 Chapter 3.
-(./defs_elem_num_theory.tex) [51] [52] (./proof1/direct-exer.tex [53
+(./defs_elem_num_theory.tex) [59] [60] (./proof1/direct-exer.tex [61
 
-]) [54]
-(./proof1/more-exer.tex [55]) [56] (./proof1/contra-exer.tex) [57]
-(./proof1/disproofs-exer.tex [58]
+] [62]
+[63] [64] [65] [66]) [67] (./proof1/more-exer.tex [68] [69] [70] [71] [72])
+(./proof1/contra-exer.tex [73] [74] [75] [76] [77])
+(./proof1/disproofs-exer.tex [78] [79] [80]) [81] (./proof1/cases-exer.tex
+[82] [83] [84] [85]
 
-LaTeX Warning: Reference `sec:more' on page 59 undefined on input line 84.
-
-) [59] (./proof1/cases-exer.tex [60]
-
-LaTeX Warning: Citation `putnam1' on page 61 undefined on input line 103.
+LaTeX Warning: Citation `putnam1' on page 86 undefined on input line 128.
 
 
-LaTeX Warning: Citation `putnam2' on page 61 undefined on input line 103.
+LaTeX Warning: Citation `putnam2' on page 86 undefined on input line 128.
 
 
-LaTeX Warning: Citation `putnam3' on page 61 undefined on input line 103.
+LaTeX Warning: Citation `putnam3' on page 86 undefined on input line 128.
 
-) [61] (./proof1/exist-exer.tex
+[86] [87]) (./proof1/exist-exer.tex [88] [89]
 
-LaTeX Warning: Reference `gcd!exists' on page 62 undefined on input line 23.
+LaTeX Warning: Reference `gcd!exists' on page 90 undefined on input line 35.
 
-(./figures/sci-pap-roc.tex
-<figures/sci-pap-roc.pdf, id=752, 201.75375pt x 134.5025pt>
+[90] (./figures/sci-pap-roc.tex
+<figures/sci-pap-roc.pdf, id=884, 201.75375pt x 134.5025pt>
 File: figures/sci-pap-roc.pdf Graphic file (type pdf)
 
 <use figures/sci-pap-roc.pdf>
 Package pdftex.def Info: figures/sci-pap-roc.pdf used on input line 2.
 (pdftex.def)             Requested size: 201.75325pt x 134.50215pt.
-))) [62 <./figures/sci-pap-roc.pdf>]
+) [91 <./figures/sci-pap-roc.pdf>]))
 \openout2 = `sets/sets-hw.aux'.
 
 
-(./sets/sets-hw.tex
-Chapter 4.
-(./sets/basic-exer.tex [63
+(./sets/sets-hw.tex [92
 
 
 
 ]
-Overfull \hbox (54.86035pt too wide) in paragraph at lines 42--44
-[]\OT1/cmr/m/n/12 How many 8 el-e-ment sub-sets are there in $\OMS/cmsy/m/n/12 
-P\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 a; b; c; d; e; f; g; h; i;
- j; k; l; m; n; o; p\OMS/cmsy/m/n/12 g\OT1/cmr/m/n/12 )$? 
- []
-
-) [64] (./sets/contain-exer.tex
+Chapter 4.
+(./sets/basic-exer.tex [93] [94] [95]) (./sets/contain-exer.tex
 Overfull \hbox (11.05907pt too wide) in paragraph at lines 6--11
 [][] 
  []
 
-) [65] (./set-theoretic-equivalences.tex
+[96]) [97] (./set-theoretic-equivalences.tex
 Overfull \hbox (16.50476pt too wide) in paragraph at lines 3--48
  [] 
  []
@@ -533,19 +505,22 @@ Overfull \hbox (16.50476pt too wide) in paragraph at lines 3--48
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (./sets/ops-exer.tex [66] [67]) [68] [69] (./sets/venn-exer.tex
-Underfull \hbox (badness 1275) in paragraph at lines 37--39
+) [98] (./sets/ops-exer.tex [99
+
+] [100] [101] [102] [103] [104] [105] [106]
+[107]) (./sets/venn-exer.tex [108
+
+] [109] [110]
+Underfull \hbox (badness 1275) in paragraph at lines 53--55
 \OT1/cmr/m/n/12 Therefore Socrates is
  []
 
-[70
-
-]) [71] (./sets/russell-exer.tex)) [72]
+[111] [112] [113]) (./sets/russell-exer.tex [114]))
 \openout2 = `proof2/proof2-hw.aux'.
 
  (./proof2/proof2-hw.tex
 Chapter 5.
-(./proof2/induct-exer.tex [73
+(./proof2/induct-exer.tex [115
 
 
 
@@ -556,31 +531,32 @@ Overfull \hbox (2.45457pt too wide) in paragraph at lines 41--49
 /12 h[]; h[]; h[]; [] h[]\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 .
  []
 
-[74] (./figures/straight_trominoe.tex
-<figures/straight_trominoe.pdf, id=876, 56.21pt x 20.075pt>
+[116] (./figures/straight_trominoe.tex
+<figures/straight_trominoe.pdf, id=1055, 56.21pt x 20.075pt>
 File: figures/straight_trominoe.pdf Graphic file (type pdf)
 
 <use figures/straight_trominoe.pdf>
 Package pdftex.def Info: figures/straight_trominoe.pdf used on input line 2.
 (pdftex.def)             Requested size: 56.20985pt x 20.07494pt.
 ) (./figures/L-shaped_trominoe.tex
-<figures/L-shaped_trominoe.pdf, id=877, 38.1425pt x 38.1425pt>
+<figures/L-shaped_trominoe.pdf, id=1056, 38.1425pt x 38.1425pt>
 File: figures/L-shaped_trominoe.pdf Graphic file (type pdf)
 
 <use figures/L-shaped_trominoe.pdf>
 Package pdftex.def Info: figures/L-shaped_trominoe.pdf used on input line 2.
 (pdftex.def)             Requested size: 38.1424pt x 38.1424pt.
-)) [75 <./figures/straight_trominoe.pdf> <./figures/L-shaped_trominoe.pdf>] (./
-proof2/sums-exer.tex
+) [117 <./figures/straight_trominoe.pdf> <./figures/L-shaped_trominoe.pdf>] [11
+8]) (./proof2/sums-exer.tex [119] [120]
 (./figures/triangular_numbers.tex
-<figures/triangular_numbers.pdf, id=891, 359.3425pt x 66.2475pt>
+<figures/triangular_numbers.pdf, id=1088, 359.3425pt x 66.2475pt>
 File: figures/triangular_numbers.pdf Graphic file (type pdf)
 
 <use figures/triangular_numbers.pdf>
 Package pdftex.def Info: figures/triangular_numbers.pdf used on input line 2.
 (pdftex.def)             Requested size: 359.34161pt x 66.24733pt.
-) [76 <./figures/triangular_numbers.pdf>]
-Overfull \hbox (13.24936pt too wide) detected at line 127
+) [121 <./figures/triangular_numbers.pdf>]
+[122] [123] [124]
+Overfull \hbox (13.24936pt too wide) detected at line 154
 \OML/cmm/m/it/12 F[] \OT1/cmr/m/n/12 = 1\OML/cmm/m/it/12 ; F[] \OT1/cmr/m/n/12 
 = 1\OML/cmm/m/it/12 ; F[] \OT1/cmr/m/n/12 = 2\OML/cmm/m/it/12 ; F[] \OT1/cmr/m/
 n/12 = 3\OML/cmm/m/it/12 ; F[] \OT1/cmr/m/n/12 = 5\OML/cmm/m/it/12 ; F[] \OT1/c
@@ -588,107 +564,82 @@ mr/m/n/12 = 8\OML/cmm/m/it/12 ; F[] \OT1/cmr/m/n/12 = 13\OML/cmm/m/it/12 ; F[]
 \OT1/cmr/m/n/12 = 21\OML/cmm/m/it/12 ;  []
  []
 
-) [77] (./proof2/divisibility-exer.tex) [78] (./proof2/strong-exer.tex))
-[79]
+[125]) (./proof2/divisibility-exer.tex [126] [127] [128] [129] [130] [131])
+[132] (./proof2/strong-exer.tex [133] [134]))
 \openout2 = `rel/rel-hw.aux'.
 
- (./rel/rel-hw.tex [80
-
-
-
-]
+ (./rel/rel-hw.tex
 Chapter 6.
-(./rel/rel-exer.tex [81]) [82] (./rel/properties-exer.tex
-Overfull \hbox (72.9494pt too wide) in paragraph at lines 5--8
+(./rel/rel-exer.tex [135
+
+
+
+] [136] [137]) (./rel/properties-exer.tex
+Overfull \hbox (72.9494pt too wide) in paragraph at lines 8--11
 []\OT1/cmr/m/n/12 Consider the re-la-tion $[]$ de-fined by $[] = \OMS/cmsy/m/n/
 12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 ) []  \OML/cmm/m/it/1
 2 x [] y\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 .
  []
 
-) [83] (./rel/equiv-exer.tex
-Overfull \hbox (72.9494pt too wide) in paragraph at lines 2--5
-[]\OT1/cmr/m/n/12 Consider the re-la-tion $[]$ de-fined by $[] = \OMS/cmsy/m/n/
-12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 ) []  \OML/cmm/m/it/1
-2 x [] y\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 .
- []
-
-(./figures/petersen_iso.tex
-<figures/petersen_iso.pdf, id=962, 431.6125pt x 207.77625pt>
+[138]) (./rel/equiv-exer.tex [139] [140] (./figures/petersen_iso.tex
+<figures/petersen_iso.pdf, id=1209, 431.6125pt x 207.77625pt>
 File: figures/petersen_iso.pdf Graphic file (type pdf)
 
 <use figures/petersen_iso.pdf>
 Package pdftex.def Info: figures/petersen_iso.pdf used on input line 2.
 (pdftex.def)             Requested size: 431.61143pt x 207.77573pt.
 )
-Overfull \hbox (21.55545pt too wide) in paragraph at lines 21--22
+Overfull \hbox (21.55545pt too wide) in paragraph at lines 38--39
 [][]   [][] 
  []
 
-
-Underfull \vbox (badness 4353) has occurred while \output is active []
-
- [84])
-[85 <./figures/petersen_iso.pdf>] (./rel/order-exer.tex
+[141 <./figures/petersen_iso.pdf>] [142]) (./rel/order-exer.tex
 (./figures/ecosystem.tex
-<figures/ecosystem.pdf, id=980, 246.9225pt x 168.63pt>
+<figures/ecosystem.pdf, id=1224, 246.9225pt x 168.63pt>
 File: figures/ecosystem.pdf Graphic file (type pdf)
 
 <use figures/ecosystem.pdf>
 Package pdftex.def Info: figures/ecosystem.pdf used on input line 2.
 (pdftex.def)             Requested size: 246.92188pt x 168.62958pt.
-) [86 <./figures/ecosystem.pdf>]
+) [143 <./figures/ecosystem.pdf>]
 Underfull \hbox (badness 2261) in paragraph at lines 31--32
 []\OT1/cmr/m/n/12 An (non-maximal) an-
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 50--51
-[]
- []
-
-
-Overfull \hbox (12.28134pt too wide) in paragraph at lines 50--51
-\OMS/cmsy/m/n/12 f[]\OML/cmm/m/it/12 ; []; []; []\OMS/cmsy/m/n/12 g$ 
- []
-
-(./figures/0-3_dim_cubes.tex
-<figures/0-3_dim_cubes.pdf, id=988, 302.12875pt x 93.34875pt>
+[144] (./figures/0-3_dim_cubes.tex
+<figures/0-3_dim_cubes.pdf, id=1238, 302.12875pt x 93.34875pt>
 File: figures/0-3_dim_cubes.pdf Graphic file (type pdf)
 
 <use figures/0-3_dim_cubes.pdf>
 Package pdftex.def Info: figures/0-3_dim_cubes.pdf used on input line 2.
 (pdftex.def)             Requested size: 302.128pt x 93.34851pt.
-) [87 <./figures/0-3_dim_cubes.pdf>]) [88]
-(./rel/functions-exer.tex [89] (./figures/Cantor_snake.tex
-<figures/Cantor_snake.pdf, id=1020, 358.33875pt x 316.18124pt>
+) [145 <./figures/0-3_dim_cubes.pdf>] [146]
+[147]) (./rel/functions-exer.tex [148] [149] (./figures/Cantor_snake.tex
+<figures/Cantor_snake.pdf, id=1276, 358.33875pt x 316.18124pt>
 File: figures/Cantor_snake.pdf Graphic file (type pdf)
 
 <use figures/Cantor_snake.pdf>
 Package pdftex.def Info: figures/Cantor_snake.pdf used on input line 2.
 (pdftex.def)             Requested size: 358.33788pt x 316.18047pt.
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [90])
-[91 <./figures/Cantor_snake.pdf>] (./rel/special-exer.tex [92])) [93]
+) [150 <./figures/Cantor_snake.pdf>] [151])
+(./rel/special-exer.tex [152] [153] [154]))
 \openout2 = `proof3/proof3-hw.aux'.
 
-
-(./proof3/proof3-hw.tex [94
-
-
-
-]
+ (./proof3/proof3-hw.tex
 Chapter 7.
-(./proof3/counting-exer.tex
-Overfull \hbox (2.84346pt too wide) in paragraph at lines 21--25
+(./proof3/counting-exer.tex [155
+
+
+
+] [156]
+Overfull \hbox (2.84346pt too wide) in paragraph at lines 31--35
 \OT1/cmr/m/n/12 cod-ing and cryp-tog-ra-phy. It con-sists of the first 6 let-te
 rs, $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 a; b; c; d; e; f\OMS/cmsy/m/n/12 g$\OT1
 /cmr/m/n/12 .
  []
 
-[95]) [96] (./proof3/parity-exer.tex (./figures/Euler_circuit_problems_a.tex
-<figures/Euler_circuit_problems_a.pdf, id=1078, 316.18124pt x 168.63pt>
+[157] [158]) (./proof3/parity-exer.tex (./figures/Euler_circuit_problems_a.tex
+<figures/Euler_circuit_problems_a.pdf, id=1343, 316.18124pt x 168.63pt>
 File: figures/Euler_circuit_problems_a.pdf Graphic file (type pdf)
 
 <use figures/Euler_circuit_problems_a.pdf>
@@ -697,7 +648,7 @@ e 2.
 (pdftex.def)             Requested size: 316.18047pt x 168.62958pt.
 )
 (./figures/Euler_circuit_problems_b.tex
-<figures/Euler_circuit_problems_b.pdf, id=1079, 363.3575pt x 165.61874pt>
+<figures/Euler_circuit_problems_b.pdf, id=1344, 363.3575pt x 165.61874pt>
 File: figures/Euler_circuit_problems_b.pdf Graphic file (type pdf)
 
 <use figures/Euler_circuit_problems_b.pdf>
@@ -709,55 +660,55 @@ Overfull \hbox (2.239pt too wide) in paragraph at lines 3--19
  [][] 
  []
 
-[97
+[159
 
  <./figures/Euler_circuit_problems_a.pdf> <./figures/Euler_circuit_problems_b.p
-df>] (./figures/five_tetrominoes.tex
-<figures/five_tetrominoes.pdf, id=1089, 254.9525pt x 114.4275pt>
+df>] [160] (./figures/five_tetrominoes.tex
+<figures/five_tetrominoes.pdf, id=1360, 254.9525pt x 114.4275pt>
 File: figures/five_tetrominoes.pdf Graphic file (type pdf)
 
 <use figures/five_tetrominoes.pdf>
 Package pdftex.def Info: figures/five_tetrominoes.pdf used on input line 2.
 (pdftex.def)             Requested size: 254.95186pt x 114.42722pt.
-) [98 <./figures/five_tetrominoes.pdf>]
-(./figures/magic_hexagon.tex
-<figures/magic_hexagon.pdf, id=1102, 137.51375pt x 137.51375pt>
+) [161 <./figures/five_tetrominoes.pdf>]
+[162] [163] (./figures/magic_hexagon.tex
+<figures/magic_hexagon.pdf, id=1381, 137.51375pt x 137.51375pt>
 File: figures/magic_hexagon.pdf Graphic file (type pdf)
 
 <use figures/magic_hexagon.pdf>
 Package pdftex.def Info: figures/magic_hexagon.pdf used on input line 2.
 (pdftex.def)             Requested size: 137.51341pt x 137.51341pt.
-)) [99 <./figures/magic_hexagon.pdf>]
-(./proof3/pigeon-exer.tex [100
+)) [164 <./figures/magic_hexagon.pdf>]
+(./proof3/pigeon-exer.tex [165
 
-]) [101] (./proof3/combinations-exer.tex
-(./figures/Pascals_tetrahedron.tex
-<figures/Pascals_tetrahedron.pdf, id=1128, 191.71625pt x 239.89626pt>
+] [166] [167] [168])
+(./proof3/combinations-exer.tex [169
+
+] (./figures/Pascals_tetrahedron.tex
+<figures/Pascals_tetrahedron.pdf, id=1422, 191.71625pt x 239.89626pt>
 File: figures/Pascals_tetrahedron.pdf Graphic file (type pdf)
 
 <use figures/Pascals_tetrahedron.pdf>
 Package pdftex.def Info: figures/Pascals_tetrahedron.pdf used on input line 2.
 (pdftex.def)             Requested size: 191.71577pt x 239.89566pt.
-) [102
-
- <./figures/Pascals_tetrahedron.pdf>])) [103]
+) [170 <./figures/Pascals_tetrahedron.pdf>] [171]))
 \openout2 = `card/card-hw.aux'.
 
- (./card/card-hw.tex [104
+ (./card/card-hw.tex [172
 
 
 
 ]
 Chapter 8.
-(./card/equiv-exer.tex) [105] (./card/examples-exer.tex) [106]
-(./card/cantors-exer.tex [107]) [108] (./card/dominance-exer.tex) [109]
-(./card/gch-exer.tex)) [110]
+(./card/equiv-exer.tex [173]) [174] (./card/examples-exer.tex [175] [176])
+[177] (./card/cantors-exer.tex [178] [179] [180]) (./card/dominance-exer.tex
+[181])) [182]
 \openout2 = `proof4/proof4-hw.aux'.
 
  (./proof4/proof4-hw.tex
 Chapter 9.
 (./proof4/morley-exer.tex (./figures/Morley_finished.tex
-<figures/Morley_finished.pdf, id=1195, 362.35374pt x 136.51pt>
+<figures/Morley_finished.pdf, id=1502, 362.35374pt x 136.51pt>
 File: figures/Morley_finished.pdf Graphic file (type pdf)
 
 <use figures/Morley_finished.pdf>
@@ -768,36 +719,33 @@ Overfull \hbox (1.51628pt too wide) in paragraph at lines 3--8
  [][] 
  []
 
-[111
+[183
 
 
 
- <./figures/Morley_finished.pdf>]) [112] (./proof4/five-exer.tex) [113]
-(./proof4/monge-exer.tex)) [114]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 167.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 167.
+ <./figures/Morley_finished.pdf>]) [184] (./proof4/five-exer.tex [185])
+[186] (./proof4/monge-exer.tex)) [187]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 131.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 131.
  (./GIAM-hw.aux (./intro/intro-hw.aux)
 (./logic/logic-hw.aux) (./proof1/proof1-hw.aux) (./sets/sets-hw.aux)
 (./proof2/proof2-hw.aux) (./rel/rel-hw.aux) (./proof3/proof3-hw.aux)
 (./card/card-hw.aux) (./proof4/proof4-hw.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 167.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 167.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 131.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 131.
 Package rerunfilecheck Info: File `GIAM-hw.out' has not changed.
-(rerunfilecheck)             Checksum: 6AA05D0C4C5179DFFC30A0B92875BC46;3740.
+(rerunfilecheck)             Checksum: E1DE21B881EB7910885763981BF31E50;3683.
 
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 167.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 131.
  ) 
 Here is how much of TeX's memory you used:
- 7648 strings out of 493315
- 106687 string characters out of 6137904
- 190977 words of memory out of 5000000
- 10165 multiletter control sequences out of 15000+600000
+ 7747 strings out of 493315
+ 107739 string characters out of 6137904
+ 192725 words of memory out of 5000000
+ 10174 multiletter control sequences out of 15000+600000
  15437 words of font info for 59 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  29i,15n,30p,814b,626s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -821,10 +769,10 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2013/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2013/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2013
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on GIAM-hw.pdf (116 pages, 403647 bytes).
+Output written on GIAM-hw.pdf (189 pages, 430171 bytes).
 PDF statistics:
- 1415 PDF objects out of 1440 (max. 8388607)
- 1250 compressed objects within 13 object streams
- 608 named destinations out of 1000 (max. 500000)
- 519 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1744 PDF objects out of 2073 (max. 8388607)
+ 1503 compressed objects within 16 object streams
+ 681 named destinations out of 1000 (max. 500000)
+ 511 words of extra memory for PDF output out of 10000 (max. 10000000)
 
