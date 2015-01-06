@@ -1,3 +1,47 @@
+\newcommand{\versionNum}{$3.2$\ }
+
+\newboolean{InTextBook}
+\setboolean{InTextBook}{false}
+\newboolean{InWorkBook}
+\setboolean{InWorkBook}{false}
+\newboolean{InHints}
+\setboolean{InHints}{false}
+
+%When this boolean is true (beginning in Section 5.1) we will use the convention
+% that $0 \in \Naturals$.  If it is false we will continue to count $1$ as the smallest
+%natural number (thus making Giuseppe Peano spin in his grave...)
+ 
+\newboolean{ZeroInNaturals}
+
+%This boolean is used to distinguish the version where we use $\sim$ rather than $\lnot$
+
+\newboolean{LNotIsSim}
+
+%The values of the last two booleans are set in ``switches.tex''
+
+\input{switches}
+
+\let\savedlnot\lnot
+\ifthenelse{\boolean{LNotIsSim}}{\renewcommand{\lnot}{\sim} }{}
+
+%This command puts different amounts of space depending on whether we are
+% in the text, the workbook or the hints & solutions manual. 
+\newcommand{\twsvspace}[3]{%
+ \ifthenelse{\boolean{InTextBook} }{\vspace{#1}}{%
+  \ifthenelse{\boolean{InWorkBook} }{\vspace{#2}}{%
+   \ifthenelse{\boolean{InHints} }{\vspace{#3}}{} %
+   }%
+  }%
+ }
+
+
+\newcommand{\wbvfill}{\ifthenelse{\boolean{InWorkBook}}{\vfill}{}}
+\newcommand{\wbitemsep}{\ifthenelse{\boolean{InWorkBook} }{\rule[-12pt]{0pt}{36pt}}{}}
+\newcommand{\textbookpagebreak}{\ifthenelse{\boolean{InTextBook}}{\newpage}{}}
+\newcommand{\workbookpagebreak}{\ifthenelse{\boolean{InWorkBook}}{\newpage}{}}
+\newcommand{\hintspagebreak}{\ifthenelse{\boolean{InHints}}{\newpage}{}}
+
+\newcommand{\hint}[1]{\ifthenelse{\boolean{InHints}}{{ \color[rgb]{0,0,1} #1 } }{}}
 
 \newlength{\cwidth}
 \newcommand{\cents}{\settowidth{\cwidth}{c}%

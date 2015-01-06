@@ -1,0 +1,17 @@
+desc:
+A Gentle Introduction to the Art of Mathematics (GIAM for short) is a textbook for a "transitions" course.
+
+Transitions courses (also known as "foundations" or "intro to proofs" courses) are typically taken after the Calculus sequence and before upper-division coursework in the mathematics major.  Their purpose is to acclimatize the student to some of the culture and terminology of mathematics and to begin developing in them a proficiency at reading and writing mathematical proofs.  
+
+GIAM has chapters on Logic, Set theory, Relations and Cardinality interspersed with chapters on proofs -- direct and indirect arguments, induction, combinatorial reasoning and "magic". 
+
+This is version 3.1SN.  
+The 'S' flag indicates that the symbol used for logical negation is ~. 
+The 'N' flag indicates that the convention that 1 (not 0) is the smallest natural number is maintained throughout.
+
+
+bio:
+Joe Fields is a professor of Mathematics at Southern Connecticut State University. He earned his doctorate at the University of Illinois, Chicago under the direction of Vera Pless. Outside of Mathematics, his interests are varied - ranging from playing saxophone to sculpting to electrical experimentation. He lives in New Haven, CT with his wife and son and a dog named Dan.
+
+kwds:
+Foundations of Math, Transitions course, Introduction to proof
