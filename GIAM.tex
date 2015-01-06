@@ -7,13 +7,15 @@
 \documentclass[pdftex,12pt,twoside]{book}
 %\usepackage{thumbpdf}
 \RequirePackage[pdftex]{hyperref}
+
+
 \hypersetup{colorlinks=true, %
   plainpages=false, %
   pdfpagelabels, %
   %hyperindex=true, %
   %backref=true, %
   %bookmarks=true, %
-  pdftitle={A Gentle Introduction to the Art of Mathematics, Version 3.1}, %
+  pdftitle={A Gentle Introduction to the Art of Mathematics}, %
   pdfauthor={Joseph E. Fields}, %
   pdfsubject={Foundations of Mathematics}, %
   %pdfpagelayout=SinglePage, %
@@ -61,7 +63,7 @@
 
 \frontmatter
 
-\title{A Gentle Introduction to the Art of Mathematics\\ {\small Version 3.1 \ifthenelse{\boolean{LNotIsSim}}{S}{}\ifthenelse{\boolean{ZeroInNaturals}}{}{N} }}
+\title{A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum \ifthenelse{\boolean{LNotIsSim}}{S}{}\ifthenelse{\boolean{ZeroInNaturals}}{}{N} }}
 \author{Joe Fields}
 \date{Southern Connecticut State University}
 
@@ -74,7 +76,7 @@
 \vfill
 
 \begin{quote}
-    Copyright \copyright{}  2013  Joseph E. Fields.
+    Copyright \copyright{}  2015  Joseph E. Fields.
     Permission is granted to copy, distribute and/or modify this document
     under the terms of the GNU Free Documentation License, Version 1.3
     or any later version published by the Free Software Foundation;
@@ -87,7 +89,9 @@
 
 \begin{quote}
 The latest version of this book is available (without charge) in portable document format at \newline
-\rule{0pt}{0pt} \hspace{1in} \verb+http://www.southernct.edu/~fields/+
+\rule{0pt}{0pt} \hspace{1in} \verb+http://www.southernct.edu/~fields/+.  
+
+\noindent The pdf and also the \LaTeX\  source code repository can also be found on GitHub.
 \end{quote}
 
 \vfill
@@ -101,7 +105,7 @@ The latest version of this book is available (without charge) in portable docume
 \begin{quote}
 {\Large \bf Acknowledgments} 
 
-   This is version 3.1 of {\em A Gentle Introduction to the Art of Mathematics}.
+   This is version \versionNum of {\em A Gentle Introduction to the Art of Mathematics}.
 Earlier versions were used and classroom tested by several colleagues: 
 Robert Vaden-Goad, John Kavanagh, Ross Gingrich, Aaron Clark.  I thank you all.  
 A particular debt of gratitude is owed to Len Brin whose keen eyes caught 
@@ -117,8 +121,8 @@ exercises -- thanks, Len.
 {\Large \bf A word about options} 
 
 There are currently 4 optional versions of this text.  The different options are distinguished with
-flags following the version number.  Thus you may see a plain ``version  3.1'' (no flags) 
-or any of the following: ``version 3.1S'', ``version 3.1N'',  or ``version 3.1SN''. 
+flags following the version number.  Thus you may see a plain ``version  \versionNum'' (no flags) 
+or any of the following: ``version \versionNum S'', ``version \versionNum N'',  or ``version \versionNum SN''. 
 The S flag is for those who prefer the symbol $\sim$ to represent 
 logical negation.  (The default is to
 use the symbol $\savedlnot$ for logical negation.)  The N flag distinguishes a version in which
