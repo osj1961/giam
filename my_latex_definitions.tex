@@ -36,12 +36,13 @@
 
 
 \newcommand{\wbvfill}{\ifthenelse{\boolean{InWorkBook}}{\vfill}{}}
-\newcommand{\wbitemsep}{\ifthenelse{\boolean{InWorkBook} }{\rule[-12pt]{0pt}{36pt}}{}}
+\newcommand{\wbitemsep}{\ifthenelse{\boolean{InWorkBook} }{\rule[-24pt]{0pt}{60pt}}{}}
 \newcommand{\textbookpagebreak}{\ifthenelse{\boolean{InTextBook}}{\newpage}{}}
 \newcommand{\workbookpagebreak}{\ifthenelse{\boolean{InWorkBook}}{\newpage}{}}
 \newcommand{\hintspagebreak}{\ifthenelse{\boolean{InHints}}{\newpage}{}}
 
-\newcommand{\hint}[1]{\ifthenelse{\boolean{InHints}}{{ \color[rgb]{0,0,1} #1 } }{}}
+\newcommand{\hint}[1]{\ifthenelse{\boolean{InHints}}{ {\par \hspace{12pt} \color[rgb]{0,0,1} #1 } }{}}
+\newcommand{\inlinehint}[1]{\ifthenelse{\boolean{InHints}}{ { \color[rgb]{0,0,1} #1 } }{}}
 
 \newlength{\cwidth}
 \newcommand{\cents}{\settowidth{\cwidth}{c}%
