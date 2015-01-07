@@ -47,4 +47,10 @@ Fixed several German language typos noticed by Karl-Dieter Crisman from Gordon C
 Added a short discussion on which axioms are acceptable for use at the end of the first "proofs" chapter.
 
 
+Version 3.2 (1/7/2015)
 
+Included typo fixes and exercise suggestions from my Spring 2014 class.
+
+Made lots of changes to improve the generation of text, workbbok and solutions manual from the same source files.
+
+Hints on exercises now go up to section 5.2.
