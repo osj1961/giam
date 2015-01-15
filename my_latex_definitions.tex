@@ -64,6 +64,9 @@ c\kern-\cwidth
 \newcommand{\Naturals}{{\mathbb N}}
 \newcommand{\Integers}{{\mathbb Z}}
 \newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\ifthenelse{\boolean{ZeroInNaturals}}{%
+  \newcommand{\Zplus}{{\mathbb Z}^+} }{%
+  \newcommand{\Zplus}{{\mathbb N}} }
 \newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
 \newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
 \newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
