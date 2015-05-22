@@ -1,0 +1,100 @@
+\begin{thebibliography}{10}
+
+\bibitem{putnam1}
+R.~E.~Greenwood A.~M.~Gleason and L.~M. Kelly.
+\newblock {\em The William Lowell Putnam Mathematical Competition Problems \&
+  Solutions: 1938-1964}.
+\newblock The Mathematical Association of America, Reissued 2003.
+
+\bibitem{pftB}
+Martin Aigner and Gunter~M. Ziegler.
+\newblock {\em Proofs from THE BOOK}.
+\newblock Springer-Verlag, 2nd edition, 2001.
+
+\bibitem{wiki-CBS}
+Wikipedia contributors.
+\newblock Cantor-bernstein-schroeder theorem.
+\newblock Wikipedia, the free encyclopedia. %
+  \href{http://en.wikipedia.org/wiki/Cantor-Bernstein-Schroeder_theorem}%
+  {http://en.wikipedia.org/wiki/Cantor-Bernstein-Schroeder\_theorem}.
+
+\bibitem{wiki-goldbach}
+Wikipedia contributors.
+\newblock Christian \protect{G}oldbach.
+\newblock Wikipedia, the free encyclopedia. %
+  \href{http://en.wikipedia.org/wiki/Goldbach}{http://en.wikipedia.org/wiki/Goldbach}.
+
+\bibitem{wiki-Erdos_number}
+Wikipedia contributors.
+\newblock Erdos number.
+\newblock Wikipedia, the free encyclopedia. %
+  \href{http://en.wikipedia.org/wiki/Erdos_number}{http://en.wikipedia.org/wiki/Erdos\_number}.
+
+\bibitem{wiki-4color}
+Wikipedia contributors.
+\newblock The four color theorem.
+\newblock Wikipedia, the free encyclopedia. %
+  \href{http://en.wikipedia.org/wiki/Four_color_theorem}{http://en.wikipedia.org/wiki/Four\_color\_theorem}.
+
+\bibitem{putnam2}
+Leonard F.~Klosinski Gerald L.~Alexanderson and Loren~C. Larson.
+\newblock {\em The William Lowell Putnam Mathematical Competitions Problems \&
+  Solutions: 1965 - 1984}.
+\newblock The Mathematical Association of America, Reissued 2003.
+
+\bibitem{lighthouse}
+Richard~K. Guy.
+\newblock The lighthouse theorem, \protect{M}orley \& \protect{M}alfatti -- a
+  budget of paradoxes.
+\newblock {\em American Mathematical Monthly}, 2007.
+
+\bibitem{putnam3}
+Bjorn~Poonen Kiran S.~Kedlaya and Ravi Vakil.
+\newblock {\em The William Lowell Putnam Mathematical Competition 1985-2000:
+  Problems Solutions, and Commentary}.
+\newblock The Mathematical Association of America, 2002.
+
+\bibitem{lam}
+C.~W.~H. Lam.
+\newblock The search for a finite projective plane of order 10.
+\newblock
+  \href{http://www.cecm.sfu.ca/organics/papers/lam/paper/html/paper.html}{http://www.www.cecm.sfu.ca/organics/papers/lam/paper/html/paper.html}.
+
+\bibitem{macl}
+Saunders MacLane.
+\newblock {\em Categories for the Working Mathematician}.
+\newblock Springer-Verlag, 2nd edition, 1998.
+
+\bibitem{HisMathArch}
+John~J. O'Connor and Edmund~F. Robertson.
+\newblock
+  \href{http://www-history.mcs.st-andrews.ac.uk/history/index.html}{http://www-history.mcs.st-andrews.ac.uk/history/index.html}.
+\newblock The MacTutor History of Mathematics archive.
+
+\bibitem{radz}
+Stanislaw Radziszowski.
+\newblock Small ramsey numbers.
+\newblock \href{http://www.combinatorics.org/Surveys/ds1.pdf}
+  {http://www.combinatorics.org/Surveys/ds1.pdf}.
+
+\bibitem{rota}
+Gian-Carlo Rota.
+\newblock {\em Indiscrete Thoughts}.
+\newblock Birkh\"{a}user, 1997.
+
+\bibitem{satyana}
+M.~Satyanarayana.
+\newblock none given.
+\newblock {\em Math. Quest. Educ. Times (New Series)}, 1909.
+
+\bibitem{struik}
+D.~J. Struik.
+\newblock {\em A Source Book in Mathematics, 1200-1800}.
+\newblock Princeton University Press, 1986.
+
+\bibitem{PM}
+Alfred~North Whitehead and Bertrand Russell.
+\newblock {\em Principia Mathematica}.
+\newblock Cambridge University Press, 1910.
+
+\end{thebibliography}

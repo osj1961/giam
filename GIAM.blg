@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99d (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: GIAM.aux
+A level-1 auxiliary file: intro/intro.aux
+A level-1 auxiliary file: logic/logic.aux
+A level-1 auxiliary file: proof1/proof1.aux
+A level-1 auxiliary file: sets/sets.aux
+A level-1 auxiliary file: proof2/proof2.aux
+A level-1 auxiliary file: rel/rel.aux
+A level-1 auxiliary file: proof3/proof3.aux
+A level-1 auxiliary file: card/card.aux
+A level-1 auxiliary file: proof4/proof4.aux
+The style file: plain.bst
+Database file #1: main.bib
+You've used 17 entries,
+            2118 wiz_defined-function locations,
+            582 strings with 6584 characters,
+and the built_in function-call counts, 3807 in all, are:
+= -- 343
+> -- 155
+< -- 0
++ -- 70
+- -- 46
+* -- 141
+:= -- 667
+add.period$ -- 51
+call.type$ -- 17
+change.case$ -- 65
+chr.to.int$ -- 0
+cite$ -- 17
+duplicate$ -- 165
+empty$ -- 365
+format.name$ -- 46
+if$ -- 808
+int.to.chr$ -- 0
+int.to.str$ -- 17
+missing$ -- 18
+newline$ -- 88
+num.names$ -- 34
+pop$ -- 137
+preamble$ -- 1
+purify$ -- 57
+quote$ -- 0
+skip$ -- 120
+stack$ -- 0
+substring$ -- 92
+swap$ -- 17
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 52
+warning$ -- 0
+while$ -- 34
+width$ -- 19
+write$ -- 165
