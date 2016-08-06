@@ -128,6 +128,8 @@ Adding $(-1)^{k} (k+1)^2$ to both sides gives
 Notice that the problem statement didn't specify the domain -- but the smallest value of $n$ that gives
 a non-empty product on the left-hand side is $n=2$.  
 
+\newpage
+
 \begin{proof} (By mathematical induction)
 
 {\bf Base case:} ($n=2$)
@@ -143,16 +145,20 @@ Suppose that $k>2$ is an integer such that
 
 \[ \prod_{i=2}^k \left(1 - \frac{1}{i}\right) =  \frac{1}{k}. \]
 
+Then,
+
 \begin{gather*}
 \prod_{i=2}^{k+1} \left(1 - \frac{1}{i}\right) \\
 = \left(1 - \frac{1}{k+1}\right) \; \cdot \; \prod_{i=2}^{k} \left(1 - \frac{1}{i}\right) \\
 = \left(1 - \frac{1}{k+1}\right) \; \cdot \; \frac{1}{k} \\
-= \frac{1}{k+1}
+= \frac{1}{k+1}.
 \end{gather*}
 \end{proof}
-}
 
-\wbvfill
+The final line skips over a tiny bit of algebraic detail.  You may feel more comfortable if you fill in those steps.
+
+\newpage
+}
 
 
 \item Prove $\displaystyle \sum_{j=0}^{n}(4j+1) \; = \; 2n^{2}+3n+1$ for all
