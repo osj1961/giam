@@ -124,6 +124,34 @@ Adding $(-1)^{k} (k+1)^2$ to both sides gives
 
 \[ \prod_{i=2}^n \left(1 - \frac{1}{i}\right) =  \frac{1}{n} \]
 
+\hint{
+Notice that the problem statement didn't specify the domain -- but the smallest value of $n$ that gives
+a non-empty product on the left-hand side is $n=2$.  
+
+\begin{proof} (By mathematical induction)
+
+{\bf Base case:} ($n=2$)
+For the base case, note that when $n=2$ we have
+
+\[ \prod_{i=2}^2 \left(1 - \frac{1}{i}\right) \quad = \quad  \left(1 - \frac{1}{2}\right) \quad = \quad 1/2 \]
+
+\noindent and, when $n=2$, the right-hand side ($1/n$) also evaluates to $1/2$.
+
+{\bf Inductive step:}
+
+Suppose that $k>2$ is an integer such that 
+
+\[ \prod_{i=2}^k \left(1 - \frac{1}{i}\right) =  \frac{1}{k}. \]
+
+\begin{gather*}
+\prod_{i=2}^{k+1} \left(1 - \frac{1}{i}\right) \\
+= \left(1 - \frac{1}{k+1}\right) \; \cdot \; \prod_{i=2}^{k} \left(1 - \frac{1}{i}\right) \\
+= \left(1 - \frac{1}{k+1}\right) \; \cdot \; \frac{1}{k} \\
+= \frac{1}{k+1}
+\end{gather*}
+\end{proof}
+}
+
 \wbvfill
 
 
