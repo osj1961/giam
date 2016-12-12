@@ -1,0 +1,398 @@
+
+<section xml:id="sec_cases">
+  <title>Even more direct proofs: By cases and By exhaustion</title>
+  <p>
+    <index><main>proof by exhaustion</main></index>
+    Proof by exhaustion is the least attractive proof method from
+    an aesthetic perspective. An exhaustive proof consists of literally
+    (and exhaustively) checking every element of the universe to see
+    if the given statement is true for it. Usually, of course, this is
+    impossible because the universe of discourse is infinite; but when the
+    universe of discourse is finite, one certainly can't argue the validity
+    of an exhaustive proof.
+  </p>
+
+  <p>
+    In the last few decades the introduction of powerful computational
+    assistance for mathematicians has lead to a funny situation. There
+    is a growing list of important results that have been <q>proved</q> by
+    exhaustion using a computer. Important examples of this phenomenon
+    are the non-existence of a
+    <index><main>projective plane of order 10</main></index>
+    projective plane of order 10<nbsp /><xref ref="lam" /> and the
+    only known value of a
+    <index><main>Ramsey number</main></index>Ramsey number for hypergraphs<nbsp /><xref ref="radz" />.
+  </p>
+
+  <p>
+    <index><main>proof by cases</main></index>
+    Proof by cases is subtly different from exhaustive proof <mdash /> for one
+    thing a valid proof by cases can be used in an infinite universe.
+    In a proof by cases one has to divide the universe of discourse into
+    a finite number of sets<fn>It is necessary to provide an argument that 
+    this list of cases is complete!  I.e. that every element of the universe
+    falls into one of the cases.</fn> and then provide a separate proof for each
+    of the cases. A great many statements about the integers can be proved
+    using the division of integers into even and odd. Another set of
+    cases that is used frequently is the finite number of possible remainders
+    obtained when dividing by an integer <m>d</m>. (Note that even and odd correspond
+    to the remainders <m>0</m> and <m>1</m> obtained after division by <m>2</m>.)
+  </p>
+
+  <p>
+    A very famous instance of proof by cases is the computer-assisted proof
+    of the
+    <index><main>four color theorem</main></index>
+    four color theorem. The four color theorem is a result known to
+    map makers for quite some time that says that 4 colors are always sufficient
+    to color the nations on a map in such a way that countries sharing a boundary
+    are always colored differently. <xref ref="fig_Lux_map">Figure</xref> shows one instance
+    of an arrangement of nations that requires at least four different colors,
+    the theorem says that four colors are <em>always</em> enough. It should be noted
+    that real cartographers usually reserve a fifth color for oceans (and other
+    water) and that it is possible to conceive of a map requiring five colors if
+    one allows the nations to be non-contiguous. In 1977,
+    <index><main>Appel, Kenneth</main></index> Kenneth Appel and
+    <index><main>Haken, Wolfgang</main></index>Wolfgang Haken proved the four color
+    theorem by reducing the infinitude of possibilities to
+    1,936 separate cases and analyzing each of these with a computer.
+    The inelegance of a proof by cases is probably proportional to some power of
+    the number of cases, but in any case, this proof is generally considered
+    somewhat inelegant. Ever since the proof was announced there has been an
+    ongoing effort to reduce the number of cases (currently the record is 633
+    cases <mdash /> still far too many to be checked through without a computer) or to
+    find a proof that does not rely on cases. For a good introductory article on
+    the four color theorem see<nbsp /><xref ref="wiki-4color" />.
+  </p>
+
+  <figure>
+    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+      \reset@font\fontsize{#1}{#2pt}
+      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+      \selectfont}\fi
+    <image source="images/7165ceb5044216c12890b89bac2815ee915e7f4c.png"/>
+    \caption[A four-color map.]{The nations surrounding 
+    <index><main>Luxembourg</main></index> Luxembourg show 
+    that sometimes 4 colors are required in cartography.}
+  </figure>
+
+  <p>
+    Most exhaustive proofs of statements that aren't trivial tend to either be (literally) too exhausting or to seem rather contrived. One example of a situation
+    in which an exhaustive proof of some statement exists is when the statement
+    is thought to be universally true but no general proof is known <mdash /> yet the
+    statement has been checked for a large number of cases.
+    <index><main>Goldbach's conjecture</main></index>Goldbach's conjecture
+    is one such statement.
+    <index><main>Goldbach, Christian</main></index>Christian Goldbach<nbsp /><nbsp /><xref ref="wiki-goldbach" />
+    was a mathematician born
+    in <index><main>K&#xf6;nigsberg</main></index>K&#xf6;nigsberg Prussia,
+    who, curiously, did <em>not</em> make the
+    conjecture<fn>This conjecture was 
+    discussed previously in the exercises of <xref ref="sec_def">Section</xref></fn> which bears
+    his name. In a letter to
+    <index><main>Euler, Leonhard</main></index>Leonard Euler, Goldbach conjectured that every
+    odd number greater than 5 could be expressed as the sum of three primes (nowadays this is known as the
+    <index><main>weak Goldbach conjecture</main></index> weak Goldbach conjecture). Euler apparently liked the
+    problem and replied to Goldbach stating what is now known as Goldbach's
+    conjecture: Every even number greater than 2 can be expressed as the sum of
+    two primes. This statement has been lying around since 1742, and a great
+    many of the world's best mathematicians have made their attempts at proving it <mdash /> to no avail! (Well, actually a lot of progress has been made but the result
+    still hasn't been proved.) It's easy to verify the Goldbach conjecture for
+    relatively small even numbers, so what <em>has</em> been done is/are proofs by
+    exhaustion of Goldbach's conjecture restricted to finite universes.
+    As of this writing, the conjecture has been verified to be true of
+    all even numbers less than <m>2 \times 10^{17}</m>.
+  </p>
+
+  <p>
+    Whenever an exhaustive proof, or a proof by cases exists for some statement
+    it is generally felt that a direct proof would be more esthetically pleasing.
+    If you are in a situation that doesn't admit such a direct proof, you should
+    at least seek a proof by cases using the minimum possible number of cases.
+    For example, consider the following theorem and proof.
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        <m>\forall n \in \Integers \; n^2 \;</m> is of the form <m>4k</m> or
+        <m>4k+1</m> for some <m>k \in \Integers</m>.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+    We will consider the four cases determined by the four
+    possible residues mod 4.
+
+    <ul>
+      <li>
+        <title>case i)</title>
+        <p>
+          If <m>n \equiv 0 \pmod{4}</m> then there is an integer <m>m</m>
+          such that <m>n = 4m</m>.  It follows that <m>n^2 = (4m)^2 = 16m^2</m> is of the 
+          form <m>4k</m> where <m>k</m> is <m>4m^2</m>.
+        </p></li>
+
+      <li>
+        <title>case ii)</title>
+        <p>
+          If <m>n \equiv 1 \pmod{4}</m> then there is an integer <m>m</m>
+          such that <m>n = 4m+1</m>.  It follows that <m>n^2 = (4m+1)^2 = 16m^2 + 8m + 1</m> 
+          is of the form <m>4k+1</m> where <m>k</m> is <m>4m^2+2m</m>.
+        </p></li>
+
+      <li>
+        <title>case iii)</title>
+        <p>
+          If <m>n \equiv 2 \pmod{4}</m> then there is an integer <m>m</m>
+          such that <m>n = 4m+2</m>.  It follows that <m>n^2 = (4m+2)^2 = 16m^2 + 16m + 4</m> 
+          is of the form <m>4k</m> where <m>k</m> is <m>4m^2+4m+1</m>.
+        </p></li>
+
+      <li>
+        <title>case iv)</title>
+        <p>
+          If <m>n \equiv 3 \pmod{4}</m> then there is an integer <m>m</m>
+          such that <m>n = 4m+3</m>.  It follows that <m>n^2 = (4m+3)^2 = 16m^2 + 24m + 9</m> 
+          is of the form <m>4k+1</m> where <m>k</m> is <m>4m^2+6m+2</m>.
+        </p></li>
+    </ul>
+    </p>
+
+    <p>
+      Since these four cases exhaust the possibilities and since the desired
+      result holds in each case, our proof is complete.
+    </p>
+  </proof>
+
+  <p>
+    While the proof just stated is certainly valid, the argument is inelegant
+    since a smaller number of cases would suffice.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        The previous theorem can be proved using just two cases. Do so.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    We'll close this section by asking you to determine an exhaustive proof where
+    the complexity of the argument is challenging but not <em>too</em> impossible.
+  </p>
+
+  <p>
+    <index><main>graph pebbling</main></index> Graph pebbling is an interesting concept originated
+    by the famous combinatorialist <index><main>Chung, Fan</main></index> Fan Chung. A <q>graph</q>
+    (as the term is used here) is a collection
+    of places or locations which are known as <q>nodes,</q> some of which
+    are joined by paths or connections which are known as <q>edges.</q>
+    Graphs have been studied by mathematicians for about 400 years, and
+    many interesting problems can be put in this setting. Graph pebbling
+    is a crude version of a broader problem in resource management <mdash /> often
+    a resource actually gets used in the process of transporting it. Think of
+    the big tanker trucks that are used to transport gasoline. What do they
+    run on? Well, actually they probably burn diesel <mdash /> but the point is
+    that in order to move the fuel around we have to consume some of it.
+    Graph pebbling takes this to an extreme: in order to move one pebble
+    we must consume one pebble.
+  </p>
+
+  <p>
+    Imagine that a bunch of pebbles are randomly
+    distributed on the nodes of a graph, and that we are allowed to do
+    <em>graph pebbling moves</em> <mdash /> we remove two pebbles from some node
+    and place a single pebble on a node that is connected to it.
+    See <xref ref="fig_pebbling_move">Figure</xref>.
+  </p>
+
+  <figure>
+    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+      \reset@font\fontsize{#1}{#2pt}
+      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+      \selectfont}\fi
+    <image source="images/cd84b457db63c0b752ed210a2205dc206ddff1a0.png"/>
+    \caption[Graph pebbling.]{In graph pebbling problems a collection of pebbles
+    are distributed on the nodes of a graph.  There is no significance to the 
+    particular graph that is shown here, or to the arrangement of pebbles <mdash /> 
+    we are just giving an example.}
+  </figure>
+
+  <figure>
+    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+      \reset@font\fontsize{#1}{#2pt}
+      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+      \selectfont}\fi
+    <image source="images/18f1e6b14db59b93308543983d9f8311d7062205.png"/>
+    \caption[Graph pebbling move.]{A graph pebbling move takes two pebbles off
+    of a node and puts one of them on an adjacent node (the other is discarded).
+    Notice how node C, which formerly held 3 pebbles, now has only 1 and that 
+    a pebble is now present on node D where previously there was none.}
+  </figure>
+
+  <p>
+    For any particular graph, we can ask for its <em>pebbling number</em>, <m>\rho</m>.
+    This is the smallest number so that if <m>\rho</m> pebbles are distributed <em>in any way whatsoever</em> on the nodes of the graph, it will be possible to use
+    pebbling moves so as to get a pebble to any node.
+  </p>
+
+  <p>
+    For example, consider the triangle graph <mdash /> three nodes which are all
+    mutually connected. The pebbling number of this graph is 3. If we
+    start with one pebble on each node we are already done; if there is a
+    node that has two pebbles on it, we can use a pebbling move to reach
+    either of the other two nodes.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        There is a graph <m>C_5</m> which consists of 5 nodes connected in a circular
+        fashion. Determine its pebbling number. Prove your answer exhaustively.
+      </p>
+
+      <p>
+        Hint: the pebbling number must be greater than 4 because if one pebble is
+        placed on each of 4 nodes the configuration is unmovable (we need to
+        have two pebbles on a node in order to be able to make a pebbling move
+        at all) and so the 5th node can never be reached.
+      </p>
+    </statement>
+  </exercise>
+  <exercises>
+
+    <ol>
+      <li><p>
+          Prove that if <m>n</m> is an odd number then <m>n^4 \pmod{16} = 1</m>.
+
+          \hint{
+
+          While one could perform fairly complicated arithmetic, expanding expression like
+          <m>(16k+13)^4</m> and then regrouping to put it in the form <m>16q+1</m> (and one would need 
+          to do that work for each of the odd remainders modulo <m>16</m>),  that would be missing out
+          on the true power of modular notation.  In a <q><m>\pmod{16}</m></q> calculation one can simply ignore
+          summands like <m>16k</m> because they are <m>0 \pmod{16}</m>.  Thus, for example,
+          <me>
+            (16k+7)^4 \pmod{16} \; = \; 7^4 \pmod{16} \; = \; 2401 \pmod{16}  \; = \; 1.
+          </me>
+          So, essentially one just needs to compute the <m>4</m>th powers of <m>1, 3, 5, 7, 9, 11, 13</m>  and <m>15</m>, and
+          then reduce them modulo 16.  An even greater economy is possible if one notes that (modulo 16) many
+          of those cases are negatives of one another <mdash /> so their <m>4</m>th powers are equal.
+          }
+        </p></li>
+
+      <li><p>
+          Prove that every prime number other than 2 and 3 has the form
+          <m>6q+1</m> or <m>6q+5</m> for some integer <m>q</m>.  (Hint: this problem involves
+          thinking about cases as well as contrapositives.)
+
+          \hint{It is probably obvious that the "cases" will be the possible remainders mod 6. Numbers of the form 6q+0 will be multiples of 6, so clearly not prime. The other forms that need to be eliminated are 6q+2, 6q+3, and 6q+4.
+          }
+        </p></li>
+
+      <li><p>
+          Show that the sum of any three consecutive integers is divisible
+          by 3.
+
+          \hint{Write the sum as <m>n + (n+1) + (n+2)</m>.}
+        </p></li>
+
+      <li><p>
+          There is a graph known as <m>K_4</m> that has <m>4</m> nodes and there is an edge between every pair of nodes.
+          The pebbling number of <m>K_4</m> has to be at least <m>4</m> since it would be possible to put one pebble on each of
+          <m>3</m> nodes and not be able to reach the remaining node using pebbling moves.  Show that the pebbling number of <m>K_4</m> is actually <m>4</m>.
+
+          \hint{If there are two pebbles on any node we will be able to reach all the other nodes using pebbling moves
+          (since every pair of nodes is connected).}
+        </p></li>
+
+      <li><p>
+          Find the pebbling number of a graph whose nodes are the corners and 
+          whose edges are the, uhmm, edges of a cube.
+
+          \hint{It should be clear that the pebbling number is at least <m>8</m> <mdash /> <m>7</m> pebbles could be distributed, 
+          one to a node, and the <m>8</m>th node would be unreachable.  It will be easier to play around with this if
+          you figure out how to draw the cube graph <q>flattened-out</q> in the plane.}
+        </p></li>
+
+      <li><p>
+          A <index><main>vampire number</main></index><em>vampire number</em> is a <m>2n</m> digit number <m>v</m> that factors as <m>v=xy</m>
+          where <m>x</m> and <m>y</m> are <m>n</m> digit numbers and the digits of <m>v</m> are the 
+          union of the digits in <m>x</m> and <m>y</m> in some order.  The numbers <m>x</m> and <m>y</m>
+          are known as the <q>fangs</q> of <m>v</m>.  To eliminate trivial
+          cases, pairs of trailing zeros are disallowed.  
+
+          Show that there are no 2-digit vampire numbers.
+
+          Show that there are seven 4-digit vampire numbers.
+
+          \hint{The 2-digit challenge is do-able by hand (just barely).  The <m>4</m> digit question certainly requires 
+          some computer assistance!}
+        </p></li>
+
+      <li><p>
+          Lagrange's theorem on representation of integers as sums of squares
+          says that every positive integer can be expressed as the sum of at most 
+          <m>4</m> squares.  For example, <m>79 = 7^2 + 5^2 + 2^2 + 1^2</m>.  Show (exhaustively) 
+          that <m>15</m> can not be represented using fewer than <m>4</m> squares.
+
+          \hint{Note that <m>15 = 3^2 + 2^2 + 1^2 + 1^2</m>.  Also, if <m>15</m> were expressible as a sum of fewer than <m>4</m> squares, the squares involved would be <m>1</m>, <m>4</m> and <m>9</m>.  It's really not that hard to try all the possibilities.}
+        </p></li>
+
+      <li><p>
+          Show that there are exactly <m>15</m> numbers <m>x</m> in the range <m>1 \leq x \leq 100</m> that can't be represented using fewer than <m>4</m> squares.
+
+
+
+          \hint{The following Sage code generates all the numbers up to <m>100</m> that <em>can</em> be written
+          as the sum of at most <m>3</m> squares.
+
+          <c>var('x y z') 
+          a=[s<m>\caret</m>2 for s in [1..10]]  
+          b=[s<m>\caret</m>2 for s in [0..10]]  
+          s = []  
+          for x in a:  
+           for y in b:  
+            for z in b:  
+             s = union(s,[x+y+z])  
+          s = Set(s)  
+          H=Set([1..100]) 
+          show(H.intersection(s))  
+          </c>
+          }
+        </p></li>
+
+      <li><p>
+          The <index><main>trichotomy property</main></index><em>trichotomy property</em> of the real 
+          numbers simply states that every real number is either positive or negative 
+          or zero.  Trichotomy can be used to prove many statements by looking at the
+          three cases that it guarantees.  Develop a proof (by cases) that the square of
+          any real number is non-negative.
+
+          \hint{By trichotomy, x is either zero, negative, or positive. If x is zero, its square is zero. If x is negative, its square is positive. If x is positive, its square is also positive.}
+        </p></li>
+
+      <li><p>
+          Consider the game called <q>binary determinant tic-tac-toe</q>  
+          which is played by two players who alternately fill in the entries of a 
+          <m>3 \times 3</m> array.  Player One goes first, placing 1's in the array and 
+          player Zero goes second, placing 0's.  Player One's goal is that the 
+          final array have determinant 1, and player Zero's goal is that the 
+          determinant be 0.  The determinant calculations are carried out mod 2.
+
+          Show that player Zero can always win a game of binary determinant tic-tac-toe
+          by the method of exhaustion.
+
+          \hint{If you know something about determinants it would help here.  The determinant will be
+          0 if there are two identical rows (or columns) in the finished array.  Also, if there is a row or column
+          that is all zeros, player Zero wins too.  Also, cyclically permuting either rows or columns has no effect
+          on the determinant of a binary array.  This means we lose no generality in assuming player One's
+          first move goes (say) in the upper-left corner.}
+        </p></li>
+    </ol>
+  </exercises>
+</section>

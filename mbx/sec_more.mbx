@@ -1,0 +1,224 @@
+
+<section xml:id="sec_more">
+  <title>More direct proofs</title>
+  <p>
+    In creating a direct proof we need to look at our hypotheses, consider
+    the desired conclusion, and develop a strategy for transforming A into B.
+    Quite often you'll find it easy to make several deductions from the
+    hypotheses, but none of them seems to be headed in the direction of
+    the desired conclusion. The usual advice at this stage is
+    <index><main>forwards-backwards method</main></index>
+    <q>Try working backwards from the conclusion.</q>
+    <fn>Some people refer to this as the forwards-backwards method, since 
+    you work backwards from the conclusion, but also forwards from the premises, 
+    in the hopes of meeting somewhere in the middle.</fn>
+  </p>
+
+  <p>
+    There is a lovely result known as the
+    <index><main>arithmetic-geometric mean inequality</main></index>
+    <q>arithmetic-geometric mean inequality</q>
+    whose proof epitomizes this approach. Basically this inequality compares two
+    different ways of getting an <q>average</q> between two real numbers. The
+    <index><main>arithmetic mean</main></index><em>arithmetic mean</em> of two real numbers <m>a</m> and <m>b</m> is the one you're
+    probably used to, <m>(a+b)/2</m>. Many people just call this the <q>mean</q>
+    of <m>a</m> and <m>b</m> without using the modifier <q>arithmetic</q> but as we'll
+    see, our notion of what intermediate value to use in between two numbers
+    is dependent on context. Consider the following two sequences of numbers
+    (both of which have a missing entry)
+    <me>
+      2  9   16   23   \rule{12pt}{.5pt}   37   44
+    </me>
+    and
+    <me>
+      3  6   12   24   \rule{12pt}{.5pt}   96   192.
+    </me>
+  </p>
+
+  <p>
+    How should we fill in the blanks?
+  </p>
+
+  <p>
+    The first sequence is an
+    <index><main>arithmetic sequence</main></index><em>arithmetic sequence</em>.
+    Arithmetic sequences
+    are characterized by the property that the difference between successive
+    terms is a constant. The second sequence is a
+    <index><main>geometric sequence</main></index><em>geometric sequence</em>.
+    Geometric sequences have the property that the ratio of successive terms
+    is a constant. The blank in the first sequence should be filled with the
+    arithmetic mean of the surrounding entries <m>(23+37)/2 = 30</m>. The blank
+    in the second sequence should be filled using the
+    <index><main>geometric mean</main></index>geometric mean
+    of <em>its</em> surrounding entries: <m>\sqrt{24\cdot 96} = 48</m>.
+  </p>
+
+  <p>
+    Given that we accept the utility of having two inequivalent concepts
+    of <em>mean</em> that can be used in different contexts, it is interesting
+    to see how these two means compare to one another. The
+    arithmetic-geometric mean inequality states that the arithmetic mean
+    is always bigger.
+    <me>
+      \forall a,b \in \Reals,   a,b \geq 0 \; \implies \;  \frac{a+b}{2} \geq \sqrt{ab}
+    </me>
+  </p>
+
+  <p>
+    In proving this statement we have little choice but to work backwards
+    from the conclusion because the only hypothesis we have to work with
+    is that <m>a</m> and <m>b</m> are non-negative real numbers <mdash /> which isn't a
+    particularly potent tool. But what should we do?
+    There isn't a good response to that
+    question, we'll just have to try a bunch of different things and hope
+    that something will work out. When we finally get around to writing up
+    our proof though, we'll have to rearrange the statements in the opposite
+    order from the way they were discovered. This means that we would
+    be ill-advised to make any uni-directional inferences, we should
+    strive to make biconditional connections between our statements
+    (or else try to intentionally make converse errors).
+  </p>
+
+  <p>
+    The first thing that appeals to your humble author is to eliminate
+    both the fractions and the radicals<ellipsis />
+    <me>
+      \frac{a+b}{2} \geq \sqrt{ab}
+    </me>
+    <me>
+      \iff \; a+b \geq 2\sqrt{ab}
+    </me>
+    <me>
+      \iff \; (a+b)^2 \geq 4ab
+    </me>
+    <me>
+      \iff \; a^2+2ab+b^2 \geq 4ab
+    </me>
+  </p>
+
+  <p>
+    One of the steps above involves squaring both sides of an inequality.
+    We need to ask ourselves if this step is really reversible. In other
+    words, is the following conditional true?
+    <me>
+      \forall x,y \in \Rnoneg, \, \; 
+      x \geq y \; \implies \sqrt{x} \geq \sqrt{y}
+    </me>
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Provide a justification for the previous implication.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    What should we try next? There's really no good justification for
+    this but experience working with quadratic polynomials either in
+    equalities or inequalities leads most people to try <q>moving everything
+    to one side,</q> that is, manipulating things so that one side of the
+    equation or inequality is zero.
+    <me>
+      a^2+2ab+b^2 \geq 4ab
+    </me>
+    <me>
+      \iff \; a^2-2ab+b^2 \geq 0
+    </me>
+  </p>
+
+  <p>
+    Whoa! We're done! Do you see why? If not, I'll give you one
+    hint: the square of any real number is greater than or equal to
+    zero.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Re-assemble all of the steps taken in the previous few paragraphs
+        into a proof of the arithmetic-geometric mean inequality.
+      </p>
+    </statement>
+  </exercise>
+  <exercises>
+
+    <ol>
+      <li><p>
+          Suppose you have a savings account which bears interest 
+          compounded monthly.  The July statement shows a balance of 
+          <dollar /> 2104.87 and the September statement shows a balance <dollar /> 2125.97.
+          What would be the balance on the (missing) August statement?
+
+          \hint{A savings account where we are not depositing or withdrawing funds has a balance that is growing geometrically.}
+        </p></li>
+
+      <li xml:id="quad" ><p>
+          Recall that a quadratic equation <m>ax^2+bx+c=0</m> has two real solutions
+          if and only if the discriminant <m>b^2-4ac</m> is positive.  Prove that if 
+          <m>a</m> and <m>c</m> have different signs then the quadratic equation has two 
+          real solutions.
+
+          \hint{You don't need all the hypotheses. If <m>a</m> and <m>c</m> have different signs, then <m>ac</m> is a negative quantity}
+        </p></li>
+
+      <li><p>
+          Prove that if <m>x^3-x^2</m> is negative then <m>3x+4 \lt  7</m>.
+
+          \hint{This follows very easily by the method of working backwards from the conclusion. Remember that when multiplying or dividing both sides of an inequality by some number, the direction of the inequality may reverse (unless we know the number involved is positive).  Also, remember that we can't divide by zero, so if we are (just for example, don't know why I'm mentioning it really<ellipsis />) dividing both sides of an inequality by <m>x^2</m> then we must treat the case where <m>x=0</m> separately.}
+        </p></li>
+
+      <li><p>
+          Prove that for all integers <m>a,b,</m> and <m>c</m>, if <m>a|b</m> and <m>a|(b+c)</m>, then
+          <m>a|c</m>.
+        </p></li>
+
+      <li><p>
+          Show that if <m>x</m> is a positive real number, then <m>x+\frac{1}{x} \geq 2</m>. 
+
+          \hint{If you work backwards from the conclusion on this one, you should eventually come to the inequality <m>(x-1)^2 \geq 0</m>.  Notice that this inequality is always true <mdash /> all squares are non-negative. When you go to write-up your proof (writing things in the forward direction), you'll want to acknowledge this truth. Start with something like <q>Regardless of the value of <m>x</m>, the quantity <m>(x-1)^2</m> is greater than or equal to zero as it is a perfect square.</q>}
+        </p></li>
+
+      <li><p>
+          Prove that for all real numbers <m>a,b,</m> and <m>c</m>, if <m>ac\lt 0</m>, then the quadratic
+          equation <m>ax^{2}+bx+c=0</m> has two real solutions.
+
+          <em>Hint:</em> The quadratic equation <m>ax^{2}+bx+c=0</m> has two
+          real solutions if and only if <m>b^{2}-4ac>0</m> and <m>a\neq0</m>.
+
+          \hint{This is very similar to <xref ref="quad">problem</xref>.}
+        </p></li>
+
+      <li><p>
+          Show that <m>\binom{n}{k} \cdot \binom{k}{r} \; = \; \binom{n}{r} \cdot \binom{n-r}{k-r}</m> (for all integers <m>r</m>, <m>k</m> and <m>n</m> with <m>r \leq k \leq n</m>). 
+
+          \hint{Use the definition of the binomial coefficients as fractions involving factorials:
+
+          E.g. <m>\displaystyle\binom{n}{k} \; = \; \frac{n!}{k! (n-k)!}</m>
+
+          Write down the definitions, both of the left hand side and the right hand side and consider how you can
+          convert one into the other.}
+        </p></li>
+
+      <li><p>
+          In proving the <index><main>product rule</main></index> <em>product rule</em> in Calculus using the definition of the derivative, we might start our proof with:
+          <me>
+            \frac{\mbox{d} }{\mbox{d} x} \left( f(x) \cdot g(x) \right)
+          </me>
+          <me>
+            = \lim_{h \longrightarrow 0} \frac{f(x+h) \cdot g(x+h) - f(x) \cdot g(x)}{h}
+          </me>
+          The last two lines of our proof should be:
+          <me>
+            = \lim_{h \longrightarrow 0} \frac{f(x+h) - f(x)}{h} \cdot g(x) \; + \; f(x) \cdot \lim_{h \longrightarrow 0} \frac{g(x+h) - g(x)}{h}
+          </me>
+          <me>
+            = \frac{\mbox{d} }{\mbox{d} x}\left( f(x) \right) \cdot g(x) \; + \; f(x) \cdot \frac{\mbox{d} }{\mbox{d} x}\left( g(x) \right)
+          </me>
+          Fill in the rest of the proof.
+
+          \hint{The critical step is to subtract and add the same thing: <m>f(x)g(x+h)</m> in the numerator of the fraction
+          in the limit which gives the definition of <m>\frac{\mbox{d} }{\mbox{d} x} \left( f(x) \cdot g(x) \right)</m>.  Also, you'll need to recall the laws of limits (like <q>the limit of a product is the product of the limits <mdash /> provided both exist</q>) }
+        </p></li>
+    </ol>
+  </exercises>
+</section>

@@ -1,0 +1,422 @@
+
+<section xml:id="sec_special_functions">
+  <title>Special functions</title>
+  <p>
+    There are a great many functions that fail the horizontal line test
+    which we nevertheless seem to have inverse functions for. For example,
+    <m>x^2</m> fails HLT but <m>\sqrt{x}</m> is a pretty reasonable inverse for it <mdash /> one just needs to be careful about the <q>plus or minus</q> issue. Also,
+    <m>\sin{x}</m> fails HLT pretty badly; any horizontal line <m>y=c</m> with
+    <m>-1 \leq c \leq 1</m> will hit <m>\sin{x}</m> infinitely many times. But look!
+    Right here on my calculator is a button labeled <q><m>\sin^{-1}</m>.</q><fn>It 
+    might be labeled <q>asin</q> instead.  The old-style way to refer to the inverse
+    of a trig. function was arc-whatever.  So the inverse of sine was arcsine,
+    the inverse of tangent was arctangent.</fn> This apparent contradiction
+    can be resolved using the notion of restriction.
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        <index><main>restriction, of a function</main></index>
+        Given a function <m>f</m> and a subset <m>D</m> of its domain, the
+        <term>restriction of <m>f</m> to <m>D</m></term> is denoted <m>\restrict{f}{D}</m> and
+        <me>
+          \restrict{f}{D} = \{ (x,y) \suchthat \; x \in D \, \land \, (x,y) \in f \}.
+        </me>
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    The way we typically use restriction is to eliminate any regions in
+    <m>\Dom{f}</m> that cause <m>f</m> to fail to be one-to-one. That is, we
+    choose a subset <m>D \subseteq \Dom{f}</m> so that <m>\restrict{f}{D}</m> is an injection.
+    This allows us to invert the restricted version of <m>f</m>. There can be
+    problems in doing this, but if we are careful about how we choose <m>D</m>,
+    these problems are usually resolvable.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Suppose <m>f</m> is a function that is not one-to-one, and <m>D</m> is a subset
+        of <m>\Dom{f}</m> such that <m>\restrict{f}{D}</m> <em>is</em> one-to-one. The restricted
+        function <m>\restrict{f}{D}</m> has an inverse which we will denote by <m>g</m>.
+        Note that <m>g</m> is a function from <m>\Rng{\restrict{f}{D}}</m> to <m>D</m>. Which
+        of the following is always true:
+        <me>
+          f(g(x)) = x  \mbox{or}   g(f(x)) = x ?
+        </me>
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    Technically, when we do the process outlined above (choose a domain
+    <m>D</m> so that the restriction <m>\restrict{f}{D}</m> is invertible, and
+    find that inverse)
+    the function we get is a <index><main>right inverse</main></index><em>right inverse</em> for <m>f</m>.
+  </p>
+
+  <p>
+    Let's take a closer look at the inverse sine function. This should
+    help us to really understand the <q>right inverse</q> concept.
+  </p>
+
+  <p>
+    A glance at the graph of <m>y = \sin{x}</m> will certainly convince us that
+    this function is not injective, but the portion of the graph shown
+    in bold below passes the horizontal line test.
+  </p>
+  <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  <image source="images/dcd355cffe9f94796d7769fec3a3132463f72e1c.png"/>
+  <p>
+    If we restrict the domain of the sine function to the closed interval
+    <m>[-\pi/2, \pi/2]</m>, we have an invertible function. The inverse of this
+    restricted function is the function we know as <m>\sin^{-1}(x)</m> or
+    <m>\mbox{arcsin} (x)</m>. The domain and range of <m>\sin^{-1}(x)</m> are
+    (respectively) the intervals
+    <m>[-1,1]</m> and <m>[-\pi/2, \pi/2]</m>.
+  </p>
+
+  <p>
+    Notice that if we choose a number <m>x</m> in the range <m>-1 \leq x \leq 1</m> and apply
+    the inverse sine function to it, we will get a number between <m>-\pi/2</m> and
+    <m>\pi/2</m> <mdash /> i.e. a number we can interpret as an <em>angle</em> in radian measure.
+    If we then proceed to calculate the sine of this angle, we will get back our
+    original number <m>x</m>.
+  </p>
+
+  <p>
+    On the other hand, if we choose an angle first, then take the sine of it to
+    get a number in <m>[-1,1]</m> and then take the inverse sine of <em>that</em>,
+    we will only end up with the same angle we started with <em>if</em>
+    we chose the original angle
+    so that it lay in the interval <m>[-\pi/2, \pi/2]</m>.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        We get a right inverse for the cosine function by restricting it to
+        the interval <m>[0,\pi]</m>. What are the domain and range of <m>\cos^{-1}</m>?
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    The <index><main>winding map</main></index><em>winding map</em> is a function that goes
+    from <m>\Reals</m> to the unit circle in the <m>x</m><ndash /><m>y</m> plane, defined by
+    <me>
+      W(t) = (\cos{t}, \sin{t}).
+    </me>
+  </p>
+
+  <p>
+    One can think of this map as literally winding the infinitely long
+    real line around and around the circle. Obviously, this is not an
+    injection <mdash /> there are an infinite number of values of <m>t</m> that
+    get mapped to (for instance) the point <m>(1,0)</m>, <m>t</m> can be any integer
+    multiple of <m>2\pi</m>.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        What is the set <m>W^{-1}(\{(0,1)\})</m> ?
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    If we restrict <m>W</m> to the half-open interval <m>[0, 2\pi)</m> the restricted
+    function <m>\restrict{W}{[0, 2\pi)}</m> is an injection. The inverse function is
+    not easy to write down, but it is possible to express (in terms
+    of the inverse functions of sine and cosine) if we consider the
+    four cases determined by what quadrant a point on the unit circle
+    may lie in.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Suppose <m>(x,y)</m> represents a point on the unit circle. If <m>(x,y)</m> happens
+        to lie on one of the coordinate axes we have
+        <md>
+          <mrow>W^{-1}((1,0)) = 0</mrow>
+          <mrow>W^{-1}((0,1)) = \pi/2</mrow>
+          <mrow>W^{-1}((-1,0)) = \pi</mrow>
+          <mrow>W^{-1}((0,-1)) = 3\pi/2.</mrow>
+        </md>
+      </p>
+
+      <p>
+        If neither <m>x</m> nor <m>y</m> is zero, there are four cases to consider.
+        Write an expression for <m>W^{-1}((x,y))</m> using the cases
+        (i) <m>x>0 \, \land \, y>0</m>,
+        (ii) <m>x\lt 0 \, \land \, y>0</m>,
+        (iii) <m>x\lt 0 \, \land \, y\lt 0</m> and
+        (iv) <m>x>0 \, \land \, y\lt 0</m>.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    This last example that we have done (the winding map) was unusual in that
+    the outputs were ordered pairs. In thinking of this map as a relation
+    (that is, as a set of ordered pairs) we have an ordered pair in which
+    the second element is an ordered pair! Just for fun, here is another
+    way of expressing the winding map:
+    <me>
+      W = \{ (t, (\cos{t}, \sin{t})) \suchthat \, t \in \Reals \}
+    </me>
+  </p>
+
+  <p>
+    When dealing with very complicated expressions involving ordered
+    pairs, or more generally, ordered <m>n</m>-tuples, it is useful to
+    have a way to refer succinctly to the pieces of a tuple.
+  </p>
+
+  <p>
+    Let's start by considering the set <m>P = \Reals \times \Reals</m> <mdash /> i.e.
+    <m>P</m> is the <m>x</m><ndash /><m>y</m> plane. There are two functions, whose domain is <m>P</m>
+    that <q>pick out</q> the <m>x</m>, and/or <m>y</m> coordinate. These functions are
+    called <m>\pi_1</m> and <m>\pi_2</m>, <m>\pi_1</m> is the projection onto the first
+    coordinate and <m>\pi_2</m> is the projection onto the second coordinate.<fn>Don't think of the usual <m>\pi \approx 3.14159</m> when looking at <m>\pi_1</m> and 
+    <m>\pi_2</m>.  These functions are named as they are because <m>\pi</m> is the Greek 
+    letter corresponding to `p' which stands for <q>projection.</q></fn>
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        The function <m>\pi_1: \Reals \times \Reals \longrightarrow \Reals</m> known
+        as <index><main>projection</main></index><term>projection onto the first coordinate</term> is
+        defined by
+        <me>
+          \pi_1((x,y)) = x.
+        </me>
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    The definition of <m>\pi_2</m> is entirely analogous.
+  </p>
+
+  <p>
+    You should note that these projection functions are <em>very</em> bad
+    as far as being one-to-one is concerned. For instance, the preimage
+    of <m>1</m> under the map <m>\pi_1</m> consists of all the points on the vertical line
+    <m>x=1</m>. That's a lot of preimages! These guys are so far from being
+    one-to-one that it seems impossible to think of an appropriate restriction
+    that would become invertible. Nevertheless, there is a function that
+    provides a right inverse for both <m>\pi_1</m> and <m>\pi_2</m>. Now, these projection
+    maps go from <m>\Reals \times \Reals</m> to <m>\Reals</m> so an inverse needs to be
+    a map from <m>\Reals</m> to <m>\Reals \times \Reals</m>. What is a reasonable way to
+    produce a <em>pair</em> of real numbers if we have a single real number in hand?
+    There are actually many ways one could proceed, but one reasonable choice is
+    to create a pair where the input number appears in both coordinates. This
+    is the so-called <index><main>diagonal map</main></index><em>diagonal map</em>,
+    <m>d:\Reals \times \Reals \longrightarrow \Reals</m>, defined by <m>d(a) = (a,a)</m>.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Which of the following is always true,
+        <me>
+          d(\pi_1((x,y)) = (x,y)  \mbox{or}   \pi_1(d(x)) = x?
+        </me>
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    There are a few other functions that it will be convenient to
+    introduce at this stage. All of them are aspects of the
+    characteristic function of a subset, so we'll start with that.
+  </p>
+
+  <p>
+    Whenever we have a subset/superset relationship, <m>S \subseteq D</m>,
+    it is possible to define a function whose codomain is <m>\{0,1\}</m>
+    which performs a very useful task <mdash /> if an input <m>x</m> is in the
+    set <m>S</m> the function will indicate this by returning 1, otherwise
+    it will return 0. The function which has this behavior is known
+    as <m>1_S</m>, and is called the <index><main>characteristic function</main></index>
+    <em>characteristic function of the subset <m>S</m></em> (There are those
+    who use the term <index><main>indicator function</main></index><em>indicator function of <m>S</m></em>
+    for <m>1_S</m>.) By definition,
+    <m>D</m> is the domain of this function.
+    <md>
+      <mrow>1_S: D \longrightarrow \{0,1\}</mrow>
+      <mrow>1_S(x) = \left\{ \begin{array}{cl} 1 \amp  \mbox{if}  \, x \in S \\ 0 \amp  \mbox{otherwise} 
+      \end{array}  \right.</mrow>
+    </md>
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        If you have the characteristic function of a subset <m>S</m>, how can you
+        create the characteristic function of its complement, <m>\overline{S}</m>.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    A characteristic function may be thought of as an embodiment of a
+    membership criterion. The logical open sentence <q><m>x \in S</m></q> being true
+    is the same thing as the equation <q><m>1_S(x) = 1</m>.</q> There is a notation,
+    growing in popularity, that does the same thing for an arbitrary open sentence.
+    The <index><main>Iverson bracket</main></index><em>Iverson bracket</em> notation uses the
+    shorthand <m>[ P(x) ]</m> to represent a function that sends any <m>x</m> that makes
+    <m>P(x)</m> true to 1, and any inputs that make <m>P(x)</m> false will get sent to 0.
+    <me>
+      [ P(x) ] = \left\{ \begin{array}{cl} 1 \amp  \mbox{if}  \, P(x) \\ 0 \amp  \mbox{otherwise} 
+      \end{array}  \right.
+    </me>
+  </p>
+
+  <p>
+    The Iverson brackets can be particularly useful in expressing and simplifying
+    sums. For example, we can write <m>\sum_{i=1}^{24} [2 \divides i]</m> to
+    find the number of even natural numbers less than 25. Similarly, we can write
+    <m>\sum_{i=1}^{24} [3 \divides i]</m> to find the number of natural numbers less than
+    25 that are divisible by 3.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        What does the following formula count?
+        <me>
+          \sum_{i=1}^{24} [2 \divides i] + [3 \divides i] - [6 \divides i]
+        </me>
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    There is a much more venerable notation known as the <index><main>Kronecker delta</main></index>
+    <em>Kronecker delta</em> that can be thought of as a special case of the
+    idea inherent in Iverson brackets. We write <m>\delta_{ij}</m> as a shorthand
+    for a function that takes two inputs, <m>\delta(i,j)</m> is 1 if and only if
+    <m>i</m> and <m>j</m> are equal.
+    <me>
+      \delta_{ij} =  \left\{ \begin{array}{cl} 1 \amp  \mbox{if}  \; i=j \\ 0 \amp  \mbox{otherwise} 
+      \end{array}  \right.
+    </me>
+  </p>
+
+  <p>
+    The corresponding Iverson bracket would simply be <m>[i=j]</m>.
+  </p>
+
+  <p>
+    We'll end this section with a function that will be especially important
+    in <xref ref="ch_card">Chapter</xref>. If we have an arbitrary subset of the natural
+    numbers, we can associate it with an infinite string of 0's and 1's. By
+    sticking a decimal point in front of such a thing, we get binary notation
+    for a real number in the interval <m>[0,1]</m>. There is a subtle problem that
+    we'll deal with when we study this function in more detail in <xref ref="ch_card">Chapter</xref> <mdash /> some real numbers can be expressed in two different ways in base 2.
+    For example, <m>1/2</m> can either be written as <m>.1</m> or as <m>.0\overline{1}</m> (where,
+    as usual, the overline indicates a pattern that repeats forever).
+    For the moment, we are talking about
+    defining a function <m>\phi</m> whose domain is <m>{\mathcal P}(\Naturals)</m> and
+    whose codomain is the set of all infinite binary strings.
+    Let us denote these binary expansions by
+    <m>.b_1b_2b_3b_4\ldots</m>. Suppose <m>A</m> is a subset of <m>\Naturals</m>,
+    then the binary expansion associated with <m>A</m> will be
+    determined by <m>b_i = 1_A(i)</m>. (Alternatively, we can use the Iverson
+    bracket notation: <m>b_i = [i \in A]</m>.)
+  </p>
+
+  <p>
+    The function <m>\phi</m> defined in the last paragraph turns out to be a
+    bijection <mdash /> given a subset we get a unique binary expansion, and given
+    binary expansion we get (using <m>\phi^{-1}</m>) a unique subset of
+    <m>\Naturals</m>.
+  </p>
+
+  <p>
+    A few examples will
+    probably help to clarify this function's workings. Consider
+    the set <m>\{1,2,3\} \subseteq \Naturals</m>, the binary expansion that this
+    corresponds to will have 1's in the first three positions after the
+    decimal <mdash /> <m>\phi(\{1,2,3\}) = .111</m> this is the number written .875
+    in decimal. The infinite repeating binary number <m>.\overline{01}</m>
+    is the base-2 representation of <m>1/3</m>, it is easy to see that
+    <m>.\overline{01}</m> is the image of the set of odd naturals, <m>\{1,3,5,\ldots\}</m>.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Find the binary representation for the real number which is the image of
+        the set of even numbers under <m>\phi</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Find the binary representation for the real number which is the image of
+        the set of triangular numbers under <m>\phi</m>. (Recall that the triangular
+        numbers are <m>T = \{1,3,6,10,15, \ldots \}</m>.)
+      </p>
+    </statement>
+  </exercise>
+  <exercises>
+
+    <ol>
+      <li><p>
+          The <m>n</m>-th triangular number, denoted <m>T(n)</m>, is given by the formula
+          <m>T(n) = (n^2 + n)/2</m>. If we regard this formula as a function from <m>\Reals</m> to
+          <m>\Reals</m>, it fails the horizontal line test and so it is not invertible. Find a
+          suitable restriction so that T is invertible.
+        </p></li>
+
+      <li><p>
+          The usual algebraic procedure for inverting <m>T(x) = (x^2+x)/2</m> fails. Use
+          your knowledge of the geometry of functions and their inverses to find
+          a formula for the inverse. (Hint: it may be instructive to first invert
+          the simpler formula <m>S(x) = x^2/2</m> <mdash /> this will get you the right vertical
+          scaling factor.)
+        </p></li>
+
+      <li><p>
+          What is <m>\pi_2(W(t))</m>?
+        </p></li>
+
+      <li><p>
+          Find a right inverse for <m>f(x) = |x|</m>.
+        </p></li>
+
+      <li><p>
+          In three-dimensional space we have projection functions that go onto
+          the three coordinate axes (<m>\pi_1</m>, <m>\pi_2</m> and <m>\pi_3</m>) and we also have
+          projections onto coordinate planes.  For example,
+          <m>\pi_{12}: \Reals \times \Reals \times \Reals \longrightarrow \Reals \times \Reals</m>, defined by
+          <me>
+            \pi_{12}((x,y,z)) = (x,y)
+          </me>
+          is the projection onto the <m>x</m><ndash /><m>y</m> coordinate plane.
+
+          The triple of functions  <m>(\cos{t}, \sin{t}, t)</m> is a parametric
+          expression for a helix.  Let 
+          <m>H = \{ (\cos{t}, \sin{t}, t) \suchthat t \in \Reals \}</m> be the set of all
+          points on the helix.  What is the set <m>\pi_{12}(H)</m> ?  What are the
+          sets <m>\pi_{13}(H)</m> and <m>\pi_{23}(H)</m>?
+        </p></li>
+
+      <li><p>
+          Consider the set <m>\{1, 2, 3, \ldots, 10\}</m>.  Express the characteristic
+          function of the subset <m>S = \{1, 2, 3 \}</m> as a set of ordered pairs.
+        </p></li>
+
+      <li><p>
+          If <m>S</m> and <m>T</m> are subsets of a set <m>D</m>, what is the product of
+          their characteristic functions <m>1_S \cdot 1_T</m> ?
+        </p></li>
+
+      <li><p>
+          Evaluate the sum
+          <me>
+            \sum_{i=1}^{10} \frac{1}{i} \cdot [ i \; \mbox{is prime}  ].
+          </me>
+        </p></li>
+    </ol>
+  </exercises>
+</section>

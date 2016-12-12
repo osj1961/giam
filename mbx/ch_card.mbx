@@ -1,0 +1,17 @@
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ch_card">
+  <title>Cardinality</title>
+  <introduction>
+    <p>
+      <em>The very existence of flame-throwers proves that some time,
+      somewhere, someone said to themselves, <q>You know, I want to set
+      those people over there on fire, but I'm just not close enough
+      to get the job done.</q> <ndash />George Carlin</em>
+    </p>
+  </introduction>
+  <xi:include  href="sec_equiv_sets.mbx" />
+  <xi:include  href="section8-2.mbx" />
+  <xi:include  href="sec_cantors_thm.mbx" />
+  <xi:include  href="section8-4.mbx" />
+  <xi:include  href="section8-5.mbx" />
+</chapter>

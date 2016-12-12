@@ -1,0 +1,203 @@
+
+<section xml:id="sec_equiv_sets">
+  <title>Equivalent sets</title>
+  <p>
+    We have seen several interesting examples of equivalence relations
+    already, and in this section we will explore one more: we'll say two sets are equivalent
+    if they have the same number of elements. Usually, an equivalence relation
+    has the effect that it highlights one characteristic of the objects being studied,
+    while ignoring all the others. Equivalence of sets brings the issue of size (a.k.a.
+    cardinality) into sharp focus while, at the same time, it forgets all about the
+    many other features of sets. Sets that are equivalent (under the relation we
+    are discussing) are sometimes said to be <index><main>equinumerous</main></index>
+    <em>equinumerous</em>
+    <fn>Perversely, there are also those who use the term <em>equipollent</em> 
+    to indicate that sets are the same size. This term actually applies to 
+    logical statements that are deducible from one another.</fn>.
+  </p>
+
+  <p>
+  A couple of examples may be in order.
+
+  <ul>
+    <li><p>
+        If <m>A = \{1, 2, 3\}</m> and <m>B = \{a, b, c\}</m> then <m>A</m> and <m>B</m> are equivalent.
+      </p></li>
+
+    <li><p>
+        Since the empty set is unique <mdash /> <m>\emptyset</m> is the only set having 0 elements <mdash /> it
+        follows that there are no other sets equivalent to it.
+      </p></li>
+
+    <li><p>
+        Every singleton set<fn>Recall that a 
+        singleton set is a set having just one element.</fn> 
+        is equivalent to every other singleton set.
+      </p></li>
+  </ul>
+  </p>
+
+  <p>
+    Hopefully these examples are relatively self-evident. Unfortunately, that
+    very self-evidence may tend to make you think that this notion of equivalence
+    isn't all that interesting <mdash /> nothing could be further from the truth! The
+    notion of equivalence of sets becomes really interesting when we study infinite
+    sets. Once we have the right definition in hand we will be able to prove
+    some truly amazing results. For instance, the sets <m>\Naturals</m> and <m>\Rationals</m> turn out to be equivalent. Since the naturals are wholly contained in the rationals this is (to say the least) counter-intuitive! Coming up with the <q>right</q> definition for this concept is crucial.
+  </p>
+
+  <p>
+    We could make the following:
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        (Well . . . not quite.) For all sets <m>A</m> and <m>B</m>, we say <m>A</m> and <m>B</m> are
+        equivalent, and write <m>A \equiv B</m> iff <m>|A| = |B|</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    The problem with this definition is that it is circular. We're trying to
+    come up with an equivalence relation so that the equivalence classes will
+    represent the various cardinalities of sets (i.e. their sizes) and we
+    define the relation in terms of cardinalities. We won't get anything new
+    from this.
+  </p>
+
+  <p>
+    Georg Cantor was the first person to develop the modern notion of the
+    equivalence of sets. His early work used the notion implicitly, but when he
+    finally developed the concept of one-to-one correspondences in an explicit
+    way he was able to prove some amazing facts. The phrase <q>one-to-one correspondence</q>
+    has a fairly impressive ring to it, but one can discover what it
+    means by just thinking carefully about what it means to count something.
+  </p>
+
+  <p>
+    Consider the solmization syllables used for the notes of the major scale
+    in music; they form the set <m>\{\mbox{do, re, mi, fa, so, la, ti} \}</m>.
+    What are we doing when
+    we count this set (and presumably come up with a total of 7 notes)? We first
+    point at `do' while saying `one,' then point at `re' while saying `two,'
+    et cetera.
+    In a technical sense we are creating a one-to-one correspondence between the
+    set containing the seven syllables and the special set <m>\{1, 2, 3, 4, 5, 6, 7\}</m>. You should notice that this one-to-one correspondence is by no means unique. For
+    instance we could have counted the syllables in reverse <mdash /> a descending scale,
+    or in some funny order <mdash /> a little melody using each note once. The fact that
+    there are seven syllables in the solmization of the major scale is equivalent
+    to saying that there exists a one-to-one correspondence between the syllables
+    and the special set <m>\{1, 2, 3, 4, 5, 6, 7\}</m>. Saying <q>there exists</q> in this situation may seem a bit weak since in fact there are <m>7! = 5040</m> correspondences, but <q>there exists</q> is what we really want here. What exactly is a one-to-one
+    correspondence? Well, we've actually seen such things before <mdash /> a one-to-one
+    correspondence is really just a bijective function between two sets. We're
+    finally ready to write a definition that Georg Cantor would approve of.
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        For all sets <m>A</m> and <m>B</m>, we say <m>A</m> and <m>B</m> are equivalent, and write
+        <m>A \equiv B</m> iff there exists a one-to-one (and onto) function <m>f</m>, with <m>\Dom{f} = A</m> and <m>\Rng{f} = B</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Somewhat more succinctly, one can just say the sets are equivalent iff
+    there is a bijection between them.
+  </p>
+
+  <p>
+    We are going to ask you to prove that the above definition defines an
+    equivalence relation in the exercises for this section. In order to give you a
+    bit of a jump start on that proof we'll outline what the proof that the relation
+    is symmetric should look like.
+  </p>
+
+  <blockquote>
+  To show that the relation is symmetric we must assume that <m>A</m>
+  and <m>B</m> are sets with <m>A \equiv B</m> and show that this implies that
+  <m>B \equiv A</m>. According to the definition above this means that we'll
+  need to locate a function (that is one-to-one) from <m>B</m> to <m>A</m>. On
+  the other hand, since it is given that <m>A \equiv B</m>, the definition tells
+  us that there actually is an injective function, <m>f</m>, from <m>A</m> to <m>B</m>.
+  The inverse function <m>f^{-1}</m> would do exactly what we'd like (namely
+  form a map from B to A) assuming that we can show that <m>f^{-1}</m>
+  has the right properties. We need to know that <m>f^{-1}</m> is a function
+  (remember that in general the inverse of a function is only a
+  relation) and that it is one-to-one. That <m>f^{-1}</m> is a function is a
+  consequence of the fact that <m>f</m> is one-to-one. That <m>f^{-1}</m> is one-to-one
+  is a consequence of the fact that <m>f</m> is a function.
+  </blockquote>
+
+  <p>
+    The above is just a sketch of a proof. In the exercise you'll need to fill
+    in the rest of the details as well as provide similar arguments for reflexivity
+    and transitivity.
+  </p>
+
+  <p>
+    For each possible finite cardinality <m>k</m>, there are many, many sets having
+    that cardinality, but there is one set that stands out as the most basic <mdash /> the
+    set of numbers from <m>1</m> to <m>k</m>. For each cardinality <m>k > 0</m>, we use the symbol
+    <m>\Naturals_k</m> to indicate this set:
+    <me>
+      \Naturals_k \; = \; \{1, 2, 3, \ldots , k\}.
+    </me>
+  </p>
+
+  <p>
+    The finite cardinalities are the equivalence classes (under the relation of
+    set equivalence) containing the empty set and the sets <m>\Naturals_k</m>.
+    Of course there
+    are also infinite sets! The prototype for an infinite set would have to be
+    the entire set <m>\Naturals</m>.
+    The long-standing tradition is to use the
+    symbol <index><main>Aleph<ndash />naught</main></index>
+    <m>\aleph_0</m><fn>The Hebrew letter (capital) aleph with a 
+    subscript zero <mdash /> usually pronounced <q>aleph naught.</q></fn>
+    for the cardinality
+    of sets having the same size as <m>\Naturals</m>, alternatively, such sets
+    are known as <q>countable.</q> One could make a pretty good argument that
+    it is the finite sets that are actually countable! After all it would literally take forever to count the natural numbers! We have to presume that the
+    people who instituted
+    this terminology meant for <q>countable</q> to mean <q>countable, in principle</q>
+    or <q>countable if you're willing to let me keep counting forever</q> or maybe
+    <q>countable if you can keep counting faster and faster and are capable of
+    ignoring the speed of light limitations on how fast your lips can move.</q> Worse
+    yet, the term <q>countable</q> has come to be used for sets whose cardinalities are
+    either finite <em>or</em> the size of the naturals. If we want to refer specifically to the infinite sort of countable set most mathematicians
+    use the term <index><main>denumerable</main></index><em>denumerable</em> (although this is not universal) or <index><main>countably infinite</main></index> <em>countably infinite</em>.
+    Finally, there are sets
+    whose cardinalities are bigger than the naturals. In other words, there are
+    sets such that no one-to-one correspondence with <m>\Naturals</m> is possible.
+    We don't mean that people have looked for one-to-one correspondences
+    between such sets and <m>\Naturals</m> and haven't been able to find them <mdash /> we literally mean that it can't be done; and it is has been proved that it can't be done! Sets having cardinalities that are this ridiculously huge are known as <index><main>uncountable</main></index> <em>uncountable</em>.
+  </p>
+  <exercises>
+
+    <ol>
+      <li><p>
+          Name four sets in the equivalence class of <m>\{1, 2, 3\}</m>.
+        </p></li>
+
+      <li><p>
+          Prove that set equivalence is an equivalence relation.
+        </p></li>
+
+      <li><p>
+          Construct a Venn diagram showing the relationships between the sets of
+          sets which are finite, infinite, countable, denumerable and uncountable.
+        </p></li>
+
+      <li><p>
+          Place the sets <m>\Naturals</m>, <m>\Reals</m>, <m>\Rationals</m>, <m>\Integers</m>, <m>\Integers \times \Integers</m>, <m>\Complexes</m>, <m>\Naturals_{2007}</m> and <m>\emptyset</m>; 
+          somewhere on the Venn diagram above. (Note to students (and graders): 
+          there are no wrong answers to this question, the point is to see what 
+          your intuition about these sets says at this point.)
+        </p></li>
+    </ol>
+  </exercises>
+</section>

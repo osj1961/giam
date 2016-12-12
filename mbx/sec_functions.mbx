@@ -1,0 +1,586 @@
+
+<section xml:id="sec_functions">
+  <title>Functions</title>
+  <p>
+    The concept of a function is one of the most useful abstractions
+    in mathematics. In fact it is an abstraction that can be further
+    abstracted! For instance an <index><main>operator</main></index><em>operator</em>
+    is an entity which takes functions as inputs and produces functions
+    as outputs, thus an operator is to functions as functions themselves
+    are to numbers. There are many operators that you have certainly
+    encountered already <mdash /> just not by that name. One of the most
+    famous operators is <q>differentiation,</q> when you take the derivative
+    of some function, the answer you obtain is another function.
+    If two different people are given the same differentiation problem
+    and they come up with different answers, we <em>know</em> that at least
+    one of them has made a mistake! Similarly, if two calculations of the
+    value of a function are made for the same input, they <em>must</em> match.
+  </p>
+
+  <p>
+    The property we are discussing used to be captured by saying that a
+    function needs to be <q>well-defined.</q> The old school definition of a
+    function was:
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        A <term>function</term> <m>f</m> is a well-defined rule, that, given any input
+        value <m>x</m> produces a unique output<fn>The use of the notation 
+        <m>f(x)</m> to indicate the output of function <m>f</m> associated with input <m>x</m> 
+        was instituted by Leonard Euler, and so it is known as Euler notation.</fn>
+        value <m>f(x)</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    A more modern definition of a function is the following.
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        A <term>function</term> is a binary relation which does not contain
+        distinct pairs having the same initial element.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    When we think of a function as a special type of binary relation,
+    the pairs that are <q>in</q> the function have the form <m>(x, f(x))</m>,
+    that is, they consist of an input and the corresponding output.
+  </p>
+
+  <p>
+    We have gotten relatively used to relations <q>on</q> a set, but recall
+    that the more general situation is that a binary relation is
+    a subset of <m>A \times B</m>. In this setting, if the relation is
+    actually a function <m>f</m>, we say that <m>f</m> is a function <em>from</em> <m>A\emph{to}B</m>. Now, quite often there are input values that simply don't
+    work for a given function (for instance the well-known <q>you can't take
+    the square root of a negative</q> rule). Also, it is often the case that
+    certain outputs just can't happen. So, when dealing with a function
+    as a relation contained in <m>A \times B</m> there are actually four sets
+    that are of interest <mdash /> the sets <m>A</m> and <m>B</m> (of course) but also some
+    sets that we'll denote by <m>A'</m> and <m>B'</m>. The set <m>A'</m> consists of those
+    elements of <m>A</m> that actually appear as the first coordinate of a pair
+    in the relation <m>f</m>. The set <m>B'</m> consists of those elements of <m>B</m>
+    that actually appear as the second coordinate of a pair in the relation <m>f</m>.
+    A generic example of how these four sets might look is given in <xref ref="fig_generic_function">Figure</xref>.
+  </p>
+
+  <figure xml:id="fig_generic_function" >
+    <caption>The sets related to an arbitrary function.</caption>
+    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+      \reset@font\fontsize{#1}{#2pt}
+      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+      \selectfont}\fi
+    <image source="images/e4da943afd93931db3290c98ac0d461cf87b9e29.png"/>
+  </figure>
+
+  <p>
+    Sadly, only three of the sets we have just discussed are known to
+    the mathematical world. The set we have denoted <m>A'</m> is called the
+    <em>domain</em> of the function <m>f</m>. The set we have denoted <m>B'</m> is
+    known as the <em>range</em> of the function <m>f</m>. The set we have denoted
+    <m>B</m> is called the <em>codomain</em> of the function <m>f</m>. The set we
+    have been calling <m>A</m> does not have a name. In fact, the formal
+    definition of the term <q>function</q> has been rigged so that there
+    is no difference between the sets <m>A</m> and <m>A'</m>. This seems a shame,
+    if you think of range and domain as being primary, doesn't it seem
+    odd that we have a way to refer to a superset of the range (i.e. the
+    codomain) but no way of referring to a superset of the domain?
+  </p>
+
+  <p>
+    Nevertheless, this is just the way it is <ellipsis /> There is only one
+    set on the input side <mdash /> the domain of our function.
+  </p>
+
+  <p>
+    The domain of
+    any relation is expressed by writing <m>\Dom{\relR}</m>. Which is
+    defined as follows.
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        If <m>\relR</m> is a relation from <m>A</m> to <m>B</m> then <m>\Dom{\relR}</m> is
+        a subset of <m>A</m> defined by
+        <me>
+          \Dom{\relR} = \{a \in A \suchthat \exists b \in B, (a,b) \in \relR \}
+        </me>
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    We should point out that the notation just given for the domain of a
+    relation <m>\relR</m>, (<m>\Dom{\relR}</m>) has analogs for the other
+    sets that are involved with a relation. We write <m>\Cod{\relR}</m>
+    to refer the the codomain of the relation, and <m>\Rng{\relR}</m>
+    to refer to the range.
+  </p>
+
+  <p>
+    Since we are now thinking of functions as special classes of relations, it follows that a function is just
+    a set of ordered pairs. This means that the identity of a function is
+    tied up, not just with a formula that gives the output for a given input,
+    but also with what values can be used for those inputs. Thus the function
+    <m>f(x)=2x</m> defined on <m>\Reals</m> is a completely different animal from
+    the function <m>f(x)=2x</m> defined on <m>\Naturals</m>. If you really want to
+    specify a function precisely you must give its domain as well as a
+    formula for it. Usually, one does this by writing a formula, then a
+    semicolon, then the domain. (E.g. <m>f(x)=x^2;  x \geq 0</m>.)
+  </p>
+
+  <p>
+    Okay, so, finally, we are prepared to give the real
+    definition of a function.
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        If <m>A</m> and <m>B</m> are sets, then <m>f</m> is a function from <m>A</m> to <m>B</m> (which
+        is expressed symbolically by <m>f:A\longrightarrow B</m>), if and only if
+        <m>f</m> is a subset of <m>A\times B</m>, <m>\Dom{f}=A</m> and <m>((a,b) \in f \; \land \; (a,c) \in f \; \implies \; b=c</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Recapping, a function <em>must</em> have its domain equal to the set <m>A</m>
+    where its inputs come from. This is sometimes expressed by saying that
+    a function is <em>defined</em> on its domain. A function's range and codomain
+    may be different however. In the event that the range and codomain <em>are</em>
+    the same (<m>\Cod{\relR} = \Rng{\relR}</m>)
+    we have a rather special situation and the function is graced by
+    the appellation <q>surjection.</q> The term <q>onto</q> is also commonly used
+    to describe a surjective function.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        There is an expression in mathematics, <q>Every function is onto its
+        range.</q> that really doesn't say very much. Why not?
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    If one has elements <m>x</m> and <m>y</m>, of the domain and codomain, (respectively)
+    and <m>y = f(x)</m><fn>Or, equivalently, <m>(x,y) \in f</m>.</fn> then one may
+    say that <q><m>y</m> is the image of <m>x</m></q> or that
+    <q><m>x</m> is a preimage of <m>y</m>.</q> Take careful note of the articles used in
+    these phrases <mdash /> we say <q><m>y</m> is <em>the</em> image of <m>x</m></q> but
+    <q><m>x</m> is <em>a</em> preimage of <m>y</m>.</q> This is because <m>y</m> is uniquely determined
+    by <m>x</m>, but not vice versa. For example, since the squares of <m>2</m> and <m>-2</m> are
+    both <m>4</m>, if we consider the function <m>f(x) = x^2</m>, the image of (say) <m>2</m>
+    is <m>4</m>, but a preimage for <m>4</m> could be either <m>2</m> or <m>-2</m>.
+  </p>
+
+  <p>
+    It would be pleasant if there were a nice way to refer to the preimage of
+    some element, <m>y</m>, of the range. One notation that you have probably
+    seen before is <q><m>f^{-1}(y)</m>.</q> There is a major difficulty with writing
+    down such a thing. By writing <q><m>f^{-1}</m></q> you are making a rather
+    vast presumption <mdash /> that there actually is a function that serves as an
+    inverse for <m>f</m>. Usually, there is not.
+  </p>
+
+  <p>
+    One can define an inverse for any relation, the inverse is formed by
+    simply exchanging the elements in the ordered pairs that make up <m>\relR</m>.
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        The <index><main>inverse relation</main></index><term>inverse relation</term> of a relation <m>\relR</m>
+        is denoted <m>\relR^{-1}</m> and
+        <me>
+          \relR^{-1} = \{ (y,x) \suchthat (x,y) \in \relR \}.
+        </me>
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    In terms of graphs, the inverse and the original relation are related
+    by being reflections in the line <m>y=x</m>. It is possible for one, both,
+    or neither of these to be functions. The canonical example to keep
+    in mind is probably <m>f(x) = x^2</m> and its inverse.
+  </p>
+  <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  <image source="images/284f365bf5be9a556c2f2761aa3b31e3308102b2.png"/>
+  <p>
+    The graph that we obtain by reflecting <m>y=f(x)=x^2</m> in the line <m>y=x</m> doesn't
+    pass the vertical line test and so it is the graph of (merely) a relation <mdash /> not of a function. The function <m>g(x) = \sqrt{x}</m> that we all know
+    and love is not truly the inverse of <m>f(x)</m>. In fact this function is
+    defined to make a specific (and natural) choice <mdash /> it returns the positive
+    square root of a number. But this leads to a subtle problem; if we start
+    with a negative number (say <m>-3</m>) and square it we get a positive number (<m>9</m>)
+    and if we then come along and take the square root we get another positive
+    number (<m>3</m>). This is problematic since we didn't end up where we started
+    which is what ought to happen if we apply a function followed by its inverse.
+  </p>
+
+  <p>
+    We'll try to handle the general situation in a bit, but for the moment let's
+    consider the nice case: when the inverse of a function is also a function.
+    When exactly does this happen? Well, we have just seen that the inverse
+    of a function doesn't necessarily pass the vertical line test, and it turns
+    out that that is the predominant issue. So, under what circumstances does
+    the inverse pass the vertical line test? When the original function
+    passes the so-called horizontal line test (every horizontal line
+    intersects the graph at most once). Thinking again about <m>f(x)=x^2</m>, there
+    are some horizontal lines that miss the graph entirely, but all horizontal
+    lines of the form <m>y=c</m> where <m>c</m> is positive will intersect the graph twice.
+    There are many functions that <em>do</em> pass the horizontal line test, for
+    instance, consider <m>f(x) = x^3</m>. Such functions are known as
+    <index><main>injection</main></index><em>injections</em>, this is the same thing as
+    saying a function is <q>one-to-one.</q> Injective functions can be inverted <mdash /> the domain of the inverse function of <m>f</m> will only be the range, <m>\Rng{f}</m>,
+    which as we have seen may fall short of the being the entire codomain, since
+    <m>\Rng{f} \subseteq \Cod{f}</m>.
+  </p>
+
+  <p>
+    Let's first define injections in a way that is divorced from thinking
+    about their graphs.
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        A function <m>f(x)</m> is an <term>injection</term> iff for all pairs of
+        inputs <m>x_1</m> and <m>x_2</m>, if <m>f(x_1) = f(x_2)</m> then <m>x_1=x_2</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    This is another of those defining properties that is designed so
+    that when it is true it is vacuously true. An injective function
+    never takes two distinct inputs to the same output. Perhaps the
+    cleanest way to think about injective functions is in terms of
+    preimages <mdash /> when a function is injective, preimages are unique.
+    Actually, this is a good time to mention something about surjective
+    functions and preimages <mdash /> if a function is surjective, every element
+    of the codomain <em>has</em> a preimage. So, if a function has both
+    of these properties it means that every element of the codomain
+    has one (and only one) preimage.
+  </p>
+
+  <p>
+    A function that is both injective and surjective (one-to-one and onto)
+    is known as a <index><main>bijection</main></index><em>bijection</em>. Bijections are tremendously
+    important in mathematics since they provide a way of perfectly matching
+    up the elements of two sets. You will probably spend a good bit of time
+    in the future devising maps between sets and then proving that they are
+    bijections, so we will start practicing that skill now<ellipsis />
+  </p>
+
+  <p>
+    Ordinarily, we will show that a function is a bijection by proving
+    separately that it is both a surjection and an injection.
+  </p>
+
+  <p>
+    To show that a function is surjective we need to show that it is
+    possible to find a preimage for every element of the codomain. If
+    we happen to know what the inverse function is, then it is easy to
+    find a preimage for an arbitrary element. In terms of the taxonomy
+    for proofs that was introduced in <xref ref="ch_proof1">Chapter</xref>, we are talking
+    about a constructive proof of an existential statement. A function <m>f</m>
+    is surjective iff <m>\forall y \in \Cod{f}, \exists x \in \Dom{f}, 
+    y = f(x)</m>, so to prove surjectivity is to find the <m>x</m> that <q>works</q> for an
+    arbitrary <m>y</m>. If this is done by literally naming <m>x</m>, we have
+    proved the statement constructively.
+  </p>
+
+  <p>
+    To show that a function
+    is an injection, we traditionally prove that the property used in the
+    definition of an injective function is true. Namely, we suppose that
+    <m>x_1</m> and <m>x_2</m> are distinct elements of <m>\Dom{f}</m> and that
+    <m>f(x_1)=f(x_2)</m> and then we show that actually <m>x_1 = x_2</m>. This is
+    in the spirit of a proof by contradiction <mdash /> if there were actually
+    distinct elements that get mapped to the same value then <m>f</m> would <em>not</em>
+    be injective, but by deducing that <m>x_1=x_2</m> we are contradicting that
+    presumption and so, are showing that <m>f</m> is indeed an injection.
+  </p>
+
+  <p>
+    Let's start by looking at a very simple example,
+    <m>f(x)=2x-1; \; x \in \Naturals</m>. Clearly this function
+    is not a surjection if we are thinking that <m>\Cod{f}=\Naturals</m>
+    since the outputs are always odd. Let <m>{\mathcal O} = \{1, 3, 5, 7, \ldots \}</m>
+    be the set of odd naturals.
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        The function <m>f:\Naturals \longrightarrow {\mathcal O}</m> defined by
+        <m>f(x) = 2x-1</m> is a bijection from <m>\Naturals</m> to <m>{\mathcal O}</m>.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      First we will show that <m>f</m> is surjective. Consider an arbitrary element
+      <m>y</m> of the set <m>\mathcal O</m>. Since <m>y \in {\mathcal O}</m> it follows that
+      <m>y</m> is both positive and odd. Thus there is an integer <m>k</m>, such that
+      <m>y=2k+1</m>, but also <m>y>0</m>. From this it follows that <m>2k+1 >0</m> and so
+      <m>k > -1/2</m>. Since <m>k</m> is also an integer, this last inequality implies
+      that <m>k \in \Znoneg</m>. (Recall that <m>\Znoneg = \{0,1,2,3, \ldots \}</m>.) We can easily verify that a preimage
+      for <m>y</m> is <m>k+1</m>, since <m>f(k+1) = 2(k+1)-1 = 2k+2-1 = 2k+1 = y</m>.
+    </p>
+
+    <p>
+      Next we show that <m>f</m> is injective. Suppose that there are two input
+      values, <m>x_1</m> and <m>x_2</m> such that <m>f(x_1) = f(x_2)</m>. Then <m>2x_1-1 = 2x_2-1</m>
+      and simple algebra leads to <m>x_1=x_2</m>.
+    </p>
+  </proof>
+
+  <p>
+    For a slightly more complicated example
+    consider the function from <m>\Naturals</m> to <m>\Integers</m> defined by
+    <me>
+      f(x) = \left\{ \begin{array}{cl} x/2 \amp  \mbox{if \(x\) is even}  \\ -(x-1)/2 \amp  \mbox{if \(x\) is odd} 
+      \end{array}  \right.
+    </me>
+  </p>
+
+  <p>
+    This function does quite a handy little job, it matches up the natural
+    numbers and the integers in pairs. Every even natural gets matched with
+    a positive integer and every odd natural (except 1) gets matched with a
+    negative integer (1 gets paired with 0). This function is really doing
+    something remarkable <mdash /> common sense would seem to indicate that the integers
+    must be a larger set than the naturals (after all <m>\Naturals</m> is completely
+    contained inside of <m>\Integers</m>), but the function <m>f</m> defined above serves
+    to show that these two sets are <em>exactly the same size!</em>
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        The function <m>f</m> defined above is bijective.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      First we will show that <m>f</m> is surjective.
+    </p>
+
+    <p>
+      It suffices to find a preimage for an arbitrary element of <m>\Integers</m>.
+      Suppose that <m>y</m> is a particular but arbitrarily chosen integer. There
+      are two cases to consider: <m>y\leq 0</m> and <m>y>0</m>.
+    </p>
+
+    <p>
+      If <m>y>0</m> then <m>x=2y</m> is a preimage for <m>y</m>. This follows easily since
+      <m>x=2y</m> is obviously even and so <m>x</m>'s image will be
+      defined by the first case in the definition of <m>f</m>. Thus <m>f(x) = f(2y) =
+      (2y)/2 = y</m>.
+    </p>
+
+    <p>
+      If <m>y \leq 0</m> then <m>x=1-2y</m> is a preimage for <m>y</m>. Clearly, <m>1-2y</m> is odd
+      whenever <m>y</m> is an integer, thus this value for <m>x</m> will fall into the second
+      case in the definition of <m>f</m>. So, <m>f(x) = f(1-2y) = -((1-2y)-1)/2 = -(-2y)/2 = y</m>.
+    </p>
+
+    <p>
+      Since the cases <m>y>0</m> and <m>y\leq 0</m> are exhaustive (that is, every <m>y</m> in
+      <m>\Integers</m> falls into one or the other of these cases), and we have found
+      a preimage for <m>y</m> in both cases, it follows that <m>f</m> is surjective.
+    </p>
+
+    <p>
+      Next, we will show that <m>f</m> is injective.
+    </p>
+
+    <p>
+      Suppose that <m>x_1</m> and <m>x_2</m> are elements of <m>\Naturals</m> and that
+      <m>f(x_1)=f(x_2)</m>. Consider the following three cases: <m>x_1</m> and <m>x_2</m>
+      are both even, both odd, or have opposite parity.
+    </p>
+
+    <p>
+      If <m>x_1</m> and <m>x_2</m> are both even, then by the definition of <m>f</m> we
+      have <m>f(x_1) = x_1/2</m> and <m>f(x_2) = x_2/2</m> and since these functional
+      values are equal, we have <m>x_1/2 = x_2/2</m>. Doubling both sides of this
+      leads to <m>x_1=x_2</m>.
+    </p>
+
+    <p>
+      If <m>x_1</m> and <m>x_2</m> are both odd, then by the definition of <m>f</m> we
+      have <m>f(x_1) = -(x_1-1)/2</m> and <m>f(x_2) = -(x_2-1)/2</m> and since these functional
+      values are equal, we have <m>-(x_1-1)/2 = -(x_2-1)/2</m>. A bit more
+      algebra (doubling, negating and adding one to both sides) leads to
+      <m>x_1=x_2</m>.
+    </p>
+
+    <p>
+      If <m>x_1</m> and <m>x_2</m> have opposite parity, we will assume w.l.o.g. that
+      <m>x_1</m> is even and <m>x_2</m> is odd. The equality <m>f(x_1)=f(x_2)</m> becomes
+      <m>x_1/2 = -(x_2-1)/2</m>. Note that <m>x_1 \geq 2</m> so <m>f(x_1) = x_1/2 \geq 1</m>.
+      Also, note that <m>x_2 \geq 1</m> so
+      <md>
+        <mrow>x_2 - 1 \geq 0</mrow>
+        <mrow>(x_2-1)/2 \geq 0</mrow>
+        <mrow>-(x_2-1)/2 \leq 0</mrow>
+        <mrow>f(x_2) \leq 0</mrow>
+      </md>
+      therefore we have a contradiction since it is impossible
+      for the two values <m>f(x_1)</m> and <m>f(x_2)</m> to be equal while <m>f(x_1) \geq 1</m>
+      and <m>f(x_2) \leq 0</m>.
+    </p>
+
+    <p>
+      Since the last case under consideration leads to a contradiction, it follows
+      that <m>x_1</m> and <m>x_2</m> never have opposite parities, and so the first two
+      cases are exhaustive <mdash /> in both of those cases we reached the desired
+      conclusion that <m>x_1 = x_2</m> so it follows that <m>f</m> is injective.
+    </p>
+  </proof>
+
+  <p>
+    We'll conclude this section by mentioning that the ideas of <q>image</q>
+    and <q>preimage</q> can be extended to sets. If <m>S</m> is a subset of
+    <m>\Dom{f}</m> then the <index><main>image, of a set</main></index><em>image of <m>S</m> under <m>f</m></em>
+    is denoted <m>f(S)</m> and
+    <me>
+      f(S) = \{ y \suchthat \exists x \in \Dom{f}, x \in S \land y = f(x) \}.
+    </me>
+  </p>
+
+  <p>
+    Similarly, if <m>T</m> is a subset of of <m>\Rng{f}</m> we can define something akin
+    to the preimage. The <index><main>inverse image, of a set</main></index><em>inverse image
+    of the set <m>T</m> under the function <m>f</m></em> is denoted <m>f^{-1}(T)</m> and
+    <me>
+      f^{-1}(T) = \{ x \suchthat \exists y \in \Cod{f}, y \in T \land y=f(x) \}.
+    </me>
+  </p>
+
+  <p>
+    Essentially, we have extended the function <m>f</m> so that it goes between the
+    power sets of its codomain and range! This new notion gives us some elegant
+    ways of restating what it means to be surjective and injective.
+  </p>
+
+  <p>
+    A function <m>f</m> is surjective iff <m>f(\Dom{f}) = \Cod{f}</m>.
+  </p>
+
+  <p>
+    A function <m>f</m> is injective iff the inverse images of singletons
+    are always singletons. That is,
+    <me>
+      \forall y \in \Rng{f}, \exists x \in \Dom{f},  f^{-1}(\{y\}) = \{x\}.
+    </me>
+  </p>
+  <exercises>
+
+    <ol>
+    <li><p>
+    For each of the following functions, give its domain, range and a possible codomain.
+
+    <ol>
+      <li><p>
+          <m>f(x) = \sin{(x)}</m>
+        </p></li>
+
+      <li><p>
+          <m>g(x) = e^x</m>
+        </p></li>
+
+      <li><p>
+          <m>h(x) = x^2</m>
+        </p></li>
+
+      <li><p>
+          <m>m(x) = \frac{x^2+1}{x^2-1}</m>
+        </p></li>
+
+      <li><p>
+          <m>n(x) = \lfloor x \rfloor</m>
+        </p></li>
+
+      <li><p>
+          <m>p(x) = \langle \cos{(x)}, \sin{(x)} \rangle</m>
+        </p></li>
+    </ol>
+    </p></li>
+
+    <li><p>
+        Find a bijection from the set of odd squares, <m>\{1, 9, 25, 49, \ldots\}</m>,
+        to the non-negative integers, <m>\Znoneg = \{0,1,2,3, \ldots\}</m>.
+        Prove that the function you just determined is both injective and surjective.
+        Find the inverse function of the bijection above.
+      </p></li>
+
+    <li><p>
+        The natural logarithm function <m>\ln (x)</m> is defined by a definite
+        integral with the variable <m>x</m> in the upper limit.
+        <me>
+          \ln (x) = \int_{t=1}^{x} \frac{1}{t} \, \mbox{d} t.
+        </me>
+        From this definition we can deduce that <m>\ln (x)</m> is strictly increasing on its
+        entire domain, <m>(0, \infty)</m>.  Why is this true?
+
+        We can use the above definition with <m>x=2</m> to find the value of 
+        <m>\ln (2) \approx .693</m>.  We will also take as given the following 
+        rule (which is valid for all logarithmic functions).
+        <me>
+          \ln(a^b) = b \ln(a)
+        </me>
+        Use the above information to show that there is neither an upper bound 
+        nor a lower bound for the values of the natural logarithm.  These facts
+        together with the information that <m>\ln</m> is strictly increasing show that
+        <m>\Rng{\ln} = \Reals</m>.
+      </p></li>
+
+    <li><p>
+        Georg Cantor developed a systematic way of listing the rational numbers.
+        By <q>listing</q> a set one is actually developing a bijection from <m>\Naturals</m> to
+        that set.  The method known as <q>Cantor's Snake</q> creates a bijection from
+        the naturals to the non-negative rationals.  
+        First we create an infinite table whose rows
+        are indexed by positive integers and whose columns are indexed by non-negative
+        integers <mdash /> the entries in this table are rational numbers of the form
+        <q>column index</q> / <q>row index.</q>  We then follow a snake-like path that
+        zig-zags across this table <mdash /> whenever we encounter a rational number that 
+        we haven't seen before (in lower terms) we write it down.  This is indicated 
+        in the diagram below by circling the entries.
+        <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+        \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+          \reset@font\fontsize{#1}{#2pt}
+          \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+          \selectfont}\fi
+        <image source="images/aa39e298f21779c6da86ce0b5fbac7aa8b57aea7.png"/>
+        Effectively this gives us a function <m>f</m> which produces the rational number 
+        that would be found in a given position in this list.  For example 
+        <m>f(1) = 0/1, f(2) = 1/1</m> and <m>f(5) = 1/3</m>.  
+
+        What is <m>f(26)</m>?  What is <m>f(30)</m>?  What is <m>f^{-1}(3/4)</m>? What is <m>f^{-1}(6/7)</m>?
+      </p></li>
+    </ol>
+  </exercises>
+</section>

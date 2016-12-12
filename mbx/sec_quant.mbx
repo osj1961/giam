@@ -1,0 +1,501 @@
+
+<section xml:id="sec_quant">
+  <title>Quantified statements</title>
+  <p>
+    All of the statements discussed in the previous sections were of the
+    <q>completely unambiguous</q> sort; that is, they didn't have any <em>unknowns</em>
+    in them. As a reader of this text, it's a sure bet that you've mastered
+    Algebra and are firmly convinced of the utility of <m>x</m> and <m>y</m>. Admittedly,
+    we've used variables to refer to sentences (or sentence fragments) themselves,
+    but we've said that sentences that had variables <em>in them</em> were ambiguous
+    and didn't even deserve to be called logical statements. The notion
+    of <index><main>quantification</main></index><em>quantification</em>
+    allows us to use the power of variables within a
+    sentence without introducing ambiguity.
+  </p>
+
+  <p>
+    Consider the sentence <q>There are exactly 7 odd primes less than 20.</q>
+    This sentence has some kind of ambiguity in it (because it doesn't mention
+    the primes explicitly) and yet it certainly seems to have a definite
+    truth value! The reason its truth value is known (by the way, it is T)
+    is that the sentence is quantified. <q>X is an odd prime less than 20.</q>
+    is an ambiguous sentence, but <q>There are exactly 7 distinct X's that
+    are odd primes less than 20.</q> is not. This example represents a fairly
+    unusual form of quantification. Usually, we take away the ambiguity
+    of a sentence having a variable in it by asserting one of two levels
+    of quantification: <q>this is true at least once</q> or <q>this is always true</q>.
+    We've actually seen the symbols (<m>\exists</m> and <m>\forall</m>) for these
+    concepts already (in <xref ref="sec_scary">Section</xref>).
+  </p>
+
+  <p>
+    An <index><main>open sentence</main></index><em>open sentence</em>
+    is one that has variables in it. We represent
+    open sentences using a sort of functional notation to show what
+    variables are in them.
+  </p>
+
+  <p>
+  Examples:
+
+  <ol>
+    <li>
+      <title>i)</title>
+      <p>
+        <m>P(x)</m> = <q><m>2^{2^x}+1</m> is a prime.</q>
+      </p></li>
+
+    <li>
+      <title>ii)</title>
+      <p>
+        <m>Q(x,y)</m> = <q><m>x</m> is prime or <m>y</m> is a divisor of <m>x</m>.</q>
+      </p></li>
+
+    <li>
+      <title>iii)</title>
+      <p>
+        <m>L(f,c,l)</m> = <q>The function <m>f</m> has limit <m>l</m> at <m>c</m>, if 
+        and only if, 
+        for every positive number <m>\epsilon</m>, there is a positive number <m>\delta</m> 
+        such that whenever <m>|x-c| \lt  \delta</m> it follows that <m>|f(x)-l| \lt  \epsilon</m>.</q>
+      </p></li>
+  </ol>
+  </p>
+
+  <p>
+    That last example certainly is a doozey! At first glance it would appear
+    to have more than three variables in it, and indeed it does! In order of
+    appearance, we have <m>f</m>, <m>l</m>, <m>c</m>, <m>\epsilon</m>, <m>\delta</m> and <m>x</m> <mdash /> the
+    last three variables that appear (<m>\epsilon</m>, <m>\delta</m> and <m>x</m>) are said
+    to be <index><main>bound variables</main></index><em>bound</em>.
+    A variable in an open sentence is bound if it is in the
+    scope of a quantifier. Bound variables don't need to be mentioned
+    in the argument list of the sentence. Unfortunately, when sentences are
+    given in natural languages the quantification status of a variable may
+    not be clear. For example in the third sentence above, the variable <m>\delta</m>
+    is easily seen to be in the scope of the quantifier <m>\exists</m> because of the
+    words <q>there is a positive number</q> that precede it. Similarly, <m>\epsilon</m>
+    is universally quantified (<m>\forall</m>) because the phrase <q>for every positive
+    number</q> appears before it. What is the status of <m>x</m>? Is it really bound?
+    The answers to such questions may not be clear at first, but after some
+    thought you should be able to decide that <m>x</m> is universally quantified.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        What word in example iii) indicates that <m>x</m> is in the
+        scope of a <m>\forall</m> quantifier?
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    It is not uncommon, in advanced Mathematics, to encounter compound sentences
+    involving dozens of variables and 4 or 5 levels of quantification. Such
+    sentences seem hopelessly complicated at first sight <mdash /> the key to
+    understanding them is to determine each variable's quantification status
+    explicitly and to break things down into simpler sub-parts.
+  </p>
+
+  <p>
+    For instance, in understanding example iii) above, it might be
+    useful to define some new open sentences:
+  </p>
+
+  <p>
+    <m>D(x,c,\delta)</m> = <q><m>|x-c| \lt  \delta</m></q>
+  </p>
+
+  <p>
+    <m>E(f,x,l,\epsilon)</m> = <q><m>|f(x)-l| \lt  \epsilon</m></q>
+  </p>
+
+  <p>
+    Furthermore, it's often handy to replace an awkward phrase (such as
+    <q>the limit of <m>f</m> at <m>c</m> is <m>l</m></q>) with symbols when possible.
+  </p>
+
+  <p>
+    Example iii) now looks like
+    <me>
+      \lim_{x\rightarrow c}f(x) = l \iff \forall \epsilon>0 \, \exists \delta>0 \, \forall x \, D(x,c,\delta) \implies E(f,x,l,\epsilon).
+    </me>
+  </p>
+
+  <p>
+    The sentence <m>D(x,c,\delta)</m> is usually interpreted as saying that
+    <q><m>x</m> is close to <m>c</m></q> (where <m>\delta</m> tells you <em>how</em> close.)
+    The sentence <m>E(f,x,l,\epsilon)</m> could be expressed informally as
+    <q><m>f(x)</m> is close to <m>l</m></q> (again, <m>\epsilon</m> serves to make the
+    word <q>close</q> more exact).
+  </p>
+
+  <p>
+    It's instructive to write this sentence one last time, <em>completely</em>
+    in symbols and without the abbreviations we created for saying
+    that <m>x</m> is near <m>c</m> and <m>f(x)</m> is near <m>l</m>:
+  </p>
+
+  <p>
+    <m>\displaystyle \lim_{x\rightarrow c}f(x) = l \iff \forall \epsilon>0 \, \exists 
+    \delta>0 \, \forall x \, (|x-c| \lt  \delta) \implies (|f(x)-l| \lt  \epsilon)</m>.
+  </p>
+
+  <p>
+    It would not be unfair to say that developing the facility to read,
+    and understand, this hieroglyph (and others like it) constitutes the
+    first several weeks of a course in Real Analysis.
+  </p>
+
+  <p>
+    Let us turn back to another of the examples (of an open sentence) from the
+    beginning of this section. <m>P(x)</m> = <q><m>2^{2^x}+1</m> is a prime.</q>
+  </p>
+
+  <p>
+    In the 17th century, <index><main>Fermat, Pierre de</main></index>Pierre de Fermat
+    made the conjecture<fn>Fermat's 
+    more famous conjecture, that <m>x^n+y^n=z^n</m> has no non-trivial integer solutions
+    if <m>n</m> is an integer with <m>n>2</m> was discovered after his death.</fn> that
+    <m>\forall x \in {\mathbb N}, P(x)</m>. No doubt, this seemed reasonable to Fermat
+    because the numbers given by this formula (they are called
+    <index><main>Fermat numbers</main></index>Fermat numbers in
+    his honor) are all primes <mdash /> at first! Fermat numbers are conventionally
+    denoted with a subscripted letter F, <m>F_n = 2^{2^n}+1</m>, the first five
+    Fermat numbers are prime.
+  </p>
+
+  <m>\displaystyle F_0 = 2^{2^0}+1 = 3</m>
+
+  <m>\displaystyle F_1 = 2^{2^1}+1 = 5</m>
+
+  <m>\displaystyle F_2 = 2^{2^2}+1 = 17</m>
+
+  <m>\displaystyle F_3 = 2^{2^3}+1 = 257</m>
+
+  <m>\displaystyle F_4 = 2^{2^4}+1 = 65537</m>
+
+  <p>
+    Fermat probably computed that <m>F_5=4294967297</m>, and we can well imagine
+    that he checked that this number was not divisible by any small primes.
+    Of course, this was well before the development of effective computing
+    machinery, so we shouldn't blame Fermat for not noticing that
+    <m>4294967297 = 641 \cdot 6700417</m>. This remarkable feat of factoring
+    can be replicated in seconds on a modern computer, however it was done
+    first by <index><main>Euler, Leonhard</main></index> Leonhard Euler in 1732!
+    There is quite a lot of literature
+    concerning the primeness and/or compositeness of Fermat numbers. So
+    far, all the Fermat numbers between <m>F_5</m> and <m>F_{32}</m> (inclusive) have
+    been shown to be composite. One might be tempted to conjecture that
+    only the first five Fermat numbers are prime, however this temptation
+    should be resisted <ellipsis />
+  </p>
+
+  <p>
+    Let us set aside, for the moment, further questions about Fermat numbers.
+    Suppose we define the set <m>U</m> (for `Universe') by <m>U=\{0,1,2,3,4\}</m>.
+    Then the assertion, <q><m>\forall x \in U, P(x)</m>.</q> is certainly true.
+    You should note that the only variable in this sentence is <m>x</m>, and
+    that the variable is bound <mdash /> it is universally quantified. Open sentences
+    that have all variables bound are <em>statements</em>. It is possible
+    (in principle, and in finite universes, in practice) to check the
+    truth value of such sentences.
+    Indeed, the sentence <q><m>\forall x \in U, P(x)</m></q> has the same logical content
+    as <q><m>P(0) \land P(1) \land P(2) \land P(3)  \land P(4)</m></q>. Both happen to be
+    true, but the real point here is to note that a universally quantified sentence
+    can be thought of instead as a conjunction.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Define a new set <m>U</m> by <m>U=\{0,1,2,3,4,5\}</m>.
+        Write a sentence using disjunctions
+        that is equivalent to <q><m>\exists x \in U, {\lnot}P(x)</m>.</q>
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    Even when we are dealing with infinite universes, it is possible to
+    think of universally quantified sentences in terms of conjunctions,
+    and existentially quantified sentences in terms of disjunctions. For
+    example, a quick look at the graphs should be sufficient to convince you
+    that <q><m>x > \ln x</m></q> is a sentence that is true for all <m>x</m> values in
+    <m>{\mathbb R}^+</m>. There is a notation, reminiscent of so-called sigma notation
+    for sums, that can be used to express this universally quantified sentence as
+    a conjunction.
+    <me>
+      \forall x \in {\mathbb R}^+, x > \ln x \; \cong \; 
+      \bigwedge_{x \in {\mathbb R}^+} x > \ln x
+    </me>
+  </p>
+
+  <p>
+    A similar notation exists for disjunctions. Purely as an example, consider
+    the following problem from recreational math: Find a four digit number that
+    is an integer multiple of its reversal. (By reversal, we mean the four
+    digit number with the digits in the opposite order <mdash /> for example, the
+    reversal of 1234 is 4321.) The sentence<fn>This sentence uses what 
+    is commonly referred to as an <q>abuse of notation</q> in order avoid an 
+    unnecessarily complex problem statement.  One should not necessarily 
+    avoid such abuses if one's readers can be expected to easily understand 
+    what is meant, any more than one should completely eschew the splitting 
+    of infinitives.</fn>
+    that states that this question has a solution is
+    <me>
+      \exists abcd \in {\mathbb Z},  \exists k \in {\mathbb Z}, abcd = k\cdot dcba
+    </me>
+  </p>
+
+  <p>
+    This could be expressed instead as the disjunction of 9000 statements, or more
+    compactly as
+    <me>
+      \bigvee_{1000\leq abcd \leq 9999}  \exists k \in {\mathbb Z}, abcd = k\cdot dcba.
+    </me>
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        The existential statement above is true because <m>8712 = 4\cdot 2178</m>.
+        There is one other solution <mdash /> find it!
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    An important, or at least useful, talent for a Mathematics student to develop
+    is the ability to negate quantified sentences. There are two major reasons for this:
+    the techniques known as proof by contradiction and proof by contraposition.
+    The contrapositive of a conditional sentence is logically
+    equivalent to it. Many veteran proofwriters give newcomers the advice:
+  </p>
+
+  <p>
+    <q>If you get stuck, try writing down the contrapositive.</q>
+  </p>
+
+  <p>
+    Writing down the contrapositive of a logical statement will often involve finding the
+    negation of a quantified sentence. Proof by contradiction also requires you to be able to
+    negate a logical statement in order to even get started. Let's try a one.
+  </p>
+
+  <p>
+    Our universe of discourse<fn>The Pep Boys <mdash /> Manny, Moe and 
+    Jack <mdash /> are hopefully known to some readers as the mascots of a chain 
+    of automotive supply stores.</fn>
+    will be <m>P = \{ \mbox{Manny} , \mbox{Moe} , \mbox{Jack}  \}</m>.
+    Consider the sentence
+    <q><m>\forall x \in P, x\; \mbox{starts with M}</m>.</q> The equivalent sentence
+    expressed conjunctively is
+    <md>
+      <mrow>(\mbox{Manny starts with M} ) \land</mrow>
+      <mrow>(\mbox{Moe starts with M} ) \land</mrow>
+      <mrow>(\mbox{Jack starts with M} ).</mrow>
+    </md>
+  </p>
+
+  <p>
+    The negation
+    of this sentence (by DeMorgan's law) is a disjunction:
+    <md>
+      <mrow>(\mbox{Manny doesn't start with M} ) \lor</mrow>
+      <mrow>(\mbox{Moe doesn't start with M} ) \lor</mrow>
+      <mrow>(\mbox{Jack doesn't start with M} )</mrow>
+    </md>
+  </p>
+
+  <p>
+    Finally, this disjunction of three sentences can be converted into
+    a single sentence, existentially quantified over <m>P</m>:
+  </p>
+
+  <p>
+    <q><m>\exists x \in P, {\lnot}(x \, \mbox{starts with M} )</m>.</q>
+  </p>
+
+  <p>
+    The discussion in the previous paragraphs justifies some laws of
+    Logic which should be thought of as generalizations of DeMorgan's laws:
+    <me>
+      {\lnot}( \forall x \in U, P(x)) \; \cong \; \exists x \in U, {\lnot}P(x)
+    </me>
+    and
+    <me>
+      {\lnot}( \exists x \in U, P(x)) \; \cong \; \forall x \in U, {\lnot}P(x).
+    </me>
+  </p>
+
+  <p>
+    It's equally valid to think of these rules in a way that's divorced from
+    DeMorgan's laws. To show that a universal sentence is <em>false</em>, it suffices
+    to show that an existential sentence involving a negation of the original is
+    true.
+  </p>
+
+  <p>
+    If someone announces that <q>All the Pep boys name's start with M!</q> you might counter that
+    with <q>Uhhmmm<ellipsis /> What about Jack?</q>
+  </p>
+
+  <p>
+    In other words, to show that it is not the case that every Pep boy's name starts
+    with `M', one only needs to demonstrate that there is a Pep boy (Jack) whose
+    name doesn't start with `M'.
+  </p>
+  <exercises>
+
+    <ol>
+    <li><p>
+        There is a common variant of the existential quantifier,
+        <m>\exists !</m>, if you write <m>\exists ! \, x, \, P(x)</m> you are asserting 
+        that there is a <index><main>unique existence</main></index><em>unique</em> element 
+        in the universe that makes <m>P(x)</m> true.
+        Determine how to negate the sentence <m>\exists ! \, x, \, P(x)</m>.
+
+
+
+        \hint{
+        Unique existence is essentially saying that there is exactly 1 element of the universe of discourse that makes P(x) true. The negation of "there is exactly 1" is "there's either none, or at least 2".
+
+        Is that enough of a hint?
+        }
+      </p></li>
+
+    <li><p>
+    The order in which quantifiers appear is important.  Let <m>L(x,y)</m>
+    be the open sentence <q><m>x</m> is in love with <m>y</m>.</q>  Discuss the meanings of the
+    following quantified statements and find their negations.
+
+    <ol>
+      <li><p>
+          <m>\forall x \, \exists y \; L(x,y)</m>.
+        </p></li>
+
+      <li><p>
+          <m>\exists x \, \forall y \; L(x, y)</m>.
+        </p></li>
+
+      <li><p>
+          <m>\forall x \, \forall y \; L(x, y)</m>.
+        </p></li>
+
+      <li><p>
+          <m>\exists x \, \exists y \; L(x, y)</m>.
+        </p></li>
+    </ol>
+    </p>
+
+    \hint{
+
+    <ol>
+      <li><p>
+          <m>\forall x \, \exists y \; L(x,y)</m>.
+
+          This is a fairly optimistic statement  <q>For everyone out there, there's somebody that they are in love with.</q>
+        </p></li>
+
+      <li><p>
+          <m>\exists x \, \forall y \; L(x, y)</m>.
+
+          This one, on the other hand, says something fairly strange: <q>There's someone who has fallen in love with every other human being.</q> I don't know, maybe the Dalai Lama? Mother Theresa?...
+          Anyway, do the last two for yourself.
+        </p></li>
+
+      <li><p>
+          <m>\forall x \, \forall y \; L(x, y)</m>.
+        </p></li>
+
+      <li><p>
+          <m>\exists x \, \exists y \; L(x, y)</m>.
+
+
+          Here's a couple of bonus questions. Two of the statements above have different meanings if you just interchange the order that the quantifiers appear in. What do the following mean (in contrast to the ones above)?
+        </p></li>
+
+      <li><p>
+          <m>\exists y \, \forall x \; L(x, y)</m>.
+        </p></li>
+
+      <li><p>
+          <m>\forall y \, \exists x \; L(x,y)</m>.
+        </p></li>
+    </ol>
+    }</li>
+
+    <li><p>
+        Determine a useful denial of: 
+
+        <m>\displaystyle \forall \epsilon>0 \, \exists 
+        \delta>0 \, \forall x \, (|x-c| \lt  \delta) \implies (|f(x)-l| \lt  \epsilon)</m>.
+
+        The denial above gives a criterion for saying <m>\lim_{x\rightarrow c}f(x) \neq l.</m>
+
+        \hint{
+        This is asking you to put a couple of things together. The first thing is that in negating a quantified statement, we get a new statement with all the quantified variables occurring in the same order but with <m>\forall</m>'s and <m>\exists</m>'s interchanged. The second issue is that the logical statement that appears after all the quantifiers needs to be negated. Since, in this statement we have a conditional, you must remember to negate that properly (its negation is a conjunction).
+
+        <m>\displaystyle \exists \epsilon>0 \, \forall 
+        \delta>0 \, \exists x \, (|x-c| \lt  \delta)  \land  (|f(x)-l| \geq \epsilon)</m>.
+
+        }
+      </p></li>
+
+    <li><p>
+        A <index><main>Sophie Germain prime</main></index> <em>Sophie Germain prime</em> is a prime number <m>p</m>
+        such that the corresponding odd number <m>2p+1</m> is also a prime.  For example 11 is a 
+        Sophie Germain prime since <m>23 = 2\cdot 11 + 1</m> is also prime.  Almost all Sophie Germain
+        primes are congruent to <m>5 \pmod{6}</m>, nevertheless, there are exceptions <mdash /> so the
+        statement <q>There are Sophie Germain primes that are not 5 mod 6.</q> is true.  Verify this.
+
+        \hint{The exceptions are very small prime numbers. You should be able to find them easily.}
+      </p></li>
+
+    <li><p>
+    Alvin, Betty, and Charlie enter a cafeteria which offers three different
+    entrees, turkey sandwich, veggie burger, and pizza; four different
+    beverages, soda, water, coffee, and milk; and two types of desserts,
+    pie and pudding. Alvin takes a turkey sandwich, a soda, and a pie.
+    Betty takes a veggie burger, a soda, and a pie. Charlie takes a pizza
+    and a soda. Based on this information, determine whether the following
+    statements are true or false.
+
+    <ol>
+      <li xml:id="negated" ><p>
+          <m>\forall</m> people <m>p</m>, <m>\exists</m> dessert <m>d</m> such that <m>p</m>
+          took <m>d</m>. \hint{false}
+        </p></li>
+
+      <li xml:id="compare" ><p>
+          <m>\exists</m> person <m>p</m> such that <m>\forall</m> desserts
+          <m>d</m>, <m>p</m> did not take <m>d</m>. \hint{true}
+        </p></li>
+
+      <li><p>
+          <m>\forall</m> entrees <m>e</m>, <m>\exists</m> person <m>p</m> such that <m>p</m> took
+          <m>e</m>. \hint{true}
+        </p></li>
+
+      <li xml:id="entree" ><p>
+          <m>\exists</m> entree <m>e</m> such that  <m>\forall</m> people
+          <m>p,\ p</m> took <m>e</m>. \hint{false}
+        </p></li>
+
+      <li><p>
+          <m>\forall</m> people <m>p</m>, <m>p</m> took a dessert <m>\iff p</m> did not take
+          a pizza. \hint{true}
+        </p></li>
+
+      <li><p>
+          Change one word of <xref ref="entree">statement</xref> so that it becomes true. \hint{entree <m>\longrightarrow</m> beverage}
+        </p></li>
+
+      <li><p>
+          Write down the negation of <xref ref="negated"></xref> and compare it to <xref ref="compare">statement</xref>. Hopefully you will see that they are the same! Does
+          this make you want to modify one or both of your answers to <xref ref="negated"></xref>
+          and <xref ref="compare"></xref>? \hint{<m>\exists</m> person <m>p</m> such that <m>\forall</m> desserts
+          <m>d</m>, <m>p</m> did not take <m>d</m>. Yes I do.  No, I got them right in the first place!}
+        </p></li>
+    </ol>
+    </p></li>
+    </ol>
+  </exercises>
+</section>

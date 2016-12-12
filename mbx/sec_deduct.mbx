@@ -1,0 +1,792 @@
+
+<section xml:id="sec_deduct">
+  <title>Deductive reasoning and Argument forms</title>
+  <p>
+    Deduction <index><main>deduction</main></index>
+    is the process by which we determine new truths from old.
+    It is sometimes claimed that nothing truly new can come from deduction,
+    the truth of a statement that is arrived at by deductive processes was
+    lying (perhaps hidden somewhat) within the hypotheses. This claim is something
+    of a canard, as any Sherlock Holmes aficionado can tell you, the statements
+    that can sometimes be deduced from others can be remarkably surprising.
+    A better
+    argument against deduction is that it is a relatively ineffective way for most
+    human beings to discover new truths <mdash /> for that purpose inductive processes are
+    superior for the majority of us. Nevertheless, if a chain of deductive reasoning
+    leading from known hypotheses to a particular conclusion can be exhibited, the truth
+    of the conclusion is <em>unassailable</em>. For this reason, mathematicians have
+    latched on to deductive reasoning as <em>the</em> tool for, if not discovering
+    our theorems, communicating them to others.
+  </p>
+
+  <p>
+    The word <q>argument</q> has a negative connotation for many people because
+    it seems to have to do with <em>disagreement</em>. Arguments within mathematics
+    (as well as many other scholarly areas), while they may be impassioned, should
+    not involve discord. A mathematical argument is a sequence of logically
+    connected statements designed to produce <em>agreement</em> as to the validity
+    of a proposition. This <q>design</q> generally follows one of two possibilities,
+    inductive reasoning or deductive reasoning. In an inductive argument
+    a long list of premises is presented whose truths are considered to be
+    apparent to all, each of which provides evidence that the desired conclusion
+    is true. So an <index><main>inductive argument</main></index>inductive argument represents a kind of statistical thing,
+    you have all these statements that are true each of which indicates that
+    the conclusion is most likely true<ellipsis /> A strong inductive argument
+    amounts to what attorneys call a <q>preponderance of the evidence.</q>
+    Occasionally
+    a person who has been convicted of a crime based on a preponderance of the
+    evidence is later found to be innocent. This usually happens when new evidence
+    is discovered that incontrovertibly proves (i.e. shows through deductive
+    means) that he or she cannot be guilty. In a nutshell: inductive arguments
+    can be wrong.
+  </p>
+
+  <p>
+    In contrast a deductive argument can only turn out to be wrong under
+    certain well-understood circumstances.
+  </p>
+
+  <p>
+    Like an inductive argument, a <index><main>deductive argument</main></index>deductive argument
+    is essentially just a
+    long sequence of statements; but there is some additional structure.
+    The last statement in the list is the <em>conclusion</em> <mdash /> the statement
+    to be proved <mdash /> those occurring before it are known as
+    <index><main>premise</main></index><em>premises</em>.
+    Premises may be further subdivided into (at least) five sorts: axioms,
+    definitions, previously proved theorems, hypotheses and deductions.
+    Axioms and definitions are often glossed
+    over, indeed, they often go completely unmentioned (but rarely <em>unused</em>)
+    in a proof. In the interest of brevity this is quite appropriate, but
+    conceptually, you should think of an argument as being based off of
+    the axioms for the particular area you are working in, and its standard
+    definitions. A rote knowledge of all the other theorems proved up to
+    the one you are working with would generally be considered excessive,
+    but completely memorizing the axioms and standard definitions of a field
+    is essential. <index><main>hypotheses</main></index>Hypotheses are a funny class of premises <mdash /> they are things
+    which can be assumed true for the sake of the current argument. For
+    example, if the statement you are trying to prove is a conditional,
+    then the antecedent may be assumed true (if the antecedent is false,
+    then the conditional is automatically true!). You should always be
+    careful to list all hypotheses explicitly, and at the end of your
+    proof make sure that each and every hypothesis got used somewhere
+    along the way. If a hypothesis really isn't necessary then you have
+    proved a more general statement (that's a good thing).
+  </p>
+
+  <p>
+    Finally, deductions <mdash /> I should note that the conclusion is also a
+    deduction <mdash /> obey a very strict rule: every deduction follows from
+    the premises that have already been written down (this includes
+    axioms and definitions that probably won't actually have been written,
+    hypotheses and all the deductions made up to this point) by one of the
+    so-called <index><main>rules of inference</main></index>rules of inference.
+  </p>
+
+  <p>
+    Each of the rules of inference actually amounts to a logical tautology
+    that has been re-expressed as a sort of re-writing rule. Each rule
+    of inference will be expressed as a list of logical
+    sentences that are assumed to be among the premises of the argument,
+    a horizontal bar, followed by the symbol <m>\therefore</m> (which is
+    usually voiced as the word <q>therefore</q>) and then a new statement
+    that can be placed among the deductions.
+  </p>
+
+  <p>
+    For example, one (very obvious) rule of inference is
+  </p>
+  <tabular>
+    <row>
+      <cell></cell>
+      <cell><m>A \land B</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>\therefore</m></cell>
+      <cell><m>B</m></cell>
+    </row>
+  </tabular>
+  <p>
+    This rule is known as
+    <index><main>conjunctive simplification</main></index><em>conjunctive simplification</em>, and
+    is equivalent to the tautology <m>(A \land B) \implies B</m>.
+  </p>
+
+  <p>
+    The <index><main>modus ponens</main></index><em>modus ponens</em>
+    rule<fn>Latin for <q>method of affirming</q>,
+    the related <em>modus tollens</em> rule means <q>method of denying.</q></fn>
+    is one of the most useful.
+  </p>
+  <tabular>
+    <row>
+      <cell></cell>
+      <cell><m>A</m></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell><m>A \implies B</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>\therefore</m></cell>
+      <cell><m>B</m></cell>
+    </row>
+  </tabular>
+  <p>
+    Modus ponens is related to the tautology <m>(A \land (A \implies B)) \implies B</m>.
+  </p>
+
+  <p>
+    <index><main>modus tollens</main></index><em>Modus tollens</em>
+    is the rule of inference we get if we put modus ponens
+    through the <q>contrapositive</q> wringer.
+  </p>
+  <tabular>
+    <row>
+      <cell></cell>
+      <cell><m>{\lnot}B</m></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell><m>A \implies B</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>\therefore</m></cell>
+      <cell><m>{\lnot}A</m></cell>
+    </row>
+  </tabular>
+  <p>
+    Modus tollens is related to the tautology <m>({\lnot}B \land (A \implies B)) \implies {\lnot}A</m>.
+  </p>
+
+  <p>
+    Modus ponens and modus tollens are also known as
+    <index><main>syllogism</main></index><em>syllogisms</em>. A
+    syllogism is an argument form wherein a deduction follows from two premises.
+    There are two other common syllogisms,
+    <index><main>hypothetical syllogism</main></index><em>hypothetical syllogism</em> and
+    <index><main>disjunctive syllogism</main></index><em>disjunctive syllogism</em>.
+  </p>
+
+  <p>
+    Hypothetical syllogism basically asserts a transitivity property for
+    implications.
+  </p>
+  <tabular>
+    <row>
+      <cell></cell>
+      <cell><m>A \implies B</m></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell><m>B \implies C</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>\therefore</m></cell>
+      <cell><m>A \implies C</m></cell>
+    </row>
+  </tabular>
+  <p>
+    Disjunctive syllogism can be thought of as a statement about
+    alternatives, but be careful to remember that in Logic, the disjunction
+    always has the inclusive sense.
+  </p>
+  <tabular>
+    <row>
+      <cell></cell>
+      <cell><m>A \lor B</m></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell><m>{\lnot}B</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>\therefore</m></cell>
+      <cell><m>A</m></cell>
+    </row>
+  </tabular>
+  <exercise>
+    <statement>
+      <p>
+        Convert the <m>A \lor B</m> that appears in the premises of the disjunctive
+        syllogism rule into an equivalent conditional. How is the new argument
+        form related to modus ponens and/or modus tollens?
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    The word <q>dilemma</q> usually refers to a situation in which an individual
+    is faced with an impossible choice. A cute example known as the
+    <index><main>Crocodile's dilemma</main></index>Crocodile's dilemma is as follows:
+  </p>
+
+  <blockquote>
+  A crocodile captures a little boy who has strayed too near the river.  The 
+  child's father appears and the crocodile tells him <q>Don't worry, I shall 
+  either release your son or I shall eat him.  If you can say, in advance,
+  which I will do, then I shall release him.</q>  The father responds, <q>You will
+  eat my son.</q>  What should the crocodile do?
+  </blockquote>
+
+  <p>
+    In logical arguments the word dilemma is used in another sense having to
+    do with certain rules of inference.
+    <index><main>constructive dilemma</main></index><em>Constructive dilemma</em> is
+    a rule of inference having to do with the conclusion that one of two
+    possibilities must hold.
+  </p>
+  <tabular>
+    <row>
+      <cell></cell>
+      <cell><m>A \implies B</m></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell><m>C \implies D</m></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell><m>A \lor C</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>\therefore</m></cell>
+      <cell><m>B \lor D</m></cell>
+    </row>
+  </tabular>
+  <p>
+    <index><main>destructive dilemma</main></index><em>Destructive dilemma</em>
+    is often not listed among the rules
+    of inference because it can easily be obtained by using the constructive
+    dilemma and replacing the implications with their contrapositives.
+  </p>
+  <tabular>
+    <row>
+      <cell></cell>
+      <cell><m>A \implies B</m></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell><m>C \implies D</m></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell><m>{\lnot}B \lor {\lnot}D</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>\therefore</m></cell>
+      <cell><m>{\lnot}A \lor {\lnot}C</m></cell>
+    </row>
+  </tabular>
+  <p>
+    In <xref ref="tab_roi">Table</xref>, the ten most common
+    <index><main>rules of inference</main></index>rules of inference are listed.
+    Note that all of these are equivalent to tautologies that
+    involve conditionals (as opposed to biconditionals), every one of the
+    basic logical equivalences that we established in <xref ref="sec_le">Section</xref>
+    is really a tautology involving a biconditional, collectively these are
+    known as the <index><main>rules of replacement</main></index><q>rules of replacement.</q>
+    In an argument, any statement
+    allows us to infer a logically equivalent statement. Or, put differently,
+    we could replace any premise with a different, but logically equivalent,
+    premise. You might enjoy trying to determine a minimal set of rules of
+    inference, that together with the rules of replacement would allow one
+    to form all of the same arguments as the ten rules in <xref ref="tab_roi">Table</xref>.
+  </p>
+
+  <table xml:id="tab_roi" >
+    <caption>The rules of inference.</caption>
+    <tabular>
+    <row>
+      <cell>Name</cell>
+      <cell>Form</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+    <cell>Modus ponens</cell>
+    <cell><tabular>
+      <row>
+        <cell></cell>
+        <cell><m>A</m></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell><m>A \implies B</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell><m>\therefore</m></cell>
+        <cell><m>B</m></cell>
+      </row>
+    </tabular></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+    <cell>Modus tollens</cell>
+    <cell><tabular>
+      <row>
+        <cell></cell>
+        <cell><m>{\lnot}B</m></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell><m>A \implies B</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell><m>\therefore</m></cell>
+        <cell><m>{\lnot}A</m></cell>
+      </row>
+    </tabular></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+    <cell>Hypothetical syllogism</cell>
+    <cell><tabular>
+      <row>
+        <cell></cell>
+        <cell><m>A \implies B</m></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell><m>B \implies C</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell><m>\therefore</m></cell>
+        <cell><m>A \implies C</m></cell>
+      </row>
+    </tabular></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+    <cell>Disjunctive syllogism</cell>
+    <cell><tabular>
+      <row>
+        <cell></cell>
+        <cell><m>A \lor B</m></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell><m>{\lnot}B</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell><m>\therefore</m></cell>
+        <cell><m>A</m></cell>
+      </row>
+    </tabular></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+    <cell>Constructive dilemma</cell>
+    <cell><tabular>
+      <row>
+        <cell></cell>
+        <cell><m>A \implies B</m></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell><m>C \implies D</m></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell><m>A \lor C</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell><m>\therefore</m></cell>
+        <cell><m>B \lor D</m></cell>
+      </row>
+    </tabular></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    </tabular>
+  </table>
+
+  <tabular>
+  <row>
+    <cell>Name</cell>
+    <cell>Form</cell>
+  </row>
+  <row bottom="minor">
+    <cell></cell>
+    <cell></cell>
+  </row>
+  <row>
+    <cell></cell>
+    <cell></cell>
+  </row>
+  <row>
+  <cell>Destructive dilemma</cell>
+  <cell><tabular>
+    <row>
+      <cell></cell>
+      <cell><m>A \implies B</m></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell><m>C \implies D</m></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell><m>{\lnot}B \lor {\lnot}D</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>\therefore</m></cell>
+      <cell><m>{\lnot}A \lor {\lnot}C</m></cell>
+    </row>
+  </tabular></cell>
+  </row>
+  <row>
+    <cell></cell>
+    <cell></cell>
+  </row>
+  <row bottom="minor">
+    <cell></cell>
+    <cell></cell>
+  </row>
+  <row>
+    <cell></cell>
+    <cell></cell>
+  </row>
+  <row>
+  <cell>Conjunctive simplification</cell>
+  <cell><tabular>
+    <row>
+      <cell></cell>
+      <cell><m>A \land B</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>\therefore</m></cell>
+      <cell><m>A</m></cell>
+    </row>
+  </tabular></cell>
+  </row>
+  <row>
+    <cell></cell>
+    <cell></cell>
+  </row>
+  <row bottom="minor">
+    <cell></cell>
+    <cell></cell>
+  </row>
+  <row>
+    <cell></cell>
+    <cell></cell>
+  </row>
+  <row>
+  <cell>Conjunctive addition</cell>
+  <cell><tabular>
+    <row>
+      <cell></cell>
+      <cell><m>A</m></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell><m>B</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>\therefore</m></cell>
+      <cell><m>A \land B</m></cell>
+    </row>
+  </tabular></cell>
+  </row>
+  <row>
+    <cell></cell>
+    <cell></cell>
+  </row>
+  <row bottom="minor">
+    <cell></cell>
+    <cell></cell>
+  </row>
+  <row>
+    <cell></cell>
+    <cell></cell>
+  </row>
+  <row>
+  <cell>Disjunctive addition</cell>
+  <cell><tabular>
+    <row>
+      <cell></cell>
+      <cell><m>A</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>\therefore</m></cell>
+      <cell><m>A \lor B</m></cell>
+    </row>
+  </tabular></cell>
+  </row>
+  <row>
+    <cell></cell>
+    <cell></cell>
+  </row>
+  <row bottom="minor">
+    <cell></cell>
+    <cell></cell>
+  </row>
+  <row>
+    <cell></cell>
+    <cell></cell>
+  </row>
+  <row>
+  <cell>Absorption</cell>
+  <cell><tabular>
+    <row>
+      <cell></cell>
+      <cell><m>A \implies B</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>\therefore</m></cell>
+      <cell><m>A \implies (A \land B)</m></cell>
+    </row>
+  </tabular></cell>
+  </row>
+  <row>
+    <cell></cell>
+    <cell></cell>
+  </row>
+  </tabular>
+  \vspace{.25in}
+
+  <xref ref="tab_roi">Table</xref>: The rules of inference. (continued)
+  <index><main>rules of inference</main></index>
+  <exercises>
+
+    <ol>
+    <li><p>
+        In the movie <q>Monty Python and the Holy Grail</q> we encounter
+        a medieval villager who (with a bit of prompting) makes the 
+        following argument.
+        <blockquote>
+        If she weighs the same as a duck, then she's made of wood. 
+        If she's made of wood then she's a witch. 
+        Therefore, if she weighs the same as a duck, she's a witch.
+        </blockquote>
+        Which rule of inference is he using?
+
+        \hint{
+        This is what many people refer to as the transitive rule of implication.  As an argument form it's known as <q>hypothetical syllogism.</q>
+        }
+      </p></li>
+
+    <li><p>
+        In constructive dilemma, the antecedent of the conditional 
+        sentences are usually chosen to represent opposite alternatives. 
+        This allows us to introduce their disjunction as a tautology. 
+        Consider the following proof that there is never any reason to worry
+        (found on the walls of an Irish pub).
+        <blockquote>
+        Either you are sick or you are well. 
+        If you are well there's nothing to worry about. 
+        If you are sick there are just two possibilities: 
+        Either you will get better or you will die. 
+        If you are going to get better there's nothing to worry about. 
+        If you are going to die there are just two possibilities:
+        Either you will go to Heaven or to Hell. 
+        If you go to Heaven there is nothing to worry about.
+        If you go to Hell, you'll be so busy shaking hands with all your friends there won't be time to worry \ldots
+        </blockquote>
+        Identify the three tautologies that are introduced in this <q>proof.</q>
+
+        \hint{Look at the lines that start with the word "Either."}
+      </p></li>
+
+    <li><p>
+    For each of the following arguments, write it in symbolic form and determine 
+    which rules of inference are used.
+
+    <ol>
+      <li><p>
+          You are either with us, or you're against us.  And you don't appear to be with us.
+          So, that means you're against us!
+
+          \hint{
+          <tabular>
+            <row>
+              <cell></cell>
+              <cell><m>W \lor A</m></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell><m>{\lnot}W</m></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell><m>\therefore</m></cell>
+              <cell><m>A</m></cell>
+            </row>
+          </tabular>
+          This is <q>disjunctive syllogism.</q>
+          }
+        </p></li>
+
+      <li><p>
+          All those who had cars escaped the flooding.  Sandra had a car <mdash /> therefore, Sandra
+          escaped the flooding.
+
+          \hint{
+          Let <m>C(x)</m> be the open sentence <q>x has a car</q> and let <m>E(x)</m> be the open sentence <q>x escaped the flooding.</q>
+          This argument is actually the particular form of universal modus ponens: (See the final question in the next set of exercises.)
+          <tabular>
+            <row>
+              <cell></cell>
+              <cell><m>\forall x, C(x) \implies E(x)</m></cell>
+            </row>
+            <row>
+              <cell></cell>
+              <cell><m>C(\mbox{Sandra} )</m></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell><m>\therefore</m></cell>
+              <cell><m>E(\mbox{Sandra} )</m></cell>
+            </row>
+          </tabular>
+          At this stage in the game it would be perfectly fine to just identify this as modus ponens and not worry about the quantifiers that appear.
+          }
+        </p></li>
+
+      <li><p>
+          When Johnny goes to the casino, he always gambles 'til he goes broke.  Today, Johnny
+          has money, so Johnny hasn't been to the casino recently.
+        </p></li>
+
+      <li><p>
+          (A non-constructive proof that there are 
+          irrational numbers <m>a</m> and <m>b</m> such that <m>a^b</m> is rational.)  
+          Either <m>\sqrt{2}^{\sqrt{2}}</m> is rational or it is irrational.
+          If <m>\sqrt{2}^{\sqrt{2}}</m> is rational, we let <m>a=b=\sqrt{2}</m>.
+          Otherwise, we let <m>a=\sqrt{2}^{\sqrt{2}}</m> and <m>b=\sqrt{2}</m>.
+          (Since <m>\sqrt{2}^{\sqrt{2}^{\sqrt{2}}} = 2</m>, which is rational.) It follows that in either case, there
+          are irrational numbers <m>a</m> and <m>b</m> such that <m>a^b</m> is rational.
+        </p></li>
+    </ol>
+    </p>
+
+    \hint{I'm leaving the last two for you to do. One small hint: both are valid forms.}</li>
+    </ol>
+  </exercises>
+</section>

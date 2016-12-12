@@ -1,0 +1,432 @@
+
+<section xml:id="sec_eq_rel">
+  <title>Equivalence relations</title>
+  <p>
+    The main idea of an equivalence relation is that it is something like
+    equality, but not quite. Usually there is some property that
+    we can name, so that equivalent things share that property. For
+    example Albert Einstein and Adolf Eichmann were two entirely
+    different human beings, if you consider all the different criteria
+    that one can use to distinguish human beings there is little they
+    have in common. But, if the only thing one was interested in was
+    a person's initials, one would have to say that Einstein and Eichmann
+    were equivalent. Future examples of equivalence relations will
+    be less frivolous<ellipsis /> But first, the formal definition:
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        A relation <m>\relR</m> on a set <m>S</m> is an <index><main>equivalence relation</main></index><term>equivalence relation</term>
+        iff <m>\relR</m> is reflexive, symmetric and transitive.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Probably the most important equivalence relation we've seen to date
+    is <q>congruence mod <m>m</m></q> which we will denote using the symbol <m>\equiv_m</m>.
+    This relation may even be more interesting than
+    actual equality! The reason for this seemingly odd statement is that
+    <q>congruence mod <m>m</m></q> gives us non-trivial <index><main>equivalence class</main></index> equivalence classes. Equivalence
+    classes are one of the most potent ideas in modern mathematics and it's essential
+    that you understand them, so we'll start with an example. Consider congruence
+    mod <m>5</m>. What other numbers is (say) 11 equivalent to? There are many! Any
+    number that leaves the same remainder as 11 when we divide it by 5. This collection
+    is called the equivalence class of 11 and is usually denoted using an overline <mdash />
+    <m>\overline{11}</m>, another notation that is often seen for the set of things equivalent
+    to 11 is <m>11/\equiv_5</m>.
+    <me>
+      \overline{11} = \{ \ldots, -9, -4, 1, 6, 11, 16, \ldots \}
+    </me>
+  </p>
+
+  <p>
+    It's easy to see that we will get the exact same set if we choose any other element
+    of the equivalence class (in place of 11), which leads us to an infinite list of set
+    equalities,
+    <me>
+      \overline{1} = \overline{6} = \overline{11} = \ldots
+    </me>
+  </p>
+
+  <p>
+    And similarly,
+    <me>
+      \overline{2} = \overline{7} = \overline{12} = \ldots
+    </me>
+  </p>
+
+  <p>
+    In fact, there are really just 5 different sets that form the
+    equivalence classes mod 5: <m>\overline{0}</m>, <m>\overline{1}</m>, <m>\overline{2}</m>, <m>\overline{3}</m>,
+    and <m>\overline{4}</m>. (Note: we have followed the usual convention of using the smallest
+    possible non-negative integers as the representatives for our equivalence classes.)
+  </p>
+
+  <p>
+    What we've been discussing here is one of the first examples of a <index><main>quotient structure</main></index>
+    <em>quotient structure</em>.
+    We start with the integers and <q>mod out</q> by an equivalence relation. In doing so, we
+    <q>move to the quotient</q> which means (in this instance) that we go from <m>\Integers</m> to a much simpler set
+    having only five elements: <m>\{ \overline{0}, \overline{1}, \overline{2}, \overline{3}, 
+    \overline{4} \}</m>. In moving to the quotient we will generally lose a lot of information,
+    but greatly highlight some particular feature <mdash /> in this example, properties related to
+    divisibility by 5.
+  </p>
+
+  <p>
+    Given some equivalence relation <m>\relR</m> defined on a set <m>S</m> the set of equivalence classes
+    of <m>S</m> under <m>\relR</m> is denoted <m>S/\relR</m> (which is read <q><m>S</m> mod <m>\relR</m></q>). This use of the
+    slash <mdash /> normally reserved for division <mdash /> shouldn't cause any confusion since those aren't
+    numbers on either side of the slash but rather a set and a relation. This
+    notation may also clarify why some people denote the equivalence classes above
+    by <m>0/\equiv_5</m>, <m>1/\equiv_5</m>, <m>2/\equiv_5</m>, <m>3/\equiv_5</m> and <m>4/\equiv_5</m>.
+  </p>
+
+  <p>
+    The set of equivalence
+    classes forms a <index><main>partition</main></index> <em>partition</em> of the set <m>S</m>.
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        A <term>partition</term> <m>P</m> of a set <m>S</m> is a set of sets such that
+        <me>
+          S = \bigcup_{X \in P} X \qquad \mbox{and}  \qquad 
+          \forall X, Y \in P, \; X \neq Y \, \implies \, X \cap Y = \emptyset.
+        </me>
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    In words, if you take the union of all the pieces of the partition you'll get the
+    set <m>S</m>, and any pair of sets from the partition that aren't identical are disjoint.
+    Partitions are an inherently useful way of looking at things, although in the real world
+    there are often problems (sets we thought were disjoint turn out to have elements in common,
+    or we discover something that doesn't fit into any of the pieces of our partition), in
+    mathematics we usually find that partitions do just what we would want them to do.
+    Partitions divide some set up into a number of convenient pieces in such a way that we're
+    guaranteed that every element of the set is in one of the pieces and also so that none of
+    the pieces overlap. Partitions are a useful way of dissecting sets, and equivalence relations
+    (via their equivalence classes) give us an easy way of creating partitions <mdash /> usually with some additional structure to boot! The
+    properties that make a relation an equivalence relation (reflexivity, symmetry and
+    transitivity) are designed to ensure that equivalence classes exist and do provide us
+    with the desired partition. For the beginning proof writer this all may seem very complicated,
+    but take heart! Most of the work has already been done for you by those who created
+    the general theory of equivalence relations and quotient structures. All you have
+    to do (usually) is prove that a given relation is an equivalence relation by verifying
+    that it is indeed reflexive, symmetric and transitive. Let's have a look at another
+    example.
+  </p>
+
+  <p>
+    In Number Theory, the <index><main>square-free part, of an integer</main></index> square-free part of an integer is what remains after we divide-out
+    the largest perfect square that divides it. (This is also known as the
+    <index><main>radical, of an integer</main></index><em>radical</em> of an integer.)
+    The following table gives the
+    square-free part, <m>sf(n)</m>, for the first several values of <m>n</m>.
+  </p>
+  <tabular>
+    <row>
+      <cell><m>n</m></cell>
+      <cell>1</cell>
+      <cell>2</cell>
+      <cell>3</cell>
+      <cell>4</cell>
+      <cell>5</cell>
+      <cell>6</cell>
+      <cell>7</cell>
+      <cell>8</cell>
+      <cell>9</cell>
+      <cell>10</cell>
+      <cell>11</cell>
+      <cell>12</cell>
+      <cell>13</cell>
+      <cell>14</cell>
+      <cell>15</cell>
+      <cell>16</cell>
+      <cell>17</cell>
+      <cell>18</cell>
+      <cell>19</cell>
+      <cell>20</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>sf(n)</m></cell>
+      <cell>1</cell>
+      <cell>2</cell>
+      <cell>3</cell>
+      <cell>1</cell>
+      <cell>5</cell>
+      <cell>6</cell>
+      <cell>7</cell>
+      <cell>2</cell>
+      <cell>1</cell>
+      <cell>10</cell>
+      <cell>11</cell>
+      <cell>3</cell>
+      <cell>13</cell>
+      <cell>14</cell>
+      <cell>15</cell>
+      <cell>1</cell>
+      <cell>17</cell>
+      <cell>2</cell>
+      <cell>19</cell>
+      <cell>5</cell>
+    </row>
+  </tabular>
+  <p>
+    It's easy to compute the square-free part of an integer if you know its prime factorization <mdash /> just reduce all the exponents mod 2. For example<fn>This is the size of largest 
+    sporadic finite simple group, known as <q>the Monster.</q></fn>
+    <md>
+      <mrow>808017424794512875886459904961710757005754368000000000</mrow>
+      <mrow>= 2^{46}\cdot 3^{20}\cdot 5^9\cdot7^6\cdot 11^2\cdot 13^3\cdot 17
+      \cdot 19\cdot 23\cdot 29\cdot 31\cdot 41\cdot 47\cdot 59\cdot 71</mrow>
+    </md>
+    the square-free part of this number is
+    <md>
+      <mrow>5\cdot 13\cdot 17\cdot 19\cdot 23\cdot 29\cdot 31\cdot 41\cdot 47\cdot 59\cdot 71</mrow>
+      <mrow>= 3504253225343845</mrow>
+    </md>
+    which, while it is still quite a large number, is certainly a good
+    bit smaller than the original!
+  </p>
+
+  <p>
+    We will define an equivalence relation <m>\relS</m> on the set of natural numbers
+    by using the square-free part:
+    <me>
+      \forall x, y \in \Naturals, \; x \relS y \; \iff sf(x) = sf(y)
+    </me>
+  </p>
+
+  <p>
+    In other words, two natural numbers will be <m>\relS</m>-related if they have the
+    same square-free parts.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        What is <m>1/\relS</m>?
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    Before we proceed to the proof that <m>\relS</m> is an equivalence relation we'd like
+    you to be cognizant of a bigger picture as you read. Each of the three parts of
+    the proof will have a similar structure. We will show that <m>\relS</m> has one of the
+    three properties by using the fact that <m>=</m> has that property. In more advanced
+    work this entire proof could be omitted or replaced by the phrase <q><m>\relS</m> inherits
+    reflexivity, symmetry and transitivity from equality, and is therefore an equivalence
+    relation.</q> (Nice trick isn't it? But before you're allowed to use it you have
+    to show that you can do it the hard way <ellipsis />)
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        The relation <m>\relS</m> defined by
+        <me>
+          \forall x, y \in \Naturals, \; x \relS y \; \iff sf(x) = sf(y)
+        </me>
+        is an equivalence relation on <m>\Naturals</m>.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      We must show that <m>\relS</m> is reflexive, symmetric and transitive.
+    </p>
+
+    <p>
+      <em>reflexive</em> <mdash /> (Here we must show that <m>\forall x \in \Naturals, \; x \relS x</m>.)
+      Let <m>x</m> be an arbitrary natural number. Since <m>sf(x) = sf(x)</m> (this is the reflexive
+      property of <m>=</m>) it follows from the definition of <m>\relS</m> that <m>x \relS x</m>.
+    </p>
+
+    <p>
+      <em>symmetric</em> <mdash /> (Here we must show that <m>\forall x,y \in \Naturals, \; x \relS y \, 
+      \implies \, y \relS x</m>.)
+      Let <m>x</m> and <m>y</m> be arbitrary natural numbers, and further suppose that <m>x \relS y</m>.
+      Since <m>x \relS y</m>, it follows from the definition of <m>\relS</m> that <m>sf(x) = sf(y)</m>,
+      obviously then <m>sf(y) = sf(x)</m> (this is the symmetric property of <m>=</m>) and so
+      <m>y \relS x</m>.
+    </p>
+
+    <p>
+      <em>transitive</em> <mdash /> (Here we must show that <m>\forall x,y,z \in \Naturals, \; x \relS y \,
+      \land \, y \relS z \; \implies \; x \relS z</m>.)
+      Let <m>x</m>, <m>y</m> and <m>z</m> be arbitrary natural numbers, and further suppose that both
+      <m>x \relS y</m> and <m>y \relS z</m>. From the definition of <m>\relS</m> we deduce that
+      <m>sf(x) = sf(y)</m> and <m>sf(y) = sf(z)</m>. Clearly, <m>sf(x) = sf(z)</m> (this deduction comes
+      from the transitive property of <m>=</m>), so <m>x \relS z</m>.
+    </p>
+  </proof>
+
+  <p>
+    We'll end this section with an example of an equivalence relation that
+    doesn't <q>inherit</q> the three properties from equality.
+  </p>
+
+  <p>
+    A <index><main>graph</main></index> <em>graph</em> is a mathematical structure consisting of
+    two sets, a set <m>V</m> of points (a.k.a. vertices) and a set<fn>Technically, <m>E</m> is a so-called
+    multiset in many instances <mdash /> there may be several edges that connect the same pair of vertices.</fn> <m>E</m> of edges.
+    The elements of <m>E</m> may be either ordered or unordered pairs from <m>V</m>.
+    If <m>E</m> consists of ordered pairs we have a <index><main>digraph</main></index>
+    <em>directed graph</em> or <em>digraph</em> <mdash /> the diagrams we have been using to visualize
+    relations! If <m>E</m> consists of unordered
+    pairs then we are dealing with an <em>undirected graph</em>. Since the
+    undirected case is actually the more usual, if the word <q>graph</q> appears without
+    a modifier it is assumed that we are talking about an undirected graph.
+  </p>
+
+  <p>
+    The previous paragraph gives a relatively precise definition of a graph
+    in terms of sets, however the real way to think of graphs is in terms
+    of diagrams where a set of dots are connected by paths. (The paths will,
+    of course, need to
+    have arrows on them in digraphs.) Below are a few examples of the
+    diagrams that are used to represent graphs.
+  </p>
+  <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  <image source="images/06d94f01bfecbcbff19166494556e5f5671266b7.png"/>
+  <p>
+    Two graphs are said to be <index><main>graph isomorphism</main></index> <em>isomorphic</em> if they
+    represent the same connections. There must first of all be a one-to-one correspondence
+    between the vertices of the two graphs, and further, a pair of vertices in one
+    graph are connected by some number of edges if and only if the corresponding vertices in the other graph
+    are connected by the same number of edges.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        The four examples of graphs above actually are two pairs of isomorphic graphs.
+        Which pairs are isomorphic?
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    This word <q>isomorphic</q> has a nice etymology. It means <q>same shape.</q> Two graphs are
+    isomorphic if they have the same shape. We don't have the tools right now to do a formal
+    proof (in fact we need to look at some further prerequisites before we can really precisely
+    define isomorphism), but isomorphism of graphs is an equivalence relation. Let's at least
+    verify this informally.
+  </p>
+
+  <p>
+    <em>Reflexivity</em> Is a graph isomorphic to itself? That is, does a graph have the <q>same
+    shape</q> as itself? Clearly!
+  </p>
+
+  <p>
+    <em>Symmetry</em> If graph <m>A</m> is isomorphic to graph <m>B</m>, is it also the case that graph <m>B</m>
+    is isomorphic to graph <m>A</m>? I.e. if <m>A</m> has the <q>same shape</q> as <m>B</m>, doesn't <m>B</m> have the
+    same shape as <m>A</m>? Of course!
+  </p>
+
+  <p>
+    <em>Transitivity</em> Well <ellipsis /> the answer here is going to be <q>Naturally!</q> but let's wait
+    to delve into this issue when we have a usable formal definition for graph isomorphism. The
+    question at this stage should be clear though: If <m>A</m> is isomorphic to <m>B</m> and <m>B</m> is isomorphic
+    to <m>C</m>, then isn't <m>A</m> isomorphic to <m>C</m>?
+  </p>
+  <exercises>
+
+    <ol>
+      <li><p>
+          Consider the relation <m>\relA</m> defined by
+          <me>
+            \relA = \{ (x,y) \suchthat \; x \, \mbox{has the same astrological sign as}  \, y \}.
+          </me>
+          Show that <m>\relA</m> is an equivalence relation.  What equivalence class
+          under <m>\relA</m> do you belong to?
+        </p></li>
+
+      <li><p>
+          Define a relation <m>\square</m> on the integers by <m>x \square y \; \iff x^2 = y^2</m>.  Show that <m>\square</m> is an equivalence relation.  List the equivalence
+          classes <m>x/\square</m> for <m>0 \leq x \leq 5</m>.
+        </p></li>
+
+      <li><p>
+          Define a relation <m>\relA</m> on the set of all words by
+          <me>
+            w_1 \relA w_2  \iff  w_1 \mbox{ is an anagram of }  w_2.
+          </me>
+          Show that <m>\relA</m> is an equivalence relation.  (Words are anagrams
+          if the letters of one can be re-arranged to form the other.  For example, `ART' and `RAT' are anagrams.)
+        </p></li>
+
+      <li><p>
+          The two diagrams below both show a famous graph known as the 
+          <index><main>Petersen graph</main></index>Petersen graph.  The picture on the 
+          left is the usual representation which emphasizes its five-fold symmetry.  The picture on the right
+          highlights the fact that the Petersen graph also has a three-fold symmetry.  Label the right-hand diagram
+          using the same letters (A through J) in order to show that these two representations are truly isomorphic.
+          <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+          \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+            \reset@font\fontsize{#1}{#2pt}
+            \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+            \selectfont}\fi
+          <image source="images/1037ff38287e1a5c52302d9737a3b5b289ff723d.png"/>
+        </p></li>
+
+      <li><p>
+          We will use the symbol <m>\Integers^{\ast}</m> to refer to the set of
+          all integers <em>except</em> <m>0</m>.  
+          Define a relation <m>\relQ</m> on the set of all pairs in <m>\Integers \times \Integers^{\ast}</m> (pairs of integers where the second coordinate is non-zero) by
+          <m>(a,b) \relQ (c,d) \; \iff \; ad=bc</m>.  Show that <m>\relQ</m> is an 
+          equivalence relation.
+        </p></li>
+
+      <li><p>
+          The relation <m>\relQ</m> defined in the previous problem partitions
+          the set of all pairs of integers into an interesting set of equivalence
+          classes.  Explain why
+          <me>
+            \Rationals  =  (\Integers \times \Integers^{\ast}) / \relQ.
+          </me>
+          Ultimately, this is the <q>right</q> definition of the set 
+          of rational numbers!
+        </p></li>
+
+      <li><p>
+          Reflect back on the proof in problem 5.  Note that we were fairly
+          careful in assuring that the second coordinate in the ordered pairs is
+          non-zero. (This was the whole reason for introducing the 
+          <m>\Integers^{\ast}</m> notation.)  At what point in the argument did you
+          use this hypothesis?
+        </p></li>
+    </ol>
+  </exercises>
+</section>

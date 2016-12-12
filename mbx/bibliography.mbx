@@ -1,0 +1,65 @@
+
+<references>
+<title>Bibliography</title>
+<biblio type="raw" xml:id="putnam1">R.~E.~Greenwood A.~M.~Gleason and L.~M. Kelly.
+ \emph{The William Lowell Putnam Mathematical Competition Problems &amp; Solutions: 1938-1964}.
+ The Mathematical Association of America, Reissued 2003.</biblio>
+<biblio type="raw" xml:id="pftB">Martin Aigner and Gunter~M. Ziegler.
+ \emph{Proofs from THE BOOK}.
+ Springer-Verlag, 2nd edition, 2001.</biblio>
+<biblio type="raw" xml:id="wiki-CBS">Wikipedia contributors.
+ Cantor-bernstein-schroeder theorem.
+ Wikipedia, the free encyclopedia. 
+  \href{http://en.wikipedia.org/wiki/Cantor-Bernstein-Schroeder_theorem}
+  {http://en.wikipedia.org/wiki/Cantor-Bernstein-Schroeder\_theorem}.</biblio>
+<biblio type="raw" xml:id="wiki-goldbach">Wikipedia contributors.
+ Christian \protect{G}oldbach.
+ Wikipedia, the free encyclopedia. 
+  \href{http://en.wikipedia.org/wiki/Goldbach}{http://en.wikipedia.org/wiki/Goldbach}.</biblio>
+<biblio type="raw" xml:id="wiki-Erdos_number">Wikipedia contributors.
+ Erdos number.
+ Wikipedia, the free encyclopedia. 
+  \href{http://en.wikipedia.org/wiki/Erdos_number}{http://en.wikipedia.org/wiki/Erdos\_number}.</biblio>
+<biblio type="raw" xml:id="wiki-4color">Wikipedia contributors.
+ The four color theorem.
+ Wikipedia, the free encyclopedia. 
+  \href{http://en.wikipedia.org/wiki/Four_color_theorem}{http://en.wikipedia.org/wiki/Four\_color\_theorem}.</biblio>
+<biblio type="raw" xml:id="putnam2">Leonard F.~Klosinski Gerald L.~Alexanderson and Loren~C. Larson.
+ \emph{The William Lowell Putnam Mathematical Competitions Problems &amp; Solutions: 1965 - 1984}.
+ The Mathematical Association of America, Reissued 2003.</biblio>
+<biblio type="raw" xml:id="lighthouse">Richard~K. Guy.
+ The lighthouse theorem, \protect{M}orley &amp; \protect{M}alfatti -- a
+  budget of paradoxes.
+ \emph{American Mathematical Monthly}, 2007.</biblio>
+<biblio type="raw" xml:id="putnam3">Bjorn~Poonen Kiran S.~Kedlaya and Ravi Vakil.
+ \emph{The William Lowell Putnam Mathematical Competition 1985-2000:
+  Problems Solutions, and Commentary}.
+ The Mathematical Association of America, 2002.</biblio>
+<biblio type="raw" xml:id="lam">C.~W.~H. Lam.
+ The search for a finite projective plane of order 10.
+
+  \href{http://www.cecm.sfu.ca/organics/papers/lam/paper/html/paper.html}{http://www.www.cecm.sfu.ca/organics/papers/lam/paper/html/paper.html}.</biblio>
+<biblio type="raw" xml:id="macl">Saunders MacLane.
+ \emph{Categories for the Working Mathematician}.
+ Springer-Verlag, 2nd edition, 1998.</biblio>
+<biblio type="raw" xml:id="HisMathArch">John~J. O'Connor and Edmund~F. Robertson.
+
+  \href{http://www-history.mcs.st-andrews.ac.uk/history/index.html}{http://www-history.mcs.st-andrews.ac.uk/history/index.html}.
+ The MacTutor History of Mathematics archive.</biblio>
+<biblio type="raw" xml:id="radz">Stanislaw Radziszowski.
+ Small ramsey numbers.
+ \href{http://www.combinatorics.org/Surveys/ds1.pdf}
+  {http://www.combinatorics.org/Surveys/ds1.pdf}.</biblio>
+<biblio type="raw" xml:id="rota">Gian-Carlo Rota.
+ \emph{Indiscrete Thoughts}.
+ Birkh\"{a}user, 1997.</biblio>
+<biblio type="raw" xml:id="satyana">M.~Satyanarayana.
+ none given.
+ \emph{Math. Quest. Educ. Times (New Series)}, 1909.</biblio>
+<biblio type="raw" xml:id="struik">D.~J. Struik.
+ \emph{A Source Book in Mathematics, 1200-1800}.
+ Princeton University Press, 1986.</biblio>
+<biblio type="raw" xml:id="PM">Alfred~North Whitehead and Bertrand Russell.
+ \emph{Principia Mathematica}.
+ Cambridge University Press, 1910.</biblio>
+</references>

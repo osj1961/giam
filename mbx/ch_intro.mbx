@@ -1,0 +1,16 @@
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ch_intro">
+  <title>Introduction and notation</title>
+  <introduction>
+    <p>
+      <em>Wisdom is the quality that keeps you from getting into situations where you need it. <ndash />Doug Larson</em>
+    </p>
+  </introduction>
+  <xi:include  href="sec_basic.mbx" />
+  <xi:include  href="sec_def.mbx" />
+  <xi:include  href="sec_scary.mbx" />
+  <xi:include  href="sec_num_thry.mbx" />
+  <xi:include  href="sec_alg.mbx" />
+  <xi:include  href="sec_rat.mbx" />
+  <xi:include  href="sec_rel_intro.mbx" />
+</chapter>

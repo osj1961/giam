@@ -1,0 +1,164 @@
+
+<section xml:id="sec_russell">
+  <title>Russell's Paradox</title>
+  <p>
+    There is no Nobel prize category for mathematics.<fn>There are prizes
+    considered equivalent to the Nobel in stature <mdash /> the Fields Medal, awarded every four years by the International Mathematical Union to up to four mathematical researchers under the age of forty, and the Abel Prize, awarded annually by the King of Norway.</fn> Alfred Nobel's will
+    called for the awarding of annual prizes in physics, chemistry, physiology
+    or medicine, literature, and peace. Later, the
+    <q>Bank of Sweden Prize in Economic Sciences in Memory of Alfred Nobel</q>
+    was created and certainly several mathematicians have won what is
+    improperly known as the Nobel prize in Economics. But, there is no
+    Nobel prize in Mathematics per se. There is an interesting urban myth that
+    purports to explain this lapse: Alfred Nobel's wife either left him for, or
+    had an affair with a mathematician <mdash /> so Nobel, the inventor of dynamite
+    and an immensely wealthy and powerful man, when he decided to endow
+    a set of annual prizes for <q>those who, during the preceding year, shall have conferred the greatest benefit on mankind</q> pointedly left out mathematicians.
+  </p>
+
+  <p>
+    One major flaw in this theory is that Nobel was never married.
+  </p>
+
+  <p>
+    In all likelihood, Nobel simply didn't view mathematics as a field
+    which provides benefits for mankind <mdash /> at least not directly.
+    The broadest division within mathematics is between the <q>pure</q>
+    and <q>applied</q> branches. Just precisely where the dividing line
+    between these spheres lies is a matter of opinion, but it can be
+    argued that it is so far to one side that one may as well call an
+    applied mathematician a physicist
+    (or chemist, or biologist, or economist, or <ellipsis />). One thing is
+    clear, Nobel believed to a certain extent in the utilitarian ethos.
+    The value of a thing (or a person) is determined by how useful it is (or they
+    are), which makes it interesting that one of the few mathematicians
+    to win a Nobel prize was Bertrand Russell (the 1950 prize in Literature
+    <q>in recognition of his varied and significant writings in which he
+    champions humanitarian ideals and freedom of thought</q>).
+  </p>
+
+  <p>
+    Bertrand Russell was one of the twentieth century's most colorful
+    intellectuals. He helped revolutionize the foundations of mathematics,
+    but was perhaps better known as a philosopher. It's hard to conceive
+    of <em>anyone</em> who would characterize Russell as an applied mathematician!
+  </p>
+
+  <p>
+    Russell was an ardent anti-war and anti-nuclear activist. He achieved a
+    status (shared with Albert Einstein, but very few others) as an eminent
+    scientist who was also a powerful moral authority. Russell's mathematical
+    work was of a very abstruse foundational sort; he was concerned with
+    the idea of reducing all mathematical thought to Logic and Set theory.
+  </p>
+
+  <p>
+    In the beginning of our investigations into Set theory we mentioned
+    that the notion of a <q>set of all sets</q> leads to something paradoxical.
+    Now we're ready to look more closely into that remark and hopefully
+    gain an understanding of Russell's paradox.
+  </p>
+
+  <p>
+    By this point you should be okay with the notion of a set that
+    contains other sets, but would it be okay for a set to contain
+    <em>itself</em>? That is, would it make sense to have a set
+    defined by
+    <me>
+      A = \{ 1, 2, A \}?
+    </me>
+  </p>
+
+  <p>
+    The set <m>A</m> has three elements, <m>1</m>, <m>2</m> and itself. So we
+    could write
+    <me>
+      A = \{ 1, 2, \{ 1, 2, A \} \},
+    </me>
+    and then
+    <me>
+      A = \{ 1, 2, \{ 1, 2, \{ 1, 2, A \} \} \},
+    </me>
+    and then
+    <me>
+      A = \{ 1, 2, \{ 1, 2, \{ 1, 2, \{ 1, 2, A \} \} \} \},
+    </me>
+    et cetera.
+  </p>
+
+  <p>
+    This obviously seems like a problem. Indeed, often paradoxes seem to
+    be caused by self-reference of this sort. Consider
+  </p>
+
+  The sentence in this box is false.
+
+  <p>
+    So a reasonable alternative
+    is to <q>do</q> math among the sets that don't exhibit this particular
+    pathology.
+  </p>
+
+  <p>
+    Thus, inside the set of all sets we are singling out a particular subset
+    that consists of sets which don't contain themselves.
+    <me>
+      {\mathcal S} = \{ A \suchthat \; A \,\mbox{is a set}  \; \land \; A \notin A \}
+    </me>
+  </p>
+
+  <p>
+    Now within the universal set we're working in (the set of all sets) there
+    are only two possibilities: a given set is either in <m>{\mathcal S}</m> or
+    it is in its complement <m>\overline{\mathcal S}</m>. Russell's paradox
+    comes about when we try to decide which of these alternatives pertains
+    to <m>{\mathcal S}</m> itself, the problem is that each alternative leads us
+    to the other!
+  </p>
+
+  <p>
+    If we assume that <m>{\mathcal S} \in {\mathcal S}</m>, then it must be the
+    case that <m>{\mathcal S}</m> satisfies the membership criterion for <m>{\mathcal S}</m>.
+    Thus, <m>{\mathcal S} \notin {\mathcal S}</m>.
+  </p>
+
+  <p>
+    On the other hand, if we assume that <m>{\mathcal S} \notin {\mathcal S}</m>,
+    then we see that <m>{\mathcal S}</m> does indeed satisfy the membership criterion for <m>{\mathcal S}</m>. Thus <m>{\mathcal S} \in {\mathcal S}</m>.
+  </p>
+
+  <p>
+    Russell himself developed a workaround for the paradox which
+    bears his name. Together with Alfred North Whitehead he published
+    a 3 volume work entitled <em>Principia Mathematica</em><fn>Isaac Newton
+    also published a 3 volume work which is often cited by this same title,
+    <em>Philosophiae Naturalis Principia Mathematica</em>.</fn><nbsp /><xref ref="PM" />.
+    In the Principia, Whitehead and Russell develop a system known as
+    <em>type theory</em> which sets forth principles for avoiding problems
+    like Russell's paradox. Basically, a set and its elements are of
+    different <q>types</q> and so the notion of a set being contained in itself
+    (as an element) is disallowed.
+  </p>
+  <exercises>
+
+    <ol>
+      <li><p>
+          Verify that <m>(A \implies {\lnot}A) \land ({\lnot}A \implies A)</m>
+          is a logical contradiction in two ways:  by filling out a truth table and 
+          using the laws of logical equivalence.
+
+          \hint{In order to get started on this you'll need to convert the conditionals into equivalent
+          disjunctions.  Recall that <m>X \implies Y \; \equiv \; {\lnot}X \lor Y</m>.}
+        </p></li>
+
+      <li><p>
+          One way out of Russell's paradox is to declare that the collection
+          of sets that don't contain themselves as elements is not a set itself.
+          Explain how this circumvents the paradox. 
+
+          \hint{If it's not a set then it doesn't necessarily have to have the property that we
+          can be <em>sure</em> whether an element is in it or not.}
+        </p></li>
+    </ol>
+  </exercises>
+</section>
