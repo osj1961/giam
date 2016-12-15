@@ -1,0 +1,740 @@
+
+<section xml:id="sec_basic">
+  <title>Basic sets</title>
+  <p>
+    It has been said<index><main>Kronecker, Leopold</main></index><fn>Usually attributed to 
+    Kronecker <mdash /> ``Die ganze Zahl schuf der liebe Gott, alles &Uuml;brige 
+    ist Menschenwerk.''</fn> that <q>God invented
+    the integers, all else is the work of Man.</q> This is
+    a mistranslation. The term <q>integers</q> should
+    actually be <q>whole numbers.</q> The concepts of zero and negative
+    values seem (to many people) to be unnatural constructs. Indeed, otherwise
+    intelligent people are still known to rail against the concept of a
+    negative quantity <mdash /> <q>How can you have negative three apples?</q>
+    The concept of zero is also somewhat profound.
+  </p>
+
+  <p>
+    Probably most people will agree that the
+    <index><main>natural numbers</main></index> natural numbers <em>are</em> a natural construct <mdash /> they are the numbers we use to count things. Traditionally, the natural numbers are denoted <m>\Naturals</m>.
+  </p>
+
+  <p>
+    At this point in time there seems to be no general agreement about the status
+    of zero (<m>0</m>) as a natural number. Are there collections that we might possibly
+    count that have <em>no</em> members? Well, yes <mdash /> I'd invite you to consider the collection of gold bars that I keep in my basement<ellipsis />
+  </p>
+
+  <p>
+    The traditional view seems to be that
+    <me>
+      \Naturals = \{1, 2, 3, 4, \ldots \}
+    </me>
+    i.e. that the naturals don't include 0. My personal
+    preference would be to make the other choice (i.e. to include <m>0</m>
+    in the natural numbers), but for the moment, let's be traditionalists.
+  </p>
+
+  <p>
+    Be advised that this is a choice. We are adopting a
+    convention. If in some other course, or other mathematical setting
+    you find that the other convention is preferred, well, it's good to
+    learn flexibility<ellipsis />
+  </p>
+
+  <p>
+    Perhaps the best way of saying what a set is, is to do as we
+    have above. List all the elements. Of course, if a set has an
+    infinite number of things in it, this is a difficult task <mdash /> so
+    we satisfy ourselves by listing enough of the elements that the
+    pattern becomes clear.
+  </p>
+
+  <p>
+    Taking <m>\Naturals</m> for granted, what is meant by the <q>all else</q>
+    that humankind is responsible for? The basic sets of different types
+    of <q>numbers</q> that every mathematics student should know are: <m>\Naturals,
+    \Integers, \Rationals, \Reals
+    \; \mbox{and}  \; \Complexes</m>. Respectively: the naturals, the integers, the
+    rationals, the reals, and the complex numbers. The use of <m>\Naturals,
+    \Reals \; \mbox{and}  \; \Complexes</m> is probably clear to an English
+    speaker. The integers are denoted with a <m>\Integers</m> because of the
+    German word <em>z&#xe4;hlen</em> which means <q>to count.</q> The rational numbers are
+    probably denoted using <m>\Rationals</m>, for <q>quotients.</q> Etymology
+    aside, is it possible for us to provide precise descriptions of these
+    remaining sets?
+  </p>
+
+  <p>
+    The <index><main>integers</main></index> integers (<m>\Integers</m>) are just the set of natural numbers
+    together with the negatives of naturals and zero. We can use
+    a doubly infinite list to denote this set.
+    <me>
+      \Integers = \{ \ldots -3, -2, -1, 0, 1, 2, 3, \ldots \}
+    </me>
+  </p>
+
+  <p>
+    To describe the <index><main>rationals</main></index> rational numbers precisely we'll have to wait until <xref ref="sec_rat">Section</xref>.
+    In the interim, we can use an intuitively appealing, but somewhat imprecise
+    definition for the set of rationals. A rational number is a fraction built out
+    of integers. This also provides us with
+    a chance to give an example of using the main other way of describing
+    the contents of a set <mdash /> so-called <index><main>set-builder notation</main></index> set-builder notation.
+    <me>
+      \Rationals = \{ \frac{a}{b} \suchthat a \in \Integers \; \mbox{and}  \;
+      b \in \Integers \; \mbox{and}  \; b \neq 0 \}
+    </me>
+  </p>
+
+  <p>
+    This is a good time to start building a <q>glossary</q> <mdash /> a translation lexicon
+    between the symbols of mathematics and plain language. In the line
+    above we are defining the set <m>\Rationals</m> of rational numbers, so the
+    first symbols that appear are <q><m>\Rationals =</m>.</q> It is interesting to
+    note that the equals sign has two subtly different meanings: assignment
+    and equality testing, in the mathematical sentence above we are
+    making an assignment <mdash /> that is, we are declaring that from now on the set
+    <m>\Rationals</m> will <em>be</em> the set defined on the remainder of the
+    line.<fn>Some Mathematicians contend that only the <q>equality
+      test</q> meaning of the equals sign is real, that by writing the
+      mathematical sentence above we are asserting the truth of the
+      equality test.  This may be technically correct but it isn't how
+      most people think of things.</fn>
+    Let's dissect the rest of that line now. There are only 4
+    characters whose meaning may be in doubt, <m>\{</m>, <m>\}</m>, <m>\in</m> and <m>\suchthat</m>.
+    The curly braces (a.k.a. <em>french braces</em>) are almost universally
+    reserved to denote sets, anything appearing between curly braces is
+    meant to define a set. In translating from <q>math</q> to English,
+    replace the initial brace with the phrase <q>the set of all.</q> The
+    next arcane symbol to appear is the vertical bar. As we will see in
+    <xref ref="div">Section</xref> this symbol has (at least) two meanings <mdash /> it will
+    always be clear from context which is meant. In the sentence we are
+    analyzing, it stands for the words <q>such that.</q> The last bit of
+    arcana to be deciphered is the symbol <m>\in</m>, it stands for the English
+    word <q>in</q> or, more formally, <q>is an element of.</q>
+  </p>
+
+  <p>
+    Let's parse the entire mathematical sentence we've been discussing
+    with an English translation in parallel.
+  </p>
+  <tabular>
+    <row>
+      <cell><m>\Rationals</m></cell>
+      <cell><m>=</m></cell>
+      <cell><m>\{</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>The rational numbers</cell>
+      <cell>are defined to be</cell>
+      <cell>the set of all</cell>
+    </row>
+  </tabular>
+  <tabular>
+    <row>
+      <cell><m>\displaystyle \frac{a}{b}</m></cell>
+      <cell><m>\suchthat</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>fractions of the form <m>a</m> over <m>b</m></cell>
+      <cell>such that</cell>
+    </row>
+  </tabular>
+  <tabular>
+    <row>
+      <cell><m>a \in \Integers</m></cell>
+      <cell>and</cell>
+      <cell><m>b \in \Integers</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>a</m> is an element of the integers</cell>
+      <cell>and</cell>
+      <cell><m>b</m> is an
+      element of the integers</cell>
+    </row>
+  </tabular>
+  <tabular>
+    <row>
+      <cell>and</cell>
+      <cell><m>b \neq 0</m></cell>
+      <cell><m>\}</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>and</cell>
+      <cell><m>b</m> is nonzero.</cell>
+      <cell>(the final curly brace
+      is silent)</cell>
+    </row>
+  </tabular>
+  <p>
+    It is quite apparent that the mathematical notation represents a huge
+    improvement as regards brevity.
+  </p>
+
+  <p>
+    As mentioned previously, this definition is slightly flawed. We will
+    have to wait 'til later to get a truly precise
+    definition of the rationals, but we invite the reader to mull over
+    what's wrong with this one. Hint: think about the issue of whether
+    a fraction is in lowest terms.
+  </p>
+
+  <p>
+    Let's proceed with our menagerie of sets of numbers. The next set
+    we'll consider is <m>\Reals</m>, the set of<index><main>reals</main></index> real numbers. To someone
+    who has completed Calculus, the reals are perhaps the most obvious and
+    natural notion of what is meant by <q>number.</q> It may be surprising to
+    learn that the actual definition of what is meant by a real number is
+    extremely difficult. In fact, the first reasonable formulation of a
+    precise definition of the reals came around 1858, more than 180 years
+    after the development of the
+    Calculus<index><main>Newton, Isaac</main></index><fn>Although it was not
+      published until 1736, Newton's book (De Methodis Serierum et
+      Fluxionum) describing both differential and integral Calculus was
+      written in 1671.</fn>. A precise
+    definition for the set <m>\Reals</m> of real numbers is
+    beyond the scope of this book, for the moment consider the
+    following intuitive description. A real number is a number that
+    measures some physical quantity. For example, if a circle has
+    diameter 1 then its circumference is <m>\pi</m>, thus <m>\pi</m> is a real
+    number. The points <m>(0,0)</m> and <m>(1,1)</m> in the Cartesian plane have
+    distance <m>\sqrt{ (0-1)^2 + (0-1)^2} = \sqrt{2}</m>, thus <m>\sqrt{2}</m> is
+    a real number. Any rational number is clearly a real number <mdash /> slope
+    is a physical quantity, and the line from <m>(0,0)</m> to <m>(b,a)</m> has slope
+    <m>a/b</m>. In ancient Greece, <index><main>Pythagoras</main></index>Pythagoras <mdash /> who has sometimes been
+    described as the first pure Mathematician, believed that
+    every real quantity was in fact rational, a belief that we now know to
+    be false. The numbers <m>\pi</m> and <m>\sqrt{2}</m> mentioned above are not
+    rational numbers. For the moment it is useful to recall a practical
+    method for distinguishing between rational numbers and real quantities
+    that are not rational <mdash /> consider their decimal expansions. If the
+    reader is unfamiliar with the result to which we are alluding, we urge
+    you to experiment. Use a calculator or (even better) a computer
+    algebra package to find the decimal expansions of various quantities.
+    Try <m>\pi</m>, <m>\sqrt{2}</m>, <m>1/7</m>, <m>2/5</m>, <m>16/17</m>, <m>1/2</m> and a few other
+    quantities of your own choice. Given that we have already said that the first
+    two of these are not rational, try to determine the pattern. What is
+    it about the decimal expansions
+    that distinguishes rational quantities from reals that aren't rational?
+  </p>
+
+  <p>
+    Given that we can't give a precise definition of a real number at this
+    point it is perhaps surprising that we <em>can</em> define the set
+    <m>\Complexes</m> of <index><main>complex numbers</main></index>complex numbers with precision
+    (modulo the fact that we define them in terms of <m>\Reals</m>).
+    <me>
+      \Complexes = \{ a + bi \suchthat a \in \Reals \; \mbox{and}  \; b \in
+      \Reals \; \mbox{and}  \; i^2 = -1 \}
+    </me>
+  </p>
+
+  <p>
+    Translating this bit of mathematics into English we get:
+  </p>
+  <tabular>
+    <row>
+      <cell><m>\Complexes</m></cell>
+      <cell><m>=</m></cell>
+      <cell><m>\{</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>The complex numbers</cell>
+      <cell>are defined to be</cell>
+      <cell>the set of all</cell>
+    </row>
+  </tabular>
+  <tabular>
+    <row>
+      <cell><m>a+bi</m></cell>
+      <cell><m>\suchthat</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>expressions of the form <m>a</m> plus <m>b</m> times <m>i</m></cell>
+      <cell>such that</cell>
+    </row>
+  </tabular>
+  <tabular>
+    <row>
+      <cell><m>a \in \Reals</m></cell>
+      <cell>and</cell>
+      <cell><m>b \in \Reals</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>a</m> is an element of the reals</cell>
+      <cell>and</cell>
+      <cell><m>b</m> is an
+      element of the reals</cell>
+    </row>
+  </tabular>
+  <tabular>
+    <row>
+      <cell>and</cell>
+      <cell><m>i^2 = -1</m></cell>
+      <cell><m>\}</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>and</cell>
+      <cell><m>i</m> has the property that its
+      square is negative one.</cell>
+      <cell></cell>
+    </row>
+  </tabular>
+  <p>
+    We sometimes denote a complex number using a single variable (by
+    convention, either late alphabet Roman letters or Greek letters.
+    Suppose that we've defined <m>z = a + bi</m>. The single letter <m>z</m>
+    denotes the entire complex number. We can extract the individual
+    components of this complex number by talking about the
+    <index><main>real part</main></index>real and
+    <index><main>imaginary part</main></index>imaginary parts of <m>z</m>.
+    Specifically, <m>Re(z) = a</m> is called the
+    real part of <m>z</m>, and <m>Im(z) = b</m> is called the imaginary part of
+    <m>z</m>.
+  </p>
+
+  <p>
+    Complex numbers are added and multiplied as if they were binomials
+    (polynomials with just two terms) where <m>i</m> is treated as if it were
+    the variable <mdash /> except that we use the algebraic property that <m>i</m>'s
+    square is -1. For example, to add the complex numbers <m>1+2i</m> and
+    <m>3-6i</m> we just think of the binomials <m>1+2x</m> and <m>3-6x</m>. Of course we
+    normally write a binomial with the term involving the variable coming
+    first, but this is just a convention. The sum of those binomials
+    would be <m>4-4x</m> and so the sum of the given complex numbers is <m>4-4i</m>.
+    This sort of operation is fairly typical and is called
+    <index><main>component-wise operations</main></index><em>component-wise</em> addition.
+    To multiply complex numbers we have to
+    recall how it is that we multiply binomials. This is the well-known
+    FOIL rule (first, outer, inner, last). For example the product of
+    <m>3-2x</m> and <m>4+3x</m> is <m>(3\cdot 4) + (3 \cdot 3x) + (-2x\cdot 4) +
+    (-2x\cdot 3x)</m> this expression simplifies to <m>12 + x - 6x^2</m>. The
+    analogous calculation with complex numbers looks just the same, until
+    we get to the very last stage where, in simplifying, we use the fact
+    that <m>i^2=-1</m>.
+    <md>
+      <mrow>(3-2i)\cdot (4+3i)</mrow>
+      <mrow>= (3\cdot 4) + (3\cdot 3i) + (-2i\cdot 4) + (-2i\cdot 3i)</mrow>
+      <mrow>= 12 + 9i - 8i -6i^2</mrow>
+      <mrow>= 12 + i + 6</mrow>
+      <mrow>= 18 + i</mrow>
+    </md>
+  </p>
+
+  <p>
+    The real numbers have a natural ordering, and hence, so do the
+    other sets that are contained in <m>\Reals</m>. The complex numbers
+    can't really be put into a well-defined order <mdash /> which should be
+    bigger, <m>1</m> or <m>i</m>? But we do have a way to, at least partially,
+    accomplish this task. The <index><main>modulus, of a complex number</main></index>
+    <em>modulus</em> of a complex number is a real number that gives the
+    distance from the origin (<m>0+0i</m>) of the complex plane, to a given
+    complex number. We indicate the modulus using absolute value bars,
+    and you should note that if a complex number happens to be purely
+    real, the modulus and the usual notion of absolute value coincide.
+    If <m>z = a + bi</m> is a complex number, then its modulus, <m>\|a + bi \|</m>,
+    is given by the formula <m>\sqrt{a^2+b^2}</m>.
+  </p>
+
+  <p>
+    Several of the sets of numbers we've been discussing can be split
+    up based on the so-called <index><main>trichotomy</main></index><em>trichotomy property</em>:
+    every real number is either positive, negative or zero. In particular,
+    <m>\Integers</m>, <m>\Rationals</m> and <m>\Reals</m> can have modifiers stuck on so
+    that we can discuss (for example) the negative real numbers, or the
+    positive rational numbers or the integers that aren't negative.
+    To do this, we put superscripts on the set symbols, either a <m>+</m>
+    or a <m>-</m> or the word <index><main>noneg</main></index><q>noneg.</q>
+  </p>
+
+  <p>
+    So
+    <me>
+      \Integers^+ \; = \; \{ x \in \Integers \suchthat x > 0 \}
+    </me>
+    and
+    <me>
+      \Integers^- \; = \; \{ x \in \Integers \suchthat x \lt  0 \}
+    </me>
+    and
+    <me>
+      \Znoneg \; = \; 
+      \{ x \in \Integers \suchthat x \geq 0 \}.
+    </me>
+  </p>
+
+  <p>
+    Presumably, we could also use <q>nonpos</q> as a superscript to indicate
+    non-positive integers, but this never seems to come up in practice.
+    Also, you should note that <m>\Integers^+</m> is really the same thing
+    as <m>\Naturals</m>, but that <m>\Znoneg</m> is different because it
+    contains <m>0</m>.
+  </p>
+
+  <p>
+    We would be remiss in closing this section without discussing the
+    way the sets of numbers we've discussed fit together. Simply put,
+    each is contained in the next. <m>\Naturals</m> is contained in <m>\Integers</m>,
+    <m>\Integers</m> is contained in <m>\Rationals</m>, <m>\Rationals</m> is contained
+    in <m>\Reals</m>, and <m>\Reals</m> is contained in <m>\Complexes</m>.
+    Geometrically the complex numbers are essentially a two-dimensional
+    plane. The real numbers sit inside this plane just as the <m>x</m>-axis
+    sits inside the usual Cartesian plane <mdash /> in this context you may
+    hear people talk about <q>the real line within the complex plane.</q>
+    It is probably clear how <m>\Naturals</m> lies within <m>\Integers</m>, and
+    every integer is certainly a real number. The intermediate set
+    <m>\Rationals</m> (which contains the integers, and is contained by the
+    reals) has probably the most interesting relationship with the
+    set that contains it. Think of the real line as being solid, like
+    a dark pencil stroke. The rationals are like sand that has been
+    sprinkled very evenly over that line. Every point on the line
+    has bits of sand nearby, but not (necessarily) on top of it.
+  </p>
+  <exercises>
+
+    <ol>
+    <li><p>
+        Each of the quantities indexing the rows of the following table
+        is in one or more of the sets which index the columns.  Place a 
+        check mark in a table entry if the quantity is in the set.
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell></cell>
+            <cell><m>\Naturals</m></cell>
+            <cell><m>\Integers</m></cell>
+            <cell><m>\Rationals</m></cell>
+            <cell><m>\Reals</m></cell>
+            <cell><m>\Complexes</m></cell>
+          </row>
+          <row bottom="medium">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell  ><m>17</m></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>\pi</m></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>22/7</m></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>-6</m></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>e^0</m></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>1+i</m></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>\sqrt{3}</m></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>i^2</m></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+        \hint{Note that these sets contain one another, so if 
+        you determine that a number is a natural number it is automatically 
+        an integer and a rational number and a real number and a complex number<ellipsis />}
+      </p></li>
+
+    <li><p>
+        Write the set <m>\Integers</m> of integers using a singly infinite
+        listing.
+
+
+
+        \hint{What the heck is meant by a <q>singly infinite listing</q>?  To help you figure this out, note that
+        <me>
+          \ldots -3, -2, -1, 0, 1, 2, 3, \ldots
+        </me>
+        is a doubly infinite listing.}
+      </p></li>
+
+    <li><p>
+    Identify each as rational or irrational.
+
+    <ol>
+      <li><p>
+          <m>5021.2121212121\ldots</m>
+        </p></li>
+
+      <li><p>
+          <m>0.2340000000\ldots</m>
+        </p></li>
+
+      <li><p>
+          <m>12.31331133311133331111\ldots</m>
+        </p></li>
+
+      <li><p>
+          <m>\pi</m>
+        </p></li>
+
+      <li><p>
+          <m>2.987654321987654321987654321\ldots</m>
+        </p></li>
+    </ol>
+    </p>
+
+    \hint{rat,rat,irr,irr,rat}</li>
+
+    <li><p>
+        The <q>see and say</q> sequence is produced by first writing a 1, 
+        then iterating the following procedure:  look at the previous entry 
+        and say how many entries there are of each integer and write down what 
+        you just said.  The first several terms of the <q>see and say</q> sequence 
+        are <m>1, 11, 21, 1112, 3112, 211213, 312213, 212223, \ldots</m>.  Comment on the
+        rationality (or irrationality) of the number whose decimal digits are obtained 
+        by concatenating the <q>see and say</q> sequence.
+        <me>
+          0.1112111123112211213...
+        </me>
+        \hint{
+        Experiment!
+
+        What would it mean for this number to be rational?  If we were to
+        run into an element of the <q>see and say</q> sequence that is its own description, then
+        from that point onward the sequence would get stuck repeating the same thing over and over
+        (and the number whose digits are found by concatenating the elements of the <q>see and say</q> 
+        sequence will enter into a repeating pattern.)
+        }
+      </p></li>
+
+    <li><p>
+        Give a description of the set of rational numbers whose decimal
+        expansions terminate.  (Alternatively, you may think of their decimal
+        expansions ending in an infinitely-long string of zeros.)
+
+        \hint{If a decimal expansion terminates after, say, k digits, can you figure out how to produce an integer from that number? Think about multiplying by something <ellipsis />}
+      </p></li>
+
+    <li><p>
+        Find the first 20 decimal places of <m>\pi</m>, <m>3/7</m>, <m>\sqrt{2}</m>, 
+          <m>2/5</m>, <m>16/17</m>, <m>\sqrt{3}</m>, <m>1/2</m> and <m>42/100</m>.  Classify each of
+        these quantity's decimal expansion as: terminating, having a repeating
+        pattern, or showing no discernible pattern.
+
+        \hint{A calculator will generally be inadequate for this problem. You should try using a CAS (Computer Algebra System).  I  would recommend the Sage computer algebra system because
+        like this book it is free <mdash /> you can download sage and run it on your own system or you can try it out online without installing.  Check it out at www.sagemath.org.
+
+        You can get sage to output <m>\pi</m> to high accuracy by typing <c>pi.N(digits=21)</c>
+        at the sage<m>></m> prompt.}
+      </p></li>
+
+    <li><p>
+        Consider the process of long division.  Does this algorithm give
+        any insight as to why rational numbers have terminating or repeating
+        decimal expansions?  Explain.
+
+        \hint{You really need to actually sit down and do some long division problems.  When in the process do you suddenly realize that the digits are going to repeat?  Must this decision point always occur? Why?}
+      </p></li>
+
+    <li><p>
+        Give an argument as to why the product of two rational numbers
+        is again a rational.
+
+        \hint{Take for granted that the usual rule for multiplying two fractions is okay to use:
+        <me>
+          \frac{a}{b} * \frac{c}{d} \; = \; \frac{ac}{bd}.
+        </me>
+        How do you know that the result is actually a rational number?}
+      </p></li>
+
+    <li><p>
+    Perform the following computations with complex numbers
+
+    <ol>
+      <li><p>
+          <m>(4 + 3i) - (3 + 2i)</m>
+        </p></li>
+
+      <li><p>
+          <m>(1 + i) + (1 - i)</m>
+        </p></li>
+
+      <li><p>
+          <m>(1 + i) \cdot (1 - i)</m>
+        </p></li>
+
+      <li><p>
+          <m>(2 - 3i) \cdot (3 - 2i)</m>
+        </p></li>
+    </ol>
+    </p>
+
+    \hint{These are straightforward. If you really must verify these somehow, you can go to a CAS like Sage, or you can learn how to enter complex numbers on your graphing calculator. (On my TI-84, you get i by hitting the 2nd key and then the decimal point.)
+    }</li>
+
+    <li><p>
+        The <em>conjugate</em> of a complex number is denoted with a
+          superscript star, and is formed by negating the imaginary part.
+          Thus if <m>z = 3+ 4i</m> then the conjugate of <m>z</m> is  <m>z^\ast = 3-4i</m>.
+          Give an argument as to why the product of a complex number and its
+          conjugate is a real quantity.  (I.e. the imaginary part of
+          <m>z\cdot z^\ast</m> is necessarily 0, no matter what complex number is
+          used for <m>z</m>.) 
+
+        \hint{This is really easy, but be sure to do it generically. In other words, don't just use examples <mdash /> do the calculation with variables for the real and imaginary parts of the complex number.
+        }
+      </p></li>
+    </ol>
+  </exercises>
+</section>

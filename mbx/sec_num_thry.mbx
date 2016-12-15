@@ -1,0 +1,1106 @@
+
+<section xml:id="sec_num_thry">
+  <title>Definitions of elementary number theory</title>
+  <subsection xml:id="even_n_odd">
+    <title>Even and odd</title>
+    <p>
+      If you divide a number by 2 and it comes out even (i.e. with
+      no remainder) the number is said to be <em>even</em>. So the
+      <em>word</em> even is related to division. It turns out that the
+      <em>concept</em> even is better understood through thinking about
+      multiplication.
+    </p>
+
+    <definition>
+      <statement>
+        <p>
+          An integer <m>n</m> is <term>even</term> exactly when there is an integer <m>m</m>
+          such that <m>n = 2m</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      You should note that there is a <q>two-way street</q> sort of quality
+      to this definition <mdash /> indeed with most, if not all, definitions. If
+      a number is even, then we are guaranteed the existence of another
+      integer half as big. On the other hand, if we can show that another
+      integer half as big exists, then we know the original number is even.
+      This two-wayness means that the definition is what is known as a
+      <em>biconditional</em>, a concept which we'll revisit in
+      <xref ref="sec_impl">Section</xref>.
+    </p>
+
+    <p>
+      A lot of people don't believe that <m>0</m> should be counted as an even
+      number. Now that we are armed with a precise definition, we can
+      answer this question easily. Is there an integer <m>x</m> such that
+      <m>0 = 2x</m> ? Certainly! let <m>x</m> also be <m>0</m>. (Notice that in the
+      definition, nothing was said about <m>m</m> and <m>n</m> being distinct from
+      one another.)
+    </p>
+
+    <p>
+      An integer is <em>odd</em> if it isn't even. That is, amongst integers,
+      there are only two possibilities: even or odd. We can also define
+      oddness without reference to <q>even.</q>
+    </p>
+
+    <definition>
+      <statement>
+        <p>
+          An integer <m>n</m> is <term>odd</term> exactly when there is an integer <m>m</m>
+          such that <m>n = 2m + 1</m>.
+        </p>
+      </statement>
+    </definition>
+  </subsection>
+
+  <subsection xml:id="base-n">
+    <title>Decimal and base-<em>n</em> notation</title>
+    <p>
+      You can also identify even numbers by considering their
+      decimal representation. Recall that each digit in the
+      decimal representation of a number has a value that depends
+      on its position. For example, the number <m>3482</m> really means
+      <m>3\cdot10^3 + 4\cdot10^2 + 8\cdot10^1 + 2\cdot10^0</m>. This
+      is also known as <index><main>place notation</main></index>place notation.
+      The fact that we use the
+      powers of 10 in our place notation is probably due to the
+      fact that most humans have 10 fingers. It is possible to
+      use <em>any</em> number in place of 10. In Computer Science there
+      are 3 other bases in common use: 2, 8 and 16 <mdash /> these are
+      known (respectively) as binary, octal and hexadecimal notation.
+      When denoting a number using some base other than 10, it is
+      customary to append a subscript indicating the base.
+      So, for example, <m>1011_2</m> is binary notation meaning
+      <m>1\cdot2^3 + 0\cdot2^2 + 1\cdot2^1 + 1\cdot2^0</m> or <m>8+2+1 = 11</m>.
+      No matter what base we are using, the rightmost digit of
+      the number multiplies the base raised to the <m>0</m>-th power.
+      Any number raised to the <m>0</m>-th power is 1, and the rightmost
+      digit is consequently known as the units digit. We are now
+      prepared to give some statements that are equivalent to our
+      definition of even. These statements truly don't deserve the
+      designation <q>theorem,</q> they are immediate consequences of the
+      definition.
+    </p>
+
+    <theorem>
+      <statement>
+        <p>
+          An integer is <em>even</em> if the units digit in its decimal
+          representation is one of 0, 2, 4, 6 or 8.
+        </p>
+      </statement>
+    </theorem>
+
+    <theorem>
+      <statement>
+        <p>
+          An integer is <em>even</em> if the units digit in its binary
+          representation is 0.
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      For certain problems it is natural to use some particular notational system.
+      For example, the
+      last theorem would tend to indicate that binary numbers are useful
+      in problems dealing with even and odd. Given that there are many different
+      notations that are available to us, it is obviously desirable to have
+      means at our disposal for converting between them. It is possible to
+      develop general rules for converting a base-<m>a</m> number to a base-<m>b</m>
+      number (where <m>a</m> and <m>b</m> are arbitrary) but it is actually more convenient
+      to pick a <q>standard</q> base (and since we're human we'll use base-<m>10</m>)
+      and develop methods for converting between an arbitrary base and the
+      <q>standard</q> one. Imagine that in the not-too-distant future we need to
+      convert some numbers from the base-<m>7</m> system used by the Seven-lobed
+      Amoebazoids from Epsilon Eridani III to the base-<m>12</m> scheme favored
+      by the Dodecatons of Alpha-Centauri IV. We will need a procedure
+      for converting base-<m>7</m> to base-<m>10</m> and another procedure for converting
+      from base-<m>10</m> to base-<m>12</m>. In the School House Rock episode
+      <q>Little Twelve Toes</q> they describe base-<m>12</m>
+      numeration in a way that is understandable for elementary school
+      children <mdash /> the digits they use are
+      <m>\{1, 2, 3, 4, 5, 6, 7, 8, 9, \delta, \epsilon \}</m>, the last two digits
+      (which are pronounced <q>dec</q> and <q>el</q>) are necessary since we need
+      single symbols for the things we ordinarily denote using <m>10</m> and <m>11</m>.
+    </p>
+
+    <p>
+      Converting from some other base to decimal is easy. You just use the
+      definition of place notation. For example, to find what <m>451663_7</m>
+      represents in decimal, just write
+      <me>
+        4 \cdot 7^5 + 5 \cdot 7^4 + 1 \cdot 7^3 + 6 \cdot 7^2 + 6 \cdot 7 + 3 =  4 \cdot 16807 + 5 \cdot 2401 + 1 \cdot 343 + 6 \cdot 49 + 6 \cdot 7 + 3 = 79915.
+      </me>
+    </p>
+
+    <p>
+      (Everything in the line above can be interpreted as a base-<m>10</m> number,
+      and no subscripts are necessary for base-<m>10</m>.)
+    </p>
+
+    <p>
+      Converting from decimal to some other base is harder. There is an algorithm
+      called <q>repeated division</q> that we'll explore a bit in the exercises
+      for this section. For the moment, just verify that
+      <m>3\delta 2\epsilon 7_{12}</m> is also a representation of the
+      number more conventionally written as 79915.
+    </p>
+  </subsection>
+
+  <subsection xml:id="div">
+    <title>Divisibility</title>
+    <p>
+      The notion of being even has an obvious generalization. Suppose
+      we asked whether <m>3</m> divided evenly into a given number. Presumably
+      we could make a definition of what it meant to be <em>threeven</em>, but
+      rather than doing so (or engaging in any further punnery) we shall
+      instead move to a general definition. We need a notation for the
+      situation when one number divides evenly into another. There are
+      many ways to describe this situation in English, but essentially
+      just one in <q>math,</q> we use a vertical bar <mdash /> <em>not</em> a fraction
+      bar. Indeed the difference between this vertical bar and the
+      fraction symbol (<m>\divides</m> versus <m>/</m>) needs to
+      be strongly stressed. The vertical bar
+      when placed between two numbers is a symbol which asks the question
+      <q>Does the first number divide evenly (i.e. with no remainder) into
+      the second?</q> On the other hand the fraction bar asks you to actually
+      carry out some division. The value of <m>2\divides 5</m> is <em>false</em>, whereas
+      the value of <m>2/5</m> is <m>.4</m>
+    </p>
+
+    <p>
+      As was the case in defining even, it turns out that it is best
+      to think of multiplication, not division, when making a formal
+      definition of this concept. Given any two integers <m>n</m> and <m>d</m>
+      we define the symbol <index><main>divisibility</main></index><m>d\divides n</m> by
+    </p>
+
+    <definition>
+      <statement>
+        <p>
+          <m>d \divides n</m> exactly when <m>\exists k \in \Integers</m> such that <m>n = kd</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+    In spoken language the symbol <m>d \divides n</m> can be translated in a variety
+    of ways:
+
+    <ul>
+      <li><p>
+          <m>d</m> is a divisor of <m>n</m>.
+        </p></li>
+
+      <li><p>
+          <m>d</m> divides <m>n</m> evenly.
+        </p></li>
+
+      <li><p>
+          <m>d</m> is a factor of <m>n</m>.
+        </p></li>
+
+      <li><p>
+          <m>n</m> is an integer multiple of <m>d</m>.
+        </p></li>
+    </ul>
+    </p>
+
+    <p>
+      Although, by far the most popular way of expressing this concept is to just say <q><m>d</m> divides <m>n</m>.</q>
+    </p>
+  </subsection>
+
+  <subsection xml:id="floor">
+    <title>Floor and ceiling</title>
+    <p>
+      Suppose there is an elevator with a capacity of 1300 pounds. A large
+      group of men who all weigh about 200 pounds want to ascend in it. How
+      many should ride at a time? This is just a division problem, 1300/200
+      gives 6.5 men should ride together. Well, obviously putting half a
+      person on an elevator is a bad idea <mdash /> should we just round-up and
+      let 7 ride together? Not if the 1300 pound capacity rating doesn't
+      have a safety margin! This is an example of the kind of problem
+      in which the floor function is used. The <index><main>floor function</main></index>
+      floor function takes a real number as input and returns the next
+      lower integer.
+    </p>
+
+    <p>
+      Suppose after a party we have 43 unopened bottles of beer. We'd like
+      to store them in containers that hold 12 bottles each. How many
+      containers will we need? Again, this is simply a division problem <mdash /> <m>43/12 = 3.58\overline{333}</m>. So we need 3 boxes and another
+      7 twelfths of a box. Obviously we really need 4 boxes <mdash /> at least one
+      will have some unused space in it. In this sort of situation
+      we're dealing with the <index><main>ceiling function</main></index>ceiling function.
+      Given a real number, the ceiling function rounds it up to the
+      next integer.
+    </p>
+
+    <p>
+      Both of these functions are denoted using symbols that look very
+      much like absolute value bars. The difference lies in some
+      small horizontal strokes.
+    </p>
+
+    <p>
+      If <m>x</m> is a real number, its floor is denoted <m>\lfloor x \rfloor</m>,
+      and its ceiling is denoted <m>\lceil x \rceil</m>. Here are the
+      formal definitions:
+    </p>
+
+    <definition>
+      <statement>
+        <p>
+          <m>y = \lfloor x \rfloor</m> exactly when <m>y \in \Integers</m> and
+          <m>y \leq x \lt  y+1</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <definition>
+      <statement>
+        <p>
+          <m>y = \lceil x \rceil</m> exactly when <m>y \in \Integers</m> and
+          <m>y-1 \lt  x \leq y</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      Basically, the definition of floor says that <m>y</m> is an integer
+      that is less than or equal to <m>x</m>, but <m>y+1</m> definitely exceeds <m>x</m>.
+      The definition of ceiling can be paraphrased similarly.
+    </p>
+  </subsection>
+
+  <subsection xml:id="div_mod">
+    <title>Div and mod</title>
+    <p>
+      In the next section we'll discuss the so-called division algorithm <mdash /> this may be over-kill since you certainly already know how to do
+      division! Indeed, in the U.S., long division is usually first studied
+      in the latter half of elementary school, and division problems that
+      don't involve a remainder may be found as early as the first grade.
+      Nevertheless, we're going to discuss this process in sordid detail
+      because it gives us a good setting in which to prove relatively easy
+      statements. Suppose you are setting-up a long division problem in
+      which the integer <m>n</m> is being divided by a positive divisor <m>d</m>.
+      (If you want to divide by a negative number, just divide by the
+      corresponding positive number and then throw an extra minus sign
+      on at the end.)
+    </p>
+    <tabular>
+    <row>
+      <cell></cell>
+      <cell>q</cell>
+    </row>
+    <row>
+    <cell>d</cell>
+    <cell><tabular>
+      <row bottom="minor">
+        <cell></cell>
+      </row>
+      <row>
+        <cell>n</cell>
+      </row>
+    </tabular></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell><m>\vdots</m></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell>r</cell>
+    </row>
+    </tabular>
+    <p>
+      Recall that the answer consists of two parts, a <em>quotient</em> <m>q</m>,
+      and a <em>remainder</em> <m>r</m>. Of course, <m>r</m> may be zero, but also, the
+      largest <m>r</m> can be is <m>d-1</m>. The assertion that this answer uniquely
+      exists is known as the <index><main>quotient-remainder theorem</main></index>
+      <em>quotient-remainder theorem</em>:
+    </p>
+
+    <theorem xml:id="quo-rem">
+      <statement>
+        <p>
+          Given integers <m>n</m> and <m>d>0</m>, there are unique integers <m>q</m> and <m>r</m> such
+          that <m>n = qd + r</m> and <m>0 \leq r \lt  d</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      The words <q>div</q> and <q>mod</q> that appear in the title of this
+      subsection provide mathematical shorthand for <m>q</m> and <m>r</m>. Namely,
+      <q><m>n \bmod d</m></q> is a way of expressing the remainder <m>r</m>, and <q><m>n
+      \tdiv d</m></q> is a way of expressing the quotient <m>q</m>.
+    </p>
+
+    <p>
+      If two integers, <m>m</m> and <m>n</m>, leave the same remainder when you
+      divide them by <m>d</m>, we say that they are <index><main>congruence</main></index>
+      <em>congruent modulo <m>d</m></em>.
+      One could express this by writing <m>n \bmod d = m \bmod d</m>, but usually
+      we adopt a shorthand notation
+      <me>
+        n \equiv m \pmod{d}.
+      </me>
+    </p>
+
+    <p>
+      If one is in a context in which it is completely clear what <m>d</m> is, it's
+      acceptable to just write <m>n \equiv m</m>.
+    </p>
+
+    <p>
+      The <q>mod</q> operation is used quite a lot in mathematics. When we do
+      computations modulo some number <m>d</m>, (this is known as <q>modular arithmetic</q>
+      or, sometimes, <q>clock arithmetic</q>) some very nice properties of <q>mod</q>
+      come in handy:
+      <me>
+        x + y \bmod d = ( x \bmod d + y \bmod d ) \bmod d
+      </me>
+      and
+      <me>
+        x \cdot y \bmod d = ( x \bmod d \cdot y \bmod d ) \bmod d.
+      </me>
+    </p>
+
+    <p>
+      These rules mean that we can either do the operations first, then
+      reduce the answer <m>\bmod\; d</m> or we can do the reduction <m>\bmod\; d</m>
+      first and then do the operations (although we may have to do one
+      more round of reduction <m>\bmod\; d</m>).
+    </p>
+
+    <p>
+      For example, if we are working <m>\bmod\; 10</m>, and want to compute
+      <m>87 \cdot 96 \bmod\; 10</m>, we can instead just compute <m>7 \cdot 6 \bmod\; 10</m>,
+      which is <m>2</m>.
+    </p>
+  </subsection>
+
+  <subsection xml:id="binom_coeff">
+    <title>Binomial coefficients</title>
+    <p>
+      A <q>binomial</q> is a polynomial with 2 terms, for example <m>x+1</m> or <m>a+b</m>.
+      The numbers that appear as the coefficients when one raises a binomial
+      to some power are <mdash /> rather surprisingly <mdash /> known as
+      <index><main>binomial coefficients</main></index> binomial coefficients.
+    </p>
+
+    <p>
+      Let's have a look at the first several powers of <m>a+b</m>.
+      <md>
+        <mrow>(a+b)^0 = 1</mrow>
+        <mrow>(a+b)^1 = a+b</mrow>
+        <mrow>(a+b)^2 = a^2 + 2ab + b^2</mrow>
+      </md>
+    </p>
+
+    <p>
+      To go much further than the second power requires a bit of work,
+      but try the following
+    </p>
+    <exercise>
+      <statement>
+        <p>
+          Multiply <m>(a+b)</m> and <m>(a^2 + 2ab + b^2)</m> in order to determine <m>(a+b)^3</m>.
+          If you feel up to it, multiply <m>(a^2 + 2ab + b^2)</m> times itself in order
+          to find <m>(a+b)^4</m>.
+        </p>
+      </statement>
+    </exercise>
+    <p>
+      Since we're interested in the coefficients of these polynomials, it's important
+      to point out that if no coefficient appears in front of a term that means the
+      coefficient is 1.
+    </p>
+
+    <p>
+      These binomial coefficients can be placed in an arrangement known as
+      <index><main>Pascal's triangle</main></index> <index><main>Blaise Pascal</main></index> Pascal's triangle
+      <fn>This triangle was actually known well before Blaise Pascal 
+      began to study it, but it carries his name today.</fn>, which
+      provides a convenient way to calculate small binomial coefficients
+    </p>
+
+    <table>
+      <tabular>
+        <row>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell>1</cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell>1</cell>
+          <cell></cell>
+          <cell>1</cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell></cell>
+          <cell>1</cell>
+          <cell></cell>
+          <cell>2</cell>
+          <cell></cell>
+          <cell>1</cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell>1</cell>
+          <cell></cell>
+          <cell>3</cell>
+          <cell></cell>
+          <cell>3</cell>
+          <cell></cell>
+          <cell>1</cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>1</cell>
+          <cell></cell>
+          <cell>4</cell>
+          <cell></cell>
+          <cell>6</cell>
+          <cell></cell>
+          <cell>4</cell>
+          <cell></cell>
+          <cell>1</cell>
+        </row>
+      </tabular>
+      \vspace{.2in}
+
+      \caption[Pascal's triangle.]{The first <m>5</m> rows of Pascal's triangle (which are numbered 0 through 4 \ldots).}
+    </table>
+
+    <p>
+      Notice that in the triangle there is a border on both sides containing
+      1's and that the numbers on the inside of the triangle are the sum of the
+      two numbers above them. You can use these facts to extend the triangle.
+    </p>
+    <exercise>
+      <statement>
+        <p>
+          Add the next two rows to the Pascal triangle in <xref ref="fig_pascal">Figure</xref>.
+        </p>
+      </statement>
+    </exercise>
+    <p>
+      Binomial coefficients are denoted using a somewhat strange looking
+      symbol. The number in the <m>k</m>-th position in row number <m>n</m> of
+      the triangle is denoted <m>\displaystyle \binom{n}{k}</m>. This looks
+      a little like a fraction, but the fraction bar is missing. Don't
+      put one in! It's <em>supposed</em> to be missing. In spoken English
+      you say <q><m>n</m> choose <m>k</m></q> when you encounter the symbol <m>\displaystyle \binom{n}{k}</m>.
+    </p>
+
+    <p>
+      There is a formula for the binomial coefficients <mdash /> which is nice. Otherwise
+      we'd need to complete a pretty huge Pascal triangle in order to compute
+      something like <m>\displaystyle \binom{52}{5}</m>. The formula involves
+      <index><main>factorials</main></index> factorial notation. Just to be sure we are
+      all on the same page, we'll define factorials before proceeding.
+    </p>
+
+    <p>
+      The symbol for factorials is an exclamation point following a number.
+      This is just a short-hand for expressing the
+      product of all the numbers up to a given one.
+      For example <m>7!</m> means <m>1\cdot 2\cdot 3\cdot 4\cdot 5\cdot 6\cdot 7</m>.
+      Of course, there's really no need to write the initial <m>1</m> <mdash /> also,
+      for some reason people usually write the product in decreasing order
+      (<m>7! = 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2)</m>.
+    </p>
+
+    <p>
+      The formula for a binomial coefficient is
+      <me>
+        \binom{n}{k} = \frac{n!}{k! \cdot (n-k)!}.
+      </me>
+    </p>
+
+    <p>
+      For example
+      <me>
+        \binom{5}{3} = \frac{5!}{3! \cdot (5-3)!} = \frac{1\cdot 2\cdot 3\cdot 4\cdot 5}{(1\cdot 2\cdot 3) \cdot (1\cdot 2)} = 10.
+      </me>
+    </p>
+
+    <p>
+      A slightly more complicated example (and one that gamblers are fond of)
+      is
+      <md>
+        <mrow>\binom{52}{5} = \frac{52!}{5! \cdot (52-5)!} 
+         = \frac{1\cdot 2\cdot 3\cdot \cdots 52}{(1\cdot 2\cdot 3 \cdot 4 \cdot 5) \cdot (1\cdot 2 \cdot 3\cdot \cdots 47)}</mrow>
+        <mrow>= \frac{48 \cdot 49 \cdot 50 \cdot 51 \cdot 52}{1\cdot 2\cdot 3 \cdot 4 \cdot 5} = 2598960.</mrow>
+      </md>
+    </p>
+
+    <p>
+      The reason that a gambler might be interested in the number we just calculated
+      is that binomial coefficients do more than just give us the coefficients in the
+      expansion of a binomial. They also can be used to compute how many ways one
+      can choose a subset of a given size from a set. Thus <m>\binom{52}{5}</m> is the
+      number of ways that one can get a 5 card hand out of a deck of 52 cards.
+    </p>
+    <exercise>
+      <statement>
+        <p>
+          There are seven days in a week. In how many ways can one choose a set
+          of three days (per week)?
+        </p>
+      </statement>
+    </exercise>
+    <exercises>
+
+      <ol>
+      <li><p>
+          An integer <m>n</m> is <index><main>doubly-even</main></index> <em>doubly-even</em> 
+          if it is even, and the integer <m>m</m> guaranteed to exist because 
+          <m>n</m> is even is itself even.  Is 0 doubly-even?  What are the 
+          first 3 positive, doubly-even integers?
+
+
+
+          \hint{Answers: yes, 0,4 and 8.}
+        </p></li>
+
+      <li><p>
+          Dividing an integer by two has an interesting interpretation
+          when using binary notation: simply shift the digits to the right.
+          Thus, <m>22 = 10110_2</m> when divided by two gives <m>1011_2</m> which is
+          <m>8+2+1=11</m>.  How can you recognize a doubly-even integer from
+          its binary representation?
+
+
+
+          \hint{Even numbers have a zero in their units place. What digit must also be zero in a doubly-even number's binary representation?}
+        </p></li>
+
+      <li><p>
+          The <index><main>octal representation</main></index> <em>octal</em> representation 
+          of an integer uses powers of 8 in place notation.  The digits of an 
+          octal number run from 0 to 7, one never sees 8's or 9's.  How would 
+          you represent 8 and 9 as octal numbers?  What octal number comes 
+          immediately after <m>777_8</m>?  What (decimal) number is <m>777_8</m>?
+
+
+
+
+
+          \hint{Eight is <m>10_8</m>, nine is <m>11_8</m>. The point of asking questions about <m>777</m>, is that (in octal) <m>7</m> is the digit that is analogous to <m>9</m> in base-<m>10</m>. Thus <m>777_8</m> is something like <m>999_{10}</m> in that the number following both of them is written <m>1000</m> (although <m>1000_8</m> and <m>1000_{10}</m> are certainly not equal!)}
+        </p></li>
+
+      <li><p>
+          One method of converting from decimal to some other base is
+          called <index><main>repeated division algorithm</main></index> <em>repeated division</em>.  
+          One divides the number by the base
+          and records the remainder <mdash /> one then divides the quotient obtained
+          by the base and records the remainder.  Continue dividing the 
+          successive quotients by the base until the quotient is smaller than
+          the base.  Convert 3267 to base-7 using repeated division.  Check 
+          your answer by using the meaning of base-7 place notation.  (For
+          example <m>54321_7</m> means <m>5\cdot7^4 + 4\cdot7^3 + 3 \cdot7^2 +
+          2\cdot7^1 + 1\cdot7^0</m>.)
+
+
+
+          \hint{It is helpful to write something of the form <m>n = qd+r</m> at each stage. The first two stages should look like
+          <me>
+            3267 \; = \; 466 \cdot 7 + 5
+          </me>
+          <me>
+            466 \; = \; 66 \cdot 7 + 4
+          </me>
+          you do the rest<ellipsis />
+          }
+        </p></li>
+
+      <li><p>
+          State a theorem about the octal representation of even numbers.
+
+
+
+          \hint{One possibility is to mimic the result for base-10 that an even number always ends in 0,2,4,6 or 8.}
+        </p></li>
+
+      <li><p>
+          In hexadecimal (base-16) notation one needs 16 <q>digits,</q> the
+            ordinary digits are used for 0 through 9, and the letters A through
+            F are used to give single symbols for 10 through 15.  The first  32
+            natural number in hexadecimal are:
+            1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,10,11,12,13,14,15,16, 17,18,19,1A,
+            1B,1C,1D,1E,1F,20. 
+
+            Write the next 10 hexadecimal numbers after <m>AB</m>.
+
+            Write the next 10 hexadecimal numbers after <m>FA</m>.
+
+          \hint{As a check, the tenth number after AB is B5.
+          The tenth hexadecimal number after FA is 104.}
+        </p></li>
+
+      <li><p>
+          For conversion between the three bases used most often in 
+          Computer Science we can take binary as the <q>standard</q> base and 
+          convert using a table look-up.  Each octal digit will correspond 
+          to a binary triple, and each hexadecimal digit will correspond to 
+          a 4-tuple of binary numbers.  Complete the following tables.  
+          (As a check, the 4-tuple next to <m>A</m> in the table for
+          hexadecimal should be 1010 <mdash /> which is nice since <m>A</m> 
+          is really 10 so if you read that as <q>ten-ten</q> it is a good 
+          aid to memory.)
+          <tabular>
+          <row>
+          <cell><tabular>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>octal</cell>
+              <cell>binary</cell>
+            </row>
+            <row bottom="medium">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell  >0</cell>
+              <cell>000</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>1</cell>
+              <cell>001</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>2</cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>3</cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>4</cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>5</cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>6</cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>7</cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+          </tabular></cell>
+          <cell></cell>
+          <cell><tabular>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>hexadecimal</cell>
+              <cell>binary</cell>
+            </row>
+            <row bottom="medium">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell  >0</cell>
+              <cell>0000</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>1</cell>
+              <cell>0001</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>2</cell>
+              <cell>0010</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>3</cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>4</cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>5</cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>6</cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>7</cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>8</cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>9</cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>A</cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>B</cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>C</cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>D</cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>E</cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>F</cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+            </row>
+          </tabular></cell>
+          </row>
+          </tabular>
+          \hint{
+
+
+
+          This is just counting in binary. Remember the sanity check that the hexadecimal digit A is represented by 1010 in binary.  (<m>10_{10} \; = \; A_{16} \; = \; 1010_{2}</m>)
+
+
+
+          }
+        </p></li>
+
+      <li><p>
+      Use the tables from the previous problem to make the following conversions.
+
+      <ol>
+        <li><p>
+            Convert <m>757_8</m> to binary.
+          </p></li>
+
+        <li><p>
+            Convert <m>1007_8</m> to hexadecimal.
+          </p></li>
+
+        <li><p>
+            Convert <m>100101010110_2</m> to octal.
+          </p></li>
+
+        <li><p>
+            Convert <m>1111101000110101_2</m> to hexadecimal.
+          </p></li>
+
+        <li><p>
+            Convert <m>FEED_{16}</m> to binary.
+          </p></li>
+
+        <li><p>
+            Convert <m>FFFFFF_{16}</m> to octal.
+          </p></li>
+      </ol>
+      </p>
+
+      \hint{Answers for the first three:
+      <me>
+        757_8 = 111 101 111_2
+      </me>
+      <me>
+        1007_8 = 001 000 000 111_2 = 0010 0000 0111_2 = 207_{16}
+      </me>
+      <me>
+        100 101 010 110_2 = 4526_8
+      </me>
+      }</li>
+
+      <li><p>
+      Try the following conversions between various number systems:
+
+      <ol>
+        <li><p>
+            Convert <m>30</m> (base 10) to binary.
+          </p></li>
+
+        <li><p>
+            Convert <m>69</m> (base 10) to base 5.
+          </p></li>
+
+        <li><p>
+            Convert <m>1222_3</m> to binary.
+          </p></li>
+
+        <li><p>
+            Convert <m>1234_7</m> to base 10.
+          </p></li>
+
+        <li><p>
+            Convert <m>EEED_{15}</m> to base 12. (Use <m>\{1, 2, 3 \ldots 9, d, e\}</m> as the digits in base 12.)
+          </p></li>
+
+        <li><p>
+            Convert <m>678_{9}</m> to hexadecimal.
+          </p></li>
+      </ol>
+      </p></li>
+
+      <li><p>
+          It is a well known fact that if a number is divisible by 3, then 3
+            divides the sum of the (decimal) digits of that number.  Is this
+            result true in base 7?  Do you think this result is true in <em>any</em> base? 
+ 
+ 
+ 
+          \hint{Might this effect have something to do with 10 being just one bigger than 9 (a multiple of 3)?}
+        </p></li>
+
+      <li><p>
+          Suppose that 340 pounds of sand must be placed into bags having
+            a 50 pound capacity.  Write an expression using either floor or
+            ceiling notation for the number of bags required.
+
+
+
+          \hint{Seven 50 pound bags would hold 350 pounds of sand. They'd also be able to handle 340 pounds!}
+        </p></li>
+
+      <li><p>
+          True or false?
+          <me>
+            \left\lfloor \frac{n}{d}\right\rfloor \lt  \left\lceil \frac{n}{d}\right\rceil
+          </me>
+          for all integers <m>n</m> and <m>d>0</m>. Support your claim.
+
+
+
+          \hint{You have to try a bunch of examples.  You should try to make sure the examples
+          you try cover all the possibilities.  The pairs that provide counterexamples (i.e. show the statement is false in general) are relatively sparse, so be systematic.}
+        </p></li>
+
+      <li><p>
+          What is the value of <m>\lceil\pi\rceil^{2}-\lceil\pi^{2}\rceil</m>?
+
+
+
+          \hint{ <m>\pi^2 = 9.8696</m> }
+        </p></li>
+
+      <li><p>
+          Assuming the symbols <m>n</m>,<m>d</m>,<m>q</m> and <m>r</m> have meanings as in the
+            quotient-remainder theorem (see page 29 of GIAM ).  Write
+            expressions for <m>q</m> and <m>r</m>, in terms of <m>n</m> and <m>d</m> using floor
+            and/or ceiling notation.
+
+
+
+          \hint{I just can't bring myself to spoil this one for you, you really need to work this out on your own. }
+        </p></li>
+
+      <li><p>
+      Calculate the following quantities:
+
+      <ol>
+        <li><p>
+            <m>3 \mod 5</m>
+          </p></li>
+
+        <li><p>
+            <m>37 \mod 7</m>
+          </p></li>
+
+        <li><p>
+            <m>1000001 \mod 100000</m>
+          </p></li>
+
+        <li><p>
+            <m>6 \tdiv 6</m>
+          </p></li>
+
+        <li><p>
+            <m>7 \tdiv 6</m>
+          </p></li>
+
+        <li><p>
+            <m>1000001 \tdiv 2</m>
+          </p></li>
+      </ol>
+      </p>
+
+      \hint{The even numbered ones are 2, 1, 500000.}</li>
+
+      <li><p>
+      Calculate the following binomial coefficients:
+
+      <ol>
+        <li><p>
+            <m>\binom{3}{0}</m>
+          </p></li>
+
+        <li><p>
+            <m>\binom{7}{7}</m>
+          </p></li>
+
+        <li><p>
+            <m>\binom{13}{5}</m>
+          </p></li>
+
+        <li><p>
+            <m>\binom{13}{8}</m>
+          </p></li>
+
+        <li><p>
+            <m>\binom{52}{7}</m>
+          </p></li>
+      </ol>
+      </p>
+
+      \hint{The even numbered ones are 1 and 1287. The TI-84 calculates binomial coefficients. The symbol used is <c>nCr</c> (which is placed between the numbers <mdash /> i.e. it is an infix operator). You get <c>nCr</c> as the 3rd item in the <c>PRB</c> menu under <c>MATH</c>. In sage the command is <c>binomial(n,k)</c>.}</li>
+
+      <li><p>
+          An ice cream shop sells the following flavors: chocolate, vanilla, 
+          strawberry, coffee, butter pecan, mint chocolate chip and raspberry.
+          How many different bowls of ice cream <mdash /> with three scoops <mdash /> can they make?  
+
+
+
+          \hint{You're choosing three things out of a set of size seven<ellipsis />}
+        </p></li>
+      </ol>
+    </exercises>
+  </subsection>
+</section>

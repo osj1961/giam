@@ -1,0 +1,16 @@
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ch_logic">
+  <title>Logic and quantifiers</title>
+  <introduction>
+    <p>
+      <em>If at first you don't succeed, try again. Then quit. There's no use being a damn fool about it. <ndash />W. C. Fields</em>
+    </p>
+  </introduction>
+  <xi:include  href="sec_pred.mbx" />
+  <xi:include  href="sec_impl.mbx" />
+  <xi:include  href="sec_le.mbx" />
+  <xi:include  href="sec_2_col.mbx" />
+  <xi:include  href="sec_quant.mbx" />
+  <xi:include  href="sec_deduct.mbx" />
+  <xi:include  href="sec_valid.mbx" />
+</chapter>

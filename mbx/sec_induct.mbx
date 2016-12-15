@@ -1,0 +1,482 @@
+
+<section xml:id="sec_induct">
+  <title>The principle of mathematical induction</title>
+  <p>
+    The <index><main>induction</main></index>Principle of Mathematical Induction (PMI) may be the least intuitive
+    proof method available to us. Indeed, at first, PMI may feel somewhat like
+    grabbing yourself by the seat of your pants and lifting yourself into
+    the air. Despite the indisputable fact that proofs by PMI often feel
+    like magic, we need to convince you of the validity of this proof
+    technique. It is one of the most important tools in your mathematical
+    kit!
+  </p>
+
+  <p>
+  The simplest argument in favor of the validity of PMI is simply that it is
+  axiomatic. This may seem somewhat unsatisfying, but the axioms for
+  the natural number system, known as the <index><main>Peano axioms</main></index>Peano axioms,
+  include one that justifies PMI. The Peano axioms will not be treated
+  thoroughly in this book, but here they are:
+
+  <ol>
+    <li>
+      <title>i)</title>
+      <p>
+        There is a least element of <m>\Naturals</m> that we denote by <m>0</m>.
+      </p></li>
+
+    <li>
+      <title>ii)</title>
+      <p>
+        Every natural number <m>a</m> has a successor denoted by <m>s(a)</m>.
+        (Intuitively, think of <m>s(a) = a+1</m>.)
+      </p></li>
+
+    <li>
+      <title>iii)</title>
+      <p>
+        There is no natural number whose successor is <m>0</m>.  (In other
+        words, -1 isn't in <m>\Naturals</m>.)
+      </p></li>
+
+    <li>
+      <title>iv)</title>
+      <p>
+        Distinct natural numbers have distinct successors.  
+        (<m>a \neq b \; \implies \; s(a) \neq s(b)</m>)
+      </p></li>
+
+    <li>
+      <title>v)</title>
+      <p>
+        If a subset of the natural numbers contains <m>0</m> and also has the
+        property that whenever <m>a \in S</m> it follows that <m>s(a) \in S</m>, then the
+        subset <m>S</m> is actually equal to <m>\Naturals</m>.
+      </p></li>
+  </ol>
+  </p>
+
+  <p>
+    The last axiom is the one that justifies PMI. Basically, if <m>0</m> is in
+    a subset, and the subset has this property about successors<fn>Whenever a number is in it, the number's successor must be in it.</fn>, then <m>1</m> must
+    be in it. But if <m>1</m> is in it, then <m>1</m>'s successor (<m>2</m>) must be in it.
+    And so on <ellipsis />
+  </p>
+
+  <p>
+    The subset ends up having every natural number in it.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Verify that the following symbolic formulation has the same content
+        as the version of the 5th Peano axiom given above.
+        <me>
+          \forall S \subseteq \Naturals \; ( 0 \in S ) \land (\forall a \in \Naturals, a \in S \, \implies s(a) \in S) \implies  \; S=\Naturals
+        </me>
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    On August 16th 2003, <index><main>Lihua, Ma</main></index>Ma Lihua of Beijing, China earned her place in the
+    record books by single-handedly setting up an arrangement of dominoes
+    standing on end (actually, the setup took 7 weeks and was almost ruined by
+    some cockroaches in the Singapore Expo Hall) and toppling them.
+    After the first domino was tipped over it took about six minutes
+    before 303,621 out of the 303,628 dominoes had fallen. (One has to wonder
+    what kept those other 7 dominoes upright <ellipsis />)
+  </p>
+  <image width="20%" source="images/domino_row.png" />
+  <p>
+    This is the model one should keep in mind when thinking about PMI: domino
+    toppling. In setting up a line of dominoes, what do we need to do
+    in order to ensure that they will all fall when the toppling begins?
+    Every domino must be placed so that it will hit and topple its successor.
+    This is exactly analogous to <m>(a \in S \, \implies s(a) \in S)</m>. (Think
+    of <m>S</m> having the membership criterion, <m>x \in S</m> = <q><m>x</m> will have fallen
+    when the toppling is over.</q>) The other thing that has to happen
+    (barring the action of cockroaches) is for someone to knock over the
+    first domino. This is analogous to <m>0 \in S</m>.
+  </p>
+
+  <p>
+    Rather than continuing to talk about subsets of the naturals, it will
+    be convenient to recast our discussion in terms of infinite families
+    of logical statements. If we have a sequence of statements, (one
+    for each natural number) <m>P_0</m>, <m>P_1</m>, <m>P_2</m>, <m>P_3</m>, <ellipsis /> we
+    can prove them <em>all</em> to be true using PMI. We have to do two
+    things. First <mdash /> and this is usually the easy part <mdash /> we must show
+    that <m>P_0</m> is true (i.e. the first domino <em>will</em> get knocked over).
+    Second, we must show, for every possible value of <m>k</m>, <m>P_k \implies P_{k+1}</m>
+    (i.e. each domino will knock down its successor). These two parts
+    of an inductive proof are known, respectively, as the <em>basis</em>
+    and the <em>inductive step</em>.
+  </p>
+
+  <p>
+    An outline for a proof using PMI:
+  </p>
+  <tabular>
+    <row bottom="minor">
+      <cell></cell>
+    </row>
+    <row>
+      <cell>\begin{minipage}{.75\textwidth}
+
+      <em> Theorem</em> <m>\displaystyle \forall n \in \Naturals, \; P_n</m>
+
+
+       <em>Proof:</em> (By induction)
+
+       <em>Basis:</em>
+
+      <m>\vdots</m>  \begin{minipage}[c]{1.7 in} (Here we must show that <m>P_0</m> is true.) 
+
+       <em>Inductive step:</em>
+
+      <m>\vdots</m>  \begin{minipage}[c]{1.7 in} (Here we must show that <m>\forall k,  P_k \implies P_{k+1}</m> is true.) 
+
+        Q.E.D.</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+    </row>
+  </tabular>
+  <p>
+    Soon we'll do an actual example of an inductive
+    proof, but first we have to say something <em>REALLY IMPORTANT</em>
+    about such proofs. Pay attention! This is <em>REALLY IMPORTANT</em>!
+    When doing the second part of an inductive proof (the inductive step),
+    you are proving a UCS, and if you recall how that's done, you start
+    by assuming the antecedent is true. But the particular UCS we'll
+    be dealing with is <m>\forall k,  P_k \implies P_{k+1}</m>. That means
+    that in the course of proving <m>\forall n,  P_n</m> we have to <em>assume</em>
+    that <m>P_k</m> is true. Now this sounds very much like the error known
+    as <q>circular reasoning,</q> especially as many authors don't even
+    use different letters (<m>n</m> versus <m>k</m> in our outline) to distinguish
+    the two statements. (And, quite honestly, we only introduced the variable
+    <m>k</m> to assuage a certain lingering guilt regarding circular reasoning.)
+    The sentence <m>\forall n,  P_n</m> is what we're trying to prove, but the
+    sentence we need to prove in order to do that is <m>\forall k,  P_k \implies P_{k+1}</m>.
+    This is subtly different <mdash /> in proving that <m>\forall k,  P_k \implies P_{k+1}</m>
+    (which is a UCS!) we assume that <m>P_k</m> is true <em>for some particular value of <m>k</m></em>.
+  </p>
+
+  <p>
+    The sentence <m>P_k</m> is known as the
+    <index><main>inductive hypothesis</main></index><em>inductive hypothesis</em>.
+    Think about it this way: If we were doing an entirely separate
+    proof of <m>\forall n,  P_n \implies P_{n+1}</m>, it would certainly be fair
+    to use the inductive hypothesis, and <em>once that proof was done</em>,
+    it would be okay to quote that result in an inductive proof of
+    <m>\forall n,  P_n</m>. Thus we can compartmentalize our way out of the
+    difficulty!
+  </p>
+
+  <p>
+    Okay, so on to an example. In <xref ref="sec_basic_set_notions">Section</xref>
+    we discovered a formula relating the sizes of a set <m>A</m> and its
+    power set <m>{\mathcal P}(A)</m>. If <m>|A| = n</m> then <m>|{\mathcal P}(A)| = 2^n</m>.
+    What we've got here is an infinite family of logical sentences, one for
+    each value of <m>n</m> in the natural numbers,
+    <me>
+      |A| = 0 \implies |{\mathcal P}(A)| = 2^0,
+    </me>
+    <me>
+      |A| = 1 \implies |{\mathcal P}(A)| = 2^1,
+    </me>
+    <me>
+      |A| = 2 \implies |{\mathcal P}(A)| = 2^2,
+    </me>
+    <me>
+      |A| = 3 \implies |{\mathcal P}(A)| = 2^3,
+    </me>
+    et cetera.
+  </p>
+
+  <p>
+    This is exactly the sort of situation in which we use induction.
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        For all finite sets <m>A</m>, <m>\displaystyle |A| = n \implies  |{\mathcal P}(A)| = 2^n</m>.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      Let <m>n = |A|</m> and proceed by induction on <m>n</m>.
+    </p>
+
+    <p>
+      <em>Basis:</em> Suppose <m>A</m> is a finite set and <m>|A| = 0</m>, it follows
+      that <m>A = \emptyset</m>. The power set of <m>\emptyset</m> is <m>\{ \emptyset \}</m>
+      which is a set having 1 element. Note that <m>2^0 = 1</m>.
+    </p>
+
+    <p>
+      <em>Inductive step:</em> Suppose that <m>A</m> is a finite set with <m>|A| = k+1</m>. Choose some particular element of <m>A</m>, say <m>a</m>, and note that
+      we can divide the subsets of <m>A</m> (i.e. elements of <m>{\mathcal P}(A)</m>) into
+      two categories, those that contain <m>a</m> and those that don't.
+    </p>
+
+    <p>
+      Let <m>S_1 = \{ X \in {\mathcal P}(A) \suchthat a \in X \}</m> and let
+      <m>S_2 = \{ X \in {\mathcal P}(A) \suchthat a \notin X \}</m>. We have
+      created two sets that contain all the elements of <m>{\mathcal P}(A)</m>,
+      and which are disjoint from one another. In symbolic form,
+      <m>S_1 \cup S_2 = {\mathcal P}(A)</m> and <m>S_1 \cap S_2 = \emptyset</m>.
+      It follows that <m>|{\mathcal P}(A)| = |S_1| + |S_2|</m>.
+    </p>
+
+    <p>
+      Notice that <m>S_2</m> is actually the power set of the <m>k</m>-element set
+      <m>A \setminus \{ a \}</m>. By the inductive hypothesis, <m>|S_2| = 2^k</m>.
+      Also, notice that each set in <m>S_1</m> corresponds uniquely to a set in
+      <m>S_2</m> if we just remove the element <m>a</m> from it. This shows that
+      <m>|S_1| = |S_2|</m>. Putting this all together we get that
+      <m>|{\mathcal P}(A)| = 2^k + 2^k = 2(2^k) = 2^{k+1}</m>.
+    </p>
+  </proof>
+
+  <p>
+  Here are a few pieces
+  of advice about proofs by induction:
+
+  <ul>
+    <li><p>
+        Statements that can be proved inductively don't always start out with 
+        <m>P_0</m>.  Sometimes <m>P_1</m> is the first statement in an infinite family.
+        Sometimes its <m>P_5</m>.  Don't get hung up about something that could be
+        handled by renumbering things.
+      </p></li>
+
+    <li><p>
+        In your final write-up you only need to prove the initial case
+        (whatever it may be) for the basis, but it is a good idea to try 
+        the first several cases while you are in the <q>draft</q> stage.  This
+        can provide insights into how to prove the inductive step, and it may
+        also help you avoid a classic error in which the inductive approach fails
+        essentially just because there is a gap between two of the earlier 
+        dominoes.<fn>See <xref ref="ex_horses">exercise</xref>, the classic fallacious proof that all horses are the same color.</fn>
+      </p></li>
+
+    <li><p>
+        It is a good idea to write down somewhere just what it is that
+        needs to be proved in the inductive step <mdash /> just don't make it look like 
+        you're assuming what needs to be shown.  For instance in the proof above
+        it might have been nice to start the inductive step with a comment along
+        the following lines, <q>What we need to show is that under the assumption
+        that any set of size <m>k</m> has a power set of size <m>2^k</m>, it follows that
+        a set of size <m>k+1</m> will have a power set of size <m>2^{k+1}</m>.</q>
+      </p></li>
+  </ul>
+  </p>
+
+  <p>
+    We'll close this section with a short discussion about nothing.
+  </p>
+
+  <p>
+    When we first introduced the natural numbers (<m>\Naturals</m>) in <xref ref="ch_intro">Chapter</xref> we decided to follow the convention that the smallest natural number is 1.
+    You may have noticed that the Peano axioms mentioned in the beginning of this
+    section treat <m>0</m> as the smallest natural number. Many people follow Dr.<nbsp />Peano's
+    convention, but we're going to stick with our original interpretation:
+    <me>
+      \Naturals \, = \, \{ 1, 2, 3, \ldots \}
+    </me>
+  </p>
+
+  <p>
+    Despite our stubbornness, we are forced to admit that many inductive proofs are
+    made easier by treating the <q>first</q> case as being in truth the one numbered <m>0</m>. We'll
+    use the symbol <m>\Naturals</m> to indicate the set <m>{\mathbb N} \cup \{ 0 \}</m>.
+  </p>
+  <exercises>
+
+    <ol>
+    <li><p>
+        Consider the sequence of numbers that are 1 greater than a multiple of 4.
+        (Such numbers are of the form <m>4j+1</m>.)
+        <me>
+          1, 5, 9, 13, 17, 21, 25, 29, \ldots
+        </me>
+        The sum of the first several numbers in this sequence can be expressed as
+        a polynomial.
+        <me>
+          \sum_{j=0}^n 4j+1 = 2n^2 + 3n + 1
+        </me>
+        Complete the following table in order to provide evidence that the formula
+        above is correct.
+        <tabular>
+          <row>
+            <cell><m>n</m></cell>
+            <cell><m>\sum_{j=0}^n 4j+1</m></cell>
+            <cell><m>2n^2 + 3n + 1</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>0</cell>
+            <cell><m>1</m></cell>
+            <cell><m>1</m></cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell><m>1 + 5 = 6</m></cell>
+            <cell><m>2 \cdot 1^2 + 3 \cdot 1 + 1 = 6</m></cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell><m>1 + 5 + 9 =</m> \inlinehint{<m>15</m>}</cell>
+            <cell>\inlinehint{<m>2 \cdot 2^2 + 3 \cdot 2 + 1 = 15</m>}</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>\inlinehint{<m>1 + 5 + 9 + 13 = 28</m>}</cell>
+            <cell>\inlinehint{<m>2 \cdot 3^2 + 3 \cdot 3 + 1 = 28</m>}</cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+        \hint{I'm leaving the very last one for you to do.}
+      </p></li>
+
+    <li xml:id="ex_horses" ><p>
+      What is wrong with the following inductive proof of
+      <q>all horses are the same color.</q>?
+
+      <em>Theorem</em> Let <m>H</m> be a set of <m>n</m> horses, all horses in <m>H</m> 
+      are the same color.
+
+      <proof>
+        <p>
+          We proceed by induction on <m>n</m>.
+        </p>
+
+        <p>
+          <em>Basis: </em> Suppose <m>H</m> is a set containing 1 horse. Clearly
+          this horse is the same color as itself.
+        </p>
+
+        <p>
+          <em>Inductive step: </em> Given a set of <m>k+1</m> horses <m>H</m> we can
+          construct two sets of <m>k</m> horses. Suppose <m>H = \{ h_1, h_2, h_3, \ldots h_{k+1} \}</m>. Define <m>H_a = \{ h_1, h_2, h_3, \ldots h_{k} \}</m> (i.e. <m>H_a</m> contains
+          just the first <m>k</m> horses) and <m>H_b = \{ h_2, h_3, h_4, \ldots h_{k+1} \}</m>
+          (i.e. <m>H_b</m> contains the last <m>k</m> horses). By the inductive hypothesis
+          both these sets contain horses that are <q>all the same color.</q> Also,
+          all the horses from <m>h_2</m> to <m>h_k</m> are in both sets so both <m>H_a</m> and
+          <m>H_b</m> contain only horses of this (same) color. Finally, we conclude that
+          all the horses in <m>H</m> are the same color.
+        </p>
+      </proof>
+
+      \hint{Look carefully at the stage from <m>n=2</m> to <m>n=3</m>.}
+      </p></li>
+
+    <li><p>
+    For each of the following theorems, write the statement that must be
+    proved for the basis <mdash /> then prove it, if you can!
+
+    <ol>
+      <li><p>
+          The sum of the first <m>n</m> positive integers is <m>(n^2+n)/2</m>.
+
+          \hint{The sum of the first <m>0</m> positive integers is <m>(0^2 + 0)/2</m>.  Or, if you
+          prefer to start with something rather than nothing: The sum of the first <m>1</m> positive integers
+          is <m>(1^2+1)/2</m>. }
+        </p></li>
+
+      <li><p>
+          The sum of the first <m>n</m> (positive) odd numbers is <m>n^2</m>.
+
+          \hint{The sum of the first <m>0</m> positive odd numbers is <m>0^2</m>.  Or, the sum of the first <m>1</m> positive odd numbers is <m>1^2</m>.}
+        </p></li>
+
+      <li><p>
+          If <m>n</m> coins are flipped, the probability that all of them 
+          are <q>heads</q> is <m>1/2^n</m>.
+
+          \hint{If <m>1</m> coin is flipped, the the probability that it is <q>heads</q> is <m>1/2</m>. Or if we try it 
+          when <m>n=0</m>, ``If no coins are flipped the probability that all of them are heads is 1.  Does that
+          make sense to you?  Is it reasonable that we would say it is 100<percent /> certain that all of the coins
+          are heads in a set that doesn't contain <em>any</em> coins? }
+        </p></li>
+
+      <li><p>
+          Every <m>2^n \times 2^n</m> chessboard <mdash /> with one square removed <mdash /> can 
+          be tiled perfectly<fn>Here, <q>perfectly tiled</q> means that every trominoe
+          covers 3 squares of the chessboard (nothing hangs over the edge) and that every
+          square of the chessboard is covered by some trominoe.</fn> by L-shaped trominoes.  
+          (A trominoe is like a domino but 
+          made up of <m>3</m> little squares.  There are two kinds, straight
+          <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+          \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+            \reset@font\fontsize{#1}{#2pt}
+            \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+            \selectfont}\fi
+          <image source="images/179d43e045cfb6a76942071cd1855db76d8b4b90.png"/>
+          and L-shaped
+          <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+          \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+            \reset@font\fontsize{#1}{#2pt}
+            \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+            \selectfont}\fi
+          <image source="images/33d989bbe2968ee70084b2870624ab4bea264938.png"/>
+          . This problem is only concerned with
+          the L-shaped trominoes.)
+        </p></li>
+    </ol>
+    </p>
+
+    \hint{If <m>n=1</m> we have: ``Every <m>2 \times 2</m> chessboard <mdash /> with one square removed
+    can be tiled perfectly by L-shaped trominoes.  This version is trivial to prove.  Try formulating
+    the <m>n=0</m> case.}</li>
+
+    <li><p>
+    Suppose that the rules of the game for PMI were changed so that one
+    did the following:
+
+    <ul>
+      <li><p>
+          Basis.  Prove that <m>P(0)</m> is true.
+        </p></li>
+
+      <li><p>
+          Inductive step.  Prove that for all <m>k</m>, <m>P_k</m> implies <m>P_{k+2}</m>
+        </p></li>
+    </ul>
+    </p>
+
+    Explain why this would not constitute a valid proof that <m>P_n</m> holds 
+    for all natural numbers <m>n</m>. 
+     How could we change the basis in this outline to obtain a valid proof?
+
+    \hint{In this modified version, <m>P(0)</m> is not going to imply <m>P(1)</m>. and in fact, none of the odd numbered
+    statements will be proven.  If we change the 
+    basis so that we prove both <m>P(0)</m> and <m>P(1)</m>, all the even statements will be implied by
+    <m>P(0)</m> being true and all the odd statements get forced because <m>P(1)</m> is true.}</li>
+
+    <li><p>
+        If we wanted to prove statements that were indexed by the integers,
+        <me>
+          \forall z \in \Integers, \; P_z,
+        </me>
+        what changes should be made to PMI?
+
+        \hint{A quick change would be to replace <m>\forall k, \; P_k \implies P_{k+1}</m> in the inductive
+        step with <m>\forall k, \; P_k \iff P_{k+1}</m>.  While this would do the trick, a slight improvement 
+        is possible, if we treat the positive and negative cases for <m>k</m> separately.}
+      </p></li>
+    </ol>
+  </exercises>
+</section>

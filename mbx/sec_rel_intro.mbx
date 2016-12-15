@@ -1,0 +1,242 @@
+
+<section xml:id="sec_rel_intro">
+  <title>Relations</title>
+  <p>
+    One of the principle ways in which mathematical writing
+    differs from ordinary writing is in its incredible brevity. For
+    instance, a Ph.D. thesis for someone in the humanities would be very
+    suspicious if its length were less than 300 pages, whereas it would
+    be quite acceptable for a math doctoral student to submit a thesis
+    amounting to less than 100 pages. Indeed, the usual criteria for
+    a doctoral thesis (or indeed any scholarly work in mathematics) is
+    that it be <q>new, true and interesting.</q> If one can prove a truly
+    interesting, novel result in a single page <mdash /> they'll probably hand over
+    the sheepskin.
+  </p>
+
+  <p>
+    How is this great brevity achieved? By inserting single symbols in place
+    of a whole paragraph's worth of words! One class of symbols in particular
+    has immense power <mdash /> so-called <index><main>relations</main></index> relational symbols.
+    When you place a relational
+    symbol between two expressions, you create a sentence that says the
+    relation <em>holds</em>. The period at the end of the last sentence should
+    probably be pronounced! <q>The relation holds, period!</q> In other words
+    when you write down a mathematical sentence involving a relation, you
+    are asserting the relation is True (the capital T is intentional).
+    This is why it's okay to write <q><m>2 \lt  3</m></q> but it's <em>not</em> okay to
+    write <q><m>3 \lt  2</m>.</q> The symbol <m>\lt</m> is a relation symbol and you are
+    only supposed to put it between two things when they actually bear this
+    relation to one another.
+  </p>
+
+  <p>
+    The situation becomes slightly more complicated when we have
+    variables in relational expressions, but before we proceed to
+    consider that complication let's make a list of the relations
+    we've seen to date:
+    <me>
+      =, \lt , >, \leq, \geq,\; \divides \; , \; \mbox{and}  \; \equiv \pmod{m}.
+    </me>
+  </p>
+
+  <p>
+    Each of these, when placed between numbers, produces a statement that
+    is either true or false. Ordinarily we wouldn't write down the
+    false ones, instead we should express that we know the relation
+    <em>doesn't</em> hold by negating the relation symbol (often by
+    drawing a slash through it, but some of the symbols above are
+    negations of others).
+  </p>
+
+  <p>
+    So what about expressions involving variables and these relation symbols?
+    For example what does <m>x \lt  y</m> really mean? Okay, I know that you know
+    what <m>x \lt  y</m> means but, philosophically, a relation symbol involving variables
+    is doing something that you may have only been vaguely aware of in the
+    past <mdash /> it is introducing a <em>supposition</em>. Watch out for relation
+    symbols involving variables! Whenever you encounter them it means the
+    rules of the game are being subtly altered <mdash /> up until the point where
+    you see <m>x \lt  y</m>, <m>x</m> and <m>y</m> are just two random numbers, but after that
+    point we must suppose that <m>x</m> is the smaller of the two.
+  </p>
+
+  <p>
+    The relations we've discussed so far are <index><main>binary relation</main></index>
+    <em>binary</em> relations, that
+    is, they go in between <em>two</em> numbers. There are also higher order
+    relations. For example, a famous <index><main>ternary relation</main></index> ternary
+    relation (a relationship between
+    three things) is the notion of <q>betweenness.</q> If <m>A</m>, <m>B</m> and <m>C</m> are
+    three points which all lie on a single line, we write <m>A\star B \star C</m>
+    if <m>B</m> falls somewhere on the line segment <m>\overline{AC}</m>. So the
+    symbol <m>A\star B \star C</m> is shorthand for the sentence <q>Point <m>B</m> lies
+    somewhere in between points <m>A</m> and <m>C</m> on the line determined by them.</q>
+  </p>
+
+  <p>
+    There is a slightly silly tendency these days to define functions as being
+    a special class of relations. (This is slightly silly not because it's wrong <mdash /> indeed, functions are a special type of relation <mdash /> but because it's the
+    least intuitive approach possible, and it is usually foisted-off on middle or
+    high school students.) When this approach is taken, we first define
+    a relation to be <em>any</em> set of ordered pairs and then state a
+    restriction on the ordered pairs that may be in a relation if it
+    is to be a function. Clearly what these Algebra textbook authors
+    are talking about are <em>binary</em> relations, a ternary relation
+    would actually be a set of ordered triples, and higher order relations
+    might involve ordered 4-tuples or 5-tuples, etc. A couple of small examples
+    should help to clear up this connection between a relation symbol and
+    some set of tuples.
+  </p>
+
+  <p>
+    Consider the numbers from 1 to 5 and the less-than relation, <m>\lt</m>.
+    As a set of ordered pairs, this relation is the set
+    <me>
+      \{(1,2), (1,3), (1,4), (1,5), (2,3), (2,4), (2,5), (3,4), (3,5), (4,5) \}.
+    </me>
+  </p>
+
+  <p>
+    The pairs that are <em>in</em> the relation are those such that the first is smaller than the second.
+  </p>
+
+  <p>
+    An example involving the ternary relation <q>betweenness</q> can be had
+    from the following diagram.
+  </p>
+  <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/a553abcd621275f12bb7a898b1a96928b23a2a0a.png"/>
+  <p>
+    The betweenness relation on the points in this diagram consists of the
+    following triples.
+    <md>
+      <mrow>\{ (A,B,C), (A,G,D), (A,F,E), (B,G,E), (C,B,A), (C,G,F), (C,D,E),</mrow>
+      <mrow>(D,G,A), (E,D,C), (E,G,B), (E,F,A), (F,G,C) \}.</mrow>
+    </md>
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        When thinking of a function as a special type of relation, the pairs are of
+        the form <m>(x, f(x))</m>. That is, they consist of an input and the corresponding
+        output. What is the restriction that must be placed on the pairs in a
+        relation if it is to be a function? (Hint: think about the so-called
+        vertical line test.)
+      </p>
+    </statement>
+  </exercise>
+  <exercises>
+
+    <ol>
+      <li><p>
+          Consider the numbers from 1 to 10.  Give the set of pairs of these numbers that 
+          corresponds to the divisibility relation.
+
+
+
+          \hint{A pair is <q>in</q> the relation when the first number gazinta the second number.  <m>1</m> gazinta anything, <m>2</m> gazinta the even numbers, <m>3</m> gazinta <m>3</m>, <m>6</m> and <m>9</m>, etc. (Also a number always gazinta itself.)}
+        </p></li>
+
+      <li><p>
+          The <index><main>domain</main></index><em>domain</em> of a function (or binary relation) 
+          is the set of numbers appearing in the first coordinate.  The <index><main>range</main></index> 
+          <em>range</em> of a function (or binary relation) is the set of numbers 
+          appearing in the second coordinate.  
+
+          Consider the set <m>\{0,1,2,3,4,5,6\}</m> and the function <m>f(x) = x^2 \pmod{7}</m>.
+          Express this function as a relation by explicitly writing out the set of
+          ordered pairs it contains.  What is the range of this function?
+ 
+ 
+ 
+          \hint{
+          <me>
+            f \; = \; \{(0,0), (1,1), (2,4), (3,2), (4,2), (5,4), (6,1)\}
+          </me>
+          <me>
+            \Rng{f} \;= \; \{0,1,2,4\}
+          </me>
+          }
+        </p></li>
+
+      <li><p>
+          What relation on the numbers from 1 to 10 does the following set of ordered pairs
+          represent?
+          <md>
+            <mrow>\{ (1,1), (1,2), (1,3), (1,4), (1,5), (1,6), (1,7), (1,8), (1,9), (1,10),</mrow>
+            <mrow>(2,2), (2,3), (2,4), (2,5), (2,6), (2,7), (2,8), (2,9), (2,10),</mrow>
+            <mrow>(3,3), (3,4), (3,5), (3,6), (3,7), (3,8), (3,9), (3,10),</mrow>
+            <mrow>(4,4), (4,5), (4,6), (4,7), (4,8), (4,9), (4,10),</mrow>
+            <mrow>(5,5), (5,6), (5,7), (5,8), (5,9), (5,10),</mrow>
+            <mrow>(6,6), (6,7), (6,8), (6,9), (6,10),</mrow>
+            <mrow>(7,7), (7,8), (7,9), (7,10),</mrow>
+            <mrow>(8,8), (8,9), (8,10),</mrow>
+            <mrow>(9,9), (9,10),</mrow>
+            <mrow>(10,10) \}</mrow>
+          </md>
+          \hint{ Less-than-or-equal-to }
+        </p></li>
+
+      <li><p>
+          Draw a five-pointed star, label all 10 points. There are 40 triples of these 
+          labels that satisfy the betweenness relation.  List them.
+
+
+
+          \hint{
+          Yeah, hmmm. Forty is kind of a lot...
+          Let's look at the points (E,F,G and B) on the horizontal line in the diagram below. The triples involving these four points are: (E,F,G), (G,F,E), (E,F,B), (B,F,E), (E,G,B), (B,G,E), (F,G,B), (B,G,F).
+
+
+
+          \
+          <image width="73%" source="images/star.png" />
+          }
+        </p></li>
+
+      <li><p>
+          Sketch a graph of the relation
+          <me>
+            \{ (x,y) \suchthat x,y \in \Reals \; \mbox{and}  \; y > x^2 \}.
+          </me>
+          \hint{Is this the region above or below the curve <m>y=x^2</m>?}
+        </p></li>
+
+      <li><p>
+          A function <m>f(x)</m> is said to be <index><main>invertible function</main></index> 
+          <em>invertible</em> if there is another function <m>g(x)</m> such that 
+          <m>g(f(x)) = x</m> for all values of <m>x</m>.  (Usually, the inverse function,
+          <m>g(x)</m> would be denoted <m>f^{-1}(x)</m>.)   Suppose a function is presented 
+          to you as a relation <mdash /> that is, you are just given a set of pairs.  
+          How can you distinguish whether the function represented by this list 
+          of input/output pairs is invertible?  How can you produce the inverse 
+          (as a set of ordered pairs)?
+ 
+          \hint{If <m>f</m> sends <m>x</m> to <m>y</m>, then we want <m>f^{-1}</m> to send <m>y</m> back to <m>x</m>.  So the inverse just has the pairs in <m>f</m> reversed.  When is the inverse going to fail to be a function?}
+        </p></li>
+
+      <li><p>
+          There is a relation known as <q>has color</q> which goes from the
+          set
+          <me>
+            F = \{orange, cherry, pumpkin, banana\}
+          </me>
+          to the set
+          <me>
+            C = \{orange, red, green, yellow\}.
+          </me>
+          What pairs are in <q>has color</q>?
+   
+          \hint{Depending on your personal experience level with fruit there may be different answers.  Certainly
+          (orange, orange) will be one of the pairs, but (orange, green) happens too!}
+        </p></li>
+    </ol>
+  </exercises>
+</section>

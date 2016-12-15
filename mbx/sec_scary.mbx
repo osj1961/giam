@@ -1,0 +1,166 @@
+
+<section xml:id="sec_scary">
+  <title>More scary notation</title>
+  <p>
+    It is often the case that we want to prove statements that
+    assert something is true for <em>every</em> element of a set.
+    For example, <q>Every number has an additive inverse.</q>
+    You should note that the truth of that statement is relative,
+    it depends on what is meant by <q>number.</q> If we are talking
+    about natural numbers it is clearly false: 3's additive
+    inverse isn't in the set under consideration. If we are
+    talking about integers or any of the other sets we've considered,
+    the statement is true. A statement that begins with the English
+    words <q>every</q> or <q>all</q> is called <index><main>universal quantification</main></index>
+    <em>universally quantified</em>.
+    It is asserted that the statement holds for <em>everything</em> within
+    some universe. It is probably clear that when we are making
+    statements asserting that a thing has an additive inverse, we
+    are not discussing human beings or animals or articles of clothing <mdash /> we are talking about objects that it is reasonable to add together:
+    numbers of one sort or another. When being careful <mdash /> and we should always
+    strive to be careful! <mdash /> it is important to make explicit what
+    universe (known as the <index><main>universe of discourse</main></index><em>universe of discourse</em>) the objects
+    we are discussing come from. Furthermore, we need to distinguish
+    between statements that assert that everything in the universe of
+    discourse has some property, and statements that say something
+    about a few (or even just one) of the elements of our universe.
+    Statements of the latter sort are called <index><main>existential quantification</main></index>
+    <em>existentially quantified</em>.
+  </p>
+
+  <p>
+    Adding to the glossary or translation lexicon we started earlier,
+    there are symbols which describe both these types of quantification.
+    The symbol <m>\forall</m>, an upside-down A, is used for universal
+    quantification, and is usually translated as <q>for all.</q>
+    The symbol <m>\exists</m>, a backwards E, is used for existential
+    quantification, it's translated as <q>there is</q> or <q>there exists.</q>
+    Lets have a look at a mathematically precise sentence that captures
+    the meaning of the one with which we started this section.
+    <me>
+      \forall x \in \Integers, \; \exists y \in \Integers, \; x+y=0.
+    </me>
+  </p>
+
+  <p>
+    Parsing this as we have done before with an English translation in
+    parallel, we get:
+  </p>
+  <tabular>
+    <row>
+      <cell><m>\forall x</m></cell>
+      <cell><m>\in \Integers</m></cell>
+      <cell><m>\exists y</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>For every number <m>x</m></cell>
+      <cell>in the set of integers</cell>
+      <cell>there is a number <m>y</m></cell>
+    </row>
+  </tabular>
+  <tabular>
+    <row>
+      <cell><m>\in \Integers</m></cell>
+      <cell><m>x+y=0</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>in the integers</cell>
+      <cell>having the property that
+      their sum is <m>0</m>.</cell>
+    </row>
+  </tabular>
+  <exercise>
+    <statement>
+      <p>
+      Which type of quantification do the following
+      statements have?
+
+      <ol>
+        <li><p>
+            Every dog has his day.
+          </p></li>
+
+        <li><p>
+            Some days it's just not worth getting out of bed.
+          </p></li>
+
+        <li><p>
+            There's a party in <em>somebody's</em> dorm this Saturday.
+          </p></li>
+
+        <li><p>
+            There's someone for everyone.
+          </p></li>
+      </ol>
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    A couple of the examples in the exercise above actually have two quantifiers
+    in them. When there are two or more (different) quantifiers in a sentence
+    you have to be careful about keeping their order straight. The following
+    two sentences contain all the same elements except that the words that
+    indicate quantification have been switched. Do they have the same meaning?
+  </p>
+
+  <blockquote>
+  For every student in James Woods High School, there is some item of
+  cafeteria food that they like to eat.
+  </blockquote>
+  <blockquote>
+  There is some item of cafeteria food that every student in James Woods 
+  High School likes to eat.
+  </blockquote>
+  <exercises>
+
+    <ol>
+      <li><p>
+          How many quantifiers (and what sorts) are in the following sentence?
+
+          <q>Everybody has <em>some</em> friend that thinks they know everything about 
+          a sport.</q>
+  
+
+
+          \hint{Four.}
+        </p></li>
+
+      <li><p>
+          The sentence <q>Every metallic element is a solid at room temperature.</q> 
+          is false.  Why?
+
+
+
+          \hint{The chemical symbol for an element that is an exception is Hg which stands for "Hydro-argyrum" it is also known as "liquid silver" or "quick silver".}
+        </p></li>
+
+      <li><p>
+          The sentence <q>For every pair of (distinct) real numbers there is 
+          another real number between them.</q> is true.  Why?
+
+
+
+          \hint{Think about this: is there any way to (using a formula) find a number that lies in between two other numbers?}
+        </p></li>
+
+      <li><p>
+          Write your own sentences containing four quantifiers.  One
+          sentence in which the quantifiers appear (<m>\forall \exists \forall \exists</m>)
+          and another in which they appear (<m>\exists \forall \exists \forall</m>).
+
+
+
+          \hint{You're on your own here. Be inventive!}
+        </p></li>
+    </ol>
+  </exercises>
+</section>
