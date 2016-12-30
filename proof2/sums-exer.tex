@@ -141,7 +141,7 @@ For the base case, note that when $n=2$ we have
 
 {\bf Inductive step:}
 
-Suppose that $k>2$ is an integer such that 
+Suppose that $k\geq2$ is an integer such that 
 
 \[ \prod_{i=2}^k \left(1 - \frac{1}{i}\right) =  \frac{1}{k}. \]
 
@@ -164,12 +164,94 @@ The final line skips over a tiny bit of algebraic detail.  You may feel more com
 \item Prove $\displaystyle \sum_{j=0}^{n}(4j+1) \; = \; 2n^{2}+3n+1$ for all
 integers $n \geq 0$.
 
+\hint{
+\begin{proof} (By mathematical induction)
+
+{\bf Base case:} ($n=0$)
+For the base case, note that when $n=0$ we have
+
+\[ \sum_{j=0}^{n}(4j+1) \; = \; (4\cdot 0 + 1 \; = \; 1 \]
+
+\noindent also, when $n=0$,
+
+\[ 2n^2+3n+1 \; = \; 2\cdot 0^2 +3\cdot 0 + 1 \; = \; 1. \]
+
+{\bf Inductive step:}
+
+Suppose that $k \geq 0$ is an integer such that 
+
+\[  \sum_{j=0}^{k}(4j+1) \; = \; 2k^{2}+3k+1. \]
+
+(We want to show that $\displaystyle \sum_{j=0}^{k+1}(4j+1) \; = \; 2(k+1)^{2}+3(k+1)+1$.)
+
+So consider the sum $\displaystyle \sum_{j=0}^{k+1}(4j+1)$:
+
+\begin{gather*}
+\sum_{j=0}^{k+1}(4j+1) \\
+= \; 4(k+1)+1 \; + \; \sum_{j=0}^{k}(4j+1) \\
+= \;  4(k+1)+1 \; + \; 2k^{2}+3k+1 \\
+= \; \rule{0pt}{18pt} \rule{2in}{0pt} \\
+= \; \rule{0pt}{18pt} \rule{2in}{0pt} \\
+= \; \rule{0pt}{18pt} \rule{2 in}{0pt} \\
+\end{gather*}
+\end{proof}
+
+
+Notice that the last line given in the proof is where the inductive hypothesis gets used.  The actual last line of the proof is fairly easy to determine (hint: it is given in the "We want to show" sentence.)  So now you just have to fill in the gaps\ldots
+
+\rule{0pt}{12pt}
+
+}
+
 \wbvfill
 
 \workbookpagebreak
 
 \item Prove $\displaystyle \sum_{i=1}^{n}\frac{1}{(2i-1)(2i+1)} \; = \; \frac{n}{2n+1}$ for all natural numbers $n$.
 
+\hint{
+\begin{proof} (By mathematical induction)
+
+{\bf Base case:} ($n=0$)
+For the base case, note that when $n=0$ 
+
+\[ \sum_{j=0}^{n} \frac{1}{(2i-1)(2i+1)} \]
+
+contains no terms. Thus its value is 0.
+
+And, $\displaystyle \frac{n}{2n+1}$ also evaluates to 0 when $n=0$.
+
+{\bf Inductive step:}
+
+By the inductive hypothesis we may write
+
+\[ \sum_{i=1}^{k} \frac{1}{(2i-1)(2i+1)} \; = \; \frac{k}{2k+1}. \]
+
+Adding $\displaystyle  \frac{1}{(2(k+1)-1)(2(k+1)+1)}$ to both side of this gives
+
+\[ \sum_{i=1}^{k+1} \frac{1}{(2i-1)(2i+1)} \; = \; \frac{k}{2k+1} \; + \; \frac{1}{(2(k+1)-1)(2(k+1)+1)}. \]
+
+To complete the proof we must verify that 
+
+\[ \frac{k}{2k+1} \; + \; \frac{1}{(2(k+1)-1)(2(k+1)+1)} = \frac{k+1}{2(k+1)+1}. \]
+
+Note that
+\begin{gather*}
+\rule{0pt}{23pt} \frac{k}{2k+1} \; + \; \frac{1}{(2(k+1)-1)(2(k+1)+1)} \\
+\rule{0pt}{23pt} = \frac{k}{2k+1} \; + \; \frac{1}{(2k+1)(2k+3)}\\
+\rule{0pt}{23pt} = \frac{k(2k+3)}{(2k+1)(2k+3)} \; + \; \frac{1}{(2k+1)(2k+3)}\\
+\rule{0pt}{23pt} = \frac{k(2k+3)+1}{(2k+1)(2k+3)} \\
+\rule{0pt}{23pt} = \frac{2k^2+3k+1}{(2k+1)(2k+3)} \\
+\rule{0pt}{23pt} = \frac{(2k+1)(k+1)}{(2k+1)(2k+3)} \\
+\rule{0pt}{23pt} = \frac{k+1}{2k+3} \; = \; \frac{k+1}{2(k+1)+1}
+\end{gather*}
+
+\noindent as desired.
+
+
+\end{proof}
+
+}
 \wbvfill
 
 \workbookpagebreak
@@ -191,6 +273,40 @@ Use mathematical induction to prove the following formula involving
 Fibonacci numbers.
 
 \[ \sum_{i=0}^n (F_i)^2 \, = \, F_n \cdot F_{n+1} \]
+
+\hint{
+\begin{proof} (by induction)
+
+{\bf Base case:} ($n=0$)
+
+For the base case, note that when $n=0$ 
+
+\[ \sum_{i=0}^{n} (F_i)^2 \; = \; 1. \]
+
+And, $\displaystyle F_n \cdot F_{n+1} \; = \; F_0 \cdot F_1 \; = \; 1 \cdot 1 \; = \; 1$. 
+
+{\bf Inductive step:}
+
+By the inductive hypothesis we may write
+
+\[ \sum_{i=0}^k (F_i)^2 \; = \; F_k \cdot F_{k+1}. \]
+
+Adding $(F_{k+1})^2$ to both sides gives
+
+\[ \sum_{i=0}^{k+1} (F_i)^2 \; = \; F_k \cdot F_{k+1} + (F_{k+1})^2. \]
+
+Finally, note that (using factoring and the defining property of the Fibonacci numbers)
+we can show that
+
+\begin{gather*}
+ F_k \cdot F_{k+1} + (F_{k+1})^2 \\
+  = \; F_{k+1} \cdot (F_k + F_{k+1}) \\
+  = \; F_{k+1} \cdot F_{k+2}
+\end{gather*}
+
+So the inductive step has been proved and the result follows by PMI.
+\end{proof}
+}
 
 \wbvfill
 
