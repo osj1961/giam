@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-10T23:30:56-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Basic sets</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></a></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="ch_intro.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_intro.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_def.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ch_intro.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_intro.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_def.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link active"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html" class="active">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_ord_rel.html">Ordering relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-37.html">Parity and Counting arguments</a></li>
+<li><a href="section-38.html">The pigeonhole principle</a></li>
+<li><a href="section-39.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-41.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-43.html">Dominance</a></li>
+<li><a href="section-44.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-45.html">Morley's miracle</a></li>
+<li><a href="section-46.html">Five steps into the void</a></li>
+<li><a href="section-47.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_basic"><header title="Section 1.1 Basic sets"><h1 class="heading hide-type" alt="Section 1.1 Basic sets">
+<span class="type">Section</span><span class="codenumber">1.1</span><span class="title">Basic sets</span><a href="sec_basic.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-2">
+    It has been said<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-1" id="fn-1"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-1" style="display: none;" class="tex2jax_ignore"><span class="footnote">Usually attributed to 
+    Kronecker — ``Die ganze Zahl schuf der liebe Gott, alles Übrige 
+    ist Menschenwerk.''</span></span> that “God invented
+    the integers, all else is the work of Man.” This is
+    a mistranslation. The term “integers” should
+    actually be “whole numbers.” The concepts of zero and negative
+    values seem (to many people) to be unnatural constructs. Indeed, otherwise
+    intelligent people are still known to rail against the concept of a
+    negative quantity — “How can you have negative three apples?”
+    The concept of zero is also somewhat profound.
+  </p>
+<p id="p-3">
+    Probably most people will agree that the
+     natural numbers <!--Style me with CSS--><em>are</em> a natural construct — they are the numbers we use to count things. Traditionally, the natural numbers are denoted \(\Naturals\).
+  </p>
+<p id="p-4">
+    At this point in time there seems to be no general agreement about the status
+    of zero (\(0\)) as a natural number. Are there collections that we might possibly
+    count that have <!--Style me with CSS--><em>no</em> members? Well, yes — I'd invite you to consider the collection of gold bars that I keep in my basement…
+  </p>
+<p id="p-5">
+    The traditional view seems to be that
+    \begin{equation*}
+      \Naturals = \{1, 2, 3, 4, \ldots \}
+    \end{equation*}
+    i.e. that the naturals don't include 0. My personal
+    preference would be to make the other choice (i.e. to include \(0\)
+    in the natural numbers), but for the moment, let's be traditionalists.
+  </p>
+<p id="p-6">
+    Be advised that this is a choice. We are adopting a
+    convention. If in some other course, or other mathematical setting
+    you find that the other convention is preferred, well, it's good to
+    learn flexibility…
+  </p>
+<p id="p-7">
+    Perhaps the best way of saying what a set is, is to do as we
+    have above. List all the elements. Of course, if a set has an
+    infinite number of things in it, this is a difficult task — so
+    we satisfy ourselves by listing enough of the elements that the
+    pattern becomes clear.
+  </p>
+<p id="p-8">
+    Taking \(\Naturals\) for granted, what is meant by the “all else”
+    that humankind is responsible for? The basic sets of different types
+    of “numbers” that every mathematics student should know are: \(\Naturals,
+    \Integers, \Rationals, \Reals
+    \; \mbox{and}  \; \Complexes\). Respectively: the naturals, the integers, the
+    rationals, the reals, and the complex numbers. The use of \(\Naturals,
+    \Reals \; \mbox{and}  \; \Complexes\) is probably clear to an English
+    speaker. The integers are denoted with a \(\Integers\) because of the
+    German word <!--Style me with CSS--><em>zählen</em> which means “to count.” The rational numbers are
+    probably denoted using \(\Rationals\), for “quotients.” Etymology
+    aside, is it possible for us to provide precise descriptions of these
+    remaining sets?
+  </p>
+<p id="p-9">
+    The  integers (\(\Integers\)) are just the set of natural numbers
+    together with the negatives of naturals and zero. We can use
+    a doubly infinite list to denote this set.
+    \begin{equation*}
+      \Integers = \{ \ldots -3, -2, -1, 0, 1, 2, 3, \ldots \}
+    \end{equation*}
+  </p>
+<p id="p-10">
+    To describe the  rational numbers precisely we'll have to wait until <a href="sec_rat.html" alt="Section 1.6 Rational and irrational numbers" title="Section 1.6 Rational and irrational numbers">Section 1.6</a>.
+    In the interim, we can use an intuitively appealing, but somewhat imprecise
+    definition for the set of rationals. A rational number is a fraction built out
+    of integers. This also provides us with
+    a chance to give an example of using the main other way of describing
+    the contents of a set — so-called  set-builder notation.
+    \begin{equation*}
+      \Rationals = \{ \frac{a}{b} \suchthat a \in \Integers \; \mbox{and}  \;
+      b \in \Integers \; \mbox{and}  \; b \neq 0 \}
+    \end{equation*}
+  </p>
+<p id="p-11">
+    This is a good time to start building a “glossary” — a translation lexicon
+    between the symbols of mathematics and plain language. In the line
+    above we are defining the set \(\Rationals\) of rational numbers, so the
+    first symbols that appear are “\(\Rationals =\).” It is interesting to
+    note that the equals sign has two subtly different meanings: assignment
+    and equality testing, in the mathematical sentence above we are
+    making an assignment — that is, we are declaring that from now on the set
+    \(\Rationals\) will <!--Style me with CSS--><em>be</em> the set defined on the remainder of the
+    line.<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-2" id="fn-2"><span class="footnote"><sup> 2 </sup></span></a></span><span id="hk-fn-2" style="display: none;" class="tex2jax_ignore"><span class="footnote">Some Mathematicians contend that only the “equality
+      test” meaning of the equals sign is real, that by writing the
+      mathematical sentence above we are asserting the truth of the
+      equality test.  This may be technically correct but it isn't how
+      most people think of things.</span></span>
+    Let's dissect the rest of that line now. There are only 4
+    characters whose meaning may be in doubt, \(\{\), \(\}\), \(\in\) and \(\suchthat\).
+    The curly braces (a.k.a. <!--Style me with CSS--><em>french braces</em>) are almost universally
+    reserved to denote sets, anything appearing between curly braces is
+    meant to define a set. In translating from “math” to English,
+    replace the initial brace with the phrase “the set of all.” The
+    next arcane symbol to appear is the vertical bar. As we will see in
+    <a href="sec_num_thry.html#div" alt="Subsection 1.4.3 Divisibility" title="Subsection 1.4.3 Divisibility">Section 1.4.3</a> this symbol has (at least) two meanings — it will
+    always be clear from context which is meant. In the sentence we are
+    analyzing, it stands for the words “such that.” The last bit of
+    arcana to be deciphered is the symbol \(\in\), it stands for the English
+    word “in” or, more formally, “is an element of.”
+  </p>
+<p id="p-12">
+    Let's parse the entire mathematical sentence we've been discussing
+    with an English translation in parallel.
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\Rationals\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(=\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\{\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">The rational numbers</td>
+<td class="l m b0 r0 l0 t0 lines">are defined to be</td>
+<td class="l m b0 r0 l0 t0 lines">the set of all</td>
+</tr>
+</table>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\displaystyle \frac{a}{b}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\suchthat\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">fractions of the form \(a\) over \(b\)</td>
+<td class="l m b0 r0 l0 t0 lines">such that</td>
+</tr>
+</table>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(a \in \Integers\)</td>
+<td class="l m b0 r0 l0 t0 lines">and</td>
+<td class="l m b0 r0 l0 t0 lines">\(b \in \Integers\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(a\) is an element of the integers</td>
+<td class="l m b0 r0 l0 t0 lines">and</td>
+<td class="l m b0 r0 l0 t0 lines">\(b\) is an
+      element of the integers</td>
+</tr>
+</table>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">and</td>
+<td class="l m b0 r0 l0 t0 lines">\(b \neq 0\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">and</td>
+<td class="l m b0 r0 l0 t0 lines">\(b\) is nonzero.</td>
+<td class="l m b0 r0 l0 t0 lines">(the final curly brace
+      is silent)</td>
+</tr>
+</table>
+<p id="p-13">
+    It is quite apparent that the mathematical notation represents a huge
+    improvement as regards brevity.
+  </p>
+<p id="p-14">
+    As mentioned previously, this definition is slightly flawed. We will
+    have to wait 'til later to get a truly precise
+    definition of the rationals, but we invite the reader to mull over
+    what's wrong with this one. Hint: think about the issue of whether
+    a fraction is in lowest terms.
+  </p>
+<p id="p-15">
+    Let's proceed with our menagerie of sets of numbers. The next set
+    we'll consider is \(\Reals\), the set of real numbers. To someone
+    who has completed Calculus, the reals are perhaps the most obvious and
+    natural notion of what is meant by “number.” It may be surprising to
+    learn that the actual definition of what is meant by a real number is
+    extremely difficult. In fact, the first reasonable formulation of a
+    precise definition of the reals came around 1858, more than 180 years
+    after the development of the
+    Calculus<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-3" id="fn-3"><span class="footnote"><sup> 3 </sup></span></a></span><span id="hk-fn-3" style="display: none;" class="tex2jax_ignore"><span class="footnote">Although it was not
+      published until 1736, Newton's book (De Methodis Serierum et
+      Fluxionum) describing both differential and integral Calculus was
+      written in 1671.</span></span>. A precise
+    definition for the set \(\Reals\) of real numbers is
+    beyond the scope of this book, for the moment consider the
+    following intuitive description. A real number is a number that
+    measures some physical quantity. For example, if a circle has
+    diameter 1 then its circumference is \(\pi\), thus \(\pi\) is a real
+    number. The points \((0,0)\) and \((1,1)\) in the Cartesian plane have
+    distance \(\sqrt{ (0-1)^2 + (0-1)^2} = \sqrt{2}\), thus \(\sqrt{2}\) is
+    a real number. Any rational number is clearly a real number — slope
+    is a physical quantity, and the line from \((0,0)\) to \((b,a)\) has slope
+    \(a/b\). In ancient Greece, Pythagoras — who has sometimes been
+    described as the first pure Mathematician, believed that
+    every real quantity was in fact rational, a belief that we now know to
+    be false. The numbers \(\pi\) and \(\sqrt{2}\) mentioned above are not
+    rational numbers. For the moment it is useful to recall a practical
+    method for distinguishing between rational numbers and real quantities
+    that are not rational — consider their decimal expansions. If the
+    reader is unfamiliar with the result to which we are alluding, we urge
+    you to experiment. Use a calculator or (even better) a computer
+    algebra package to find the decimal expansions of various quantities.
+    Try \(\pi\), \(\sqrt{2}\), \(1/7\), \(2/5\), \(16/17\), \(1/2\) and a few other
+    quantities of your own choice. Given that we have already said that the first
+    two of these are not rational, try to determine the pattern. What is
+    it about the decimal expansions
+    that distinguishes rational quantities from reals that aren't rational?
+  </p>
+<p id="p-16">
+    Given that we can't give a precise definition of a real number at this
+    point it is perhaps surprising that we <!--Style me with CSS--><em>can</em> define the set
+    \(\Complexes\) of complex numbers with precision
+    (modulo the fact that we define them in terms of \(\Reals\)).
+    \begin{equation*}
+      \Complexes = \{ a + bi \suchthat a \in \Reals \; \mbox{and}  \; b \in
+      \Reals \; \mbox{and}  \; i^2 = -1 \}
+    \end{equation*}
+  </p>
+<p id="p-17">
+    Translating this bit of mathematics into English we get:
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\Complexes\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(=\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\{\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">The complex numbers</td>
+<td class="l m b0 r0 l0 t0 lines">are defined to be</td>
+<td class="l m b0 r0 l0 t0 lines">the set of all</td>
+</tr>
+</table>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(a+bi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\suchthat\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">expressions of the form \(a\) plus \(b\) times \(i\)</td>
+<td class="l m b0 r0 l0 t0 lines">such that</td>
+</tr>
+</table>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(a \in \Reals\)</td>
+<td class="l m b0 r0 l0 t0 lines">and</td>
+<td class="l m b0 r0 l0 t0 lines">\(b \in \Reals\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(a\) is an element of the reals</td>
+<td class="l m b0 r0 l0 t0 lines">and</td>
+<td class="l m b0 r0 l0 t0 lines">\(b\) is an
+      element of the reals</td>
+</tr>
+</table>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">and</td>
+<td class="l m b0 r0 l0 t0 lines">\(i^2 = -1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">and</td>
+<td class="l m b0 r0 l0 t0 lines">\(i\) has the property that its
+      square is negative one.</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+</table>
+<p id="p-18">
+    We sometimes denote a complex number using a single variable (by
+    convention, either late alphabet Roman letters or Greek letters.
+    Suppose that we've defined \(z = a + bi\). The single letter \(z\)
+    denotes the entire complex number. We can extract the individual
+    components of this complex number by talking about the
+    real and
+    imaginary parts of \(z\).
+    Specifically, \(Re(z) = a\) is called the
+    real part of \(z\), and \(Im(z) = b\) is called the imaginary part of
+    \(z\).
+  </p>
+<p id="p-19">
+    Complex numbers are added and multiplied as if they were binomials
+    (polynomials with just two terms) where \(i\) is treated as if it were
+    the variable — except that we use the algebraic property that \(i\)'s
+    square is -1. For example, to add the complex numbers \(1+2i\) and
+    \(3-6i\) we just think of the binomials \(1+2x\) and \(3-6x\). Of course we
+    normally write a binomial with the term involving the variable coming
+    first, but this is just a convention. The sum of those binomials
+    would be \(4-4x\) and so the sum of the given complex numbers is \(4-4i\).
+    This sort of operation is fairly typical and is called
+    <!--Style me with CSS--><em>component-wise</em> addition.
+    To multiply complex numbers we have to
+    recall how it is that we multiply binomials. This is the well-known
+    FOIL rule (first, outer, inner, last). For example the product of
+    \(3-2x\) and \(4+3x\) is \((3\cdot 4) + (3 \cdot 3x) + (-2x\cdot 4) +
+    (-2x\cdot 3x)\) this expression simplifies to \(12 + x - 6x^2\). The
+    analogous calculation with complex numbers looks just the same, until
+    we get to the very last stage where, in simplifying, we use the fact
+    that \(i^2=-1\).
+    \begin{gather*}
+(3-2i)\cdot (4+3i)\\
+= (3\cdot 4) + (3\cdot 3i) + (-2i\cdot 4) + (-2i\cdot 3i)\\
+= 12 + 9i - 8i -6i^2\\
+= 12 + i + 6\\
+= 18 + i
+\end{gather*}
+  </p>
+<p id="p-20">
+    The real numbers have a natural ordering, and hence, so do the
+    other sets that are contained in \(\Reals\). The complex numbers
+    can't really be put into a well-defined order — which should be
+    bigger, \(1\) or \(i\)? But we do have a way to, at least partially,
+    accomplish this task. The 
+    <!--Style me with CSS--><em>modulus</em> of a complex number is a real number that gives the
+    distance from the origin (\(0+0i\)) of the complex plane, to a given
+    complex number. We indicate the modulus using absolute value bars,
+    and you should note that if a complex number happens to be purely
+    real, the modulus and the usual notion of absolute value coincide.
+    If \(z = a + bi\) is a complex number, then its modulus, \(\|a + bi \|\),
+    is given by the formula \(\sqrt{a^2+b^2}\).
+  </p>
+<p id="p-21">
+    Several of the sets of numbers we've been discussing can be split
+    up based on the so-called <!--Style me with CSS--><em>trichotomy property</em>:
+    every real number is either positive, negative or zero. In particular,
+    \(\Integers\), \(\Rationals\) and \(\Reals\) can have modifiers stuck on so
+    that we can discuss (for example) the negative real numbers, or the
+    positive rational numbers or the integers that aren't negative.
+    To do this, we put superscripts on the set symbols, either a \(+\)
+    or a \(-\) or the word “noneg.”
+  </p>
+<p id="p-22">
+    So
+    \begin{equation*}
+      \Integers^+ \; = \; \{ x \in \Integers \suchthat x &gt; 0 \}
+    \end{equation*}
+    and
+    \begin{equation*}
+      \Integers^- \; = \; \{ x \in \Integers \suchthat x \lt  0 \}
+    \end{equation*}
+    and
+    \begin{equation*}
+      \Znoneg \; = \; 
+      \{ x \in \Integers \suchthat x \geq 0 \}.
+    \end{equation*}
+  </p>
+<p id="p-23">
+    Presumably, we could also use “nonpos” as a superscript to indicate
+    non-positive integers, but this never seems to come up in practice.
+    Also, you should note that \(\Integers^+\) is really the same thing
+    as \(\Naturals\), but that \(\Znoneg\) is different because it
+    contains \(0\).
+  </p>
+<p id="p-24">
+    We would be remiss in closing this section without discussing the
+    way the sets of numbers we've discussed fit together. Simply put,
+    each is contained in the next. \(\Naturals\) is contained in \(\Integers\),
+    \(\Integers\) is contained in \(\Rationals\), \(\Rationals\) is contained
+    in \(\Reals\), and \(\Reals\) is contained in \(\Complexes\).
+    Geometrically the complex numbers are essentially a two-dimensional
+    plane. The real numbers sit inside this plane just as the \(x\)-axis
+    sits inside the usual Cartesian plane — in this context you may
+    hear people talk about “the real line within the complex plane.”
+    It is probably clear how \(\Naturals\) lies within \(\Integers\), and
+    every integer is certainly a real number. The intermediate set
+    \(\Rationals\) (which contains the integers, and is contained by the
+    reals) has probably the most interesting relationship with the
+    set that contains it. Think of the real line as being solid, like
+    a dark pencil stroke. The rationals are like sand that has been
+    sprinkled very evenly over that line. Every point on the line
+    has bits of sand nearby, but not (necessarily) on top of it.
+  </p>
+<section class="exercises" id="exercises-1"><header title="Exercises 1.1.1 Exercises"><h1 class="heading hide-type" alt="Exercises 1.1.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">1.1.1</span><span class="title">Exercises</span>
+</h1></header><ol id="ol-1" style="list-style-type: lower-alpha;">
+<li id="li-1"><p id="p-25">
+        Each of the quantities indexing the rows of the following table
+        is in one or more of the sets which index the columns.  Place a 
+        check mark in a table entry if the quantity is in the set.
+        <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\Naturals\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\Integers\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\Rationals\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\Reals\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\Complexes\)</td>
+</tr>
+<tr>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(17\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\pi\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(22/7\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(-6\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(e^0\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(1+i\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\sqrt{3}\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(i^2\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table>
+        \hint{Note that these sets contain one another, so if 
+        you determine that a number is a natural number it is automatically 
+        an integer and a rational number and a real number and a complex number…}
+      </p></li>
+<li id="li-2"><p id="p-26">
+        Write the set \(\Integers\) of integers using a singly infinite
+        listing.
+
+
+
+        \hint{What the heck is meant by a “singly infinite listing”?  To help you figure this out, note that
+        \begin{equation*}
+          \ldots -3, -2, -1, 0, 1, 2, 3, \ldots
+        \end{equation*}
+        is a doubly infinite listing.}
+      </p></li>
+<li id="li-3">
+<p id="p-27">
+    Identify each as rational or irrational.
+
+    </p>
+<ol id="ol-2" style="list-style-type: lower-roman;">
+<li id="li-4"><p id="p-28">
+          \(5021.2121212121\ldots\)
+        </p></li>
+<li id="li-5"><p id="p-29">
+          \(0.2340000000\ldots\)
+        </p></li>
+<li id="li-6"><p id="p-30">
+          \(12.31331133311133331111\ldots\)
+        </p></li>
+<li id="li-7"><p id="p-31">
+          \(\pi\)
+        </p></li>
+<li id="li-8"><p id="p-32">
+          \(2.987654321987654321987654321\ldots\)
+        </p></li>
+</ol>
+<p>
+    </p>
+</li>
+<li id="li-9"><p id="p-33">
+        The “see and say” sequence is produced by first writing a 1, 
+        then iterating the following procedure:  look at the previous entry 
+        and say how many entries there are of each integer and write down what 
+        you just said.  The first several terms of the “see and say” sequence 
+        are \(1, 11, 21, 1112, 3112, 211213, 312213, 212223, \ldots\).  Comment on the
+        rationality (or irrationality) of the number whose decimal digits are obtained 
+        by concatenating the “see and say” sequence.
+        \begin{equation*}
+          0.1112111123112211213...
+        \end{equation*}
+        \hint{
+        Experiment!
+
+        What would it mean for this number to be rational?  If we were to
+        run into an element of the “see and say” sequence that is its own description, then
+        from that point onward the sequence would get stuck repeating the same thing over and over
+        (and the number whose digits are found by concatenating the elements of the “see and say” 
+        sequence will enter into a repeating pattern.)
+        }
+      </p></li>
+<li id="li-10"><p id="p-34">
+        Give a description of the set of rational numbers whose decimal
+        expansions terminate.  (Alternatively, you may think of their decimal
+        expansions ending in an infinitely-long string of zeros.)
+
+        \hint{If a decimal expansion terminates after, say, k digits, can you figure out how to produce an integer from that number? Think about multiplying by something …}
+      </p></li>
+<li id="li-11"><p id="p-35">
+        Find the first 20 decimal places of \(\pi\), \(3/7\), \(\sqrt{2}\), 
+          \(2/5\), \(16/17\), \(\sqrt{3}\), \(1/2\) and \(42/100\).  Classify each of
+        these quantity's decimal expansion as: terminating, having a repeating
+        pattern, or showing no discernible pattern.
+
+        \hint{A calculator will generally be inadequate for this problem. You should try using a CAS (Computer Algebra System).  I  would recommend the Sage computer algebra system because
+        like this book it is free — you can download sage and run it on your own system or you can try it out online without installing.  Check it out at www.sagemath.org.
+
+        You can get sage to output \(\pi\) to high accuracy by typing <tt class="code-inline tex2jax_ignore">pi.N(digits=21)</tt>
+        at the sage\(&gt;\) prompt.}
+      </p></li>
+<li id="li-12"><p id="p-36">
+        Consider the process of long division.  Does this algorithm give
+        any insight as to why rational numbers have terminating or repeating
+        decimal expansions?  Explain.
+
+        \hint{You really need to actually sit down and do some long division problems.  When in the process do you suddenly realize that the digits are going to repeat?  Must this decision point always occur? Why?}
+      </p></li>
+<li id="li-13"><p id="p-37">
+        Give an argument as to why the product of two rational numbers
+        is again a rational.
+
+        \hint{Take for granted that the usual rule for multiplying two fractions is okay to use:
+        \begin{equation*}
+          \frac{a}{b} * \frac{c}{d} \; = \; \frac{ac}{bd}.
+        \end{equation*}
+        How do you know that the result is actually a rational number?}
+      </p></li>
+<li id="li-14">
+<p id="p-38">
+    Perform the following computations with complex numbers
+
+    </p>
+<ol id="ol-3" style="list-style-type: lower-roman;">
+<li id="li-15"><p id="p-39">
+          \((4 + 3i) - (3 + 2i)\)
+        </p></li>
+<li id="li-16"><p id="p-40">
+          \((1 + i) + (1 - i)\)
+        </p></li>
+<li id="li-17"><p id="p-41">
+          \((1 + i) \cdot (1 - i)\)
+        </p></li>
+<li id="li-18"><p id="p-42">
+          \((2 - 3i) \cdot (3 - 2i)\)
+        </p></li>
+</ol>
+<p>
+    </p>
+</li>
+<li id="li-19"><p id="p-43">
+        The <!--Style me with CSS--><em>conjugate</em> of a complex number is denoted with a
+          superscript star, and is formed by negating the imaginary part.
+          Thus if \(z = 3+ 4i\) then the conjugate of \(z\) is  \(z^\ast = 3-4i\).
+          Give an argument as to why the product of a complex number and its
+          conjugate is a real quantity.  (I.e. the imaginary part of
+          \(z\cdot z^\ast\) is necessarily 0, no matter what complex number is
+          used for \(z\).) 
+
+        \hint{This is really easy, but be sure to do it generically. In other words, don't just use examples — do the calculation with variables for the real and imaginary parts of the complex number.
+        }
+      </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

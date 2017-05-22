@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:40-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The algebra of combinations</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="previous-button toolbar-item button" href="section-37.html">Previous</a><a class="up-button button toolbar-item" href="chapter-7.html">Up</a><a class="next-button button toolbar-item" href="ch_card.html">Next</a>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-37.html">Previous</a><a class="up-button button toolbar-item" href="chapter-7.html">Up</a><a class="next-button button toolbar-item" href="ch_card.html">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link active"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-36.html">Parity and Counting arguments</a></li>
+<li><a href="section-37.html">The pigeonhole principle</a></li>
+<li><a href="section-38.html" class="active">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-40.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-42.html">Dominance</a></li>
+<li><a href="section-43.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-44.html">Morley's miracle</a></li>
+<li><a href="section-45.html">Five steps into the void</a></li>
+<li><a href="section-46.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-38"><header title="Section 7.4 The algebra of combinations"><h1 class="heading hide-type" alt="Section 7.4 The algebra of combinations">
+<span class="type">Section</span><span class="codenumber">7.4</span><span class="title">The algebra of combinations</span>
+</h1></header><p id="p-1484">
+    Earlier in this chapter we determined the number of \(k\)-subsets of a set
+    of size \(n\). These numbers, denoted by \(C(n,k) = nCk = \binom{n}{k}\)
+    and determined by the formula \(\frac{n!}{k!(n-k)!}\) are known as binomial
+    coefficients. It seems likely that you will have already seen the arrangement
+    of these binomial coefficients into a triangular array — known as
+     Pascal's triangle, but if not…
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">15</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">15</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+</table>
+<p id="p-1485">
+    <!--Style me with CSS--><em>et cetera.</em>
+  </p>
+<p id="p-1486">
+    The thing that makes this triangle so nice and that leads to the
+    strange name “binomial coefficients” for the number of \(k\)-combinations
+    of an \(n\)-set is that you can use the triangle to (very quickly) compute
+    powers of binomials.
+  </p>
+<p id="p-1487">
+    A <!--Style me with CSS--><em>binomial</em> is a polynomial with two terms.
+    Things like \((x+y)\), \((x+1)\) and \((x^7+x^3)\) all count as binomials
+    but to keep things simple just think about \((x+y)\). If you need to
+    compute a large power of \((x+y)\) you can just multiply it out, for
+    example, think of finding the 6th power of \((x+y)\).
+  </p>
+<p id="p-1488">
+    We can use the F.O.I.L rule to find \((x+y)^2 = x^2 + 2xy + y^2\).
+    Then \((x+y)^3 =  (x+y) \cdot (x+y)^2 = (x+y) \cdot  (x^2 + 2xy + y^2)\).
+  </p>
+<p id="p-1489">
+    You can compute that last product either by using the distributive law
+    or the table method:
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(x^2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(+ 2xy\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(+ y^2\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(x\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(+ y\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+</table>
+<p id="p-1490">
+    Either way, the answer should be \((x+y)^3 = x^3 + 3x^2y + 3xy^2 + y^3\).
+  </p>
+<p id="p-1491">
+    Finally the sixth power is the square of the cube thus
+    \begin{gather*}
+(x+y)^6 = (x+y)^3 \cdot (x+y)^3\\
+= (x^3 + 3x^2y + 3xy^2 + y^3) \cdot (x^3 + 3x^2y + 3xy^2 + y^3)
+\end{gather*}
+  </p>
+<p id="p-1492">
+    For this product I wouldn't even <!--Style me with CSS--><em>think</em> about the distributive
+    law, I'd jump to the table method right away:
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(x^3\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(+ 3x^2y\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(+ 3xy^2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(+ y^3\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(x^3\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(+ 3x^2y\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(+ 3xy^2\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(+ y^3\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+</table>
+<p id="p-1493">
+    In the end you should obtain
+    \begin{equation*}
+      x^6 + 6 x^5y + 15 x^4y^2 + 20 x^3y^3 + 15 x^2y^4 + 6 xy^5 + y^6.
+    \end{equation*}
+  </p>
+<p id="p-1494">
+    Now all of this is a lot of work and it's really much easier
+    to notice the form of the answer: The exponent on \(x\) starts at 6 and descends
+    with each successive term down to 0. The exponent on \(y\) starts at 0
+    and ascends to 6. The coefficients in the answer are the numbers in the
+    sixth row of Pascal's triangle.
+  </p>
+<p id="p-1495">
+    Finally, the form of Pascal's triangle makes it really easy to extend.
+    A number in the interior of the triangle is always the sum of the two
+    above it (on either side). Numbers that aren't in the interior of the
+    triangle are always 1.
+  </p>
+<p id="p-1496">
+    We showed rows 0 through 6 above. Rows 7 and 8 are
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">21</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">35</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">35</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">21</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">28</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">56</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">70</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">56</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">28</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1.</td>
+</tr>
+</table>
+<p id="p-1497">
+    With this information in hand, it becomes nothing more than a matter of copying
+    down the answer to compute
+    \begin{equation*}
+      (x+y)^8 =  x^8 + 8x^7y + 28x^6y^2 + 56x^5y^3 + 70x^4y^4 + 56x^3y^5 + 28x^2y^6 + 8xy^7 + y^8.
+    \end{equation*}
+  </p>
+<article class="exercise-like" id="exercise-70"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">7.4.1</span>
+</h5>
+<p id="p-1498">
+        Given the method using Pascal's triangle for computing \((x+y)^n\) we can
+        use substitution to determine more general binomial powers.
+      </p>
+<p id="p-1499">
+        Find \((x^4 + x^2)^5\).
+      </p></article><div class="hidden-knowl-wrapper"></div>
+<p id="p-1500">
+    All of the above hinges on the fact that one can compute a binomial
+    coefficient by summing the two that appear to either side and above it
+    in Pascal's triangle. This fact is the fundamental relationship
+    between binomial coefficients — it is usually called Pascal's formula.
+  </p>
+<article class="theorem-like" id="theorem-35"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">7.4.2</span>
+</h5>
+<p id="p-1501">
+        For all natural numbers \(n\) and \(k\) with \(0 \lt  k \leq n\),
+        \begin{equation*}
+          \binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}.
+        \end{equation*}
+      </p></article><p id="p-1502">
+    We are going to prove it twice.
+  </p>
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-45" id="proof-45"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-45" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1503">
+      (The first proof is a combinatorial argument.)
+    </p>
+<p id="p-1504">
+      There are \(\binom{n}{k}\) subsets of size \(k\) of the set \(N = \{1, 2, 3, \ldots, n\}\).
+      We will partition these \(k\)-subsets into two disjoint cases: those that contain
+      the final number, \(n\), and those that do not.
+    </p>
+<p id="p-1505">
+      Let
+      \begin{equation*}
+        A = \{ S \subseteq N \suchthat |S| = k \; \land \; n \notin S \}
+      \end{equation*}
+      and, let
+      \begin{equation*}
+        B = \{ S \subseteq N \suchthat |S| = k \; \land \; n \in S \}.
+      \end{equation*}
+    </p>
+<p id="p-1506">
+      Since the number \(n\) is either in a \(k\)-subset or it isn't, these sets
+      are disjoint and exhaustive. So the addition rule tells us that
+      \begin{equation*}
+        \binom{n}{k} = |A| + |B|.
+      \end{equation*}
+    </p>
+<p id="p-1507">
+      The set \(A\) is really just the set of all \(k\)-subsets of the \((n-1)\)-set
+      \(\{1, 2, 3, \ldots, n-1 \}\), so \(|A| = \binom{n-1}{k}\).
+    </p>
+<p id="p-1508">
+      Any of the sets in \(B\) can be obtained by adjoining the element \(n\) to
+      a \(k-1\) subset of the \((n-1)\)-set
+      \(\{1, 2, 3, \ldots, n-1 \}\), so \(|B| = \binom{n-1}{k-1}\).
+    </p>
+<p id="p-1509">
+      Substituting gives us the desired result.
+    </p></article></span><span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-46" id="proof-46"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-46" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1510">
+      (The second proof is algebraic in nature.)
+    </p>
+<p id="p-1511">
+      Consider the sum
+      \begin{equation*}
+        \binom{n-1}{k} + \binom{n-1}{k-1}.
+      \end{equation*}
+    </p>
+<p id="p-1512">
+      Applying the formula we deduced in <a href="sec_counting.html" alt="Section 7.1 Counting" title="Section 7.1 Counting">Section 7.1</a>
+      we get
+      \begin{gather*}
+\binom{n-1}{k} + \binom{n-1}{k-1}\\
+= \frac{(n-1)!}{k! (n-1-k)!}  + \frac{(n-1)!}{(k-1)! ((n-1)-(k-1))!}\\
+= \frac{(n-1)!}{k! (n-k-1)!}  + \frac{(n-1)!}{(k-1)! (n-k)!}
+\end{gather*}
+    </p>
+<p id="p-1513">
+      A common denominator for these fractions is \(k!(n-k)!\). (We will have
+      to multiply the top and bottom of the first fraction by \((n-k)\) and the
+      top and bottom of the second fraction by \(k\).)
+      \begin{gather*}
+= \frac{(n-k)(n-1)!}{k! (n-k) (n-k-1)!}  + \frac{k (n-1)!}{k (k-1)! (n-k)!}\\
+= \frac{(n-k)(n-1)!}{k! (n-k)!}  + \frac{k (n-1)!}{k! (n-k)!}\\
+= \frac{(n-k)(n-1)! + k (n-1)!}{k! (n-k)!}\\
+= \frac{(n-k+k)(n-1)!}{k! (n-k)!}\\
+= \frac{(n)(n-1)!}{k! (n-k)!}\\
+= \frac{n!}{k! (n-k)!}.
+\end{gather*}
+    </p>
+<p id="p-1514">
+      We recognize the final expression as the definition of \(\binom{n}{k}\),
+      so we have proved that
+      \begin{equation*}
+        \binom{n-1}{k} + \binom{n-1}{k-1} = \binom{n}{k}.
+      \end{equation*}
+    </p></article></span><p id="p-1515">
+    There are quite a few other identities concerning binomial coefficients
+    that can also be proved in (at least) two ways. We will provide one
+    or two
+    other examples and leave the rest to you in the exercises for this section.
+  </p>
+<article class="theorem-like" id="theorem-36"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">7.4.3</span>
+</h5>
+<p id="p-1516">
+        For all natural numbers \(n\) and \(k\) with \(0 \lt  k \leq n\),
+        \begin{equation*}
+          k \cdot \binom{n}{k} = n \cdot \binom{n-1}{k-1}.
+        \end{equation*}
+      </p></article><p id="p-1517">
+    Let's try a purely algebraic approach first.
+  </p>
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-47" id="proof-47"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-47" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1518">
+      Using the formula for the value of a binomial coefficient
+      we get
+      \begin{equation*}
+        k \cdot \binom{n}{k} = k \cdot \frac{n!}{k! (n-k)!}.
+      \end{equation*}
+    </p>
+<p id="p-1519">
+      We can do some cancellation to obtain
+      \begin{equation*}
+        k \cdot \binom{n}{k} = \frac{n!}{(k-1)! (n-k)!}.
+      \end{equation*}
+    </p>
+<p id="p-1520">
+      Finally we factor-out an \(n\) to obtain
+      \begin{equation*}
+        k \cdot \binom{n}{k} = n \cdot \frac{(n-1)!}{(k-1)! (n-k)!},
+      \end{equation*}
+      since \((n-k)\) is the same thing as \(((n-1)-(k-1))\) we have
+      \begin{equation*}
+        k \cdot \binom{n}{k} = n \cdot \frac{(n-1)!}{(k-1)!((n-1)-(k-1))!} 
+        = n \cdot \binom{n-1}{k-1}
+      \end{equation*}
+    </p></article></span><p id="p-1521">
+    A combinatorial argument usually involves counting <!--Style me with CSS--><em>something</em>
+    in two ways. What could that something be? Well, if you see a
+    product in some formula you should try to imagine what the
+    multiplication rule would say in that particular circumstance.
+  </p>
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-48" id="proof-48"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-48" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1522">
+      Consider the collection of all subsets of size \(k\) taken from
+      \(N = \{1, 2, 3, \ldots, n\}\) in which one of the elements has
+      been marked to distinguish it from the others in some way.<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-51" id="fn-51"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-51" style="display: none;" class="tex2jax_ignore"><span class="footnote">
+      For example, a committee of \(k\) individuals one of whom has been 
+      chosen as chairperson, is an example of the kind of entity we are 
+      discussing.</span></span>
+    </p>
+<p id="p-1523">
+      We can count this collection in two ways using the multiplication rule.
+    </p>
+<p id="p-1524">
+      Firstly, we could select a \(k\)-subset in \(\binom{n}{k}\) ways and then from
+      among the \(k\) elements of the subset we could select one to be marked.
+      By this analysis there are \(\binom{n}{k} \cdot k\) elements in our
+      collection.
+    </p>
+<p id="p-1525">
+      Secondly, we could select an element from the \(n\)-set which will be
+      the “marked” element of our subset, and then choose the additional
+      \(k-1\) elements from the remaining \(n-1\) elements of the \(n\)-set.
+      By this analysis there are \(n \cdot \binom{n-1}{k-1}\) elements in
+      the collection we have been discussing.
+    </p>
+<p id="p-1526">
+      Thus,
+      \begin{equation*}
+        k \cdot \binom{n}{k} = n \cdot \binom{n-1}{k-1}
+      \end{equation*}
+    </p></article></span><p id="p-1527">
+    The final result that we'll talk about actually has (at least) three proofs.
+    One of which suffers from the fault that it is “like swatting a fly
+    with a sledge hammer.”
+  </p>
+<p id="p-1528">
+    The result concerns the sum of all the numbers in some
+    row of Pascal's triangle.
+  </p>
+<article class="theorem-like" id="theorem-37"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">7.4.4</span>
+</h5>
+<p id="p-1529">
+        For all natural numbers \(n\) and \(k\) with \(0 \lt  k \leq n\),
+        \begin{equation*}
+          \sum_{k=0}^n \binom{n}{k} = 2^n
+        \end{equation*}
+      </p></article><p id="p-1530">
+    Our sledge hammer is a powerful result known as the binomial theorem
+    which is a formalized statement of the material we began this section
+    with.
+  </p>
+<article class="theorem-like" id="theorem-38"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">7.4.5</span><span class="title">The Binomial Theorem</span>
+</h5>
+<p id="p-1531">
+        For all natural numbers \(n\), and real numbers \(x\) and \(y\),
+        \begin{equation*}
+          (x+y)^n = \sum_{k=0}^{n} \binom{n}{k} x^{n-k}y^k.
+        \end{equation*}
+      </p></article><p id="p-1532">
+    We won't be proving this result just now. But, the following proof
+    is a proof of the previous theorem using this more powerful result.
+  </p>
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-49" id="proof-49"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-49" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1533">
+      Substitute \(x=y=1\) in the binomial theorem.
+    </p></article></span><p id="p-1534">
+    Our second proof will be combinatorial.
+    Let us re-iterate that a combinatorial proof usually consists of
+    counting some collection in two different ways. The formula
+    we have in this example contains a sum, so we should search for
+    a collection of things that can be counted using the addition
+    rule.
+  </p>
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-50" id="proof-50"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-50" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1535">
+      The set of all subsets of \(N = \{1, 2, 3, \ldots, n\}\), which we
+      denote by \({\mathcal P}(N)\), can be partitioned into \(n+1\) sets based
+      on the sizes of the subsets,
+      \begin{equation*}
+        {\mathcal P}(N) = S_0 \cup S_1 \cup S_2 \cup \ldots \cup S_n,
+      \end{equation*}
+      where \(S_k = \{ S \suchthat S \subseteq N \; \land \; |S| = k \}\)
+      for \(0 \leq k \leq n\). Since no subset of \(N\) can appear in two different
+      parts of the partition (a subset's size is unique) and every subset of \(N\)
+      appears in one of the parts of the partition (the sizes of subsets are
+      all in the range from \(0\) to \(n\)). The addition principle tells us that
+      \begin{equation*}
+        |{\mathcal P}(N)|  =  |S_0| \;+\; |S_1| \;+\;\cup |S_2| \;+\; \ldots \;+\; |S_n|.
+      \end{equation*}
+    </p>
+<p id="p-1536">
+      We have previously proved that \(|{\mathcal P}(N)| = 2^n\) and we know that
+      \(|S_k| = \binom{n}{k}\) so it follows that
+      \begin{equation*}
+        2^n = \binom{n}{0} + \binom{n}{1} +\binom{n}{2} + \ldots + \binom{n}{n}.
+      \end{equation*}
+    </p></article></span><section class="exercises" id="exercises-38"><header title="Exercises 7.4.1 Exercises"><h1 class="heading hide-type" alt="Exercises 7.4.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">7.4.1</span><span class="title">Exercises</span>
+</h1></header><ol style="list-style-type: lower-alpha;">
+<li id="li-477"><p id="p-1537">
+          Use the binomial theorem (with \(x=1000\) and \(y=1\)) to calculate
+          \(1001^6\).
+        </p></li>
+<li id="li-478"><p id="p-1538">
+          Find \((2x+3)^5\).
+        </p></li>
+<li id="li-479"><p id="p-1539">
+          Find \((x^2+y^2)^6\).
+        </p></li>
+<li id="li-480"><p id="p-1540">
+          The following diagram contains a 3-dimensional analog of
+          Pascal's triangle that we might call “Pascal's tetrahedron.” 
+          What would the next layer look like?
+          <img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt="">
+          \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+            \reset@font\fontsize{#1}{#2pt}
+            \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+            \selectfont}\fi
+          <img width="100%" src="images/5f3b0e79f0726a4824d60de1f8d8269cc92be3d4.png" alt="">
+        </p></li>
+<li id="li-481"><p id="p-1541">
+          The student government at Lagrange High consists of 24 members chosen
+          from amongst the general student body of 210. Additionally, there
+          is a steering committee of 5 members chosen from amongst those in
+          student government. Use the multiplication rule to determine two different
+          formulas for the total number of possible governance structures.
+        </p></li>
+<li id="li-482"><p id="p-1542">
+          Prove the identity
+          \begin{equation*}
+            \binom{n}{k} \cdot \binom{k}{r} \; = \; \binom{n}{r} \cdot \binom{n-r}{k-r}
+          \end{equation*}
+          combinatorially.
+        </p></li>
+<li id="li-483"><p id="p-1543">
+          Prove the binomial theorem.
+          \begin{equation*}
+            \forall n \in \Naturals, \; \forall x,y \in \Reals, \; 
+            (x+y)^n \; = \; \sum_{k=0}^n \binom{n}{k} x^{n-k}y^k
+          \end{equation*}
+        </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

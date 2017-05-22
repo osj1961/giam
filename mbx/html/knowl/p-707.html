@@ -1,0 +1,25 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:43-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<p><h5 class="heading"><span class="type">Paragraph</span></h5>
+          Prove that if \(n\) is an odd number then \(n^4 \pmod{16} = 1\).
+
+          \hint{
+
+          While one could perform fairly complicated arithmetic, expanding expression like
+          \((16k+13)^4\) and then regrouping to put it in the form \(16q+1\) (and one would need 
+          to do that work for each of the odd remainders modulo \(16\)),  that would be missing out
+          on the true power of modular notation.  In a “\(\pmod{16}\)” calculation one can simply ignore
+          summands like \(16k\) because they are \(0 \pmod{16}\).  Thus, for example,
+          \begin{equation*}
+            (16k+7)^4 \pmod{16} \; = \; 7^4 \pmod{16} \; = \; 2401 \pmod{16}  \; = \; 1.
+          \end{equation*}
+          So, essentially one just needs to compute the \(4\)th powers of \(1, 3, 5, 7, 9, 11, 13\)  and \(15\), and
+          then reduce them modulo 16.  An even greater economy is possible if one notes that (modulo 16) many
+          of those cases are negatives of one another — so their \(4\)th powers are equal.
+          }
+        </p><span class="incontext"><a href="sec_cases.html#p-707">in-context</a></span>

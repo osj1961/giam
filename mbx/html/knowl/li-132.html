@@ -1,0 +1,39 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:42-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<article class="list"><h5 class="heading">
+<span class="type">Item</span> <span class="codenumber">j</span>
+</h5>
+<p id="p-311">
+        The integral test in Calculus is used to determine whether an
+        infinite series converges or diverges:   Suppose that \(f(x)\) is a positive,
+        decreasing, 
+        real-valued function with \(\lim_{x \longrightarrow \infty} f(x) = 0\), if
+        the improper integral
+        \(\int_0^\infty f(x)\) has a finite value, then the infinite series 
+        \(\sum_{n=1}^\infty f(n)\) converges.
+
+        The integral test should be envisioned by letting the series correspond
+        to a right-hand Riemann sum for the integral, since the function is decreasing,
+        a right-hand Riemann sum is an underestimate for the value of the integral,
+        thus
+        \begin{equation*}
+          \sum_{n=1}^\infty f(n) \lt  \int_0^\infty f(x).
+        \end{equation*}
+        Discuss the meanings of and (where possible) provide justifications for
+        the inverse, converse and contrapositive of the conditional statement 
+        in the integral test.
+
+
+
+        \hint{
+        The inverse says — if the integral isn't finite, then the series doesn't converge. You can cook-up a function that shows this to be false by (for example) creating one with vertical asymptotes that occur in between the integer \(x\)-values. Even one such pole can be enough to make the integral go infinite.
+        The converse says that if the series converges, the integral must be finite. The counter-example we just discussed would work here too.
+
+        The contrapositive says that if the series doesn't converge, then the integral must not be finite. If we were allowed to use discontinuous functions, it isn't too hard to come up with an \(f\) that actually has zero area under it — just make f be identically zero except at the integer x-values where it will take the same values as the terms of the series. But wait, the function we just described isn't “decreasing” — which is probably why that hypothesis was put in there!
+        }
+      </p></article><span class="incontext"><a href="sec_impl.html#li-132">in-context</a></span>

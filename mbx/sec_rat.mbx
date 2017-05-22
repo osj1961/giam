@@ -1,0 +1,300 @@
+
+<section xml:id="sec_rat">
+  <title>Rational and irrational numbers</title>
+  <p>
+    When we first discussed the rational numbers in <xref ref="sec_basic">Section</xref>
+    we gave the following definition, which isn't quite right.
+    <me>
+      \Rationals = \{ \frac{a}{b} \suchthat a \in \Integers \; \mbox{and}  \;
+      b \in \Integers \; \mbox{and}  \; b \neq 0 \}
+    </me>
+  </p>
+
+  <p>
+    We are now in a position to fix the problem.
+  </p>
+
+  <p>
+    So what was the problem after all? Essentially this: there are
+    many expressions formed with one integer written above another (with an
+    intervening fraction bar) that represent the exact same rational
+    number. For example <m>\frac{3}{6}</m> and <m>\frac{14}{28}</m> are distinct
+    things that appear in the set defined above, but we all know that they
+    both represent the rational number <m>\frac{1}{2}</m>. To eliminate this
+    problem with our definition of the rationals we need to add an
+    additional condition that ensures that such duplicates don't arise.
+    It turns out that what we want is for the numerators and denominators
+    of our fractions to have <em>no</em> factors in common. Another way to
+    say this is that the <m>a</m> and <m>b</m> from the definition above should be
+    chosen so that <m>\gcd{a}{b} = 1</m>. A pair of numbers whose gcd is 1 are
+    called <index><main>relative primality</main></index> <em>relatively prime</em>.
+  </p>
+
+  <p>
+    We're ready, at last, to give a good, precise definition of the set
+    of rational numbers. (Although it should be noted that we're not
+    quite done fiddling around; an even better definition will be given in
+    <xref ref="sec_eq_rel">Section</xref>.)
+    <me>
+      \Rationals = \{ \frac{a}{b} \suchthat a,b \in \Integers \; \mbox{and}  \;
+      b \neq 0 \; \mbox{and}  \; \gcd{a}{b}=1 \}.
+    </me>
+  </p>
+
+  <p>
+    As we have in the past, let's parse this with an English translation in parallel.
+  </p>
+  <tabular>
+    <row>
+      <cell><m>\Rationals</m></cell>
+      <cell><m>=</m></cell>
+      <cell><m>\{</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>The rational numbers</cell>
+      <cell>are defined to be</cell>
+      <cell>the set of all</cell>
+    </row>
+  </tabular>
+  <tabular>
+    <row>
+      <cell><m>\displaystyle \frac{a}{b}</m></cell>
+      <cell><m>\suchthat</m></cell>
+      <cell><m>a,b \in \Integers</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>fractions of the form <m>a</m> over <m>b</m></cell>
+      <cell>such that</cell>
+      <cell><m>a</m> and <m>b</m> are integers</cell>
+    </row>
+  </tabular>
+  <tabular>
+    <row>
+      <cell>and</cell>
+      <cell><m>b \neq 0</m></cell>
+      <cell>and</cell>
+      <cell><m>\gcd{a}{b}=1</m></cell>
+      <cell><m>\}</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>and</cell>
+      <cell><m>b</m> is non-zero</cell>
+      <cell>and</cell>
+      <cell><m>a</m> and <m>b</m> are relatively prime.</cell>
+      <cell></cell>
+    </row>
+  </tabular>
+  <p>
+    Finally, we are ready to face a fundamental problem that was
+    glossed-over in <xref ref="sec_basic">Section</xref>. We defined two sets
+    back then, <m>\Rationals</m> and <m>\Reals</m>, the hidden assumption that one
+    makes in asserting that there are two of something is that the two
+    things are distinct. Is this really the case? The reals have been
+    defined (unrigorously) as numbers that measure the magnitudes of
+    physical quantities, so another way to state the question is this:
+    Are there physical quantities (for example lengths) that are <em>not</em>
+    rational numbers?
+  </p>
+
+  <p>
+    The answer is that <em>yes</em> there are numbers that measure lengths
+    which are not rational numbers. With our new and improved definition
+    of what is meant by a rational number we are ready to <em>prove</em> that
+    there is at least one length that can't be expressed as a fraction.
+    Using the Pythagorean theorem it's easy to see that the length of the
+    diagonal of a unit square is <m>\sqrt{\,2}</m>. The proof that <m>\sqrt{\,2}</m> is
+    not rational is usually attributed to the followers of Pythagoras (but
+    probably not to Pythagoras himself). In any case it is a result of
+    great antiquity. The proof is of a type known as
+    <index><main>reductio ad absurdam</main></index> <em>reductio ad absurdum</em>
+    <fn>Reduction to an absurdity <mdash /> better known these 
+    days as proof by contradiction. </fn>. We show that a given assumption
+    leads logically to an absurdity, a statement that <em>can't</em> be true,
+    then we know that the original assumption must itself be false. This
+    method of proof is a bit slippery; one has to first assume the
+    <em>exact opposite</em> of what one hopes to prove and then argue (on
+    purpose) towards a ridiculous conclusion.
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        The number <m>\sqrt{\,2}</m> is not in the set <m>\Rationals</m> of
+        rational numbers.
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    Before we can actually give the proof we should prove an intermediary
+    result <mdash /> but we won't, we'll save this proof for the student to do
+    later (heh, heh, heh<ellipsis />).
+    These sorts of intermediate results, things that don't deserve to be
+    called theorems themselves, but that aren't entirely self-evident are
+    known as <index><main>lemmas</main></index> lemmas. It is often the case that in an
+    attempt at proving a statement we find ourselves in need of some small
+    fact. Perhaps it even seems to be true but it's not clear. In such
+    circumstances, good form dictates that we first state and prove the
+    lemma then proceed on to our theorem and its proof. So, here, without
+    its proof is the lemma we'll need.
+  </p>
+
+  <lemma>
+    <statement>
+      <p>
+        If the square of an integer is even, then the original
+        integer is even.
+      </p>
+    </statement>
+  </lemma>
+
+  <p>
+    Given that thoroughness demands that we fill in this gap by actually
+    proving the lemma at a later date, we can now proceed with the proof
+    of our theorem.
+  </p>
+
+  <proof>
+    <p>
+      Suppose to the contrary that <m>\sqrt{2}</m> <em>is</em> a rational number.
+      Then by the definition of the set of rational numbers, we know that
+      there are integers
+      <m>a</m> and <m>b</m> having the following properties:
+      <m>\displaystyle \sqrt{2} = \frac{a}{b}</m> and <m>\gcd{a}{b} = 1</m>.
+    </p>
+
+    <p>
+      Consider the expression <m>\displaystyle \sqrt{2} = \frac{a}{b}</m>.
+      By squaring both sides of this we obtain
+      <me>
+        2 = \frac{a^2}{b^2}.
+      </me>
+    </p>
+
+    <p>
+      This last expression can be rearranged to give
+      <me>
+        a^2 = 2 b^2
+      </me>
+    </p>
+
+    <p>
+      An immediate consequence of this last equation is that <m>a^2</m> is an
+      even number. Using the lemma above we now know that <m>a</m> is an even
+      integer and hence that there is an integer <m>m</m> such that <m>a=2m</m>.
+      Substituting this last expression into the previous equation gives
+      <me>
+        (2m)^2 = 2 b^2,
+      </me>
+      thus,
+      <me>
+        4m^2 = 2 b^2,
+      </me>
+      so
+      <me>
+        2m^2 = b^2.
+      </me>
+    </p>
+
+    <p>
+      This tells us that <m>b^2</m> is even, and hence (by the lemma), <m>b</m> is even.
+    </p>
+
+    <p>
+      Finally, we have arrived at the desired absurdity because if <m>a</m> and
+      <m>b</m> are both even then <m>\gcd{a}{b} \geq 2</m>, but, on the other hand,
+      one of our initial assumptions is that <m>\gcd{a}{b} = 1</m>.
+    </p>
+  </proof>
+
+  <exercises>
+
+    <ol>
+      <li><p>
+          <index><main>Rational approximation</main></index> Rational Approximation is 
+          a field of mathematics that has received much study.  The main idea 
+          is to find rational numbers that are very good approximations to
+          given irrationals.  For example, <m>22/7</m> is a well-known rational 
+          approximation to <m>\pi</m>.  Find good rational approximations to 
+          <m>\sqrt{2}, \sqrt{3}, \sqrt{5}</m> and <m>e</m>.
+
+
+
+
+
+          \hint{One approach is to truncate a decimal approximation and then rationalize. E.g. <m>\sqrt{2}</m> is approximately 1.4142, so 14142/10000 isn't a bad approximator (although naturally 7071/5000 is better since it involves smaller numbers).}
+        </p></li>
+
+      <li><p>
+          The theory of base-<m>n</m> notation that we looked at in 
+          the sub-section on base-<m>n</m>  can be extended to deal with real and 
+          rational numbers by introducing a decimal point (which should 
+          probably be re-named in accordance with the base) and adding 
+          digits to the right of it.  For instance <m>1.1011</m> is binary notation
+          for <m>1 \cdot 2^0 + 1 \cdot 2^{-1} + 0 \cdot 2^{-2} + 
+          1\cdot 2^{-3} + 1\cdot 2^{-4}</m> or <m>\displaystyle 1 + \frac{1}{2} + 
+          \frac{1}{8} + \frac{1}{16} = 1 \frac{11}{16}</m>.
+
+          Consider the binary number <m>.1010010001000010000010000001\ldots</m>, 
+          is this number rational or irrational?  Why?
+
+
+
+          \hint{Does the rule about rational numbers having terminating or repeating decimal representations carry over to other bases?
+
+
+
+          }
+        </p></li>
+
+      <li><p>
+          If a number <m>x</m> is even, it's easy to show that its square <m>x^2</m>
+          is even.  The lemma that went unproved in this section asks us to
+          start with a square (<m>x^2</m>) that is even and deduce that the UN-squared
+          number (<m>x</m>) is even.  Perform some numerical experimentation to
+          check whether this assertion is reasonable.  Can you give an argument
+          that would prove it?
+
+
+
+          \hint{What if the lemma wasn't true? Can you work out what it would mean if we had a number x such that x2 was even but x itself was odd?}
+        </p></li>
+
+      <li><p>
+          The proof that <m>\sqrt{2}</m> is irrational can be generalized 
+          to show that <m>\sqrt{p}</m> is irrational for every prime number <m>p</m>.
+          What statement would be equivalent to the lemma about the parity
+          of <m>x</m> and <m>x^2</m> in such a generalization?
+
+
+
+          \hint{Hint: Saying <q>x is even</q> is the same thing as saying <q>x is evenly divisible by 2.</q>  Replace the <m>2</m> by <m>p</m> and you're halfway there<ellipsis />}
+        </p></li>
+
+      <li><p>
+          Write a proof that <m>\sqrt{3}</m> is irrational.
+
+
+
+          \hint{You can mostly just copy the argument for <m>\sqrt{2}</m>.}
+        </p></li>
+    </ol>
+  </exercises>
+</section>

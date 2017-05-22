@@ -1,0 +1,66 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:44-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<article class="list"><h5 class="heading">
+<span class="type">Item</span> <span class="codenumber">d</span>
+</h5>
+<p id="p-1022">
+        Consider the alternating sum of squares:
+        \begin{gather*}
+1\\
+1 - 4 = -3\\
+1 - 4 + 9 = 6\\
+1 - 4 + 9 - 16 = -10\\
+\mbox{et cetera}
+\end{gather*}
+        Guess a general formula for \(\sum_{i=1}^n (-1)^{i-1} i^2\), and prove it using PMI.
+
+        \hint{
+
+        <article class="theorem-like" id="theorem-20"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">5.2.7</span>
+</h5>\begin{equation*}
+              \forall n \in \Naturals, \; \sum_{i=1}^n (-1)^{i-1} i^2 \;= \; (-1)^{n-1} \frac{n(n+1)}{2}
+            \end{equation*}</article>
+
+        <span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-32" id="proof-32"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-32" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1023">
+            (By mathematical induction)
+          </p>
+<p id="p-1024">
+            <!--Style me with CSS--><em>Base case:</em> (\(n=1\))
+            For the base case, note that when \(n=1\) we have
+            \begin{equation*}
+              \sum_{i=1}^n (-1)^{i-1} i^2 \;= \; 1
+            \end{equation*}
+            and also
+            \begin{equation*}
+              (-1)^{n-1} \frac{n(n+1)}{2} \;= \; 1.
+            \end{equation*}
+          </p>
+<p id="p-1025">
+            <!--Style me with CSS--><em>Inductive step:</em>
+          </p>
+<p id="p-1026">
+            Suppose that \(k&gt;1\) is an integer such that
+            \begin{equation*}
+              \sum_{i=1}^k (-1)^{i-1} i^2 \;= \; (-1)^{k-1} \frac{k(k+1)}{2}.
+            \end{equation*}
+          </p>
+<p id="p-1027">
+            Adding \((-1)^{k} (k+1)^2\) to both sides gives
+            \begin{gather*}
+\sum_{i=1}^{k+1} (-1)^{i-1} i^2 \;= \; (-1)^{k-1} \frac{k(k+1)}{2} + (-1)^{k} (k+1)^2\\
+\;= \; (-1)^{k-1} \frac{k(k+1)}{2} - (-1)^{k-1} (k+1)^2\\
+\;= \; (-1)^{k-1} \left( \frac{k(k+1)}{2} -  \frac{2(k+1)^2}{2} \right)\\
+\;= \; (-1)^{k} \left( \frac{2(k+1)^2}{2} - \frac{k(k+1)}{2} \right)\\
+\;= \; (-1)^{k} \frac{(k+1)(2(k+1)-k)}{2}\\
+\;= \; (-1)^{k} \frac{(k+1)(k+2)}{2}
+\end{gather*}
+          </p></article></span>
+
+        }
+        </p></article><span class="incontext"><a href="section-27.html#li-373">in-context</a></span>

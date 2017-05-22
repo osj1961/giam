@@ -1,0 +1,45 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:45-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5>
+<p>
+      (The first proof is a combinatorial argument.)
+    </p>
+<p>
+      There are \(\binom{n}{k}\) subsets of size \(k\) of the set \(N = \{1, 2, 3, \ldots, n\}\).
+      We will partition these \(k\)-subsets into two disjoint cases: those that contain
+      the final number, \(n\), and those that do not.
+    </p>
+<p>
+      Let
+      \begin{equation*}
+        A = \{ S \subseteq N \suchthat |S| = k \; \land \; n \notin S \}
+      \end{equation*}
+      and, let
+      \begin{equation*}
+        B = \{ S \subseteq N \suchthat |S| = k \; \land \; n \in S \}.
+      \end{equation*}
+    </p>
+<p>
+      Since the number \(n\) is either in a \(k\)-subset or it isn't, these sets
+      are disjoint and exhaustive. So the addition rule tells us that
+      \begin{equation*}
+        \binom{n}{k} = |A| + |B|.
+      \end{equation*}
+    </p>
+<p>
+      The set \(A\) is really just the set of all \(k\)-subsets of the \((n-1)\)-set
+      \(\{1, 2, 3, \ldots, n-1 \}\), so \(|A| = \binom{n-1}{k}\).
+    </p>
+<p>
+      Any of the sets in \(B\) can be obtained by adjoining the element \(n\) to
+      a \(k-1\) subset of the \((n-1)\)-set
+      \(\{1, 2, 3, \ldots, n-1 \}\), so \(|B| = \binom{n-1}{k-1}\).
+    </p>
+<p>
+      Substituting gives us the desired result.
+    </p></article><span class="incontext"><a href="section-38.html#proof-45">in-context</a></span>

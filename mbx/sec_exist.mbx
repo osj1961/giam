@@ -1,0 +1,392 @@
+
+<section xml:id="sec_exist">
+  <title>Proofs and disproofs of existential statements</title>
+  <p>
+    From a certain point of view, there is no need for the current section.
+    If we are proving an existential statement we are <em>disproving</em> some
+    universal statement. (Which has already been discussed.) Similarly,
+    if we are trying to disprove an existential statement, then we are
+    actually <em>proving</em> a related universal statement. Nevertheless,
+    sometimes the way a theorem is stated emphasizes the existence question
+    over the corresponding universal <mdash /> and so people talk about proving
+    and disproving existential statements as a separate issue from
+    universal statements.
+  </p>
+
+  <p>
+    Proofs of existential questions come in two basic varieties: constructive
+    and non-constructive. Constructive proofs are conceptually the easier
+    of the two <mdash /> you actually name an example that shows the existential
+    question is true. For example:
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        There is an even prime.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      The number 2 is both even and prime.
+    </p>
+  </proof>
+
+  <exercise>
+    <statement>
+      <p>
+        The Fibonacci numbers are defined by the initial values <m>F(0)=1</m>
+        and <m>F(1)=1</m> and the recursive formula <m>F(n+1) = F(n)+F(n-1)</m> (to
+        get the next number in the series you add the last and the penultimate).
+      </p>
+      <tabular>
+        <row>
+          <cell><m>n</m></cell>
+          <cell><m>F(n)</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>0</cell>
+          <cell>1</cell>
+        </row>
+        <row>
+          <cell>1</cell>
+          <cell>1</cell>
+        </row>
+        <row>
+          <cell>2</cell>
+          <cell>2</cell>
+        </row>
+        <row>
+          <cell>3</cell>
+          <cell>3</cell>
+        </row>
+        <row>
+          <cell>4</cell>
+          <cell>5</cell>
+        </row>
+        <row>
+          <cell>5</cell>
+          <cell>8</cell>
+        </row>
+        <row>
+          <cell><m>\vdots</m></cell>
+          <cell><m>\vdots</m></cell>
+        </row>
+      </tabular>
+      <p>
+        Prove that there is a Fibonacci number that is a perfect square.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    A non-constructive existence proof is trickier. One approach is to argue
+    by contradiction <mdash /> if the thing we're seeking doesn't exist that will
+    lead to an absurdity. Another approach is to outline a search algorithm
+    for the desired item and provide an argument as to why it cannot fail!
+  </p>
+
+  <p>
+    A particularly neat approach is to argue using dilemma.
+    This is my favorite non-constructive existential theorem/proof.
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        There are irrational numbers <m>\alpha</m> and <m>\beta</m> such that <m>\alpha^\beta</m>
+        is rational.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      If <m>\sqrt{2}^{\sqrt{2}}</m> is rational then we are done.
+      (Let <m>\alpha = \beta = \sqrt{2}</m>.) Otherwise, let
+      <m>\alpha = \sqrt{2}^{\sqrt{2}}</m> and <m>\beta = \sqrt{2}</m>. The result
+      follows because <m>\left(\sqrt{2}^{\sqrt{2}}\right)^{\sqrt{2}} = \sqrt{2}^{(\sqrt{2}\sqrt{2})} 
+      = \sqrt{2}^2 = 2</m>, which is clearly rational.
+    </p>
+  </proof>
+
+  <p>
+    Many existential proofs involve a property of the natural numbers
+    known as the <index><main>well-ordering principle</main></index>well-ordering principle. The well-ordering principle is
+    sometimes abbreviated WOP. If a set has WOP it doesn't mean that the
+    set is ordered in a particularly good way, but rather that its subsets
+    are like wells <mdash /> the kind one hoists water out of with a bucket on a rope.
+    You needn't be concerned with WOP in general at this point, but notice
+    that the subsets of the natural numbers have a particularly nice property <mdash /> any non-empty set of natural numbers must have a least element (much like
+    every water well has a bottom).
+  </p>
+
+  <p>
+    Because the natural numbers have the well-ordering principle
+    we can prove that there is a least
+    natural number with property X by simply finding <em>any</em> natural
+    number with property X <mdash /> by doing that we've shown that the set of
+    natural numbers with property X is non-empty and that's the only
+    hypothesis the WOP needs.
+  </p>
+
+  <p>
+    For example, in the exercises in <xref ref="sec_cases">Section</xref> we
+    introduced vampire numbers. A <index><main>vampire number</main></index> <em>vampire number</em>
+    is a
+    <m>2n</m> digit number <m>v</m> that factors as <m>v=xy</m>
+    where <m>x</m> and <m>y</m> are <m>n</m> digit numbers and the digits of <m>v</m> are the
+    union of the digits in <m>x</m> and <m>y</m> in some order. The numbers <m>x</m> and <m>y</m>
+    are known as the <q>fangs</q> of <m>v</m>. To eliminate trivial
+    cases, pairs of trailing zeros are disallowed.
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        There is a smallest 6-digit vampire number.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      The number <m>125460</m> is a vampire number (in fact this is the smallest
+      example of a vampire number with two sets of fangs:
+      <m>125460 = 204\cdot 615 = 246\cdot 510</m>). Since the set of 6-digit vampire
+      numbers is non-empty, the well-ordering principle of the natural numbers
+      allows us to deduce that there is a smallest 6-digit vampire number.
+    </p>
+  </proof>
+
+  <p>
+    This is quite an interesting situation in that we know there is a smallest
+    6-digit vampire number without having any idea what it is!
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Show that <m>102510</m> is the smallest 6-digit vampire number.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    There are quite a few occasions when we need to prove statements
+    involving the <index><main>unique existence</main></index> unique existence quantifier
+    (<m>\exists !</m>). In
+    such instances we need to do just a little bit more work. We
+    need to show existence <mdash /> either constructively or non-constructively <mdash /> and we also need to show uniqueness. To give an example of
+    a unique existence proof we'll return to a concept first
+    discussed in <xref ref="sec_alg">Section</xref> and finish-up some business
+    that was glossed-over there.
+  </p>
+
+  <p>
+    Recall the Euclidean algorithm that was used to calculate the
+    <index><main>greatest common divisor, gcd</main></index>greatest
+    common divisor of two integers <m>a</m> and <m>b</m> (which we denote <m>\gcd{a}{b}</m>).
+    There is a rather important question concerning algorithms known as
+    the <q>halting problem.</q> Does the program eventually halt, or does it get
+    stuck in an infinite loop? We know that the Euclidean algorithm halts
+    (and outputs the correct result) because we know the following
+    unique existence result.
+    <me>
+      \forall a, b \in \Integers^+, \, \exists ! \, d \in \Integers^+ \; \mbox{such that}  \, d=\gcd{a}{b}
+    </me>
+  </p>
+
+  <p>
+    Now, before we can prove this result, we'll need a precise definition
+    for <m>\gcd{a}{b}</m>. Firstly, a gcd must be a <em>common divisor</em> which
+    means it needs to divide both <m>a</m> and <m>b</m>. Secondly, among all the common
+    divisors, it must be the <em>largest</em>. This second point is usually
+    addressed
+    by requiring that every other common divisor divides the gcd. Finally we
+    should note that a gcd is always positive, for whenever a number divides
+    another number so does its negative, and whichever of those two is positive
+    will clearly be the greater! This allows us to extend the definition of
+    gcd to all integers, but things are conceptually easier if we
+    keep our attention restricted to the positive integers.
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        The <term>greatest common divisor</term>, or gcd, of two positive
+        integers <m>a</m> and <m>b</m>
+        is a positive integer <m>d</m> such that <m>d \divides a</m> and <m>d \divides b</m> and if <m>c</m> is any
+        other positive integer such that <m>c \divides a</m> and <m>c \divides b</m> then <m>c \divides d</m>.
+        <me>
+          \forall a,b,c,d \in \Integers^+ \; d=\gcd{a}{b} \; \iff \;
+          d \divides a \, \land \, d \divides b \, \land \, (c \divides a \, \land \, c \divides b  \implies c \divides d)
+        </me>
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Armed with this definition, let's return our attention to proving the
+    unique existence of the gcd. The uniqueness part is easier so we'll
+    do that first. We argue by contradiction. Suppose that there were
+    two different numbers <m>d</m> and <m>d'</m> satisfying the definition of <m>\gcd{a}{b}</m>.
+    Put <m>d'</m> in the place of <m>c</m> in the definition to see that <m>d' \divides d</m>.
+    Similarly, we can deduce that <m>d \divides d'</m> and if two numbers each divide
+    into the other, they must be equal. This is a contradiction since we
+    assumed <m>d</m> and <m>d'</m> were different.
+  </p>
+
+  <p>
+    For the existence part we'll need to define a set <mdash /> known as the
+    <index><main>Z-module</main></index><m>\Integers</m>-module generated by <m>a</m> and <m>b</m> <mdash /> that consists of all
+    numbers of the form <m>xa+yb</m> where <m>x</m> and <m>y</m> range over the integers.
+  </p>
+
+  <figure>
+    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+      \reset@font\fontsize{#1}{#2pt}
+      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+      \selectfont}\fi
+    <image source="images/edf6f6167bbe93cd8da459f34f7b72649911ed34.png"/>
+    \caption[A <m>\Integers</m>-module.]{The <m>\Integers</m>-module generated by <m>21</m> and 
+    <m>15</m>. The number <m>21x+15y</m> is printed by the point <m>(x,y)</m>.}
+  </figure>
+
+  <p>
+    This set has a very nice geometric character that often doesn't receive the
+    attention it deserves. Every element of a <m>\Integers</m>-module generated
+    by two numbers (<m>15</m> and <m>21</m> in the example)
+    corresponds to a point in the Euclidean plane. As indicated in
+    <xref ref="fig_zmodule">Figure</xref> there is a dividing line between the positive
+    and negative elements in a <m>\Integers</m>-module. It is also easy to see
+    that there are many repetitions of the same value at different points
+    in the plane.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        The value <m>0</m> clearly occurs in a <m>\Integers</m>-module when both
+        <m>x</m> and <m>y</m> are themselves zero. Find another pair of <m>(x,y)</m>
+        values such that <m>21x+15y</m> is zero. What is the slope of
+        the line which separates the positive values from the negative
+        in our <m>\Integers</m>-module?
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    In thinking about this <m>\Integers</m>-module, and perusing
+    <xref ref="fig_zmodule">Figure</xref>, you may have noticed that the smallest
+    positive number in the <m>\Integers</m>-module is 3. If you hadn't
+    noticed that, look back and verify that fact now.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        How do we know that some smaller positive value (a <m>1</m> or a <m>2</m>) doesn't
+        occur somewhere in the Euclidean plane?
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    What we've just observed is a particular instance of a general result.
+  </p>
+
+  <theorem xml:id="gcduniqueexists">
+    <statement>
+      <p>
+        The smallest positive number in the <m>\Integers</m>-module generated by
+        <m>a</m> and <m>b</m> is <m>d = \gcd{a}{b}</m>.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      Suppose that <m>d</m> is the smallest positive number
+      in the <m>\Integers</m>-module <m>\{ xa + yb \suchthat x,y \in \Integers \}</m>.
+      There are particular values of <m>x</m> and <m>y</m> (which we will distinguish
+      with over-lines) such that <m>d = \overline{x}a + \overline{y}b</m>. Now, it
+      is easy to see that if <m>c</m> is any common divisor of <m>a</m> and <m>b</m> then
+      <m>c \divides d</m>, so what remains to be proved is that <m>d</m> itself is a divisor
+      of both <m>a</m> and <m>b</m>. Consider dividing <m>d</m> into <m>a</m>. By the
+      division algorithm there are uniquely determined numbers <m>q</m> and <m>r</m>
+      such that <m>a =qd + r</m> with <m>0 \leq r \lt  d</m>. We will show that <m>r=0</m>.
+      Suppose, to the contrary, that <m>r</m> is positive. Note that we can
+      write <m>r</m> as <m>r = a - qd = a - q(\overline{x}a + \overline{y}b) = (1-q\overline{x})a - q\overline{y}b</m>. The last equality shows that <m>r</m> is in the
+      <m>\Integers</m>-module under consideration, and so, since <m>d</m> is the smallest
+      positive integer in this <m>\Integers</m>-module it follows that <m>r \geq d</m> which
+      contradicts the previously noted fact that <m>r \lt  d</m>. Thus, <m>r=0</m> and so
+      it follows that <m>d \divides a</m>. An entirely analogous argument can be used
+      to show that <m>d \divides b</m> which completes the proof that <m>d = \gcd{a}{b}</m>.
+    </p>
+  </proof>
+
+  <exercises>
+
+    <ol>
+      <li><p>
+          Show that there is a perfect square that is the sum of two
+          perfect squares.
+
+          \hint{Can you say "Pythagorean triple"? I thought you could.}
+        </p></li>
+
+      <li><p>
+          Show that there is a perfect cube that is the sum of three
+          perfect cubes.
+
+          \hint{Hint: <m>6^3</m> can be expressed as such a sum.}
+        </p></li>
+
+      <li><p>
+          Show that the <index><main>well-ordering principle</main></index>WOP doesn't hold in the integers.  (This is an
+          existence proof, you show that there is a subset of <m>\Integers</m>
+          that doesn't have a smallest element.)
+
+          \hint{How about even integers? Is there a smallest one?  That's my example!  You come up with a 
+          different one!}
+        </p></li>
+
+      <li><p>
+          Show that the WOP doesn't hold in <m>\Rationals^+</m>.
+
+          \hint{Consider the set <m>\{ 1, 1/2, 1/4, 1/8, \ldots \}</m>.  Does it have a smallest element?}
+        </p></li>
+
+      <li><p>
+          In the proof of <xref ref="gcduniqueexists">Theorem</xref> we weaseled out of
+          showing that <m>d \divides b</m>.  Fill in that part of the proof.
+
+          \hint{Yeah, I'm going to keep weaseling<ellipsis />}
+        </p></li>
+
+      <li><p>
+          Give a proof of the unique existence of <m>q</m> and <m>r</m> in the
+          division algorithm. 
+
+          \hint{Unique existence proofs consist of two parts. First, just show existence. Then, show that if there were two of the things under consideration that they must in fact be equal.}
+        </p></li>
+
+      <li><p>
+          A <index><main>digraph</main></index><em>digraph</em> is a drawing containing a collection of points
+          that are connected by arrows.  The game known as <em>scissors-paper-rock</em>
+          can be represented by a digraph that is <em>balanced</em> (each point has the
+          same number of arrows going out as going in).  Show that there is a 
+          balanced digraph having 5 points.
+          <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+          \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+            \reset@font\fontsize{#1}{#2pt}
+            \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+            \selectfont}\fi
+          <image source="images/7e1f383b56ab3f1d5418dae1b438e60d025d7be3.png"/>
+          \hint{If at first you don't succeed<ellipsis /> 
+          try googling <q>scissor paper rock lizard spock.</q>}
+        </p></li>
+    </ol>
+  </exercises>
+</section>

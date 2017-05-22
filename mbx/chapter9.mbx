@@ -1,0 +1,54 @@
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" >
+  <title>Proof techniques IV <mdash /> Magic</title>
+  <introduction>
+    <p>
+      <em>If you can keep your head when all about you are losing theirs, it's
+      just possible you haven't grasped the situation. <ndash />Jean Kerr</em>
+    </p>
+
+    <p>
+      The famous mathematician
+      <index><main>Erdos, Paul</main></index> Paul Erd&#xf6;s is said to have believed that
+      God has a Book in which all the really elegant proofs are written.
+      The greatest praise that a collaborator<fn>The collaborators
+      of Paul Erd&#xf6;s were legion.  His collaborators, and their collaborators,
+      and <em>their</em> collaborators, etc. are organized into a tree structure 
+      according to their so-called <index><main>Erdos number</main></index>Erd&#xf6;s number,
+      see<nbsp /><nbsp /><xref ref="wiki-Erdos_number" />.</fn> could receive from Erd&#xf6;s
+      was that they had discovered a <q>Book proof.</q> It is not
+      easy or straightforward for a mere mortal to come up with a Book
+      proof but notice that, since the Book is inaccessible to the living,
+      all the Book proofs of which we are aware were constructed by ordinary
+      human beings. In other words, it's not impossible!
+    </p>
+
+    <p>
+      The title of this final chapter is intended to be whimsical <mdash /> there
+      is no real magic involved in any of the arguments that we'll look at.
+      Nevertheless, if you reflect a bit on the mental processes that
+      must have gone into the development of these elegant proofs, perhaps
+      you'll agree that there is something magical there.
+    </p>
+
+    <p>
+      At a minimum
+      we hope that you'll agree that they are beautiful <mdash /> they are proofs
+      from the Book<fn>There is a lovely book entitled <q>Proofs from the
+      Book</q><nbsp /><nbsp /><xref ref="pftB" /> that has a nice collection of Book proofs.</fn>.
+    </p>
+
+    <p>
+      Acknowledgment: Several of the topics in this section were unknown to
+      the author until he visited the excellent mathematics website maintained
+      by Alexander Bogomolny at
+    </p>
+
+    <p>
+      <c>http://www.cut-the-knot.org/</c>
+    </p>
+  </introduction>
+  <xi:include  href="section9-1.mbx" />
+  <xi:include  href="section9-2.mbx" />
+  <xi:include  href="section9-3.mbx" />
+</chapter>

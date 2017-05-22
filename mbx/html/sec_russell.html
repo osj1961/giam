@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-10T23:30:59-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Russell's Paradox</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></a></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="section-24.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-4.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="chapter-5.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-24.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-4.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="chapter-5.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link active"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html" class="active">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_ord_rel.html">Ordering relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-37.html">Parity and Counting arguments</a></li>
+<li><a href="section-38.html">The pigeonhole principle</a></li>
+<li><a href="section-39.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-41.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-43.html">Dominance</a></li>
+<li><a href="section-44.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-45.html">Morley's miracle</a></li>
+<li><a href="section-46.html">Five steps into the void</a></li>
+<li><a href="section-47.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_russell"><header title="Section 4.5 Russell's Paradox"><h1 class="heading hide-type" alt="Section 4.5 Russell's Paradox">
+<span class="type">Section</span><span class="codenumber">4.5</span><span class="title">Russell's Paradox</span><a href="sec_russell.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-911">
+    There is no Nobel prize category for mathematics.<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-28" id="fn-28"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-28" style="display: none;" class="tex2jax_ignore"><span class="footnote">There are prizes
+    considered equivalent to the Nobel in stature — the Fields Medal, awarded every four years by the International Mathematical Union to up to four mathematical researchers under the age of forty, and the Abel Prize, awarded annually by the King of Norway.</span></span> Alfred Nobel's will
+    called for the awarding of annual prizes in physics, chemistry, physiology
+    or medicine, literature, and peace. Later, the
+    “Bank of Sweden Prize in Economic Sciences in Memory of Alfred Nobel”
+    was created and certainly several mathematicians have won what is
+    improperly known as the Nobel prize in Economics. But, there is no
+    Nobel prize in Mathematics per se. There is an interesting urban myth that
+    purports to explain this lapse: Alfred Nobel's wife either left him for, or
+    had an affair with a mathematician — so Nobel, the inventor of dynamite
+    and an immensely wealthy and powerful man, when he decided to endow
+    a set of annual prizes for “those who, during the preceding year, shall have conferred the greatest benefit on mankind” pointedly left out mathematicians.
+  </p>
+<p id="p-912">
+    One major flaw in this theory is that Nobel was never married.
+  </p>
+<p id="p-913">
+    In all likelihood, Nobel simply didn't view mathematics as a field
+    which provides benefits for mankind — at least not directly.
+    The broadest division within mathematics is between the “pure”
+    and “applied” branches. Just precisely where the dividing line
+    between these spheres lies is a matter of opinion, but it can be
+    argued that it is so far to one side that one may as well call an
+    applied mathematician a physicist
+    (or chemist, or biologist, or economist, or …). One thing is
+    clear, Nobel believed to a certain extent in the utilitarian ethos.
+    The value of a thing (or a person) is determined by how useful it is (or they
+    are), which makes it interesting that one of the few mathematicians
+    to win a Nobel prize was Bertrand Russell (the 1950 prize in Literature
+    “in recognition of his varied and significant writings in which he
+    champions humanitarian ideals and freedom of thought”).
+  </p>
+<p id="p-914">
+    Bertrand Russell was one of the twentieth century's most colorful
+    intellectuals. He helped revolutionize the foundations of mathematics,
+    but was perhaps better known as a philosopher. It's hard to conceive
+    of <!--Style me with CSS--><em>anyone</em> who would characterize Russell as an applied mathematician!
+  </p>
+<p id="p-915">
+    Russell was an ardent anti-war and anti-nuclear activist. He achieved a
+    status (shared with Albert Einstein, but very few others) as an eminent
+    scientist who was also a powerful moral authority. Russell's mathematical
+    work was of a very abstruse foundational sort; he was concerned with
+    the idea of reducing all mathematical thought to Logic and Set theory.
+  </p>
+<p id="p-916">
+    In the beginning of our investigations into Set theory we mentioned
+    that the notion of a “set of all sets” leads to something paradoxical.
+    Now we're ready to look more closely into that remark and hopefully
+    gain an understanding of Russell's paradox.
+  </p>
+<p id="p-917">
+    By this point you should be okay with the notion of a set that
+    contains other sets, but would it be okay for a set to contain
+    <!--Style me with CSS--><em>itself</em>? That is, would it make sense to have a set
+    defined by
+    \begin{equation*}
+      A = \{ 1, 2, A \}?
+    \end{equation*}
+  </p>
+<p id="p-918">
+    The set \(A\) has three elements, \(1\), \(2\) and itself. So we
+    could write
+    \begin{equation*}
+      A = \{ 1, 2, \{ 1, 2, A \} \},
+    \end{equation*}
+    and then
+    \begin{equation*}
+      A = \{ 1, 2, \{ 1, 2, \{ 1, 2, A \} \} \},
+    \end{equation*}
+    and then
+    \begin{equation*}
+      A = \{ 1, 2, \{ 1, 2, \{ 1, 2, \{ 1, 2, A \} \} \} \},
+    \end{equation*}
+    et cetera.
+  </p>
+<p id="p-919">
+    This obviously seems like a problem. Indeed, often paradoxes seem to
+    be caused by self-reference of this sort. Consider
+  </p>
+
+  The sentence in this box is false.
+
+  <p id="p-920">
+    So a reasonable alternative
+    is to “do” math among the sets that don't exhibit this particular
+    pathology.
+  </p>
+<p id="p-921">
+    Thus, inside the set of all sets we are singling out a particular subset
+    that consists of sets which don't contain themselves.
+    \begin{equation*}
+      {\mathcal S} = \{ A \suchthat \; A \,\mbox{is a set}  \; \land \; A \notin A \}
+    \end{equation*}
+  </p>
+<p id="p-922">
+    Now within the universal set we're working in (the set of all sets) there
+    are only two possibilities: a given set is either in \({\mathcal S}\) or
+    it is in its complement \(\overline{\mathcal S}\). Russell's paradox
+    comes about when we try to decide which of these alternatives pertains
+    to \({\mathcal S}\) itself, the problem is that each alternative leads us
+    to the other!
+  </p>
+<p id="p-923">
+    If we assume that \({\mathcal S} \in {\mathcal S}\), then it must be the
+    case that \({\mathcal S}\) satisfies the membership criterion for \({\mathcal S}\).
+    Thus, \({\mathcal S} \notin {\mathcal S}\).
+  </p>
+<p id="p-924">
+    On the other hand, if we assume that \({\mathcal S} \notin {\mathcal S}\),
+    then we see that \({\mathcal S}\) does indeed satisfy the membership criterion for \({\mathcal S}\). Thus \({\mathcal S} \in {\mathcal S}\).
+  </p>
+<p id="p-925">
+    Russell himself developed a workaround for the paradox which
+    bears his name. Together with Alfred North Whitehead he published
+    a 3 volume work entitled <!--Style me with CSS--><em>Principia Mathematica</em><span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-29" id="fn-29"><span class="footnote"><sup> 2 </sup></span></a></span><span id="hk-fn-29" style="display: none;" class="tex2jax_ignore"><span class="footnote">Isaac Newton
+    also published a 3 volume work which is often cited by this same title,
+    <!--Style me with CSS--><em>Philosophiae Naturalis Principia Mathematica</em>.</span></span> <a knowl="./knowl/PM.html" knowl-id="xref-PM" alt="Bibliographic Entry 17 " title="Bibliographic Entry 17 ">[17]</a>.
+    In the Principia, Whitehead and Russell develop a system known as
+    <!--Style me with CSS--><em>type theory</em> which sets forth principles for avoiding problems
+    like Russell's paradox. Basically, a set and its elements are of
+    different “types” and so the notion of a set being contained in itself
+    (as an element) is disallowed.
+  </p>
+<section class="exercises" id="exercises-25"><header title="Exercises 4.5.1 Exercises"><h1 class="heading hide-type" alt="Exercises 4.5.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">4.5.1</span><span class="title">Exercises</span>
+</h1></header><ol id="ol-52" style="list-style-type: lower-alpha;">
+<li id="li-349"><p id="p-926">
+          Verify that \((A \implies {\lnot}A) \land ({\lnot}A \implies A)\)
+          is a logical contradiction in two ways:  by filling out a truth table and 
+          using the laws of logical equivalence.
+
+          \hint{In order to get started on this you'll need to convert the conditionals into equivalent
+          disjunctions.  Recall that \(X \implies Y \; \equiv \; {\lnot}X \lor Y\).}
+        </p></li>
+<li id="li-350"><p id="p-927">
+          One way out of Russell's paradox is to declare that the collection
+          of sets that don't contain themselves as elements is not a set itself.
+          Explain how this circumvents the paradox. 
+
+          \hint{If it's not a set then it doesn't necessarily have to have the property that we
+          can be <!--Style me with CSS--><em>sure</em> whether an element is in it or not.}
+        </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

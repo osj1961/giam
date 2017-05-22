@@ -1,0 +1,331 @@
+
+<section xml:id="sec_contra">
+  <title>Indirect proofs: contradiction and contraposition</title>
+  <p>
+    Suppose we are trying to prove that all thrackles are polycyclic
+    <fn>Both of these strange sounding words represent real 
+    mathematical concepts, however, they don't have anything to do 
+    with one another.</fn>.
+    A <em>direct</em> proof of this would involve looking up the definition
+    of what it means to be a thrackle, and of what it means to be polycyclic,
+    and somehow discerning a way to convert whatever thrackle's logical equivalent
+    is into the logical equivalent of polycyclic. As happens fairly often,
+    there may be no obvious way to accomplish this task.
+    <index><main>indirect proof</main></index>Indirect proof takes
+    a completely different tack. Suppose you had a thrackle that wasn't
+    polycyclic, and furthermore, show that this supposition leads to something
+    truly impossible. Well, if it's impossible for a thrackle to <em>not</em> be
+    polycyclic, then it must be the case that all of them <em>are</em>.
+    Such an argument is known as <index><main>proof by contradiction</main></index>
+    <em>proof by contradiction</em>.
+  </p>
+
+  <p>
+    Quite possibly the sweetest indirect proof known is Euclid's proof that there
+    are an infinite number of primes.
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        <index><main>infinitude of the primes</main></index>(Euclid) The set of all prime numbers is infinite.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      Suppose on the contrary that there are only a finite number
+      of primes. This finite set of prime numbers could, in principle, be listed
+      in ascending order.
+      <me>
+        \{ p_1, p_2, p_3, \ldots , p_n \}
+      </me>
+    </p>
+
+    <p>
+      Consider the number <m>N</m> formed by adding 1 to the product of all of these
+      primes.
+      <me>
+        N = 1 + \prod_{k=1}^n p_k
+      </me>
+    </p>
+
+    <p>
+      Clearly, <m>N</m> is much larger than the largest prime <m>p_n</m>, so <m>N</m> cannot
+      be a prime number itself. Thus <m>N</m> must be a product of some of the
+      primes in the list. Suppose that <m>p_j</m> is one of the primes that
+      divides <m>N</m>. Now notice that, by construction, <m>N</m> would leave remainder
+      <m>1</m> upon division by <m>p_j</m>. This is a contradiction since we cannot have
+      both <m>p_j \divides N</m> and <m>p_j \nmid N</m>.
+    </p>
+
+    <p>
+      Since the supposition that there are only finitely many primes leads to
+      a contradiction, there must indeed be an infinite number of primes.
+    </p>
+  </proof>
+
+  <p>
+    If you are working on proving a UCS and the direct approach seems to be
+    failing you may find that another indirect approach,
+    <index><main>proof by contraposition</main></index>proof by contraposition,
+    will do the trick. In one sense this proof technique isn't really all that
+    indirect; what one does is determine the contrapositive of the original
+    conditional and then prove <em>that</em> directly. In another sense this
+    method <em>is</em> indirect because a proof by contraposition can usually
+    be recast as a proof by contradiction fairly easily.
+  </p>
+
+  <p>
+    The easiest proof I know of using the method of contraposition (and possibly
+    the nicest example of this technique)
+    is the proof of the lemma we stated in <xref ref="sec_rat">Section</xref> in the course
+    of proving that <m>\sqrt{2}</m> wasn't rational. In case you've forgotten
+    we needed the fact that whenever <m>x^2</m> is an even number, so is <m>x</m>.
+  </p>
+
+  <p>
+    Let's first phrase this as a UCS.
+    <me>
+      \forall x \in \Integers, \; x^2 \, \mbox{even}  \; \implies x \, \mbox{even}
+    </me>
+  </p>
+
+  <p>
+    Perhaps you tried to prove this result earlier. If so you probably
+    came across the conceptual problem that all you have to work with
+    is the evenness of <m>x^2</m> which doesn't give you much ammunition
+    in trying to show that <m>x</m> is even. The contrapositive of this
+    statement is:
+    <me>
+      \forall x \in \Integers, \; x \, \mbox{not even}  \; 
+      \implies x^2 \, \mbox{not even}
+    </me>
+  </p>
+
+  <p>
+    Now, since <m>x</m> and <m>x^2</m> are integers, there is only one alternative to being
+    even <mdash /> so we can re-express the contrapositive as
+    <me>
+      \forall x \in \Integers, \; x \, \mbox{odd}  \; \implies x^2 \, \mbox{odd} .
+    </me>
+  </p>
+
+  <p>
+    Without further ado, here is the proof:
+  </p>
+
+  <theorem>
+    <statement>
+      <me>
+        \forall x \in \Integers, \; x^2 \, \mbox{even}  \; 
+        \implies x \, \mbox{even}
+      </me>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      This statement is logically equivalent to
+      <me>
+        \forall x \in \Integers, \; x \, \mbox{odd}  \; \implies x^2 \, \mbox{odd}
+      </me>
+      so we prove that instead.
+    </p>
+
+    <p>
+      Suppose that <m>x</m> is a particular but arbitrarily chosen integer
+      such that <m>x</m> is odd. Since <m>x</m> is odd, there is an integer <m>k</m> such that
+      <m>x=2k+1</m>. It follows that
+      <m>x^2 = (2k + 1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1</m>.
+      Finally, we see that <m>x^2</m> must be odd because it is of the form <m>2m+1</m>, where
+      <m>m = 2k^2 + 2k</m> is clearly an integer.
+    </p>
+  </proof>
+
+  <p>
+    Let's have a look at a proof of the same statement done by contradiction.
+  </p>
+
+  <proof>
+    <p>
+      We wish to show that
+      <me>
+        \forall x \in \Integers, \; x^2 \, \mbox{even}  \; 
+        \implies x \, \mbox{even} .
+      </me>
+    </p>
+
+    <p>
+      Suppose to the contrary that there is an integer <m>x</m> such that
+      <m>x^2</m> is even but <m>x</m> is odd.<fn>Recall that the negation of 
+      a UCS is an existentially quantified conjunction.</fn> Since <m>x</m> is
+      odd, there is an integer <m>m</m> such that <m>x=2m+1</m>. Therefore, by
+      simple arithmetic, we obtain <m>x^2 = 4m^2+4m+1</m> which is clearly odd.
+      This is a contradiction because (by assumption) <m>x^2</m> is even.
+    </p>
+  </proof>
+
+  <p>
+    The main problem in applying the method of proof by contradiction
+    is that it usually involves <q>cleverness.</q> You have to come up
+    with some reason why the presumption that the theorem is false leads
+    to a contradiction <mdash /> and this may or may not be obvious. More than
+    any other proof technique, proof by contradiction demands that we use
+    drafts and rewriting. After monkeying around enough that we find a
+    way to reach a contradiction, we need to go back to the beginning
+    of the proof and highlight the feature that we will eventually contradict!
+    After all, we want it to look like our proofs are completely clear, concise
+    and reasonable even if their formulation caused us some sort
+    of Gordian-level mental anguish.
+  </p>
+
+  <p>
+    We'll end this section with an example from Geometry.
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        Among all triangles inscribed in a fixed circle, the one with maximum
+        area is equilateral.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      We'll proceed by contradiction. Suppose to the contrary that there is a
+      triangle, <m>\triangle ABC</m>, inscribed in a circle having maximum area that
+      is not equilateral. Since <m>\triangle ABC</m> is not equilateral, there are
+      two sides of it that are not equal. Without loss of generality, suppose that
+      sides <m>\overline{AB}</m> and <m>\overline{BC}</m> have different lengths. Consider
+      the remaining side (<m>\overline{AC}</m>) to be the base of this triangle.
+      We can construct another triangle <m>\triangle AB'C</m>, also inscribed in our circle, and also
+      having <m>\overline{AC}</m> as its base, having a greater altitude than
+      <m>\triangle ABC</m> <mdash /> since the area of a triangle is given by
+      the formula <m>bh/2</m> (where <m>b</m> is the base, and <m>h</m> is the altitude),
+      this triangle's area is evidently greater than that of <m>\triangle ABC</m>.
+      This is a contradiction since <m>\triangle ABC</m> was presumed to have
+      maximal area.
+    </p>
+
+    <p>
+      We leave the actual construction <m>\triangle AB'C</m> to the following exercise.
+    </p>
+  </proof>
+
+  <exercise>
+    <statement>
+      <p>
+        Where should we place the point <m>B'</m> in order to create a triangle
+        <m>\triangle AB'C</m> having
+        greater area than any triangle such as <m>\triangle ABC</m> which is not isosceles?
+      </p>
+      <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+      \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+        \reset@font\fontsize{#1}{#2pt}
+        \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+        \selectfont}\fi
+      <image source="images/515f4a63ee16fceb8582dcdd7b356546dbac52e0.png"/>
+    </statement>
+  </exercise>
+  <exercises>
+
+    <ol>
+      <li><p>
+          Prove that if the cube of an integer is odd, then that integer is odd.
+
+          \hint{The best hint for this problem is simply to write down the contrapositive statement. It is trivial to prove!}
+        </p></li>
+
+      <li><p>
+          Prove that whenever a prime <m>p</m> does not divide the square of an integer, 
+          it also doesn't divide the original integer. 
+          (<m>p \nmid x^2 \; \implies \; p \nmid x</m>)
+
+          \hint{The contrapositive is <m>(p \divides x) \; \implies \; (p \divides x^2)</m>.}
+        </p></li>
+
+      <li><p>
+        Prove (by contradiction) that there is no largest integer.
+
+        \hint{Well, if there was a largest integer <mdash /> let's call it <m>L</m> (for largest) <mdash /> then isn't <m>L+1</m> an integer, and isn't it bigger?  That's the main idea.  A more formal proof might look like this:
+
+        <proof>
+          <p>
+            Suppose (by way of contradiction) that there is a largest integer <m>L</m>. Then <m>L \in \Integers</m> and <m>\forall z \in \Integers, L \geq z</m>.
+            Consider the quantity <m>L+1</m>. Clearly <m>L+1</m> is an integer (because it is the sum of two integers) and also
+            <m>L+1 > L</m>. This is a contradiction so the original supposition is false. Hence there is no largest integer.
+          </p>
+        </proof>
+
+        }
+        </p></li>
+
+      <li><p>
+          Prove (by contradiction) that there is no smallest positive real number.
+
+          \hint{Assume there was a smallest positive real number <mdash /> might as well call it <m>s</m> (for smallest) <mdash /> what can we do to produce an even smaller number? (But be careful that it needs to remain positive <mdash /> for instance <m>s-1</m> won't work.)}
+        </p></li>
+
+      <li><p>
+          Prove (by contradiction) that the sum of a rational and an irrational 
+          number is irrational.
+
+          \hint{Suppose that x is rational and y is irrational and their sum (let's call it z) is also rational. Do some algebra to solve for y, and you will see that y (which is, by presumption, irrational) is also the difference of two rational numbers (and hence, rational <mdash /> a contradiction.)
+          }
+        </p></li>
+
+      <li><p>
+          Prove (by contraposition) that for all integers <m>x</m> and <m>y</m>, if <m>x+y</m> is odd, then <m>x\neq y</m>.
+
+          \hint{Well, the problem says to do this by contraposition, so let's write down the contrapositive:
+          <me>
+            \forall x, y \in \Integers, \; x=y \, \implies \, x+y \; \mbox{is even} .
+          </me>
+          But proving that is obvious!
+          }
+        </p></li>
+
+      <li><p>
+          Prove (by contraposition) that for all real numbers <m>a</m> and <m>b</m>, if <m>ab</m> is irrational, then <m>a</m>
+          is irrational or <m>b</m> is irrational.
+
+          \hint{The contrapositive would be:
+          <me>
+            \forall a,b \in \Reals, \; (a \in \Rationals \land b \in \Rationals) \, \implies ab \in \Rationals.
+          </me>
+          Wow! Haven't we proved that before?}
+        </p></li>
+
+      <li><p>
+          A <index><main>Pythagorean triple</main></index><em>Pythagorean triple</em> is a set of three
+          natural numbers, <m>a</m>, <m>b</m> and <m>c</m>, such that <m>a^2 + b^2 = c^2</m>.  Prove that, in a
+          Pythagorean triple, at least one of <m>a</m> and <m>b</m> is even.  Use either a proof by
+          contradiction or a proof by contraposition.
+
+          \hint{If both <m>a</m> and <m>b</m> are odd then their squares will be 1 mod 4 <mdash /> so the sum of their squares
+          will be 2 mod 4.  But <m>c^2</m> can only be 0 or 1 mod 4, which gives us a contradiction.}
+        </p></li>
+
+      <li><p>
+        Suppose you have 2 pairs of positive real numbers whose products are 1.  That is, you have <m>(a,b)</m> and <m>(c,d)</m> in <m>\Reals^2</m> satisfying <m>ab=cd=1</m>.  Prove that
+        <m>a \lt  c</m> implies that <m>b > d</m>.
+
+         \hint{
+
+        <proof>
+          <p>
+            Suppose by way of contradiction that <m>a,b,c,d \in \Reals</m> satisfy <m>ab=cd=1</m> and that <m>a\lt c</m> and <m>b \leq d</m>.
+            By multiplying the inequalities we get that <m>ab \lt  cd</m> which contradicts the assumption that both products
+            are equal to 1 (and so must be equal to one another).
+          </p>
+        </proof>
+
+        }
+        </p></li>
+    </ol>
+  </exercises>
+</section>

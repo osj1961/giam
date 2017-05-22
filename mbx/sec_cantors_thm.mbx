@@ -1,0 +1,367 @@
+
+<section xml:id="sec_cantors_thm">
+  <title>Cantor's theorem</title>
+  <p>
+    Many people believe that the result known as Cantor's theorem says that
+    the real numbers, <m>\Reals</m>, have a greater cardinality than the natural numbers, <m>\Naturals</m>.
+    That isn't quite right. In fact Cantor's theorem is a much broader statement,
+    one of whose consequences is that <m>|\Reals| > |\Naturals|</m>. Before we go
+    on to discuss Cantor's theorem in full generality, we'll first explore it,
+    essentially, in this simplified form.
+    Once we know that <m>|\Reals| \neq |\Naturals|</m>, we'll be in a position to
+    explore a lot of
+    interesting issues relative to the infinite. In particular, this result
+    means that there are at least two cardinal numbers that are
+    infinite <mdash /> thus the <q>infinity is infinity</q> idea will be discredited.
+    Once we have the full power of Cantor's
+    theorem, we'll see just how completely wrong that concept is.
+  </p>
+
+  <p>
+    To show that some pair of sets are not equivalent it is necessary to show
+    that there cannot be a one-to-one correspondence between them. Ordinarily,
+    one would try to argue by contradiction in such a situation. That is what
+    we'll need to do to show that the reals and the naturals are not equinumerous.
+    We'll presume that they are in fact the same size and try to reach a
+    contradiction.
+  </p>
+
+  <p>
+    What exactly does the assumption that <m>\Reals</m> and <m>\Naturals</m> are
+    equivalent mean?
+    It means there is a one-to-one correspondence, that is, a bijective function
+    from <m>\Reals</m> to <m>\Naturals</m>. In a nutshell, it means that it is
+    possible to list all the real
+    numbers in a singly-infinite list. Now, it is certainly possible to make an
+    infinite list of real numbers (since <m>\Naturals \subseteq \Reals</m>,
+    by listing the naturals themselves
+    we are making an infinite list of reals!). The problem is that we would need
+    to be sure that every real number is on the list somewhere. In fact, since
+    we've used a geometric argument to show that the interval <m>(0, 1)</m> and the
+    set <m>\Reals</m> are equinumerous, it will be sufficient to presume that there
+    is an infinite list containing all the numbers in the interval <m>(0, 1)</m>.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Notice that, for example, <m>\pi-3</m> is a real number in
+        <m>(0, 1)</m>. Make
+        a list of <m>10</m> real numbers in the interval <m>(0, 1)</m>. Make sure that
+        at least 5 of them are not rational.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    In the previous exercise, you've started the job, but we need to presume
+    that it is truly possible to complete this job. That is, we must presume
+    that there really is an infinite list containing every real number in
+    the interval <m>(0, 1)</m>.
+  </p>
+
+  <p>
+    Once we have an infinite list containing every real number in the interval
+    <m>(0, 1)</m> we have to face up to a second issue. What does it really mean
+    to list a particular real number? For instance if <m>e-2</m> is in the seventh
+    position on our list, is it OK to write <q><m>e-2</m></q> there or should we write
+    <q>0.7182818284590452354<ellipsis /></q>? Clearly it would be simpler to write
+    <q><m>e-2</m></q> but it isn't necessarily possible to do something of that kind
+    for every real
+    number <mdash /> on the other hand, writing down the decimal expansion is a problem
+    too; in a certain sense, <q>most</q> real numbers in (0, 1) have infinitely long
+    decimal expansions. There is also another problem with decimal expansions;
+    they aren't unique. For example, there is really no difference between the
+    finite expansion <m>0.5</m> and the infinitely long expansion <m>0.4\overline{9}</m>.
+  </p>
+
+  <p>
+    Rather than writing something like <q><m>e-2</m></q> or <q>0.7182818284590452354<ellipsis /></q>,
+    we are going to in fact write <q>.1011011111100001010100010110001010001010 <ellipsis /></q>
+    In other words, we are going to write the base-2 expansions of the real numbers
+    in our list. Now, the issue of non-uniqueness is still there in binary, and
+    in fact if we were to stay in base-10 it would be possible to plug a certain
+    gap in our argument <mdash /> but the binary version of this argument has some
+    especially nice features.
+    Every binary (or for that matter decimal) expansion corresponds to a unique
+    real number, but it doesn't work out so well the other way around <mdash />
+    there are sometimes two different binary expansions that correspond to the
+    same real number. There is a lovely fact that we are not going to prove (you
+    may get to see this result proved in a course in Real Analysis) that points up
+    the problem. Whenever two different binary expansions represent the same
+    real number, one of them is a terminating expansion (it ends in infinitely
+    many 0's) and the other is an infinite expansion (it ends in infinitely many
+    1's). We won't prove this fact, but the gist of the argument is a proof by
+    contradiction <mdash /> you may be able to get the point by studying <xref ref="fig_binary_reps">Figure</xref>.
+    (Try to see how it would be possible to find a number in between two binary
+    expansions that didn't end in all-zeros and all-ones.)
+  </p>
+
+  <figure>
+    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+      \reset@font\fontsize{#1}{#2pt}
+      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+      \selectfont}\fi
+    <image source="images/3ce32157fb70f1f0244003cfd10fcdbc30799c13.png"/>
+    \caption[Binary representations in the unit interval.]{The base-<m>2</m> 
+    expansions of reals in the interval <m>[0, 1]</m> are the leaves of an 
+    infinite tree.}
+  </figure>
+
+  <p>
+    So, instead of showing that the set of reals in <m>(0, 1)</m> can't be put
+    in one-to-one
+    correspondence with <m>\Naturals</m>, what we're really going to do is show
+    that their binary expansions can't be put in one-to-one correspondence
+    with <m>\Naturals</m>. Since
+    there are an infinite number of reals that have two different binary expansions
+    this doesn't really do the job as advertised at the beginning of this section.
+    (Perhaps you are getting used to our wily ways by now <mdash /> yes, this does
+    mean that we're going to ask you to do the real proof in the exercises.)
+    The set of binary numerals, <m>\{0, 1\}</m>, is an instance of a mathematical
+    structure known as a field; basically, that means that it's possible to
+    add, subtract, multiply and divide (but not divide by 0) with them.
+    We are only mentioning this fact so that you'll understand why the set
+    <m>\{0, 1\}</m> is often referred to as <m>{\mathbb F}_2</m>. We're only mentioning that
+    fact so that you'll understand why we call the set of all possible
+    binary expansion <m>{\mathbb F}_2^\infty</m> . Finally, we're only mentioning <em>that</em>
+    fact so that we'll have a succinct way of expressing this set.
+    Now we can write <q><m>{\mathbb F}_2^\infty</m></q> rather than
+    <q>the set of all possible infinitely-long binary sequences.</q>
+  </p>
+
+  <p>
+    Suppose we had a listing of all the elements of <m>{\mathbb F}_2^\infty</m>. We would have an
+    infinite list of things, each of which is itself an infinite list
+    of 0's and 1's.
+  </p>
+
+  <p>
+    So what? We need to proceed from here to find a contradiction.
+  </p>
+
+  <p>
+    This argument that we've been edging towards is known as Cantor's
+    diagonalization argument. The reason for this name is that our
+    listing of binary representations looks like an enormous table
+    of binary digits and the contradiction is deduced by looking at
+    the diagonal of this infinite-by-infinite table.
+    The diagonal is itself an infinitely long binary string <mdash /> in other words, the
+    diagonal can be thought of as a binary expansion itself.
+    If we take the complement
+    of the diagonal, (switch every 0 to a 1 and vice versa) we will also
+    have a thing that can be regarded as a binary expansion and this binary
+    expansion can't be one of the ones on the list! This bit-flipped version of
+    the diagonal is different from the first binary expansion in the first
+    position,
+    it is different from the second binary expansion in the second position, it is
+    different from the third binary expansion in the third position, and so on.
+    The very presumption that we could list all of the elements of <m>{\mathbb F}_2^\infty</m>
+    allows us
+    to construct an element of <m>{\mathbb F}_2^\infty</m> that could not be on the list!
+  </p>
+
+  <p>
+    This argument has been generalized many times, so this is the first in a
+    class of things known as diagonal arguments. Diagonal arguments have been
+    used to settle several important mathematical questions. There is a valid
+    diagonal argument that even does what we'd originally set out to do: prove
+    that <m>\Naturals</m> and <m>\Reals</m> are not equinumerous. Strangely, the
+    argument can't be made to work in binary, and since you're going to be
+    asked to write it up in the exercises, we want to point out one of the
+    potential pitfalls.
+    If we were to use a diagonal argument to show that <m>(0, 1)</m> isn't countable,
+    we would start by assuming that every element of <m>(0, 1)</m> was written down in
+    a list. For most real numbers in <m>(0, 1)</m> we could write out their
+    binary representation uniquely, but for some we would have to make a
+    choice: should we write down the representation that terminates, or
+    the one that ends in infinitely-many 1's? Suppose we choose to use
+    the terminating representations, then none of the infinite binary
+    strings that end with all 1's will be on the list. It's possible that
+    the thing we get when we complement the diagonal
+    is one of these (unlisted) binary strings so we don't <em>necessarily</em>
+    have a contradiction.
+    If we make the other choice <mdash /> use the infinite binary representation
+    when we have a choice <mdash /> there is a similar problem.
+    You may think that our use of binary representations for real numbers
+    was foolish in light of the failure of the argument to <q>go through</q>
+    in binary.
+    Especially since, as we've alluded to, it can be made to work in decimal.
+    The reason for our apparent stubbornness is that these infinite binary
+    strings do something else that's very nice. An infinitely long binary sequence
+    can be thought of as the indicator function of a subset of N. For example,
+    <m>.001101010001</m> is the indicator of <m>\{2, 3, 5, 7, 11\}</m>.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Complete the table.
+      </p>
+      <tabular>
+        <row>
+          <cell>binary expansion</cell>
+          <cell>subset of <m>\Naturals</m></cell>
+        </row>
+        <row bottom="medium">
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell  ><m>.1</m></cell>
+          <cell><m>\{0\}</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>.0111</m></cell>
+          <cell></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell><m>\{2, 4, 6\}</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>.\overline{01}</m></cell>
+          <cell></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell><m>\{3k + 1 \suchthat k \in \Naturals\}</m></cell>
+        </row>
+      </tabular>
+    </statement>
+  </exercise>
+  <p>
+    The set, <m>{\mathbb F}_2^\infty</m>, we've been working with is in one-to-one correspondence
+    with the power set of the natural numbers, <m>{\mathcal P}(\Naturals)</m>.
+    When viewed in this light, the proof we did above showed that the power
+    set of <m>\Naturals</m> has an infinite cardinality strictly greater than that
+    of <m>\Naturals</m> itself. In other words, <m>{\mathcal P}(\Naturals)</m> is
+    uncountable.
+  </p>
+
+  <p>
+    What Cantor's theorem says is that this always works. If <m>A</m> is any set,
+    and <m>{\mathcal P}(A)</m> is its power set then <m>|A| \lt  |{\mathcal P}(A)|</m>.
+    In a way, this more general
+    theorem is easier to prove than the specific case we just handled.
+  </p>
+
+  <theorem>
+    <title>Cantor</title>
+    <statement>
+      <p>
+        For all sets <m>A</m>, <m>A</m> is not equivalent to <m>{\mathcal P}(A)</m>.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      Suppose that there is a set <m>A</m> that can be placed in one-to-one
+      correspondence with its power set. Then there is a bijective
+      function <m>f : A \longrightarrow {\mathcal P}(A)</m>. We will deduce
+      a contradiction by constructing a subset of <m>A</m>
+      (i.e. a member of <m>{\mathcal P}(A))</m> that cannot
+      be in the range of <m>f</m>.
+    </p>
+
+    <p>
+      Let <m>S = \{x \in A \suchthat x \notin f(x)\}</m>.
+    </p>
+
+    <p>
+      If <m>S</m> is in the range of <m>f</m>, there is a preimage <m>y</m> such that <m>S = f(y)</m>.
+      But, if such a <m>y</m> exists then the membership question, <m>y \in S</m>, must
+      either be true or false. If <m>y \in S</m>, then because <m>S = f(y)</m>, and <m>S</m>
+      consists of those elements that are not in their images, it follows
+      that <m>y \notin S</m>. On the other hand, if <m>y \notin S</m> then <m>y \notin f(y)</m> so
+      (by the definition of <m>S</m>) it follows that <m>y \in S</m>. Either possibility leads to the other, which is a contradiction.
+    </p>
+  </proof>
+
+  <p>
+    Cantor's theorem guarantees that there is an infinite hierarchy of infinite
+    cardinal numbers. Let's put it another way. People have sought a construction
+    that, given an infinite set, could be used to create a strictly larger set.
+    For
+    instance, the Cartesian product works like this if our sets are finite <mdash />
+    <m>A \times A</m> is strictly bigger than <m>A</m> when <m>A</m> is a finite set. But, as
+    we've already seen,
+    this is not necessarily so if <m>A</m> is infinite (remember the <q>snake</q> argument
+    that <m>\Naturals</m> and <m>\Naturals \times \Naturals</m> are equivalent). The
+    real import of Cantor's theorem is that taking the power set of a set
+    <em>does</em> create a set of larger cardinality.
+    So we get an infinite tower of infinite cardinalities, starting with
+    <m>\aleph_0 = |\Naturals|</m>, by successively taking power sets.
+    <me>
+      \aleph_0  = |\Naturals| \lt  |{\mathcal P}(\Naturals)| \lt  |{\mathcal P}({\mathcal P}(\Naturals))| \lt  |{\mathcal P}({\mathcal P}({\mathcal P}(\Naturals)))| \lt  \ldots
+    </me>
+  </p>
+  <exercises>
+
+    <ol>
+      <li><p>
+          Determine a substitution rule <mdash /> a consistent way of replacing one digit
+          with another along the diagonal so that a diagonalization proof showing
+          that the interval (0, 1) is uncountable will work in decimal. Write up
+          the proof.
+        </p></li>
+
+      <li><p>
+          Can a diagonalization proof showing that the interval (0, 1) is uncountable
+          be made workable in base-3 (ternary) notation?
+        </p></li>
+
+      <li><p>
+          In the proof of Cantor's theorem we construct a set <m>S</m> that cannot
+          be in the image of a presumed bijection from <m>A</m> to <m>{\mathcal P}(A)</m>.  
+          Suppose <m>A = \{1, 2, 3\}</m> and f determines the following correspondences: 
+          <m>1 \longleftrightarrow \emptyset</m>,
+          <m>2 \longleftrightarrow \{1, 3\}</m> and <m>3 \longleftrightarrow \{1, 2, 3\}</m>. 
+          What is <m>S</m>?
+        </p></li>
+
+      <li><p>
+          An argument very similar to the one embodied in the proof of Cantor's
+          theorem is found in the Barber's paradox. This paradox was
+          originally introduced in the popular press in order to give laypeople an
+          understanding of Cantor's theorem and Russell's paradox. It sounds
+          somewhat sexist to modern ears. (For example, it is presumed without
+          comment that the Barber is male.)
+          <blockquote>
+          In a small town there is a Barber who shaves those men (and
+          only those men) who do not shave themselves. Who shaves
+          the Barber?
+          </blockquote>
+          Explain the similarity to the proof of Cantor's theorem.
+        </p></li>
+
+      <li><p>
+          Cantor's theorem, applied to the set of all sets leads to an interesting
+          paradox. The power set of the set of all sets is a collection of sets, so
+          it must be contained in the set of all sets. Discuss the paradox and
+          determine a way of resolving it.
+        </p></li>
+
+      <li><p>
+          Verify that the final deduction in the proof of Cantor's theorem, 
+          <q><m>(y \in S  \implies  y \notin S) \land  (y \notin S \implies y \in S)</m>,</q> 
+          is truly a contradiction.
+        </p></li>
+    </ol>
+  </exercises>
+</section>

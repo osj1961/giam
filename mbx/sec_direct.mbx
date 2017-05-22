@@ -1,0 +1,751 @@
+
+<section xml:id="sec_direct">
+  <title>Direct proofs of universal statements</title>
+  <p>
+    If you form the product of 4 consecutive numbers, the result will be one
+    less than a perfect square. Try it!
+    <me>
+      1 \cdot 2 \cdot 3 \cdot 4 = 24 = 5^2 - 1
+    </me>
+    <me>
+      2 \cdot 3 \cdot 4 \cdot 5 = 120 = 11^2 - 1
+    </me>
+    <me>
+      3 \cdot 4 \cdot 5 \cdot 6 = 360 = 19^2 - 1
+    </me>
+  </p>
+
+  <p>
+    It always works!
+  </p>
+
+  <p>
+    The three calculations that we've carried out above constitute an
+    inductive argument in favor of the result. If you like we can try
+    a bunch of further examples,
+    <me>
+      13 \cdot 14 \cdot 15 \cdot 16 = 43680 = 209^2 - 1
+    </me>
+    <me>
+      14 \cdot 15 \cdot 16 \cdot 17 = 571200 = 239^2 - 1
+    </me>
+    but really, no matter how many examples we produce, we haven't
+    <em>proved</em> the statement <mdash /> we've just given evidence.
+  </p>
+
+  <p>
+    Generally, the first thing to do in proving a universal statement like
+    this is to rephrase it as a conditional. The resulting statement is a
+    <index><main>universal conditional statement</main></index><em>Universal Conditional Statement</em>
+    or a UCS. The reason for taking
+    this step is that the <em>hypotheses</em> will then be clear <mdash /> they form
+    the antecedent of the UCS. So, while you won't have really made any
+    progress in the proof by taking this advice, you will at least know what tools
+    you have at hand. Taking the example we started with, and rephrasing
+    it as a UCS we get
+    <me>
+      \forall a,b,c,d \in \Integers, (\mbox{a,b,c,d  consecutive} ) 
+      \implies \exists k \in \Integers, a{\cdot}b{\cdot}c{\cdot}d = k^2 -1
+    </me>
+  </p>
+
+  <p>
+    The antecedent of the UCS is that <m>a,b,c</m> and <m>d</m> must be
+    <em>consecutive</em>. By concentrating our attention on what it
+    means to be consecutive, we should quickly realize that the original
+    way we thought of the problem involved a red herring. We don't need
+    to have variables for all four numbers; because they are consecutive,
+    <m>a</m> uniquely determines the other three. Finally we have a version
+    of the statement that we'd like to prove that should lend itself
+    to our proof efforts.
+  </p>
+
+  <theorem>
+    <statement>
+      <me>
+        \forall a \in \Integers, \exists k \in \Integers, 
+        a(a+1)(a+2)(a+3) = k^2 - 1.
+      </me>
+    </statement>
+  </theorem>
+
+  <p>
+    In this simplistic example, the only thing we need to do is come
+    up with a value for <m>k</m> given that we know what <m>a</m> is. In other
+    words, a <q>proof</q> of this statement involves doing some algebra.
+  </p>
+
+  <p>
+    Without further ado<ellipsis />
+  </p>
+
+  <proof>
+    <p>
+      Suppose that <m>a</m> is a particular but arbitrarily chosen
+      integer. Consider the product of the 4 consecutive integers, <m>a</m>,
+      <m>a+1</m>, <m>a+2</m> and <m>a+3</m>. We would like to show that this product is
+      one less than the square of an integer <m>k</m>. Let <m>k</m> be <m>a^2+3a+1</m>.
+    </p>
+
+    <p>
+      First, note that
+      <me>
+        a(a+1)(a+2)(a+3) = a^4 + 6a^3 + 11a^2 + 6a.
+      </me>
+    </p>
+
+    <p>
+      Then, note that
+      <md>
+        <mrow>k^2 - 1 = (a^2 + 3a +1)^2 - 1</mrow>
+        <mrow>= (a^4  + 6a^3 + 11a^2 + 6a + 1) - 1</mrow>
+        <mrow>= a^4 + 6a^3 + 11a^2 + 6a.</mrow>
+      </md>
+    </p>
+  </proof>
+
+  <p>
+    Now, if you followed the algebra above, (none of which was particularly
+    difficult) the proof stands as a completely valid argument showing the
+    truth of our proposition, but this is <em>very</em> unsatisfying! All
+    the real work was concealed in one stark little sentence:
+    <q>Let <m>k</m> be <m>a^2+3a+1</m>.</q> Where on Earth did that particular value
+    of <m>k</m> come from? The answer to that question should hopefully
+    convince you that there is a huge difference between <em>devising</em>
+    a proof and <em>writing</em> one. A good proof can sometimes be
+    somewhat akin to a good demonstration of magic, a magician doesn't
+    reveal the inner workings of his trick, neither should a mathematician
+    feel guilty about leaving out some of the details behind the work!
+    Heck, there are plenty of times when you just have to <em>guess</em>
+    at something, but if your guess works out, you can write
+    a perfectly correct proof.
+  </p>
+
+  <p>
+    In devising the proof above, we multiplied out the consecutive numbers
+    and then realized that we'd be done if we could find a polynomial in
+    <m>a</m> whose square was <m>a^4  + 6a^3 + 11a^2 + 6a + 1</m>. Now, obviously,
+    we're going to need a quadratic polynomial, and because the leading
+    term is <m>a^4</m> and the constant term is <m>1</m>, it should be of the form
+    <m>a^2 + ma + 1</m>. Squaring this gives <m>a^4 + 2ma^3 + (m^2+2)a^2 + 2ma + 1</m>
+    and comparing that result with what we want, we pretty quickly realize
+    that <m>m</m> had better be 3. So it wasn't magic after all!
+  </p>
+
+  <p>
+    This seems like a good time to make a comment on polynomial arithmetic.
+    <index><main>polynomial multiplication</main></index>
+    Many people give up (or go searching for a computer algebra system)
+    when dealing with products of anything bigger than binomials. This
+    is a shame because there is an easy method using a table for performing
+    such multiplications. As an example, in devising the previous proof we
+    needed to form the product <m>a(a+1)(a+2)(a+3)</m>, now we can use the
+    distributive law or the infamous F.O.I.L rule to multiply pairs of these,
+    but we still need to multiply <m>(a^2+a)</m> with <m>(a^2+5a+6)</m>. Create a
+    table that has the terms of these two polynomials as its row and column
+    headings.
+  </p>
+  <tabular>
+    <row>
+      <cell></cell>
+      <cell><m>a^2</m></cell>
+      <cell><m>5a</m></cell>
+      <cell><m>6</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>a^2</m></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>a</m></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+  </tabular>
+  <p>
+    Now, fill in the entries of the table by multiplying the corresponding
+    row and column headers.
+  </p>
+  <tabular>
+    <row>
+      <cell></cell>
+      <cell><m>a^2</m></cell>
+      <cell><m>5a</m></cell>
+      <cell><m>6</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>a^2</m></cell>
+      <cell><m>a^4</m></cell>
+      <cell><m>5a^3</m></cell>
+      <cell><m>6a^2</m></cell>
+    </row>
+    <row>
+      <cell><m>a</m></cell>
+      <cell><m>a^3</m></cell>
+      <cell><m>5a^2</m></cell>
+      <cell><m>6a</m></cell>
+    </row>
+  </tabular>
+  <p>
+    Finally add up all the entries of the table, combining any like terms.
+  </p>
+
+  <p>
+    You should note that the F.O.I.L rule is just a mnemonic for the case when
+    the table has 2 rows and 2 columns.
+  </p>
+
+  <p>
+    Okay, let's get back to doing proofs. We are going to do a lot of
+    proofs involving the concepts of elementary number theory so, as a
+    convenience, all of the definitions that were made in <xref ref="ch_intro">Chapter</xref>
+    are gathered together in <xref ref="tab_defs">Table</xref>.
+  </p>
+
+  <table xml:id="tab_defs" >
+    <caption>The definitions of elementary number theory restated.</caption>
+    <tabular>
+      <row>
+        <cell>Even</cell>
+      </row>
+      <row>
+        <cell>\begin{minipage}{.8\textwidth}
+         <m>\forall n \in \Integers</m>,</cell>
+      </row>
+      <row>
+        <cell>\<m>n</m> is even  <m>\iff</m>  <m>\exists  k \in \Integers, \; n = 2k</m></cell>
+      </row>
+      <row>
+        <cell>Odd</cell>
+      </row>
+      <row>
+        <cell>\begin{minipage}{.8\textwidth}
+         <m>\forall n \in \Integers</m>,</cell>
+      </row>
+      <row>
+        <cell>\<m>n</m> is odd  <m>\iff</m>  <m>\exists
+         k \in \Integers, \; n = 2k+1</m></cell>
+      </row>
+      <row>
+        <cell>Divisibility</cell>
+      </row>
+      <row>
+        <cell>\begin{minipage}{.8\textwidth}
+         <m>\forall n \in \Integers , \forall  d>0 \in \Integers</m>,</cell>
+      </row>
+      <row>
+        <cell>\<m>d \divides n</m>   <m>\iff</m>  <m>\exists
+         k \in \Integers, \; n = kd</m></cell>
+      </row>
+      <row>
+        <cell>Floor</cell>
+      </row>
+      <row>
+        <cell>\begin{minipage}{.8\textwidth}
+         <m>\forall x \in \Reals</m>,</cell>
+      </row>
+      <row>
+        <cell>\<m>y = \lfloor x \rfloor</m>   <m>\iff</m>  
+        <m>y \in \Integers \, \; \land \, \; y \leq x \lt  y+1</m></cell>
+      </row>
+      <row>
+        <cell>Ceiling</cell>
+      </row>
+      <row>
+        <cell>\begin{minipage}{.8\textwidth}
+         <m>\forall x \in \Reals</m>,</cell>
+      </row>
+      <row>
+        <cell>\<m>y = \lceil x \rceil</m>   <m>\iff</m>  
+        <m>y \in \Integers \, \; \land \, \; y-1 \lt  x \leq y</m></cell>
+      </row>
+      <row>
+        <cell>Quotient-remainder theorem, Div and Mod</cell>
+      </row>
+      <row>
+        <cell>\begin{minipage}{.8\textwidth}<m>\forall n, d>0 \in \Integers</m>,</cell>
+      </row>
+      <row>
+        <cell>\<m>\exists \mbox{!}  q,r \in \Integers, \; n = qd + r \, \; \land \, \; 0 \leq r \lt  d</m>  
+        \<m>n \; \mbox{div}  \; d = q</m>  
+        \<m>n \; \mbox{mod}  \; d = r</m></cell>
+      </row>
+      <row>
+        <cell>Prime</cell>
+      </row>
+      <row>
+        <cell>\begin{minipage}{.8\textwidth}<m>\forall \, p \, \in \Integers</m></cell>
+      </row>
+      <row>
+        <cell>\<m>p</m> is prime <m>\iff</m>   
+        \<m>(p>1)  \land  (\forall x,y \in \Integers^+, \; p=xy \; \implies \; x=1 \, \lor \,  y=1)</m></cell>
+      </row>
+    </tabular>
+  </table>
+
+  <p>
+    In this section we are concerned with
+    <index><main>direct proofs</main></index>direct proofs of universal statements.
+    Such statements come in two flavors <mdash /> those that appear to involve
+    conditionals, and those that don't:
+  </p>
+
+  <blockquote>
+  Every prime greater than two is odd.
+  </blockquote>
+
+  <p>
+    versus
+  </p>
+
+  <blockquote>
+  For all integers <m>n</m>, if <m>n</m> is a prime greater than two, then <m>n</m> is odd.
+  </blockquote>
+
+  <p>
+    These two forms can readily be transformed one into the other, so
+    we will always concentrate on the latter. A direct proof of a UCS
+    always follows a form known as
+    <index><main>generalizing from the generic particular</main></index>
+    <q>generalizing from the generic particular.</q>
+    We are trying to prove that <m>\forall x \in U, P(x) \implies Q(x)</m>.
+    The argument (in skeletal outline) will look like:
+  </p>
+  <tabular>
+    <row bottom="minor">
+      <cell></cell>
+    </row>
+    <row>
+      <cell>\begin{minipage}{.75\textwidth}
+       <em>Proof:</em> Suppose that <m>a</m> is a particular but arbitrary element of <m>U</m> such 
+      that <m>P(a)</m> holds.
+
+      <m>\vdots</m> 
+
+      Therefore <m>Q(a)</m> is true. 
+      Thus we have shown that for all <m>x</m> in <m>U</m>, <m>P(x) \implies Q(x)</m>.
+        Q.E.D.</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+    </row>
+  </tabular>
+  <p>
+    Okay, so this outline is pretty crappy. It tells you how to start and
+    end a direct proof, but those obnoxious dot-dot-dots in the middle are
+    where all the real work has to go. If I could tell you (even in outline)
+    how to fill in those dots, that would mean mathematical proof isn't really
+    a very interesting activity to engage in. Filling in those dots will
+    sometimes (rarely) be obvious, more often it will be extremely challenging;
+    it will require great creativity, loads of concentration, you'll call on
+    all your previous mathematical experiences, and you will most likely
+    experience a certain degree of anguish. Just remember that your sense
+    of accomplishment is proportional to the difficulty of the puzzles you
+    attempt. So let's attempt another<ellipsis />
+  </p>
+
+  <p>
+    In <xref ref="tab_defs">Table</xref> one of the very handy notions defined is that
+    of the <em>floor</em> of a real number.
+    <me>
+      y = \lfloor x \rfloor \; \iff \; (y \in \mathbb Z \; \land \; y \leq x \lt  y+1).
+    </me>
+  </p>
+
+  <p>
+    There is a sad tendency for people to apply old rules in new situations
+    just because of a chance similarity in the notation. The brackets used
+    in notating the floor function look very similar to ordinary parentheses,
+    so the following <q>rule</q> is often proposed
+    <me>
+      \lfloor x + y \rfloor = \lfloor x \rfloor + \lfloor y \rfloor
+    </me>
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Find a counterexample to the previous <q>rule.</q>
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    What is (perhaps) surprising is that if one of the numbers involved is an
+    integer then the <q>rule</q> really works.
+  </p>
+
+  <theorem>
+    <statement>
+      <me>
+        \forall x \in \Reals, \, \forall n \in \Integers, \, 
+        \lfloor x + n \rfloor = \lfloor x \rfloor + \lfloor n \rfloor
+      </me>
+    </statement>
+  </theorem>
+
+  <p>
+    Since the floor of an integer <em>is</em> that integer, we could restate this
+    as <m>\lfloor x + n \rfloor = \lfloor x \rfloor +  n</m>.
+  </p>
+
+  <p>
+    Now, let's try rephrasing this theorem as a UCS: If <m>x</m> is a real number
+    and <m>n</m> is an integer, then <m>\lfloor x + n \rfloor = \lfloor x \rfloor +  n</m>.
+    This is bad <ellipsis /> it appears that the only hypotheses that we can use
+    involve what kinds of numbers <m>x</m> and <m>n</m> are <mdash /> our hypotheses aren't
+    particularly potent. Your next most useful allies in constructing proofs
+    are the definitions of the concepts involved. The quantity
+    <m>\lfloor x \rfloor</m> appears in the theorem, let's make
+    use of the definition:
+    <me>
+      a = \lfloor x  \rfloor \; \iff \; a \in \Integers \; \, 
+      \land \; \, a \leq x \lt  a+1.
+    </me>
+  </p>
+
+  <p>
+    The only other floor function that appears in the statement of the theorem
+    (perhaps even more prominently)
+    is <m>\lfloor x + n\rfloor</m>, here, the definition gives us
+    <me>
+      b = \lfloor x + n \rfloor \; \iff \; 
+      b \in \Integers \; \, \land \; \, b \leq x + n \lt  b+1.
+    </me>
+  </p>
+
+  <p>
+    These definitions are our only available tools so we'll certainly <em>have</em>
+    to make use of them, and it's important to notice that that is a good thing;
+    the definitions allow us to work with something well-understood
+    (the inequalities that appear within them) rather than with something
+    new and relatively suspicious (the floor notation). Putting the proof
+    of this statement together is an exercise in staring at the two definitions
+    above and noting how one can be converted into the other. It is also a
+    testament to the power of <em>naming</em> things.
+  </p>
+
+  <proof>
+    <p>
+      Suppose that <m>x</m> is a particular but arbitrary real number
+      and that <m>n</m> is a particular but arbitrary integer. Let
+      <m>a = \lfloor x \rfloor</m>. By the definition of the floor function
+      it follows that <m>a</m> is an integer and <m>a \leq x \lt  a+1</m>. By adding
+      <m>n</m> to each of the parts of this inequality
+      we deduce a new (and equally valid) inequality, <m>a+n \leq x+n \lt  a+n+1</m>.
+      Note that <m>a+n</m> is an integer and the inequality above together with
+      this fact constitute precisely the definition of
+      <m>a + n = \lfloor x + n \rfloor</m>. Finally, recalling that
+      <m>a = \lfloor x \rfloor</m> (by assumption), and rewriting, we obtain the
+      desired result
+      <me>
+        \lfloor x + n \rfloor = \lfloor x \rfloor + n.
+      </me>
+    </p>
+  </proof>
+
+  <p>
+  As we've seen in the examples presented in this section, coming up
+  with a proof can sometimes involve a bit of ingenuity. But, sometimes,
+  there is a <q>follow your nose</q> sort of approach that will
+  allow you to devise a valid argument without necessarily displaying
+  any great leaps of genius! Here are a few pieces
+  of advice about proof-writing:
+
+  <ul>
+    <li><p>
+        Before anything else, determine precisely what hypotheses you
+        can use.
+      </p></li>
+
+    <li><p>
+        Jot down the definitions of <em>anything</em> in the statement of 
+        the theorem.
+      </p></li>
+
+    <li><p>
+        There are 26 letters at your disposal (and even more if you know
+        Greek) (and you can always throw on subscripts!) don't be stingy with
+        letters.  The nastiest mistake you can make is to use the same variable
+        for two different things.
+      </p></li>
+
+    <li><p>
+        Please write a rough draft first.  Write two drafts!  Even if you
+        can write beautiful, lucid prose on the first go around, it won't fly
+        when it comes to organizing a proof.
+      </p></li>
+
+    <li><p>
+        The statements in a proof are supposed to be logical statements.
+        That means they should be Boolean (statements that are either true or false).
+        An algebraic expression all by itself doesn't count, an inequality or an 
+        equality does.
+      </p></li>
+
+    <li><p>
+        Don't say <q>if</q> when you mean <q>since.</q>  Really!  If you start a
+        proof about rational numbers like so:
+        <blockquote>
+        <em>Proof:</em> Suppose that <m>x</m> is a particular but arbitrary rational number.
+        If <m>x</m> is a rational number, it follows that \ldots
+        </blockquote>
+        people are going to look at you funny.  What's the point of 
+        <em>supposing</em>
+        that <m>x</m> is rational, then acting as if you're in doubt of that fact by
+        writing <q>if</q>?   You mean <q>since.</q>
+      </p></li>
+
+    <li><p>
+        Mark off the beginning and the end of your proofs as a hint to your
+        readers.  In this book we start off a proof by writing <em>Proof:</em> in 
+        italics and we end every proof with the abbreviation 
+        <index><main>quod erat demonstrandum</main></index>
+        Q.E.D.<fn><em>Quod erat demonstrandum</em> or <q>(that) which was to 
+        be demonstrated.</q> some authors prefer placing a small rectangle at 
+        the end of their proofs, but Q.E.D. seems more pompous.</fn>
+      </p></li>
+  </ul>
+  </p>
+
+  <p>
+    We'll close this section with a word about axioms. The axioms in any
+    given area of math are your most fundamental tools. Axioms don't
+    need to be proved <mdash /> we are supposed to just accept them! A very common
+    problem for beginning proofwriters is telling the difference between statements
+    that are axiomatic and statements that require some proof. For instance, in the
+    exercises for this section there is a problem that asks us to prove that the sum of
+    two rational numbers is rational. Doesn't this seem like it might be one of
+    the axioms of rational numbers? Is it really something that <em>can</em> be proved?
+    Well, we know how the process of adding rational numbers works: we put the
+    fractions over a common
+    denominator and then just add numerators. Do you see how adding fractions really rests
+    on our ability to add the numerators (which are integers). So, in doing that exercise you
+    can use the fact (indeed, you'll need to use the fact) that the sum of two integers is an integer.
+    So how about <em>that</em> statement? Is it necessary to prove that adding integers produces
+    an integer? As a matter of fact it <em>is</em> necessary since the structure of the integers
+    rests on a foundation known as the Peano axioms for the naturals <mdash /> and the Peano axioms
+    <em>don't</em> include one that guarantees that the sum of two naturals is also a natural. If you
+    are tempted to trace this whole thing back, to <q>find out how deep the rabbit hole goes,</q> I commend
+    you. But, if you just want to be able to get on with doing your homework problems, I sympathize
+    with that sentiment too. Let's agree that integers behave the way we've come to expect <mdash /> if
+    you add or multiply integers the result will be an integer.
+  </p>
+  <exercises>
+
+    <ol>
+      <li><p>
+      Every prime number greater than 3 is of one of the two forms
+      <m>6k+1</m> or <m>6k+5</m>.  What statement(s) could be used as hypotheses in
+      proving this theorem?
+
+      \hint{
+
+
+
+      Fill in the blanks:
+
+      <ul>
+        <li><p>
+            <m>p</m> is a <fillin /> number, and
+          </p></li>
+
+        <li><p>
+            <m>p</m> is greater than <fillin />.
+          </p></li>
+      </ul>
+      </p>
+
+      }</li>
+
+      <li><p>
+          Prove that 129 is odd.
+
+          \hint{
+
+
+
+           All you have to do to show that some number is odd, is produce the integer <m>k</m> that the definition
+          of <q>odd</q> says has to exist.  Hint: the same number could be used to prove that <m>128</m> is even.
+
+
+
+          }
+        </p></li>
+
+      <li><p>
+          Prove that the sum of two rational numbers is a rational number.
+
+          \hint{
+
+
+
+           You want to argue about the sum of two generic rational numbers. Maybe call them <m>a/b</m> and <m>c/d</m>. The definition of <q>rational number</q> then tells you that <m>a</m>, <m>b</m>, <m>c</m> and <m>d</m> are integers and that neither <m>b</m> nor <m>d</m> are zero. You add these generic rational numbers in the usual way <mdash /> put them over a common denominator and then add the numerators. One possible common denominator is <m>bd</m>, so we can express the sum as <m>(ad+bc)/(bd)</m>.  You can finish off the argument from here: you need to show that this expression for the sum satisfies the definition of a rational number (quotient of integers w/ non-zero denominator). Also, write it all up a bit more formally<ellipsis />
+
+
+
+          }
+        </p></li>
+
+      <li><p>
+        Prove that the sum of an odd number and an even number is odd.
+
+
+        \hint{
+
+        <proof>
+          <p>
+            Suppose that <m>x</m> is an odd number and <m>y</m> is an even number. Since <m>x</m> is odd there is an
+            integer <m>k</m> such that <m>x=2k+1</m>. Furthermore, since <m>y</m> is even, there is an integer <m>m</m> such that
+            <m>y=2m</m>. By substitution, we can express the sum <m>x+y</m> as <m>x+y = (2k+1) + (2m) = 2(k+m) + 1</m>.
+            Since <m>k+m</m> is an integer (the sum of integers is an integer) it follows that <m>x+y</m> is odd.
+          </p>
+        </proof>
+
+        }
+        </p></li>
+
+      <li><p>
+          Prove that if the sum of two integers is even, then so is their
+          difference.
+
+          \hint{
+
+
+
+          Hint: If we write <m>x+y</m> for the sum of two integers that is even (so <m>x+y = 2k</m> for some integer <m>k</m>), then we could subtract <fillin /> from it in order to obtain <m>x-y</m>. Once you fill in that blank properly the flow of the argument should become apparent to you.
+
+
+
+          }
+        </p></li>
+
+      <li><p>
+          Prove that for every real number <m>x</m>, <m>\frac{2}{3} \lt  x \lt  \frac{3}{4} \; \implies \; \lfloor 12x \rfloor = 8</m>.
+
+          \hint{
+
+
+
+          Begin your proof like so:
+
+          <q>Suppose that <m>x</m> is a real number such that <m>\frac{2}{3} \lt  x \lt  \frac{3}{4}</m>.</q>
+
+          You need to multiply all three parts of the inequality by something in order to <q>clear</q> the fractions.
+          What should that be?
+
+
+          The definition for the floor of <m>12x</m> will be satisfied if <m>8 \leq 12x \lt  9</m> but unfortunately the work done 
+          previously will have deduced that <m>8 \lt  12x \lt  9</m> is true.  Don't just gloss over this discrepancy.  Explain why
+          one of these inequalities is implied by the other.
+
+
+
+          }
+        </p></li>
+
+      <li><p>
+          Prove that if <m>x</m> is an odd integer, then <m>x^2</m> is of the form
+          <m>4k+1</m> for some integer <m>k</m>.
+
+          \hint{
+
+
+
+           You may be tempted to write <q>Since x is odd, it can be expressed as <m>x = 2k+1</m> where <m>k</m> is an integer.</q> This is slightly wrong since the variable <m>k</m> is already being used in the statement of the theorem. But, except for replacing <m>k</m> with some other variable (maybe <m>m</m> or <m>j</m>?) that <em>is</em> a good way to get started. From there it's really just algebra until, eventually, you'll find out what <m>k</m> really is.
+
+
+
+          }
+        </p></li>
+
+      <li><p>
+          Prove that for all integers <m>a</m> and <m>b</m>, if <m>a</m> is odd and <m>6 \divides (a+b)</m>, then <m>b</m> is odd.
+
+          \hint{
+
+
+
+           The premise that <m>6 \divides (a+b)</m> is a bit of a red herring (a clue that is designed to mislead).  The premise that you really need is that <m>a+b</m> is even.  Can you deduce that from what's given?
+
+
+
+          }
+        </p></li>
+
+      <li><p>
+        Prove that <m>\forall x\in\Reals, \, x\not\in\Integers \, \implies \, \lfloor x\rfloor+\lfloor-x\rfloor=-1</m>.
+
+        \hint{
+
+        <proof>
+          <p>
+            Suppose that <m>x</m> is a real number and <m>x\not\in\Integers</m>. Let <m>a = \lfloor x \rfloor</m>. By the definition
+            of the floor function we have <m>a \in\Integers</m> and <m>a \leq x \lt  a+1</m>. Since <m>x \not\in\Integers</m> we
+            know that <m>x \neq a</m> so we may strengthen the inequality to <m>a \lt  x \lt  a+1</m>. Multiplying this inequality
+            by <m>-1</m> we obtain <m>-a > -x > -a - 1</m>. This inequality may be weakened to <m>-a > -x \geq -a - 1</m>. Finally, note that (since <m>-a-1 \in\Integers</m> and <m>-a = (-a-1)+1</m> we
+            have shown that <m>\lfloor -x \rfloor \, = \, -a-1</m>. Thus, by substitution we have <m>\lfloor x \rfloor+\lfloor -x \rfloor \; = \; a + (-a-1) \; = \; -1</m> as desired.
+          </p>
+        </proof>
+
+        }
+        </p></li>
+
+      <li><p>
+          Define the <index><main>evenness</main></index><em>evenness</em> of an integer <m>n</m> by:
+          <me>
+            \mbox{evenness}  (n) = k \; \iff \;  
+             2^k \divides n \, \land \, 2^{k+1} \nmid n
+          </me>
+          State and prove a theorem concerning the evenness of products.
+
+          \hint{Well, the statement is that the evenness of a product is the sum of the evennesses of the factors<ellipsis />}
+        </p></li>
+
+      <li><p>
+          Suppose that <m>a</m>, <m>b</m> and <m>c</m> are integers such that <m>a \divides b</m>
+          and <m>b \divides c</m>.  Prove that <m>a \divides c</m>.
+
+          \hint{
+          This one is pretty straightforward. Be sure to not reuse any variables. Particularly, the fact that <m>a \divides b</m> tells us (because of the definition of divisibility) that there is an integer <m>k</m> such that <m>b = ak</m>.  It is not okay to also use <m>k</m> when converting the statement <q><m>b \divides c</m>.</q>
+          }
+        </p></li>
+
+      <li><p>
+          Suppose that <m>a</m>, <m>b</m>, <m>c</m> and <m>d</m> are integers with <m>a \neq c</m>.
+          Further, suppose that <m>x</m> is a real number satisfying the equation
+          <me>
+            \frac{ax+b}{cx+d} = 1.
+          </me>
+          Show that <m>x</m> is rational.  Where is the hypothesis <m>a \neq c</m>
+          used?
+
+          \hint{Cross multiply and solve for <m>x</m>.  If you need to divide by an expression, it had 
+          better be non-zero!}
+        </p></li>
+
+      <li><p>
+          Show that if two positive integers <m>a</m> and <m>b</m> satisfy <m>a \divides b\emph{and}b \divides a</m> then they are equal.
+
+          \hint{From the definition of divisibility, you get two integers <m>j</m> and <m>k</m>, such that 
+          <m>a = jb</m> and <m>b = ka</m>. Substitute one of those into the other and ask yourself what 
+          the resulting equation says about <m>j</m> and <m>k</m>.  Can they be any old integers?  Or, are 
+          there restrictions on their values?
+          }
+        </p></li>
+    </ol>
+  </exercises>
+</section>

@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-10T23:30:58-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Set operations</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></a></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="section-22.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-4.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-24.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-22.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-4.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-24.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link active"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html" class="active">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_ord_rel.html">Ordering relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-37.html">Parity and Counting arguments</a></li>
+<li><a href="section-38.html">The pigeonhole principle</a></li>
+<li><a href="section-39.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-41.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-43.html">Dominance</a></li>
+<li><a href="section-44.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-45.html">Morley's miracle</a></li>
+<li><a href="section-46.html">Five steps into the void</a></li>
+<li><a href="section-47.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-23"><header title="Section 4.3 Set operations"><h1 class="heading hide-type" alt="Section 4.3 Set operations">
+<span class="type">Section</span><span class="codenumber">4.3</span><span class="title">Set operations</span>
+</h1></header><p id="p-810">
+    In this section we'll continue to develop the correspondence between
+    Logic and Set theory.
+  </p>
+<p id="p-811">
+    The logical connectors \(\land\) and \(\lor\) correspond to the set-theoretic
+    notions of
+    union (\(\cup\)) and
+    intersection (\(\cap\)). The symbols are
+    designed to provide a mnemonic for the correspondence; the Set theory
+    symbols are just rounded versions of those from Logic.
+  </p>
+<p id="p-812">
+    Explicitly, if \(P(x)\) and \(Q(x)\) are open sentences, then
+    the <!--Style me with CSS--><em>union</em> of the corresponding truth sets \(S_P\) and \(S_Q\)
+    is defined by
+    \begin{equation*}
+      S_P \cup S_Q \; = \{ x \in U \suchthat P(x) \lor Q(x) \}.
+    \end{equation*}
+  </p>
+<article class="exercise-like" id="exercise-35"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">4.3.1</span>
+</h5>
+<p id="p-813">
+        Suppose two sets \(A\) and \(B\) are given. Re-express the previous
+        definition of “union” using their membership criteria, \(M_A(x) =\)
+        “\(x \in A\)” and \(M_B(x) =\) “\(x \in B\).”
+      </p></article><p id="p-814">
+    The union of more than two sets can be expressed using a big union
+    symbol. For example, consider the family of real intervals defined
+    by \(I_n = (n,n+1]\).<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-27" id="fn-27"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-27" style="display: none;" class="tex2jax_ignore"><span class="footnote">The elements 
+    of \(I_n\) can also be distinguished as the solution sets of 
+    the inequalities \(n \lt  x \leq n+1\).</span></span>
+    There's an interval for every integer \(n\). Also, every real number is in
+    one of these intervals. The previous sentence can be expressed as
+    \begin{equation*}
+      \Reals \; = \; \bigcup_{n\in\Integers} I_n.
+    \end{equation*}
+  </p>
+<p id="p-815">
+    The intersection of two sets is conceptualized as “what they have in common”
+    but the precise definition is found by considering conjunctions,
+    \begin{equation*}
+      A \cap B \; = \; \{ x \in U \suchthat x \in A \; \land \; x \in B \}.
+    \end{equation*}
+  </p>
+<article class="exercise-like" id="exercise-36"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">4.3.2</span>
+</h5>
+<p id="p-816">
+        With reference to two open sentences \(P(x)\) and \(Q(x)\), define the
+        intersection of their truth sets, \(S_P \cap S_Q\).
+      </p></article><p id="p-817">
+    There is also a “big” version of the intersection symbol. Using
+    the same family of intervals as before,
+    \begin{equation*}
+      \mbox{\(\emptyset\)}  \; = \; \bigcap_{n\in\Integers} I_n.
+    \end{equation*}
+  </p>
+<p id="p-818">
+    Of course the intersection of any distinct pair of these intervals is empty
+    so the statement above isn't particularly strong.
+  </p>
+<p id="p-819">
+    Negation in Logic corresponds to
+    complementation in Set theory. The
+    <!--Style me with CSS--><em>complement</em> of a set \(A\) is usually denoted by \(\overline{A}\)
+    (although some prefer a superscript \(c\) — as in \(A^c\)), this is the set
+    of all things that <!--Style me with CSS--><em>aren't</em> in \(A\). In thinking about complementation
+    one quickly sees why the importance of working within a well-defined
+    universal set is stressed. Consider the set of all math textbooks.
+    Obviously the complement of this set would contain texts in English,
+    Engineering and Evolution — but that statement is implicitly
+    assuming that the universe of discourse is “textbooks.” It's equally
+    valid to say that a very long sequence of zeros and ones, a luscious
+    red strawberry, and the number \(\sqrt{\pi}\)
+    are not math textbooks and so
+    these things are all elements of the complement of the set of all math
+    textbooks. What is really a concern for us is the issue of whether or not
+    the complement of a set is well-defined, that is, can we tell for sure
+    whether a given item is or is not in the complement of a set. This
+    question is decidable exactly when the membership question for the
+    original set is decidable. Many people think that the main
+    reason for working within a fixed universal set is that we then
+    have well-defined complements. The real reason that we accept
+    this restriction is to ensure that both membership criteria,
+    \(M_A(x)\) and \(M_{\overline{A}}(x)\), are decidable open sentences.
+    As an example of the sort of strangeness that can crop up, consider that
+    during the time that I, as the author of this book, was writing the
+    last paragraph, this text was nothing more than a very long
+    sequence of zeros and ones in the memory of my computer…
+  </p>
+<p id="p-820">
+    Every rule that we learned in <a href="ch_logic.html" alt="Chapter 2 Logic and quantifiers" title="Chapter 2 Logic and quantifiers">Chapter 2</a>
+    (see <a knowl="./knowl/tab_bool_equiv.html" knowl-id="xref-tab_bool_equiv" alt="Table 2.3.4 " title="Table 2.3.4 ">Table 2.3.4</a>) has a set-theoretic equivalent.
+    These set-theoretic versions are
+    expressed using equalities (i.e. the symbol \(=\) in between two sets) which
+    is actually a little bit funny if you think about it. We normally
+    use \(=\) to mean that two numbers or variables have the same numerical
+    magnitude, as in \(12^2 = 144\), we are doing something altogether
+    different when we use that symbol between two sets, as in \(\{1,2,3\}=
+    \{\sqrt{1},\sqrt{4},\sqrt{9}\}\), but people seem to be used to this
+    so there's no sense in quibbling.
+  </p>
+<article class="exercise-like" id="exercise-37"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">4.3.3</span>
+</h5>
+<p id="p-821">
+        Develop a useful definition for set equality. In other words,
+        come up with a (quantified) logical statement that means the
+        same thing as “\(A = B\)” for two arbitrary sets \(A\) and \(B\).
+      </p></article><article class="exercise-like" id="exercise-38"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">4.3.4</span>
+</h5>
+<p id="p-822">
+        What symbol in Logic should go between the membership criteria
+        \(M_A(x)\) and \(M_B(x)\) if \(A\) and \(B\) are equal sets?
+      </p></article><p id="p-823">
+    In <a knowl="./knowl/tab_set_equiv.html" knowl-id="xref-tab_set_equiv" alt="Table 4.3.5 " title="Table 4.3.5 ">Table 4.3.5</a> the rules governing the interactions
+    between the set theoretic operations are collected.
+  </p>
+<p id="p-824">
+    We are now in a position somewhat similar to when we jumped from
+    proving logical assertions with truth tables to doing two-column
+    proofs. We have two different approaches for showing that two
+    sets are equal. We can do a so-called “element chasing” proof
+    (to show \(A=B\), assume \(x \in A\) and prove \(x \in B\) and then vice versa).
+    Or, we can construct a proof using the basic set equalities given
+    in <a knowl="./knowl/tab_set_equiv.html" knowl-id="xref-tab_set_equiv" alt="Table 4.3.5 " title="Table 4.3.5 ">Table 4.3.5</a>. Often the latter can take the form
+    of a two-column proof.
+  </p>
+<figure class="figure-like" id="tab_set_equiv"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.35\textwidth} \Intersection 
+        \version</td>
+<td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.35\textwidth} \Union 
+        \version</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr><td class="l m b0 r0 l0 t0 lines">Commutative</td></tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">laws</td>
+<td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.35\textwidth} \\(A \cap B = B \cap A\)</td>
+<td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.35\textwidth} \\(A \cup B = B \cup A\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr><td class="l m b0 r0 l0 t0 lines">Associative</td></tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">laws</td>
+<td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.35\textwidth} \\(A \cap (B \cap C)\)  
+        \\(= (A \cap B) \cap C\)</td>
+<td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.35\textwidth} \\(A \cup (B \cup C)\)  
+        \\(= (A \cup B) \cup C\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr><td class="l m b0 r0 l0 t0 lines">Distributive</td></tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">laws</td>
+<td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.35\textwidth} 
+        \\(A \cap (B \cup C) =\)   
+        \\((A \cap B) \cup (A \cap C)\)</td>
+<td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.35\textwidth} \\(A \cup (B \cap C) =\)   
+        \\((A \cup B) \cap (A \cup C)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr><td class="l m b0 r0 l0 t0 lines">DeMorgan's</td></tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">laws</td>
+<td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.35\textwidth} \\(\overline{A \cap B}\)  
+        \\(= \; \overline{A} \cup \overline{B}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.35\textwidth} \\(\overline{A \cup B}\) 
+        \\(= \; \overline{A} \cap \overline{B}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr><td class="l m b0 r0 l0 t0 lines">Double</td></tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">complement</td>
+<td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.35\textwidth} \\(\overline{\overline{A}} \; = \; A\)</td>
+<td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.35\textwidth} \same</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Complementarity</td>
+<td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.35\textwidth} \\(A \cap \overline{A} \; = \; \emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.35\textwidth} \\(A \cup \overline{A} \; = \; U\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr><td class="l m b0 r0 l0 t0 lines">Identity</td></tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">laws</td>
+<td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.35\textwidth} \\(A \cap U = A\)</td>
+<td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.35\textwidth} \\(A \cup \emptyset = A\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Domination</td>
+<td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.35\textwidth}  \\(A \cap \emptyset = \emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.35\textwidth} \\(A \cup U = U\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Idempotence</td>
+<td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.35\textwidth} \\(A \cap A = A\)</td>
+<td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.35\textwidth} \\(A \cup A = A\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Absorption</td>
+<td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.35\textwidth} \\(A \cap (A \cup B) = A\)</td>
+<td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.35\textwidth} \\(A \cup (A \cap B) = A\)</td>
+</tr>
+</table>
+<figcaption><span class="heading">Table</span><span class="codenumber">4.3.5</span>Basic set theoretic equalities.</figcaption></figure><p id="p-825">
+    Before we proceed much further in our study of set theory it would be a
+    good idea to give you an example. We're going to prove the same assertion
+    in two different ways — once via element chasing and once using the
+    basic set theoretic equalities from <a knowl="./knowl/tab_set_equiv.html" knowl-id="xref-tab_set_equiv" alt="Table 4.3.5 " title="Table 4.3.5 ">Table 4.3.5</a>.
+  </p>
+<p id="p-826">
+    The statement we'll prove is \(A \cup B \; = \; A \cup (\overline{A} \cap B)\).
+  </p>
+<p id="p-827">
+    First, by chasing elements:
+  </p>
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-23" id="proof-23"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-23" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-828">
+      Suppose \(x\) is an element of \(A \cup B\). By the definition of union we
+      know that
+      \begin{equation*}
+        x \in A \lor x \in B.
+      \end{equation*}
+    </p>
+<p id="p-829">
+      The conjunctive identity law and the
+      fact that \(x \in A \lor x \notin A\) is a tautology gives us an equivalent
+      logical statement:
+      \begin{equation*}
+        (x \in A \lor x \notin A) \land (x \in A \lor x \in B).
+      \end{equation*}
+    </p>
+<p id="p-830">
+      Finally, this last statement is equivalent to
+      \begin{equation*}
+        x \in A \lor (x \notin A \land x \in B)
+      \end{equation*}
+      which is the definition of \(x \in A \cup (\overline{A} \cap B)\).
+    </p>
+<p id="p-831">
+      On the other hand, if we assume that \(x \in A \cup (\overline{A} \cap B)\), it follows that
+      \begin{equation*}
+        x \in A \lor (x \notin A \land x \in B).
+      \end{equation*}
+    </p>
+<p id="p-832">
+      Applying the distributive law, disjunctive complementarity and the identity law,
+      in sequence we obtain
+      \begin{gather*}
+x \in A \lor (x \notin A \land x \in B)\\
+\cong (x \in A \lor x \notin A) \land (x \in A \lor x \in B)\\
+\cong t \land (x \in A \lor x \in B)\\
+\cong x \in A \lor x \in B
+\end{gather*}
+    </p>
+<p id="p-833">
+      The last statement in this chain of logical equivalences provides the definition of \(x \in A \cup B\).
+    </p></article></div>
+<p id="p-834">
+    A two-column proof of the same statement looks like this:
+  </p>
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-24" id="proof-24"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-24" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(A \cup B\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">Given</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(=\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(U \cap (A \cup B)\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">Identity law</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(=\)</td>
+<td class="l m b0 r0 l0 t0 lines">\((A \cup \overline{A}) \cap (A \cup B)\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">Complementarity</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(=\)</td>
+<td class="l m b0 r0 l0 t0 lines">\((A \cup (\overline{A} \cap B)\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">Distributive law</td>
+</tr>
+</table></article></div>
+<p id="p-835">
+    There are some notions within Set theory that don't have any clear
+    parallels in Logic. One of these is essentially a generalization
+    of the concept of “complements.” If you think of the set \(\overline{A}\)
+    as being the difference between the universal set \(U\) and the set \(A\)
+    you are on the right track. The
+    <!--Style me with CSS--><em>difference</em> between two sets is written
+    \(A \setminus B\) (sadly, sometimes this is denoted using the ordinary
+    subtraction symbol \(A-B\)) and is defined by
+    \begin{equation*}
+      A \setminus B = A \cap \overline{B}.
+    \end{equation*}
+  </p>
+<p id="p-836">
+    The difference, \(A \setminus B\), consists of those elements of \(A\) that aren't in \(B\). In some developments of Set theory, the difference of sets is
+    defined first and then complementation is defined by \(\overline{A} = U \setminus A\).
+  </p>
+<p id="p-837">
+    The difference of sets (like the difference of real numbers) is not a
+    commutative operation. In other words \(A \setminus B \neq B \setminus A\)
+    (in general). It is possible to define an operation that acts somewhat
+    like the difference, but that <!--Style me with CSS--><em>is</em> commutative. The
+    <!--Style me with CSS--><em>symmetric difference</em>
+    of two sets is denoted using a
+    triangle (really a capital Greek delta)
+    \begin{equation*}
+      A \triangle B = (A \setminus B) \cup (B\setminus A).
+    \end{equation*}
+  </p>
+<article class="exercise-like" id="exercise-39"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">4.3.6</span>
+</h5>
+<p id="p-838">
+        Show that \(A \triangle B = (A \cup B) \setminus (A \cap B)\).
+      </p></article><p id="p-839">
+    Come on! You read right past that exercise without even pausing!
+  </p>
+<p id="p-840">
+    What? You say you <!--Style me with CSS--><em>did</em> try it and it was too hard?
+  </p>
+<p id="p-841">
+    Okay, just for you (and this time only) I've prepared an aid to
+    help you through…
+  </p>
+<p id="p-842">
+    On the next page is a two-column proof of the result you need to
+    prove, but the lines of the proof are all scrambled.
+    Make a copy and cut out all the pieces and then glue them together
+    into a valid proof.
+  </p>
+<p id="p-843">
+    So, no more excuses, just do it!
+  </p>
+<table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(= (A \cap \overline{B}) \cup (B \cap \overline{A})\)</td>
+<td class="l m b0 r0 l0 t0 lines">identity law</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(= (A \cup B) \cap \overline{(A \cap B)}\)</td>
+<td class="l m b0 r0 l0 t0 lines">def. of relative difference</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\((A \cup B) \setminus (A \cap B)\)</td>
+<td class="l m b0 r0 l0 t0 lines">Given</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(= ((A \cap \overline{A}) \cup (A \cap \overline{B})) \cup ((B \cap \overline{A}) \cup (B \cap \overline{B}))\)</td>
+<td class="l m b0 r0 l0 t0 lines">distributive law</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(= (A \setminus B) \cup (B \setminus A)\)</td>
+<td class="l m b0 r0 l0 t0 lines">def. of relative difference</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(= (A \cap \overline{(A \cap B)}) \cup (B \cap \overline{(A \cap B)})\)</td>
+<td class="l m b0 r0 l0 t0 lines">distributive law</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(= A \triangle B\)</td>
+<td class="l m b0 r0 l0 t0 lines">def. of symmetric difference</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(= (A \cap (\overline{A} \cup \overline{B}) \cup (B \cap (\overline{A} \cup \overline{B}))\)</td>
+<td class="l m b0 r0 l0 t0 lines">DeMorgan's law</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(= (\emptyset \cup (A \cap \overline{B})) \cup ((B \cap \overline{A}) \cup \emptyset)\)</td>
+<td class="l m b0 r0 l0 t0 lines">complementarity</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table>
+<section class="exercises" id="exercises-23"><header title="Exercises 4.3.1 Exercises"><h1 class="heading hide-type" alt="Exercises 4.3.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">4.3.1</span><span class="title">Exercises</span>
+</h1></header><ol id="ol-47" style="list-style-type: lower-alpha;">
+<li id="li-311">
+<p id="p-844">
+    Let \(A = \{1, 2, \{1, 2\}, b\}\) and let \(B=\{a, b, \{1, 2\} \}\).
+    Find the following:
+
+    </p>
+<ol id="ol-48" style="list-style-type: lower-roman;">
+<li id="li-312"><p id="p-845">
+          \(A \cap B\)   \hint{ \(\{ b,  \{1, 2\} \}\) }
+        </p></li>
+<li id="li-313"><p id="p-846">
+          \(A \cup B\) \hint{ \(\{1, 2, a, b, \{1, 2\} \}\) }
+        </p></li>
+<li id="li-314"><p id="p-847">
+          \(A \setminus B\) \hint{  \(\{ 1, 2 \}\) }
+        </p></li>
+<li id="li-315"><p id="p-848">
+          \(B \setminus A\) \hint{ \(\{ a \}\) }
+        </p></li>
+<li id="li-316"><p id="p-849">
+          \(A \triangle B\) \hint{ \(\{ 1, 2, a \}\) }
+        </p></li>
+</ol>
+<p>
+    </p>
+</li>
+<li id="li-317">
+<p id="p-850">
+    In a standard deck of playing cards one can distinguish sets
+    based on face-value and/or suit.  Let \(A, 2, \ldots 9, 10, J, Q\) and \(K\)
+    represent the sets of cards having the various face-values.  Also, let
+    \(\heartsuit\), \(\spadesuit\), \(\clubsuit\) and \(\diamondsuit\) be the 
+    sets of cards having the possible suits.  Find the following
+
+    </p>
+<ol id="ol-49" style="list-style-type: lower-roman;">
+<li id="li-318"><p id="p-851">
+          \(A \cap \heartsuit\) \hint{This is just the ace of hearts.}
+        </p></li>
+<li id="li-319"><p id="p-852">
+          \(A \cup \heartsuit\) \hint{All of the hearts and the other three aces}
+        </p></li>
+<li id="li-320"><p id="p-853">
+          \(J \cap (\spadesuit \cup \heartsuit)\) \hint{ These two cards are known as the one-eyed jacks.}
+        </p></li>
+<li id="li-321"><p id="p-854">
+          \(K \cap \heartsuit\) \hint{The king of hearts, a.k.a. the suicide king.}
+        </p></li>
+<li id="li-322"><p id="p-855">
+          \(A \cap K\) \hint{\(\emptyset\) }
+        </p></li>
+<li id="li-323"><p id="p-856">
+          \(A \cup K\) \hint{Eight cards: all four kings and all four aces.}
+        </p></li>
+</ol>
+<p>
+    </p>
+</li>
+<li id="li-324"><p id="p-857">
+        The following is a screenshot from the computational geometry program OpenSCAD (very hand for making models for 3-d printing…)  In computational geometry we use the basice set operations together
+        with a few other types of transformations to create interesting models using simple components.  Across the top of the image below we see 3 sets of points in \(\Reals^3\), a ball, a sort of 3-dimensional plus sign, and a disk.  Let's call the ball \(A\), the plus sign \(B\) and the disk \(C\).   The nine shapes shown below them are made from \(A\), \(B\) and \(C\) using union, intersection and set difference.  Identify them!
+        <img width="37%" src="images/set_ops.png" alt="">
+      </p></li>
+<li id="li-325">
+<p id="p-858">
+    Do element-chasing proofs (show that an element is in the left-hand side if and only if it is in the right-hand side) to prove each of the following set equalities.
+
+    </p>
+<ol id="ol-50" style="list-style-type: lower-roman;">
+<li id="li-326"><p id="p-859">
+          \(\overline{A\cap B} \; = \; \overline{A}\cup\overline{B}\)
+        </p></li>
+<li id="li-327"><p id="p-860">
+          \(A\cup B \; = \; A\cup(\overline{A}\cap B)\)
+        </p></li>
+<li id="li-328"><p id="p-861">
+          \(A\triangle B \; = \; (A\cup B)\setminus(A\cap B)\)
+        </p></li>
+<li id="li-329"><p id="p-862">
+          \((A\cup B)\setminus C \; = \; (A\setminus C)\cup(B\setminus C)\)
+        </p></li>
+</ol>
+<p>
+    </p>\begin{gather*}
+x \in \overline{A\cap B}\\
+\iff \; {\lnot}(x \in A\cap B)\\
+\iff \; {\lnot}(x \in A \; \land \; x \in B)\\
+\iff \; {\lnot}(x \in A) \; \lor \; {\lnot}(x \in B)\\
+\iff \; x \in \overline{A}  \; \lor \; x \in \overline{B}\\
+\iff \; x \in \overline{A} \cup \overline{B}
+\end{gather*}</li>
+<li id="li-330"><p id="p-863">
+        For each positive integer \(n\), we'll define an interval \(I_n\)
+        by
+        \begin{equation*}
+          I_n = [-n, 1/n).
+        \end{equation*}
+        Find the union and intersection of all the intervals in this infinite family.
+        \begin{equation*}
+          \bigcup_{n \in \Naturals} I_n  =
+        \end{equation*}
+        \begin{equation*}
+          \bigcap_{n \in \Naturals} I_n  =
+        \end{equation*}
+        \hint{To better understand what is going on, first figure out what the first three or four
+        intervals actually are.
+        \begin{equation*}
+          I_1 \; = \; \underline{}
+        \end{equation*}
+        \begin{equation*}
+          I_2 \; = \; \underline{}
+        \end{equation*}
+        \begin{equation*}
+          I_3 \; = \; \underline{}
+        \end{equation*}
+        \begin{equation*}
+          I_4 \; = \; \underline{}
+        \end{equation*}
+        Any negative real number \(r\) will be in the intersection only if  \(r \geq -1\).  Certainly \(0\) is in
+        the intersection since it is in each of the intervals.  Are there any positive numbers in the intersection?
+
+        In order to be in the union a real number just needs to be in <!--Style me with CSS--><em>one</em> of the intervals.
+        }
+      </p></li>
+<li id="li-331"><p id="p-864">
+        There is a set \(X\) such that, for all sets \(A\), we have 
+        \(X \triangle A = A\).  What is \(X\)?
+      </p></li>
+<li id="li-332"><p id="p-865">
+        There is a set \(Y\) such that, for all sets \(A\), we have 
+        \(Y \triangle A = \overline{A}\).  What is \(Y\)?
+
+        \hint{One of the answers to the last two questions is \(\emptyset\) and the other is \(U\).  Decide
+        which is which.}
+      </p></li>
+<li id="li-333"><p id="p-866">
+        In proving a set-theoretic identity, we are basically showing that
+        two sets are equal.  One reasonable way to proceed is to show that
+        each is contained in the other.  Prove that 
+        \(A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\) by showing that 
+        \(A \cap (B \cup C) \subseteq (A \cap B) \cup (A \cap C)\) and 
+        \((A \cap B) \cup (A \cap C) \subseteq A \cap (B \cup C)\).
+      </p></li>
+<li id="li-334"><p id="p-867">
+        Prove that 
+        \(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\) by showing that 
+        \(A \cup (B \cap C) \subseteq (A \cup B) \cap (A \cup C)\) and 
+        \((A \cup B) \cap (A \cup C) \subseteq A \cup (B \cap C)\).
+
+        \hint{This exercise, as well as the previous one, is really just about converting set-theoretic
+        statements into their logical equivalents, applying some rules of logic that we've already verified,
+        and then returning to a set-theoretic version of things.}
+      </p></li>
+<li id="li-335"><p id="p-868">
+        Prove the set-theoretic versions of DeMorgan's laws using the technique
+        discussed in the previous problems.
+      </p></li>
+<li id="li-336"><p id="p-869">
+      The previous technique (showing that \(A=B\) by arguing that
+      \(A \subseteq B \; \land \; B \subseteq A\)) will have an outline something like
+
+      <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-25" id="proof-25"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div><div id="hk-proof-25" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-870">
+          First we will show that \(A \subseteq B\).
+          Towards that end, suppose \(x \in A\).
+        </p>\(\vdots\)<p id="p-871">
+          Thus \(x \in B\).
+        </p>
+<p id="p-872">
+          Now, we will show that \(B \subseteq A\).
+          Suppose that \(x \in B\).
+        </p>\(\vdots\)<p id="p-873">
+          Thus \(x \in A\).
+        </p>
+<p id="p-874">
+          Therefore \(A \subseteq B \; \land \; B \subseteq A\) so we conclude that \(A=B\).
+        </p></article></div>
+
+      Formulate a proof that \(A \triangle B \; = \; (A \cup B) \setminus (A \cap B)\) that follows this outline.
+
+      \hint{The definition of \(A \triangle B\) is \((A\setminus B) \cup (B\setminus A)\).  The definition of 
+      \(X \setminus Y\) is \(X \cap \overline{Y}\).   Restating things in terms of \(\cap\) and \(\cup\) (and complementation) should help.  So your first few lines should be:
+      <blockquote>
+      Suppose \(x \in  A \triangle B\).  
+ 
+      Then, by definition, \(x \in (A\setminus B) \cup (B\setminus A)\).
+ 
+       So, \(x \in (A \cap \overline{B}) \cup (B \cap \overline{A})\).
+   
+      \(\vdots\)</blockquote>
+      }
+      </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

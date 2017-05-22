@@ -1,0 +1,17 @@
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ch_proof1">
+  <title>Proof techniques I <mdash /> Standard methods</title>
+  <introduction>
+    <p>
+      <em>Love is a snowmobile racing across the tundra and then suddenly it
+      flips over, pinning you underneath. At night, the <index><main>weasels, ice</main></index>
+      ice weasels come. <ndash />Matt Groening</em>
+    </p>
+  </introduction>
+  <xi:include  href="sec_direct.mbx" />
+  <xi:include  href="sec_more.mbx" />
+  <xi:include  href="sec_contra.mbx" />
+  <xi:include  href="sec_disproofs.mbx" />
+  <xi:include  href="sec_cases.mbx" />
+  <xi:include  href="sec_exist.mbx" />
+</chapter>

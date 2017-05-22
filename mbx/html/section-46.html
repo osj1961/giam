@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:41-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Monge's circle theorem</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="previous-button toolbar-item button" href="section-45.html">Previous</a><a class="up-button button toolbar-item" href="chapter-9.html">Up</a><a class="next-button button toolbar-item" href="backmatter-1.html">Next</a>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-45.html">Previous</a><a class="up-button button toolbar-item" href="chapter-9.html">Up</a><a class="next-button button toolbar-item" href="backmatter-1.html">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-36.html">Parity and Counting arguments</a></li>
+<li><a href="section-37.html">The pigeonhole principle</a></li>
+<li><a href="section-38.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-40.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-42.html">Dominance</a></li>
+<li><a href="section-43.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link active"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-44.html">Morley's miracle</a></li>
+<li><a href="section-45.html">Five steps into the void</a></li>
+<li><a href="section-46.html" class="active">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-46"><header title="Section 9.3 Monge's circle theorem"><h1 class="heading hide-type" alt="Section 9.3 Monge's circle theorem">
+<span class="type">Section</span><span class="codenumber">9.3</span><span class="title">Monge's circle theorem</span>
+</h1></header><p id="p-1721">
+    There's a nice sequence of matchstick puzzles that starts with
+    “Use nine non-overlapping matchsticks to form 4 triangles (all of
+    the same size.” It's not that hard, and after a while most people come
+    up with
+  </p>
+<img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt="">
+  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  <img width="100%" src="images/52637fedbd2fc34b78317ac81b2180e00d1e48e8.png" alt=""><p id="p-1722">
+    The kicker comes when you next ask them to “use six matches to form
+    4 (equal sized) triangles.” There's a picture of the solution to
+    this new puzzle at the back of this section. The answer involves
+    thinking three-dimensionally, so — with that hint — give it a try for a
+    while before looking in the back.
+  </p>
+<p id="p-1723">
+    Monge's circle theorem has
+    nothing to do with matchsticks, but it is a
+    <!--Style me with CSS--><em>sweet</em> example of a proof that works by moving to a higher dimension.
+    People often talk about “thinking outside of the box” when discussing
+    critical thinking, but the mathematical idea of moving to a higher dimension
+    is even more powerful. When we have a “box” in 2-dimensional space which
+    we then regard as sitting in a 3-dimensional space we find that the box
+    doesn't even <!--Style me with CSS--><em>have</em> an inside or an outside anymore! We get “outside
+    the box” by literally erasing the notion that there <!--Style me with CSS--><em>is</em> an inside
+    of the box!
+  </p>
+<p id="p-1724">
+    The setup for Monge's circle theorem consists of three random circles
+    drawn in the plane. Well, to be honest they can't be entirely random — we can't allow a circle that is entirely inside another circle. Because,
+    if a circle was entirely inside another, there would be no external tangents
+    and Monge's circle theorem is about external tangents.
+  </p>
+<p id="p-1725">
+    I could probably write a few hundred words to explain the concept of
+    external tangents to a pair of circles, or you could just have a look at
+    <span>&lt;&lt;Unresolved xref, reference "fig_monge1"; check spelling or use "provisional" attribute&gt;&gt;</span>. So, uhmm, just have a look…
+  </p>
+<figure class="figure-like" id="figure-38"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/74deff9eac9f5b7da63197a9d357535da645f955.png" alt="">—</figure><p id="p-1726">
+    Notice how the external tangents<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-63" id="fn-63"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-63" style="display: none;" class="tex2jax_ignore"><span class="footnote">The reason I keep saying “external tangents” is that there are also <!--Style me with CSS--><em>internal</em> tangents.</span></span> to two of the circles meet in a point? Unless the circles just happen to have exactly the same size
+    (And what are the odds of that?) this is going to be the case. Each pair of external tangents are going to meet in a point. There are three such pairs of external tangents and so they determine three points. I suppose, since these three
+    points are determined in a fairly complicated way from three randomly chosen
+    circles, that we would expect the three points to be pretty much random.
+    Monge's circle theorem says that that isn't so.
+  </p>
+<article class="theorem-like" id="theorem-41"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">9.3.1</span><span class="title">Monge's Circle Theorem</span>
+</h5>
+<p id="p-1727">
+        If three circles of different radii in the Euclidean plane are
+        chosen so that no circle lies in the interior of another, the
+        three pairs of external tangents to these circles meet in
+        points which are collinear.
+      </p></article><p id="p-1728">
+    In <span>&lt;&lt;Unresolved xref, reference "fig_monge2"; check spelling or use "provisional" attribute&gt;&gt;</span> we see a complete example of Monge's Circle theorem
+    in action. There are three random circles. There are three pairs of external
+    tangents. The three points determined by the intersection of the pairs of
+    external tangents lie on a line (shown dashed in the figure).
+  </p>
+<figure class="figure-like" id="figure-39"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/c26dbe1c132cd49151d97680803b6a78f9cc1bc3.png" alt=""></figure><p id="p-1729">
+    We won't even try to write-up a formal proof of the circle theorem.
+    Not that it can't be done — it's just that you can probably get the
+    point better via an informal discussion.
+  </p>
+<p id="p-1730">
+    The main idea is simply to move to 3-dimensional space. Imagine the
+    original flat plane containing our three random circles as being the
+    plane \(z=0\) in Euclidean 3-space. Replace the three circles by three
+    spheres of the same radius and having the same centers — clearly the
+    intersections of these spheres with the plane \(z=0\) will be our original
+    circles. While pairs of circles are encompassed by two lines (the external
+    tangents that we've been discussing so much), when we have a pair of spheres
+    in 3-space, they are encompassed by a cone which lies tangent to both
+    spheres<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-64" id="fn-64"><span class="footnote"><sup> 2 </sup></span></a></span><span id="hk-fn-64" style="display: none;" class="tex2jax_ignore"><span class="footnote">As before, when the spheres happen to have identical radii 
+    we get a degenerate case — the cone becomes a cylinder.</span></span>. Notice that
+    the cones that lie tangent to a pair of spheres intersect the plane
+    precisely in those infamous external tangents.
+  </p>
+<p id="p-1731">
+    Well, okay, we've moved to 3-d. We've replaced our circles with spheres
+    and our external tangents with tangent cones. The points of intersection
+    of the external tangents are now the tips of the cones. But, what good has this all done?
+    Is there any reason to believe that the tips of those cones lie in a line?
+  </p>
+<p id="p-1732">
+    Actually, yes! There is a plane that touches all three spheres tangentially.
+    Actually, there are two such planes, one that touches them all on their
+    upper surfaces and one that touches them all on their lower surfaces. Oh
+    damn! There are actually <!--Style me with CSS--><em>lots</em> of planes that are tangent to all three spheres
+    but only one that lies above the three of them. That plane intersects the
+    plane \(z=0\) in a line — nothing fancy there; any pair of non-parallel planes
+    will intersect in a line (and the only way the planes we are discussing
+    would be parallel is if all three spheres just happened to be the same size).
+    But that plane also lies tangent to the cones that envelope our spheres
+    and so that plane (as well as the plane \(z=0\)) contains the tips of the
+    cones!
+  </p>
+<figure class="figure-like" id="figure-40"><img width="100%" src="images/pencil_tetrahedron.png" alt=""></figure><section class="exercises" id="exercises-45"><header title="Exercises 9.3.1 Exercises"><h1 class="heading hide-type" alt="Exercises 9.3.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">9.3.1</span><span class="title">Exercises</span>
+</h1></header><ol style="list-style-type: lower-alpha;"><li id="li-510"><p id="p-1733">
+          There is a scenario where the proof we have sketched for
+          Monge's circle theorem doesn't really work.  Can you envision it?
+          Hint: consider two relatively large spheres and one that is quite
+          small.
+        </p></li></ol></section><p id="p-1734">
+    \phantomsection
+  </p>
+<p id="p-1735">
+    \phantomsection
+  </p></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:43-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<article class="list"><h5 class="heading">
+<span class="type">Item</span> <span class="codenumber">h</span>
+</h5>
+<p id="p-714">
+          Show that there are exactly \(15\) numbers \(x\) in the range \(1 \leq x \leq 100\) that can't be represented using fewer than \(4\) squares.
+
+
+
+          \hint{The following Sage code generates all the numbers up to \(100\) that <!--Style me with CSS--><em>can</em> be written
+          as the sum of at most \(3\) squares.
+
+          <tt class="code-inline tex2jax_ignore">var('x y z') 
+          a=[s2 for s in [1..10]]  
+          b=[s2 for s in [0..10]]  
+          s = []  
+          for x in a:  
+           for y in b:  
+            for z in b:  
+             s = union(s,[x+y+z])  
+          s = Set(s)  
+          H=Set([1..100]) 
+          show(H.intersection(s))  
+          </tt>
+          }
+        </p></article><span class="incontext"><a href="sec_cases.html#li-283">in-context</a></span>

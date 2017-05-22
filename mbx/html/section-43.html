@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:41-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The continuum hypothesis and the generalized continuum hypothesis</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="previous-button toolbar-item button" href="section-42.html">Previous</a><a class="up-button button toolbar-item" href="ch_card.html">Up</a><a class="next-button button toolbar-item" href="chapter-9.html">Next</a>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-42.html">Previous</a><a class="up-button button toolbar-item" href="ch_card.html">Up</a><a class="next-button button toolbar-item" href="chapter-9.html">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-36.html">Parity and Counting arguments</a></li>
+<li><a href="section-37.html">The pigeonhole principle</a></li>
+<li><a href="section-38.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link active"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-40.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-42.html">Dominance</a></li>
+<li><a href="section-43.html" class="active">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-44.html">Morley's miracle</a></li>
+<li><a href="section-45.html">Five steps into the void</a></li>
+<li><a href="section-46.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-43"><header title="Section 8.5 The continuum hypothesis and the generalized continuum hypothesis"><h1 class="heading hide-type" alt="Section 8.5 The continuum hypothesis and the generalized continuum hypothesis">
+<span class="type">Section</span><span class="codenumber">8.5</span><span class="title">The continuum hypothesis and the generalized continuum hypothesis</span>
+</h1></header><p id="p-1643">
+    The word “continuum” in the title of this section is used to indicate sets of
+    points that have a certain continuity property. For example, in a real interval
+    it is possible to move from one point to another, in a smooth fashion, without
+    ever leaving the interval. In a range of rational numbers this is not possible,
+    because there are irrational values in between every pair of rationals. There
+    are many sets that behave as a continuum — the intervals (a, b) or [a, b], the
+    entire real line \(\Reals\), the x-y plane \(\Reals \times \Reals\), a volume in 3-dimensional space (or
+    for that matter the entire space \(\Reals^3\)). It turns out that all of these sets have
+    the same size.
+  </p>
+<p id="p-1644">
+    The cardinality of the continuum, denoted <!--Style me with CSS--><em>c</em>, is the cardinality of all of the
+    sets above.
+  </p>
+<p id="p-1645">
+    In the previous section we mentioned the continuum hypothesis and how
+    angry Cantor became when someone (König) tried to prove it
+    was false. In this section we'll delve a little deeper into what the
+    continuum hypothesis says and even take a look at CH's big brother, GCH.
+    Before doing so, it seems like a good idea to look into the equivalences
+    we've asserted about all those sets above which (if you trust us) have the
+    cardinality <!--Style me with CSS--><em>c</em>.
+  </p>
+<p id="p-1646">
+    We've already seen that an interval is equivalent to the entire
+    real line but the notion that the entire infinite Cartesian plane has no more
+    points in it than an interval one inch long defies our intuition. Our conception
+    of dimensionality leads us to think that things of higher dimension must be
+    larger than those of lower dimension. This preconception is false as we can see
+    by demonstrating that a \(1 \times 1\) square can be put in one-to-one correspondence
+    with the unit interval.
+    Let \(S = \{ (x, y) \suchthat 0 \lt  x \lt  1 \land  0 \lt  y \lt  1 \}\) and let \(I\) be
+    the open unit interval \((0, 1)\). We can use the Cantor-Bernstein-Schroeder
+    theorem to show that \(S\) and \(I\) are equinumerous — we just need to find
+    injections from \(I\) to \(S\) and vice versa. Given an element \(r\) in \(I\) we
+    can map it injectively to the point \((r, r)\) in \(S\). To go in the other
+    direction, consider a point \((a, b)\) in \(S\)
+    and write out the decimal expansions of \(a\) and \(b\):
+    \begin{equation*}
+      a = 0.a_1a_2a_3a_4a_5\ldots
+    \end{equation*}
+    \begin{equation*}
+      b = 0.b_1b_2b_3b_4b_5\ldots
+    \end{equation*}
+    as usual, if there are two decimal expansions for \(a\) and/or \(b\) we
+    will make a consistent choice — say the infinite one.
+  </p>
+<p id="p-1647">
+    From these decimal expansions, we can create the decimal expansion of
+    a number in \(I\) by interleaving the digits of \(a\) and \(b\). Let
+    \begin{equation*}
+      s = 0.a_1b_1a_2b_2a_3b_3 \ldots
+    \end{equation*}
+    be the image of \((a, b)\). If two different points get mapped to the same
+    value \(s\) then both points have \(x\) and \(y\) coordinates that agree in
+    every position of
+    their decimal expansion (so they must really be equal).
+    It is a little bit harder to create a bijective function from \(S\) to \(I\)
+    (and thus
+    to show the equivalence directly, without appealing to C-B-S). The problem
+    is that, once again, we need to deal with the non-uniqueness of decimal
+    representations of real numbers. If we make the choice that, whenever there
+    is a choice to be made, we will use the non-terminating decimal expansions
+    for our real numbers there will be elements of \(I\) not in the image of the map
+    determined by interleaving digits (for example \(0.15401050902060503\) is the
+    interleaving of the digits after the decimal point in
+    \(\pi = 3.141592653\ldots\) and \(1/2 = 0.5\), this is clearly an element of
+    \(I\) but it can't be in the image of our
+    map since \(1/2\) should be represented by \(0.4\overline{9}\) according to
+    our convention. If
+    we try other conventions for dealing with the non-uniqueness it is possible
+    to find other examples that show simple interleaving will not be surjective.
+    A slightly more subtle approach is required.
+  </p>
+<p id="p-1648">
+    Presume that all decimal expansions are non-terminating (as we can,
+    WLOG) and use the following approach:
+    Write out the decimal expansion of the coordinates of a point \((a, b)\) in
+    \(S\). Form the digits into blocks with as many 0's as possible followed by a
+    non-zero digit. Finally, interleave these blocks.
+  </p>
+<p id="p-1649">
+    For example if
+    \begin{equation*}
+      a = 0.124520047019902 \ldots
+    \end{equation*}
+    and
+    \begin{equation*}
+      b = 0.004015648000031 \ldots
+    \end{equation*}
+    we would separate the digits into blocks as follows:
+    \begin{equation*}
+      a = 0.1  2  4  5 2  004 7 01 9  9  02 \ldots
+    \end{equation*}
+    and
+    \begin{equation*}
+      b = 0.004  01   5   6   4   8   00003   1 \ldots
+    \end{equation*}
+    and the number formed by interleaving them would be
+    \begin{equation*}
+      s = 0.10042014556240048 \ldots
+    \end{equation*}
+  </p>
+<p id="p-1650">
+    We've shown that the unit square, \(S\), and the unit interval, \(I\), have the
+    same cardinality. These arguments can be extended to show that all of \(R \times R\) also has this cardinality (<!--Style me with CSS--><em>c</em>).
+  </p>
+<p id="p-1651">
+    So now let's turn to the continuum hypothesis.
+  </p>
+<p id="p-1652">
+    We mentioned earlier in this chapter that the cardinality of \(\Naturals\) is
+    denoted \(\aleph_0\). The fact that that capital letter aleph is wearing a
+    subscript ought to make you wonder what other aleph-sub-something-or-others
+    there are out there. What is \(\aleph_1\)? What about \(\aleph_2\)? Cantor
+    presumed that there was a sequence of cardinal numbers (which is itself, of course, infinite) that give all of the possible infinities. The smallest infinite set that anyone seems to be able to imagine is \(\Naturals\), so Cantor called
+    that cardinality \(\aleph_0\). What ever the “next” infinite cardinal is, is
+    called \(\aleph_1\). It's conceivable that there actually isn't a “next” infinite cardinal after \(\aleph_0\) — it might be the case that the collection of
+    infinite cardinal numbers isn't well-ordered! In any case, if there <!--Style me with CSS--><em>is</em> a
+    “next” infinite cardinal, what is it? Cantor's theorem shows that there is
+    a way to build <!--Style me with CSS--><em>some</em> infinite cardinal bigger than \(\aleph_0\) — just
+    apply the power set construction. The continuum hypothesis just says that this
+    bigger cardinality that we get by applying the power set construction <!--Style me with CSS--><em>is</em> that “next” cardinality we've been talking about.
+  </p>
+<p id="p-1653">
+    To re-iterate, we've shown that the power set of \(\Naturals\) is equivalent
+    to the interval \((0,1)\) which is one of the sets whose cardinality is <!--Style me with CSS--><em>c</em>.
+    So the continuum hypothesis, the thing that got Georg Cantor so very heated up,
+    comes down to asserting that
+    \begin{equation*}
+      \aleph_1 = \mathbf{ c}.
+    \end{equation*}
+  </p>
+<p id="p-1654">
+    There really should be a big question mark over that. A <!--Style me with CSS--><em>really</em> big
+    question mark. It turns out that the continuum hypothesis lives in a really
+    weird world… To this day, no one has the least notion of whether it
+    is true or false. But wait! That's not all! The real weirdness is that it
+    would appear to be <!--Style me with CSS--><em>impossible</em> to decide. Well, that's not <!--Style me with CSS--><em>so</em> bad — after all, we talked about undecidable sentences way back in the beginning
+    of Chapter 2. Okay, so here's the ultimate weirdness. It has been <!--Style me with CSS--><em>proved</em> that one can't prove the continuum hypothesis. It has also been <!--Style me with CSS--><em>proved</em> that one can't disprove the continuum hypothesis.
+  </p>
+<p id="p-1655">
+    Having reached this stage in a book about proving things I hope that the
+    last two sentences in the previous paragraph caused some thought along the
+    lines of “well, ok, with respect to what axioms?” to run through your
+    head. So, if you did think something along those lines pat yourself on the
+    back. And if you <!--Style me with CSS--><em>didn't</em> then recognize that you need to start thinking
+    that way — things are proved or disproved only in a relative way, it depends
+    what axioms you allow yourself to work with. The usual axioms for mathematics
+    are called ZFC; the Zermelo-Frankel set theory axioms together with the
+    axiom of choice. The “ultimate weirdness” we've been describing about
+    the continuum hypothesis is a result due to a gentleman named  Paul Cohen that says “CH is independent of ZFC.” More pedantically — it is impossible to either prove or disprove the continuum hypothesis within
+    the framework of the ZFC axiom system.
+  </p>
+<p id="p-1656">
+    It would be really nice to end this chapter by mentioning Paul Cohen, but there
+    is one last thing we'd like to accomplish — explain what GCH means. So
+    here goes.
+  </p>
+<p id="p-1657">
+    The generalized continuum hypothesis says that the power set construction
+    is basically the only way to get from one infinite cardinality to the next.
+    In other words GCH says that not only does \({\mathcal P}(\Naturals)\) have the
+    cardinality known as \(\aleph_1\), but every other aleph number can be realized
+    by applying the power set construction a bunch of times. Some people would
+    express this symbolically by writing
+    \begin{equation*}
+      \forall n \in \Naturals,  \aleph_{n+1} = 2^{\aleph_n}.
+    \end{equation*}
+  </p>
+<p id="p-1658">
+    I'd really rather not bring this chapter to a close with that monstrosity
+    so instead I think I'll just say
+  </p>
+
+  Paul Cohen.
+
+  <p id="p-1659">
+    Hah! I did it! I ended the chapter by sayi… Hunh? Oh.
+  </p>
+<p id="p-1660">
+    Paul Cohen.
+  </p></section></div></main>
+</div>
+</body>
+</html>

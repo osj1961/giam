@@ -1,0 +1,344 @@
+
+<section xml:id="sec_basic_set_notions">
+  <title>Basic notions of set theory</title>
+  <p>
+    In modern mathematics there is an area called <index><main>Category theory</main></index>
+    Category theory<fn>The classic text by Saunders Mac Lane<nbsp /><xref ref="macl" /> 
+    is still considered one of the best introductions to Category theory.</fn>
+    which studies the
+    relationships between different areas of mathematics. More precisely,
+    the founders of category theory noticed that essentially the same theorems
+    and proofs could be found in many different mathematical fields <mdash /> with
+    only the names of the structures involved changed. In this sort of
+    situation one can make what is known as a <em>categorical</em> argument
+    in which one proves the desired result in the abstract, without reference
+    to the details of any particular field. In effect this allows one
+    to prove many theorems at once <mdash /> all you need to convert an abstract
+    categorical proof into a concrete one relevant to a particular area
+    is a sort of key or lexicon to provide the correct names for things.
+    Now, category theory probably shouldn't really be studied until you
+    have a background that includes enough different fields that you can
+    make sense of their categorical correspondences. Also, there are
+    a good many mathematicians who deride category theory as
+    <q>abstract nonsense.</q> But, as someone interested in developing a facility
+    with proofs, you should be on the lookout for categorical correspondences.
+    If you ever hear yourself utter something like <q>well, the proof of
+    <em>that</em> goes just like the proof of the
+    (insert weird technical-sounding name here) theorem</q> you are
+    probably noticing a categorical correspondence.
+  </p>
+
+  <p>
+    Okay, so category theory won't be of much
+    use to you until much later in your mathematical career (if at all), and
+    one could argue that it doesn't really save that much effort. Why not just do two or three different
+    proofs instead of learning a whole new field so we can combine
+    them into one? Nevertheless, category theory is being
+    mentioned here at the beginning of the chapter on sets. Why?
+  </p>
+
+  <p>
+    We are about to see our first example of a categorical correspondence.
+    Logic and Set theory are different aspects of the same thing. To
+    describe a set people often quote
+    <index><main>G&#xf6;del, Kurt</main></index> Kurt G&#xf6;del <mdash /> <q>A set is a Many that allows itself to be thought of as a One.</q> (Note
+    how the attempt at defining what is really an elemental, undefinable
+    concept ends up sounding rather mystical.) A more practical approach is
+    to think of a set as the collection of things that make some open sentence
+    <em>true</em>.<fn>This may sound less metaphysical,
+    but this statement is also faulty because it defines <q>set</q> in terms of <q>collection</q> <mdash /> which will of course be defined elsewhere as <q>the sort of things of which sets are one example.</q></fn>
+  </p>
+
+  <p>
+    Recall that in Logic the atomic concepts were <q>true</q>, <q>false</q>,
+    <q>sentence</q> and <q>statement.</q> In Set theory, they are <q>set</q>,
+    <q>element</q> and <q>membership.</q> These concepts (more or less) correspond to
+    one another. In most books, a set is denoted either using the letter <m>M</m>
+    (which stands for the German word <q>menge</q>) or early alphabet capital roman
+    letters <mdash /> <m>A</m>, <m>B</m>, <m>C</m>, <em>et cetera</em>. Here, we will often emphasize the connection between
+    sets and open sentences in Logic by using a subscript notation. The set that
+    corresponds to the open sentence <m>P(x)</m> will be denoted <m>S_P</m>, we call
+    <m>S_P</m> the <index><main>truth set</main></index> <em>truth set</em> of<nbsp /><m>P(x)</m>.
+    <me>
+      S_P = \{ x \suchthat P(x) \}
+    </me>
+  </p>
+
+  <p>
+    On the other hand, when we have a set given in the absence of any open
+    sentence, we'll be happy to use the early alphabet, capital roman letters
+    convention <mdash /> or frankly, any other letters we feel like!
+    Whenever we have a set <m>A</m> given, it is easy to state a logical
+    open sentence that would correspond to it. The membership question: <m>M_A(x) =
+    \,</m> <q>Is <m>x</m> in the set <m>A</m>?</q> Or, more succinctly,
+    <m>M_A(x) = \,</m> <q><m>x \in A</m></q>. Thus the atomic concept <q>true</q> from Logic
+    corresponds to the answer <q>yes</q> to the membership question in Set theory
+    (and of course <q>false</q> corresponds to <q>no</q>).
+  </p>
+
+  <p>
+    There are many interesting foundational issues which we are going to
+    sidestep in our current development of Set theory. For instance,
+    recall that in Logic we always worked inside some
+    <index><main>universe of discourse</main></index><q>universe of discourse.</q>
+    As a consequence of the approach we are taking now, all of our set theoretic
+    work will be done within some unknown
+    <index><main>universal set</main></index><q>universal</q> set. Attempts at
+    specifying (<em>a priori</em>) a universal set for doing mathematics within
+    are doomed to failure. In the early days of the twentieth century
+    they attempted to at least get Set theory itself on a firm footing by
+    defining the universal set to be <q>the set of all sets</q> <mdash /> an innocuous
+    sounding idea that had funny consequences (we'll investigate this in
+    <xref ref="sec_russell">Section</xref>).
+  </p>
+
+  <p>
+    In Logic we had <q>sentences</q> and <q>statements,</q> the latter were
+    distinguished as having definite truth values. The corresponding
+    thing in Set theory is that sets have the property that we can always
+    tell whether a given object is or is not in them. If it ever becomes
+    necessary to talk about <q>sets</q> where we're not really sure what's in
+    them we'll use the term <em>collection</em>.
+  </p>
+
+  <p>
+    You should think of a set as being an <em>unordered</em> collection of
+    things, thus <m>\{ \mbox{popover} , 1, \mbox{froggy}  \}</m> and
+    <m>\{ 1, \mbox{froggy} , \mbox{popover}  \}</m> are two ways to represent the
+    same set. Also, a set either contains, or doesn't contain, a given element.
+    It doesn't make sense to have an element in a set multiple times. By
+    convention, if an element is listed more than once when a set is
+    listed we ignore the repetitions. So, the sets
+    <m>\{ 1, 1\}</m> and <m>\{1\}</m> are really the same thing. If the notion
+    of a set containing multiple instances of its elements is needed there
+    is a concept known as a
+    <index><main>multiset</main></index><em>multiset</em> that is studied in Combinatorics.
+    In a multiset, each element is preceded by a so-called
+    <index><main>repetition number</main></index><em>repetition number</em>
+    which may be the special symbol <m>\infty</m> (indicating an unlimited number
+    of repetitions). The multiset concept is useful when studying puzzles like
+    <q>How many ways can the letters of MISSISSIPPI be rearranged?</q> because the
+    letters in MISSISSIPPI can be expressed as the multiset <m>\{1\cdot M, 4\cdot I,
+    2\cdot P, 4\cdot S \}</m>. With the exception of the following exercise, in the
+    remainder of this chapter we will only be concerned with sets, never multisets.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        (Not for the timid!) How many ways can the letters of MISSISSIPPI be arranged?
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    If a computer scientist were seeking a data structure to implement the
+    notion of <q>set,</q> he'd want a sorted list where repetitions of an entry
+    were somehow disallowed. We've already noted that a set should be thought of
+    as an unordered collection, and yet it's been asserted that a <em>sorted</em>
+    list would be the right vehicle for representing a set on a computer. Why?
+    One reason is that we'd like to be able to tell (quickly) whether two sets
+    are the same or not. If the elements have been presorted it's easier.
+  </p>
+
+  <p>
+    Consider the difficulty in deciding whether the following two sets are
+    equal.
+    <me>
+      S_1 = \{ \spadesuit, 1, e, \pi, \diamondsuit, A, \Omega, h, \oplus, \epsilon \}
+    </me>
+    <me>
+      S_2 = \{ A, 1, \epsilon, \pi, e, s, \oplus,  \spadesuit, \Omega, \diamondsuit \}
+    </me>
+  </p>
+
+  <p>
+    If instead we compare them after they've been sorted, the job is much easier.
+    <me>
+      S_1 = \{1, A, \diamondsuit, e, \epsilon, h, \Omega, \oplus, \pi, \spadesuit \}
+    </me>
+    <me>
+      S_2 = \{1, A, \diamondsuit, e, \epsilon, \Omega, \oplus, \pi, s, \spadesuit \}
+    </me>
+  </p>
+
+  <p>
+    This business about ordered versus unordered comes up fairly often so it's
+    worth investing a few moments to figure out how it works. If a collection
+    of things that is inherently unordered is handed to us we generally <em>put</em>
+    them in an order that is pleasing to us. Consider receiving five cards
+    from the dealer in a card game, or extracting seven letters from the bag
+    in a game of Scrabble. If, on the other hand, we receive
+    a collection where order
+    is important we certainly <em>may not</em> rearrange them. Imagine someone
+    receiving the telephone number of an attractive other but writing it down
+    with the digits sorted in increasing order!
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Consider a universe consisting of just the first 5 natural numbers
+        <m>U = \{ 1, 2, 3, 4, 5 \}</m>. How many different sets having 4 elements
+        are there in this universe? How many different ordered collections of 4
+        elements are there?
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    The last exercise suggests an interesting question. If you have
+    a universal set of some fixed (finite) size, how many different sets
+    are there? Obviously you can't have any more elements in a set than
+    are in your universe. What's the smallest possible size for a set?
+    Many people would answer 1 <mdash /> which isn't unreasonable! <mdash /> after all
+    a set is supposed to be a collection of things, and is it really possible
+    to have a <em>collection</em> with nothing in it? The standard answer is
+    0 however, mostly because it makes a certain counting formula work out
+    nicely. A set with one element is known as a
+    <index><main>singleton set</main></index><em>singleton set</em>
+    (note the use of the indefinite article). A set with no elements
+    is known as the
+    <index><main>empty set</main></index><em>empty set</em> (note the definite article). There
+    are as many singletons as there are elements in your universe. They
+    aren't the same though, for example <m>1 \neq \{ 1 \}</m>. There is
+    only one empty set and it is denoted <m>\emptyset</m> <mdash /> irrespective of the
+    universe we are working in.
+  </p>
+
+  <p>
+    Let's have a look at a small example. Suppose we have a universal set
+    with 3 elements, without loss of generality, <m>\{1, 2, 3\}</m>. It's
+    possible to construct a set, whose elements are all the possible sets
+    in this universe. This set is known as the
+    <index><main>power set</main></index><em>power set</em> of the universal
+    set. Indeed, we can construct the power set of <em>any</em> set <m>A</m> and
+    we denote it with the symbol <m>{\mathcal P}(A)</m>. Returning to our
+    example we have
+  </p>
+  <tabular>
+    <row>
+      <cell><m>{\mathcal P}(\{1, 2, 3 \}) =</m></cell>
+      <cell><m>\left\{   \right.</m></cell>
+      <cell><m>\emptyset,</m></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell></cell>
+      <cell><m>\{ 1 \},  \{ 2 \},  \{ 3 \},</m></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell></cell>
+      <cell><m>\{ 1, 2 \},  \{ 1, 3 \},  \{ 2, 3 \},</m></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell></cell>
+      <cell><m>\left.   \{ 1, 2, 3 \}  \right\}.</m></cell>
+    </row>
+  </tabular>
+  <exercise>
+    <statement>
+      <p>
+        Find the power sets <m>{\mathcal P}(\{1, 2 \})</m> and
+        <m>{\mathcal P}(\{1, 2, 3, 4 \})</m>.
+      </p>
+
+      <p>
+        Conjecture a formula for the number
+        of elements (these are, of course, <em>sets</em>) in
+        <m>{\mathcal P}(\{1, 2, \ldots n \})</m>.
+      </p>
+
+      <p>
+        Hint: If your conjectured formula is correct you should see
+        why these sets are named as they are.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    One last thing before we end this section. The size (a.k.a. <index><main>cardinality</main></index>cardinality) of a set is just the number of elements in it. We use the
+    very same symbol for cardinality as we do for the absolute value of a
+    numerical entity. There should really never be any confusion. If <m>A</m> is
+    a set then <m>|A|</m> means that we should count how many things are in <m>A</m>.
+    If <m>A</m> isn't a set then we are talking about the ordinary absolute value
+  </p>
+  <exercises>
+
+    <ol>
+    <li><p>
+        What is the power set of <m>\emptyset</m>?  Hint: if you got the last exercise
+        in the chapter you'd know that this power set has <m>2^0 = 1</m> element.
+
+        \hint{The power set of a set always includes the empty set as well as the whole set that we
+        are forming the power set of.  In this case they happen to coincide so <m>{\mathcal P}(\emptyset) = \{ \emptyset \}</m>.  Notice that <m>2^0 =1</m>.}
+      </p></li>
+
+    <li><p>
+        Try iterating the power set operator.  What is <m>{\mathcal P}({\mathcal P}(\emptyset))</m>?  What is <m>{\mathcal P}({\mathcal P}({\mathcal P}(\emptyset)))</m>?
+
+        \hint{I won't spoil you're fun, but as a check <m>{\mathcal P}({\mathcal P}(\emptyset))</m> should have <m>2</m> elements, and <m>{\mathcal P}({\mathcal P}({\mathcal P}(\emptyset)))</m> should have <m>4</m>.}
+      </p></li>
+
+    <li><p>
+    Determine the following cardinalities.
+
+    <ol>
+      <li><p>
+          <m>A = \{ 1, 2, \{3, 4, 5\}\}  |A| =</m>\rule{36pt}{1pt}
+        </p></li>
+
+      <li><p>
+          <m>B = \{ \{1, 2, 3, 4, 5\} \}  |B| =</m>\rule{36pt}{1pt}
+        </p></li>
+    </ol>
+    </p>
+
+    \hint{Three and one}</li>
+
+    <li><p>
+        What, in Logic, corresponds the notion <m>\emptyset</m> in Set theory?
+
+        \hint{A contradiction.}
+      </p></li>
+
+    <li><p>
+        What, in Set theory, corresponds to the notion <m>t</m> (a tautology) in Logic?
+
+        \hint{The universe of discourse.}
+      </p></li>
+
+    <li><p>
+        What is the truth set of the proposition <m>P(x) =</m> <q>3 divides <m>x</m> and 2 divides <m>x</m></q>?
+
+        \hint{ The set of all multiples of <m>6</m>.}
+      </p></li>
+
+    <li><p>
+        Find a logical open sentence such that <m>\{0, 1, 4, 9, \ldots \}</m> is
+        its truth set.
+
+        \hint{Many answers are possible.  Perhaps the easiest is <m>\exists y \in \Integers, x = y^2</m>.}
+      </p></li>
+
+    <li><p>
+        How many singleton sets are there in the power set of 
+        <m>\{a,b,c,d,e\}</m>?  <q>Doubleton</q> sets?
+
+        \hint{5, 10}
+      </p></li>
+
+    <li><p>
+        How many 8 element subsets are there in
+        <me>
+          {\mathcal P}(\{a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p\})?
+        </me>
+        \hint{ <m>\binom{16}{8} = 12870</m>}
+      </p></li>
+
+    <li><p>
+        How many singleton sets are there in the power set of 
+        <m>\{1,2,3, \ldots n\}</m>?
+
+        \hint{<m>n</m>}
+      </p></li>
+    </ol>
+  </exercises>
+</section>

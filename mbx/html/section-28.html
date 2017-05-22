@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-10T23:30:59-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Divisibility statements and other proofs using PMI</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></a></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="section-27.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-5.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-29.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-27.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-5.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-29.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link active"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html" class="active">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_ord_rel.html">Ordering relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-37.html">Parity and Counting arguments</a></li>
+<li><a href="section-38.html">The pigeonhole principle</a></li>
+<li><a href="section-39.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-41.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-43.html">Dominance</a></li>
+<li><a href="section-44.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-45.html">Morley's miracle</a></li>
+<li><a href="section-46.html">Five steps into the void</a></li>
+<li><a href="section-47.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-28"><header title="Section 5.3 Divisibility statements and other proofs using PMI"><h1 class="heading hide-type" alt="Section 5.3 Divisibility statements and other proofs using PMI">
+<span class="type">Section</span><span class="codenumber">5.3</span><span class="title">Divisibility statements and other proofs using PMI</span>
+</h1></header><p id="p-1037">
+    There is a very famous result known as
+    Fermat's Little Theorem.
+    This would probably be abbreviated FLT except for two things.
+    In science fiction FLT means “faster than light travel” and
+    there is <!--Style me with CSS--><em>another</em> theorem due to Fermat that goes by
+    the initials FLT: Fermat's Last Theorem.
+    Fermat's last theorem states that equations of the form \(a^n+b^n=c^n\),
+    where \(n\) is a positive natural number,
+    only have integer solutions that are trivial (like \(0^3+1^3=1^3\)) when \(n\)
+    is greater than 2. When \(n\) is 1, there are lots of integer solutions.
+    When \(n\) is 2, there are still plenty of integer solutions — these are the
+    so-called Pythagorean triples, for example 3,4 &amp; 5 or 5,12 &amp; 13.
+    It is somewhat unfair that this statement is known as Fermat's last <!--Style me with CSS--><em>theorem</em> since he didn't prove it (or at least we can't be sure that he proved it).
+    Five years after his death, Fermat's son published a translated<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-35" id="fn-35"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-35" style="display: none;" class="tex2jax_ignore"><span class="footnote">The
+    translation from Greek into Latin was done by Claude Bachet.</span></span> version of
+    Diophantus's <!--Style me with CSS--><em>Arithmetica</em> containing his father's notations. One of
+    those notations — near the place where Diophantus was discussing the
+    equation \(x^2+y^2=z^2\) and its solution in whole numbers — was the statement
+    of what is now known as Fermat's last theorem as well as the following claim:
+  </p>
+<blockquote>
+  Cuius rei demonstrationem mirabilem sane detexi hanc marginis exiguitas non caperet.
+  </blockquote>
+<p id="p-1038">
+    In English:
+  </p>
+<blockquote>
+  I have discovered a truly remarkable proof of this that the margin of this page is too small to contain.
+  </blockquote>
+<p id="p-1039">
+    Between 1670 and 1994 a lot of famous mathematicians worked on FLT but
+    never found the “demonstrationem mirabilem.” Finally in 1994, Andrew Wiles
+    of Princeton announced a proof of FLT, but in Wiles's own words, his is “a twentieth century proof” it can't be the proof Fermat had in mind.
+  </p>
+<p id="p-1040">
+    These days most people believe that Fermat was mistaken. Probably he thought
+    a proof technique that works for small values of \(n\) could be generalized.
+    It remains a tantalizing question, can a proof of FLT using only methods
+    available in the 17th century be accomplished?
+  </p>
+<p id="p-1041">
+    Part of the reason that so many people spent so much effort on FLT
+    over the centuries is that Fermat had an excellent record as regards
+    being correct about his theorems and proofs. The result known as Fermat's
+    little theorem is an example of a theorem and proof that Fermat got
+    right. It is probably known as his “little” theorem because its
+    statement is very short, but it is actually a fairly deep result.
+  </p>
+<article class="theorem-like" id="theorem-21"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">5.3.1</span><span class="title">Fermat's Little Theorem</span>
+</h5>
+<p id="p-1042">
+        For every prime number \(p\), and for all integers \(x\), the \(p\)-th
+        power of \(x\) and \(x\) itself are congruent mod \(p\). Symbolically:
+        \begin{equation*}
+          x^p \equiv x \pmod{p}
+        \end{equation*}
+      </p></article><p id="p-1043">
+    A slight restatement of Fermat's little theorem is that \(p\) is
+    always a divisor of \(x^p-x\) (assuming \(p\) is a prime and \(x\) is an integer).
+    Math professors enjoy using their knowledge of Fermat's little theorem
+    to cook up divisibility results that can be proved using mathematical
+    induction. For example, consider the following:
+    \begin{equation*}
+      \forall n \in \Naturals,  3 \divides (n^3 + 2n + 6).
+    \end{equation*}
+  </p>
+<p id="p-1044">
+    This is really just the \(p=3\) case of Fermat's little theorem
+    with a little camouflage added: \(n^3 + 2n + 6 = (n^3-n)+3(n+2)\).
+    But let's have a look at proving this statement using PMI.
+  </p>
+<article class="theorem-like" id="theorem-22"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">5.3.2</span>
+</h5>
+<p id="p-1045">
+        \(\forall n \in \Naturals,  3 \divides (n^3 + 2n + 6)\)
+      </p></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-34" id="proof-34"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-34" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1046">
+      (By mathematical induction)
+    </p>
+<p id="p-1047">
+      <!--Style me with CSS--><em>Basis:</em> Clearly \(3 \divides 6\).
+    </p>
+<p id="p-1048">
+      <!--Style me with CSS--><em>Inductive step:</em>
+    </p>
+<p id="p-1049">
+      (We need to show that \(3 \divides (k^3 + 2k + 6) \; \implies \; 3 \divides ((k+1)^3 + 2(k+1) + 6\).)
+    </p>
+<p id="p-1050">
+      Consider the quantity \((k+1)^3 + 2(k+1) + 6\).
+      \begin{gather*}
+(k+1)^3 + 2(k+1) + 6\\
+= (k^3 + 3k^2 + 3k + 1) + (2k + 2) + 6\\
+= (k^3 + 2k + 6) + 3k^2 + 3k + 3\\
+= (k^3 + 2k + 6) + 3(k^2 + k + 1).
+\end{gather*}
+    </p>
+<p id="p-1051">
+      By the inductive hypothesis, 3 is a divisor of \(k^3 + 2k + 6\) so there
+      is an integer \(m\) such that \(k^3 + 2k + 6 = 3m\).
+      Thus,
+      \begin{gather*}
+(k+1)^3 + 2(k+1) + 6\\
+= 3m + 3(k^2 + k + 1)\\
+= 3(m + k^2 + k + 1).
+\end{gather*}
+    </p>
+<p id="p-1052">
+      This equation shows that 3 is a divisor of \((k+1)^3 + 2(k+1) + 6\), which
+      is the desired conclusion.
+    </p></article></div>
+<article class="exercise-like" id="exercise-45"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">5.3.3</span>
+</h5>
+<p id="p-1053">
+        Devise an inductive proof of the statement, \(\forall n \in \Naturals, 5 \divides x^5+4x-10\).
+      </p></article><p id="p-1054">
+    There is one other subtle trick for devising statements to be
+    proved by PMI that you should know about. An example should
+    suffice to make it clear. Notice that \(7\) is equivalent to \(1 \pmod{6}\),
+    it follows that any power of \(7\) is also \(1 \pmod{6}\). So, if we subtract
+    \(1\) from some power of 7 we will have a number that is divisible by \(6\).
+  </p>
+<p id="p-1055">
+    The proof (by PMI) of a statement like this requires another subtle little
+    trick. Somewhere along the way in the proof you'll need the identity \(7=6+1\).
+  </p>
+<article class="theorem-like" id="theorem-23"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">5.3.4</span>
+</h5>\begin{equation*}
+        \forall n \in \Naturals, \; 6 \divides 7^n-1
+      \end{equation*}</article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-35" id="proof-35"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-35" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1056">
+      (By PMI)
+    </p>
+<p id="p-1057">
+      <!--Style me with CSS--><em>Basis:</em> Note that \(7^0-1\) is \(0\) and also that \(6 \divides 0\).
+    </p>
+<p id="p-1058">
+      <!--Style me with CSS--><em>Inductive step:</em>
+    </p>
+<p id="p-1059">
+      (We need to show that if \(6 \divides 7^k-1\) then \(6 \divides 7^{k+1}-1\).)
+    </p>
+<p id="p-1060">
+      Consider the quantity \(7^{k+1}-1\).
+      \begin{gather*}
+7^{k+1}-1 = 7 \cdot 7^k -1\\
+= (6 + 1) \cdot 7^k - 1\\
+= 6 \cdot 7^k + 1 \cdot 7^k - 1\\
+= 6(7^k) + (7^k - 1)
+\end{gather*}
+    </p>
+<p id="p-1061">
+      By the inductive hypothesis, \(6 \divides 7^k - 1\) so there is
+      an integer \(m\) such that \(7^k - 1 = 6m\). It follows that
+      \begin{equation*}
+        7^{k+1}-1 = 6(7^k) + 6m.
+      \end{equation*}
+    </p>
+<p id="p-1062">
+      So, clearly, \(6\) is a divisor of \(7^{k+1}-1\).
+    </p></article></div>
+<p id="p-1063">
+    Mathematical induction
+    can often be used to prove inequalities. There are quite a few examples
+    of families of statements where there is an inequality for every natural
+    number. Often such statements seem to be <!--Style me with CSS--><em>obviously</em> true and yet
+    devising a proof can be illusive. If such is the case, try using PMI.
+    One hint: it is fairly typical that the inductive step in a PMI proof
+    of an inequality will involve reasoning that isn't particularly sharp.
+    Just remember that if you have an inequality and you make the big
+    side even bigger, the resulting statement is certainly still true!
+  </p>
+<p id="p-1064">
+    Consider the sequences \(2^n\) and \(n!\).
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(2^n\)</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(n!\)</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+</table>
+<p id="p-1065">
+    As the table illustrates, for small values of \(n\), \(2^n &gt; n!\). But from \(n=4\)
+    onward the inequality is reversed.
+  </p>
+<article class="theorem-like" id="theorem-24"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">5.3.5</span>
+</h5>\begin{equation*}
+        \forall n \geq 4 \in \Naturals, 2^n \lt  n!
+      \end{equation*}</article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-36" id="proof-36"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-36" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1066">
+      (By mathematical induction)
+    </p>
+<p id="p-1067">
+      <!--Style me with CSS--><em>Basis:</em> When \(n=4\) we have \(2^4 \lt  4!\), which is certainly
+      true (\(16 \lt  24\)).
+    </p>
+<p id="p-1068">
+      <!--Style me with CSS--><em>Inductive step:</em> Suppose that \(k\) is a natural number
+      with \(k &gt; 4\), and that \(2^k \lt  k!\). Multiply the left hand side of this
+      inequality by \(2\) and the right hand side by \(k+1\)<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-36" id="fn-36"><span class="footnote"><sup> 2 </sup></span></a></span><span id="hk-fn-36" style="display: none;" class="tex2jax_ignore"><span class="footnote">It might be 
+      smoother to justify this step by first proving the lemma that 
+      \(\forall a,b,c,d \in {\mathbb R}^+, \; a\lt b \land c\lt d \implies ac \lt  bd\). </span></span>
+      to get
+      \begin{equation*}
+        2\cdot 2^{k} \lt  (k+1) \cdot k!.
+      \end{equation*}
+    </p>
+<p id="p-1069">
+      So
+      \begin{equation*}
+        2^{k+1} \lt  (k+1)!.
+      \end{equation*}
+    </p></article></div>
+<p id="p-1070">
+    The observant Calculus student will certainly be aware of the fact
+    that, asymptotically, exponential functions grow faster than polynomial
+    functions. That is, if you have a base \(b\) which is greater than 1, the
+    function \(b^x\) is eventually larger than any polynomial \(p(x)\). This
+    may seem a bit hard to believe if \(b=1.001\) and \(p(x) = 500x^{10}\). The
+    graph of \(y=1.001^x\) is practically indistinguishable from the line \(y=1\)
+    (at first), whereas the graph of \(y=500x^{10}\) has already reached the
+    astronomical value of five trillion (\(5,000,000,000,000\)) when \(x\) is just
+    \(10\). Nevertheless, the exponential will eventually outstrip the polynomial.
+    We can use the methods of this section to get started on proving the fact
+    mentioned above. Consider the two sequences \(n^2\) and \(2^n\).
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(n^2\)</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">9</td>
+<td class="l m b0 r0 l0 t0 lines">16</td>
+<td class="l m b0 r0 l0 t0 lines">25</td>
+<td class="l m b0 r0 l0 t0 lines">36</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(2^n\)</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines">16</td>
+<td class="l m b0 r0 l0 t0 lines">32</td>
+<td class="l m b0 r0 l0 t0 lines">64</td>
+</tr>
+</table>
+<p id="p-1071">
+    If we think of a “race” between the sequences \(n^2\) and \(2^n\), notice
+    that \(2^n\) starts out with the lead. The two sequences are tied when
+    \(n=2\). Briefly, \(n^2\) goes into the lead but they are tied again when
+    \(n=4\). After that it would appear that \(2^n\) recaptures the lead for good.
+    Of course we're making a rather broad presumption — is it really true
+    that \(n^2\) never catches up with \(2^n\) again? Well, if we're right
+    then the following theorem should be provable:
+  </p>
+<article class="theorem-like" id="theorem-25"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">5.3.6</span>
+</h5>
+<p id="p-1072">
+        For all natural numbers \(n\), if \(n \geq 4\) then \(n^2 \leq 2^n\).
+      </p></article><blockquote>
+<!--Style me with CSS--><em>Proof:</em><!--Style me with CSS--><em>Basis:</em> When \(n=4\) we have \(4^2 \leq 2^4\), which is 
+  true since both numbers are 16.
+
+   <!--Style me with CSS--><em>Inductive step:</em> (In the inductive step we assume
+  that \(k^2 \leq 2^k\) and then show that \((k+1)^2 \leq 2^{k+1}\).)
+
+  The inductive hypothesis tells us that
+  \begin{equation*}
+    k^2 \leq 2^k.
+  \end{equation*}
+  If we add \(2k+1\) to the left-hand side of this inequality
+  and \(2^k\) to the right-hand side we will produce the desired
+  inequality.  Thus our proof will follow provided that
+  we know that \(2k+1 \leq 2^k\).  Indeed, it is sufficient to show
+  that \(2k+1 \leq k^2\) since we already know (by the inductive
+  hypothesis) that \(k^2 \leq 2^k\).
+
+  So the result remains in doubt unless you can complete the 
+  exercise that follows\ldots
+
+      Q.E.D.???
+  </blockquote>
+<article class="exercise-like" id="exercise-46"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">5.3.7</span>
+</h5>
+<p id="p-1073">
+        Prove the lemma: For all \(n \in \Naturals\), if \(n \geq 4\) then
+        \(2n+1 \leq n^2\).
+      </p></article><section class="exercises" id="exercises-28"><header title="Exercises 5.3.1 Exercises"><h1 class="heading hide-type" alt="Exercises 5.3.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">5.3.1</span><span class="title">Exercises</span>
+</h1></header>
+    Give inductive proofs of the following
+
+    <ol id="ol-57" style="list-style-type: lower-alpha;">
+<li id="li-378"><p id="p-1074">
+          \(\forall x \in \Naturals, \; 3 \divides x^3-x\)
+        </p></li>
+<li id="li-379"><p id="p-1075">
+          \(\forall x \in \Naturals, \; 3 \divides x^3+5x\)
+        </p></li>
+<li id="li-380"><p id="p-1076">
+          \(\forall x \in \Naturals, \; 11 \divides x^{11}+10x\)
+        </p></li>
+<li id="li-381"><p id="p-1077">
+          \(\forall n \in \Naturals, \; 3 \divides 4^n-1\)
+        </p></li>
+<li id="li-382"><p id="p-1078">
+          \(\forall n \in \Naturals, \; 6 \divides (3n^{2}+3n-12)\)
+        </p></li>
+<li id="li-383"><p id="p-1079">
+          \(\forall n \in \Naturals, \; 5 \divides (n^{5}-5n^{3}+14n)\)
+        </p></li>
+<li id="li-384"><p id="p-1080">
+          \(\forall n \in \Naturals, \; 4 \divides (13^{n}+4n-1)\)
+        </p></li>
+<li id="li-385"><p id="p-1081">
+          \(\forall n \in \Naturals, \; 7 \divides 8^n+6\)
+        </p></li>
+<li id="li-386"><p id="p-1082">
+          \(\forall n \in \Naturals, \; 6 \divides 2n^3 - 2n - 12\)
+        </p></li>
+<li id="li-387"><p id="p-1083">
+          \(\forall n \geq 3 \in \Naturals, \; 3n^2+3n+1 \lt  2n^3\)
+        </p></li>
+<li id="li-388"><p id="p-1084">
+          \(\forall n &gt; 3 \in \Naturals, \; n^3 \lt  3^n\)
+        </p></li>
+<li id="li-389"><p id="p-1085">
+          \(\forall n \geq 3 \in \Naturals, \; n^{3}+3&gt;n^{2}+3n+1\)
+        </p></li>
+<li id="li-390"><p id="p-1086">
+          \(\forall x \geq 4 \in \Naturals, \; x^22^x \leq 4^x\)
+        </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

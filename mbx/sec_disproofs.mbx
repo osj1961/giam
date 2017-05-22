@@ -1,0 +1,307 @@
+
+<section xml:id="sec_disproofs">
+  <title>Disproofs</title>
+  <p>
+    The idea of a <q>disproof</q> is really just semantics <mdash /> in order to
+    disprove a statement we need to <em>prove</em> its negation.
+  </p>
+
+  <p>
+    So far we've been discussing proofs quite a bit, but have paid
+    very little attention to a really huge issue. If the statements
+    we are attempting to prove are false, no proof is ever going to
+    be possible. Really, a prerequisite to developing a facility with
+    proofs is developing a good <q>lie detector.</q> We need to be able
+    to guess, or quickly ascertain, whether a statement is true or false.
+    If we are given a universally quantified statement the first thing to
+    do is try it out for some random elements of the universe we're working
+    in. If we happen across a value that satisfies the statement's hypotheses
+    but doesn't satisfy the conclusion, we've found what is known as a
+    <index><main>counterexample</main></index><em>counterexample</em>.
+  </p>
+
+  <p>
+    Consider the following statement about integers and divisibility:
+  </p>
+
+  <conjecture xml:id="conj_prim">
+    <me>
+      \forall a,b,c \in \Integers, \; a \divides bc \; \implies \; a \divides b \,
+      \lor \, a \divides c.
+    </me>
+  </conjecture>
+
+  <p>
+    This is phrased as a UCS, so the hypothesis is clear, we're looking
+    for three integers so that the first divides the product of the other
+    two. In the following table we have collected several values for
+    <m>a</m>, <m>b</m> and <m>c</m> such that <m>a \divides bc</m>.
+  </p>
+  <tabular>
+    <row>
+      <cell><m>a</m></cell>
+      <cell><m>b</m></cell>
+      <cell><m>c</m></cell>
+      <cell><m>a \divides b \, \lor \, a \divides c</m> ?</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>2</cell>
+      <cell>7</cell>
+      <cell>6</cell>
+      <cell>yes</cell>
+    </row>
+    <row>
+      <cell>2</cell>
+      <cell>4</cell>
+      <cell>5</cell>
+      <cell>yes</cell>
+    </row>
+    <row>
+      <cell>3</cell>
+      <cell>12</cell>
+      <cell>11</cell>
+      <cell>yes</cell>
+    </row>
+    <row>
+      <cell>3</cell>
+      <cell>5</cell>
+      <cell>15</cell>
+      <cell>yes</cell>
+    </row>
+    <row>
+      <cell>5</cell>
+      <cell>4</cell>
+      <cell>15</cell>
+      <cell>yes</cell>
+    </row>
+    <row>
+      <cell>5</cell>
+      <cell>10</cell>
+      <cell>3</cell>
+      <cell>yes</cell>
+    </row>
+    <row>
+      <cell>7</cell>
+      <cell>2</cell>
+      <cell>14</cell>
+      <cell>yes</cell>
+    </row>
+  </tabular>
+  <exercise>
+    <statement>
+      <p>
+        As noted in <xref ref="sec_def">Section</xref> the statement above is related to
+        whether or not <m>a</m> is prime. Note that in the table, only prime
+        values of <m>a</m> appear. This is a rather broad hint. Find a
+        counterexample to <xref ref="conj_prim">Conjecture</xref>.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    There can be times when the search for a counterexample starts to feel
+    really futile. Would you think it likely that a statement about
+    natural numbers could be true for (more than) the first 50 numbers
+    a yet still be false?
+  </p>
+
+  <conjecture xml:id="conj_prim2">
+    <me>
+      \forall n \in \Integers^+ \; n^2 - 79n + 1601 \, \mbox{is prime.}
+    </me>
+  </conjecture>
+
+  <exercise>
+    <statement>
+      <p>
+        Find a counterexample to <xref ref="conj_prim2">Conjecture</xref>
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    Hidden within Euclid's proof of the infinitude of the primes is
+    a sequence. Recall that in the proof we deduced a contradiction
+    by considering the number <m>N</m> defined by
+    <me>
+      N = 1 + \prod_{k=1}^n p_k.
+    </me>
+  </p>
+
+  <p>
+    Define a sequence by
+    <me>
+      N_n  = 1 + \prod_{k=1}^n p_k,
+    </me>
+    where <m>\{p_1, p_2, \ldots , p_n\}</m> are the actual first <m>n</m> primes.
+    The first several values of this sequence are:
+  </p>
+  <tabular>
+    <row>
+      <cell><m>n</m></cell>
+      <cell><m>N_n</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>1</m></cell>
+      <cell><m>1+(2) = 3</m></cell>
+    </row>
+    <row>
+      <cell><m>2</m></cell>
+      <cell><m>1+(2\cdot 3) = 7</m></cell>
+    </row>
+    <row>
+      <cell><m>3</m></cell>
+      <cell><m>1+(2\cdot 3\cdot 5) = 31</m></cell>
+    </row>
+    <row>
+      <cell><m>4</m></cell>
+      <cell><m>1+(2\cdot 3\cdot 5\cdot 7) = 211</m></cell>
+    </row>
+    <row>
+      <cell><m>5</m></cell>
+      <cell><m>1+(2\cdot 3\cdot 5\cdot 7\cdot 11) = 2311</m></cell>
+    </row>
+    <row>
+      <cell><m>\vdots</m></cell>
+      <cell><m>\vdots</m></cell>
+    </row>
+  </tabular>
+  <p>
+    Now, in the proof, we deduced a contradiction by noting that <m>N_n</m> is
+    much larger than <m>p_n</m>, so if <m>p_n</m> is the largest prime it follows that
+    <m>N_n</m> can't be prime <mdash /> but what really appears to be the case (just look
+    at that table!) is that <m>N_n</m> actually <em>is</em> prime for all <m>n</m>.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Find a counterexample to the conjecture that <m>1+\prod_{k=1}^n p_k</m>
+        is itself always a prime.
+      </p>
+    </statement>
+  </exercise>
+  <exercises>
+
+    <ol>
+      <li><p>
+          Find a polynomial that assumes only prime values for
+          a reasonably large range of inputs.
+
+          \hint{It sort of depends on what is meant by <q>a reasonably large range of inputs.</q>  For example the polynomial <m>p(x) = 2x+1</m> gives primes three times in a row (at <m>x=1,2</m> and <m>3</m>).  See if you can do better than that.
+          }
+        </p></li>
+
+      <li><p>
+          Find a counterexample to the conjecture that <m>\forall a,b,c \in \Integers, a \divides bc \; \implies \; a \divides b \, \lor \, a \divides c</m>  using only powers of 2.
+
+          \hint{The intent of the problem is that you find three numbers, <m>a</m>, <m>b</m> and <m>c</m>, that are all powers 
+          of <m>2</m> and such that <m>a</m> divides the product <m>bc</m>, but neither of the factors separately. For instance, 
+          if you pick <m>a=16</m>, then you would need to choose <m>b</m> and <m>c</m> so that <m>16</m> doesn't divide evenly 
+          into them (they would need to be less than <m>16</m><ellipsis />) but so that their product <em>is</em> divisible by <m>16</m>.
+          }
+        </p></li>
+
+      <li><p>
+          The alternating sum of factorials provides an interesting
+          example of a sequence of integers.
+          <me>
+            1! = 1
+          </me>
+          <me>
+            2! - 1! = 1
+          </me>
+          <me>
+            3! - 2! + 1! = 5
+          </me>
+          <me>
+            4! - 3! + 2! - 1! = 19
+          </me>
+          et cetera 
+
+           Are they all prime?  (After the first two 1's.)
+
+          \hint{
+
+          Here's some Sage code that would test this conjecture:
+
+          <c>
+          n=1
+          for i in [2..8]:
+          n = factorial(i) - n
+          show(factor(n))
+          </c>
+
+          Of course it turns out that going out to <m>8</m> isn't quite far enough<ellipsis />
+
+          }
+        </p></li>
+
+      <li><p>
+          It has been conjectured that whenever <m>p</m> is prime, <m>2^p - 1</m> is
+          also prime.  Find a minimal counterexample.
+
+          \hint{I would definitely seek help at your friendly neighborhood CAS.  In Sage 
+          you can loop over the first several prime numbers using the following syntax.
+
+          <c>for p in [2,3,5,7,11,13]:</c>
+
+           If you want to automate that somewhat, there is a Sage function that returns a list
+          of all the primes in some range.  So the following does the same thing.
+
+          <c>for p in primes(2,13):</c>
+          }
+        </p></li>
+
+      <li><p>
+          True or false:  The sum of any two irrational numbers is irrational.
+          Prove your answer.
+
+          \hint{This statement and the next are negations of one another.  Your answers should reflect that.}
+        </p></li>
+
+      <li><p>
+          True or false:  There are two irrational numbers whose sum is rational.
+          Prove your answer.
+
+          \hint{If a number is irrational, isn't its negative also irrational?  That's actually a pretty huge hint.}
+        </p></li>
+
+      <li><p>
+          True or false: The product of any two irrational numbers is irrational.
+          Prove your answer.
+
+          \hint{This one and the next are negations too. Aren't they?}
+        </p></li>
+
+      <li><p>
+          True or false: There are two irrational numbers whose product is rational.
+          Prove your answer.
+
+          \hint{The two numbers <em>could</em> be equal couldn't they?}
+        </p></li>
+
+      <li><p>
+          True or false:  Whenever an integer <m>n</m> is a divisor of the square of an integer, <m>m^2</m>, it follows that <m>n</m> is a divisor of <m>m</m> as well.
+          (In symbols, <m>\forall n \in \Integers, \forall m \in \Integers, n \mid m^2 \; \implies \; n \mid m</m>.)
+          Prove your answer.
+
+          \hint{Hint: List all of the divisors of <m>36 = (2\cdot 3)^2</m>.  See if any of them are bigger than <m>6</m>.}
+        </p></li>
+
+      <li><p>
+          In an exercise in <xref ref="sec_more">Section</xref> we proved that the quadratic 
+          equation <m>ax^2 + bx + c = 0</m> has two solutions if <m>ac \lt  0</m>.  Find a counterexample which shows that this implication cannot be replaced with a biconditional.  
+
+          \hint{We'd want <m>ac</m> to be positive (so <m>a</m> and <m>c</m> have the same sign) but nevertheless have <m>b^2-4ac > 0</m>.  It seems that if we make <m>b</m> sufficiently large that could happen.}
+        </p></li>
+    </ol>
+  </exercises>
+</section>

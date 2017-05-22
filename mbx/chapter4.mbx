@@ -1,0 +1,14 @@
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" >
+  <title>Sets</title>
+  <introduction>
+    <p>
+      <em>No more turkey, but I'd like some more of the bread it ate. <ndash />Hank Ketcham</em>
+    </p>
+  </introduction>
+  <xi:include  href="sec_basic_set_notions.mbx" />
+  <xi:include  href="section4-2.mbx" />
+  <xi:include  href="section4-3.mbx" />
+  <xi:include  href="section4-4.mbx" />
+  <xi:include  href="sec_russell.mbx" />
+</chapter>

@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:40-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Special functions</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="previous-button toolbar-item button" href="sec_functions.html">Previous</a><a class="up-button button toolbar-item" href="chapter-6.html">Up</a><a class="next-button button toolbar-item" href="chapter-7.html">Next</a>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_functions.html">Previous</a><a class="up-button button toolbar-item" href="chapter-6.html">Up</a><a class="next-button button toolbar-item" href="chapter-7.html">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link active"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html" class="active">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-36.html">Parity and Counting arguments</a></li>
+<li><a href="section-37.html">The pigeonhole principle</a></li>
+<li><a href="section-38.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-40.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-42.html">Dominance</a></li>
+<li><a href="section-43.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-44.html">Morley's miracle</a></li>
+<li><a href="section-45.html">Five steps into the void</a></li>
+<li><a href="section-46.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_special_functions"><header title="Section 6.5 Special functions"><h1 class="heading hide-type" alt="Section 6.5 Special functions">
+<span class="type">Section</span><span class="codenumber">6.5</span><span class="title">Special functions</span><a href="sec_special_functions.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-1272">
+    There are a great many functions that fail the horizontal line test
+    which we nevertheless seem to have inverse functions for. For example,
+    \(x^2\) fails HLT but \(\sqrt{x}\) is a pretty reasonable inverse for it — one just needs to be careful about the “plus or minus” issue. Also,
+    \(\sin{x}\) fails HLT pretty badly; any horizontal line \(y=c\) with
+    \(-1 \leq c \leq 1\) will hit \(\sin{x}\) infinitely many times. But look!
+    Right here on my calculator is a button labeled “\(\sin^{-1}\).”<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-41" id="fn-41"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-41" style="display: none;" class="tex2jax_ignore"><span class="footnote">It 
+    might be labeled “asin” instead.  The old-style way to refer to the inverse
+    of a trig. function was arc-whatever.  So the inverse of sine was arcsine,
+    the inverse of tangent was arctangent.</span></span> This apparent contradiction
+    can be resolved using the notion of restriction.
+  </p>
+<article class="definition-like" id="definition-17"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">6.5.1</span>
+</h5>
+<p id="p-1273">
+        
+        Given a function \(f\) and a subset \(D\) of its domain, the
+        <em class="terminology">restriction of \(f\) to \(D\)</em> is denoted \(\restrict{f}{D}\) and
+        \begin{equation*}
+          \restrict{f}{D} = \{ (x,y) \suchthat \; x \in D \, \land \, (x,y) \in f \}.
+        \end{equation*}
+      </p></article><p id="p-1274">
+    The way we typically use restriction is to eliminate any regions in
+    \(\Dom{f}\) that cause \(f\) to fail to be one-to-one. That is, we
+    choose a subset \(D \subseteq \Dom{f}\) so that \(\restrict{f}{D}\) is an injection.
+    This allows us to invert the restricted version of \(f\). There can be
+    problems in doing this, but if we are careful about how we choose \(D\),
+    these problems are usually resolvable.
+  </p>
+<article class="exercise-like" id="exercise-54"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">6.5.2</span>
+</h5>
+<p id="p-1275">
+        Suppose \(f\) is a function that is not one-to-one, and \(D\) is a subset
+        of \(\Dom{f}\) such that \(\restrict{f}{D}\) <!--Style me with CSS--><em>is</em> one-to-one. The restricted
+        function \(\restrict{f}{D}\) has an inverse which we will denote by \(g\).
+        Note that \(g\) is a function from \(\Rng{\restrict{f}{D}}\) to \(D\). Which
+        of the following is always true:
+        \begin{equation*}
+          f(g(x)) = x  \mbox{or}   g(f(x)) = x ?
+        \end{equation*}
+      </p></article><div class="hidden-knowl-wrapper"></div>
+<p id="p-1276">
+    Technically, when we do the process outlined above (choose a domain
+    \(D\) so that the restriction \(\restrict{f}{D}\) is invertible, and
+    find that inverse)
+    the function we get is a <!--Style me with CSS--><em>right inverse</em> for \(f\).
+  </p>
+<p id="p-1277">
+    Let's take a closer look at the inverse sine function. This should
+    help us to really understand the “right inverse” concept.
+  </p>
+<p id="p-1278">
+    A glance at the graph of \(y = \sin{x}\) will certainly convince us that
+    this function is not injective, but the portion of the graph shown
+    in bold below passes the horizontal line test.
+  </p>
+<img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt="">
+  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  <img width="100%" src="images/dcd355cffe9f94796d7769fec3a3132463f72e1c.png" alt=""><p id="p-1279">
+    If we restrict the domain of the sine function to the closed interval
+    \([-\pi/2, \pi/2]\), we have an invertible function. The inverse of this
+    restricted function is the function we know as \(\sin^{-1}(x)\) or
+    \(\mbox{arcsin} (x)\). The domain and range of \(\sin^{-1}(x)\) are
+    (respectively) the intervals
+    \([-1,1]\) and \([-\pi/2, \pi/2]\).
+  </p>
+<p id="p-1280">
+    Notice that if we choose a number \(x\) in the range \(-1 \leq x \leq 1\) and apply
+    the inverse sine function to it, we will get a number between \(-\pi/2\) and
+    \(\pi/2\) — i.e. a number we can interpret as an <!--Style me with CSS--><em>angle</em> in radian measure.
+    If we then proceed to calculate the sine of this angle, we will get back our
+    original number \(x\).
+  </p>
+<p id="p-1281">
+    On the other hand, if we choose an angle first, then take the sine of it to
+    get a number in \([-1,1]\) and then take the inverse sine of <!--Style me with CSS--><em>that</em>,
+    we will only end up with the same angle we started with <!--Style me with CSS--><em>if</em>
+    we chose the original angle
+    so that it lay in the interval \([-\pi/2, \pi/2]\).
+  </p>
+<article class="exercise-like" id="exercise-55"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">6.5.3</span>
+</h5>
+<p id="p-1282">
+        We get a right inverse for the cosine function by restricting it to
+        the interval \([0,\pi]\). What are the domain and range of \(\cos^{-1}\)?
+      </p></article><div class="hidden-knowl-wrapper"></div>
+<p id="p-1283">
+    The <!--Style me with CSS--><em>winding map</em> is a function that goes
+    from \(\Reals\) to the unit circle in the \(x\)–\(y\) plane, defined by
+    \begin{equation*}
+      W(t) = (\cos{t}, \sin{t}).
+    \end{equation*}
+  </p>
+<p id="p-1284">
+    One can think of this map as literally winding the infinitely long
+    real line around and around the circle. Obviously, this is not an
+    injection — there are an infinite number of values of \(t\) that
+    get mapped to (for instance) the point \((1,0)\), \(t\) can be any integer
+    multiple of \(2\pi\).
+  </p>
+<article class="exercise-like" id="exercise-56"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">6.5.4</span>
+</h5>
+<p id="p-1285">
+        What is the set \(W^{-1}(\{(0,1)\})\) ?
+      </p></article><div class="hidden-knowl-wrapper"></div>
+<p id="p-1286">
+    If we restrict \(W\) to the half-open interval \([0, 2\pi)\) the restricted
+    function \(\restrict{W}{[0, 2\pi)}\) is an injection. The inverse function is
+    not easy to write down, but it is possible to express (in terms
+    of the inverse functions of sine and cosine) if we consider the
+    four cases determined by what quadrant a point on the unit circle
+    may lie in.
+  </p>
+<article class="exercise-like" id="exercise-57"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">6.5.5</span>
+</h5>
+<p id="p-1287">
+        Suppose \((x,y)\) represents a point on the unit circle. If \((x,y)\) happens
+        to lie on one of the coordinate axes we have
+        \begin{gather*}
+W^{-1}((1,0)) = 0\\
+W^{-1}((0,1)) = \pi/2\\
+W^{-1}((-1,0)) = \pi\\
+W^{-1}((0,-1)) = 3\pi/2.
+\end{gather*}
+      </p>
+<p id="p-1288">
+        If neither \(x\) nor \(y\) is zero, there are four cases to consider.
+        Write an expression for \(W^{-1}((x,y))\) using the cases
+        (i) \(x&gt;0 \, \land \, y&gt;0\),
+        (ii) \(x\lt 0 \, \land \, y&gt;0\),
+        (iii) \(x\lt 0 \, \land \, y\lt 0\) and
+        (iv) \(x&gt;0 \, \land \, y\lt 0\).
+      </p></article><div class="hidden-knowl-wrapper"></div>
+<p id="p-1289">
+    This last example that we have done (the winding map) was unusual in that
+    the outputs were ordered pairs. In thinking of this map as a relation
+    (that is, as a set of ordered pairs) we have an ordered pair in which
+    the second element is an ordered pair! Just for fun, here is another
+    way of expressing the winding map:
+    \begin{equation*}
+      W = \{ (t, (\cos{t}, \sin{t})) \suchthat \, t \in \Reals \}
+    \end{equation*}
+  </p>
+<p id="p-1290">
+    When dealing with very complicated expressions involving ordered
+    pairs, or more generally, ordered \(n\)-tuples, it is useful to
+    have a way to refer succinctly to the pieces of a tuple.
+  </p>
+<p id="p-1291">
+    Let's start by considering the set \(P = \Reals \times \Reals\) — i.e.
+    \(P\) is the \(x\)–\(y\) plane. There are two functions, whose domain is \(P\)
+    that “pick out” the \(x\), and/or \(y\) coordinate. These functions are
+    called \(\pi_1\) and \(\pi_2\), \(\pi_1\) is the projection onto the first
+    coordinate and \(\pi_2\) is the projection onto the second coordinate.<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-42" id="fn-42"><span class="footnote"><sup> 2 </sup></span></a></span><span id="hk-fn-42" style="display: none;" class="tex2jax_ignore"><span class="footnote">Don't think of the usual \(\pi \approx 3.14159\) when looking at \(\pi_1\) and 
+    \(\pi_2\).  These functions are named as they are because \(\pi\) is the Greek 
+    letter corresponding to `p' which stands for “projection.”</span></span>
+  </p>
+<article class="definition-like" id="definition-18"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">6.5.6</span>
+</h5>
+<p id="p-1292">
+        The function \(\pi_1: \Reals \times \Reals \longrightarrow \Reals\) known
+        as <em class="terminology">projection onto the first coordinate</em> is
+        defined by
+        \begin{equation*}
+          \pi_1((x,y)) = x.
+        \end{equation*}
+      </p></article><p id="p-1293">
+    The definition of \(\pi_2\) is entirely analogous.
+  </p>
+<p id="p-1294">
+    You should note that these projection functions are <!--Style me with CSS--><em>very</em> bad
+    as far as being one-to-one is concerned. For instance, the preimage
+    of \(1\) under the map \(\pi_1\) consists of all the points on the vertical line
+    \(x=1\). That's a lot of preimages! These guys are so far from being
+    one-to-one that it seems impossible to think of an appropriate restriction
+    that would become invertible. Nevertheless, there is a function that
+    provides a right inverse for both \(\pi_1\) and \(\pi_2\). Now, these projection
+    maps go from \(\Reals \times \Reals\) to \(\Reals\) so an inverse needs to be
+    a map from \(\Reals\) to \(\Reals \times \Reals\). What is a reasonable way to
+    produce a <!--Style me with CSS--><em>pair</em> of real numbers if we have a single real number in hand?
+    There are actually many ways one could proceed, but one reasonable choice is
+    to create a pair where the input number appears in both coordinates. This
+    is the so-called <!--Style me with CSS--><em>diagonal map</em>,
+    \(d:\Reals \times \Reals \longrightarrow \Reals\), defined by \(d(a) = (a,a)\).
+  </p>
+<article class="exercise-like" id="exercise-58"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">6.5.7</span>
+</h5>
+<p id="p-1295">
+        Which of the following is always true,
+        \begin{equation*}
+          d(\pi_1((x,y)) = (x,y)  \mbox{or}   \pi_1(d(x)) = x?
+        \end{equation*}
+      </p></article><div class="hidden-knowl-wrapper"></div>
+<p id="p-1296">
+    There are a few other functions that it will be convenient to
+    introduce at this stage. All of them are aspects of the
+    characteristic function of a subset, so we'll start with that.
+  </p>
+<p id="p-1297">
+    Whenever we have a subset/superset relationship, \(S \subseteq D\),
+    it is possible to define a function whose codomain is \(\{0,1\}\)
+    which performs a very useful task — if an input \(x\) is in the
+    set \(S\) the function will indicate this by returning 1, otherwise
+    it will return 0. The function which has this behavior is known
+    as \(1_S\), and is called the 
+    <!--Style me with CSS--><em>characteristic function of the subset \(S\)</em> (There are those
+    who use the term <!--Style me with CSS--><em>indicator function of \(S\)</em>
+    for \(1_S\).) By definition,
+    \(D\) is the domain of this function.
+    \begin{align*}
+1_S: D \longrightarrow \{0,1\}\\
+1_S(x) = \left\{ \begin{array}{cl} 1 \amp  \mbox{if}  \, x \in S \\ 0 \amp  \mbox{otherwise} 
+      \end{array}  \right.
+\end{align*}
+  </p>
+<article class="exercise-like" id="exercise-59"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">6.5.8</span>
+</h5>
+<p id="p-1298">
+        If you have the characteristic function of a subset \(S\), how can you
+        create the characteristic function of its complement, \(\overline{S}\).
+      </p></article><div class="hidden-knowl-wrapper"></div>
+<p id="p-1299">
+    A characteristic function may be thought of as an embodiment of a
+    membership criterion. The logical open sentence “\(x \in S\)” being true
+    is the same thing as the equation “\(1_S(x) = 1\).” There is a notation,
+    growing in popularity, that does the same thing for an arbitrary open sentence.
+    The <!--Style me with CSS--><em>Iverson bracket</em> notation uses the
+    shorthand \([ P(x) ]\) to represent a function that sends any \(x\) that makes
+    \(P(x)\) true to 1, and any inputs that make \(P(x)\) false will get sent to 0.
+    \begin{equation*}
+      [ P(x) ] = \left\{ \begin{array}{cl} 1 \amp  \mbox{if}  \, P(x) \\ 0 \amp  \mbox{otherwise} 
+      \end{array}  \right.
+    \end{equation*}
+  </p>
+<p id="p-1300">
+    The Iverson brackets can be particularly useful in expressing and simplifying
+    sums. For example, we can write \(\sum_{i=1}^{24} [2 \divides i]\) to
+    find the number of even natural numbers less than 25. Similarly, we can write
+    \(\sum_{i=1}^{24} [3 \divides i]\) to find the number of natural numbers less than
+    25 that are divisible by 3.
+  </p>
+<article class="exercise-like" id="exercise-60"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">6.5.9</span>
+</h5>
+<p id="p-1301">
+        What does the following formula count?
+        \begin{equation*}
+          \sum_{i=1}^{24} [2 \divides i] + [3 \divides i] - [6 \divides i]
+        \end{equation*}
+      </p></article><div class="hidden-knowl-wrapper"></div>
+<p id="p-1302">
+    There is a much more venerable notation known as the 
+    <!--Style me with CSS--><em>Kronecker delta</em> that can be thought of as a special case of the
+    idea inherent in Iverson brackets. We write \(\delta_{ij}\) as a shorthand
+    for a function that takes two inputs, \(\delta(i,j)\) is 1 if and only if
+    \(i\) and \(j\) are equal.
+    \begin{equation*}
+      \delta_{ij} =  \left\{ \begin{array}{cl} 1 \amp  \mbox{if}  \; i=j \\ 0 \amp  \mbox{otherwise} 
+      \end{array}  \right.
+    \end{equation*}
+  </p>
+<p id="p-1303">
+    The corresponding Iverson bracket would simply be \([i=j]\).
+  </p>
+<p id="p-1304">
+    We'll end this section with a function that will be especially important
+    in <a href="ch_card.html" alt="Chapter 8 Cardinality" title="Chapter 8 Cardinality">Chapter 8</a>. If we have an arbitrary subset of the natural
+    numbers, we can associate it with an infinite string of 0's and 1's. By
+    sticking a decimal point in front of such a thing, we get binary notation
+    for a real number in the interval \([0,1]\). There is a subtle problem that
+    we'll deal with when we study this function in more detail in <a href="ch_card.html" alt="Chapter 8 Cardinality" title="Chapter 8 Cardinality">Chapter 8</a> — some real numbers can be expressed in two different ways in base 2.
+    For example, \(1/2\) can either be written as \(.1\) or as \(.0\overline{1}\) (where,
+    as usual, the overline indicates a pattern that repeats forever).
+    For the moment, we are talking about
+    defining a function \(\phi\) whose domain is \({\mathcal P}(\Naturals)\) and
+    whose codomain is the set of all infinite binary strings.
+    Let us denote these binary expansions by
+    \(.b_1b_2b_3b_4\ldots\). Suppose \(A\) is a subset of \(\Naturals\),
+    then the binary expansion associated with \(A\) will be
+    determined by \(b_i = 1_A(i)\). (Alternatively, we can use the Iverson
+    bracket notation: \(b_i = [i \in A]\).)
+  </p>
+<p id="p-1305">
+    The function \(\phi\) defined in the last paragraph turns out to be a
+    bijection — given a subset we get a unique binary expansion, and given
+    binary expansion we get (using \(\phi^{-1}\)) a unique subset of
+    \(\Naturals\).
+  </p>
+<p id="p-1306">
+    A few examples will
+    probably help to clarify this function's workings. Consider
+    the set \(\{1,2,3\} \subseteq \Naturals\), the binary expansion that this
+    corresponds to will have 1's in the first three positions after the
+    decimal — \(\phi(\{1,2,3\}) = .111\) this is the number written .875
+    in decimal. The infinite repeating binary number \(.\overline{01}\)
+    is the base-2 representation of \(1/3\), it is easy to see that
+    \(.\overline{01}\) is the image of the set of odd naturals, \(\{1,3,5,\ldots\}\).
+  </p>
+<article class="exercise-like" id="exercise-61"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">6.5.10</span>
+</h5>
+<p id="p-1307">
+        Find the binary representation for the real number which is the image of
+        the set of even numbers under \(\phi\).
+      </p></article><div class="hidden-knowl-wrapper"></div>
+<article class="exercise-like" id="exercise-62"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">6.5.11</span>
+</h5>
+<p id="p-1308">
+        Find the binary representation for the real number which is the image of
+        the set of triangular numbers under \(\phi\). (Recall that the triangular
+        numbers are \(T = \{1,3,6,10,15, \ldots \}\).)
+      </p></article><div class="hidden-knowl-wrapper"></div>
+<section class="exercises" id="exercises-34"><header title="Exercises 6.5.1 Exercises"><h1 class="heading hide-type" alt="Exercises 6.5.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">6.5.1</span><span class="title">Exercises</span>
+</h1></header><ol style="list-style-type: lower-alpha;">
+<li id="li-427"><p id="p-1309">
+          The \(n\)-th triangular number, denoted \(T(n)\), is given by the formula
+          \(T(n) = (n^2 + n)/2\). If we regard this formula as a function from \(\Reals\) to
+          \(\Reals\), it fails the horizontal line test and so it is not invertible. Find a
+          suitable restriction so that T is invertible.
+        </p></li>
+<li id="li-428"><p id="p-1310">
+          The usual algebraic procedure for inverting \(T(x) = (x^2+x)/2\) fails. Use
+          your knowledge of the geometry of functions and their inverses to find
+          a formula for the inverse. (Hint: it may be instructive to first invert
+          the simpler formula \(S(x) = x^2/2\) — this will get you the right vertical
+          scaling factor.)
+        </p></li>
+<li id="li-429"><p id="p-1311">
+          What is \(\pi_2(W(t))\)?
+        </p></li>
+<li id="li-430"><p id="p-1312">
+          Find a right inverse for \(f(x) = |x|\).
+        </p></li>
+<li id="li-431"><p id="p-1313">
+          In three-dimensional space we have projection functions that go onto
+          the three coordinate axes (\(\pi_1\), \(\pi_2\) and \(\pi_3\)) and we also have
+          projections onto coordinate planes.  For example,
+          \(\pi_{12}: \Reals \times \Reals \times \Reals \longrightarrow \Reals \times \Reals\), defined by
+          \begin{equation*}
+            \pi_{12}((x,y,z)) = (x,y)
+          \end{equation*}
+          is the projection onto the \(x\)–\(y\) coordinate plane.
+
+          The triple of functions  \((\cos{t}, \sin{t}, t)\) is a parametric
+          expression for a helix.  Let 
+          \(H = \{ (\cos{t}, \sin{t}, t) \suchthat t \in \Reals \}\) be the set of all
+          points on the helix.  What is the set \(\pi_{12}(H)\) ?  What are the
+          sets \(\pi_{13}(H)\) and \(\pi_{23}(H)\)?
+        </p></li>
+<li id="li-432"><p id="p-1314">
+          Consider the set \(\{1, 2, 3, \ldots, 10\}\).  Express the characteristic
+          function of the subset \(S = \{1, 2, 3 \}\) as a set of ordered pairs.
+        </p></li>
+<li id="li-433"><p id="p-1315">
+          If \(S\) and \(T\) are subsets of a set \(D\), what is the product of
+          their characteristic functions \(1_S \cdot 1_T\) ?
+        </p></li>
+<li id="li-434"><p id="p-1316">
+          Evaluate the sum
+          \begin{equation*}
+            \sum_{i=1}^{10} \frac{1}{i} \cdot [ i \; \mbox{is prime}  ].
+          \end{equation*}
+        </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

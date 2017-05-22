@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:41-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Five steps into the void</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="previous-button toolbar-item button" href="section-44.html">Previous</a><a class="up-button button toolbar-item" href="chapter-9.html">Up</a><a class="next-button button toolbar-item" href="section-46.html">Next</a>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-44.html">Previous</a><a class="up-button button toolbar-item" href="chapter-9.html">Up</a><a class="next-button button toolbar-item" href="section-46.html">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-36.html">Parity and Counting arguments</a></li>
+<li><a href="section-37.html">The pigeonhole principle</a></li>
+<li><a href="section-38.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-40.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-42.html">Dominance</a></li>
+<li><a href="section-43.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link active"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-44.html">Morley's miracle</a></li>
+<li><a href="section-45.html" class="active">Five steps into the void</a></li>
+<li><a href="section-46.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-45"><header title="Section 9.2 Five steps into the void"><h1 class="heading hide-type" alt="Section 9.2 Five steps into the void">
+<span class="type">Section</span><span class="codenumber">9.2</span><span class="title">Five steps into the void</span>
+</h1></header><p id="p-1688">
+    In this section we'll talk about another Book proof also due to John
+    Conway. This proof serves as an introduction to a really powerful
+    general technique — the idea of an invariant. An invariant is some
+    sort of quantity that one can calculate that itself doesn't change as
+    other things are changed. Of course different situations have different
+    invariant quantities.
+  </p>
+<p id="p-1689">
+    The setup here is simple and relatively intuitive. We have a bunch
+    of checkers on a checkerboard — in fact we have an infinite number
+    of checkers, but not filling up the whole board, they completely fill
+    an infinite half-plane which we could take to be the set
+    \begin{equation*}
+      S = \{(x,y) \suchthat x \in \Integers \, \land \, y \in \Integers \, \land \, y \leq 0 \}.
+    \end{equation*}
+  </p>
+<p id="p-1690">
+    See <span>&lt;&lt;Unresolved xref, reference "fig_the_army"; check spelling or use "provisional" attribute&gt;&gt;</span>.
+  </p>
+<figure class="figure-like" id="figure-32"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/fd64742391c71fe2fdaafbc7e6606f57975728a6.png" alt="">\(y\leq 0\)</figure><p id="p-1691">
+    Think of these checkers as an army and the upper half-plane is “enemy
+    territory.” Our goal is to move one of our soldiers into enemy territory
+    as far as possible. The problem is that our “soldiers” move the
+    way checkers do, by jumping over another man (who is then removed from
+    the board). It's clear that we can get someone into enemy territory — just take someone in the second row and jump a guy in the first row.
+    It is also easy enough to see that it is possible to get a man
+    two steps into enemy territory — we could bring two adjacent men
+    a single step into enemy territory, have one of them jump the other
+    and then a man from the front rank can jump over him.
+  </p>
+<article class="exercise-like" id="exercise-78"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">9.2.1</span>
+</h5>
+<p id="p-1692">
+        The strategy just stated uses 4 men (in the sense that they are removed
+        from the board — 5 if you count the one who ends up two steps into
+        enemy territory as well). Find a strategy for moving someone two
+        steps into enemy territory that is more efficient — that is, involves
+        fewer jumps.
+      </p></article><div class="hidden-knowl-wrapper"></div>
+<article class="exercise-like" id="exercise-79"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">9.2.2</span>
+</h5>
+<p id="p-1693">
+        Determine the most efficient way to get a man three steps into
+        enemy territory. An actual checkers board and pieces (or some
+        coins, or rocks) might come in handy.
+      </p></article><div class="hidden-knowl-wrapper"></div>
+<p id="p-1694">
+    We'll count the man who ends up some number of steps above the
+    \(x\)-axis, as well as all the pieces who get jumped and removed
+    from the board as a measure of the efficiency of a strategy.
+    If you did the last exercise correctly you should have found that
+    eight men are the minimum required to get 3 steps into enemy
+    territory. So far, the number of men required to get a given
+    distance into enemy territory seems to always be a power of
+    2.
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"># of steps</td>
+<td class="l m b0 r0 l0 t0 lines"># of men</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+</tr>
+</table>
+<p id="p-1695">
+    As a picture is sometimes literally worth one thousand words, we
+    include here 3 figures illustrating the moves necessary to put
+    a scout 1, 2 and 3 steps into the void.
+  </p>
+<figure class="figure-like" id="figure-33"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/907b8e124b85d6affcf3f2afe17b3cf86059f809.png" alt=""></figure><figure class="figure-like" id="figure-34"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/acb792ad17007c1ecd0cab609eab7fec75586481.png" alt=""></figure><p id="p-1696">
+    In order to show that 8 men are sufficient to get a scout 3 steps into
+    enemy territory, we show that it is possible to reproduce the configuration
+    that can place a man two steps in — shifted up by one unit.
+  </p>
+<figure class="figure-like" id="figure-35"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/287b9f7ee1d05413ef80edd0ca3983c2d2e5af4c.png" alt=""></figure><p id="p-1697">
+    You may be surprised to learn that the pattern of 8 men which are needed to
+    get someone three steps into the void can be re-created — shifted up by one
+    unit — using just 12 men. This means that we can get a man 4 steps into
+    enemy territory using \(12 + 8 = 20\) men. You were expecting 16 weren't you?
+    (I know <!--Style me with CSS--><em>I</em> was!)
+  </p>
+<article class="exercise-like" id="exercise-80"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">9.2.3</span>
+</h5>
+<p id="p-1698">
+        Determine how to get a marker 4 steps into the void.
+      </p></article><div class="hidden-knowl-wrapper"></div>
+<p id="p-1699">
+    The <!--Style me with CSS--><em>real</em> surprise is that it is simply impossible to get a man five
+    steps into enemy territory. So the sequence we've been looking at actually
+    goes
+    \begin{equation*}
+      2, 4, 8, 20, \infty.
+    \end{equation*}
+  </p>
+<p id="p-1700">
+    The proof of this surprising result works by using a fairly simple, but
+    clever, strategy. We assign a numerical value to a set of men that is
+    dependent on their positions — then we show that this value never increases
+    when we make “checker jumping” moves — finally we note that the
+    value assigned to a man in position \((0,5)\) is equal to the value of the
+    entire original set of men (that is, with <!--Style me with CSS--><em>all</em> the positions in the lower
+    half-plane occupied). This is a pretty nice strategy, but how exactly are
+    we going to assign these numerical values?
+  </p>
+<p id="p-1701">
+    A man's value is related to his distance from the point \((0,5)\) in what
+    is often called “the taxicab metric.” We don't use the straight-line
+    distance, but rather determine the number of blocks we will have to drive
+    in the north-south direction and in the east-west direction and add them
+    together. The value of a set of men is the sum of their individual values.
+    Since we need to deal with the value of the set of men that completely fills
+    the lower half-plane, we are going to have to have most of these values be
+    pretty tiny! To put it in a more mature and dignified manner: the infinite
+    sum of the values of the men in our army must be convergent.
+  </p>
+<figure class="figure-like" id="figure-36"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/7d10df1de998061b6b7b9eefc4c9780b9611e798.png" alt="">\((0,5)\)\((0,5)\)</figure><p id="p-1702">
+    We've previously seen geometric series which have convergent sums. Recall
+    the formula for such a sum is
+    \begin{equation*}
+      \sum_{k=0}^{\infty} ar^k   =  \frac{a}{1-r},
+    \end{equation*}
+    where \(a\) is the initial term of the sum and \(r\) is the common
+    ratio between terms.
+  </p>
+<p id="p-1703">
+    Conway's big insight was to associate the powers of some number \(r\) with
+    the positions on the board — \(r^k\) goes on the squares that are distance
+    \(k\) from the target location. If we have a man who is actually <!--Style me with CSS--><em>at</em>
+    the target location, he will be worth \(r^0\) or \(1\). We need to arrange for
+    two things to happen: the sum of all the powers of \(r\) in the initial setup
+    of the board must be less than or equal to 1, and checker-jumping moves should
+    result in the total value of a set of men going down or (at worst) staying
+    the same. These goals push us in different directions: In order for the initial sum to be less
+    than 1, we would like to choose \(r\) to be fairly small. In order to have checker-jumping moves we need to choose \(r\) to be (relatively) larger. Is there a value of \(r\) that does the trick? Can we find a balance between these competing
+    desires?
+  </p>
+<p id="p-1704">
+    Think about the change in the value of our invariant as a checker jumping
+    move gets made. See <span>&lt;&lt;Unresolved xref, reference "fig_finding_r"; check spelling or use "provisional" attribute&gt;&gt;</span>.
+  </p>
+<figure class="figure-like" id="figure-37"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/3e691cb0291dca0d9e564e9dff568b0ca22ef274.png" alt="">\(r\)\(r^{k+1}\)\(r^{k+2}\)\(r^k\)</figure><p id="p-1705">
+    If we choose \(r\) so that \(r^{k+2} + r^{k+1} \; \leq \; r^k\) then the
+    checker-jumping move will at worst leave the total sum fixed. Note that
+    so long as \(r\lt 1\) a checker-jumping move that takes us away from the target
+    position will certainly <!--Style me with CSS--><em>decrease</em> the total sum.
+  </p>
+<p id="p-1706">
+    As is often the case, we'll analyze the inequality by looking instead at the
+    corresponding equality. What value of \(r\) makes \(r^{k+2} + r^{k+1}  =  r^k\)?
+    The answer is that \(r\) must be a root of the quadratic equation \(x^2+x-1\).
+  </p>
+<article class="exercise-like" id="exercise-81"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">9.2.4</span>
+</h5>
+<p id="p-1707">
+        Do the algebra to verify the previous assertion.
+      </p></article><div class="hidden-knowl-wrapper"></div>
+<article class="exercise-like" id="exercise-82"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">9.2.5</span>
+</h5>
+<p id="p-1708">
+        Find the value of \(r\) that solves the above equation.
+      </p></article><div class="hidden-knowl-wrapper"></div>
+<p id="p-1709">
+    Hopefully you used the quadratic formula to solve the previous
+    exercise. You should of course have found two solutions, \(-1.618033989\ldots\)
+    and \(.618033989\ldots\), these decimal approximations are actually \(-\phi\) and \(1/\phi\), where \(\displaystyle \phi = \frac{1+\sqrt{5}}{2}\) is the famous  “golden ratio”. If we are hoping for the sum over all the occupied positions of \(r^k\) to be convergent, we need \(|r|\lt 1\), so the negative
+    solution is extraneous and so the inequality \(r^{k+2} + r^{k+1} \; \leq \; r^k\)
+    is true in the interval \([1/\phi, 1)\).
+  </p>
+<p id="p-1710">
+    Next we want to look at the value of this invariant when “men” occupy all of
+    the positions with \(y\leq0\). By looking at <span>&lt;&lt;Unresolved xref, reference "fig_taxicab_distance"; check spelling or use "provisional" attribute&gt;&gt;</span>
+    you can see that there is a single square with value \(r^5\), there are 3 squares
+    with value \(r^6\), there are 5 squares with value \(r^7\), <!--Style me with CSS--><em>et cetera</em>.
+    The sum, \(S\), of the values of all the initially occupied positions is
+    \begin{equation*}
+      S  =  r^5 \cdot \sum_{k=0}^{\infty} (2k+1) r^k.
+    \end{equation*}
+  </p>
+<p id="p-1711">
+    We have previously seen how to solve for the value of an infinite sum involving
+    powers of \(r\). In the expression above we have powers of \(r\) but also
+    multiplied by odd numbers. Can we solve something like this?
+  </p>
+<p id="p-1712">
+    Let's try the same trick that works for a geometric sum. Let
+    \begin{equation*}
+      T  =   \sum_{k=0}^{\infty} (2k+1) r^k  =   1 + 3r + 5r^2 + 7r^3 + \ldots.
+    \end{equation*}
+  </p>
+<p id="p-1713">
+    Note that
+    \begin{equation*}
+      rT  =   \sum_{k=0}^{\infty} (2k+1) r^{k+1}  =   r + 3r^2 + 5r^3 + 7r^4 + \ldots
+    \end{equation*}
+    and it follows that
+    \begin{equation*}
+      T - rT  =   1 + 2 \sum_{k=1}^{\infty} r^{k}  =  1 + 2r + 2r^2 + 2r^3 + 2r^4 + \ldots
+    \end{equation*}
+  </p>
+<p id="p-1714">
+    A bit more algebra (and the formula for the sum of a geometric series) leads us to
+    \begin{equation*}
+      T = \frac{1}{1-r}\left( 1 + \frac{2r}{1-r} \right),
+    \end{equation*}
+    which simplifies to
+    \begin{equation*}
+      T = \frac{1+r}{(1-r)^2}.
+    \end{equation*}
+  </p>
+<p id="p-1715">
+    Finally, recall that we are really interested in \(S = r^5 \cdot T\), or
+    \begin{equation*}
+      S = \frac{r^5 + r^6}{(1-r)^2}.
+    \end{equation*}
+  </p>
+<p id="p-1716">
+    It is interesting to proceed from this expression for \(S\),
+    using the fact that \(r\) satisfies \(x^2 = 1 - x\), to obtain the somewhat
+    amazing fact that \(S=1\).
+  </p>
+<p id="p-1717">
+    The fact that \(S=1\) has an extraordinary consequence.
+    In order to get a single
+    checker to the position \((0,5)\) we would need to use <!--Style me with CSS--><em>everybody</em>!
+  </p>
+<p id="p-1718">
+    For a set consisting of just a single
+    checker positioned at \((0,5)\) the value of our invariant is 1.
+    On the other hand, the set consisting of the entire army lined
+    up on and below the \(x\)-axis also yields a 1. Every checker move either
+    does not change the value of the invariant or reduces it. The best
+    we could possibly hope for is that there would be no need for moves
+    of the sort that reduce
+    the invariant — nevertheless we still could not get a man to \((0,5)\)
+    in a finite number of moves.
+  </p>
+<section class="exercises" id="exercises-44"><header title="Exercises 9.2.1 Exercises"><h1 class="heading hide-type" alt="Exercises 9.2.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">9.2.1</span><span class="title">Exercises</span>
+</h1></header><ol style="list-style-type: lower-alpha;">
+<li id="li-508"><p id="p-1719">
+          Do the algebra (and show all your work!) to prove that invariant
+          defined in this section actually has the value 1 for the set of all the
+          men occupying the \(x\)-axis and the lower half-plane.
+        </p></li>
+<li id="li-509"><p id="p-1720">
+          “Escape of the clones” is a  nice puzzle, originally proposed by Maxim Kontsevich.  The game
+          is played on an infinite checkerboard restricted to the first quadrant — that is the squares may be 
+          identified with points having integer coordinates \((x,y)\) with \(x&gt;0\) and \(y&gt;0\).  The “clones” are markers
+          (checkers, coins, small rocks, whatever…) that can move in only one fashion — if the squares immediately
+          above and to the right of a clone are empty, then it can make a “clone move.”   The clone moves one space
+          up and a copy is placed in the cell one to the right.  We begin with three clones occupying cells \((1,1), (2,1)\) and \((1,2)\) — we'll refer to those three checkerboard squares as “the prison.”  The question is this:  can these
+          three clones escape the prison?
+
+          You must either demonstrate a sequence of moves that frees all three clones or provide an argument that the task is impossible.
+        </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

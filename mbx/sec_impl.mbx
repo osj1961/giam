@@ -1,0 +1,595 @@
+
+<section xml:id="sec_impl">
+  <title>Implication</title>
+  <p>
+    Suppose a mother makes the following statement to her child:
+    <q>If you finish your peas, you'll get dessert.</q>
+  </p>
+
+  <p>
+    This is a compound sentence made up of the two simpler
+    sentences <m>P=</m> <q>You finish your peas</q> and <m>D=</m> <q>You'll get dessert.</q>
+    It is an example of a type of compound sentence called a
+    <index><main>conditional statement</main></index><em>conditional</em>. Conditionals are if-then type statements.
+    In ordinary language the word <q>then</q> is often elided (as is the case
+    with our example above). Another way of phrasing the <q>If P then D.</q>
+    relationship is to use the word <q>implies</q> <mdash /> although it would be
+    a rather uncommon mother who would say <q>Finishing your peas implies
+    that you will receive dessert.</q>
+  </p>
+
+  <p>
+    As was the case in the previous section, there are four possible
+    situations and we must consider each to decide the truth/falsity
+    of this conditional statement. The peas may or may not be finished,
+    and independently, the dessert may or may not be proffered.
+  </p>
+
+  <p>
+    Suppose the child finishes the peas and the mother comes across
+    with the dessert. Clearly, in this situation the mother's statement
+    was true. On the other hand, if the child finishes the hated peas
+    and yet does not receive a treat, it is just as obvious that the
+    mother has lied!
+    What do we say about the mother's veracity in the case that the peas
+    go unfinished? Here, Mom gets a break. She can either hold firm
+    and deliver no dessert, or she can be a softy and give out unearned
+    sweets <mdash /> in either case, we can't accuse her of telling a falsehood.
+    The statement she made had to do <em>only</em> with the eventualities
+    following total pea consumption, she said nothing about what happens
+    if the peas go uneaten.
+  </p>
+
+  <p>
+    A conditional statement's components are called the
+    <index><main>antecedent</main></index><em>antecedent</em>
+    (this is the <q>if</q> part, as in <q>finish
+    your peas</q>) and the <index><main>consequent</main></index><em>consequent</em> (this is the <q>then</q> part, as in
+    <q>get dessert</q>). The discussion in the
+    last paragraph was intended to make the point that when the antecedent
+    is false, we should consider the conditional to be true. Conditionals
+    that are true because their antecedents are false are said to
+    be <index><main>vacuous truth</main></index><em>vacuously true</em>. The conditional
+    involving an antecedent <m>A</m>
+    and a consequent <m>B</m> is expressed symbolically using an arrow:
+    <m>A \implies B</m>. Here is a truth table for this connective.
+  </p>
+  <tabular>
+    <row>
+      <cell><m>A</m></cell>
+      <cell><m>B</m></cell>
+      <cell><m>A \implies B</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>T</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+    </row>
+    <row>
+      <cell>T</cell>
+      <cell><m>\phi</m></cell>
+      <cell><m>\phi</m></cell>
+    </row>
+    <row>
+      <cell><m>\phi</m></cell>
+      <cell>T</cell>
+      <cell>T</cell>
+    </row>
+    <row>
+      <cell><m>\phi</m></cell>
+      <cell><m>\phi</m></cell>
+      <cell>T</cell>
+    </row>
+  </tabular>
+  <exercise>
+    <statement>
+      <p>
+        Note that this truth table is similar to the truth table for
+        <m>A \lor B</m> in that there is only a single row having a <m>\phi</m> in
+        the last column. For <m>A \lor B</m> the <m>\phi</m> occurs in the 4th row
+        and for <m>A \implies B</m> it occurs in the 2nd row. This suggests
+        that by suitably modifying things (replacing <m>A</m> or <m>B</m> by their
+        negations) we could come up with an <q>or</q> statement that had the
+        same meaning as the conditional. Try it!
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    It is fairly common that conditionals are used to express threats,
+    as in the peas/dessert example. Another common way to express a
+    threat is to use a disjunction <mdash /> <q>Finish your peas, or you won't
+    get dessert.</q> If you've been paying attention (and did the last
+    exercise), you will notice that this is <em>not</em> the disjunction
+    that should have the same meaning as the original conditional.
+    There is probably no mother on Earth who would say
+    <q>Don't finish your peas, or you get dessert!</q> to her child
+    (certainly not if she expects to be understood). So what's going on
+    here?
+  </p>
+
+  <p>
+    The problem is that <q>Finish your peas, or you won't
+    get dessert.</q> has the same logical content as
+    <q>If you get dessert then you finished your peas.</q>
+    (Notice that the roles of the antecedent and consequent have been
+    switched.) And, while this last sentence sounds awkward, it is
+    probably a more accurate reflection of what the mother intended.
+    The problem <em>really</em> is that people are incredibly sloppy
+    with their conditional statements! A lot of people secretly want
+    the 3rd row of the truth table for <m>\implies</m> to have a <m>\phi</m>
+    in it, and it simply doesn't! The operator that results if we do
+    make this modification is called the <index><main>biconditional</main></index>
+    biconditional, and is expressed
+    in English using the phrase <q>if and only if</q> (which leads mathematicians
+    to the abbreviation <index><main>iff</main></index><q>iff</q> much to the consternation of
+    spell-checking programs everywhere). The biconditional is denoted
+    using an arrow that points both ways. Its truth table follows.
+  </p>
+  <tabular>
+    <row>
+      <cell><m>A</m></cell>
+      <cell><m>B</m></cell>
+      <cell><m>A \iff B</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>T</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+    </row>
+    <row>
+      <cell>T</cell>
+      <cell><m>\phi</m></cell>
+      <cell><m>\phi</m></cell>
+    </row>
+    <row>
+      <cell><m>\phi</m></cell>
+      <cell>T</cell>
+      <cell><m>\phi</m></cell>
+    </row>
+    <row>
+      <cell><m>\phi</m></cell>
+      <cell><m>\phi</m></cell>
+      <cell>T</cell>
+    </row>
+  </tabular>
+  <p>
+    Please note, that while we like to strive for precision, we do not
+    necessarily recommend the use of phrases such as
+    <q>You will receive dessert if, and only if,
+    you finish your peas.</q> with young children.
+  </p>
+
+  <p>
+    Since conditional sentences are often confused with the sentence
+    that has the roles of antecedent and consequent reversed, this
+    switched-around sentence has been given a name: it is the
+    <index><main>converse</main></index><em>converse</em>
+    of the original statement. Another conditional that is distinct from
+    (but related to) a given conditional is its <index><main>inverse</main></index><em>inverse</em>.
+    This sort of sentence probably had to be named because of a very common
+    misconception, many people think that the way to negate an if-then
+    proposition is to negate
+    its parts. Algebraically, this looks reasonable <mdash /> sort of a distributive
+    law for logical negation over implications <mdash /> <m>{\lnot}( A \implies B) =
+    {\lnot}A \implies {\lnot}B</m>. Sadly, this reasonable looking assertion
+    can't possibly be true; since implications have just one <m>\phi</m> in a truth
+    table, the negation of an implication must have three <mdash /> but the statement
+    with the <m>\lnot</m>'s on the <em>parts</em> of the implication is going to only have
+    a single <m>\phi</m> in <em>its</em> truth table.
+  </p>
+
+  <p>
+    To recap, the converse of an implication has the pieces (antecedent and
+    consequent) switched about. The inverse of an implication has the
+    pieces negated. Neither of these is the same as the original implication.
+    Oddly, this is one of those times when two wrongs <em>do</em> make a right.
+    If you start with an implication, form its converse, then take the inverse
+    of that, you get a statement having exactly the same logical meaning
+    as the original. This new statement is called the
+    <index><main>contrapositive</main></index><em>contrapositive</em>.
+  </p>
+
+  <p>
+    This information is displayed in <xref ref="tab_contra">Table</xref>
+  </p>
+
+  <table>
+    <tabular>
+    <row>
+      <cell></cell>
+      <cell>converses</cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell>\ifx\pdfoutput\undefined
+      <image width="73%" source="images/horiz_arrows.png" /></cell>
+    </row>
+    <row>
+      <cell>\else
+      <image width="73%" source="images/horiz_arrows.png" /></cell>
+    </row>
+    <row>
+    <cell>\fi
+    \parbox[c]{10pt}{ \begin{sideways} inverses \end{sideways} } 
+    \parbox[c]{10pt}{ 
+    \ifx\pdfoutput\undefined
+    <image width="73%" source="images/vert_arrows.png" />
+    \else
+    <image width="73%" source="images/vert_arrows.png" />
+    \fi }</cell>
+    <cell><tabular>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell><m>A \implies B</m></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell><m>B \implies A</m></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell><m>{\lnot}A \implies {\lnot}B</m></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell><m>{\lnot}B \implies {\lnot}A</m></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+    </tabular></cell>
+    </row>
+    </tabular>
+    \caption[Converse, inverse and contrapositive.]{The relationship 
+    between a conditional statement, its converse, its inverse and its 
+    contrapositive.}
+  </table>
+
+  <p>
+    One final piece of advice about conditionals: don't confuse logical
+    if-then relationships with causality. Many of the if-then sentences
+    we run into in ordinary life describe cause and effect:
+    <q>If you cut the green wire the bomb will explode.</q> (Okay, that one
+    is an example from the ordinary life of a bomb squad technician, but <ellipsis />)
+    It is usually best to think of the if-then relationships we find in
+    Logic as divorced from the flow of time, the fact that <m>A \implies B</m>
+    is logically the same as <m>{\lnot}A \lor B</m> lends credence to this point of view.
+  </p>
+  <exercises>
+
+    <ol>
+    <li><p>
+        The transitive property of equality says that if <m>a=b</m> and <m>b=c</m>
+        then <m>a=c</m>.  Does the implication arrow satisfy a transitive property?
+        If so, state it.
+
+
+
+        \hint{
+        I sometimes like to rephrase the implication <m>X \implies Y</m> as <q>X's truth forces Y to be true.</q>  Does that help?
+        If we know that X being true forces Y to be true, and we also know that Y being true will force Z to be true, what can we conclude?
+
+
+
+        }
+      </p></li>
+
+    <li><p>
+        Complete truth tables for the compound sentences <m>A \implies B</m> and
+          <m>{\lnot}A \lor B</m>.
+  
+  
+  
+        \hint{
+        You should definitely be able to do this one on your own, but anyway, here's an outline of the table:
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>A</m></cell>
+            <cell><m>B</m></cell>
+            <cell><m>A \implies B</m></cell>
+            <cell><m>{\lnot}A \lor B</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>T</m></cell>
+            <cell><m>T</m></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>T</m></cell>
+            <cell><m>\phi</m></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>\phi</m></cell>
+            <cell><m>T</m></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>\phi</m></cell>
+            <cell><m>\phi</m></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+        }
+      </p></li>
+
+    <li><p>
+        Complete a truth table for the compound sentence <m>A \implies (B \implies C)</m> and for the sentence <m>(A \implies B) \implies C</m>.  What can you conclude
+        about conditionals and the associative property?
+
+
+
+        \hint{
+        No help on this one other than to say that the associative property <em>does not</em> hold for implications.
+
+
+
+        }
+      </p></li>
+
+    <li><p>
+        Determine a sentence using the <em>and</em> connector (<m>\land</m>) that
+        gives the negation of <m>A \implies B</m>.
+
+
+
+        \hint{Hmmm<ellipsis /> This will seem like a strange hint, but if you were to hear a kid at the playground say <q>Oh yeah? Well, I did call your mom a fatty and you still haven't clobbered me! Owww! OWWW!!! Stop hitting me!!</q>
+
+        What conditional sentence was he attempting to negate?
+        }
+      </p></li>
+
+    <li><p>
+        Rewrite the sentence <q>Fix the toilet or I won't pay the rent!</q> as
+        a conditional.
+
+
+
+        \hint{The way I see it there are eight possible ways to arrange "You fix the toilet" and "I'll pay the rent" (or their respective negations) around an implication arrow.
+        Here they all are. You decide which one sounds best.
+
+        If you fix the toilet, then I'll pay the rent.
+        If you fix the toilet, then I won't pay the rent.
+        If you don't fix the toilet, I'll pay the rent.
+        If you don't fix the toilet, then I won't pay the rent.
+        If I payed the rent, then you must have fixed the toilet.
+        If I payed the rent, then you must not have fixed the toilet.
+        If I didn't pay the rent, then you must have fixed the toilet.
+        If I didn't pay the rent, then you must not have fixed the toilet.
+
+        Some of those are truly strange<ellipsis />
+        }
+      </p></li>
+
+    <li><p>
+        Why is it that the sentence <q>If pigs can fly, I am the king
+        of Mesopotamia.</q> true?
+
+
+
+        \hint{Unless we're talking about some celebrity bringing their pet Vietnamese pot-bellied pig into first class with them, or possibly a catapult of some type... The antecedent (the if part) is false, so Yay! I AM the king of Mesopotamia!! Whoo-hooh! What? I'm not? Oh. But the if-then sentence is true. Bummer.}
+      </p></li>
+
+    <li><p>
+        Express the statement <m>A \implies B</m> using the Peirce arrow and/or the
+        Scheffer stroke. (See <xref ref="ex_nand_nor">Exercise</xref> in the previous section.)
+
+
+
+        \hint{You'll want to use <m>\vert</m>, the Scheffer stroke, aka NAND, because it's truth table contains three <m>T</m>'s and one <m>\phi</m> <mdash /> you'll just need to figure out which of its inputs to negate so as to make that one <m>\phi</m> occur in the second row of the table instead of the first.}
+      </p></li>
+
+    <li><p>
+    Find the contrapositives of the following sentences.
+
+    <ol>
+      <li><p>
+          If you can't do the time, don't do the crime.
+        </p></li>
+
+      <li><p>
+          If you do well in school, you'll get a good job.
+        </p></li>
+
+      <li><p>
+          If you wish others to treat you in a certain way, you must 
+              treat others in that fashion.
+        </p></li>
+
+      <li><p>
+          If it's raining, there must be clouds.
+        </p></li>
+
+      <li><p>
+          If <m>a_n \leq b_n</m>, for all <m>n</m> and <m>\sum_{n=0}^\infty b_n</m> is a 
+          convergent series, then <m>\sum_{n=0}^\infty a_n</m> is a convergent series.
+        </p></li>
+    </ol>
+    </p>
+
+    \hint{
+
+    <ol>
+      <li><p>
+          If you do the crime, you must do the time.
+        </p></li>
+
+      <li><p>
+          If you don't have a good job, you must've done poorly in school.
+        </p></li>
+
+      <li><p>
+          If you don't treat others in a certain way, you can't hope for others to treat you in that fashion,
+        </p></li>
+
+      <li><p>
+          If there are no clouds, it can't be raining.
+        </p></li>
+
+      <li><p>
+          If  <m>\sum_{n=0}^\infty a_n</m> is not a convergent series, then either <m>a_n \leq b_n</m>, for some <m>n</m> or 
+          <m>\sum_{n=0}^\infty b_n</m> is not a convergent series.
+        </p></li>
+    </ol>
+    }</li>
+
+    <li><p>
+        What are the converse and inverse of <q>If you watch my back, I'll 
+        watch your back.</q>?
+
+
+
+        \hint{
+        The converse is <q>If I watch your back, then you'll watch my back.</q>  (Sounds a little dopey doesn't it <mdash /> likes its sort of a wishful thinking<ellipsis />)
+        The inverse is <q>If you don't watch my back, then I won't watch your back.</q>  (Sounds less vapid, but it means the same thing<ellipsis />)
+        }
+      </p></li>
+
+    <li><p>
+        The integral test in Calculus is used to determine whether an
+        infinite series converges or diverges:   Suppose that <m>f(x)</m> is a positive,
+        decreasing, 
+        real-valued function with <m>\lim_{x \longrightarrow \infty} f(x) = 0</m>, if
+        the improper integral
+        <m>\int_0^\infty f(x)</m> has a finite value, then the infinite series 
+        <m>\sum_{n=1}^\infty f(n)</m> converges.
+
+        The integral test should be envisioned by letting the series correspond
+        to a right-hand Riemann sum for the integral, since the function is decreasing,
+        a right-hand Riemann sum is an underestimate for the value of the integral,
+        thus
+        <me>
+          \sum_{n=1}^\infty f(n) \lt  \int_0^\infty f(x).
+        </me>
+        Discuss the meanings of and (where possible) provide justifications for
+        the inverse, converse and contrapositive of the conditional statement 
+        in the integral test.
+
+
+
+        \hint{
+        The inverse says <mdash /> if the integral isn't finite, then the series doesn't converge. You can cook-up a function that shows this to be false by (for example) creating one with vertical asymptotes that occur in between the integer <m>x</m>-values. Even one such pole can be enough to make the integral go infinite.
+        The converse says that if the series converges, the integral must be finite. The counter-example we just discussed would work here too.
+
+        The contrapositive says that if the series doesn't converge, then the integral must not be finite. If we were allowed to use discontinuous functions, it isn't too hard to come up with an <m>f</m> that actually has zero area under it <mdash /> just make f be identically zero except at the integer x-values where it will take the same values as the terms of the series. But wait, the function we just described isn't <q>decreasing</q> <mdash /> which is probably why that hypothesis was put in there!
+        }
+      </p></li>
+
+    <li><p>
+        On the Island of Knights and Knaves (see <xref ref="IKK">page</xref>) you encounter two individuals named Locke and Demosthenes.  
+
+        Locke says, <q>Demosthenes is a knave.</q> 
+        Demosthenes says <q>Locke and I are knights.</q>
+
+        Who is a knight and who a knave?
+
+
+
+        \hint{Could Demosthenes be telling the truth?}
+      </p></li>
+    </ol>
+  </exercises>
+</section>

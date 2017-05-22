@@ -1,0 +1,857 @@
+
+<section xml:id="sec_pred">
+  <title>Predicates and Logical Connectives</title>
+  <p>
+    In every branch of Mathematics there are special, <index><main>atomic concepts</main></index>
+    atomic, notions that
+    defy precise definition. In Geometry, for example, the atomic notions
+    are points, lines and their incidence. Euclid defines a point as
+    <q>that which has no part</q> <mdash /> people can argue (and have argued) incessantly
+    over what exactly is meant by this. Is it essentially saying that anything
+    without volume, area or length of some sort is a point? In modern times
+    it has been recognized that any formal system of argumentation has to
+    have such elemental, undefined, concepts <mdash /> and that Euclid's apparent
+    lapse in precision comes from an attempt to hide this basic fact.
+    The notion of <q>point</q> can't really <em>be</em> defined. All we can do
+    is point (no joke intended) at a variety of points and hope that our
+    audience will absorb the same concept of point that we hold via the
+    process of <index><main>induction</main></index>induction<fn>inference of a 
+    generalized conclusion from particular instances <mdash /> compare DEDUCTION</fn>.
+  </p>
+
+  <p>
+    The atomic concepts in Set Theory are <q>set</q>, <q>element</q> and <q>membership</q>.
+    The atomic concepts in Logic are <q>true</q>, <q>false</q>, <index><main>sentence</main></index>
+    <q>sentence</q> and <index><main>statement</main></index> <q>statement</q>.
+  </p>
+
+  <p>
+    Regarding <em>true</em> and <em>false</em>, we hope there is no uncertainty
+    as to their meanings. <em>Sentence</em> also has a well-understood
+    meaning that most will agree on <mdash /> a syntactically correct ordered collection
+    of words such as <q>Johnny was a football player.</q> or <q>Red is a color.</q>
+    or <q>This is a sentence which does not refer to itself.</q> A <em>statement</em>
+    is a sentence which is either true or false.
+    In other words, a statement
+    is a sentence whose truth value is <em>definite</em>, in more other words,
+    it is always possible to decide <mdash /> one way or the other <mdash /> whether
+    a statement is true or false.<fn>Although, as a practical matter
+    it may be almost impossibly difficult to do so!  For instance it is 
+    certainly either true or false that I ate eggs for breakfast on my 21st
+    birthday <mdash /> but I don't remember, and short of building a time machine,
+    I don't know how you could find out.</fn> The first example
+    of a sentence given above (<q>Johnny was a football player</q>) is not a
+    statement <mdash /> the problem is that it is ambiguous unless we know who
+    Johnny is. If it had said <q>Johnny Unitas was a football player.</q> then
+    it would have been a statement. If it had said <q>Johnny Appleseed was a
+    football player.</q> it would also have been a statement, just not a true one.
+  </p>
+
+  <p>
+    Ambiguity is only one reason that a sentence may not be a statement. As
+    we consider more complex sentences, it may be the case that the truth
+    value of a given sentence simply cannot be decided. One of the most
+    celebrated mathematical results of the 20th century is
+    <index><main>G&#xf6;del, Kurt</main></index>Kurt G&#xf6;del's
+    <index><main>Incompleteness Theorem</main></index><q>Incompleteness Theorem.</q>
+    An important aspect of this theory is
+    the proof that in any axiomatic system of mathematical thought
+    there must be undecidable sentences <mdash /> statements which can neither be proved
+    nor disproved from the axioms<fn>There are trivial systems that 
+    are complete, but if a system is sufficiently complicated that it contains 
+    <q>interesting</q> statements it can't be complete.</fn>.
+    Simple sentences (e.g. those of the form
+    subject-verb-object) have little chance of being undecidable for this
+    reason, so we will next look at ways of building more complex sentences
+    from simple components.
+  </p>
+
+  <p>
+    Let's start with an example. Suppose I come up to you in some windowless
+    room and make the statement: <q>The sun is shining but it's raining!</q>
+    You decide to investigate my claim and determine its veracity. Upon
+    reaching a room that has a view of the exterior there are four possible
+    combinations of sunniness and/or precipitation that you may find. That is,
+    the atomic predicates <q>The sun is shining</q> and <q>It is raining</q> can each
+    be true or false independently of one another. In the following table
+    we introduce a convention used throughout the remainder of this book <mdash /> that true is indicated with a capital letter T and false is indicated
+    with the Greek letter <m>\phi</m> (which is basically a Greek F, and is a lot harder
+    to mistake for a T than an F is.)
+  </p>
+  <tabular>
+    <row>
+      <cell>The sun is shining</cell>
+      <cell>It is raining</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>T</cell>
+      <cell>T</cell>
+    </row>
+    <row>
+      <cell>T</cell>
+      <cell><m>\phi</m></cell>
+    </row>
+    <row>
+      <cell><m>\phi</m></cell>
+      <cell>T</cell>
+    </row>
+    <row>
+      <cell><m>\phi</m></cell>
+      <cell><m>\phi</m></cell>
+    </row>
+  </tabular>
+  <p>
+    Each row of the above table represents a possible state of the outside
+    world. Suppose you observe the conditions given in the last row, namely
+    that it is neither sunny, nor is it raining <mdash /> you would certainly conclude
+    that I am not to be trusted. I.e. my statement, the compounding of
+    <q>The sun is shining</q> and <q>It is raining</q> (with the word <q>but</q> in between
+    as a connector) is false. If you think about it a bit, you'll agree that
+    this so-called <index><main>compound sentence</main></index><em>compound sentence</em> is true
+    only in the case that both
+    of its component pieces are true. This underscores an amusing linguistic
+    point: <q>but</q> and <q>and</q> have exactly the same meaning! More precisely,
+    they <em>denote</em> the same thing, they have subtly different connotations
+    however <mdash /> <q>but</q> indicates that both of the statements it connects
+    are true and that the speaker is surprised by this state of affairs.
+  </p>
+
+  <p>
+    In Mathematics we distinguish two main connectives for hooking-up simple
+    sentences into compound ones. The <index><main>conjunction</main></index><em>conjunction</em>
+    of two sentences is
+    the compound sentence made by sticking the word <q>and</q> between them.
+    The <index><main>disjunction</main></index><em>disjunction</em> of two sentences is
+    formed by placing an <q>or</q>
+    between them. Conjunctions are true only when both components are true.
+    Disjunctions are false only when both components are false.
+  </p>
+
+  <p>
+    As usual, mathematicians have developed an incredibly terse, compact
+    notation for these ideas.<fn>One begins to suspect that 
+    mathematicians form an unusually lazy sub-species of humanity.</fn>
+    First, we represent an
+    entire sentence by a single letter <mdash /> traditionally, a capital letter.
+    This is called a <index><main>predicate variable</main></index><em>predicate variable</em>.
+    For example, following the example above, we could denote the sentence
+    <q>The sun is shining</q> by the letter <m>S</m>. Similarly, we could make the
+    assignment <m>R =</m> <q>It is raining.</q> The conjunction and disjunction
+    of these sentences can then be represented using the symbols <m>S \land R</m>
+    and <m>S \lor R</m>, respectively. As a mnemonic, note that the connective
+    in <m>S \land R</m> looks very much like the capital letter A (as in And).
+  </p>
+
+  <p>
+    To display, very succinctly, the effect of these two connectives we can
+    use so-called <index><main>truth table</main></index>truth tables. In a truth table we list
+    all possible truth
+    values of the predicate variables and then enumerate the truth values
+    of some compound sentence. For the conjunction and disjunction
+    connectors we have (respectively):
+  </p>
+  <tabular>
+    <row>
+      <cell><m>A</m></cell>
+      <cell><m>B</m></cell>
+      <cell><m>A \land B</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>T</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+    </row>
+    <row>
+      <cell>T</cell>
+      <cell><m>\phi</m></cell>
+      <cell><m>\phi</m></cell>
+    </row>
+    <row>
+      <cell><m>\phi</m></cell>
+      <cell>T</cell>
+      <cell><m>\phi</m></cell>
+    </row>
+    <row>
+      <cell><m>\phi</m></cell>
+      <cell><m>\phi</m></cell>
+      <cell><m>\phi</m></cell>
+    </row>
+  </tabular>
+  and
+  <tabular>
+    <row>
+      <cell><m>A</m></cell>
+      <cell><m>B</m></cell>
+      <cell><m>A \lor B</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>T</cell>
+      <cell>T</cell>
+      <cell>T</cell>
+    </row>
+    <row>
+      <cell>T</cell>
+      <cell><m>\phi</m></cell>
+      <cell>T</cell>
+    </row>
+    <row>
+      <cell><m>\phi</m></cell>
+      <cell>T</cell>
+      <cell>T</cell>
+    </row>
+    <row>
+      <cell><m>\phi</m></cell>
+      <cell><m>\phi</m></cell>
+      <cell><m>\phi</m></cell>
+    </row>
+  </tabular>
+  .
+
+  <p>
+    In addition to these connectors we need a modifier (called
+    <index><main>negation</main></index><em>negation</em>)
+    that acts on individual sentences. The negation of a sentence <m>A</m> is
+    denoted by <m>{\lnot}A</m>, and its truth value is exactly the opposite of
+    <m>A</m>'s truth value. The negation of a sentence is also known as the
+    <em>denial</em> of a sentence.
+    A truth table for the negation operator is somewhat
+    trivial but we include it here for completeness.
+  </p>
+  <tabular>
+    <row>
+      <cell><m>A</m></cell>
+      <cell><m>{\lnot}A</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>T</cell>
+      <cell><m>\phi</m></cell>
+    </row>
+    <row>
+      <cell><m>\phi</m></cell>
+      <cell>T</cell>
+    </row>
+  </tabular>
+  <p>
+    These three simple tools (and, or <ampersand /> not) are sufficient to
+    create extraordinarily complex sentences out of basic components.
+    The way these pieces interrelate is a bit reminiscent of algebra,
+    in fact the study of these logical operators (or any
+    operators that act like them) is called <index><main>Boole, George</main></index>
+    <em>Boolean Algebra</em><fn>In honor of George Boole, whose 1854 
+     book <em>An investigation into the Laws of Thought</em> inaugurated the 
+     subject.</fn>. There are distinct differences
+    between Boolean and ordinary algebra however. In regular algebra we have
+    the binary connectors <m>+</m> (plus) and <m>\cdot</m> (times), and the unary
+    negation operator <m>-</m>, these are certainly analogous to <m>\land</m>, <m>\lor</m> <ampersand />
+    <m>\lnot</m>, but there are certain consequences of the fact that multiplication
+    is effectively repeated addition that simply don't hold for the Boolean
+    operators. For example, there is a well-defined precedence between <m>\cdot</m> and
+    <m>+</m>. In parsing the expression <m>4 \cdot 5 + 3</m> we all know that the
+    multiplication is to be done first. There is no such rule governing
+    order of operations between <m>\land</m> and <m>\lor</m>, so an expression like
+    <m>A \land B \lor C</m> is simply ambiguous <mdash /> it <em>must</em> have parentheses
+    inserted in order to show the order, either <m>(A \land B) \lor C</m> or
+    <m>A \land (B \lor C)</m>. Another distinction between ordinary and Boolean
+    algebra is exponentiation. If there <em>were</em> exponents in Boolean algebra,
+    we'd need two different kinds <mdash /> one for repeated conjunction and another
+    for repeated disjunction.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Why is it that there is no such thing as exponentiation
+        in the algebra of Logic?
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    While there are many differences between Boolean algebra and the
+    usual, garden-variety algebra, there are also many similarities.
+    For instance, the <index><main>associative law</main></index>associative,
+    <index><main>commutative law</main></index>commutative and
+    <index><main>distributive law</main></index>distributive laws
+    of Algebra all have versions that work in the Boolean case.
+  </p>
+
+  <p>
+    A very handy way of visualizing Boolean expressions is given by
+    digital logic circuit diagrams. To discuss these diagrams we
+    must make a brief digression into Electronics. One of the most
+    basic components inside an electronic device is a <index><main>transistor</main></index>
+    transistor,
+    this is a component that acts like a switch for electricity,
+    but the switch itself is controlled by electricity. In <xref ref="fig_trans">Figure</xref>
+    we see the usual schematic representation of a transistor. If voltage
+    is applied to the wire labeled z, the transistor becomes conductive,
+    and current may flow from x to y.
+  </p>
+
+  <figure xml:id="fig_trans" >
+    <caption>A schematic representation of a transistor.</caption>
+    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+      \reset@font\fontsize{#1}{#2pt}
+      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+      \selectfont}\fi
+    <image source="images/5fa959a9d49ccd5348d43c5dace7a5db1b0e0d52.png"/>
+  </figure>
+
+  <p>
+    Suppose that two transistors are connected as in <xref ref="fig_series">Figure</xref>
+    (this is called a <index><main>series connection</main></index><em>series</em> connection).
+    In order for current to flow
+    from x to y we must have voltage applied to <em>both</em> the wires labeled
+    z and w. In other words, this circuit effectively creates the <em>and</em>
+    operation <mdash /> assuming voltage is always applied to x, if z <em>and</em> w
+    are energized then the output at y will be energized.
+  </p>
+
+  <figure>
+    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+      \reset@font\fontsize{#1}{#2pt}
+      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+      \selectfont}\fi
+    <image source="images/9f7a8052f905d5698fc1a098f9c6d5cdf2d5229d.png"/>
+    \caption[Series connections implement <em>and</em>.]{The connection of two transistors in series provides 
+    an implementation of the <em>and</em> operator.}
+  </figure>
+
+  <p>
+    When two transistors are connected in <index><main>parallel connection</main></index>parallel (this is illustrated in
+    <xref ref="fig_par">Figure</xref>) current can flow from x to y when either (or <em>both</em>)
+    of the wires at z and w have voltage applied. This brings up a point
+    which is confusing for some: in common speech the use of the word <q>or</q> often
+    has the sense known as <index><main>exclusive or</main></index><em>exclusive or</em> (a.k.a. xor), when we say <q>X or Y</q>
+    we mean <q>Either X or Y, but not both.</q> In Electronics and Mathematics,
+    <em>or</em> always has the non-exclusive (better known as
+    <index><main>inclusive or</main></index>inclusive) sense.
+  </p>
+
+  <figure>
+    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+      \reset@font\fontsize{#1}{#2pt}
+      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+      \selectfont}\fi
+    <image source="images/b755e1e6a9c1dbd364c806b69e3ebb59c1051fe1.png"/>
+    \caption[Parallel connections implement <em>or</em>.]{The connection of two transistors in parallel provides 
+    an implementation of the <em>or</em> operator.}
+  </figure>
+
+  <p>
+    As a sort of <index><main>logic gates</main></index>graphical shorthand, electronics engineers use the symbols
+    below to indicate <index><main>and gates</main></index>and-gates, <index><main>or gates</main></index>or-gates <ampersand /> <index><main>not gates</main></index>not-gates (better known as negators).
+  </p>
+  <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  <image source="images/e7616f684fd0d6d9fb32d9ac4f2d6e6796fa5c2c.png"/>
+  <p>
+    An and-gate has two transistors inside it that are wired in series <mdash /> if both the inputs are energized the output will be too. An
+    or-gate has two transistors in parallel inside it. Not-gates
+    involve magic <mdash /> when their input is not on, their output <em>is</em>
+    and vice versa.
+  </p>
+
+  <p>
+    Using this graphical <q>language</q> one can make schematic
+    representations of logical expressions. Some find that
+    tracing such diagrams makes understanding the structure
+    of a Boolean expression easier. For example, in <xref ref="fig_3ands">Figure</xref>
+    we illustrate 2 of the possible ways that the conjunction
+    of four predicate variables can be parenthesized. In fact, when
+    a multitude of predicates are joined by the same connective,
+    the way in which the expression is parenthesized is unimportant,
+    thus one often sees a further shorthand <mdash /> gates with more than
+    2 inputs.
+  </p>
+
+  <figure>
+    \
+    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+      \reset@font\fontsize{#1}{#2pt}
+      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+      \selectfont}\fi
+    <image source="images/156a7cbb2bd04164ee64f13ca3f9753e291741b8.png"/>
+    \caption[Parenthesizations expressed as digital logic circuits.]{Two of the possible ways to parenthesize the conjunction 
+    of four statement variables <mdash /> expressed as digital logic circuits.}
+  </figure>
+
+  <p>
+    A common task for an electronics designer is to come up with
+    a digital logic circuit having a prescribed input/output table.
+    Note that an input/output table for a logic circuit is entirely
+    analogous with a truth table for a compound sentence in Logic <mdash />
+    except that we use 0's and 1's rather than T's and <m>\phi</m>'s.
+  </p>
+
+  <p>
+    Suppose that we wanted to design a circuit that would
+    have the following input/output table.
+  </p>
+  <tabular>
+    <row>
+      <cell><m>\; x \;</m></cell>
+      <cell><m>\; y \;</m></cell>
+      <cell><m>\; z \;</m></cell>
+      <cell>out</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>0</cell>
+      <cell>0</cell>
+      <cell>0</cell>
+      <cell>0</cell>
+    </row>
+    <row>
+      <cell>0</cell>
+      <cell>0</cell>
+      <cell>1</cell>
+      <cell>0</cell>
+    </row>
+    <row>
+      <cell>0</cell>
+      <cell>1</cell>
+      <cell>0</cell>
+      <cell>0</cell>
+    </row>
+    <row>
+      <cell>0</cell>
+      <cell>1</cell>
+      <cell>1</cell>
+      <cell>1</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>1</cell>
+      <cell>0</cell>
+      <cell>0</cell>
+      <cell>0</cell>
+    </row>
+    <row>
+      <cell>1</cell>
+      <cell>0</cell>
+      <cell>1</cell>
+      <cell>0</cell>
+    </row>
+    <row>
+      <cell>1</cell>
+      <cell>1</cell>
+      <cell>0</cell>
+      <cell>1</cell>
+    </row>
+    <row>
+      <cell>1</cell>
+      <cell>1</cell>
+      <cell>1</cell>
+      <cell>1</cell>
+    </row>
+  </tabular>
+  <p>
+    A systematic method for accomplishing such a design task involves
+    a notion called <index><main>disjunctive normal form</main></index><em>disjunctive normal form</em>.
+    A Boolean expression
+    is in disjunctive normal form if it consists of the disjunction of
+    one or more statements, each of which consists entirely of conjunctions
+    of predicate variables and/or their negations. In other words, the <em>or</em>
+    of a bunch of <em>ands</em>. In terms of digital logic circuits, the <em>and</em>s
+    we're talking about are called <index><main>recognizers</main></index><em>recognizers</em>.
+    For example,
+    the following 3-input and-gates recognize the input states in
+    the 4th, 7th and 8th rows of the i/o table above. (These are the rows
+    where the output is supposed to be 1.)
+  </p>
+  <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  <image source="images/ae22c36eb23877e7336ee55ce36fdb752646a641.png"/>
+  <p>
+    In <xref ref="fig_dnf">Figure</xref> we illustrate how to create a circuit whose
+    i/o table is as above using these recognizers.
+  </p>
+
+  <figure>
+    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+      \reset@font\fontsize{#1}{#2pt}
+      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+      \selectfont}\fi
+    <image source="images/8f4817e0170de864ff94dbfe54de7949c4dbc6d1.png"/>
+    \caption[Disjunctive normal form.]{A digital logic circuit built 
+    using disjunctive normal form.  The output of this circuit is 
+    <m>({\lnot}x \land y \land z) \lor (x \land y \land {\lnot}z) \lor (x \land y \land z)</m>.}
+  </figure>
+
+  <exercises>
+
+    <ol>
+      <li><p>
+          Design a digital logic circuit (using and, or <ampersand /> not gates) that 
+          implements an exclusive or.
+
+
+
+          \hint{First, it's essential to know what is meant by the term "exclusive or". This is the interpretation that many people give to the word "or" <mdash /> where "X or Y" means either X is true or Y is true, but that it isn't the case that both X and Y are true. This (wrong) understanding of what "or" means is common because it is often the case that X and Y represent complimentary possibilities: old or new, cold or hot, right or wrong... The truth table for exclusive or (often written xor, pronounced "ex-or", symbolically it is usually <m>\oplus</m>) is
+          <tabular>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell><m>X</m></cell>
+              <cell><m>Y</m></cell>
+              <cell><m>X \,\oplus\, Y</m></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell><m>T</m></cell>
+              <cell><m>T</m></cell>
+              <cell><m>\phi</m></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell><m>T</m></cell>
+              <cell><m>\phi</m></cell>
+              <cell><m>T</m></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell><m>\phi</m></cell>
+              <cell><m>T</m></cell>
+              <cell><m>T</m></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell><m>\phi</m></cell>
+              <cell><m>\phi</m></cell>
+              <cell><m>\phi</m></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+          </tabular>
+          So it's true when one, or the other, but not both of its inputs are true.  The upshot of the last sentence is that we can write <m>X \oplus Y \; \equiv \; (X \lor Y) \land {\lnot}(X \land Y)</m>.
+
+          The above reformulation should help<ellipsis /> 
+
+
+
+          }
+        </p></li>
+
+      <li><p>
+          Consider the sentence 
+          <q>This is a sentence which does not refer to itself.</q>
+          which was given in the beginning of this chapter as an example.
+          Is this sentence a statement?  If so, what is its truth value?
+
+          \hint{The only question in your mind, when deciding whether a sentence is a statement, should be "Does this thing have a definite truth value?"
+          Well?
+
+          Isn't it just plainly false?}
+        </p></li>
+
+      <li><p>
+          Consider the sentence <q>This sentence is false.</q>  Is this 
+          sentence a statement?
+
+          \hint{Try to justify why this sentence can't be either true or false.}
+        </p></li>
+
+      <li><p>
+          Complete truth tables for each of the sentences 
+          <m>(A \land B) \lor C</m> and
+          <m>A \land (B \lor C)</m>.  Does it seem that these sentences have
+          the same logical content?
+
+          \hint{
+
+
+
+          A tiny hint here: since the sentences involve 3 variables you'll need truth tables with 8 rows. Here's a template.
+          <tabular>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell><m>A</m></cell>
+              <cell><m>B</m></cell>
+              <cell><m>C</m></cell>
+              <cell><m>(A \land B) \lor C</m></cell>
+              <cell><m>A \land (B \lor C)</m></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell><m>T</m></cell>
+              <cell><m>T</m></cell>
+              <cell><m>T</m></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell><m>T</m></cell>
+              <cell><m>T</m></cell>
+              <cell><m>\phi</m></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell><m>T</m></cell>
+              <cell><m>\phi</m></cell>
+              <cell><m>T</m></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell><m>T</m></cell>
+              <cell><m>\phi</m></cell>
+              <cell><m>\phi</m></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell><m>\phi</m></cell>
+              <cell><m>T</m></cell>
+              <cell><m>T</m></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell><m>\phi</m></cell>
+              <cell><m>T</m></cell>
+              <cell><m>\phi</m></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell><m>\phi</m></cell>
+              <cell><m>\phi</m></cell>
+              <cell><m>T</m></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell><m>\phi</m></cell>
+              <cell><m>\phi</m></cell>
+              <cell><m>\phi</m></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+          </tabular>
+          }
+        </p></li>
+
+      <li xml:id="ex_nand_nor" ><p>
+          There are two other logical connectives that are
+          used somewhat less commonly than <m>\lor</m> and <m>\land</m>.
+          These are the <index><main>Scheffer stroke</main></index> Scheffer stroke and the 
+          <index><main>Peirce arrow</main></index>Peirce arrow <mdash /> written <m>\vert</m> and <m>\downarrow</m>, respectively <mdash />  they are 
+          also known as <index><main>NAND</main></index> NAND and <index><main>NOR</main></index> NOR.
+
+           The truth tables for these connectives are:
+          <tabular>
+            <row>
+              <cell><m>A</m></cell>
+              <cell><m>B</m></cell>
+              <cell><m>A \,\vert\, B</m></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell><m>T</m></cell>
+              <cell><m>T</m></cell>
+              <cell><m>\phi</m></cell>
+            </row>
+            <row>
+              <cell><m>T</m></cell>
+              <cell><m>\phi</m></cell>
+              <cell><m>T</m></cell>
+            </row>
+            <row>
+              <cell><m>\phi</m></cell>
+              <cell><m>T</m></cell>
+              <cell><m>T</m></cell>
+            </row>
+            <row>
+              <cell><m>\phi</m></cell>
+              <cell><m>\phi</m></cell>
+              <cell><m>T</m></cell>
+            </row>
+          </tabular>
+          and
+          <tabular>
+            <row>
+              <cell><m>A</m></cell>
+              <cell><m>B</m></cell>
+              <cell><m>A \downarrow B</m></cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell><m>T</m></cell>
+              <cell><m>T</m></cell>
+              <cell><m>\phi</m></cell>
+            </row>
+            <row>
+              <cell><m>T</m></cell>
+              <cell><m>\phi</m></cell>
+              <cell><m>\phi</m></cell>
+            </row>
+            <row>
+              <cell><m>\phi</m></cell>
+              <cell><m>T</m></cell>
+              <cell><m>\phi</m></cell>
+            </row>
+            <row>
+              <cell><m>\phi</m></cell>
+              <cell><m>\phi</m></cell>
+              <cell><m>T</m></cell>
+            </row>
+          </tabular>
+          Find an expression for <m>(A\, \land {\lnot}B) \lor C</m>
+          using only these new connectives (as well as negation and the
+          variable symbols themselves).
+
+
+          \hint{Sorry, I know this is probably the hardest problem in the chapter, but I'm (mostly) not going to help...
+          Just one hint to help you get started: NAND and NOR are the negations of AND and OR (respectively) so, for example, <m>(X \land Y) \; \equiv \; {\lnot}(A \,\vert\, B)</m>.}
+        </p></li>
+
+      <li xml:id="IKK" ><p>
+          The famous logician <index><main>Smullyan, Raymond</main></index> Raymond Smullyan devised 
+          a family of logical puzzles around a fictitious place he called 
+          <index><main>Knights and Knaves</main></index> <q>the Island of Knights and Knaves.</q>  The inhabitants of the island are either knaves, who always make false statements, or knights, who always make truthful statements.  
+
+          In the most famous knight/knave puzzle, you are in a room which has only two exits.  One leads to certain death and the other to freedom.  There are two 
+          individuals in the room, and you know that one of them is a knight and the other is a knave, but you don't know which.   Your challenge is to determine the door which leads to freedom by asking a single question.
+
+          \hint{Ask one of them what the other one would say to do.}
+        </p></li>
+    </ol>
+  </exercises>
+</section>

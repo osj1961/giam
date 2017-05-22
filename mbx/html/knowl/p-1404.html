@@ -1,0 +1,33 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:45-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<p><h5 class="heading"><span class="type">Paragraph</span></h5>
+    Now it only takes 7 bits to encode the 128 possible values in the
+    ASCII system, which can easily be verified by noticing that the left-most
+    bits in all of the binary representations above are 0. Most computers
+    use 8 bit words or “bytes” as their basic units of information, and the
+    fact that the ASCII code only requires 7 bits lead someone to think up
+    a use for that additional bit. It became a “parity check bit.” If the
+    seven bits of an ASCII encoding have an odd number of 1's, the parity
+    check bit is set to 1 — otherwise, it is set to 0. The result of this
+    is that, subsequently, all of the 8 bit words that encode ASCII data will have
+    an even number of 1's. This is an example of a so-called  error detecting
+    code known as the “even code” or the “parity check code.” If
+    data is sent over a noisy telecommunications channel, or is stored in
+    fallible computer memory, there is some small but calculable probability
+    that there will be a “bit error.” For instance, one computer might
+    send 10000111 (which is the ASCII code that says “ring the bell”) but
+    another machine across the network might receive 10100111 (the 3rd bit from
+    the left has been received in error) now if we are only looking at the
+    rightmost seven bits we will think that the ASCII code for a single quote
+    has been received, but if we note that this piece of received data has an
+    odd number of ones we'll realize that something is amiss. There are other
+    more advanced coding schemes that will let us not only <!--Style me with CSS--><em>detect</em> an
+    error, but (within limits) <!--Style me with CSS--><em>correct</em> it as well! This rather amazing
+    feat is what makes wireless telephony (not to mention communications
+    with deep space probes — whoops! I mentioned it) work.
+  </p><span class="incontext"><a href="section-36.html#p-1404">in-context</a></span>

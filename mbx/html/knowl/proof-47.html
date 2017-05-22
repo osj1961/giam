@@ -1,0 +1,32 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:45-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5>
+<p>
+      Using the formula for the value of a binomial coefficient
+      we get
+      \begin{equation*}
+        k \cdot \binom{n}{k} = k \cdot \frac{n!}{k! (n-k)!}.
+      \end{equation*}
+    </p>
+<p>
+      We can do some cancellation to obtain
+      \begin{equation*}
+        k \cdot \binom{n}{k} = \frac{n!}{(k-1)! (n-k)!}.
+      \end{equation*}
+    </p>
+<p>
+      Finally we factor-out an \(n\) to obtain
+      \begin{equation*}
+        k \cdot \binom{n}{k} = n \cdot \frac{(n-1)!}{(k-1)! (n-k)!},
+      \end{equation*}
+      since \((n-k)\) is the same thing as \(((n-1)-(k-1))\) we have
+      \begin{equation*}
+        k \cdot \binom{n}{k} = n \cdot \frac{(n-1)!}{(k-1)!((n-1)-(k-1))!} 
+        = n \cdot \binom{n-1}{k-1}
+      \end{equation*}
+    </p></article><span class="incontext"><a href="section-38.html#proof-47">in-context</a></span>
