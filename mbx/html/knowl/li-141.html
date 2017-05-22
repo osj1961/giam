@@ -1,0 +1,36 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:42-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<article class="list"><h5 class="heading">
+<span class="type">Item</span> <span class="codenumber">d</span>
+</h5>
+<p id="p-349">
+    Find the negation of each of the following and simplify as much as possible.
+
+    <ol style="list-style-type: lower-roman;">
+<li id="li-142"><p id="p-350">
+          \((A \lor B) \; \iff \; C\)
+        </p></li>
+<li id="li-143"><p id="p-351">
+          \((A \lor B) \; \implies \; (A \land B)\)
+        </p></li>
+</ol>
+    </p>
+
+    \hint{Neither of these is particularly amenable to simplification. Nor, perhaps, is it readily
+    apparent what “simplify” means in this context! My interpretation is that we should look
+    for a logically equivalent expression using the fewest number of operators and if possible
+    <!--Style me with CSS--><em>not</em> using the more complicated operators (\(\implies\) and \(\iff\)).  However, if we try 
+    to rewrite the first statement's negation using only \(\land\), \(\lor\) and \(\lnot\) we get things
+    that look a lot more complicated than \((A \lor B) \; \iff \; {\lnot}C\)— the quick way to negate a 
+    biconditional is simply to negate one of its parts.
+
+    The second statement's negation turns out to be the same thing as exclusive or, so a particularly
+    simple response would be to write \(A \oplus B\) although that feels a bit like cheating, so
+    maybe we should answer with \((A \lor B) \land {\lnot}(A \land B)\)— but that answer is what we
+    would get by simply applying the rule for negating a conditional and doing no further simplification.
+    }</article><span class="incontext"><a href="sec_le.html#li-141">in-context</a></span>

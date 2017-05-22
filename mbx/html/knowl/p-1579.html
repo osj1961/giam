@@ -1,0 +1,33 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:45-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<p><h5 class="heading"><span class="type">Paragraph</span></h5>
+    We need to produce a formula. In truth, we should really produce two
+    formulas. One that takes an ordered pair \((x, y)\) and produces a number \(n\).
+    Another that takes a number \(n\) and produces an ordered pair \((x, y)\) The
+    number \(n\) tells us where the pair \((x, y)\) lies in our infinite listing.
+    There is a
+    problem though: the second formula (that gives the map from \(\Naturals\)
+    to \(\Naturals \times \Naturals\))
+    is really hard to write down — it's easier to describe the map
+    algorithmically.
+    A simple observation will help us to deduce the various formulas. The
+    ordered pairs along the \(y\)-axis (those of the form (0, something)) correspond
+    to triangular numbers. In fact the pair \((0, n)\) will correspond to the \(n\)-th triangular
+    number, \(T(n) = (n^2 + n)/2\). The ordered pairs along the descending
+    slanted line starting from \((0, n)\) all have the feature that the sum of their
+    coordinates is \(n\) (because as the \(x\)-coordinate is increasing, the
+    \(y\)-coordinate
+    is decreasing). So, given an ordered pair \((x, y)\), the number corresponding
+    to the position at the upper end of the slanted line it is on (which will have
+    coordinates \((0, x+y)\)) will be \(T(x+y)\), and the pair \((x, y)\) occurs in the listing exactly \(x\) positions after \((0, x + y)\). Thus, the function
+    \(f : \Naturals \times \Naturals \longrightarrow N\) is
+    given by
+    \begin{equation*}
+      f(x, y) \; = \; x + T(x + y) = x + \frac{(x + y)^2 + (x + y)}{2}.
+    \end{equation*}
+  </p><span class="incontext"><a href="section-40.html#p-1579">in-context</a></span>

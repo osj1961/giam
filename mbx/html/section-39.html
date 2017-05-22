@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T14:55:13-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Examples of set equivalence</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="previous-button toolbar-item button" href="sec_equiv_sets.html">Previous</a><a class="up-button button toolbar-item" href="ch_card.html">Up</a><a class="next-button button toolbar-item" href="sec_cantors_thm.html">Next</a>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_equiv_sets.html">Previous</a><a class="up-button button toolbar-item" href="ch_card.html">Up</a><a class="next-button button toolbar-item" href="sec_cantors_thm.html">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-21.html">Containment</a></li>
+<li><a href="section-22.html">Set operations</a></li>
+<li><a href="section-23.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-26.html">Formulas for sums and products</a></li>
+<li><a href="section-27.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-28.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-29.html">Relations</a></li>
+<li><a href="section-30.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-35.html">Parity and Counting arguments</a></li>
+<li><a href="section-36.html">The pigeonhole principle</a></li>
+<li><a href="section-37.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link active"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-39.html" class="active">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-41.html">Dominance</a></li>
+<li><a href="section-42.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-43.html">Morley's miracle</a></li>
+<li><a href="section-44.html">Five steps into the void</a></li>
+<li><a href="section-45.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-39"><header title="Section 8.2 Examples of set equivalence"><h1 class="heading hide-type" alt="Section 8.2 Examples of set equivalence">
+<span class="type">Section</span><span class="codenumber">8.2</span><span class="title">Examples of set equivalence</span>
+</h1></header><p id="p-1542">
+    There is an ancient conundrum about what happens when an irresistible force
+    meets an immovable object. In a similar spirit there are sometimes heated
+    debates among young children concerning which super-hero will win a fight.
+    Can Wolverine take Batman? What about the Incredible Hulk versus the
+    Thing? Certainly Superman is at the top of the heap in this ordering. Or is
+    he? Would the man of steel even engage in a fight with a female super-hero,
+    say Wonder Woman? (Remember the 1950's sensibilities of Clark Kent's
+    alter ego.)
+  </p>
+<p id="p-1543">
+    To many people the current topic will seem about as sensible as the schoolyard
+    discussions just alluded to. We are concerned with knowing whether
+    one infinite set is bigger than another, or are they the same size. There are
+    generally three reasons that people disdain to consider such questions. The
+    first is that, like super-heros, infinite sets are just products of the imagination.
+    The second is that there can be no difference because “infinite is infinite” — once you get to the size we call infinity, you can't add something to that to
+    get to a bigger infinity. The third is that the answers to questions like this
+    are not going to earn me big piles of money so “who cares?”
+  </p>
+<p id="p-1544">
+    Point one is actually pretty valid. Physicists have determined that we
+    appear to inhabit a universe of finite scope, containing a finite number of
+    subatomic particles, so in reality there can be no infinite sets. Nevertheless,
+    the axioms we use to study many fields in mathematics guarantee that the
+    objects of consideration are indeed infinite in number. Infinity appears as a
+    concept even when we know it can't appear in actuality.
+    Point two, the “there's only one size of infinity” argument is wrong. We'll
+    see an informal argument showing that there are at least two sizes of infinity,
+    and a more formal theorem that shows there is actually an infinite hierarchy
+    of infinities in <a href="sec_cantors_thm.html" alt="Section 8.3 Cantor's theorem" title="Section 8.3 Cantor's theorem">Section 8.3</a>
+  </p>
+<p id="p-1545">
+    Point three, “who cares?” is in some sense the toughest of all to deal with.
+    Hopefully you'll enjoy the clever arguments to come for their own intrinsic
+    beauty. But, if you can figure a way to make big piles of money using this
+    stuff that would be nice too.
+  </p>
+<p id="p-1546">
+    Let's get started.
+  </p>
+<p id="p-1547">
+    Which set is bigger — the natural numbers, \(\Naturals\) or the set,
+    \(\Enoneg\), of nonnegative even numbers?
+    Both are clearly infinite, so the “infinity is infinity” camp might be lead
+    to the correct conclusion through invalid reasoning. On the other hand,
+    the even numbers are contained in the natural numbers so there's a pretty
+    compelling case for saying the evens are somehow smaller than the naturals.
+    The mathematically rigorous way to show that these sets have the same
+    cardinality is by displaying a one-to-one correspondence. Given an even
+    number how can we produce a natural to pair it with? And, given a natural
+    how can we produce an even number to pair with it?
+    The map \(f : N \longrightarrow \Enoneg\) defined by \(f(x) = 2x\)
+    is clearly a function,
+    and just about as clearly, injective<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-53" id="fn-53"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-53" style="display: none;" class="tex2jax_ignore"><span class="footnote">If \(x\) and \(y\) are 
+    different numbers that map to the same value, then f(x) = f(y) so
+    2x = 2y. But we can cancel the 2's and derive that x = y, which is a contradiction.</span></span>. Is the map \(f\) also a surjection? In other
+    words, is every non-negative even number the image of some natural under
+    \(f\)? Given some non-negative even number \(e\) we need to be able to come
+    up with an \(x\) such that \(f(x) = e\). Well, since \(e\) is an even number, by the
+    definition of “even” we know that there is an integer \(k\) such that \(e = 2k\)
+    and since \(e\) is either zero or positive it follows that \(k\) must also be
+    either \(0\) or positive. It turns out that \(k\) is actually the \(x\) we
+    are searching for. Put more
+    succinctly, every non-negative even number \(2k\) has a preimage, \(k\), under the
+    map \(f\). So \(f\) maps \(\Naturals\) surjectively onto \(\Enoneg\).
+    Now the sets we've just considered,
+    \begin{equation*}
+      \Naturals \; = \; \{0, 1, 2, 3, 4, 5, 6, \ldots \}
+    \end{equation*}
+    and
+    \begin{equation*}
+      \Enoneg \; = \; \{0, 2, 4, 6, 8, 10, 12, \ldots \}
+    \end{equation*}
+    both have the feature that they can be listed — at
+    least in principle. There is a first element, followed by a
+    second element, followed by a third element,
+    et cetera, in each set. The next set we'll look at, Z, can't be listed so easily.
+    To list the integers we need to let the dot-dot-dots go both forward (towards
+    positive infinity) and backwards (towards negative infinity),
+    \begin{equation*}
+      \Integers \; = \; \{ \ldots , -3, -2, -1, 0, 1, 2, 3, \ldots \}.
+    \end{equation*}
+  </p>
+<p id="p-1548">
+    To show that the integers are actually equinumerous with the natural
+    numbers (which is what we're about to do — and by the way, isn't that pretty
+    remarkable?) we need, essentially, to figure out a way to list the integers in
+    a singly infinite list. Using the symbol \(\pm\) we can arrange for a singly infinite
+    listing, and if you think about what the symbol \(\pm\) means you'll probably
+    come up with
+    \begin{equation*}
+      \Integers \; = \; \{0, 1, -1, 2, -2, 3, -3, \ldots \}.
+    \end{equation*}
+  </p>
+<p id="p-1549">
+    This singly infinite listing of the integers does the job
+    we're after in a sense — it displays a one-to-one correspondence with \(\Naturals\). In fact
+    any singly infinite listing can be thought of as displaying a one-to-one correspondence with \(\Naturals\) — the first entry (or should we say zeroth entry?) in the list is corresponded
+    with 0, the second entry is corresponded with 1, and so on.
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(3\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(4\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(5\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(6\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(7\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\ldots\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\updownarrow\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\updownarrow\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\updownarrow\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\updownarrow\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\updownarrow\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\updownarrow\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\updownarrow\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(-1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(-2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(3\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(-3\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(4\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\ldots\)</td>
+</tr>
+</table>
+<p id="p-1550">
+    To make all of this precise we need to be able to explicitly give the
+    one-to-one correspondence. It isn't enough to have a picture
+    of it — we need a
+    formula. Notice that the negative integers are all paired with even naturals
+    and the positive integers are all paired with odd naturals. This observation
+    leads us to a piecewise definition for a function that gives the bijection we
+    seek
+    \begin{equation*}
+      f(x) = \left\{ \begin{array}{cl} -x/2  \amp  \mbox{if x is even} \\
+      (x + 1)/2 \amp  \mbox{if x is odd} 
+      \end{array}  \right. .
+    \end{equation*}
+  </p>
+<p id="p-1551">
+    By the way, notice that since 0 is even it falls into the first case, and
+    fortunately that formula gives the “right” value.
+  </p>
+<article class="exercise-like" id="exercise-71"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">8.2.1</span>
+</h5>
+<p id="p-1552">
+        The inverse function, \(f^{-1}\), must also be defined piecewise, but
+        based on whether the input is positive or negative. Define the inverse function.
+      </p></article><div class="hidden-knowl-wrapper"></div>
+<p id="p-1553">
+    The examples we've done so far have shown that the integers,
+    the natural numbers and the even naturals all have the same
+    cardinality. This is the first infinite cardinal number, known
+    as \(\aleph_0\). In a certain sense we could view both
+    of the equivalences we've shown as demonstrating that
+    \(2 \cdot \infty = \infty\). Our next example will lend
+    credence to the rule: \(\infty \cdot \infty = \infty\).
+    The Cartesian product of two finite sets (the set of all
+    ordered pairs with entries from the sets in question) has
+    cardinality equal to the product of the cardinalities of
+    the sets. What do you suppose will happen if we let the sets
+    be infinite? For instance, what is the cardinality of
+    \(\Naturals \times \Naturals\)? Consider this:
+    the subset of ordered pairs that start with a 0 can be thought of as a copy
+    of \(\Naturals\) sitting inside this Cartesian product. In fact
+    the subset of ordered pairs
+    starting with any particular number gives another copy of \(\Naturals\)
+    inside \(\Naturals \times \Naturals\). There
+    are infinitely many copies of \(\Naturals\) sitting inside of
+    \(\Naturals \times \Naturals\)! This just really ought
+    to get us to a larger cardinality. The surprising result that it
+    <!--Style me with CSS--><em>doesn't</em> involves an idea sometimes known as
+     “Cantor's Snake” — a trick that allows
+    us to list the elements of \(\Naturals \times \Naturals\) in a singly
+    infinite list<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-54" id="fn-54"><span class="footnote"><sup> 2 </sup></span></a></span><span id="hk-fn-54" style="display: none;" class="tex2jax_ignore"><span class="footnote">Cantor's snake was originally created to show 
+    that \(\Qnoneg\) and \(\Naturals\) are equinumerous.
+    This function was introduced in the exercises for 
+    <a href="sec_functions.html" alt="Section 6.4 Functions" title="Section 6.4 Functions">Section 6.4</a>.   The version we are presenting
+    here avoids certain complications.</span></span>.
+    You can visualize the set \(\Naturals \times \Naturals\) as the
+    points having integer coordinates
+    in the first quadrant (together with the origin and the positive
+    \(x\) and \(y\) axes).
+    This set of points and the path through them known as Cantor's snake is
+    shown in <span>&lt;&lt;Unresolved xref, reference "fig_cantors_snake_2"; check spelling or use "provisional" attribute&gt;&gt;</span>.
+  </p>
+<figure class="figure-like" id="figure-20"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/38801261154b29b75d3eaa641a112455cfa69944.png" alt="">\(\Naturals \times \Naturals\)</figure><p id="p-1554">
+    The diagram in <span>&lt;&lt;Unresolved xref, reference "fig_cantors_snake_2"; check spelling or use "provisional" attribute&gt;&gt;</span> gives a visual form of the one-to-one correspondence
+    we seek. In tabular form we would have something like the following.
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(3\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(4\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(5\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(6\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(7\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(8\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\ldots\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\updownarrow\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\updownarrow\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\updownarrow\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\updownarrow\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\updownarrow\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\updownarrow\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\updownarrow\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\updownarrow\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\updownarrow\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\((0, 0)\)</td>
+<td class="l m b0 r0 l0 t0 lines">\((0, 1)\)</td>
+<td class="l m b0 r0 l0 t0 lines">\((1, 0)\)</td>
+<td class="l m b0 r0 l0 t0 lines">\((0, 2)\)</td>
+<td class="l m b0 r0 l0 t0 lines">\((1, 1)\)</td>
+<td class="l m b0 r0 l0 t0 lines">\((2, 0)\)</td>
+<td class="l m b0 r0 l0 t0 lines">\((0, 3)\)</td>
+<td class="l m b0 r0 l0 t0 lines">\((1,2)\)</td>
+<td class="l m b0 r0 l0 t0 lines">\((2, 1)\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\ldots\)</td>
+</tr>
+</table>
+<p id="p-1555">
+    We need to produce a formula. In truth, we should really produce two
+    formulas. One that takes an ordered pair \((x, y)\) and produces a number \(n\).
+    Another that takes a number \(n\) and produces an ordered pair \((x, y)\) The
+    number \(n\) tells us where the pair \((x, y)\) lies in our infinite listing.
+    There is a
+    problem though: the second formula (that gives the map from \(\Naturals\)
+    to \(\Naturals \times \Naturals\))
+    is really hard to write down — it's easier to describe the map
+    algorithmically.
+    A simple observation will help us to deduce the various formulas. The
+    ordered pairs along the \(y\)-axis (those of the form (0, something)) correspond
+    to triangular numbers. In fact the pair \((0, n)\) will correspond to the \(n\)-th triangular
+    number, \(T(n) = (n^2 + n)/2\). The ordered pairs along the descending
+    slanted line starting from \((0, n)\) all have the feature that the sum of their
+    coordinates is \(n\) (because as the \(x\)-coordinate is increasing, the
+    \(y\)-coordinate
+    is decreasing). So, given an ordered pair \((x, y)\), the number corresponding
+    to the position at the upper end of the slanted line it is on (which will have
+    coordinates \((0, x+y)\)) will be \(T(x+y)\), and the pair \((x, y)\) occurs in the listing exactly \(x\) positions after \((0, x + y)\). Thus, the function
+    \(f : \Naturals \times \Naturals \longrightarrow N\) is
+    given by
+    \begin{equation*}
+      f(x, y) \; = \; x + T(x + y) = x + \frac{(x + y)^2 + (x + y)}{2}.
+    \end{equation*}
+  </p>
+<p id="p-1556">
+    To go the other direction — that is, to take a position
+    in the listing and
+    derive an ordered pair — we need to figure out where a given number lies
+    relative to the triangular numbers. For instance, try to figure out what
+    \((x, y)\) pair position number \(13\) will correspond with. Well, the next smaller
+    triangular number is \(10\) which is \(T(4)\), so \(13\) will be the number of an
+    ordered pair along the descending line whose \(y\)-intercept is \(4\).
+    In fact, \(13\) will be paired
+    with an ordered pair having a \(3\) in the \(x\)-coordinate (since \(13\) is \(3\)
+    larger than \(10\)) so it follows that \(f^{-1}(13) = (3, 1)\).
+  </p>
+<p id="p-1557">
+    Of course we need to generalize this procedure. One of the hardest parts
+    of finding that generalization is finding the number \(4\) in the above example
+    (when we just happen to notice that \(T(4)=10\) ). What we're really doing
+    there is inverting the function \(T(n)\). Finding an inverse for
+    \(T(n) = (n^2+n)/2\) was the essence of one of the exercises in
+    <a href="sec_special_functions.html" alt="Section 6.5 Special functions" title="Section 6.5 Special functions">Section 6.5</a>.
+    The parabola \(y = (x^2 + x)/2\) has roots at \(0\) and \(-1\) and is scaled by a
+    factor of \(1/2\) relative to the “standard” parabola \(y = x^2\).
+    Its vertex is at
+    \((-1/2,-1/8)\). The graph of the inverse relation is, of course, obtained by
+    reflecting through the line \(y = x\) and by considering scaling and horizontal/
+    vertical translations we can deduce a formula for a function that gives a
+    right inverse for \(T\),
+    \begin{equation*}
+      T^{-1}(x) = \sqrt{2x + 1/4} - 1/2.
+    \end{equation*}
+  </p>
+<p id="p-1558">
+    So, given \(n\), a position in the listing, we calculate \(A = \lfloor \sqrt{2n + 1/4}-1/2 \rfloor\). The \(x\)-coordinate of our ordered pair is \(n-T(A)\)
+    and the \(y\)-coordinate is \(A-x\).
+    It is not pretty, but the above discussion can be translated into a formula
+    for \(f^{-1}\).
+    \begin{gather*}
+f^{-1}(n) \; = \; \left( n - \frac{ \lfloor \sqrt{2n + 1/4} - 1/2 \rfloor^2 + \lfloor \sqrt{2n + 1/4} - 1/2 \rfloor}{2} , \right.\\
+\left. \lfloor \sqrt{2n + 1/4} - 1/2  \rfloor - n + \frac{\lfloor \sqrt{2n + 1/4} - 1/2 \rfloor^2 + \lfloor \sqrt{2n + 1/4} - 1/2 \rfloor}{2} \right).
+\end{gather*}
+  </p>
+<p id="p-1559">
+    When restricted to the appropriate sets (\(f\)'s domain
+    is restricted to \(\Naturals \times \Naturals\)
+    and \(f^{-1}\)'s domain is restricted to \(\Naturals\)),
+    these functions are two-sided inverses
+    for one another. That fact is sufficient to prove that \(f\)
+    is bijective.
+    So far we have shown that the sets \(\Enoneg\), \(\Naturals\), \(\Integers\) and
+    \(\Naturals \times \Naturals\) all have
+    the same cardinality — \(\aleph_0\). We plan to provide an argument that there
+    actually are other infinite cardinals in the next section. Before leaving the
+    present topic (examples of set equivalence) we'd like to present another nice
+    technique for deriving the bijective correspondences we use to show that sets
+    are equivalent — geometric constructions.
+    Consider the set of points on the line segment \([0, 1]\).
+    Now consider the set
+    of points on the line segment \([0, 2]\). This second line
+    segment, being twice as
+    long as the first, must have a lot more points on it. Right?
+  </p>
+<p id="p-1560">
+    Well, perhaps you're getting used to this sort of thing…
+    The interval \([0, 1]\) is a subset of the interval \([0, 2]\),
+    but since both represent infinite sets of points
+    it's possible they actually have the same cardinality.
+    We can prove that this is so using a geometric technique.
+    We position the line segments appropriately
+    and then use projection from a carefully chosen point to
+    develop a bijection. Imagine both intervals as lying on
+    the \(x\)-axis in the \(x\)-\(y\) plane. Shift the
+    smaller interval up one unit so that it lies on the line
+    \(y = 1\). Now, use projection
+    from the point \((0, 2)\), to visualize the correspondence
+    see <span>&lt;&lt;Unresolved xref, reference "fig_equiv_intervals"; check spelling or use "provisional" attribute&gt;&gt;</span>
+  </p>
+<figure class="figure-like" id="figure-21"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/2bcefbfb09a99dbe16ef0c628696bfd1b4ffc452.png" alt=""></figure><p id="p-1561">
+    By considering appropriate projections we can prove that any two arbitrary
+    intervals (say \([a, b]\) and \([c, d]\)) have the same cardinalities! It also
+    isn't all that hard to derive a formula for a bijective function between two
+    intervals.
+    \begin{equation*}
+      f(x) = c + \frac{(x - a)(d - c)}{(b - a)}
+    \end{equation*}
+  </p>
+<p id="p-1562">
+    There are other geometric constructions which we can use to show that
+    there are the same number of points in a variety of entities. For example,
+    consider the upper half of the unit circle (Remember the unit circle from
+    Trig? All points \((x, y)\) satisfying \(x^2 + y^2 = 1\).) This is a
+    semi-circle having a radius of 1, so the arclength of said semi-circle
+    is \(\pi\). It isn't hard to imagine
+    that this semi-circular arc contains the same number of points as an interval
+    of length \(\pi\), and we've already argued that all intervals contain the same
+    number of points… But, a nice example of geometric projection —
+    vertical projection (a.k.a. \(\pi_1\)) — can be used to show that
+    (for example) the interval
+    \((-1, 1)\) and the portion of the unit circle lying in the upper
+    half-plane are equinumerous.
+  </p>
+<figure class="figure-like" id="figure-22"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/1f98e827e140667b06ab91a89dea792324374986.png" alt=""></figure><p id="p-1563">
+    Once the bijection is understood geometrically it is fairly simple to provide
+    formulas. To go from the semi-circle to the interval, we just forget
+    about the y-coordinate:
+    \begin{equation*}
+      f(x, y) = x.
+    \end{equation*}
+  </p>
+<p id="p-1564">
+    To go in the other direction we need to recompute the missing y-value:
+    \begin{equation*}
+      f^{-1}(x) = (x, \sqrt{1 - x^2}).
+    \end{equation*}
+  </p>
+<p id="p-1565">
+    Now we're ready to put some of these ideas together in order to prove
+    something really quite remarkable. It may be okay to say that line segments
+    of different lengths are equinumerous — although ones intuition still balks
+    at the idea that a line a mile long only has the same number of points on
+    it as a line an inch long (or, if you prefer, make that a centimeter versus
+    a kilometer). Would you believe that the entire line — that is the infinitely
+    extended line — has no more points on it than a tiny little segment? You
+    should be ready to prove this one yourself.
+  </p>
+<article class="exercise-like" id="exercise-72"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">8.2.2</span>
+</h5>
+<p id="p-1566">
+        Find a point such that projection from that point determines a
+        one-to-one correspondence between the portion of the unit circle in the upper
+        half plane and the line \(y = 1\).
+      </p></article><div class="hidden-knowl-wrapper"></div>
+<p id="p-1567">
+    In the exercises from <a href="sec_equiv_sets.html" alt="Section 8.1 Equivalent sets" title="Section 8.1 Equivalent sets">Section 8.1</a> you were supposed
+    to show that set
+    equivalence is an equivalence relation. Part of that proof should have been
+    showing that the relation is transitive, and that really just comes down to
+    showing that the composition of two bijections is itself a bijection. If you
+    didn't make it through that exercise give it another try now, but whether
+    or not you can finish that proof it should be evident what that transitivity
+    means to us in the current situation. Any pair of line segments are the same
+    size — a line segment (i.e. an interval) and a semi-circle are the same size — the semi-circle and an infinite line are the same size — transitivity tells us that
+    an infinitely extended line has the same number of points as (for example)
+    the interval \((0, 1)\).
+  </p>
+<section class="exercises" id="exercises-39"><header title="Exercises 8.2.1 Exercises"><h1 class="heading hide-type" alt="Exercises 8.2.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">8.2.1</span><span class="title">Exercises</span>
+</h1></header><ol style="list-style-type: lower-alpha;">
+<li id="li-483"><p id="p-1568">
+          Prove that positive numbers of the form \(3k +1\) are equinumerous with
+          positive numbers of the form \(4k + 2\).
+        </p></li>
+<li id="li-484"><p id="p-1569">
+          Prove that \(\displaystyle f(x) =  c + \frac{(x-a)(d-c)}{(b-a)}\) 
+          provides a bijection from the interval \([a, b]\) to the interval \([c, d]\).
+        </p></li>
+<li id="li-485"><p id="p-1570">
+          Prove that any two circles are equinumerous (as sets of points).
+        </p></li>
+<li id="li-486"><p id="p-1571">
+          Determine a formula for the bijection from \((-1, 1)\) to the line \(y = 1\)
+          determined by vertical projection onto the upper half of the unit circle,
+          followed by projection from the point \((0, 0)\).
+        </p></li>
+<li id="li-487"><p id="p-1572">
+          It is possible to generalize the argument that shows a line segment is
+          equivalent to a line to higher dimensions.   In two dimensions we would
+          show that the unit disk (the interior of the unit circle) is equinumerous
+          with the entire plane \(\Reals \times \Reals\).   In three dimensions we would show that
+          the unit ball (the interior of the unit sphere) is equinumerous with the
+          entire space \(\Reals^3 = \Reals \times \Reals \times \Reals\).  Here we 
+          would like you to prove the two-dimensional case.
+
+          Gnomonic projection is a style of map rendering in which a portion of a
+          sphere is projected onto a plane that is tangent to the sphere.  The 
+          sphere's center is used as the point to project from.  Combine 
+          vertical projection from the unit disk
+          in the x–y plane to the upper half of the unit sphere \(x^2 + y^2 + z^2 = 1\),
+          with gnomonic projection from the unit sphere to the plane z = 1, to
+          deduce a bijection between the unit disk and the (infinite) plane.
+        </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

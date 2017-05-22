@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-10T23:30:57-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Quantified statements</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></a></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="sec_2_col.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_logic.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_deduct.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_2_col.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_logic.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_deduct.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link active"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html" class="active">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_ord_rel.html">Ordering relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-37.html">Parity and Counting arguments</a></li>
+<li><a href="section-38.html">The pigeonhole principle</a></li>
+<li><a href="section-39.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-41.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-43.html">Dominance</a></li>
+<li><a href="section-44.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-45.html">Morley's miracle</a></li>
+<li><a href="section-46.html">Five steps into the void</a></li>
+<li><a href="section-47.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_quant"><header title="Section 2.5 Quantified statements"><h1 class="heading hide-type" alt="Section 2.5 Quantified statements">
+<span class="type">Section</span><span class="codenumber">2.5</span><span class="title">Quantified statements</span><a href="sec_quant.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-428">
+    All of the statements discussed in the previous sections were of the
+    “completely unambiguous” sort; that is, they didn't have any <!--Style me with CSS--><em>unknowns</em>
+    in them. As a reader of this text, it's a sure bet that you've mastered
+    Algebra and are firmly convinced of the utility of \(x\) and \(y\). Admittedly,
+    we've used variables to refer to sentences (or sentence fragments) themselves,
+    but we've said that sentences that had variables <!--Style me with CSS--><em>in them</em> were ambiguous
+    and didn't even deserve to be called logical statements. The notion
+    of <!--Style me with CSS--><em>quantification</em>
+    allows us to use the power of variables within a
+    sentence without introducing ambiguity.
+  </p>
+<p id="p-429">
+    Consider the sentence “There are exactly 7 odd primes less than 20.”
+    This sentence has some kind of ambiguity in it (because it doesn't mention
+    the primes explicitly) and yet it certainly seems to have a definite
+    truth value! The reason its truth value is known (by the way, it is T)
+    is that the sentence is quantified. “X is an odd prime less than 20.”
+    is an ambiguous sentence, but “There are exactly 7 distinct X's that
+    are odd primes less than 20.” is not. This example represents a fairly
+    unusual form of quantification. Usually, we take away the ambiguity
+    of a sentence having a variable in it by asserting one of two levels
+    of quantification: “this is true at least once” or “this is always true”.
+    We've actually seen the symbols (\(\exists\) and \(\forall\)) for these
+    concepts already (in <a href="sec_scary.html" alt="Section 1.3 More scary notation" title="Section 1.3 More scary notation">Section 1.3</a>).
+  </p>
+<p id="p-430">
+    An <!--Style me with CSS--><em>open sentence</em>
+    is one that has variables in it. We represent
+    open sentences using a sort of functional notation to show what
+    variables are in them.
+  </p>
+<p id="p-431">
+  Examples:
+
+  </p>
+<ol id="ol-28" style="list-style-type: decimal;">
+<li id="li-174"><p id="p-432">
+        \(P(x)\) = “\(2^{2^x}+1\) is a prime.”
+      </p></li>
+<li id="li-175"><p id="p-433">
+        \(Q(x,y)\) = “\(x\) is prime or \(y\) is a divisor of \(x\).”
+      </p></li>
+<li id="li-176"><p id="p-434">
+        \(L(f,c,l)\) = “The function \(f\) has limit \(l\) at \(c\), if 
+        and only if, 
+        for every positive number \(\epsilon\), there is a positive number \(\delta\) 
+        such that whenever \(|x-c| \lt  \delta\) it follows that \(|f(x)-l| \lt  \epsilon\).”
+      </p></li>
+</ol>
+<p>
+  </p>
+<p id="p-435">
+    That last example certainly is a doozey! At first glance it would appear
+    to have more than three variables in it, and indeed it does! In order of
+    appearance, we have \(f\), \(l\), \(c\), \(\epsilon\), \(\delta\) and \(x\) — the
+    last three variables that appear (\(\epsilon\), \(\delta\) and \(x\)) are said
+    to be <!--Style me with CSS--><em>bound</em>.
+    A variable in an open sentence is bound if it is in the
+    scope of a quantifier. Bound variables don't need to be mentioned
+    in the argument list of the sentence. Unfortunately, when sentences are
+    given in natural languages the quantification status of a variable may
+    not be clear. For example in the third sentence above, the variable \(\delta\)
+    is easily seen to be in the scope of the quantifier \(\exists\) because of the
+    words “there is a positive number” that precede it. Similarly, \(\epsilon\)
+    is universally quantified (\(\forall\)) because the phrase “for every positive
+    number” appears before it. What is the status of \(x\)? Is it really bound?
+    The answers to such questions may not be clear at first, but after some
+    thought you should be able to decide that \(x\) is universally quantified.
+  </p>
+<article class="exercise-like" id="exercise-12"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.5.1</span>
+</h5>
+<p id="p-436">
+        What word in example iii) indicates that \(x\) is in the
+        scope of a \(\forall\) quantifier?
+      </p></article><p id="p-437">
+    It is not uncommon, in advanced Mathematics, to encounter compound sentences
+    involving dozens of variables and 4 or 5 levels of quantification. Such
+    sentences seem hopelessly complicated at first sight — the key to
+    understanding them is to determine each variable's quantification status
+    explicitly and to break things down into simpler sub-parts.
+  </p>
+<p id="p-438">
+    For instance, in understanding example iii) above, it might be
+    useful to define some new open sentences:
+  </p>
+<p id="p-439">
+    \(D(x,c,\delta)\) = “\(|x-c| \lt  \delta\)”
+  </p>
+<p id="p-440">
+    \(E(f,x,l,\epsilon)\) = “\(|f(x)-l| \lt  \epsilon\)”
+  </p>
+<p id="p-441">
+    Furthermore, it's often handy to replace an awkward phrase (such as
+    “the limit of \(f\) at \(c\) is \(l\)”) with symbols when possible.
+  </p>
+<p id="p-442">
+    Example iii) now looks like
+    \begin{equation*}
+      \lim_{x\rightarrow c}f(x) = l \iff \forall \epsilon&gt;0 \, \exists \delta&gt;0 \, \forall x \, D(x,c,\delta) \implies E(f,x,l,\epsilon).
+    \end{equation*}
+  </p>
+<p id="p-443">
+    The sentence \(D(x,c,\delta)\) is usually interpreted as saying that
+    “\(x\) is close to \(c\)” (where \(\delta\) tells you <!--Style me with CSS--><em>how</em> close.)
+    The sentence \(E(f,x,l,\epsilon)\) could be expressed informally as
+    “\(f(x)\) is close to \(l\)” (again, \(\epsilon\) serves to make the
+    word “close” more exact).
+  </p>
+<p id="p-444">
+    It's instructive to write this sentence one last time, <!--Style me with CSS--><em>completely</em>
+    in symbols and without the abbreviations we created for saying
+    that \(x\) is near \(c\) and \(f(x)\) is near \(l\):
+  </p>
+<p id="p-445">
+    \(\displaystyle \lim_{x\rightarrow c}f(x) = l \iff \forall \epsilon&gt;0 \, \exists 
+    \delta&gt;0 \, \forall x \, (|x-c| \lt  \delta) \implies (|f(x)-l| \lt  \epsilon)\).
+  </p>
+<p id="p-446">
+    It would not be unfair to say that developing the facility to read,
+    and understand, this hieroglyph (and others like it) constitutes the
+    first several weeks of a course in Real Analysis.
+  </p>
+<p id="p-447">
+    Let us turn back to another of the examples (of an open sentence) from the
+    beginning of this section. \(P(x)\) = “\(2^{2^x}+1\) is a prime.”
+  </p>
+<p id="p-448">
+    In the 17th century, Pierre de Fermat
+    made the conjecture<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-15" id="fn-15"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-15" style="display: none;" class="tex2jax_ignore"><span class="footnote">Fermat's 
+    more famous conjecture, that \(x^n+y^n=z^n\) has no non-trivial integer solutions
+    if \(n\) is an integer with \(n&gt;2\) was discovered after his death.</span></span> that
+    \(\forall x \in {\mathbb N}, P(x)\). No doubt, this seemed reasonable to Fermat
+    because the numbers given by this formula (they are called
+    Fermat numbers in
+    his honor) are all primes — at first! Fermat numbers are conventionally
+    denoted with a subscripted letter F, \(F_n = 2^{2^n}+1\), the first five
+    Fermat numbers are prime.
+  </p>\(\displaystyle F_0 = 2^{2^0}+1 = 3\)\(\displaystyle F_1 = 2^{2^1}+1 = 5\)\(\displaystyle F_2 = 2^{2^2}+1 = 17\)\(\displaystyle F_3 = 2^{2^3}+1 = 257\)\(\displaystyle F_4 = 2^{2^4}+1 = 65537\)<p id="p-449">
+    Fermat probably computed that \(F_5=4294967297\), and we can well imagine
+    that he checked that this number was not divisible by any small primes.
+    Of course, this was well before the development of effective computing
+    machinery, so we shouldn't blame Fermat for not noticing that
+    \(4294967297 = 641 \cdot 6700417\). This remarkable feat of factoring
+    can be replicated in seconds on a modern computer, however it was done
+    first by  Leonhard Euler in 1732!
+    There is quite a lot of literature
+    concerning the primeness and/or compositeness of Fermat numbers. So
+    far, all the Fermat numbers between \(F_5\) and \(F_{32}\) (inclusive) have
+    been shown to be composite. One might be tempted to conjecture that
+    only the first five Fermat numbers are prime, however this temptation
+    should be resisted …
+  </p>
+<p id="p-450">
+    Let us set aside, for the moment, further questions about Fermat numbers.
+    Suppose we define the set \(U\) (for `Universe') by \(U=\{0,1,2,3,4\}\).
+    Then the assertion, “\(\forall x \in U, P(x)\).” is certainly true.
+    You should note that the only variable in this sentence is \(x\), and
+    that the variable is bound — it is universally quantified. Open sentences
+    that have all variables bound are <!--Style me with CSS--><em>statements</em>. It is possible
+    (in principle, and in finite universes, in practice) to check the
+    truth value of such sentences.
+    Indeed, the sentence “\(\forall x \in U, P(x)\)” has the same logical content
+    as “\(P(0) \land P(1) \land P(2) \land P(3)  \land P(4)\)”. Both happen to be
+    true, but the real point here is to note that a universally quantified sentence
+    can be thought of instead as a conjunction.
+  </p>
+<article class="exercise-like" id="exercise-13"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.5.2</span>
+</h5>
+<p id="p-451">
+        Define a new set \(U\) by \(U=\{0,1,2,3,4,5\}\).
+        Write a sentence using disjunctions
+        that is equivalent to “\(\exists x \in U, {\lnot}P(x)\).”
+      </p></article><p id="p-452">
+    Even when we are dealing with infinite universes, it is possible to
+    think of universally quantified sentences in terms of conjunctions,
+    and existentially quantified sentences in terms of disjunctions. For
+    example, a quick look at the graphs should be sufficient to convince you
+    that “\(x &gt; \ln x\)” is a sentence that is true for all \(x\) values in
+    \({\mathbb R}^+\). There is a notation, reminiscent of so-called sigma notation
+    for sums, that can be used to express this universally quantified sentence as
+    a conjunction.
+    \begin{equation*}
+      \forall x \in {\mathbb R}^+, x &gt; \ln x \; \cong \; 
+      \bigwedge_{x \in {\mathbb R}^+} x &gt; \ln x
+    \end{equation*}
+  </p>
+<p id="p-453">
+    A similar notation exists for disjunctions. Purely as an example, consider
+    the following problem from recreational math: Find a four digit number that
+    is an integer multiple of its reversal. (By reversal, we mean the four
+    digit number with the digits in the opposite order — for example, the
+    reversal of 1234 is 4321.) The sentence<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-16" id="fn-16"><span class="footnote"><sup> 2 </sup></span></a></span><span id="hk-fn-16" style="display: none;" class="tex2jax_ignore"><span class="footnote">This sentence uses what 
+    is commonly referred to as an “abuse of notation” in order avoid an 
+    unnecessarily complex problem statement.  One should not necessarily 
+    avoid such abuses if one's readers can be expected to easily understand 
+    what is meant, any more than one should completely eschew the splitting 
+    of infinitives.</span></span>
+    that states that this question has a solution is
+    \begin{equation*}
+      \exists abcd \in {\mathbb Z},  \exists k \in {\mathbb Z}, abcd = k\cdot dcba
+    \end{equation*}
+  </p>
+<p id="p-454">
+    This could be expressed instead as the disjunction of 9000 statements, or more
+    compactly as
+    \begin{equation*}
+      \bigvee_{1000\leq abcd \leq 9999}  \exists k \in {\mathbb Z}, abcd = k\cdot dcba.
+    \end{equation*}
+  </p>
+<article class="exercise-like" id="exercise-14"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.5.3</span>
+</h5>
+<p id="p-455">
+        The existential statement above is true because \(8712 = 4\cdot 2178\).
+        There is one other solution — find it!
+      </p></article><p id="p-456">
+    An important, or at least useful, talent for a Mathematics student to develop
+    is the ability to negate quantified sentences. There are two major reasons for this:
+    the techniques known as proof by contradiction and proof by contraposition.
+    The contrapositive of a conditional sentence is logically
+    equivalent to it. Many veteran proofwriters give newcomers the advice:
+  </p>
+<p id="p-457">
+    “If you get stuck, try writing down the contrapositive.”
+  </p>
+<p id="p-458">
+    Writing down the contrapositive of a logical statement will often involve finding the
+    negation of a quantified sentence. Proof by contradiction also requires you to be able to
+    negate a logical statement in order to even get started. Let's try a one.
+  </p>
+<p id="p-459">
+    Our universe of discourse<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-17" id="fn-17"><span class="footnote"><sup> 3 </sup></span></a></span><span id="hk-fn-17" style="display: none;" class="tex2jax_ignore"><span class="footnote">The Pep Boys — Manny, Moe and 
+    Jack — are hopefully known to some readers as the mascots of a chain 
+    of automotive supply stores.</span></span>
+    will be \(P = \{ \mbox{Manny} , \mbox{Moe} , \mbox{Jack}  \}\).
+    Consider the sentence
+    “\(\forall x \in P, x\; \mbox{starts with M}\).” The equivalent sentence
+    expressed conjunctively is
+    \begin{gather*}
+(\mbox{Manny starts with M} ) \land\\
+(\mbox{Moe starts with M} ) \land\\
+(\mbox{Jack starts with M} ).
+\end{gather*}
+  </p>
+<p id="p-460">
+    The negation
+    of this sentence (by DeMorgan's law) is a disjunction:
+    \begin{gather*}
+(\mbox{Manny doesn't start with M} ) \lor\\
+(\mbox{Moe doesn't start with M} ) \lor\\
+(\mbox{Jack doesn't start with M} )
+\end{gather*}
+  </p>
+<p id="p-461">
+    Finally, this disjunction of three sentences can be converted into
+    a single sentence, existentially quantified over \(P\):
+  </p>
+<p id="p-462">
+    “\(\exists x \in P, {\lnot}(x \, \mbox{starts with M} )\).”
+  </p>
+<p id="p-463">
+    The discussion in the previous paragraphs justifies some laws of
+    Logic which should be thought of as generalizations of DeMorgan's laws:
+    \begin{equation*}
+      {\lnot}( \forall x \in U, P(x)) \; \cong \; \exists x \in U, {\lnot}P(x)
+    \end{equation*}
+    and
+    \begin{equation*}
+      {\lnot}( \exists x \in U, P(x)) \; \cong \; \forall x \in U, {\lnot}P(x).
+    \end{equation*}
+  </p>
+<p id="p-464">
+    It's equally valid to think of these rules in a way that's divorced from
+    DeMorgan's laws. To show that a universal sentence is <!--Style me with CSS--><em>false</em>, it suffices
+    to show that an existential sentence involving a negation of the original is
+    true.
+  </p>
+<p id="p-465">
+    If someone announces that “All the Pep boys name's start with M!” you might counter that
+    with “Uhhmmm… What about Jack?”
+  </p>
+<p id="p-466">
+    In other words, to show that it is not the case that every Pep boy's name starts
+    with `M', one only needs to demonstrate that there is a Pep boy (Jack) whose
+    name doesn't start with `M'.
+  </p>
+<section class="exercises" id="exercises-12"><header title="Exercises 2.5.1 Exercises"><h1 class="heading hide-type" alt="Exercises 2.5.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">2.5.1</span><span class="title">Exercises</span>
+</h1></header><ol id="ol-29" style="list-style-type: lower-alpha;">
+<li id="li-177"><p id="p-467">
+        There is a common variant of the existential quantifier,
+        \(\exists !\), if you write \(\exists ! \, x, \, P(x)\) you are asserting 
+        that there is a <!--Style me with CSS--><em>unique</em> element 
+        in the universe that makes \(P(x)\) true.
+        Determine how to negate the sentence \(\exists ! \, x, \, P(x)\).
+
+
+
+        \hint{
+        Unique existence is essentially saying that there is exactly 1 element of the universe of discourse that makes P(x) true. The negation of "there is exactly 1" is "there's either none, or at least 2".
+
+        Is that enough of a hint?
+        }
+      </p></li>
+<li id="li-178">
+<p id="p-468">
+    The order in which quantifiers appear is important.  Let \(L(x,y)\)
+    be the open sentence “\(x\) is in love with \(y\).”  Discuss the meanings of the
+    following quantified statements and find their negations.
+
+    </p>
+<ol id="ol-30" style="list-style-type: lower-roman;">
+<li id="li-179"><p id="p-469">
+          \(\forall x \, \exists y \; L(x,y)\).
+        </p></li>
+<li id="li-180"><p id="p-470">
+          \(\exists x \, \forall y \; L(x, y)\).
+        </p></li>
+<li id="li-181"><p id="p-471">
+          \(\forall x \, \forall y \; L(x, y)\).
+        </p></li>
+<li id="li-182"><p id="p-472">
+          \(\exists x \, \exists y \; L(x, y)\).
+        </p></li>
+</ol>
+<p>
+    </p>
+<ol id="ol-31" style="list-style-type: lower-roman;">
+<li id="li-183"><p id="p-473">
+          \(\forall x \, \exists y \; L(x,y)\).
+
+          This is a fairly optimistic statement  “For everyone out there, there's somebody that they are in love with.”
+        </p></li>
+<li id="li-184"><p id="p-474">
+          \(\exists x \, \forall y \; L(x, y)\).
+
+          This one, on the other hand, says something fairly strange: “There's someone who has fallen in love with every other human being.” I don't know, maybe the Dalai Lama? Mother Theresa?...
+          Anyway, do the last two for yourself.
+        </p></li>
+<li id="li-185"><p id="p-475">
+          \(\forall x \, \forall y \; L(x, y)\).
+        </p></li>
+<li id="li-186"><p id="p-476">
+          \(\exists x \, \exists y \; L(x, y)\).
+
+
+          Here's a couple of bonus questions. Two of the statements above have different meanings if you just interchange the order that the quantifiers appear in. What do the following mean (in contrast to the ones above)?
+        </p></li>
+<li id="li-187"><p id="p-477">
+          \(\exists y \, \forall x \; L(x, y)\).
+        </p></li>
+<li id="li-188"><p id="p-478">
+          \(\forall y \, \exists x \; L(x,y)\).
+        </p></li>
+</ol>
+</li>
+<li id="li-189"><p id="p-479">
+        Determine a useful denial of: 
+
+        \(\displaystyle \forall \epsilon&gt;0 \, \exists 
+        \delta&gt;0 \, \forall x \, (|x-c| \lt  \delta) \implies (|f(x)-l| \lt  \epsilon)\).
+
+        The denial above gives a criterion for saying \(\lim_{x\rightarrow c}f(x) \neq l.\)
+
+        \hint{
+        This is asking you to put a couple of things together. The first thing is that in negating a quantified statement, we get a new statement with all the quantified variables occurring in the same order but with \(\forall\)'s and \(\exists\)'s interchanged. The second issue is that the logical statement that appears after all the quantifiers needs to be negated. Since, in this statement we have a conditional, you must remember to negate that properly (its negation is a conjunction).
+
+        \(\displaystyle \exists \epsilon&gt;0 \, \forall 
+        \delta&gt;0 \, \exists x \, (|x-c| \lt  \delta)  \land  (|f(x)-l| \geq \epsilon)\).
+
+        }
+      </p></li>
+<li id="li-190"><p id="p-480">
+        A  <!--Style me with CSS--><em>Sophie Germain prime</em> is a prime number \(p\)
+        such that the corresponding odd number \(2p+1\) is also a prime.  For example 11 is a 
+        Sophie Germain prime since \(23 = 2\cdot 11 + 1\) is also prime.  Almost all Sophie Germain
+        primes are congruent to \(5 \pmod{6}\), nevertheless, there are exceptions — so the
+        statement “There are Sophie Germain primes that are not 5 mod 6.” is true.  Verify this.
+
+        \hint{The exceptions are very small prime numbers. You should be able to find them easily.}
+      </p></li>
+<li id="li-191">
+<p id="p-481">
+    Alvin, Betty, and Charlie enter a cafeteria which offers three different
+    entrees, turkey sandwich, veggie burger, and pizza; four different
+    beverages, soda, water, coffee, and milk; and two types of desserts,
+    pie and pudding. Alvin takes a turkey sandwich, a soda, and a pie.
+    Betty takes a veggie burger, a soda, and a pie. Charlie takes a pizza
+    and a soda. Based on this information, determine whether the following
+    statements are true or false.
+
+    </p>
+<ol id="ol-32" style="list-style-type: lower-roman;">
+<li id="negated"><p id="p-482">
+          \(\forall\) people \(p\), \(\exists\) dessert \(d\) such that \(p\)
+          took \(d\). \hint{false}
+        </p></li>
+<li id="compare"><p id="p-483">
+          \(\exists\) person \(p\) such that \(\forall\) desserts
+          \(d\), \(p\) did not take \(d\). \hint{true}
+        </p></li>
+<li id="li-194"><p id="p-484">
+          \(\forall\) entrees \(e\), \(\exists\) person \(p\) such that \(p\) took
+          \(e\). \hint{true}
+        </p></li>
+<li id="entree"><p id="p-485">
+          \(\exists\) entree \(e\) such that  \(\forall\) people
+          \(p,\ p\) took \(e\). \hint{false}
+        </p></li>
+<li id="li-196"><p id="p-486">
+          \(\forall\) people \(p\), \(p\) took a dessert \(\iff p\) did not take
+          a pizza. \hint{true}
+        </p></li>
+<li id="li-197"><p id="p-487">
+          Change one word of <a knowl="./knowl/entree.html" knowl-id="xref-entree" alt="Item e.iv " title="Item e.iv ">statement e.iv</a> so that it becomes true. \hint{entree \(\longrightarrow\) beverage}
+        </p></li>
+<li id="li-198"><p id="p-488">
+          Write down the negation of <a knowl="./knowl/negated.html" knowl-id="xref-negated" alt="Item e.i " title="Item e.i ">e.i</a> and compare it to <a knowl="./knowl/compare.html" knowl-id="xref-compare" alt="Item e.ii " title="Item e.ii ">statement e.ii</a>. Hopefully you will see that they are the same! Does
+          this make you want to modify one or both of your answers to <a knowl="./knowl/negated.html" knowl-id="xref-negated" alt="Item e.i " title="Item e.i ">e.i</a>
+          and <a knowl="./knowl/compare.html" knowl-id="xref-compare" alt="Item e.ii " title="Item e.ii ">e.ii</a>? \hint{\(\exists\) person \(p\) such that \(\forall\) desserts
+          \(d\), \(p\) did not take \(d\). Yes I do.  No, I got them right in the first place!}
+        </p></li>
+</ol>
+<p>
+    </p>
+</li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

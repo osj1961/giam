@@ -1,0 +1,74 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:44-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5>
+<p>
+      First we will show that \(f\) is surjective.
+    </p>
+<p>
+      It suffices to find a preimage for an arbitrary element of \(\Integers\).
+      Suppose that \(y\) is a particular but arbitrarily chosen integer. There
+      are two cases to consider: \(y\leq 0\) and \(y&gt;0\).
+    </p>
+<p>
+      If \(y&gt;0\) then \(x=2y\) is a preimage for \(y\). This follows easily since
+      \(x=2y\) is obviously even and so \(x\)'s image will be
+      defined by the first case in the definition of \(f\). Thus \(f(x) = f(2y) =
+      (2y)/2 = y\).
+    </p>
+<p>
+      If \(y \leq 0\) then \(x=1-2y\) is a preimage for \(y\). Clearly, \(1-2y\) is odd
+      whenever \(y\) is an integer, thus this value for \(x\) will fall into the second
+      case in the definition of \(f\). So, \(f(x) = f(1-2y) = -((1-2y)-1)/2 = -(-2y)/2 = y\).
+    </p>
+<p>
+      Since the cases \(y&gt;0\) and \(y\leq 0\) are exhaustive (that is, every \(y\) in
+      \(\Integers\) falls into one or the other of these cases), and we have found
+      a preimage for \(y\) in both cases, it follows that \(f\) is surjective.
+    </p>
+<p>
+      Next, we will show that \(f\) is injective.
+    </p>
+<p>
+      Suppose that \(x_1\) and \(x_2\) are elements of \(\Naturals\) and that
+      \(f(x_1)=f(x_2)\). Consider the following three cases: \(x_1\) and \(x_2\)
+      are both even, both odd, or have opposite parity.
+    </p>
+<p>
+      If \(x_1\) and \(x_2\) are both even, then by the definition of \(f\) we
+      have \(f(x_1) = x_1/2\) and \(f(x_2) = x_2/2\) and since these functional
+      values are equal, we have \(x_1/2 = x_2/2\). Doubling both sides of this
+      leads to \(x_1=x_2\).
+    </p>
+<p>
+      If \(x_1\) and \(x_2\) are both odd, then by the definition of \(f\) we
+      have \(f(x_1) = -(x_1-1)/2\) and \(f(x_2) = -(x_2-1)/2\) and since these functional
+      values are equal, we have \(-(x_1-1)/2 = -(x_2-1)/2\). A bit more
+      algebra (doubling, negating and adding one to both sides) leads to
+      \(x_1=x_2\).
+    </p>
+<p>
+      If \(x_1\) and \(x_2\) have opposite parity, we will assume w.l.o.g. that
+      \(x_1\) is even and \(x_2\) is odd. The equality \(f(x_1)=f(x_2)\) becomes
+      \(x_1/2 = -(x_2-1)/2\). Note that \(x_1 \geq 2\) so \(f(x_1) = x_1/2 \geq 1\).
+      Also, note that \(x_2 \geq 1\) so
+      \begin{gather*}
+x_2 - 1 \geq 0\\
+(x_2-1)/2 \geq 0\\
+-(x_2-1)/2 \leq 0\\
+f(x_2) \leq 0
+\end{gather*}
+      therefore we have a contradiction since it is impossible
+      for the two values \(f(x_1)\) and \(f(x_2)\) to be equal while \(f(x_1) \geq 1\)
+      and \(f(x_2) \leq 0\).
+    </p>
+<p>
+      Since the last case under consideration leads to a contradiction, it follows
+      that \(x_1\) and \(x_2\) never have opposite parities, and so the first two
+      cases are exhaustive — in both of those cases we reached the desired
+      conclusion that \(x_1 = x_2\) so it follows that \(f\) is injective.
+    </p></article><span class="incontext"><a href="sec_functions.html#proof-40">in-context</a></span>

@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-10T23:30:58-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Direct proofs of universal statements</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></a></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="ch_proof1.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_proof1.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_more.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ch_proof1.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_proof1.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_more.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link active"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html" class="active">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_ord_rel.html">Ordering relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-37.html">Parity and Counting arguments</a></li>
+<li><a href="section-38.html">The pigeonhole principle</a></li>
+<li><a href="section-39.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-41.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-43.html">Dominance</a></li>
+<li><a href="section-44.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-45.html">Morley's miracle</a></li>
+<li><a href="section-46.html">Five steps into the void</a></li>
+<li><a href="section-47.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_direct"><header title="Section 3.1 Direct proofs of universal statements"><h1 class="heading hide-type" alt="Section 3.1 Direct proofs of universal statements">
+<span class="type">Section</span><span class="codenumber">3.1</span><span class="title">Direct proofs of universal statements</span><a href="sec_direct.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-553">
+    If you form the product of 4 consecutive numbers, the result will be one
+    less than a perfect square. Try it!
+    \begin{equation*}
+      1 \cdot 2 \cdot 3 \cdot 4 = 24 = 5^2 - 1
+    \end{equation*}
+    \begin{equation*}
+      2 \cdot 3 \cdot 4 \cdot 5 = 120 = 11^2 - 1
+    \end{equation*}
+    \begin{equation*}
+      3 \cdot 4 \cdot 5 \cdot 6 = 360 = 19^2 - 1
+    \end{equation*}
+  </p>
+<p id="p-554">
+    It always works!
+  </p>
+<p id="p-555">
+    The three calculations that we've carried out above constitute an
+    inductive argument in favor of the result. If you like we can try
+    a bunch of further examples,
+    \begin{equation*}
+      13 \cdot 14 \cdot 15 \cdot 16 = 43680 = 209^2 - 1
+    \end{equation*}
+    \begin{equation*}
+      14 \cdot 15 \cdot 16 \cdot 17 = 571200 = 239^2 - 1
+    \end{equation*}
+    but really, no matter how many examples we produce, we haven't
+    <!--Style me with CSS--><em>proved</em> the statement — we've just given evidence.
+  </p>
+<p id="p-556">
+    Generally, the first thing to do in proving a universal statement like
+    this is to rephrase it as a conditional. The resulting statement is a
+    <!--Style me with CSS--><em>Universal Conditional Statement</em>
+    or a UCS. The reason for taking
+    this step is that the <!--Style me with CSS--><em>hypotheses</em> will then be clear — they form
+    the antecedent of the UCS. So, while you won't have really made any
+    progress in the proof by taking this advice, you will at least know what tools
+    you have at hand. Taking the example we started with, and rephrasing
+    it as a UCS we get
+    \begin{equation*}
+      \forall a,b,c,d \in \Integers, (\mbox{a,b,c,d  consecutive} ) 
+      \implies \exists k \in \Integers, a{\cdot}b{\cdot}c{\cdot}d = k^2 -1
+    \end{equation*}
+  </p>
+<p id="p-557">
+    The antecedent of the UCS is that \(a,b,c\) and \(d\) must be
+    <!--Style me with CSS--><em>consecutive</em>. By concentrating our attention on what it
+    means to be consecutive, we should quickly realize that the original
+    way we thought of the problem involved a red herring. We don't need
+    to have variables for all four numbers; because they are consecutive,
+    \(a\) uniquely determines the other three. Finally we have a version
+    of the statement that we'd like to prove that should lend itself
+    to our proof efforts.
+  </p>
+<article class="theorem-like" id="theorem-5"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">3.1.1</span>
+</h5>\begin{equation*}
+        \forall a \in \Integers, \exists k \in \Integers, 
+        a(a+1)(a+2)(a+3) = k^2 - 1.
+      \end{equation*}</article><p id="p-558">
+    In this simplistic example, the only thing we need to do is come
+    up with a value for \(k\) given that we know what \(a\) is. In other
+    words, a “proof” of this statement involves doing some algebra.
+  </p>
+<p id="p-559">
+    Without further ado…
+  </p>
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-7" id="proof-7"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-7" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-560">
+      Suppose that \(a\) is a particular but arbitrarily chosen
+      integer. Consider the product of the 4 consecutive integers, \(a\),
+      \(a+1\), \(a+2\) and \(a+3\). We would like to show that this product is
+      one less than the square of an integer \(k\). Let \(k\) be \(a^2+3a+1\).
+    </p>
+<p id="p-561">
+      First, note that
+      \begin{equation*}
+        a(a+1)(a+2)(a+3) = a^4 + 6a^3 + 11a^2 + 6a.
+      \end{equation*}
+    </p>
+<p id="p-562">
+      Then, note that
+      \begin{gather*}
+k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
+= (a^4  + 6a^3 + 11a^2 + 6a + 1) - 1\\
+= a^4 + 6a^3 + 11a^2 + 6a.
+\end{gather*}
+    </p></article></div>
+<p id="p-563">
+    Now, if you followed the algebra above, (none of which was particularly
+    difficult) the proof stands as a completely valid argument showing the
+    truth of our proposition, but this is <!--Style me with CSS--><em>very</em> unsatisfying! All
+    the real work was concealed in one stark little sentence:
+    “Let \(k\) be \(a^2+3a+1\).” Where on Earth did that particular value
+    of \(k\) come from? The answer to that question should hopefully
+    convince you that there is a huge difference between <!--Style me with CSS--><em>devising</em>
+    a proof and <!--Style me with CSS--><em>writing</em> one. A good proof can sometimes be
+    somewhat akin to a good demonstration of magic, a magician doesn't
+    reveal the inner workings of his trick, neither should a mathematician
+    feel guilty about leaving out some of the details behind the work!
+    Heck, there are plenty of times when you just have to <!--Style me with CSS--><em>guess</em>
+    at something, but if your guess works out, you can write
+    a perfectly correct proof.
+  </p>
+<p id="p-564">
+    In devising the proof above, we multiplied out the consecutive numbers
+    and then realized that we'd be done if we could find a polynomial in
+    \(a\) whose square was \(a^4  + 6a^3 + 11a^2 + 6a + 1\). Now, obviously,
+    we're going to need a quadratic polynomial, and because the leading
+    term is \(a^4\) and the constant term is \(1\), it should be of the form
+    \(a^2 + ma + 1\). Squaring this gives \(a^4 + 2ma^3 + (m^2+2)a^2 + 2ma + 1\)
+    and comparing that result with what we want, we pretty quickly realize
+    that \(m\) had better be 3. So it wasn't magic after all!
+  </p>
+<p id="p-565">
+    This seems like a good time to make a comment on polynomial arithmetic.
+    
+    Many people give up (or go searching for a computer algebra system)
+    when dealing with products of anything bigger than binomials. This
+    is a shame because there is an easy method using a table for performing
+    such multiplications. As an example, in devising the previous proof we
+    needed to form the product \(a(a+1)(a+2)(a+3)\), now we can use the
+    distributive law or the infamous F.O.I.L rule to multiply pairs of these,
+    but we still need to multiply \((a^2+a)\) with \((a^2+5a+6)\). Create a
+    table that has the terms of these two polynomials as its row and column
+    headings.
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(a^2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(5a\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(6\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(a^2\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(a\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+</table>
+<p id="p-566">
+    Now, fill in the entries of the table by multiplying the corresponding
+    row and column headers.
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(a^2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(5a\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(6\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(a^2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(a^4\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(5a^3\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(6a^2\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(a\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(a^3\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(5a^2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(6a\)</td>
+</tr>
+</table>
+<p id="p-567">
+    Finally add up all the entries of the table, combining any like terms.
+  </p>
+<p id="p-568">
+    You should note that the F.O.I.L rule is just a mnemonic for the case when
+    the table has 2 rows and 2 columns.
+  </p>
+<p id="p-569">
+    Okay, let's get back to doing proofs. We are going to do a lot of
+    proofs involving the concepts of elementary number theory so, as a
+    convenience, all of the definitions that were made in <a href="ch_intro.html" alt="Chapter 1 Introduction and notation" title="Chapter 1 Introduction and notation">Chapter 1</a>
+    are gathered together in <a knowl="./knowl/tab_defs.html" knowl-id="xref-tab_defs" alt="Table 3.1.2 " title="Table 3.1.2 ">Table 3.1.2</a>.
+  </p>
+<figure class="figure-like" id="tab_defs"><table>
+<tr><td class="l m b0 r0 l0 t0 lines">Even</td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.8\textwidth}
+         \(\forall n \in \Integers\),</td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">\\(n\) is even  \(\iff\)  \(\exists  k \in \Integers, \; n = 2k\)</td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">Odd</td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.8\textwidth}
+         \(\forall n \in \Integers\),</td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">\\(n\) is odd  \(\iff\)  \(\exists
+         k \in \Integers, \; n = 2k+1\)</td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">Divisibility</td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.8\textwidth}
+         \(\forall n \in \Integers , \forall  d&gt;0 \in \Integers\),</td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">\\(d \divides n\)   \(\iff\)  \(\exists
+         k \in \Integers, \; n = kd\)</td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">Floor</td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.8\textwidth}
+         \(\forall x \in \Reals\),</td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">\\(y = \lfloor x \rfloor\)   \(\iff\)  
+        \(y \in \Integers \, \; \land \, \; y \leq x \lt  y+1\)</td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">Ceiling</td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.8\textwidth}
+         \(\forall x \in \Reals\),</td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">\\(y = \lceil x \rceil\)   \(\iff\)  
+        \(y \in \Integers \, \; \land \, \; y-1 \lt  x \leq y\)</td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">Quotient-remainder theorem, Div and Mod</td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.8\textwidth}\(\forall n, d&gt;0 \in \Integers\),</td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">\\(\exists \mbox{!}  q,r \in \Integers, \; n = qd + r \, \; \land \, \; 0 \leq r \lt  d\)  
+        \\(n \; \mbox{div}  \; d = q\)  
+        \\(n \; \mbox{mod}  \; d = r\)</td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">Prime</td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.8\textwidth}\(\forall \, p \, \in \Integers\)</td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">\\(p\) is prime \(\iff\)   
+        \\((p&gt;1)  \land  (\forall x,y \in \Integers^+, \; p=xy \; \implies \; x=1 \, \lor \,  y=1)\)</td></tr>
+</table>
+<figcaption><span class="heading">Table</span><span class="codenumber">3.1.2</span>The definitions of elementary number theory restated.</figcaption></figure><p id="p-570">
+    In this section we are concerned with
+    direct proofs of universal statements.
+    Such statements come in two flavors — those that appear to involve
+    conditionals, and those that don't:
+  </p>
+<blockquote>
+  Every prime greater than two is odd.
+  </blockquote>
+<p id="p-571">
+    versus
+  </p>
+<blockquote>
+  For all integers \(n\), if \(n\) is a prime greater than two, then \(n\) is odd.
+  </blockquote>
+<p id="p-572">
+    These two forms can readily be transformed one into the other, so
+    we will always concentrate on the latter. A direct proof of a UCS
+    always follows a form known as
+    
+    “generalizing from the generic particular.”
+    We are trying to prove that \(\forall x \in U, P(x) \implies Q(x)\).
+    The argument (in skeletal outline) will look like:
+  </p>
+<table>
+<tr><td class="l m b1 r0 l0 t0 lines"></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.75\textwidth}
+       <!--Style me with CSS--><em>Proof:</em> Suppose that \(a\) is a particular but arbitrary element of \(U\) such 
+      that \(P(a)\) holds.
+
+      \(\vdots\) 
+
+      Therefore \(Q(a)\) is true. 
+      Thus we have shown that for all \(x\) in \(U\), \(P(x) \implies Q(x)\).
+        Q.E.D.</td></tr>
+<tr><td class="l m b1 r0 l0 t0 lines"></td></tr>
+</table>
+<p id="p-573">
+    Okay, so this outline is pretty crappy. It tells you how to start and
+    end a direct proof, but those obnoxious dot-dot-dots in the middle are
+    where all the real work has to go. If I could tell you (even in outline)
+    how to fill in those dots, that would mean mathematical proof isn't really
+    a very interesting activity to engage in. Filling in those dots will
+    sometimes (rarely) be obvious, more often it will be extremely challenging;
+    it will require great creativity, loads of concentration, you'll call on
+    all your previous mathematical experiences, and you will most likely
+    experience a certain degree of anguish. Just remember that your sense
+    of accomplishment is proportional to the difficulty of the puzzles you
+    attempt. So let's attempt another…
+  </p>
+<p id="p-574">
+    In <a knowl="./knowl/tab_defs.html" knowl-id="xref-tab_defs" alt="Table 3.1.2 " title="Table 3.1.2 ">Table 3.1.2</a> one of the very handy notions defined is that
+    of the <!--Style me with CSS--><em>floor</em> of a real number.
+    \begin{equation*}
+      y = \lfloor x \rfloor \; \iff \; (y \in \mathbb Z \; \land \; y \leq x \lt  y+1).
+    \end{equation*}
+  </p>
+<p id="p-575">
+    There is a sad tendency for people to apply old rules in new situations
+    just because of a chance similarity in the notation. The brackets used
+    in notating the floor function look very similar to ordinary parentheses,
+    so the following “rule” is often proposed
+    \begin{equation*}
+      \lfloor x + y \rfloor = \lfloor x \rfloor + \lfloor y \rfloor
+    \end{equation*}
+  </p>
+<article class="exercise-like" id="exercise-17"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.1.3</span>
+</h5>
+<p id="p-576">
+        Find a counterexample to the previous “rule.”
+      </p></article><p id="p-577">
+    What is (perhaps) surprising is that if one of the numbers involved is an
+    integer then the “rule” really works.
+  </p>
+<article class="theorem-like" id="theorem-6"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">3.1.4</span>
+</h5>\begin{equation*}
+        \forall x \in \Reals, \, \forall n \in \Integers, \, 
+        \lfloor x + n \rfloor = \lfloor x \rfloor + \lfloor n \rfloor
+      \end{equation*}</article><p id="p-578">
+    Since the floor of an integer <!--Style me with CSS--><em>is</em> that integer, we could restate this
+    as \(\lfloor x + n \rfloor = \lfloor x \rfloor +  n\).
+  </p>
+<p id="p-579">
+    Now, let's try rephrasing this theorem as a UCS: If \(x\) is a real number
+    and \(n\) is an integer, then \(\lfloor x + n \rfloor = \lfloor x \rfloor +  n\).
+    This is bad … it appears that the only hypotheses that we can use
+    involve what kinds of numbers \(x\) and \(n\) are — our hypotheses aren't
+    particularly potent. Your next most useful allies in constructing proofs
+    are the definitions of the concepts involved. The quantity
+    \(\lfloor x \rfloor\) appears in the theorem, let's make
+    use of the definition:
+    \begin{equation*}
+      a = \lfloor x  \rfloor \; \iff \; a \in \Integers \; \, 
+      \land \; \, a \leq x \lt  a+1.
+    \end{equation*}
+  </p>
+<p id="p-580">
+    The only other floor function that appears in the statement of the theorem
+    (perhaps even more prominently)
+    is \(\lfloor x + n\rfloor\), here, the definition gives us
+    \begin{equation*}
+      b = \lfloor x + n \rfloor \; \iff \; 
+      b \in \Integers \; \, \land \; \, b \leq x + n \lt  b+1.
+    \end{equation*}
+  </p>
+<p id="p-581">
+    These definitions are our only available tools so we'll certainly <!--Style me with CSS--><em>have</em>
+    to make use of them, and it's important to notice that that is a good thing;
+    the definitions allow us to work with something well-understood
+    (the inequalities that appear within them) rather than with something
+    new and relatively suspicious (the floor notation). Putting the proof
+    of this statement together is an exercise in staring at the two definitions
+    above and noting how one can be converted into the other. It is also a
+    testament to the power of <!--Style me with CSS--><em>naming</em> things.
+  </p>
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-8" id="proof-8"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-8" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-582">
+      Suppose that \(x\) is a particular but arbitrary real number
+      and that \(n\) is a particular but arbitrary integer. Let
+      \(a = \lfloor x \rfloor\). By the definition of the floor function
+      it follows that \(a\) is an integer and \(a \leq x \lt  a+1\). By adding
+      \(n\) to each of the parts of this inequality
+      we deduce a new (and equally valid) inequality, \(a+n \leq x+n \lt  a+n+1\).
+      Note that \(a+n\) is an integer and the inequality above together with
+      this fact constitute precisely the definition of
+      \(a + n = \lfloor x + n \rfloor\). Finally, recalling that
+      \(a = \lfloor x \rfloor\) (by assumption), and rewriting, we obtain the
+      desired result
+      \begin{equation*}
+        \lfloor x + n \rfloor = \lfloor x \rfloor + n.
+      \end{equation*}
+    </p></article></div>
+<p id="p-583">
+  As we've seen in the examples presented in this section, coming up
+  with a proof can sometimes involve a bit of ingenuity. But, sometimes,
+  there is a “follow your nose” sort of approach that will
+  allow you to devise a valid argument without necessarily displaying
+  any great leaps of genius! Here are a few pieces
+  of advice about proof-writing:
+
+  </p>
+<ul id="ul-3" style="list-style-type: disc;">
+<li id="li-223"><p id="p-584">
+        Before anything else, determine precisely what hypotheses you
+        can use.
+      </p></li>
+<li id="li-224"><p id="p-585">
+        Jot down the definitions of <!--Style me with CSS--><em>anything</em> in the statement of 
+        the theorem.
+      </p></li>
+<li id="li-225"><p id="p-586">
+        There are 26 letters at your disposal (and even more if you know
+        Greek) (and you can always throw on subscripts!) don't be stingy with
+        letters.  The nastiest mistake you can make is to use the same variable
+        for two different things.
+      </p></li>
+<li id="li-226"><p id="p-587">
+        Please write a rough draft first.  Write two drafts!  Even if you
+        can write beautiful, lucid prose on the first go around, it won't fly
+        when it comes to organizing a proof.
+      </p></li>
+<li id="li-227"><p id="p-588">
+        The statements in a proof are supposed to be logical statements.
+        That means they should be Boolean (statements that are either true or false).
+        An algebraic expression all by itself doesn't count, an inequality or an 
+        equality does.
+      </p></li>
+<li id="li-228"><p id="p-589">
+        Don't say “if” when you mean “since.”  Really!  If you start a
+        proof about rational numbers like so:
+        <blockquote>
+<!--Style me with CSS--><em>Proof:</em> Suppose that \(x\) is a particular but arbitrary rational number.
+        If \(x\) is a rational number, it follows that \ldots
+        </blockquote>
+        people are going to look at you funny.  What's the point of 
+        <!--Style me with CSS--><em>supposing</em>
+        that \(x\) is rational, then acting as if you're in doubt of that fact by
+        writing “if”?   You mean “since.”
+      </p></li>
+<li id="li-229"><p id="p-590">
+        Mark off the beginning and the end of your proofs as a hint to your
+        readers.  In this book we start off a proof by writing <!--Style me with CSS--><em>Proof:</em> in 
+        italics and we end every proof with the abbreviation 
+        
+        Q.E.D.<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-19" id="fn-19"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-19" style="display: none;" class="tex2jax_ignore"><span class="footnote"><!--Style me with CSS--><em>Quod erat demonstrandum</em> or “(that) which was to 
+        be demonstrated.” some authors prefer placing a small rectangle at 
+        the end of their proofs, but Q.E.D. seems more pompous.</span></span>
+      </p></li>
+</ul>
+<p>
+  </p>
+<p id="p-591">
+    We'll close this section with a word about axioms. The axioms in any
+    given area of math are your most fundamental tools. Axioms don't
+    need to be proved — we are supposed to just accept them! A very common
+    problem for beginning proofwriters is telling the difference between statements
+    that are axiomatic and statements that require some proof. For instance, in the
+    exercises for this section there is a problem that asks us to prove that the sum of
+    two rational numbers is rational. Doesn't this seem like it might be one of
+    the axioms of rational numbers? Is it really something that <!--Style me with CSS--><em>can</em> be proved?
+    Well, we know how the process of adding rational numbers works: we put the
+    fractions over a common
+    denominator and then just add numerators. Do you see how adding fractions really rests
+    on our ability to add the numerators (which are integers). So, in doing that exercise you
+    can use the fact (indeed, you'll need to use the fact) that the sum of two integers is an integer.
+    So how about <!--Style me with CSS--><em>that</em> statement? Is it necessary to prove that adding integers produces
+    an integer? As a matter of fact it <!--Style me with CSS--><em>is</em> necessary since the structure of the integers
+    rests on a foundation known as the Peano axioms for the naturals — and the Peano axioms
+    <!--Style me with CSS--><em>don't</em> include one that guarantees that the sum of two naturals is also a natural. If you
+    are tempted to trace this whole thing back, to “find out how deep the rabbit hole goes,” I commend
+    you. But, if you just want to be able to get on with doing your homework problems, I sympathize
+    with that sentiment too. Let's agree that integers behave the way we've come to expect — if
+    you add or multiply integers the result will be an integer.
+  </p>
+<section class="exercises" id="exercises-15"><header title="Exercises 3.1.1 Exercises"><h1 class="heading hide-type" alt="Exercises 3.1.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">3.1.1</span><span class="title">Exercises</span>
+</h1></header><ol id="ol-38" style="list-style-type: lower-alpha;">
+<li id="li-230">
+<p id="p-592">
+      Every prime number greater than 3 is of one of the two forms
+      \(6k+1\) or \(6k+5\).  What statement(s) could be used as hypotheses in
+      proving this theorem?
+
+      \hint{
+
+
+
+      Fill in the blanks:
+
+      </p>
+<ul id="ul-4" style="list-style-type: disc;">
+<li id="li-231"><p id="p-593">
+            \(p\) is a <span class="fillin" style="width: 4.545454545454546em;"></span> number, and
+          </p></li>
+<li id="li-232"><p id="p-594">
+            \(p\) is greater than <span class="fillin" style="width: 4.545454545454546em;"></span>.
+          </p></li>
+</ul>
+<p>
+      </p>
+</li>
+<li id="li-233"><p id="p-595">
+          Prove that 129 is odd.
+
+          \hint{
+
+
+
+           All you have to do to show that some number is odd, is produce the integer \(k\) that the definition
+          of “odd” says has to exist.  Hint: the same number could be used to prove that \(128\) is even.
+
+
+
+          }
+        </p></li>
+<li id="li-234"><p id="p-596">
+          Prove that the sum of two rational numbers is a rational number.
+
+          \hint{
+
+
+
+           You want to argue about the sum of two generic rational numbers. Maybe call them \(a/b\) and \(c/d\). The definition of “rational number” then tells you that \(a\), \(b\), \(c\) and \(d\) are integers and that neither \(b\) nor \(d\) are zero. You add these generic rational numbers in the usual way — put them over a common denominator and then add the numerators. One possible common denominator is \(bd\), so we can express the sum as \((ad+bc)/(bd)\).  You can finish off the argument from here: you need to show that this expression for the sum satisfies the definition of a rational number (quotient of integers w/ non-zero denominator). Also, write it all up a bit more formally…
+
+
+
+          }
+        </p></li>
+<li id="li-235"><p id="p-597">
+        Prove that the sum of an odd number and an even number is odd.
+
+
+        \hint{
+
+        <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-9" id="proof-9"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div><div id="hk-proof-9" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-598">
+            Suppose that \(x\) is an odd number and \(y\) is an even number. Since \(x\) is odd there is an
+            integer \(k\) such that \(x=2k+1\). Furthermore, since \(y\) is even, there is an integer \(m\) such that
+            \(y=2m\). By substitution, we can express the sum \(x+y\) as \(x+y = (2k+1) + (2m) = 2(k+m) + 1\).
+            Since \(k+m\) is an integer (the sum of integers is an integer) it follows that \(x+y\) is odd.
+          </p></article></div>
+
+        }
+        </p></li>
+<li id="li-236"><p id="p-599">
+          Prove that if the sum of two integers is even, then so is their
+          difference.
+
+          \hint{
+
+
+
+          Hint: If we write \(x+y\) for the sum of two integers that is even (so \(x+y = 2k\) for some integer \(k\)), then we could subtract <span class="fillin" style="width: 4.545454545454546em;"></span> from it in order to obtain \(x-y\). Once you fill in that blank properly the flow of the argument should become apparent to you.
+
+
+
+          }
+        </p></li>
+<li id="li-237"><p id="p-600">
+          Prove that for every real number \(x\), \(\frac{2}{3} \lt  x \lt  \frac{3}{4} \; \implies \; \lfloor 12x \rfloor = 8\).
+
+          \hint{
+
+
+
+          Begin your proof like so:
+
+          “Suppose that \(x\) is a real number such that \(\frac{2}{3} \lt  x \lt  \frac{3}{4}\).”
+
+          You need to multiply all three parts of the inequality by something in order to “clear” the fractions.
+          What should that be?
+
+
+          The definition for the floor of \(12x\) will be satisfied if \(8 \leq 12x \lt  9\) but unfortunately the work done 
+          previously will have deduced that \(8 \lt  12x \lt  9\) is true.  Don't just gloss over this discrepancy.  Explain why
+          one of these inequalities is implied by the other.
+
+
+
+          }
+        </p></li>
+<li id="li-238"><p id="p-601">
+          Prove that if \(x\) is an odd integer, then \(x^2\) is of the form
+          \(4k+1\) for some integer \(k\).
+
+          \hint{
+
+
+
+           You may be tempted to write “Since x is odd, it can be expressed as \(x = 2k+1\) where \(k\) is an integer.” This is slightly wrong since the variable \(k\) is already being used in the statement of the theorem. But, except for replacing \(k\) with some other variable (maybe \(m\) or \(j\)?) that <!--Style me with CSS--><em>is</em> a good way to get started. From there it's really just algebra until, eventually, you'll find out what \(k\) really is.
+
+
+
+          }
+        </p></li>
+<li id="li-239"><p id="p-602">
+          Prove that for all integers \(a\) and \(b\), if \(a\) is odd and \(6 \divides (a+b)\), then \(b\) is odd.
+
+          \hint{
+
+
+
+           The premise that \(6 \divides (a+b)\) is a bit of a red herring (a clue that is designed to mislead).  The premise that you really need is that \(a+b\) is even.  Can you deduce that from what's given?
+
+
+
+          }
+        </p></li>
+<li id="li-240"><p id="p-603">
+        Prove that \(\forall x\in\Reals, \, x\not\in\Integers \, \implies \, \lfloor x\rfloor+\lfloor-x\rfloor=-1\).
+
+        \hint{
+
+        <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-10" id="proof-10"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div><div id="hk-proof-10" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-604">
+            Suppose that \(x\) is a real number and \(x\not\in\Integers\). Let \(a = \lfloor x \rfloor\). By the definition
+            of the floor function we have \(a \in\Integers\) and \(a \leq x \lt  a+1\). Since \(x \not\in\Integers\) we
+            know that \(x \neq a\) so we may strengthen the inequality to \(a \lt  x \lt  a+1\). Multiplying this inequality
+            by \(-1\) we obtain \(-a &gt; -x &gt; -a - 1\). This inequality may be weakened to \(-a &gt; -x \geq -a - 1\). Finally, note that (since \(-a-1 \in\Integers\) and \(-a = (-a-1)+1\) we
+            have shown that \(\lfloor -x \rfloor \, = \, -a-1\). Thus, by substitution we have \(\lfloor x \rfloor+\lfloor -x \rfloor \; = \; a + (-a-1) \; = \; -1\) as desired.
+          </p></article></div>
+
+        }
+        </p></li>
+<li id="li-241"><p id="p-605">
+          Define the <!--Style me with CSS--><em>evenness</em> of an integer \(n\) by:
+          \begin{equation*}
+            \mbox{evenness}  (n) = k \; \iff \;  
+             2^k \divides n \, \land \, 2^{k+1} \nmid n
+          \end{equation*}
+          State and prove a theorem concerning the evenness of products.
+
+          \hint{Well, the statement is that the evenness of a product is the sum of the evennesses of the factors…}
+        </p></li>
+<li id="li-242"><p id="p-606">
+          Suppose that \(a\), \(b\) and \(c\) are integers such that \(a \divides b\)
+          and \(b \divides c\).  Prove that \(a \divides c\).
+
+          \hint{
+          This one is pretty straightforward. Be sure to not reuse any variables. Particularly, the fact that \(a \divides b\) tells us (because of the definition of divisibility) that there is an integer \(k\) such that \(b = ak\).  It is not okay to also use \(k\) when converting the statement “\(b \divides c\).”
+          }
+        </p></li>
+<li id="li-243"><p id="p-607">
+          Suppose that \(a\), \(b\), \(c\) and \(d\) are integers with \(a \neq c\).
+          Further, suppose that \(x\) is a real number satisfying the equation
+          \begin{equation*}
+            \frac{ax+b}{cx+d} = 1.
+          \end{equation*}
+          Show that \(x\) is rational.  Where is the hypothesis \(a \neq c\)
+          used?
+
+          \hint{Cross multiply and solve for \(x\).  If you need to divide by an expression, it had 
+          better be non-zero!}
+        </p></li>
+<li id="li-244"><p id="p-608">
+          Show that if two positive integers \(a\) and \(b\) satisfy \(a \divides b\emph{and}b \divides a\) then they are equal.
+
+          \hint{From the definition of divisibility, you get two integers \(j\) and \(k\), such that 
+          \(a = jb\) and \(b = ka\). Substitute one of those into the other and ask yourself what 
+          the resulting equation says about \(j\) and \(k\).  Can they be any old integers?  Or, are 
+          there restrictions on their values?
+          }
+        </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

@@ -1,4 +1,4 @@
-
+<?xml version="1.0" encoding="UTF-8" ?>
 <section xml:id="sec_ord_rel">
   <title>Ordering relations</title>
   <p>
@@ -307,8 +307,8 @@
         <cell></cell>
       </row>
       <row>
-        <cell>\begin{minipage}[b]{.4\textwidth}
-
+        <cell>
+        <p>
         <ol>
           <li>
             <title>1.</title>
@@ -359,8 +359,8 @@
             </p></li>
         </ol>
         </p></cell>
-        <cell>\begin{minipage}[b]{.4\textwidth}
-
+        <cell>
+        <p>
         <ol>
           <li>
             <title>a.</title>
@@ -409,9 +409,9 @@
             <p>
               <m>\{ \mbox{Worms} , \mbox{Robin} , \mbox{Fox}  \}</m>
             </p></li>
-        </ol></cell>
+        </ol></p></cell>
       </row>
-    </tabular></li>
+    </tabular></p></li>
 
     <li><p>
         The graph of the edges of a cube is one in an infinite sequence of 

@@ -1,4 +1,4 @@
-
+<?xml version="1.0" encoding="UTF-8" ?>
 <section xml:id="sec_def">
   <title>Definitions: Prime numbers</title>
   <p>
@@ -3232,7 +3232,7 @@
 
 
 
-        \hint{Part of what makes the "prime-producing-power" of that polynomial impressive is that it gives each prime twice <mdash /> once on the descending arm of the parabola and once on the ascending arm. In other words, the polynomial gives prime values on a set of contiguous natural numbers {0,1,2, ..., N} and the vertex of the parabola that is its graph lies dead in the middle of that range. You can figure out what N is by thinking about the other end of the range: (-1)2 + 31  · (-1) + 257 = 289 (289 is not a prime, you should recognize it as a perfect square.)}
+        \hint{Part of what makes the "prime-producing-power" of that polynomial impressive is that it gives each prime twice <mdash /> once on the descending arm of the parabola and once on the ascending arm. In other words, the polynomial gives prime values on a set of contiguous natural numbers <m>\{0,1,2, ..., N\}</m> and the vertex of the parabola that is its graph lies dead in the middle of that range. You can figure out what <m>N</m> is by thinking about the other end of the range: <m>(-1)^2 + 31 \cdot (-1) + 257 = 289</m> (<m>289</m> is not a prime, you should recognize it as a perfect square.)}
       </p></li>
 
     <li><p>

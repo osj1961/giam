@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-10T23:30:58-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Proofs and disproofs of existential statements</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></a></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="sec_cases.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_proof1.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="chapter-4.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_cases.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_proof1.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="chapter-4.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link active"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html" class="active">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_ord_rel.html">Ordering relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-37.html">Parity and Counting arguments</a></li>
+<li><a href="section-38.html">The pigeonhole principle</a></li>
+<li><a href="section-39.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-41.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-43.html">Dominance</a></li>
+<li><a href="section-44.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-45.html">Morley's miracle</a></li>
+<li><a href="section-46.html">Five steps into the void</a></li>
+<li><a href="section-47.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_exist"><header title="Section 3.6 Proofs and disproofs of existential statements"><h1 class="heading hide-type" alt="Section 3.6 Proofs and disproofs of existential statements">
+<span class="type">Section</span><span class="codenumber">3.6</span><span class="title">Proofs and disproofs of existential statements</span><a href="sec_exist.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-717">
+    From a certain point of view, there is no need for the current section.
+    If we are proving an existential statement we are <!--Style me with CSS--><em>disproving</em> some
+    universal statement. (Which has already been discussed.) Similarly,
+    if we are trying to disprove an existential statement, then we are
+    actually <!--Style me with CSS--><em>proving</em> a related universal statement. Nevertheless,
+    sometimes the way a theorem is stated emphasizes the existence question
+    over the corresponding universal — and so people talk about proving
+    and disproving existential statements as a separate issue from
+    universal statements.
+  </p>
+<p id="p-718">
+    Proofs of existential questions come in two basic varieties: constructive
+    and non-constructive. Constructive proofs are conceptually the easier
+    of the two — you actually name an example that shows the existential
+    question is true. For example:
+  </p>
+<article class="theorem-like" id="theorem-11"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">3.6.1</span>
+</h5>
+<p id="p-719">
+        There is an even prime.
+      </p></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-18" id="proof-18"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-18" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-720">
+      The number 2 is both even and prime.
+    </p></article></div>
+<article class="exercise-like" id="exercise-26"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.6.2</span>
+</h5>
+<p id="p-721">
+        The Fibonacci numbers are defined by the initial values \(F(0)=1\)
+        and \(F(1)=1\) and the recursive formula \(F(n+1) = F(n)+F(n-1)\) (to
+        get the next number in the series you add the last and the penultimate).
+      </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(F(n)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\vdots\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\vdots\)</td>
+</tr>
+</table>
+<p id="p-722">
+        Prove that there is a Fibonacci number that is a perfect square.
+      </p></article><p id="p-723">
+    A non-constructive existence proof is trickier. One approach is to argue
+    by contradiction — if the thing we're seeking doesn't exist that will
+    lead to an absurdity. Another approach is to outline a search algorithm
+    for the desired item and provide an argument as to why it cannot fail!
+  </p>
+<p id="p-724">
+    A particularly neat approach is to argue using dilemma.
+    This is my favorite non-constructive existential theorem/proof.
+  </p>
+<article class="theorem-like" id="theorem-12"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">3.6.3</span>
+</h5>
+<p id="p-725">
+        There are irrational numbers \(\alpha\) and \(\beta\) such that \(\alpha^\beta\)
+        is rational.
+      </p></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-19" id="proof-19"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-19" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-726">
+      If \(\sqrt{2}^{\sqrt{2}}\) is rational then we are done.
+      (Let \(\alpha = \beta = \sqrt{2}\).) Otherwise, let
+      \(\alpha = \sqrt{2}^{\sqrt{2}}\) and \(\beta = \sqrt{2}\). The result
+      follows because \(\left(\sqrt{2}^{\sqrt{2}}\right)^{\sqrt{2}} = \sqrt{2}^{(\sqrt{2}\sqrt{2})} 
+      = \sqrt{2}^2 = 2\), which is clearly rational.
+    </p></article></div>
+<p id="p-727">
+    Many existential proofs involve a property of the natural numbers
+    known as the well-ordering principle. The well-ordering principle is
+    sometimes abbreviated WOP. If a set has WOP it doesn't mean that the
+    set is ordered in a particularly good way, but rather that its subsets
+    are like wells — the kind one hoists water out of with a bucket on a rope.
+    You needn't be concerned with WOP in general at this point, but notice
+    that the subsets of the natural numbers have a particularly nice property — any non-empty set of natural numbers must have a least element (much like
+    every water well has a bottom).
+  </p>
+<p id="p-728">
+    Because the natural numbers have the well-ordering principle
+    we can prove that there is a least
+    natural number with property X by simply finding <!--Style me with CSS--><em>any</em> natural
+    number with property X — by doing that we've shown that the set of
+    natural numbers with property X is non-empty and that's the only
+    hypothesis the WOP needs.
+  </p>
+<p id="p-729">
+    For example, in the exercises in <a href="sec_cases.html" alt="Section 3.5 Even more direct proofs: By cases and By exhaustion" title="Section 3.5 Even more direct proofs: By cases and By exhaustion">Section 3.5</a> we
+    introduced vampire numbers. A  <!--Style me with CSS--><em>vampire number</em>
+    is a
+    \(2n\) digit number \(v\) that factors as \(v=xy\)
+    where \(x\) and \(y\) are \(n\) digit numbers and the digits of \(v\) are the
+    union of the digits in \(x\) and \(y\) in some order. The numbers \(x\) and \(y\)
+    are known as the “fangs” of \(v\). To eliminate trivial
+    cases, pairs of trailing zeros are disallowed.
+  </p>
+<article class="theorem-like" id="theorem-13"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">3.6.4</span>
+</h5>
+<p id="p-730">
+        There is a smallest 6-digit vampire number.
+      </p></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-20" id="proof-20"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-20" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-731">
+      The number \(125460\) is a vampire number (in fact this is the smallest
+      example of a vampire number with two sets of fangs:
+      \(125460 = 204\cdot 615 = 246\cdot 510\)). Since the set of 6-digit vampire
+      numbers is non-empty, the well-ordering principle of the natural numbers
+      allows us to deduce that there is a smallest 6-digit vampire number.
+    </p></article></div>
+<p id="p-732">
+    This is quite an interesting situation in that we know there is a smallest
+    6-digit vampire number without having any idea what it is!
+  </p>
+<article class="exercise-like" id="exercise-27"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.6.5</span>
+</h5>
+<p id="p-733">
+        Show that \(102510\) is the smallest 6-digit vampire number.
+      </p></article><p id="p-734">
+    There are quite a few occasions when we need to prove statements
+    involving the  unique existence quantifier
+    (\(\exists !\)). In
+    such instances we need to do just a little bit more work. We
+    need to show existence — either constructively or non-constructively — and we also need to show uniqueness. To give an example of
+    a unique existence proof we'll return to a concept first
+    discussed in <a href="sec_alg.html" alt="Section 1.5 Some algorithms of elementary number theory" title="Section 1.5 Some algorithms of elementary number theory">Section 1.5</a> and finish-up some business
+    that was glossed-over there.
+  </p>
+<p id="p-735">
+    Recall the Euclidean algorithm that was used to calculate the
+    greatest
+    common divisor of two integers \(a\) and \(b\) (which we denote \(\gcd{a}{b}\)).
+    There is a rather important question concerning algorithms known as
+    the “halting problem.” Does the program eventually halt, or does it get
+    stuck in an infinite loop? We know that the Euclidean algorithm halts
+    (and outputs the correct result) because we know the following
+    unique existence result.
+    \begin{equation*}
+      \forall a, b \in \Integers^+, \, \exists ! \, d \in \Integers^+ \; \mbox{such that}  \, d=\gcd{a}{b}
+    \end{equation*}
+  </p>
+<p id="p-736">
+    Now, before we can prove this result, we'll need a precise definition
+    for \(\gcd{a}{b}\). Firstly, a gcd must be a <!--Style me with CSS--><em>common divisor</em> which
+    means it needs to divide both \(a\) and \(b\). Secondly, among all the common
+    divisors, it must be the <!--Style me with CSS--><em>largest</em>. This second point is usually
+    addressed
+    by requiring that every other common divisor divides the gcd. Finally we
+    should note that a gcd is always positive, for whenever a number divides
+    another number so does its negative, and whichever of those two is positive
+    will clearly be the greater! This allows us to extend the definition of
+    gcd to all integers, but things are conceptually easier if we
+    keep our attention restricted to the positive integers.
+  </p>
+<article class="definition-like" id="definition-8"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">3.6.6</span>
+</h5>
+<p id="p-737">
+        The <em class="terminology">greatest common divisor</em>, or gcd, of two positive
+        integers \(a\) and \(b\)
+        is a positive integer \(d\) such that \(d \divides a\) and \(d \divides b\) and if \(c\) is any
+        other positive integer such that \(c \divides a\) and \(c \divides b\) then \(c \divides d\).
+        \begin{equation*}
+          \forall a,b,c,d \in \Integers^+ \; d=\gcd{a}{b} \; \iff \;
+          d \divides a \, \land \, d \divides b \, \land \, (c \divides a \, \land \, c \divides b  \implies c \divides d)
+        \end{equation*}
+      </p></article><p id="p-738">
+    Armed with this definition, let's return our attention to proving the
+    unique existence of the gcd. The uniqueness part is easier so we'll
+    do that first. We argue by contradiction. Suppose that there were
+    two different numbers \(d\) and \(d'\) satisfying the definition of \(\gcd{a}{b}\).
+    Put \(d'\) in the place of \(c\) in the definition to see that \(d' \divides d\).
+    Similarly, we can deduce that \(d \divides d'\) and if two numbers each divide
+    into the other, they must be equal. This is a contradiction since we
+    assumed \(d\) and \(d'\) were different.
+  </p>
+<p id="p-739">
+    For the existence part we'll need to define a set — known as the
+    \(\Integers\)-module generated by \(a\) and \(b\) — that consists of all
+    numbers of the form \(xa+yb\) where \(x\) and \(y\) range over the integers.
+  </p>
+<figure class="figure-like" id="figure-12"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/edf6f6167bbe93cd8da459f34f7b72649911ed34.png" alt="">\(\Integers\)\(\Integers\)\(21\)\(15\)\(21x+15y\)\((x,y)\)</figure><p id="p-740">
+    This set has a very nice geometric character that often doesn't receive the
+    attention it deserves. Every element of a \(\Integers\)-module generated
+    by two numbers (\(15\) and \(21\) in the example)
+    corresponds to a point in the Euclidean plane. As indicated in
+    <span>&lt;&lt;Unresolved xref, reference "fig_zmodule"; check spelling or use "provisional" attribute&gt;&gt;</span> there is a dividing line between the positive
+    and negative elements in a \(\Integers\)-module. It is also easy to see
+    that there are many repetitions of the same value at different points
+    in the plane.
+  </p>
+<article class="exercise-like" id="exercise-28"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.6.7</span>
+</h5>
+<p id="p-741">
+        The value \(0\) clearly occurs in a \(\Integers\)-module when both
+        \(x\) and \(y\) are themselves zero. Find another pair of \((x,y)\)
+        values such that \(21x+15y\) is zero. What is the slope of
+        the line which separates the positive values from the negative
+        in our \(\Integers\)-module?
+      </p></article><p id="p-742">
+    In thinking about this \(\Integers\)-module, and perusing
+    <span>&lt;&lt;Unresolved xref, reference "fig_zmodule"; check spelling or use "provisional" attribute&gt;&gt;</span>, you may have noticed that the smallest
+    positive number in the \(\Integers\)-module is 3. If you hadn't
+    noticed that, look back and verify that fact now.
+  </p>
+<article class="exercise-like" id="exercise-29"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.6.8</span>
+</h5>
+<p id="p-743">
+        How do we know that some smaller positive value (a \(1\) or a \(2\)) doesn't
+        occur somewhere in the Euclidean plane?
+      </p></article><p id="p-744">
+    What we've just observed is a particular instance of a general result.
+  </p>
+<article class="theorem-like" id="gcduniqueexists"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">3.6.9</span>
+</h5>
+<p id="p-745">
+        The smallest positive number in the \(\Integers\)-module generated by
+        \(a\) and \(b\) is \(d = \gcd{a}{b}\).
+      </p></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-21" id="proof-21"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-21" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-746">
+      Suppose that \(d\) is the smallest positive number
+      in the \(\Integers\)-module \(\{ xa + yb \suchthat x,y \in \Integers \}\).
+      There are particular values of \(x\) and \(y\) (which we will distinguish
+      with over-lines) such that \(d = \overline{x}a + \overline{y}b\). Now, it
+      is easy to see that if \(c\) is any common divisor of \(a\) and \(b\) then
+      \(c \divides d\), so what remains to be proved is that \(d\) itself is a divisor
+      of both \(a\) and \(b\). Consider dividing \(d\) into \(a\). By the
+      division algorithm there are uniquely determined numbers \(q\) and \(r\)
+      such that \(a =qd + r\) with \(0 \leq r \lt  d\). We will show that \(r=0\).
+      Suppose, to the contrary, that \(r\) is positive. Note that we can
+      write \(r\) as \(r = a - qd = a - q(\overline{x}a + \overline{y}b) = (1-q\overline{x})a - q\overline{y}b\). The last equality shows that \(r\) is in the
+      \(\Integers\)-module under consideration, and so, since \(d\) is the smallest
+      positive integer in this \(\Integers\)-module it follows that \(r \geq d\) which
+      contradicts the previously noted fact that \(r \lt  d\). Thus, \(r=0\) and so
+      it follows that \(d \divides a\). An entirely analogous argument can be used
+      to show that \(d \divides b\) which completes the proof that \(d = \gcd{a}{b}\).
+    </p></article></div>
+<section class="exercises" id="exercises-20"><header title="Exercises 3.6.1 Exercises"><h1 class="heading hide-type" alt="Exercises 3.6.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">3.6.1</span><span class="title">Exercises</span>
+</h1></header><ol id="ol-43" style="list-style-type: lower-alpha;">
+<li id="li-286"><p id="p-747">
+          Show that there is a perfect square that is the sum of two
+          perfect squares.
+
+          \hint{Can you say "Pythagorean triple"? I thought you could.}
+        </p></li>
+<li id="li-287"><p id="p-748">
+          Show that there is a perfect cube that is the sum of three
+          perfect cubes.
+
+          \hint{Hint: \(6^3\) can be expressed as such a sum.}
+        </p></li>
+<li id="li-288"><p id="p-749">
+          Show that the WOP doesn't hold in the integers.  (This is an
+          existence proof, you show that there is a subset of \(\Integers\)
+          that doesn't have a smallest element.)
+
+          \hint{How about even integers? Is there a smallest one?  That's my example!  You come up with a 
+          different one!}
+        </p></li>
+<li id="li-289"><p id="p-750">
+          Show that the WOP doesn't hold in \(\Rationals^+\).
+
+          \hint{Consider the set \(\{ 1, 1/2, 1/4, 1/8, \ldots \}\).  Does it have a smallest element?}
+        </p></li>
+<li id="li-290"><p id="p-751">
+          In the proof of <a knowl="./knowl/gcduniqueexists.html" knowl-id="xref-gcduniqueexists" alt="Theorem 3.6.9 " title="Theorem 3.6.9 ">Theorem 3.6.9</a> we weaseled out of
+          showing that \(d \divides b\).  Fill in that part of the proof.
+
+          \hint{Yeah, I'm going to keep weaseling…}
+        </p></li>
+<li id="li-291"><p id="p-752">
+          Give a proof of the unique existence of \(q\) and \(r\) in the
+          division algorithm. 
+
+          \hint{Unique existence proofs consist of two parts. First, just show existence. Then, show that if there were two of the things under consideration that they must in fact be equal.}
+        </p></li>
+<li id="li-292"><p id="p-753">
+          A <!--Style me with CSS--><em>digraph</em> is a drawing containing a collection of points
+          that are connected by arrows.  The game known as <!--Style me with CSS--><em>scissors-paper-rock</em>
+          can be represented by a digraph that is <!--Style me with CSS--><em>balanced</em> (each point has the
+          same number of arrows going out as going in).  Show that there is a 
+          balanced digraph having 5 points.
+          <img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt="">
+          \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+            \reset@font\fontsize{#1}{#2pt}
+            \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+            \selectfont}\fi
+          <img width="100%" src="images/7e1f383b56ab3f1d5418dae1b438e60d025d7be3.png" alt="">
+          \hint{If at first you don't succeed… 
+          try googling “scissor paper rock lizard spock.”}
+        </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

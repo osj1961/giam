@@ -1,4 +1,4 @@
-
+<?xml version="1.0" encoding="UTF-8" ?>
 <section xml:id="sec_alg">
   <title>Some algorithms of elementary number theory</title>
   <p>
@@ -102,14 +102,16 @@
     <caption>A small example in pseudocode and as a flowchart</caption>
     <tabular>
       <row>
-        <cell><image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-        \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-          \reset@font\fontsize{#1}{#2pt}
-          \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-          \selectfont}\fi
-        <image source="images/680500128ce5572fcef0652e47948f94d53f3cf2.png"/></cell>
+        <cell>
+          <image xml:id="if_then_flow">
+            <latex-image-code>
+              <![CDATA[ \input{/Users/joefields/giam/figures/if-then_flowchart.tex} 
+              ]]>
+            </latex-image-code>
+          </image>
+        </cell>
         <cell></cell>
-        <cell>\begin{minipage}[b]{.3\textwidth}
+        <cell>
          If <m>x=y</m> then</cell>
       </row>
       <row>
@@ -119,7 +121,7 @@
         <cell>End If</cell>
       </row>
       <row>
-        <cell>\vdots</cell>
+        <cell><m>\vdots</m></cell>
       </row>
       <row>
         <cell></cell>
@@ -164,14 +166,13 @@
     A pseudocode outline of the division algorithm is as follows:
   </p>
 
-  \begin{minipage}[b]{.5\textwidth}
+  <listing>
+    <pre>
    Algorithm: Division
 
   Inputs: integers <m>n</m> and <m>d</m>.
 
   Local variables: <m>q</m> and <m>r</m>.
-
-
 
   Let <m>q = 0</m>. 
 
@@ -190,6 +191,8 @@
   Let <m>r = r - d</m>.
 
   Goto 1.
+  </pre>
+</listing>
 
   <p>
     This same algorithm is given in flowchart form in
@@ -198,12 +201,12 @@
 
   <figure xml:id="fig_div_alg" >
     <caption>The division algorithm in flowchart form.</caption>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/1cd7d533c4c571964f41aaddda1a8d923d3c92c8.png"/>
+    <image xml:id="div_alg">
+      <latex-image-code>
+        <![CDATA[ \input{./figures/div_alg_flowchart.tex} 
+              ]]>
+      </latex-image-code>
+    </image>
   </figure>
 
   <p>

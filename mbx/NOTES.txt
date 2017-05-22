@@ -1,0 +1,32 @@
+NOTES
+
+1) Top-level mbx file is named "index.mbx".  It should take its name from the name of the top-level .tex file, or something else that can be controlled.  In GIAM, there are 3 different top-level files (which use the same subsidiary files) to create the text, the solutions manual and a workbook.
+
+2) Should all of the files included from the top-level file (and those included from there) start w/ 
+ <?xml version="1.0" encoding="UTF-8" ?>   My text editor doesn't give them syntax highlighting without that.
+
+3) The LaTeX code for an umlauted U -- \"{U} gets translated to &Uuml; in the mbx source.  Looks right to me, but it causes an
+error when running xsltproc:
+
+>make html
+  cd html;  test ! -e images && ln -s ../images; xsltproc --stringparam html.css.extra extra.css --stringparam html.knowl.example.inline no --stringparam html.knowl.exercise.inline no --xinclude ../../../Desktop/mathbook/xsl/mathbook-html.xsl ../GIAM.mbx
+  ../sec_basic.mbx:6: parser error : Entity 'Uuml' not defined
+     Kronecker <mdash /> ``Die ganze Zahl schuf der liebe Gott, alles &Uuml;brige
+                                                                            ^
+
+  Changing it to &#220; seems to work.
+
+4) Why change the file/directory structure that the author used?  My source files were organized into directories and 
+granularized at the chapter level.  The generated mbx files are all in one directory and are granularized at the section level.
+
+5) The script recognizes the starts of my Exercise sections, marking them as <exercises> but the contents of those sections are treated as ordered lists, so each exercise is marked as a <li> not as an <exercise>.  My \hint{} environment should be treated as analagous to the <hint> element of an <exercise>.
+
+6) Text inside my \hint{} commands is getting some pre-processing (probably unrecognizable junk should just get passed through) mangling math and introducing non UTF-8 characters.
+
+  ../sec_def.mbx:3235: parser error : Input is not proper UTF-8, indicate encoding !
+  Bytes: 0xB7 0x20 0x28 0x2D
+   figure out what N is by thinking about the other end of the range: (-1)2 + 31  
+                                                                                 ^
+7) The TeX construct \centerline{foo bar} is ignored (probably appropriately) but there is an extraneous slash introduced: "\foo bar"
+
+8) What in LaTeX would get translated to <sidebyside>?  Many of my \minipage's are used to put a paragraph sidebyside with an image.

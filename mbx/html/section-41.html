@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T14:55:13-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Dominance</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="previous-button toolbar-item button" href="sec_cantors_thm.html">Previous</a><a class="up-button button toolbar-item" href="ch_card.html">Up</a><a class="next-button button toolbar-item" href="section-42.html">Next</a>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_cantors_thm.html">Previous</a><a class="up-button button toolbar-item" href="ch_card.html">Up</a><a class="next-button button toolbar-item" href="section-42.html">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-21.html">Containment</a></li>
+<li><a href="section-22.html">Set operations</a></li>
+<li><a href="section-23.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-26.html">Formulas for sums and products</a></li>
+<li><a href="section-27.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-28.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-29.html">Relations</a></li>
+<li><a href="section-30.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-35.html">Parity and Counting arguments</a></li>
+<li><a href="section-36.html">The pigeonhole principle</a></li>
+<li><a href="section-37.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link active"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-39.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-41.html" class="active">Dominance</a></li>
+<li><a href="section-42.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-43.html">Morley's miracle</a></li>
+<li><a href="section-44.html">Five steps into the void</a></li>
+<li><a href="section-45.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-41"><header title="Section 8.4 Dominance"><h1 class="heading hide-type" alt="Section 8.4 Dominance">
+<span class="type">Section</span><span class="codenumber">8.4</span><span class="title">Dominance</span>
+</h1></header><p id="p-1599">
+    We've said a lot about the equivalence relation
+    determined by Cantor's definition
+    of set equivalence. We've also, occasionally, written things like
+    \(|A| \lt  |B|\), without being particularly clear about what that means.
+    It's now time to come clean. There is actually a (perhaps) more fundamental
+    notion used for comparing set sizes than equivalence — dominance.
+    Dominance is an ordering relation on the class of all sets.
+    One should probably really define dominance first and then
+    define set equivalence in terms of it. We haven't followed that plan
+    for (at least) two reasons. First, many people may want to skip this
+    section — the results of this section depend on the difficult
+    Cantor-Bernstein-Schröder theorem<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-55" id="fn-55"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-55" style="display: none;" class="tex2jax_ignore"><span class="footnote">This theorem has been 
+    known for many years as the Schröder-Bernstein theorem, but, 
+    lately, has had Cantor's name added as well. Since Cantor proved 
+    the result before the other gentlemen this is fitting. It is also 
+    known as the Cantor-Bernstein theorem (leaving out Schröder) 
+    which doesn't seem very nice.</span></span>. Second, we will later take the view that dominance
+    should really be considered to be an ordering relation on the set of
+    all cardinal numbers — i.e. the equivalence classes of the set equivalence
+    relation — not on the collection of all sets. From that perspective,
+    set equivalence really needs to be defined <!--Style me with CSS--><em>before</em> dominance.
+  </p>
+<p id="p-1600">
+    One set is said to dominate another if there is a function from the latter
+    <!--Style me with CSS--><em>into</em> the former.
+    More formally, we have the following
+  </p>
+<article class="definition-like" id="definition-24"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">8.4.1</span>
+</h5>
+<p id="p-1601">
+        If \(A\) and \(B\) are sets, we say “\(A\) dominates \(B\)”
+        and write \(|A| &gt; |B|\) iff there is an injective function \(f\) with
+        domain \(B\) and codomain \(A\).
+      </p></article><p id="p-1602">
+    It is easy to see that this relation is reflexive and transitive. The Cantor-
+    Bernstein-Schröder theorem proves that it is also anti-symmetric — which
+    means dominance is an ordering relation. Be advised that there is an abuse
+    of terminology here that one must be careful about — what are the domain
+    and range of the “dominance” relation? The definition would lead us to
+    think that sets are the things that go on either side of the “dominance”
+    relation, but the notation is a bit more honest, “\(|A| &gt; |B|\)”
+    indicates that the
+    things really being compared are the cardinal numbers of sets (not the sets
+    themselves). Thus anti-symmetry for this relation is
+    \begin{equation*}
+      (|A| &gt; |B|) \land (|B| &gt; |A|) \implies (|A| = |B|).
+    \end{equation*}
+  </p>
+<p id="p-1603">
+    In other words, if \(A\) dominates \(B\) and vice versa, then \(A\) and \(B\) are
+    equivalent sets — a strict interpretation of anti-symmetry for this relation
+    might lead to the conclusion that \(A\) and \(B\) are actually the same set, which
+    is clearly an absurdity.
+  </p>
+<p id="p-1604">
+    Naturally, we want to prove the Cantor-Bernstein-Schröder theorem (which
+    we're going to start calling the C-B-S theorem for brevity), but first it'll be
+    instructive to look at some of its consequences. Once we have the C-B-S
+    theorem we get a very useful shortcut for proving set equivalences. Given
+    sets \(A\) and \(B\), if we can find injective functions going between them in both
+    directions, we'll know that they're equivalent. So, for example, we can use
+    C-B-S to prove that the set of all infinite binary strings and the set of reals
+    in (0, 1) really are equinumerous.
+    (In case you had some remaining doubt… )
+  </p>
+<p id="p-1605">
+    It is easy to dream up an injective function from \((0, 1)\)
+    to \({\mathbb F}_2^\infty\) : just send a
+    real number to its binary expansion, and if there are two, make a consistent
+    choice — let's say we'll take the non-terminating expansion.
+  </p>
+<p id="p-1606">
+    There is a cute thought-experiment called Hilbert's Hotel that will lead
+    us to a technique for developing an injective function in the other direction.
+    Hilbert's Hotel has \(\aleph_0\) rooms. If any countable collection of
+    guests show up there will be enough rooms for everyone. Suppose you
+    arrive at Hilbert's hotel one dark and stormy evening and the
+    “No Vacancy” light is on — there are already a
+    denumerable number of guests there — every room is full. The clerk
+    sees you dejectedly considering your options, trying to think of
+    another hotel that might still have rooms when, clearly, a <!--Style me with CSS--><em>very</em>
+    large convention is in town. He rushes out and says
+    “My friend, have no fear! Even though we have no vacancies,
+    there is always room for one more at our establishment.”
+    He goes into the office and makes the following announcement
+    on the PA system. “Ladies and Gentlemen, in order to accommodate
+    an incoming guest, please vacate your room and move to the room
+    numbered one higher. Thank you.” There
+    is an infinite amount of grumbling, but shortly you find yourself occupying
+    room number \(1\).
+  </p>
+<p id="p-1607">
+    To develop an injection from \({\mathbb F}_2^\infty\) to \((0, 1)\) we'll use “room number 1” to
+    separate the binary expansions that represent the same real number. Move
+    all the digits of a binary expansion down by one, and make the first digit
+    \(0\) for (say) the terminating expansions and \(1\) for the non-terminating ones.
+    Now consider these expansions as real numbers — all the expansions that
+    previously coincided are now separated into the intervals \((0, 1/2)\) and
+    \((1/2, 1)\). Notice how funny this map is, there are now
+    many, many, (infinitely-many)
+    real numbers with no preimages. For instance, only a subset of the rational
+    numbers in \((0, 1/2)\) have preimages. Nevertheless, the map is injective, so
+    C-B-S tells us that \({\mathbb F}_2^\infty\) and \((0, 1)\) are equivalent.
+    There are quite a few different proofs of the C-B-S theorem. The one
+    Cantor himself wrote relies on the axiom of choice. The axiom of choice
+    was somewhat controversial when it was introduced, but these days most
+    mathematicians will use it without qualms. What it says (essentially) is that
+    it is possible to make an infinite number of choices. More precisely, it says
+    that if we have an infinite set consisting of non-empty sets, it is possible
+    to select an element out of each set. If there is a definable rule for picking
+    such an element (as is the case, for example, when we selected the
+    nonterminating decimal expansion whenever there was a choice in defining the
+    injection from \((0, 1)\) to \({\mathbb F}_2^\infty\)) the axiom of choice
+    isn't needed. The usual
+    axioms for set theory were developed by Zermelo and Frankel, so you may
+    hear people speak of the ZF axioms. If, in addition, we want to specifically
+    allow the axiom of choice, we are in the ZFC axiom system. If it's possible
+    to construct a proof for a given theorem without using the axiom of choice,
+    almost everyone would agree that that is preferable. On the other hand,
+    a proof of the C-B-S theorem, which necessarily must be able to deal with
+    uncountably infinite sets, will have to depend on some sort of notion that
+    will allow us to deal with huge infinities.
+  </p>
+<p id="p-1608">
+    The proof we will present here<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-56" id="fn-56"><span class="footnote"><sup> 2 </sup></span></a></span><span id="hk-fn-56" style="display: none;" class="tex2jax_ignore"><span class="footnote">We first encountered this proof 
+    in a Wikipedia article <a knowl="./knowl/wiki-CBS.html" knowl-id="xref-wiki-CBS" alt="Bibliographic Entry 3 " title="Bibliographic Entry 3 ">[3]</a>.</span></span> is attributed to Julius König.
+    König was a contemporary of Cantor's who was (initially) very
+    much respected by him. Cantor came to dislike König after the
+    latter presented a well-publicized (and ultimately wrong) lecture
+    claiming the continuum hypothesis was false.
+    Apparently the continuum hypothesis was one of Cantor's favorite ideas,
+    because he seems to have construed König's lecture as a personal attack.
+    Anyway…
+  </p>
+<p id="p-1609">
+    König's proof of C-B-S doesn't use the axiom of choice, but it does have
+    its own strangeness: a function that is not necessarily computable — that is,
+    a function for which (for certain inputs) it may not be possible to compute
+    an output in a finite amount of time! Except for this oddity,
+    König's proof
+    is probably the easiest to understand of all the proofs of C-B-S.
+    Before we get too far into the proof it is essential that we understand the
+    basic setup. The Cantor-Bernstein-Schröder theorem states that
+    whenever \(A\)
+    and \(B\) are sets and there are injective functions
+    \(f : A \longrightarrow B\) and \(g : B \longrightarrow A\),
+    then it follows that \(A\) and \(B\) are equivalent. Saying \(A\) and \(B\)
+    are equivalent
+    means that we can find a bijective function between them. So, to prove
+    C-B-S, we hypothesize the two injections and somehow we must construct the
+    bijection.
+  </p>
+<figure class="figure-like" id="figure-24"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/100b6b74df3986c4912fb43a1185d8860453ade2.png" alt=""></figure><p id="p-1610">
+    <span>&lt;&lt;Unresolved xref, reference "fig_CBS_setup"; check spelling or use "provisional" attribute&gt;&gt;</span> has a presumption in it —
+    that \(A\) and \(B\) are countable — which
+    need not be the case. Nevertheless, it gives us a good picture to work from.
+    The basic hypotheses, that \(A\) and \(B\) are sets and we have two functions, one
+    from \(A\) into \(B\) and another from \(B\) into A, are shown.
+    We will have to build our bijective function in a piecewise manner.
+    If there is a non-empty intersection between \(A\) and \(B\), we can use the
+    identity function for that part of the domain of our bijection.
+    So, without
+    loss of generality, we can presume that \(A\) and \(B\) are disjoint.
+    We can use
+    the functions \(f\) and \(g\) to create infinite sequences, which
+    alternate back and
+    forth between \(A\) and \(B\), containing any particular element.
+    Suppose \(a \in A\) is an arbitrary element. Since \(f\) is defined
+    on all of \(A\), we
+    can compute \(f(a)\). Now since \(f(a)\) is an element of \(B\), and \(g\) is
+    defined on all
+    of \(B\), we can compute \(g(f(a))\), and so on. Thus, we get the
+    infinite sequence
+    \begin{equation*}
+      a,   f(a),  g(f(a)),  f(g(f(a))), \; \ldots
+    \end{equation*}
+  </p>
+<p id="p-1611">
+    If the element \(a\) also happens to be the image of something under \(g\) (this
+    may or may not be so — since \(g\) isn't necessarily onto) then we
+    can also extend
+    this sequence to the left. Indeed, it may be possible to
+    extend the sequence infinitely far to the left, or, this
+    process may stop when one of \(f^{-1}\) or \(g^{-1}\)
+    fails to be defined.
+    \begin{equation*}
+      \ldots \; g^{-1}(f^{-1}(g^{-1}(a))),  f^{-1}(g^{-1}(a)),  g^{-1}(a),  a,   f(a),   g(f(a)),  f(g(f(a))),\; \ldots
+    \end{equation*}
+  </p>
+<p id="p-1612">
+    Now, every element of the disjoint union of \(A\) and \(B\) is in one of these
+    sequences. Also, it is easy to see that these sequences are either disjoint
+    or identical. Taking these two facts together it follows that these sequences
+    form a partition of \(A \cup B\). We'll define a bijection
+    \(\phi : A \longrightarrow B\) by deciding what it must do on these
+    sequences. There are four possibilities for how the sequences we've
+    just defined can play out. In extending them to the left, we may run
+    into a place where one of the inverse functions needed isn't
+    defined — or not. We say a sequence is an
+    \(A\)-stopper, if, in extending to the left, we end
+    up on an element of \(A\) that has
+    no preimage under \(g\) (see <span>&lt;&lt;Unresolved xref, reference "fig_A-stopper"; check spelling or use "provisional" attribute&gt;&gt;</span>). Similarly,
+    we can define a \(B\)-stopper.
+    If the inverse functions are always defined within a given sequence there are
+    also two possibilities; the sequence may be finite (and so it must be cyclic in
+    nature) or the sequence may be truly infinite.
+  </p>
+<figure class="figure-like" id="figure-25"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/100b6b74df3986c4912fb43a1185d8860453ade2.png" alt=""><!--Style me with CSS--><em>A</em>\(A\)</figure><p id="p-1613">
+    Finally, here is a definition for \(\phi\).
+    \begin{equation*}
+      \phi(x) =  \left\{ \begin{array}{cl} g^{-1}(x) \amp  \mbox{if \(x\) is in a \(B\)-stopper}  \\ f(x) \amp  \mbox{otherwise} 
+      \end{array}  \right.
+    \end{equation*}
+  </p>
+<p id="p-1614">
+    Notice that if a sequence is either cyclic or infinite it doesn't matter
+    whether we use \(f\) or \(g^{-1}\) since both will be
+    defined for all elements of such
+    sequences. Also, certainly \(f\) will work if we are in an \(A\)-stopper.
+    The function we've just created is perfectly well-defined, but it may take
+    arbitrarily long to determine whether we have an element of a \(B\)-stopper, as
+    opposed to an element of an infinite sequence. We cannot determine whether
+    we're in an infinite versus a finite sequence in a prescribed finite number of
+    steps.
+  </p>
+<section class="exercises" id="exercises-41"><header title="Exercises 8.4.1 Exercises"><h1 class="heading hide-type" alt="Exercises 8.4.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">8.4.1</span><span class="title">Exercises</span>
+</h1></header><ol style="list-style-type: lower-alpha;">
+<li id="li-494"><p id="p-1615">
+          How could the clerk at the Hilbert Hotel accommodate a countable
+          number of new guests?
+        </p></li>
+<li id="li-495"><p id="p-1616">
+          Let \(F\) be the collection of all real-valued functions 
+          defined on the real line.  Find an injection from \(\Reals\) to \(F\).  Do you 
+          think it is possible to find an injection going the other way?  In 
+          other words, do you think that \(F\) and \(\Reals\) are equivalent?  Explain.
+        </p></li>
+<li id="li-496"><p id="p-1617">
+          Fill in the details of the proof that dominance is an ordering relation.
+          (You may simply cite the C-B-S theorem in proving anti-symmetry.)
+        </p></li>
+<li id="li-497"><p id="p-1618">
+          We can inject \(\Rationals\) into \(\Integers\) by sending 
+          \(\displaystyle \pm \frac{a}{b}\) to \(\displaystyle \pm 2^a3^b\).  
+           Use this and another obvious injection to (in light of the C-B-S 
+          theorem) reaffirm the equivalence of these sets.
+        </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

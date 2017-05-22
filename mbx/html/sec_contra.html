@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-10T23:30:58-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Indirect proofs: contradiction and contraposition</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></a></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="sec_more.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_proof1.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_disproofs.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_more.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_proof1.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_disproofs.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link active"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html" class="active">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_ord_rel.html">Ordering relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-37.html">Parity and Counting arguments</a></li>
+<li><a href="section-38.html">The pigeonhole principle</a></li>
+<li><a href="section-39.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-41.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-43.html">Dominance</a></li>
+<li><a href="section-44.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-45.html">Morley's miracle</a></li>
+<li><a href="section-46.html">Five steps into the void</a></li>
+<li><a href="section-47.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_contra"><header title="Section 3.3 Indirect proofs: contradiction and contraposition"><h1 class="heading hide-type" alt="Section 3.3 Indirect proofs: contradiction and contraposition">
+<span class="type">Section</span><span class="codenumber">3.3</span><span class="title">Indirect proofs: contradiction and contraposition</span><a href="sec_contra.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-629">
+    Suppose we are trying to prove that all thrackles are polycyclic
+    <span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-21" id="fn-21"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-21" style="display: none;" class="tex2jax_ignore"><span class="footnote">Both of these strange sounding words represent real 
+    mathematical concepts, however, they don't have anything to do 
+    with one another.</span></span>.
+    A <!--Style me with CSS--><em>direct</em> proof of this would involve looking up the definition
+    of what it means to be a thrackle, and of what it means to be polycyclic,
+    and somehow discerning a way to convert whatever thrackle's logical equivalent
+    is into the logical equivalent of polycyclic. As happens fairly often,
+    there may be no obvious way to accomplish this task.
+    Indirect proof takes
+    a completely different tack. Suppose you had a thrackle that wasn't
+    polycyclic, and furthermore, show that this supposition leads to something
+    truly impossible. Well, if it's impossible for a thrackle to <!--Style me with CSS--><em>not</em> be
+    polycyclic, then it must be the case that all of them <!--Style me with CSS--><em>are</em>.
+    Such an argument is known as 
+    <!--Style me with CSS--><em>proof by contradiction</em>.
+  </p>
+<p id="p-630">
+    Quite possibly the sweetest indirect proof known is Euclid's proof that there
+    are an infinite number of primes.
+  </p>
+<article class="theorem-like" id="theorem-7"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">3.3.1</span>
+</h5>
+<p id="p-631">
+        (Euclid) The set of all prime numbers is infinite.
+      </p></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-11" id="proof-11"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-11" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-632">
+      Suppose on the contrary that there are only a finite number
+      of primes. This finite set of prime numbers could, in principle, be listed
+      in ascending order.
+      \begin{equation*}
+        \{ p_1, p_2, p_3, \ldots , p_n \}
+      \end{equation*}
+    </p>
+<p id="p-633">
+      Consider the number \(N\) formed by adding 1 to the product of all of these
+      primes.
+      \begin{equation*}
+        N = 1 + \prod_{k=1}^n p_k
+      \end{equation*}
+    </p>
+<p id="p-634">
+      Clearly, \(N\) is much larger than the largest prime \(p_n\), so \(N\) cannot
+      be a prime number itself. Thus \(N\) must be a product of some of the
+      primes in the list. Suppose that \(p_j\) is one of the primes that
+      divides \(N\). Now notice that, by construction, \(N\) would leave remainder
+      \(1\) upon division by \(p_j\). This is a contradiction since we cannot have
+      both \(p_j \divides N\) and \(p_j \nmid N\).
+    </p>
+<p id="p-635">
+      Since the supposition that there are only finitely many primes leads to
+      a contradiction, there must indeed be an infinite number of primes.
+    </p></article></div>
+<p id="p-636">
+    If you are working on proving a UCS and the direct approach seems to be
+    failing you may find that another indirect approach,
+    proof by contraposition,
+    will do the trick. In one sense this proof technique isn't really all that
+    indirect; what one does is determine the contrapositive of the original
+    conditional and then prove <!--Style me with CSS--><em>that</em> directly. In another sense this
+    method <!--Style me with CSS--><em>is</em> indirect because a proof by contraposition can usually
+    be recast as a proof by contradiction fairly easily.
+  </p>
+<p id="p-637">
+    The easiest proof I know of using the method of contraposition (and possibly
+    the nicest example of this technique)
+    is the proof of the lemma we stated in <a href="sec_rat.html" alt="Section 1.6 Rational and irrational numbers" title="Section 1.6 Rational and irrational numbers">Section 1.6</a> in the course
+    of proving that \(\sqrt{2}\) wasn't rational. In case you've forgotten
+    we needed the fact that whenever \(x^2\) is an even number, so is \(x\).
+  </p>
+<p id="p-638">
+    Let's first phrase this as a UCS.
+    \begin{equation*}
+      \forall x \in \Integers, \; x^2 \, \mbox{even}  \; \implies x \, \mbox{even}
+    \end{equation*}
+  </p>
+<p id="p-639">
+    Perhaps you tried to prove this result earlier. If so you probably
+    came across the conceptual problem that all you have to work with
+    is the evenness of \(x^2\) which doesn't give you much ammunition
+    in trying to show that \(x\) is even. The contrapositive of this
+    statement is:
+    \begin{equation*}
+      \forall x \in \Integers, \; x \, \mbox{not even}  \; 
+      \implies x^2 \, \mbox{not even}
+    \end{equation*}
+  </p>
+<p id="p-640">
+    Now, since \(x\) and \(x^2\) are integers, there is only one alternative to being
+    even — so we can re-express the contrapositive as
+    \begin{equation*}
+      \forall x \in \Integers, \; x \, \mbox{odd}  \; \implies x^2 \, \mbox{odd} .
+    \end{equation*}
+  </p>
+<p id="p-641">
+    Without further ado, here is the proof:
+  </p>
+<article class="theorem-like" id="theorem-8"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">3.3.2</span>
+</h5>\begin{equation*}
+        \forall x \in \Integers, \; x^2 \, \mbox{even}  \; 
+        \implies x \, \mbox{even}
+      \end{equation*}</article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-12" id="proof-12"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-12" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-642">
+      This statement is logically equivalent to
+      \begin{equation*}
+        \forall x \in \Integers, \; x \, \mbox{odd}  \; \implies x^2 \, \mbox{odd}
+      \end{equation*}
+      so we prove that instead.
+    </p>
+<p id="p-643">
+      Suppose that \(x\) is a particular but arbitrarily chosen integer
+      such that \(x\) is odd. Since \(x\) is odd, there is an integer \(k\) such that
+      \(x=2k+1\). It follows that
+      \(x^2 = (2k + 1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1\).
+      Finally, we see that \(x^2\) must be odd because it is of the form \(2m+1\), where
+      \(m = 2k^2 + 2k\) is clearly an integer.
+    </p></article></div>
+<p id="p-644">
+    Let's have a look at a proof of the same statement done by contradiction.
+  </p>
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-13" id="proof-13"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-13" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-645">
+      We wish to show that
+      \begin{equation*}
+        \forall x \in \Integers, \; x^2 \, \mbox{even}  \; 
+        \implies x \, \mbox{even} .
+      \end{equation*}
+    </p>
+<p id="p-646">
+      Suppose to the contrary that there is an integer \(x\) such that
+      \(x^2\) is even but \(x\) is odd.<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-22" id="fn-22"><span class="footnote"><sup> 2 </sup></span></a></span><span id="hk-fn-22" style="display: none;" class="tex2jax_ignore"><span class="footnote">Recall that the negation of 
+      a UCS is an existentially quantified conjunction.</span></span> Since \(x\) is
+      odd, there is an integer \(m\) such that \(x=2m+1\). Therefore, by
+      simple arithmetic, we obtain \(x^2 = 4m^2+4m+1\) which is clearly odd.
+      This is a contradiction because (by assumption) \(x^2\) is even.
+    </p></article></div>
+<p id="p-647">
+    The main problem in applying the method of proof by contradiction
+    is that it usually involves “cleverness.” You have to come up
+    with some reason why the presumption that the theorem is false leads
+    to a contradiction — and this may or may not be obvious. More than
+    any other proof technique, proof by contradiction demands that we use
+    drafts and rewriting. After monkeying around enough that we find a
+    way to reach a contradiction, we need to go back to the beginning
+    of the proof and highlight the feature that we will eventually contradict!
+    After all, we want it to look like our proofs are completely clear, concise
+    and reasonable even if their formulation caused us some sort
+    of Gordian-level mental anguish.
+  </p>
+<p id="p-648">
+    We'll end this section with an example from Geometry.
+  </p>
+<article class="theorem-like" id="theorem-9"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">3.3.3</span>
+</h5>
+<p id="p-649">
+        Among all triangles inscribed in a fixed circle, the one with maximum
+        area is equilateral.
+      </p></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-14" id="proof-14"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-14" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-650">
+      We'll proceed by contradiction. Suppose to the contrary that there is a
+      triangle, \(\triangle ABC\), inscribed in a circle having maximum area that
+      is not equilateral. Since \(\triangle ABC\) is not equilateral, there are
+      two sides of it that are not equal. Without loss of generality, suppose that
+      sides \(\overline{AB}\) and \(\overline{BC}\) have different lengths. Consider
+      the remaining side (\(\overline{AC}\)) to be the base of this triangle.
+      We can construct another triangle \(\triangle AB'C\), also inscribed in our circle, and also
+      having \(\overline{AC}\) as its base, having a greater altitude than
+      \(\triangle ABC\) — since the area of a triangle is given by
+      the formula \(bh/2\) (where \(b\) is the base, and \(h\) is the altitude),
+      this triangle's area is evidently greater than that of \(\triangle ABC\).
+      This is a contradiction since \(\triangle ABC\) was presumed to have
+      maximal area.
+    </p>
+<p id="p-651">
+      We leave the actual construction \(\triangle AB'C\) to the following exercise.
+    </p></article></div>
+<article class="exercise-like" id="exercise-20"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.3.4</span>
+</h5>
+<p id="p-652">
+        Where should we place the point \(B'\) in order to create a triangle
+        \(\triangle AB'C\) having
+        greater area than any triangle such as \(\triangle ABC\) which is not isosceles?
+      </p>
+<img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt="">
+      \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+        \reset@font\fontsize{#1}{#2pt}
+        \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+        \selectfont}\fi
+      <img width="100%" src="images/515f4a63ee16fceb8582dcdd7b356546dbac52e0.png" alt=""></article><section class="exercises" id="exercises-17"><header title="Exercises 3.3.1 Exercises"><h1 class="heading hide-type" alt="Exercises 3.3.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">3.3.1</span><span class="title">Exercises</span>
+</h1></header><ol id="ol-40" style="list-style-type: lower-alpha;">
+<li id="li-253"><p id="p-653">
+          Prove that if the cube of an integer is odd, then that integer is odd.
+
+          \hint{The best hint for this problem is simply to write down the contrapositive statement. It is trivial to prove!}
+        </p></li>
+<li id="li-254"><p id="p-654">
+          Prove that whenever a prime \(p\) does not divide the square of an integer, 
+          it also doesn't divide the original integer. 
+          (\(p \nmid x^2 \; \implies \; p \nmid x\))
+
+          \hint{The contrapositive is \((p \divides x) \; \implies \; (p \divides x^2)\).}
+        </p></li>
+<li id="li-255"><p id="p-655">
+        Prove (by contradiction) that there is no largest integer.
+
+        \hint{Well, if there was a largest integer — let's call it \(L\) (for largest) — then isn't \(L+1\) an integer, and isn't it bigger?  That's the main idea.  A more formal proof might look like this:
+
+        <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-15" id="proof-15"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div><div id="hk-proof-15" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-656">
+            Suppose (by way of contradiction) that there is a largest integer \(L\). Then \(L \in \Integers\) and \(\forall z \in \Integers, L \geq z\).
+            Consider the quantity \(L+1\). Clearly \(L+1\) is an integer (because it is the sum of two integers) and also
+            \(L+1 &gt; L\). This is a contradiction so the original supposition is false. Hence there is no largest integer.
+          </p></article></div>
+
+        }
+        </p></li>
+<li id="li-256"><p id="p-657">
+          Prove (by contradiction) that there is no smallest positive real number.
+
+          \hint{Assume there was a smallest positive real number — might as well call it \(s\) (for smallest) — what can we do to produce an even smaller number? (But be careful that it needs to remain positive — for instance \(s-1\) won't work.)}
+        </p></li>
+<li id="li-257"><p id="p-658">
+          Prove (by contradiction) that the sum of a rational and an irrational 
+          number is irrational.
+
+          \hint{Suppose that x is rational and y is irrational and their sum (let's call it z) is also rational. Do some algebra to solve for y, and you will see that y (which is, by presumption, irrational) is also the difference of two rational numbers (and hence, rational — a contradiction.)
+          }
+        </p></li>
+<li id="li-258"><p id="p-659">
+          Prove (by contraposition) that for all integers \(x\) and \(y\), if \(x+y\) is odd, then \(x\neq y\).
+
+          \hint{Well, the problem says to do this by contraposition, so let's write down the contrapositive:
+          \begin{equation*}
+            \forall x, y \in \Integers, \; x=y \, \implies \, x+y \; \mbox{is even} .
+          \end{equation*}
+          But proving that is obvious!
+          }
+        </p></li>
+<li id="li-259"><p id="p-660">
+          Prove (by contraposition) that for all real numbers \(a\) and \(b\), if \(ab\) is irrational, then \(a\)
+          is irrational or \(b\) is irrational.
+
+          \hint{The contrapositive would be:
+          \begin{equation*}
+            \forall a,b \in \Reals, \; (a \in \Rationals \land b \in \Rationals) \, \implies ab \in \Rationals.
+          \end{equation*}
+          Wow! Haven't we proved that before?}
+        </p></li>
+<li id="li-260"><p id="p-661">
+          A <!--Style me with CSS--><em>Pythagorean triple</em> is a set of three
+          natural numbers, \(a\), \(b\) and \(c\), such that \(a^2 + b^2 = c^2\).  Prove that, in a
+          Pythagorean triple, at least one of \(a\) and \(b\) is even.  Use either a proof by
+          contradiction or a proof by contraposition.
+
+          \hint{If both \(a\) and \(b\) are odd then their squares will be 1 mod 4 — so the sum of their squares
+          will be 2 mod 4.  But \(c^2\) can only be 0 or 1 mod 4, which gives us a contradiction.}
+        </p></li>
+<li id="li-261"><p id="p-662">
+        Suppose you have 2 pairs of positive real numbers whose products are 1.  That is, you have \((a,b)\) and \((c,d)\) in \(\Reals^2\) satisfying \(ab=cd=1\).  Prove that
+        \(a \lt  c\) implies that \(b &gt; d\).
+
+         \hint{
+
+        <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-16" id="proof-16"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div><div id="hk-proof-16" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-663">
+            Suppose by way of contradiction that \(a,b,c,d \in \Reals\) satisfy \(ab=cd=1\) and that \(a\lt c\) and \(b \leq d\).
+            By multiplying the inequalities we get that \(ab \lt  cd\) which contradicts the assumption that both products
+            are equal to 1 (and so must be equal to one another).
+          </p></article></div>
+
+        }
+        </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

@@ -1,9 +1,9 @@
-
+<?xml version="1.0" encoding="UTF-8" ?>
 <section xml:id="sec_basic">
   <title>Basic sets</title>
   <p>
     It has been said<index><main>Kronecker, Leopold</main></index><fn>Usually attributed to 
-    Kronecker <mdash /> ``Die ganze Zahl schuf der liebe Gott, alles &Uuml;brige 
+    Kronecker <mdash /> ``Die ganze Zahl schuf der liebe Gott, alles &#220;brige 
     ist Menschenwerk.''</fn> that <q>God invented
     the integers, all else is the work of Man.</q> This is
     a mistranslation. The term <q>integers</q> should

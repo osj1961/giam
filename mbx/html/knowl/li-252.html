@@ -1,0 +1,30 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:43-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<article class="list"><h5 class="heading">
+<span class="type">Item</span> <span class="codenumber">h</span>
+</h5>
+<p id="p-628">
+          In proving the  <!--Style me with CSS--><em>product rule</em> in Calculus using the definition of the derivative, we might start our proof with:
+          \begin{equation*}
+            \frac{\mbox{d} }{\mbox{d} x} \left( f(x) \cdot g(x) \right)
+          \end{equation*}
+          \begin{equation*}
+            = \lim_{h \longrightarrow 0} \frac{f(x+h) \cdot g(x+h) - f(x) \cdot g(x)}{h}
+          \end{equation*}
+          The last two lines of our proof should be:
+          \begin{equation*}
+            = \lim_{h \longrightarrow 0} \frac{f(x+h) - f(x)}{h} \cdot g(x) \; + \; f(x) \cdot \lim_{h \longrightarrow 0} \frac{g(x+h) - g(x)}{h}
+          \end{equation*}
+          \begin{equation*}
+            = \frac{\mbox{d} }{\mbox{d} x}\left( f(x) \right) \cdot g(x) \; + \; f(x) \cdot \frac{\mbox{d} }{\mbox{d} x}\left( g(x) \right)
+          \end{equation*}
+          Fill in the rest of the proof.
+
+          \hint{The critical step is to subtract and add the same thing: \(f(x)g(x+h)\) in the numerator of the fraction
+          in the limit which gives the definition of \(\frac{\mbox{d} }{\mbox{d} x} \left( f(x) \cdot g(x) \right)\).  Also, you'll need to recall the laws of limits (like “the limit of a product is the product of the limits — provided both exist”) }
+        </p></article><span class="incontext"><a href="sec_more.html#li-252">in-context</a></span>

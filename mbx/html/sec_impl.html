@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-10T23:30:57-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Implication</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></a></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="sec_pred.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_logic.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_le.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_pred.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_logic.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_le.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link active"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html" class="active">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_ord_rel.html">Ordering relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-37.html">Parity and Counting arguments</a></li>
+<li><a href="section-38.html">The pigeonhole principle</a></li>
+<li><a href="section-39.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-41.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-43.html">Dominance</a></li>
+<li><a href="section-44.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-45.html">Morley's miracle</a></li>
+<li><a href="section-46.html">Five steps into the void</a></li>
+<li><a href="section-47.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_impl"><header title="Section 2.2 Implication"><h1 class="heading hide-type" alt="Section 2.2 Implication">
+<span class="type">Section</span><span class="codenumber">2.2</span><span class="title">Implication</span><a href="sec_impl.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-279">
+    Suppose a mother makes the following statement to her child:
+    “If you finish your peas, you'll get dessert.”
+  </p>
+<p id="p-280">
+    This is a compound sentence made up of the two simpler
+    sentences \(P=\) “You finish your peas” and \(D=\) “You'll get dessert.”
+    It is an example of a type of compound sentence called a
+    <!--Style me with CSS--><em>conditional</em>. Conditionals are if-then type statements.
+    In ordinary language the word “then” is often elided (as is the case
+    with our example above). Another way of phrasing the “If P then D.”
+    relationship is to use the word “implies” — although it would be
+    a rather uncommon mother who would say “Finishing your peas implies
+    that you will receive dessert.”
+  </p>
+<p id="p-281">
+    As was the case in the previous section, there are four possible
+    situations and we must consider each to decide the truth/falsity
+    of this conditional statement. The peas may or may not be finished,
+    and independently, the dessert may or may not be proffered.
+  </p>
+<p id="p-282">
+    Suppose the child finishes the peas and the mother comes across
+    with the dessert. Clearly, in this situation the mother's statement
+    was true. On the other hand, if the child finishes the hated peas
+    and yet does not receive a treat, it is just as obvious that the
+    mother has lied!
+    What do we say about the mother's veracity in the case that the peas
+    go unfinished? Here, Mom gets a break. She can either hold firm
+    and deliver no dessert, or she can be a softy and give out unearned
+    sweets — in either case, we can't accuse her of telling a falsehood.
+    The statement she made had to do <!--Style me with CSS--><em>only</em> with the eventualities
+    following total pea consumption, she said nothing about what happens
+    if the peas go uneaten.
+  </p>
+<p id="p-283">
+    A conditional statement's components are called the
+    <!--Style me with CSS--><em>antecedent</em>
+    (this is the “if” part, as in “finish
+    your peas”) and the <!--Style me with CSS--><em>consequent</em> (this is the “then” part, as in
+    “get dessert”). The discussion in the
+    last paragraph was intended to make the point that when the antecedent
+    is false, we should consider the conditional to be true. Conditionals
+    that are true because their antecedents are false are said to
+    be <!--Style me with CSS--><em>vacuously true</em>. The conditional
+    involving an antecedent \(A\)
+    and a consequent \(B\) is expressed symbolically using an arrow:
+    \(A \implies B\). Here is a truth table for this connective.
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(A\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(B\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(A \implies B\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+</tr>
+</table>
+<article class="exercise-like" id="exercise-8"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.2.1</span>
+</h5>
+<p id="p-284">
+        Note that this truth table is similar to the truth table for
+        \(A \lor B\) in that there is only a single row having a \(\phi\) in
+        the last column. For \(A \lor B\) the \(\phi\) occurs in the 4th row
+        and for \(A \implies B\) it occurs in the 2nd row. This suggests
+        that by suitably modifying things (replacing \(A\) or \(B\) by their
+        negations) we could come up with an “or” statement that had the
+        same meaning as the conditional. Try it!
+      </p></article><p id="p-285">
+    It is fairly common that conditionals are used to express threats,
+    as in the peas/dessert example. Another common way to express a
+    threat is to use a disjunction — “Finish your peas, or you won't
+    get dessert.” If you've been paying attention (and did the last
+    exercise), you will notice that this is <!--Style me with CSS--><em>not</em> the disjunction
+    that should have the same meaning as the original conditional.
+    There is probably no mother on Earth who would say
+    “Don't finish your peas, or you get dessert!” to her child
+    (certainly not if she expects to be understood). So what's going on
+    here?
+  </p>
+<p id="p-286">
+    The problem is that “Finish your peas, or you won't
+    get dessert.” has the same logical content as
+    “If you get dessert then you finished your peas.”
+    (Notice that the roles of the antecedent and consequent have been
+    switched.) And, while this last sentence sounds awkward, it is
+    probably a more accurate reflection of what the mother intended.
+    The problem <!--Style me with CSS--><em>really</em> is that people are incredibly sloppy
+    with their conditional statements! A lot of people secretly want
+    the 3rd row of the truth table for \(\implies\) to have a \(\phi\)
+    in it, and it simply doesn't! The operator that results if we do
+    make this modification is called the 
+    biconditional, and is expressed
+    in English using the phrase “if and only if” (which leads mathematicians
+    to the abbreviation “iff” much to the consternation of
+    spell-checking programs everywhere). The biconditional is denoted
+    using an arrow that points both ways. Its truth table follows.
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(A\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(B\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(A \iff B\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+</tr>
+</table>
+<p id="p-287">
+    Please note, that while we like to strive for precision, we do not
+    necessarily recommend the use of phrases such as
+    “You will receive dessert if, and only if,
+    you finish your peas.” with young children.
+  </p>
+<p id="p-288">
+    Since conditional sentences are often confused with the sentence
+    that has the roles of antecedent and consequent reversed, this
+    switched-around sentence has been given a name: it is the
+    <!--Style me with CSS--><em>converse</em>
+    of the original statement. Another conditional that is distinct from
+    (but related to) a given conditional is its <!--Style me with CSS--><em>inverse</em>.
+    This sort of sentence probably had to be named because of a very common
+    misconception, many people think that the way to negate an if-then
+    proposition is to negate
+    its parts. Algebraically, this looks reasonable — sort of a distributive
+    law for logical negation over implications — \({\lnot}( A \implies B) =
+    {\lnot}A \implies {\lnot}B\). Sadly, this reasonable looking assertion
+    can't possibly be true; since implications have just one \(\phi\) in a truth
+    table, the negation of an implication must have three — but the statement
+    with the \(\lnot\)'s on the <!--Style me with CSS--><em>parts</em> of the implication is going to only have
+    a single \(\phi\) in <!--Style me with CSS--><em>its</em> truth table.
+  </p>
+<p id="p-289">
+    To recap, the converse of an implication has the pieces (antecedent and
+    consequent) switched about. The inverse of an implication has the
+    pieces negated. Neither of these is the same as the original implication.
+    Oddly, this is one of those times when two wrongs <!--Style me with CSS--><em>do</em> make a right.
+    If you start with an implication, form its converse, then take the inverse
+    of that, you get a statement having exactly the same logical meaning
+    as the original. This new statement is called the
+    <!--Style me with CSS--><em>contrapositive</em>.
+  </p>
+<p id="p-290">
+    This information is displayed in <span>&lt;&lt;Unresolved xref, reference "tab_contra"; check spelling or use "provisional" attribute&gt;&gt;</span>
+  </p>
+<figure class="figure-like" id="table-3"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">converses</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\ifx\pdfoutput\undefined
+      <img width="73%" src="images/horiz_arrows.png" alt="">
+</td>
+</tr>
+<tr><td class="l m b0 r0 l0 t0 lines">\else
+      <img width="73%" src="images/horiz_arrows.png" alt="">
+</td></tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\fi
+    \parbox[c]{10pt}{ \begin{sideways} inverses \end{sideways} } 
+    \parbox[c]{10pt}{ 
+    \ifx\pdfoutput\undefined
+    <img width="73%" src="images/vert_arrows.png" alt="">
+    \else
+    <img width="73%" src="images/vert_arrows.png" alt="">
+    \fi }</td>
+<td class="l m b0 r0 l0 t0 lines"><table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(A \implies B\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(B \implies A\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\({\lnot}A \implies {\lnot}B\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\({\lnot}B \implies {\lnot}A\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table></td>
+</tr>
+</table></figure><p id="p-291">
+    One final piece of advice about conditionals: don't confuse logical
+    if-then relationships with causality. Many of the if-then sentences
+    we run into in ordinary life describe cause and effect:
+    “If you cut the green wire the bomb will explode.” (Okay, that one
+    is an example from the ordinary life of a bomb squad technician, but …)
+    It is usually best to think of the if-then relationships we find in
+    Logic as divorced from the flow of time, the fact that \(A \implies B\)
+    is logically the same as \({\lnot}A \lor B\) lends credence to this point of view.
+  </p>
+<section class="exercises" id="exercises-9"><header title="Exercises 2.2.1 Exercises"><h1 class="heading hide-type" alt="Exercises 2.2.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">2.2.1</span><span class="title">Exercises</span>
+</h1></header><ol id="ol-17" style="list-style-type: lower-alpha;">
+<li id="li-113"><p id="p-292">
+        The transitive property of equality says that if \(a=b\) and \(b=c\)
+        then \(a=c\).  Does the implication arrow satisfy a transitive property?
+        If so, state it.
+
+
+
+        \hint{
+        I sometimes like to rephrase the implication \(X \implies Y\) as “X's truth forces Y to be true.”  Does that help?
+        If we know that X being true forces Y to be true, and we also know that Y being true will force Z to be true, what can we conclude?
+
+
+
+        }
+      </p></li>
+<li id="li-114"><p id="p-293">
+        Complete truth tables for the compound sentences \(A \implies B\) and
+          \({\lnot}A \lor B\).
+  
+  
+  
+        \hint{
+        You should definitely be able to do this one on your own, but anyway, here's an outline of the table:
+        <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(A\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(B\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(A \implies B\)</td>
+<td class="l m b0 r0 l0 t0 lines">\({\lnot}A \lor B\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table>
+        }
+      </p></li>
+<li id="li-115"><p id="p-294">
+        Complete a truth table for the compound sentence \(A \implies (B \implies C)\) and for the sentence \((A \implies B) \implies C\).  What can you conclude
+        about conditionals and the associative property?
+
+
+
+        \hint{
+        No help on this one other than to say that the associative property <!--Style me with CSS--><em>does not</em> hold for implications.
+
+
+
+        }
+      </p></li>
+<li id="li-116"><p id="p-295">
+        Determine a sentence using the <!--Style me with CSS--><em>and</em> connector (\(\land\)) that
+        gives the negation of \(A \implies B\).
+
+
+
+        \hint{Hmmm… This will seem like a strange hint, but if you were to hear a kid at the playground say “Oh yeah? Well, I did call your mom a fatty and you still haven't clobbered me! Owww! OWWW!!! Stop hitting me!!”
+
+        What conditional sentence was he attempting to negate?
+        }
+      </p></li>
+<li id="li-117"><p id="p-296">
+        Rewrite the sentence “Fix the toilet or I won't pay the rent!” as
+        a conditional.
+
+
+
+        \hint{The way I see it there are eight possible ways to arrange "You fix the toilet" and "I'll pay the rent" (or their respective negations) around an implication arrow.
+        Here they all are. You decide which one sounds best.
+
+        If you fix the toilet, then I'll pay the rent.
+        If you fix the toilet, then I won't pay the rent.
+        If you don't fix the toilet, I'll pay the rent.
+        If you don't fix the toilet, then I won't pay the rent.
+        If I payed the rent, then you must have fixed the toilet.
+        If I payed the rent, then you must not have fixed the toilet.
+        If I didn't pay the rent, then you must have fixed the toilet.
+        If I didn't pay the rent, then you must not have fixed the toilet.
+
+        Some of those are truly strange…
+        }
+      </p></li>
+<li id="li-118"><p id="p-297">
+        Why is it that the sentence “If pigs can fly, I am the king
+        of Mesopotamia.” true?
+
+
+
+        \hint{Unless we're talking about some celebrity bringing their pet Vietnamese pot-bellied pig into first class with them, or possibly a catapult of some type... The antecedent (the if part) is false, so Yay! I AM the king of Mesopotamia!! Whoo-hooh! What? I'm not? Oh. But the if-then sentence is true. Bummer.}
+      </p></li>
+<li id="li-119"><p id="p-298">
+        Express the statement \(A \implies B\) using the Peirce arrow and/or the
+        Scheffer stroke. (See <a knowl="./knowl/ex_nand_nor.html" knowl-id="xref-ex_nand_nor" alt="Item e " title="Item e ">Exercise e</a> in the previous section.)
+
+
+
+        \hint{You'll want to use \(\vert\), the Scheffer stroke, aka NAND, because it's truth table contains three \(T\)'s and one \(\phi\) — you'll just need to figure out which of its inputs to negate so as to make that one \(\phi\) occur in the second row of the table instead of the first.}
+      </p></li>
+<li id="li-120">
+<p id="p-299">
+    Find the contrapositives of the following sentences.
+
+    </p>
+<ol id="ol-18" style="list-style-type: lower-roman;">
+<li id="li-121"><p id="p-300">
+          If you can't do the time, don't do the crime.
+        </p></li>
+<li id="li-122"><p id="p-301">
+          If you do well in school, you'll get a good job.
+        </p></li>
+<li id="li-123"><p id="p-302">
+          If you wish others to treat you in a certain way, you must 
+              treat others in that fashion.
+        </p></li>
+<li id="li-124"><p id="p-303">
+          If it's raining, there must be clouds.
+        </p></li>
+<li id="li-125"><p id="p-304">
+          If \(a_n \leq b_n\), for all \(n\) and \(\sum_{n=0}^\infty b_n\) is a 
+          convergent series, then \(\sum_{n=0}^\infty a_n\) is a convergent series.
+        </p></li>
+</ol>
+<p>
+    </p>
+<ol id="ol-19" style="list-style-type: lower-roman;">
+<li id="li-126"><p id="p-305">
+          If you do the crime, you must do the time.
+        </p></li>
+<li id="li-127"><p id="p-306">
+          If you don't have a good job, you must've done poorly in school.
+        </p></li>
+<li id="li-128"><p id="p-307">
+          If you don't treat others in a certain way, you can't hope for others to treat you in that fashion,
+        </p></li>
+<li id="li-129"><p id="p-308">
+          If there are no clouds, it can't be raining.
+        </p></li>
+<li id="li-130"><p id="p-309">
+          If  \(\sum_{n=0}^\infty a_n\) is not a convergent series, then either \(a_n \leq b_n\), for some \(n\) or 
+          \(\sum_{n=0}^\infty b_n\) is not a convergent series.
+        </p></li>
+</ol>
+</li>
+<li id="li-131"><p id="p-310">
+        What are the converse and inverse of “If you watch my back, I'll 
+        watch your back.”?
+
+
+
+        \hint{
+        The converse is “If I watch your back, then you'll watch my back.”  (Sounds a little dopey doesn't it — likes its sort of a wishful thinking…)
+        The inverse is “If you don't watch my back, then I won't watch your back.”  (Sounds less vapid, but it means the same thing…)
+        }
+      </p></li>
+<li id="li-132"><p id="p-311">
+        The integral test in Calculus is used to determine whether an
+        infinite series converges or diverges:   Suppose that \(f(x)\) is a positive,
+        decreasing, 
+        real-valued function with \(\lim_{x \longrightarrow \infty} f(x) = 0\), if
+        the improper integral
+        \(\int_0^\infty f(x)\) has a finite value, then the infinite series 
+        \(\sum_{n=1}^\infty f(n)\) converges.
+
+        The integral test should be envisioned by letting the series correspond
+        to a right-hand Riemann sum for the integral, since the function is decreasing,
+        a right-hand Riemann sum is an underestimate for the value of the integral,
+        thus
+        \begin{equation*}
+          \sum_{n=1}^\infty f(n) \lt  \int_0^\infty f(x).
+        \end{equation*}
+        Discuss the meanings of and (where possible) provide justifications for
+        the inverse, converse and contrapositive of the conditional statement 
+        in the integral test.
+
+
+
+        \hint{
+        The inverse says — if the integral isn't finite, then the series doesn't converge. You can cook-up a function that shows this to be false by (for example) creating one with vertical asymptotes that occur in between the integer \(x\)-values. Even one such pole can be enough to make the integral go infinite.
+        The converse says that if the series converges, the integral must be finite. The counter-example we just discussed would work here too.
+
+        The contrapositive says that if the series doesn't converge, then the integral must not be finite. If we were allowed to use discontinuous functions, it isn't too hard to come up with an \(f\) that actually has zero area under it — just make f be identically zero except at the integer x-values where it will take the same values as the terms of the series. But wait, the function we just described isn't “decreasing” — which is probably why that hypothesis was put in there!
+        }
+      </p></li>
+<li id="li-133"><p id="p-312">
+        On the Island of Knights and Knaves (see <a knowl="./knowl/IKK.html" knowl-id="xref-IKK" alt="Item f " title="Item f ">page f</a>) you encounter two individuals named Locke and Demosthenes.  
+
+        Locke says, “Demosthenes is a knave.” 
+        Demosthenes says “Locke and I are knights.”
+
+        Who is a knight and who a knave?
+
+
+
+        \hint{Could Demosthenes be telling the truth?}
+      </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

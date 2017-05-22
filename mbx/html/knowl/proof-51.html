@@ -1,0 +1,27 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:45-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5>
+<p>
+      Suppose that there is a set \(A\) that can be placed in one-to-one
+      correspondence with its power set. Then there is a bijective
+      function \(f : A \longrightarrow {\mathcal P}(A)\). We will deduce
+      a contradiction by constructing a subset of \(A\)
+      (i.e. a member of \({\mathcal P}(A))\) that cannot
+      be in the range of \(f\).
+    </p>
+<p>
+      Let \(S = \{x \in A \suchthat x \notin f(x)\}\).
+    </p>
+<p>
+      If \(S\) is in the range of \(f\), there is a preimage \(y\) such that \(S = f(y)\).
+      But, if such a \(y\) exists then the membership question, \(y \in S\), must
+      either be true or false. If \(y \in S\), then because \(S = f(y)\), and \(S\)
+      consists of those elements that are not in their images, it follows
+      that \(y \notin S\). On the other hand, if \(y \notin S\) then \(y \notin f(y)\) so
+      (by the definition of \(S\)) it follows that \(y \in S\). Either possibility leads to the other, which is a contradiction.
+    </p></article><span class="incontext"><a href="sec_cantors_thm.html#proof-51">in-context</a></span>

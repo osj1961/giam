@@ -1,0 +1,37 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:44-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5>
+<p>
+            (By mathematical induction)
+          </p>
+<p>
+            <!--Style me with CSS--><em>Base case:</em> (\(n=2\))
+            For the base case, note that when \(n=2\) we have
+            \begin{equation*}
+              \prod_{i=2}^2 \left(1 - \frac{1}{i}\right)  =   \left(1 - \frac{1}{2}\right)  =  1/2
+            \end{equation*}
+            and, when \(n=2\), the right-hand side (\(1/n\)) also evaluates to \(1/2\).
+          </p>
+<p>
+            <!--Style me with CSS--><em>Inductive step:</em>
+          </p>
+<p>
+            Suppose that \(k&gt;2\) is an integer such that
+            \begin{equation*}
+              \prod_{i=2}^k \left(1 - \frac{1}{i}\right) =  \frac{1}{k}.
+            \end{equation*}
+          </p>
+<p>
+            Then,
+            \begin{gather*}
+\prod_{i=2}^{k+1} \left(1 - \frac{1}{i}\right)\\
+= \left(1 - \frac{1}{k+1}\right) \; \cdot \; \prod_{i=2}^{k} \left(1 - \frac{1}{i}\right)\\
+= \left(1 - \frac{1}{k+1}\right) \; \cdot \; \frac{1}{k}\\
+= \frac{1}{k+1}.
+\end{gather*}
+          </p></article><span class="incontext"><a href="section-27.html#proof-33">in-context</a></span>

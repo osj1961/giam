@@ -410,11 +410,11 @@
 
   <table xml:id="tab_bool_equiv" >
     <caption>Basic logical equivalences.</caption>
-    <tabular>
-      <row>
+    <tabular bottom="medium" top="medium" left="medium" right="medium">
+      <row bottom="medium" left="medium" halign="center" valign="center">
         <cell></cell>
-        <cell>\Conjunctive 
-        \version</cell>
+        <cell>Conjunctive 
+        version</cell>
         <cell>\Disjunctive 
         \version</cell>
         <cell>\Algebraic 
