@@ -1,0 +1,39 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:44-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5>
+<p>
+      (By PMI)
+    </p>
+<p>
+      <!--Style me with CSS--><em>Basis:</em> Note that \(7^0-1\) is \(0\) and also that \(6 \divides 0\).
+    </p>
+<p>
+      <!--Style me with CSS--><em>Inductive step:</em>
+    </p>
+<p>
+      (We need to show that if \(6 \divides 7^k-1\) then \(6 \divides 7^{k+1}-1\).)
+    </p>
+<p>
+      Consider the quantity \(7^{k+1}-1\).
+      \begin{gather*}
+7^{k+1}-1 = 7 \cdot 7^k -1\\
+= (6 + 1) \cdot 7^k - 1\\
+= 6 \cdot 7^k + 1 \cdot 7^k - 1\\
+= 6(7^k) + (7^k - 1)
+\end{gather*}
+    </p>
+<p>
+      By the inductive hypothesis, \(6 \divides 7^k - 1\) so there is
+      an integer \(m\) such that \(7^k - 1 = 6m\). It follows that
+      \begin{equation*}
+        7^{k+1}-1 = 6(7^k) + 6m.
+      \end{equation*}
+    </p>
+<p>
+      So, clearly, \(6\) is a divisor of \(7^{k+1}-1\).
+    </p></article><span class="incontext"><a href="section-28.html#proof-35">in-context</a></span>

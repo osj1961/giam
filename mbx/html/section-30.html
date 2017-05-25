@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-05-23T13:30:28-04:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Relations</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$4.0$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics, version 4.0</span></a></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="chapter-6.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-6.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-31.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chapter-6.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-6.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-31.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link active"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html" class="active">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_ord_rel.html">Ordering relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-37.html">Parity and Counting arguments</a></li>
+<li><a href="section-38.html">The pigeonhole principle</a></li>
+<li><a href="section-39.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-41.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-43.html">Dominance</a></li>
+<li><a href="section-44.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-45.html">Morley's miracle</a></li>
+<li><a href="section-46.html">Five steps into the void</a></li>
+<li><a href="section-47.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-30"><header title="Section 6.1 Relations"><h1 class="heading hide-type" alt="Section 6.1 Relations">
+<span class="type">Section</span><span class="codenumber">6.1</span><span class="title">Relations</span>
+</h1></header><p id="p-1102">
+    A <!--Style me with CSS--><em>relation</em> in mathematics is a symbol that can be placed between
+    two numbers (or variables) to create a logical statement (or open sentence).
+    The main point here is that the insertion of a relation symbol between
+    two numbers creates a statement whose value is either true or false.
+    For example, we have previously seen the divisibility symbol (\(\mid\)) and noted
+    the common error of mistaking it for the division symbol (\(/\)); one of these
+    tells us to perform an arithmetic operation, the other asks us whether
+    <!--Style me with CSS--><em>if</em> such an operation were performed there would be a remainder.
+    There are many other symbols that we have seen which have this characteristic,
+    the most important is probably \(=\), but there are lots: \(\neq\), \(\lt\), \(\leq\),
+    \(&gt;\), \(\geq\) all work this way — if we place them between two numbers
+    we get a Boolean thing, it's either true or false. If, instead of numbers,
+    we think of placing sets on either side of a relation symbol, then
+    \(=\), \(\subseteq\) and \(\supseteq\) are valid relation symbols. If we think
+    of placing logical expressions on either side of a relation then,
+    honestly, <!--Style me with CSS--><em>any</em> of the logical symbols is a relation, but we normally
+    think of \(\land\) and \(\lor\) as operators and give things like \(\equiv\),
+    \(\implies\) and \(\iff\) the status of relations.
+  </p>
+<p id="p-1103">
+    In the examples we've looked at the things on either side of a relation
+    are of the same type. This is usually, but not always, the case. The
+    prevalence of relations with the same kind of things being compared has
+    even lead to the aphorism “Don't compare apples and oranges.” Think
+    about the symbol \(\in\) for a moment. As we've seen previously, it
+    isn't usually appropriate to put <!--Style me with CSS--><em>sets</em> on either side of this,
+    we might have numbers or other objects on the left and sets on the right.
+    Let's look at a small example. Let \(A = \{1,2,3,a,b\}\) and let
+    \(B=\{ \{1,2,a\}, \{1,3,5,7,\ldots\}, \{1\} \}\). The “element of”
+    relation, \(\in\), is a <!--Style me with CSS--><em>relation from \(A\) to \(B\)</em>.
+  </p>
+<figure class="figure-like" id="figure-13"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/62760dcfe62684b7880031b7c4706b1baf91d5b8.png" alt="">“element of”<!--Style me with CSS--><em>from</em><!--Style me with CSS--><em>to</em></figure><p id="p-1104">
+    A diagram such as we have given in <span>&lt;&lt;Unresolved xref, reference "fig_rel1"; check spelling or use "provisional" attribute&gt;&gt;</span> seems like a
+    very natural thing. Such pictures certainly give us an easy visual
+    tool for thinking
+    about relations. But we should point out certain hidden assumptions.
+    First, they'll only work if we are dealing with finite sets, or sets
+    like the odd numbers in our example (sets that are infinite but could
+    in principle be listed). Second, by drawing the two sets separately,
+    it seems that we are assuming they are not only different, but
+    <!--Style me with CSS--><em>disjoint</em>. The sets not only need not be disjoint, but often
+    (most of the time!) we have relations that go from a set to itself
+    so the sets in a picture like this may be identical. In <span>&lt;&lt;Unresolved xref, reference "fig_rel2"; check spelling or use "provisional" attribute&gt;&gt;</span>
+    we illustrate the divisibility relation on the set of all divisors of
+    6 — this is an example in which the sets on either side of the relation
+    are the same. Notice the linguistic distinction, we can talk about
+    either “a relation from \(A\) to \(B\)” (when there are really two
+    different sets) or “a relation on \(A\)” (when there is only one).
+  </p>
+<figure class="figure-like" id="figure-14"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/19232cde722ed254a07302ca9b1fa057a5fd5cff.png" alt="">“divides”“divides”<!--Style me with CSS--><em>on</em></figure><p id="p-1105">
+    Purists will note that it is really inappropriate to represent the same set
+    in two different places in a Venn diagram. The diagram in <span>&lt;&lt;Unresolved xref, reference "fig_rel2"; check spelling or use "provisional" attribute&gt;&gt;</span>
+    should really look like this:
+  </p>
+<img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt="">
+  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  <img width="100%" src="images/6b4b7e3e0df4a590634855378b309741614b5a72.png" alt=""><p id="p-1106">
+    Indeed, this representation is definitely preferable, although it may be more crowded.
+    A picture such as this is
+    known as the <!--Style me with CSS--><em>directed graph</em> (a.k.a. <!--Style me with CSS--><em>digraph</em>)
+    of the relation.
+  </p>
+<p id="p-1107">
+    Recall that when we were discussing sets we said the best way to describe
+    a set is simply to list all of its elements. Well, what is the best
+    way to describe a relation? In the same spirit, it would seem we should
+    explicitly list all the things that make the relation true. But it takes
+    a <!--Style me with CSS--><em>pair</em> of things, one to go on the left side and one to go on the
+    right, to make a relation true (or for that matter false!). Also it should
+    be evident that order is important in this context, for example \(2\lt 3\) is true
+    but \(3\lt 2\) isn't. The identity of a relation is so intimately tied up with
+    the set of ordered pairs that make it true, that when dealing with abstract
+    relations we <!--Style me with CSS--><em>define them</em> as sets of ordered pairs.
+  </p>
+<p id="p-1108">
+    Given two sets, \(A\) and \(B\), the 
+    <!--Style me with CSS--><em>Cartesian product of \(A\) and \(B\)</em>
+    is the set of all ordered pairs \((a,b)\) where \(a\) is in \(A\) and \(b\) is in \(B\).
+    We denote the Cartesian product using the symbol ×.
+    \begin{equation*}
+      A \times B = \{ (a,b) \suchthat a \in A \land b \in B \}
+    \end{equation*}
+  </p>
+<p id="p-1109">
+    From here on out
+    in your mathematical career you'll need to take note of the context that
+    the symbol × appears in. If it appears between numbers go ahead and
+    multiply, but if it appears between sets you're doing something different — forming the Cartesian product.
+  </p>
+<p id="p-1110">
+    The familiar \(x\)–\(y\) plane, is often called the Cartesian plane. This
+    is done for two reasons. Rene Descartes, the famous
+    mathematician and philosopher, was the first to consider coordinatizing
+    the plane and thus is responsible for our current understanding of the
+    relationship between geometry and algebra. Rene Descartes' name is also
+    memorialized in the definition of the Cartesian product of sets, and the
+    plane is nothing more than the product \(\Reals \times \Reals\). Indeed,
+    the plane provided the very first example of the concept that was later
+    generalized to the Cartesian product of sets.
+  </p>
+<article class="exercise-like" id="exercise-57"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">6.1.1</span>
+</h5>
+<p id="p-1111">
+        Suppose \(A = \{1,2,3\}\) and \(B = \{a,b,c\}\). Is \((a,1)\) in the Cartesian
+        product \(A \times B\)? List all elements of \(A \times B\).
+      </p></article><p id="p-1112">
+    In the abstract, we can define a relation as <!--Style me with CSS--><em>any</em> subset of an
+    appropriate Cartesian product. So an abstract relation \(\relR\) from a set
+    \(A\) to a set \(B\) is just some subset of \(A \times B\). Similarly, a
+    relation \(\relR\) on a set \(S\) is defined by a subset of \(S \times S\).
+    This definition looks a little bit strange when we apply it to an
+    actual (concrete) relation that we already know about. Consider the
+    relation “less than.” To describe “less than” as a subset of
+    a Cartesian product we must write
+    \begin{equation*}
+      \lt  \; = \; \{ (x,y) \in \Reals \times \Reals \suchthat y-x \in \Reals^+ \}.
+    \end{equation*}
+  </p>
+<p id="p-1113">
+    This looks funny.
+  </p>
+<p id="p-1114">
+    Also, if we have defined some relation \(\relR \subseteq A \times B\), then in order
+    to say that a particular pair, \((a,b)\), of things make the relation true we
+    have to write
+    \begin{equation*}
+      a\relR b.
+    \end{equation*}
+  </p>
+<p id="p-1115">
+    This looks funny too.
+  </p>
+<p id="p-1116">
+    Despite the strange appearances, these
+    examples do express the correct way to deal with relations.
+  </p>
+<p id="p-1117">
+    Let's do a completely made-up example. Suppose \(A\) is the set
+    \(\{a,e,i,o,u\}\) and \(B\) is the set \(\{r,s,t,l,n\}\) and we define
+    a relation from \(A\) to \(B\) by
+    \begin{equation*}
+      \relR = \{ (a,s), (a,t), (a,n), (e,t), (e,l), (e,n), (i,s), (i,t), (o,r), (o,n), (u,s) \}.
+    \end{equation*}
+  </p>
+<p id="p-1118">
+    Then, for example, because \((e,t) \in \relR\) we can write \(e \relR t\). We indicate the
+    negation of the concept that two elements are related by drawing a slash
+    through the name of the relation, for example the notation \(\neq\) is certainly
+    familiar to you, as is \(\nless\) (although in this latter case we
+    would normally write \(\geq\) instead). We can denote the fact that
+    \((a,l)\) is not a pair that makes the relation true by writing \(a \nrelR l\).
+  </p>
+<p id="p-1119">
+    We should mention another way of visualizing
+    relations. When we are dealing with a relation on \(\Reals\), the
+    relation is actually a subset of \(\Reals \times \Reals\), that means
+    we can view the relation as a subset of the \(x\)–\(y\) plane. In other
+    words, we can graph it. The graph of the “\(\lt\)” relation is
+    given in <span>&lt;&lt;Unresolved xref, reference "fig_lt_graph"; check spelling or use "provisional" attribute&gt;&gt;</span>.
+  </p>
+<figure class="figure-like" id="figure-15"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/3ffa561084fa50b73553353e66863fae5e2444ee.png" alt="">“less than”“less than”\(\Reals \times \Reals\)</figure><p id="p-1120">
+    A relation on any set that is a subset of \(\Reals\) can likewise be
+    graphed. The graph of the “\(\mid\)” relation is
+    given in <span>&lt;&lt;Unresolved xref, reference "fig_div_graph"; check spelling or use "provisional" attribute&gt;&gt;</span>.
+  </p>
+<figure class="figure-like" id="figure-16"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/3ffa561084fa50b73553353e66863fae5e2444ee.png" alt=""></figure><p id="p-1121">
+    Eventually, we will get around to defining functions as relations that
+    have a certain nice property. For the moment, we'll just note that
+    some of the operations that you are used to using with functions
+    also apply with relations. When one function “undoes” what another
+    function “does” we say the functions are inverses. For example,
+    the function \(f(x)=2x\) (i.e. doubling) and the function \(g(x)=x/2\) (halving)
+    are inverse functions because, no matter what number we start with, if we
+    double it and then halve that result, we end up with the original number.
+    The inverse of a relation \(\relR\) is written \(\relR^{-1}\) and it consists of
+    the reversals of the pairs in \(\relR\),
+    \begin{equation*}
+      \relR^{-1} = \{ (b,a) \suchthat (a,b) \in \relR \}.
+    \end{equation*}
+  </p>
+<p id="p-1122">
+    This can also be expressed by writing
+    \begin{equation*}
+      b\relR^{-1}a \; \iff \; a\relR b.
+    \end{equation*}
+  </p>
+<p id="p-1123">
+    The process of “doing one function and then doing another” is known
+    as functional composition. For instance,
+    if \(f(x) = 2x+1\) and \(g(x) = \sqrt{x}\), then we can compose them (in two
+    different orders) to obtain either \(f(g(x)) = 2\sqrt{x}+1\) or
+    \(g(f(x)) = \sqrt{2x+1}\). When composing functions there is an “intermediate
+    result” that you get by applying the first function to your input, and then
+    you calculate the second function's value at the intermediate result.
+    (For example, in calculating \(g(f(4))\) we get the intermediate result
+    \(f(4) = 9\) and then we go on to calculate \(g(9) = 3\).)
+  </p>
+<p id="p-1124">
+    The definition of the <!--Style me with CSS--><em>composite</em>
+    of two relations focuses very much on this idea
+    of the intermediate result. Suppose \(\relR\) is a relation from
+    \(A\) to \(B\) and \(\relS\) is a relation from \(B\) to \(C\) then the composite
+    \(\relS \circ \relR\) is given by
+    \begin{equation*}
+      \relS \circ \relR \; = \; \{ (a,c) \suchthat \exists b \in B, (a,b) \in \relR \, \land (b,c) \in \relS \}.
+    \end{equation*}
+  </p>
+<p id="p-1125">
+    In this definition, \(b\) is the “intermediate result,” if there is no such
+    \(b\) that serves to connect \(a\) to \(c\) then \((a,c)\) won't be in the composite.
+    Also, notice that this is the composition \(\relR\) first, then \(\relS\), but
+    it is written as \(\relS \circ \relR\) — watch out for this! The
+    compositions of relations should be read from right to left. This convention
+    makes sense when you consider functional composition, \(f(g(x))\) means \(g\)
+    first, then \(f\) so if we use the “little circle” notation for the
+    composition of relations we have \(f \circ g (x) = f(g(x))\) which is nice
+    because the symbols \(f\) and \(g\) appear in the same order. But beware! there
+    are atavists out there who write their compositions the other way around.
+  </p>
+<p id="p-1126">
+    You should probably have a diagram like the following in mind while thinking
+    about the composition of relations. Here, we have the set \(A=\{1,2,3,4\}\),
+    the set \(B\) is \(\{a,b,c,d\}\) and \(C=\{w,x,y,z\}\). The relation
+    \(\relR\) goes from \(A\) to \(B\) and consists of the following set of pairs,
+    \begin{equation*}
+      \relR \; = \; \{(1,a), (1,c), (2,d), (3,c), (3,d) \}.
+    \end{equation*}
+  </p>
+<p id="p-1127">
+    And
+    \begin{equation*}
+      \relS \; = \; \{(a,y), (b,w), (b,x), (b,z) \}.
+    \end{equation*}
+  </p>
+<img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><p id="p-1128">
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+<img width="100%" src="images/ebcdce919b9a2ec1f5a6e9009a0a96317a7dfa49.png" alt=""><article class="exercise-like" id="exercise-58"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">6.1.2</span>
+</h5>
+<p id="p-1129">
+        Notice that the composition \(\relR \circ \relS\) is impossible (or, more
+        properly, it is empty). Why?
+      </p>
+<p id="p-1130">
+        What is the (only) pair in the composition \(\relS \circ \relR\) ?
+      </p></article><section class="exercises" id="exercises-30"><header title="Exercises 6.1.1 Exercises"><h1 class="heading hide-type" alt="Exercises 6.1.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">6.1.1</span><span class="title">Exercises</span>
+</h1></header><ol id="ol-58" style="list-style-type: lower-alpha;">
+<li id="li-384"><p id="p-1131">
+          The <!--Style me with CSS--><em>lexicographic order</em>, 
+          \(\lt _{\mbox{lex} }\), is a relation on the
+          set of all words, where \(x \lt _{\mbox{lex} } y\) means that \(x\) would come before
+          \(y\) in the dictionary.  Consider just the three letter words like “iff”,
+          “fig”, “the”, et cetera.  Come up with a usable definition for
+          \(x_1x_2x_3  \lt _{\mbox{lex} } y_1y_2y_3\).
+        </p></li>
+<li id="li-385"><p id="p-1132">
+          What is the graph of “\(=\)” in \(\Reals \times \Reals\)?
+        </p></li>
+<li id="li-386"><p id="p-1133">
+          The  <!--Style me with CSS--><em>inverse</em> of a relation \(\relR\)
+          is denoted \(\relR^{-1}\).  It contains exactly the same ordered pairs
+          as \(\relR\) but with the order switched.  (So technically, they aren't
+          <!--Style me with CSS--><em>exactly</em> the same ordered pairs …)
+          \begin{equation*}
+            \relR^{-1} = \{ (b,a) \suchthat (a,b) \in \relR \}
+          \end{equation*}
+          Define a relation \(\relS\) on \(\Reals \times \Reals\) by
+          \(\relS = \{ (x,y) \suchthat y = \sin x \}\).  What is \(\relS^{-1}\)?
+          Draw a single graph containing \(\relS\) and \(\relS^{-1}\).
+        </p></li>
+<li id="li-387"><p id="p-1134">
+          The “socks and shoes” rule is a very silly little mnemonic
+          for remembering how to invert a composition.  If we think of undoing
+          the process of putting on our socks and shoes (that's socks first, then
+          shoes) we have to first remove our shoes, <!--Style me with CSS--><em>then</em> take off our socks.
+
+          The socks and shoes rule is valid for relations as well.
+
+          Prove that \((\relS \circ \relR)^{-1} = \relR^{-1} \circ \relS^{-1}\).
+        </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

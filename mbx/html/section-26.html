@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-05-23T00:27:17-04:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Formulas for sums and products</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$4.0$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics, version 4.0</span></a></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="sec_induct.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-5.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-27.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_induct.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-5.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-27.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-21.html">Containment</a></li>
+<li><a href="section-22.html">Set operations</a></li>
+<li><a href="section-23.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link active"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-26.html" class="active">Formulas for sums and products</a></li>
+<li><a href="section-27.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-28.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-29.html">Relations</a></li>
+<li><a href="section-30.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_ord_rel.html">Ordering relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-36.html">Parity and Counting arguments</a></li>
+<li><a href="section-37.html">The pigeonhole principle</a></li>
+<li><a href="section-38.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-40.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-42.html">Dominance</a></li>
+<li><a href="section-43.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-44.html">Morley's miracle</a></li>
+<li><a href="section-45.html">Five steps into the void</a></li>
+<li><a href="section-46.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-26"><header title="Section 5.2 Formulas for sums and products"><h1 class="heading hide-type" alt="Section 5.2 Formulas for sums and products">
+<span class="type">Section</span><span class="codenumber">5.2</span><span class="title">Formulas for sums and products</span>
+</h1></header><p id="p-932">
+    Gauss, when only a child, found a formula for
+    summing the first 100 natural numbers (or so the story goes…).
+    This formula, and his clever method for justifying it, can be easily
+    generalized to the sum of the first \(n\) naturals.
+    While learning calculus, notably during the study of Riemann sums,
+    one encounters other summation formulas. For example, in approximating the
+    integral of the function \(f(x)=x^2\) from \(0\) to \(100\) one needs the sum of
+    the first 100 <!--Style me with CSS--><em>squares</em>. For this reason, somewhere in almost
+    every calculus book one will find the following formulas collected:
+    \begin{gather*}
+\sum_{j=1}^n j = \frac{n(n+1)}{2}\\
+\sum_{j=1}^n j^2 = \frac{n(n+1)(2n+1)}{6}\\
+\sum_{j=1}^n j^3 = \frac{n^2(n+1)^2}{4}.
+\end{gather*}
+  </p>
+<p id="p-933">
+    A really industrious author might also include the sum of the
+    fourth powers. Jacob Bernoulli (a truly industrious individual)
+    got excited enough to find formulas for the sums of the first
+    ten powers of the naturals. Actually, Bernoulli went much further. His work
+    on sums of powers lead to the definition of what are now known as Bernoulli
+    numbers and let him calculate \(\sum_{j=1}^{1000}j^{10}\) in
+    about seven minutes — long before the advent of calculators! In <a knowl="./knowl/struik.html" knowl-id="xref-struik" alt="Bibliographic Entry 16 " title="Bibliographic Entry 16 ">[16]</a>, Bernoulli is
+    quoted:
+  </p>
+<blockquote>
+  With the help of this table it took me less than half of a quarter of an hour
+  to find that the tenth powers of the first 1000 numbers being added together 
+  will yield the sum
+  \begin{equation*}
+    91,409,924,241,424,243,424,241,924,242,500.
+  \end{equation*}</blockquote>
+<p id="p-934">
+    To the beginning calculus student, the beauty of the above relationships may
+    be somewhat dimmed by the memorization challenge that they represent. It
+    is fortunate then, that the right-hand side of the third formula is just
+    the square of the right-hand side of the first formula. And of course,
+    the right-hand side of the first formula is something that can be deduced
+    by a six year old child (provided that he is a super-genius!) This happy
+    coincidence leaves us to apply most of our rote memorization energy to
+    formula number two, because the first and third formulas are related by
+    the following rather bizarre-looking equation,
+    \begin{equation*}
+      \sum_{j=1}^n j^3 = \left( \sum_{j=1}^n j \right)^2.
+    \end{equation*}
+  </p>
+<p id="p-935">
+    The sum of the cubes of the first \(n\) numbers is the square of their sum.
+  </p>
+<p id="p-936">
+    For completeness we should include the following formula which
+    should be thought of as the sum of the zeroth powers of the first \(n\)
+    naturals.
+    \begin{equation*}
+      \sum_{j=1}^n 1 = n
+    \end{equation*}
+  </p>
+<article class="exercise-like" id="exercise-43"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">5.2.1</span>
+</h5>
+<p id="p-937">
+        Use the above formulas to approximate the integral
+        \begin{equation*}
+          \int_{x=0}^{10} x^3 - 2x +3 \mbox{d} x
+        \end{equation*}
+      </p></article><p id="p-938">
+    Our challenge today is not to merely memorize these formulas but
+    to prove their validity. We'll use PMI.
+  </p>
+<p id="p-939">
+    Before we start in on a proof, it's important to figure out where
+    we're trying to go. In proving the formula that Gauss discovered
+    by induction we need to show that the \(k+1\)–th version of the
+    formula holds, assuming that the \(k\)–th version does. Before
+    proceeding on to read the proof do the following
+  </p>
+<article class="exercise-like" id="exercise-44"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">5.2.2</span>
+</h5>
+<p id="p-940">
+        Write down the \(k+1\)–th version of the formula for the sum of
+        the first \(n\) naturals. (You have to replace every \(n\) with
+        a \(k+1\).)
+      </p></article><article class="theorem-like" id="theorem-16"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">5.2.3</span>
+</h5>\begin{equation*}
+        \forall n \in \Naturals, \; \sum_{j=1}^n j = \frac{n(n+1)}{2}
+      \end{equation*}</article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-28" id="proof-28"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-28" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-941">
+      We proceed by induction on \(n\).
+    </p>
+<p id="p-942">
+      <!--Style me with CSS--><em>Basis: </em> Notice that when \(n=0\) the sum on the left-hand side
+      has no terms in it! This is known as an  empty sum, and by
+      definition, an empty sum's value is \(0\). Also, when
+      \(n=0\) the formula on the right-hand side becomes \((0 \cdot 1)/2\) and this is
+      \(0\) as well.<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-30" id="fn-30"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-30" style="display: none;" class="tex2jax_ignore"><span class="footnote">If you'd prefer to avoid the “empty sum” argument, 
+      you can choose to use \(n=1\) as the basis case.  The theorem should 
+      be restated so the universe of discourse is <!--Style me with CSS--><em>positive</em> naturals.</span></span>
+    </p>
+<p id="p-943">
+      <!--Style me with CSS--><em>Inductive step: </em> Consider the sum on the left-hand side of
+      the \(k+1\)–th version of our formula.
+      \begin{equation*}
+        \sum_{j=1}^{k+1} j
+      \end{equation*}
+    </p>
+<p id="p-944">
+      We can separate out the last term of this sum.
+      \begin{equation*}
+        = (k+1) + \sum_{j=1}^{k} j
+      \end{equation*}
+    </p>
+<p id="p-945">
+      Next, we can use the inductive hypothesis to replace the sum (the part
+      that goes from 1 to \(k\)) with a formula.
+      \begin{equation*}
+        = (k+1) + \frac{k(k+1)}{2}
+      \end{equation*}
+    </p>
+<p id="p-946">
+      From here on out it's just algebra …
+      \begin{equation*}
+        = \frac{2(k+1)}{2} + \frac{k(k+1)}{2}
+      \end{equation*}
+      \begin{equation*}
+        = \frac{2(k+1) + k(k+1)}{2}
+      \end{equation*}
+      \begin{equation*}
+        = \frac{(k+1) \cdot (k+2)}{2}.
+      \end{equation*}
+    </p></article></div>
+<p id="p-947">
+    Notice how the inductive step in this proof works. We start by writing
+    down the left-hand side of \(P_{k+1}\), we pull out the last term
+    so we've got the left-hand side of \(P_{k}\) (plus something else), then
+    we apply the inductive hypothesis and do some algebra until we arrive
+    at the right-hand side of \(P_{k+1}\). Overall, we've just transformed the
+    left-hand side of the statement we wish to prove into its right-hand side.
+  </p>
+<p id="p-948">
+    There is another way to organize the inductive steps in proofs like these
+    that works by manipulating entire equalities (rather than just one side
+    or the other of them).
+  </p>
+<blockquote>
+<!--Style me with CSS--><em>Inductive step (alternate): </em>  By the inductive 
+  hypothesis, we can write
+  \begin{equation*}
+    \sum_{j=1}^{k} j = \frac{k(k+1)}{2}.
+  \end{equation*}
+  Adding \((k+1)\) to both side of this yields
+  \begin{equation*}
+    \sum_{j=1}^{k+1} j = (k+1) + \frac{k(k+1)}{2}.
+  \end{equation*}
+  Next, we can simplify the right-hand side of this to obtain
+  \begin{equation*}
+    \sum_{j=1}^{k+1} j = \frac{(k+1)(k+2)}{2}.
+  \end{equation*}
+  Q.E.D.
+  </blockquote>
+<p id="p-949">
+    Oftentimes one can save considerable effort in an inductive
+    proof by creatively using the factored form during intermediate steps.
+    On the other hand, sometimes it is easier to just simplify everything
+    completely, and also, completely simplify the expression on the
+    right-hand side of \(P(k+1)\) and then verify that the two things are
+    equal. This is basically just another take on the technique of
+    “working backwards from the conclusion.” Just remember that
+    in writing-up your proof you need to make it look as if you reasoned
+    directly from the premises to the conclusion. We'll illustrate
+    what we've been discussing in this paragraph while proving
+    the formula for the sum of the squares of the first \(n\) positive integers.
+  </p>
+<article class="theorem-like" id="theorem-17"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">5.2.4</span>
+</h5>\begin{equation*}
+        \forall n \in \Zplus, \; \sum_{j=1}^n j^2 = \frac{n(n+1)(2n+1)}{6}
+      \end{equation*}</article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-29" id="proof-29"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-29" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-950">
+      We proceed by induction on \(n\).
+    </p>
+<p id="p-951">
+      <!--Style me with CSS--><em>Basis: </em> When \(n = 1\) the sum has only one term, \(1^2 = 1\).
+      On the other hand, the formula is
+      \(\displaystyle \frac{1(1+1)(2\cdot 1+1)}{6} = 1\). Since these are equal, the
+      basis is proved.
+    </p>
+<p id="p-952">
+      <!--Style me with CSS--><em>Inductive step: </em>
+    </p>
+<table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\begin{minipage}{4 in} 
+        Before proceeding with the inductive step, in this box, we will
+        figure out what the right-hand side of our theorem looks like 
+        when \(n\) is replaced with \(k+1\):
+        \begin{gather*}
+\frac{(k+1)((k+1)+1)(2(k+1)+1)}{6}\\
+= \frac{(k+1)(k+2)(2k+3)}{6}\\
+= \frac{(k^2+3k+2)(2k+3)}{6}\\
+= \frac{2k^3+9k^2+13k+6}{6}.
+\end{gather*}</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table>
+<p id="p-953">
+      By the inductive hypothesis,
+      \begin{equation*}
+        \sum_{j=1}^k j^2 = \frac{k(k+1)(2k+1)}{6}.
+      \end{equation*}
+    </p>
+<p id="p-954">
+      Adding \((k+1)^2\) to both sides of this equation gives
+      \begin{equation*}
+        (k+1)^2 + \sum_{j=1}^k j^2 = \frac{k(k+1)(2k+1)}{6} + (k+1)^2.
+      \end{equation*}
+    </p>
+<p id="p-955">
+      Thus,
+      \begin{equation*}
+        \sum_{j=1}^{k+1} j^2 = \frac{k(k+1)(2k+1)}{6} + \frac{6(k+1)^2}{6}.
+      \end{equation*}
+    </p>
+<p id="p-956">
+      Therefore,
+      \begin{gather*}
+\sum_{j=1}^{k+1} j^2 = \frac{(k^2+k)(2k+1)}{6} + \frac{6(k^2+2k+1)}{6}\\
+= \frac{(2k^3+3k^2+k)+(6k^2+12k+6)}{6}\\
+= \frac{2k^3+9k^2+13k+6}{6}\\
+= \frac{(k^2+3k+2)(2k+3)}{6}\\
+= \frac{(k+1)(k+2)(2k+3)}{6}\\
+= \frac{(k+1)((k+1)+1)(2(k+1)+1)}{6}.
+\end{gather*}
+    </p>
+<p id="p-957">
+      This proves the inductive step, so the result is true.
+    </p></article></div>
+<p id="p-958">
+    Notice how the last four lines of the proof are the same as those in
+    the box above containing our scratch work? (Except in the reverse order.)
+  </p>
+<p id="p-959">
+    We'll end this section by demonstrating one more use of this technique.
+    This time we'll look at a formula for a product rather than a sum.
+  </p>
+<article class="theorem-like" id="theorem-18"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">5.2.5</span>
+</h5>\begin{equation*}
+        \forall n \geq 2 \in \Integers, \prod_{j=2}^n \left( 1 - \frac{1}{j^2} \right) \;  = \; \frac{n+1}{2n}.
+      \end{equation*}</article><p id="p-960">
+    Before preceding with the proof let's look at an example (although this
+    has nothing to do with proving anything, it's really not a bad idea — it can
+    keep you from wasting a lot of time trying to prove something that isn't
+    actually true!) When \(n = 4\) the product is
+    \begin{equation*}
+      \left(1-\frac{1}{2^2}\right) \cdot \left(1-\frac{1}{3^2}\right) \cdot \left(1-\frac{1}{4^2}\right).
+    \end{equation*}
+  </p>
+<p id="p-961">
+    This simplifies to
+    \begin{equation*}
+      \left( 1-\frac{1}{4} \right) \cdot \left( 1-\frac{1}{9} \right) \cdot 
+      \left( 1-\frac{1}{16} \right)  =  \left( \frac{3}{4} \right) \cdot \left( \frac{8}{9} \right) \cdot \left( \frac{15}{16} \right)  =  \frac{360}{576}.
+    \end{equation*}
+  </p>
+<p id="p-962">
+    The formula on the right-hand side is
+    \begin{equation*}
+      \frac{4+1}{2 \cdot 4}  = \frac{5}{8}.
+    \end{equation*}
+  </p>
+<p id="p-963">
+    Well! These two expressions are <!--Style me with CSS--><em>clearly</em> not equal to one another…
+    What? You say they are? Just give me a second with my calculator…
+  </p>
+<p id="p-964">
+    Alright then. I guess we can't dodge doing the proof…
+  </p>
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-30" id="proof-30"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-30" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-965">
+      (Using mathematical induction on \(n\).)
+    </p>
+<p id="p-966">
+      <!--Style me with CSS--><em>Basis: </em> When \(n = 2\) the product has only one term, \(1-1/2^2 = 3/4\).
+      On the other hand, the formula is
+      \(\displaystyle \frac{2+1}{2\cdot2} = 3/4\). Since these are equal, the
+      basis is proved.
+    </p>
+<p id="p-967">
+      <!--Style me with CSS--><em>Inductive step: </em>
+    </p>
+<p id="p-968">
+      Let \(k\) be a particular but arbitrarily chosen integer such that
+      \begin{equation*}
+        \prod_{j=2}^k \left( 1 - \frac{1}{j^2} \right) \;  = \; \frac{k+1}{2k}.
+      \end{equation*}
+    </p>
+<p id="p-969">
+      Multiplying<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-31" id="fn-31"><span class="footnote"><sup> 2 </sup></span></a></span><span id="hk-fn-31" style="display: none;" class="tex2jax_ignore"><span class="footnote">Really, the only reason I'm doing this silly proof is to 
+      point out to you that when you're doing the inductive step in a proof of a 
+      formula for a <!--Style me with CSS--><em>product</em>, you don't add to both sides anymore, you <!--Style me with CSS--><em>multiply.</em> You see that, right?  Well, consider yourself to have been pointed out to or … oh, whatever.</span></span> both sides by the \(k+1\)-th term of the product
+      gives
+      \begin{equation*}
+        \left( 1 - \frac{1}{(k+1)^2} \right) \; \cdot \; \prod_{j=2}^k \left( 1 - \frac{1}{j^2} \right)   =  \frac{k+1}{2k} \; \cdot \; \left( 1 - \frac{1}{(k+1)^2} \right).
+      \end{equation*}
+    </p>
+<p id="p-970">
+      Thus
+      \begin{equation*}
+        \prod_{j=2}^{k+1} \left( 1 - \frac{1}{j^2} \right)   =  \frac{k+1}{2k} \; \cdot \; \left( 1 - \frac{1}{(k+1)^2} \right)
+      \end{equation*}
+      \begin{equation*}
+        = \frac{k+1}{2k} - \frac{(k+1)}{2k(k+1)^2}
+      \end{equation*}
+      \begin{equation*}
+        = \frac{k+1}{2k} - \frac{(1)}{2k(k+1)}
+      \end{equation*}
+      \begin{equation*}
+        = \frac{(k+1)^2 - 1}{2k(k+1)}
+      \end{equation*}
+    </p>\begin{equation*}
+      = \frac{k^2+2k}{2k(k+1)}
+    \end{equation*}\begin{equation*}
+      = \frac{k (k+2)}{2k(k+1)}
+    \end{equation*}\begin{equation*}
+      = \frac{k+2}{2(k+1)}.
+    \end{equation*}</article></div>
+<section class="exercises" id="exercises-26"><header title="Exercises 5.2.1 Exercises"><h1 class="heading hide-type" alt="Exercises 5.2.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">5.2.1</span><span class="title">Exercises</span>
+</h1></header><ol id="ol-53" style="list-style-type: lower-alpha;">
+<li id="li-351"><p id="p-971">
+        Write an inductive proof of the formula for the sum 
+        of the first \(n\) cubes.
+
+        \hint{
+
+        <article class="theorem-like" id="theorem-19"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">5.2.6</span>
+</h5>\begin{equation*}
+              \forall n \in \Naturals, \; \sum_{k=1}^n k^3 \;= \; \left( \frac{n(n+1)}{2} \right)^2
+            \end{equation*}</article>
+
+        <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-31" id="proof-31"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div><div id="hk-proof-31" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-972">
+            (By mathematical induction)
+          </p>
+<p id="p-973">
+            <!--Style me with CSS--><em>Base case:</em> (\(n=1\))
+            For the base case, note that when \(n=1\) we have
+            \begin{equation*}
+              \sum_{k=1}^n k^3 \; = \; 1
+            \end{equation*}
+            and
+            \begin{equation*}
+              \left( \frac{n(n+1)}{2} \right)^2  \; = \; 1.
+            \end{equation*}
+          </p>
+<p id="p-974">
+            <!--Style me with CSS--><em>Inductive step:</em>
+          </p>
+<p id="p-975">
+            Suppose that \(m&gt;1\) is an integer such that
+            \begin{equation*}
+              \sum_{k=1}^m k^3 \; = \; \left( \frac{m(m+1)}{2} \right)^2
+            \end{equation*}
+          </p>
+<p id="p-976">
+            Add \((m+1)^3\) to both sides to obtain
+            \begin{equation*}
+              (m+1)^3 + \sum_{k=1}^m k^3 \;= \; \left( \frac{m(m+1)}{2} \right)^2 + (m+1)^3.
+            \end{equation*}
+          </p>
+<p id="p-977">
+            Thus
+            \begin{gather*}
+\sum_{k=1}^{m+1} k^3 \;= \; \left( \frac{m^2(m+1)^2}{4} \right) + \frac{4(m+1)^3}{4}\\
+\;= \; \left( \frac{m^2(m+1)^2 + 4 (m+1)^3}{4} \right)\\
+\; = \; \left( \frac{(m+1)^2 (m^2 + 4(m+1))}{4} \right)\\
+\; = \; \left( \frac{(m+1)^2 (m^2 + 4m +4)}{4} \right)\\
+\; = \; \left( \frac{(m+1)^2 (m+2)^2}{4} \right)\\
+\; = \; \left( \frac{(m+1)(m+2)}{2} \right)^2
+\end{gather*}
+          </p></article></div>
+
+        }
+        </p></li>
+<li id="li-352"><p id="p-978">
+          Find a formula for the sum of the first \(n\) fourth powers.
+
+          \hint{
+          \begin{equation*}
+            \frac{n\cdot(n+1)\cdot(2n+1)\cdot(3n^2+3n-1)}{30}
+          \end{equation*}
+          }
+        </p></li>
+<li id="li-353"><p id="p-979">
+          The sum of the first \(n\) natural numbers is sometimes called
+          the \(n\)-th triangular number \(T_n\).  Triangular numbers are so-named
+          because one can represent them with triangular shaped arrangements 
+          of dots.
+          <img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt="">
+          \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+            \reset@font\fontsize{#1}{#2pt}
+            \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+            \selectfont}\fi
+          <img width="100%" src="images/682d5112e7d6860cd99c004919c62ca2240c1407.png" alt="">
+          The first several triangular numbers are 1, 3, 6, 10, 15, et cetera.
+
+          Determine a formula for the sum of the first \(n\) triangular numbers \(\displaystyle \left( \sum_{i=1}^n T_i \right)\) and prove it using PMI.
+
+          \hint{The formula is \(\frac{n(n+1)(n+2)}{6}\).}
+        </p></li>
+<li id="li-354"><p id="p-980">
+        Consider the alternating sum of squares:
+        \begin{gather*}
+1\\
+1 - 4 = -3\\
+1 - 4 + 9 = 6\\
+1 - 4 + 9 - 16 = -10\\
+\mbox{et cetera}
+\end{gather*}
+        Guess a general formula for \(\sum_{i=1}^n (-1)^{i-1} i^2\), and prove it using PMI.
+
+        \hint{
+
+        <article class="theorem-like" id="theorem-20"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">5.2.7</span>
+</h5>\begin{equation*}
+              \forall n \in \Naturals, \; \sum_{i=1}^n (-1)^{i-1} i^2 \;= \; (-1)^{n-1} \frac{n(n+1)}{2}
+            \end{equation*}</article>
+
+        <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-32" id="proof-32"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div><div id="hk-proof-32" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-981">
+            (By mathematical induction)
+          </p>
+<p id="p-982">
+            <!--Style me with CSS--><em>Base case:</em> (\(n=1\))
+            For the base case, note that when \(n=1\) we have
+            \begin{equation*}
+              \sum_{i=1}^n (-1)^{i-1} i^2 \;= \; 1
+            \end{equation*}
+            and also
+            \begin{equation*}
+              (-1)^{n-1} \frac{n(n+1)}{2} \;= \; 1.
+            \end{equation*}
+          </p>
+<p id="p-983">
+            <!--Style me with CSS--><em>Inductive step:</em>
+          </p>
+<p id="p-984">
+            Suppose that \(k&gt;1\) is an integer such that
+            \begin{equation*}
+              \sum_{i=1}^k (-1)^{i-1} i^2 \;= \; (-1)^{k-1} \frac{k(k+1)}{2}.
+            \end{equation*}
+          </p>
+<p id="p-985">
+            Adding \((-1)^{k} (k+1)^2\) to both sides gives
+            \begin{gather*}
+\sum_{i=1}^{k+1} (-1)^{i-1} i^2 \;= \; (-1)^{k-1} \frac{k(k+1)}{2} + (-1)^{k} (k+1)^2\\
+\;= \; (-1)^{k-1} \frac{k(k+1)}{2} - (-1)^{k-1} (k+1)^2\\
+\;= \; (-1)^{k-1} \left( \frac{k(k+1)}{2} -  \frac{2(k+1)^2}{2} \right)\\
+\;= \; (-1)^{k} \left( \frac{2(k+1)^2}{2} - \frac{k(k+1)}{2} \right)\\
+\;= \; (-1)^{k} \frac{(k+1)(2(k+1)-k)}{2}\\
+\;= \; (-1)^{k} \frac{(k+1)(k+2)}{2}
+\end{gather*}
+          </p></article></div>
+
+        }
+        </p></li>
+<li id="li-355"><p id="p-986">
+        Prove the following formula for a product.
+        \begin{equation*}
+          \prod_{i=2}^n \left(1 - \frac{1}{i}\right) =  \frac{1}{n}
+        \end{equation*}
+        \hint{
+        Notice that the problem statement didn't specify the domain — but the smallest value of \(n\) that gives
+        a non-empty product on the left-hand side is \(n=2\).
+
+        <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-33" id="proof-33"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div><div id="hk-proof-33" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-987">
+            (By mathematical induction)
+          </p>
+<p id="p-988">
+            <!--Style me with CSS--><em>Base case:</em> (\(n=2\))
+            For the base case, note that when \(n=2\) we have
+            \begin{equation*}
+              \prod_{i=2}^2 \left(1 - \frac{1}{i}\right)  =   \left(1 - \frac{1}{2}\right)  =  1/2
+            \end{equation*}
+            and, when \(n=2\), the right-hand side (\(1/n\)) also evaluates to \(1/2\).
+          </p>
+<p id="p-989">
+            <!--Style me with CSS--><em>Inductive step:</em>
+          </p>
+<p id="p-990">
+            Suppose that \(k&gt;2\) is an integer such that
+            \begin{equation*}
+              \prod_{i=2}^k \left(1 - \frac{1}{i}\right) =  \frac{1}{k}.
+            \end{equation*}
+          </p>
+<p id="p-991">
+            Then,
+            \begin{gather*}
+\prod_{i=2}^{k+1} \left(1 - \frac{1}{i}\right)\\
+= \left(1 - \frac{1}{k+1}\right) \; \cdot \; \prod_{i=2}^{k} \left(1 - \frac{1}{i}\right)\\
+= \left(1 - \frac{1}{k+1}\right) \; \cdot \; \frac{1}{k}\\
+= \frac{1}{k+1}.
+\end{gather*}
+          </p></article></div>
+
+        The final line skips over a tiny bit of algebraic detail.  You may feel more comfortable if you fill in those steps.
+
+
+        }
+        </p></li>
+<li id="li-356"><p id="p-992">
+          Prove \(\displaystyle \sum_{j=0}^{n}(4j+1) \; = \; 2n^{2}+3n+1\) for all
+          integers \(n \geq 0\).
+        </p></li>
+<li id="li-357"><p id="p-993">
+          Prove \(\displaystyle \sum_{i=1}^{n}\frac{1}{(2i-1)(2i+1)} \; = \; \frac{n}{2n+1}\) for all natural numbers \(n\).
+        </p></li>
+<li id="li-358"><p id="p-994">
+          The  <!--Style me with CSS--><em>Fibonacci numbers</em> are a sequence of integers defined by
+          the rule that a number in the sequence is the sum of the two that 
+          precede it.
+          \begin{equation*}
+            F_{n+2} = F_n + F_{n+1}
+          \end{equation*}
+          The first two Fibonacci numbers (actually the zeroth and the first) 
+          are both 1.  
+
+           Thus, the first several Fibonacci numbers are
+          \begin{equation*}
+            F_0 = 1, F_1=1, F_2=2, F_3=3, F_4=5, F_5=8, F_6=13, F_7=21, \; \mbox{et cetera}
+          \end{equation*}
+          Use mathematical induction to prove the following formula involving
+          Fibonacci numbers.
+          \begin{equation*}
+            \sum_{i=0}^n (F_i)^2 \, = \, F_n \cdot F_{n+1}
+          \end{equation*}
+        </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

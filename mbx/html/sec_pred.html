@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-05-23T13:30:26-04:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Predicates and Logical Connectives</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$4.0$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics, version 4.0</span></a></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="ch_logic.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_logic.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_impl.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ch_logic.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_logic.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_impl.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link active"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html" class="active">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_ord_rel.html">Ordering relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-37.html">Parity and Counting arguments</a></li>
+<li><a href="section-38.html">The pigeonhole principle</a></li>
+<li><a href="section-39.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-41.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-43.html">Dominance</a></li>
+<li><a href="section-44.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-45.html">Morley's miracle</a></li>
+<li><a href="section-46.html">Five steps into the void</a></li>
+<li><a href="section-47.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_pred"><header title="Section 2.1 Predicates and Logical Connectives"><h1 class="heading hide-type" alt="Section 2.1 Predicates and Logical Connectives">
+<span class="type">Section</span><span class="codenumber">2.1</span><span class="title">Predicates and Logical Connectives</span><a href="sec_pred.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-256">
+    In every branch of Mathematics there are special, 
+    atomic, notions that
+    defy precise definition. In Geometry, for example, the atomic notions
+    are points, lines and their incidence. Euclid defines a point as
+    “that which has no part” — people can argue (and have argued) incessantly
+    over what exactly is meant by this. Is it essentially saying that anything
+    without volume, area or length of some sort is a point? In modern times
+    it has been recognized that any formal system of argumentation has to
+    have such elemental, undefined, concepts — and that Euclid's apparent
+    lapse in precision comes from an attempt to hide this basic fact.
+    The notion of “point” can't really <!--Style me with CSS--><em>be</em> defined. All we can do
+    is point (no joke intended) at a variety of points and hope that our
+    audience will absorb the same concept of point that we hold via the
+    process of induction<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-9" id="fn-9"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-9" style="display: none;" class="tex2jax_ignore"><span class="footnote">inference of a 
+    generalized conclusion from particular instances — compare DEDUCTION</span></span>.
+  </p>
+<p id="p-257">
+    The atomic concepts in Set Theory are “set”, “element” and “membership”.
+    The atomic concepts in Logic are “true”, “false”, 
+    “sentence” and  “statement”.
+  </p>
+<p id="p-258">
+    Regarding <!--Style me with CSS--><em>true</em> and <!--Style me with CSS--><em>false</em>, we hope there is no uncertainty
+    as to their meanings. <!--Style me with CSS--><em>Sentence</em> also has a well-understood
+    meaning that most will agree on — a syntactically correct ordered collection
+    of words such as “Johnny was a football player.” or “Red is a color.”
+    or “This is a sentence which does not refer to itself.” A <!--Style me with CSS--><em>statement</em>
+    is a sentence which is either true or false.
+    In other words, a statement
+    is a sentence whose truth value is <!--Style me with CSS--><em>definite</em>, in more other words,
+    it is always possible to decide — one way or the other — whether
+    a statement is true or false.<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-10" id="fn-10"><span class="footnote"><sup> 2 </sup></span></a></span><span id="hk-fn-10" style="display: none;" class="tex2jax_ignore"><span class="footnote">Although, as a practical matter
+    it may be almost impossibly difficult to do so!  For instance it is 
+    certainly either true or false that I ate eggs for breakfast on my 21st
+    birthday — but I don't remember, and short of building a time machine,
+    I don't know how you could find out.</span></span> The first example
+    of a sentence given above (“Johnny was a football player”) is not a
+    statement — the problem is that it is ambiguous unless we know who
+    Johnny is. If it had said “Johnny Unitas was a football player.” then
+    it would have been a statement. If it had said “Johnny Appleseed was a
+    football player.” it would also have been a statement, just not a true one.
+  </p>
+<p id="p-259">
+    Ambiguity is only one reason that a sentence may not be a statement. As
+    we consider more complex sentences, it may be the case that the truth
+    value of a given sentence simply cannot be decided. One of the most
+    celebrated mathematical results of the 20th century is
+    Kurt Gödel's
+    “Incompleteness Theorem.”
+    An important aspect of this theory is
+    the proof that in any axiomatic system of mathematical thought
+    there must be undecidable sentences — statements which can neither be proved
+    nor disproved from the axioms<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-11" id="fn-11"><span class="footnote"><sup> 3 </sup></span></a></span><span id="hk-fn-11" style="display: none;" class="tex2jax_ignore"><span class="footnote">There are trivial systems that 
+    are complete, but if a system is sufficiently complicated that it contains 
+    “interesting” statements it can't be complete.</span></span>.
+    Simple sentences (e.g. those of the form
+    subject-verb-object) have little chance of being undecidable for this
+    reason, so we will next look at ways of building more complex sentences
+    from simple components.
+  </p>
+<p id="p-260">
+    Let's start with an example. Suppose I come up to you in some windowless
+    room and make the statement: “The sun is shining but it's raining!”
+    You decide to investigate my claim and determine its veracity. Upon
+    reaching a room that has a view of the exterior there are four possible
+    combinations of sunniness and/or precipitation that you may find. That is,
+    the atomic predicates “The sun is shining” and “It is raining” can each
+    be true or false independently of one another. In the following table
+    we introduce a convention used throughout the remainder of this book — that true is indicated with a capital letter T and false is indicated
+    with the Greek letter \(\phi\) (which is basically a Greek F, and is a lot harder
+    to mistake for a T than an F is.)
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">The sun is shining</td>
+<td class="l m b0 r0 l0 t0 lines">It is raining</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+</tr>
+</table>
+<p id="p-261">
+    Each row of the above table represents a possible state of the outside
+    world. Suppose you observe the conditions given in the last row, namely
+    that it is neither sunny, nor is it raining — you would certainly conclude
+    that I am not to be trusted. I.e. my statement, the compounding of
+    “The sun is shining” and “It is raining” (with the word “but” in between
+    as a connector) is false. If you think about it a bit, you'll agree that
+    this so-called <!--Style me with CSS--><em>compound sentence</em> is true
+    only in the case that both
+    of its component pieces are true. This underscores an amusing linguistic
+    point: “but” and “and” have exactly the same meaning! More precisely,
+    they <!--Style me with CSS--><em>denote</em> the same thing, they have subtly different connotations
+    however — “but” indicates that both of the statements it connects
+    are true and that the speaker is surprised by this state of affairs.
+  </p>
+<p id="p-262">
+    In Mathematics we distinguish two main connectives for hooking-up simple
+    sentences into compound ones. The <!--Style me with CSS--><em>conjunction</em>
+    of two sentences is
+    the compound sentence made by sticking the word “and” between them.
+    The <!--Style me with CSS--><em>disjunction</em> of two sentences is
+    formed by placing an “or”
+    between them. Conjunctions are true only when both components are true.
+    Disjunctions are false only when both components are false.
+  </p>
+<p id="p-263">
+    As usual, mathematicians have developed an incredibly terse, compact
+    notation for these ideas.<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-12" id="fn-12"><span class="footnote"><sup> 4 </sup></span></a></span><span id="hk-fn-12" style="display: none;" class="tex2jax_ignore"><span class="footnote">One begins to suspect that 
+    mathematicians form an unusually lazy sub-species of humanity.</span></span>
+    First, we represent an
+    entire sentence by a single letter — traditionally, a capital letter.
+    This is called a <!--Style me with CSS--><em>predicate variable</em>.
+    For example, following the example above, we could denote the sentence
+    “The sun is shining” by the letter \(S\). Similarly, we could make the
+    assignment \(R =\) “It is raining.” The conjunction and disjunction
+    of these sentences can then be represented using the symbols \(S \land R\)
+    and \(S \lor R\), respectively. As a mnemonic, note that the connective
+    in \(S \land R\) looks very much like the capital letter A (as in And).
+  </p>
+<p id="p-264">
+    To display, very succinctly, the effect of these two connectives we can
+    use so-called truth tables. In a truth table we list
+    all possible truth
+    values of the predicate variables and then enumerate the truth values
+    of some compound sentence. For the conjunction and disjunction
+    connectors we have (respectively):
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(A\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(B\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(A \land B\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+</tr>
+</table>
+  and
+  <table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(A\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(B\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(A \lor B\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+</tr>
+</table>
+  .
+
+  <p id="p-265">
+    In addition to these connectors we need a modifier (called
+    <!--Style me with CSS--><em>negation</em>)
+    that acts on individual sentences. The negation of a sentence \(A\) is
+    denoted by \({\lnot}A\), and its truth value is exactly the opposite of
+    \(A\)'s truth value. The negation of a sentence is also known as the
+    <!--Style me with CSS--><em>denial</em> of a sentence.
+    A truth table for the negation operator is somewhat
+    trivial but we include it here for completeness.
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(A\)</td>
+<td class="l m b0 r0 l0 t0 lines">\({\lnot}A\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+</tr>
+</table>
+<p id="p-266">
+    These three simple tools (and, or &amp; not) are sufficient to
+    create extraordinarily complex sentences out of basic components.
+    The way these pieces interrelate is a bit reminiscent of algebra,
+    in fact the study of these logical operators (or any
+    operators that act like them) is called 
+    <!--Style me with CSS--><em>Boolean Algebra</em><span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-13" id="fn-13"><span class="footnote"><sup> 5 </sup></span></a></span><span id="hk-fn-13" style="display: none;" class="tex2jax_ignore"><span class="footnote">In honor of George Boole, whose 1854 
+     book <!--Style me with CSS--><em>An investigation into the Laws of Thought</em> inaugurated the 
+     subject.</span></span>. There are distinct differences
+    between Boolean and ordinary algebra however. In regular algebra we have
+    the binary connectors \(+\) (plus) and \(\cdot\) (times), and the unary
+    negation operator \(-\), these are certainly analogous to \(\land\), \(\lor\) &amp;
+    \(\lnot\), but there are certain consequences of the fact that multiplication
+    is effectively repeated addition that simply don't hold for the Boolean
+    operators. For example, there is a well-defined precedence between \(\cdot\) and
+    \(+\). In parsing the expression \(4 \cdot 5 + 3\) we all know that the
+    multiplication is to be done first. There is no such rule governing
+    order of operations between \(\land\) and \(\lor\), so an expression like
+    \(A \land B \lor C\) is simply ambiguous — it <!--Style me with CSS--><em>must</em> have parentheses
+    inserted in order to show the order, either \((A \land B) \lor C\) or
+    \(A \land (B \lor C)\). Another distinction between ordinary and Boolean
+    algebra is exponentiation. If there <!--Style me with CSS--><em>were</em> exponents in Boolean algebra,
+    we'd need two different kinds — one for repeated conjunction and another
+    for repeated disjunction.
+  </p>
+<article class="exercise-like" id="exercise-17"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.1.1</span>
+</h5>
+<p id="p-267">
+        Why is it that there is no such thing as exponentiation
+        in the algebra of Logic?
+      </p></article><p id="p-268">
+    While there are many differences between Boolean algebra and the
+    usual, garden-variety algebra, there are also many similarities.
+    For instance, the associative,
+    commutative and
+    distributive laws
+    of Algebra all have versions that work in the Boolean case.
+  </p>
+<p id="p-269">
+    A very handy way of visualizing Boolean expressions is given by
+    digital logic circuit diagrams. To discuss these diagrams we
+    must make a brief digression into Electronics. One of the most
+    basic components inside an electronic device is a 
+    transistor,
+    this is a component that acts like a switch for electricity,
+    but the switch itself is controlled by electricity. In <a knowl="./knowl/fig_trans.html" knowl-id="xref-fig_trans" alt="Figure 2.1.2 " title="Figure 2.1.2 ">Figure 2.1.2</a>
+    we see the usual schematic representation of a transistor. If voltage
+    is applied to the wire labeled z, the transistor becomes conductive,
+    and current may flow from x to y.
+  </p>
+<figure class="figure-like" id="fig_trans"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/5fa959a9d49ccd5348d43c5dace7a5db1b0e0d52.png" alt=""><figcaption><span class="heading">Figure</span><span class="codenumber">2.1.2</span>A schematic representation of a transistor.</figcaption></figure><p id="p-270">
+    Suppose that two transistors are connected as in <span>&lt;&lt;Unresolved xref, reference "fig_series"; check spelling or use "provisional" attribute&gt;&gt;</span>
+    (this is called a <!--Style me with CSS--><em>series</em> connection).
+    In order for current to flow
+    from x to y we must have voltage applied to <!--Style me with CSS--><em>both</em> the wires labeled
+    z and w. In other words, this circuit effectively creates the <!--Style me with CSS--><em>and</em>
+    operation — assuming voltage is always applied to x, if z <!--Style me with CSS--><em>and</em> w
+    are energized then the output at y will be energized.
+  </p>
+<figure class="figure-like" id="figure-5"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/9f7a8052f905d5698fc1a098f9c6d5cdf2d5229d.png" alt=""><!--Style me with CSS--><em>and</em><!--Style me with CSS--><em>and</em></figure><p id="p-271">
+    When two transistors are connected in parallel (this is illustrated in
+    <span>&lt;&lt;Unresolved xref, reference "fig_par"; check spelling or use "provisional" attribute&gt;&gt;</span>) current can flow from x to y when either (or <!--Style me with CSS--><em>both</em>)
+    of the wires at z and w have voltage applied. This brings up a point
+    which is confusing for some: in common speech the use of the word “or” often
+    has the sense known as <!--Style me with CSS--><em>exclusive or</em> (a.k.a. xor), when we say “X or Y”
+    we mean “Either X or Y, but not both.” In Electronics and Mathematics,
+    <!--Style me with CSS--><em>or</em> always has the non-exclusive (better known as
+    inclusive) sense.
+  </p>
+<figure class="figure-like" id="figure-6"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/b755e1e6a9c1dbd364c806b69e3ebb59c1051fe1.png" alt=""><!--Style me with CSS--><em>or</em><!--Style me with CSS--><em>or</em></figure><p id="p-272">
+    As a sort of graphical shorthand, electronics engineers use the symbols
+    below to indicate and-gates, or-gates &amp; not-gates (better known as negators).
+  </p>
+<img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt="">
+  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  <img width="100%" src="images/e7616f684fd0d6d9fb32d9ac4f2d6e6796fa5c2c.png" alt=""><p id="p-273">
+    An and-gate has two transistors inside it that are wired in series — if both the inputs are energized the output will be too. An
+    or-gate has two transistors in parallel inside it. Not-gates
+    involve magic — when their input is not on, their output <!--Style me with CSS--><em>is</em>
+    and vice versa.
+  </p>
+<p id="p-274">
+    Using this graphical “language” one can make schematic
+    representations of logical expressions. Some find that
+    tracing such diagrams makes understanding the structure
+    of a Boolean expression easier. For example, in <span>&lt;&lt;Unresolved xref, reference "fig_3ands"; check spelling or use "provisional" attribute&gt;&gt;</span>
+    we illustrate 2 of the possible ways that the conjunction
+    of four predicate variables can be parenthesized. In fact, when
+    a multitude of predicates are joined by the same connective,
+    the way in which the expression is parenthesized is unimportant,
+    thus one often sees a further shorthand — gates with more than
+    2 inputs.
+  </p>
+<figure class="figure-like" id="figure-7"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/156a7cbb2bd04164ee64f13ca3f9753e291741b8.png" alt="">—</figure><p id="p-275">
+    A common task for an electronics designer is to come up with
+    a digital logic circuit having a prescribed input/output table.
+    Note that an input/output table for a logic circuit is entirely
+    analogous with a truth table for a compound sentence in Logic —
+    except that we use 0's and 1's rather than T's and \(\phi\)'s.
+  </p>
+<p id="p-276">
+    Suppose that we wanted to design a circuit that would
+    have the following input/output table.
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\; x \;\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\; y \;\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\; z \;\)</td>
+<td class="l m b0 r0 l0 t0 lines">out</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+</table>
+<p id="p-277">
+    A systematic method for accomplishing such a design task involves
+    a notion called <!--Style me with CSS--><em>disjunctive normal form</em>.
+    A Boolean expression
+    is in disjunctive normal form if it consists of the disjunction of
+    one or more statements, each of which consists entirely of conjunctions
+    of predicate variables and/or their negations. In other words, the <!--Style me with CSS--><em>or</em>
+    of a bunch of <!--Style me with CSS--><em>ands</em>. In terms of digital logic circuits, the <!--Style me with CSS--><em>and</em>s
+    we're talking about are called <!--Style me with CSS--><em>recognizers</em>.
+    For example,
+    the following 3-input and-gates recognize the input states in
+    the 4th, 7th and 8th rows of the i/o table above. (These are the rows
+    where the output is supposed to be 1.)
+  </p>
+<img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt="">
+  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  <img width="100%" src="images/ae22c36eb23877e7336ee55ce36fdb752646a641.png" alt=""><p id="p-278">
+    In <span>&lt;&lt;Unresolved xref, reference "fig_dnf"; check spelling or use "provisional" attribute&gt;&gt;</span> we illustrate how to create a circuit whose
+    i/o table is as above using these recognizers.
+  </p>
+<figure class="figure-like" id="figure-8"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/8f4817e0170de864ff94dbfe54de7949c4dbc6d1.png" alt="">\(({\lnot}x \land y \land z) \lor (x \land y \land {\lnot}z) \lor (x \land y \land z)\)</figure><section class="exercises" id="exercises-8"><header title="Exercises 2.1.1 Exercises"><h1 class="heading hide-type" alt="Exercises 2.1.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">2.1.1</span><span class="title">Exercises</span>
+</h1></header><ol id="ol-15" style="list-style-type: lower-alpha;">
+<li id="li-97"><p id="p-279">
+          Design a digital logic circuit (using and, or &amp; not gates) that 
+          implements an exclusive or.
+
+
+
+          \hint{First, it's essential to know what is meant by the term "exclusive or". This is the interpretation that many people give to the word "or" — where "X or Y" means either X is true or Y is true, but that it isn't the case that both X and Y are true. This (wrong) understanding of what "or" means is common because it is often the case that X and Y represent complimentary possibilities: old or new, cold or hot, right or wrong... The truth table for exclusive or (often written xor, pronounced "ex-or", symbolically it is usually \(\oplus\)) is
+          <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(X\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(Y\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(X \,\oplus\, Y\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table>
+          So it's true when one, or the other, but not both of its inputs are true.  The upshot of the last sentence is that we can write \(X \oplus Y \; \equiv \; (X \lor Y) \land {\lnot}(X \land Y)\).
+
+          The above reformulation should help… 
+
+
+
+          }
+        </p></li>
+<li id="li-98"><p id="p-280">
+          Consider the sentence 
+          “This is a sentence which does not refer to itself.”
+          which was given in the beginning of this chapter as an example.
+          Is this sentence a statement?  If so, what is its truth value?
+
+          \hint{The only question in your mind, when deciding whether a sentence is a statement, should be "Does this thing have a definite truth value?"
+          Well?
+
+          Isn't it just plainly false?}
+        </p></li>
+<li id="li-99"><p id="p-281">
+          Consider the sentence “This sentence is false.”  Is this 
+          sentence a statement?
+
+          \hint{Try to justify why this sentence can't be either true or false.}
+        </p></li>
+<li id="li-100"><p id="p-282">
+          Complete truth tables for each of the sentences 
+          \((A \land B) \lor C\) and
+          \(A \land (B \lor C)\).  Does it seem that these sentences have
+          the same logical content?
+
+          \hint{
+
+
+
+          A tiny hint here: since the sentences involve 3 variables you'll need truth tables with 8 rows. Here's a template.
+          <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(A\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(B\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(C\)</td>
+<td class="l m b0 r0 l0 t0 lines">\((A \land B) \lor C\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(A \land (B \lor C)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table>
+          }
+        </p></li>
+<li id="ex_nand_nor"><p id="p-283">
+          There are two other logical connectives that are
+          used somewhat less commonly than \(\lor\) and \(\land\).
+          These are the  Scheffer stroke and the 
+          Peirce arrow — written \(\vert\) and \(\downarrow\), respectively —  they are 
+          also known as  NAND and  NOR.
+
+           The truth tables for these connectives are:
+          <table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(A\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(B\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(A \,\vert\, B\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+</tr>
+</table>
+          and
+          <table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(A\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(B\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(A \downarrow B\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+</tr>
+</table>
+          Find an expression for \((A\, \land {\lnot}B) \lor C\)
+          using only these new connectives (as well as negation and the
+          variable symbols themselves).
+
+
+          \hint{Sorry, I know this is probably the hardest problem in the chapter, but I'm (mostly) not going to help...
+          Just one hint to help you get started: NAND and NOR are the negations of AND and OR (respectively) so, for example, \((X \land Y) \; \equiv \; {\lnot}(A \,\vert\, B)\).}
+        </p></li>
+<li id="IKK"><p id="p-284">
+          The famous logician  Raymond Smullyan devised 
+          a family of logical puzzles around a fictitious place he called 
+           “the Island of Knights and Knaves.”  The inhabitants of the island are either knaves, who always make false statements, or knights, who always make truthful statements.  
+
+          In the most famous knight/knave puzzle, you are in a room which has only two exits.  One leads to certain death and the other to freedom.  There are two 
+          individuals in the room, and you know that one of them is a knight and the other is a knave, but you don't know which.   Your challenge is to determine the door which leads to freedom by asking a single question.
+
+          \hint{Ask one of them what the other one would say to do.}
+        </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

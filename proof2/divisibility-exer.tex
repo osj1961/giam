@@ -3,6 +3,34 @@ Give inductive proofs of the following
 \begin{enumerate}
 \item $\forall x \in \Naturals, \; 3 \divides x^3-x$
 
+\hint{
+\begin{proof} (by induction)
+
+{\bf Base case:} ($x=0$)
+
+The base case is trivial since, when $x=0$, $x^3-x$ evaluates to $0$ and every natural number is a divisor of $0$.
+
+{\bf Inductive step:} 
+
+In the inductive step we want to show that $\forall k \in \Naturals, \; 3 \divides k^3 - k \; \implies \; 3 \divides (k+1)^3 - (k+1)$.  So, let $k$ be an arbitrary natural number such that  $3 \divides k^3 - k$.  
+
+Consider the quantity $(k+1)^3 - (k+1)$,
+
+\begin{gather*}
+(k+1)^3 - (k+1) \\
+= \; (k^3 + 3k^2+ 3k +1) - (k+1) \\
+= \; (k^3 - k) + (3k^2 + 3k). 
+\end{gather*}
+
+By the inductive hypothesis (and the definition of divisibility), we know that there is an integer $q$ such that $k^3-k = 3q$. So, by substitution, we obtain
+
+\[ (k+1)^3 - (k+1) \; = \; 3q + 3k^2 + 3k \; = 3 \cdot (q + k^2 + k).\]
+
+Finally, $q+k^2-k$ (being the sum of integers) is certainly an integer, so by the definition of 
+divisibility, it follows that $(k+1)^3 - (k+1)$ is divisible by 3.
+
+\end{proof}
+}
 \wbvfill
 
 %\workbookpagebreak

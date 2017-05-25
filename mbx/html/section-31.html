@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-05-23T13:30:29-04:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Properties of relations</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$4.0$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics, version 4.0</span></a></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="section-30.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-6.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_eq_rel.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-30.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-6.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_eq_rel.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link active"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html" class="active">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_ord_rel.html">Ordering relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-37.html">Parity and Counting arguments</a></li>
+<li><a href="section-38.html">The pigeonhole principle</a></li>
+<li><a href="section-39.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-41.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-43.html">Dominance</a></li>
+<li><a href="section-44.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-45.html">Morley's miracle</a></li>
+<li><a href="section-46.html">Five steps into the void</a></li>
+<li><a href="section-47.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-31"><header title="Section 6.2 Properties of relations"><h1 class="heading hide-type" alt="Section 6.2 Properties of relations">
+<span class="type">Section</span><span class="codenumber">6.2</span><span class="title">Properties of relations</span>
+</h1></header><p id="p-1135">
+    There are two special classes of relations that we will study
+    in the next two sections, equivalence relations and ordering relations.
+    The prototype for an equivalence relation is the ordinary notion
+    of numerical equality, \(=\). The prototypical ordering relation
+    is \(\leq\). Each of these has certain salient properties that are the
+    root causes of their importance. In this section we will study a
+    compendium of properties that a relation may or may not have.
+  </p>
+<p id="p-1136">
+  A relation that has three of the properties we'll discuss:
+
+  </p>
+<ol id="ol-59" style="list-style-type: decimal;">
+<li id="li-388"><p id="p-1137">
+         reflexivity
+      </p></li>
+<li id="li-389"><p id="p-1138">
+        symmetry
+      </p></li>
+<li id="li-390"><p id="p-1139">
+        transitivity
+      </p></li>
+</ol>
+<p>
+  </p>
+<p id="p-1140">
+    is said to be an equivalence relation; it will in some ways resemble
+    \(=\).
+  </p>
+<p id="p-1141">
+  A relation that has another set of three properties:
+
+  </p>
+<ol id="ol-60" style="list-style-type: decimal;">
+<li id="li-391"><p id="p-1142">
+        reflexivity
+      </p></li>
+<li id="li-392"><p id="p-1143">
+        anti-symmetry
+      </p></li>
+<li id="li-393"><p id="p-1144">
+        transitivity
+      </p></li>
+</ol>
+<p>
+  </p>
+<p id="p-1145">
+    is called an ordering relation; it will resemble \(\leq\).
+  </p>
+<p id="p-1146">
+    Additionally, there is a property known as irreflexivity that many
+    relations have.
+  </p>
+<p id="p-1147">
+    There are a total of 5 properties that we have named, and we will discuss
+    them all more thoroughly. But first, we'll state the formal definitions.
+    Take note that these properties are all stated for a relation that goes
+    from a set to itself, indeed, most of them wouldn't even make sense if
+    we tried to define them for a relation from a set to a different set.
+  </p>
+<figure class="figure-like" id="table-8"><table>
+<tr><td class="l m b1 r0 l0 t0 lines"></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.95\textwidth} \A relation \(\relR\) on a set \(S\) is <!--Style me with CSS--><em>reflexive</em> iff  
+         \\(\displaystyle \forall a \in S,  a \relR a\)  
+         “Everything is related to itself.”</td></tr>
+<tr><td class="l m b1 r0 l0 t0 lines"></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.95\textwidth} \A relation \(\relR\) on a set \(S\) is <!--Style me with CSS--><em>irreflexive</em> iff 
+         \\(\displaystyle \forall a \in S,  a \nrelR a\)  
+         “Nothing is related to itself.”</td></tr>
+<tr><td class="l m b1 r0 l0 t0 lines"></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.95\textwidth} \A relation \(\relR\) on a set \(S\) is <!--Style me with CSS--><em>symmetric</em> iff 
+         \\(\displaystyle \forall a,b \in S,  a \relR b \; \implies \; b \relR a\)  
+         “No one-way streets.”</td></tr>
+<tr><td class="l m b1 r0 l0 t0 lines"></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.95\textwidth} \A relation \(\relR\) on a set \(S\) is <!--Style me with CSS--><em>anti-symmetric</em> iff 
+         \\(\displaystyle \forall a,b \in S,  a \relR b \; \land b \relR a  \implies  a=b\) 
+         “Only one-way streets.”</td></tr>
+<tr><td class="l m b1 r0 l0 t0 lines"></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.95\textwidth} \A relation \(\relR\) on a set \(S\) is <!--Style me with CSS--><em>transitive</em> iff 
+         \\(\displaystyle \forall a,b,c \in S,  a \relR b \; \land \; b \relR c  \implies  a \relR c\)  
+         “Whenever there's a roundabout route, there's a direct route.”</td></tr>
+<tr><td class="l m b1 r0 l0 t0 lines"></td></tr>
+</table></figure><p id="p-1148">
+    The digraph of a relation that is reflexive will have little loops at every vertex.
+    The digraph of a relation that is irreflexive will contain no loops at all.
+    Hopefully it is clear that these concepts represent extreme opposite possibilities — they are <!--Style me with CSS--><em>not</em> however negations of one another.
+  </p>
+<article class="exercise-like" id="exercise-59"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">6.2.1</span>
+</h5>
+<p id="p-1149">
+        Find the logical denial of the property that says a relation is reflexive
+        \begin{equation*}
+          {\lnot}(\forall a \in S,  a \relR a).
+        \end{equation*}
+      </p>
+<p id="p-1150">
+        How does this differ from the defining property for “irreflexive”?
+      </p></article><p id="p-1151">
+    If a relation \(\relR\) is defined on some subset \(S\) of the reals, then it can be graphed
+    in the Euclidean plane. Reflexivity for \(\relR\) can be interpreted in terms of the line
+    \(L\) defined by the equation \(y=x\). Every point in \((S \times S) \cap L\)
+    must be in \(\relR\). A similar statement can be made concerning the irreflexive property.
+    If a relation \(\relR\) is irreflexive its graph completely avoids the line \(y=x\).
+  </p>
+<p id="p-1152">
+    Note that the reflexive and irreflexive properties are defined with a single quantified
+    variable. Symmetry and anti-symmetry require two universally quantified variables for
+    their definitions.
+  </p>
+<blockquote>
+  A relation \(\relR\) on a set \(S\) is <!--Style me with CSS--><em>symmetric</em> iff
+  \begin{equation*}
+    \forall a,b \in S,  a \relR b \; \implies \; b \relR a.
+  \end{equation*}</blockquote>
+<p id="p-1153">
+    This can be interpreted in terms of digraphs as follows: If a connection
+    from \(a\) to \(b\) exists in the digraph of \(\relR\), then there must also be a connection
+    from \(b\) to \(a\). In <span>&lt;&lt;Unresolved xref, reference "tab_rel_props"; check spelling or use "provisional" attribute&gt;&gt;</span> this is interpreted as “no one-way streets”
+    and while that's not quite what it says, that <!--Style me with CSS--><em>is</em> the effect of this definition.
+    Since <!--Style me with CSS--><em>if</em> a connection exists in one direction, there must also be a connection
+    in the other direction, it follows that we will never see a one-way connection.
+  </p>
+<p id="p-1154">
+    Because most of the properties we are studying are defined using conditional statements
+    it is often the case that a relation has a property for vacuous reasons. When the “if” part
+    doesn't happen, there's no need for its corresponding “then” part to happen either — the
+    conditional is still true. In the context of our discussion on the symmetry property of
+    a relation this means that the following digraph <!--Style me with CSS--><em>is</em> the digraph of a symmetric
+    relation (although it is neither reflexive nor irreflexive).
+  </p>
+<img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt="">
+  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  <img width="100%" src="images/67472c3d737d99b38f2b47b3fd60beecaf5ef376.png" alt=""><p id="p-1155">
+    Anti-symmetry is described as meaning “only one-way streets” but the definition is given
+    as:
+  </p>
+<blockquote>
+  A relation \(\relR\) on a set \(S\) is <!--Style me with CSS--><em>anti-symmetric</em> iff 
+  \\(\displaystyle \forall a,b \in S,  a \relR b \; \land b \relR a  \implies  a=b\).
+  </blockquote>
+<p id="p-1156">
+    It may be hard at first to understand why the definition we use for anti-symmetry is the one above.
+    If one wanted to insure that there were never two-way connections between elements of the set it
+    might seem easier to define anti-symmetry as follows:
+  </p>
+<blockquote>
+  (Alternate definition) A relation \(\relR\) on a set \(S\) is <!--Style me with CSS--><em>anti-symmetric</em> iff 
+  \\(\displaystyle \forall a,b \in S,  a \relR b \; \implies \; b \nrelR a\).
+  </blockquote>
+<p id="p-1157">
+    This definition may seem more straight-forward, but it turns out the original definition is
+    easier to use in proofs. We need to convince ourselves that the (first) definition really
+    accomplishes what we want. Namely, if a relation \(\relR\) satisfies the property that
+    \(\displaystyle \forall a,b \in S,  a \relR b \; \land \; b \relR a  \implies  a=b\),
+    then there will not actually be any pair of elements that are related in both orders. One
+    way to think about it is this: suppose that \(a\) and \(b\) are distinct elements of \(S\) and
+    that both \(a \relR b\) and \(b \relR a\) are true. The property now guarantees that \(a=b\)
+    which contradicts the notion that \(a\) and \(b\) are distinct. This is a miniature proof
+    by contradiction; if you assume there <!--Style me with CSS--><em>are</em> a pair of distinct elements that are
+    related in both orders you get a contradiction, so there <!--Style me with CSS--><em>aren't</em>!
+  </p>
+<p id="p-1158">
+    A funny thing about the anti-symmetry property is this: When it is true of a relation it
+    is <!--Style me with CSS--><em>always</em> vacuously true! The property is engineered in such a way that when it is
+    true, it forces that the statement in its antecedent never really happens.
+  </p>
+<p id="p-1159">
+    Transitivity is an extremely useful property as witnessed by the fact that both equivalence
+    relations and ordering relations must have this property. When speaking of the transitive
+    property of equality we say “Two things that are equal to a third, are equal to each other.”
+    When dealing with ordering we may encounter statements like the following.
+    “Since `Aardvark' precedes `Bulwark'
+    in the dictionary, and since `Bulwark' precedes `Catastrophe', it is plainly true that `Aardvark'
+    comes before `Catastrophe' in the dictionary.”
+  </p>
+<p id="p-1160">
+    Again, the definition of transitivity involves a conditional. Also, transitivity may be viewed
+    as the most complicated of the properties we've been studying; it takes three universally
+    quantified variables to state the property.
+  </p>
+<blockquote>
+  A relation \(\relR\) on a set \(S\) is <!--Style me with CSS--><em>transitive</em> iff 
+  \\(\displaystyle \forall a,b,c \in S,  a \relR b \; \land \; b \relR c  \implies  a \relR c\)</blockquote>
+<p id="p-1161">
+    We paraphrased transitivity as “Whenever there's a roundabout route, there's a direct route.”
+    In particular, what the definition says is that <!--Style me with CSS--><em>if</em> there's a connection from \(a\) to \(b\) and from
+    \(b\) to \(c\) (the roundabout route from \(a\) to \(c\)) then there must be a connection from \(a\) to \(c\) (the direct
+    route).
+  </p>
+<p id="p-1162">
+    You'll really need to watch out for relations that are transitive for vacuous reasons. So long as one
+    never has three elements \(a\), \(b\) and \(c\) with \(a \relR b\) and \(b \relR c\) the statement that defines
+    transitivity is automatically true.
+  </p>
+<p id="p-1163">
+    A very useful way of thinking about these various properties that relations may have is in terms of
+    what <!--Style me with CSS--><em>doesn't</em> happen when a relation has them. Before we proceed, it is important that
+    you do the following
+  </p>
+<article class="exercise-like" id="exercise-60"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">6.2.2</span>
+</h5>
+<p id="p-1164">
+        Find logical negations for the formal properties defining each of the five
+        properties.
+      </p></article><p id="p-1165">
+    If a relation \(\relR\) is reflexive we will never see a node that doesn't have a loop.
+  </p>
+<img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt="">
+  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  <img width="100%" src="images/67472c3d737d99b38f2b47b3fd60beecaf5ef376.png" alt=""><p id="p-1166">
+    If a relation \(\relR\) is irreflexive we will never see a node that <!--Style me with CSS--><em>does</em> have a loop!
+  </p>
+<img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt="">
+  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  <img width="100%" src="images/676d8b869c1207d1e90ca0e21e36a31960c22efa.png" alt=""><p id="p-1167">
+    If a relation \(\relR\) is symmetric we will never see a pair of nodes that are connected in one
+    direction only.
+  </p>
+<img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt="">
+  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  <img width="100%" src="images/723606658130c989e2a80cd94e0e0a8bb3a40478.png" alt=""><p id="p-1168">
+    If a relation \(\relR\) is anti-symmetric we will never see a pair of nodes that are connected in both
+    directions.
+  </p>
+<img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt="">
+  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  <img width="100%" src="images/85a8e3337e6137d4fbf8350620dcef7b3f1b42d5.png" alt=""><p id="p-1169">
+    If a relation \(\relR\) is transitive the thing we will never see is a bit harder to describe.
+    There will never be a pair of arrows meeting head to tail <!--Style me with CSS--><em>without</em> there also being an
+    arrow going from the tail of the first to the head of the second.
+  </p>
+<img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt="">
+  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  <img width="100%" src="images/bc0b953fba8179897e94412c6ab5170f106ce980.png" alt=""><section class="exercises" id="exercises-31"><header title="Exercises 6.2.1 Exercises"><h1 class="heading hide-type" alt="Exercises 6.2.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">6.2.1</span><span class="title">Exercises</span>
+</h1></header><ol id="ol-61" style="list-style-type: lower-alpha;">
+<li id="li-394"><p id="p-1170">
+          Consider the relation \(\relS\) defined by 
+          \(\relS = \{ (x,y) \suchthat \; x \, \mbox{is smarter than}  \, y \}\).
+          Is \(\relS\) symmetric or anti-symmetric?  Explain.
+        </p></li>
+<li id="li-395"><p id="p-1171">
+          Consider the relation \(\relA\) defined by 
+          \(\relA = \{ (x,y) \suchthat \; x \, \mbox{has the same astrological sign as}  \, y \}\).
+          Is \(\relA\) symmetric or anti-symmetric?  Explain.
+        </p></li>
+<li id="li-396"><p id="p-1172">
+          Explain why both of the relations just described (in problems 1 and 2)
+          have the transitive property.
+        </p></li>
+<li id="li-397"><p id="p-1173">
+          For each of the five properties, name a relation that has it
+          and a relation that doesn't.
+        </p></li>
+<li id="li-398"><p id="p-1174">
+          Show by counterexample that “\(\divides\)” (divisibility) is not symmetric as a relation on \(\Integers\).
+        </p></li>
+<li id="li-399"><p id="p-1175">
+          Prove that “\(\divides\)” is an ordering relation (you must verify that it is reflexive, anti-symmetric and transitive).
+        </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

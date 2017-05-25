@@ -1,0 +1,38 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:45-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5>
+<p>
+      Consider the collection of all subsets of size \(k\) taken from
+      \(N = \{1, 2, 3, \ldots, n\}\) in which one of the elements has
+      been marked to distinguish it from the others in some way.<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-51" id="fn-51"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-51" style="display: none;" class="tex2jax_ignore"><span class="footnote">
+      For example, a committee of \(k\) individuals one of whom has been 
+      chosen as chairperson, is an example of the kind of entity we are 
+      discussing.</span></span>
+    </p>
+<p>
+      We can count this collection in two ways using the multiplication rule.
+    </p>
+<p>
+      Firstly, we could select a \(k\)-subset in \(\binom{n}{k}\) ways and then from
+      among the \(k\) elements of the subset we could select one to be marked.
+      By this analysis there are \(\binom{n}{k} \cdot k\) elements in our
+      collection.
+    </p>
+<p>
+      Secondly, we could select an element from the \(n\)-set which will be
+      the “marked” element of our subset, and then choose the additional
+      \(k-1\) elements from the remaining \(n-1\) elements of the \(n\)-set.
+      By this analysis there are \(n \cdot \binom{n-1}{k-1}\) elements in
+      the collection we have been discussing.
+    </p>
+<p>
+      Thus,
+      \begin{equation*}
+        k \cdot \binom{n}{k} = n \cdot \binom{n-1}{k-1}
+      \end{equation*}
+    </p></article><span class="incontext"><a href="section-38.html#proof-48">in-context</a></span>

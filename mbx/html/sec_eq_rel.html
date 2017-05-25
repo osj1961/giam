@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-05-23T13:30:29-04:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Equivalence relations</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$4.0$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics, version 4.0</span></a></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="section-31.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-6.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_ord_rel.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-31.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-6.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_ord_rel.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link active"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html" class="active">Equivalence relations</a></li>
+<li><a href="sec_ord_rel.html">Ordering relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-37.html">Parity and Counting arguments</a></li>
+<li><a href="section-38.html">The pigeonhole principle</a></li>
+<li><a href="section-39.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-41.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-43.html">Dominance</a></li>
+<li><a href="section-44.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-45.html">Morley's miracle</a></li>
+<li><a href="section-46.html">Five steps into the void</a></li>
+<li><a href="section-47.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_eq_rel"><header title="Section 6.3 Equivalence relations"><h1 class="heading hide-type" alt="Section 6.3 Equivalence relations">
+<span class="type">Section</span><span class="codenumber">6.3</span><span class="title">Equivalence relations</span><a href="sec_eq_rel.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-1176">
+    The main idea of an equivalence relation is that it is something like
+    equality, but not quite. Usually there is some property that
+    we can name, so that equivalent things share that property. For
+    example Albert Einstein and Adolf Eichmann were two entirely
+    different human beings, if you consider all the different criteria
+    that one can use to distinguish human beings there is little they
+    have in common. But, if the only thing one was interested in was
+    a person's initials, one would have to say that Einstein and Eichmann
+    were equivalent. Future examples of equivalence relations will
+    be less frivolous… But first, the formal definition:
+  </p>
+<article class="definition-like" id="definition-9"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">6.3.1</span>
+</h5>
+<p id="p-1177">
+        A relation \(\relR\) on a set \(S\) is an <em class="terminology">equivalence relation</em>
+        iff \(\relR\) is reflexive, symmetric and transitive.
+      </p></article><p id="p-1178">
+    Probably the most important equivalence relation we've seen to date
+    is “congruence mod \(m\)” which we will denote using the symbol \(\equiv_m\).
+    This relation may even be more interesting than
+    actual equality! The reason for this seemingly odd statement is that
+    “congruence mod \(m\)” gives us non-trivial  equivalence classes. Equivalence
+    classes are one of the most potent ideas in modern mathematics and it's essential
+    that you understand them, so we'll start with an example. Consider congruence
+    mod \(5\). What other numbers is (say) 11 equivalent to? There are many! Any
+    number that leaves the same remainder as 11 when we divide it by 5. This collection
+    is called the equivalence class of 11 and is usually denoted using an overline —
+    \(\overline{11}\), another notation that is often seen for the set of things equivalent
+    to 11 is \(11/\equiv_5\).
+    \begin{equation*}
+      \overline{11} = \{ \ldots, -9, -4, 1, 6, 11, 16, \ldots \}
+    \end{equation*}
+  </p>
+<p id="p-1179">
+    It's easy to see that we will get the exact same set if we choose any other element
+    of the equivalence class (in place of 11), which leads us to an infinite list of set
+    equalities,
+    \begin{equation*}
+      \overline{1} = \overline{6} = \overline{11} = \ldots
+    \end{equation*}
+  </p>
+<p id="p-1180">
+    And similarly,
+    \begin{equation*}
+      \overline{2} = \overline{7} = \overline{12} = \ldots
+    \end{equation*}
+  </p>
+<p id="p-1181">
+    In fact, there are really just 5 different sets that form the
+    equivalence classes mod 5: \(\overline{0}\), \(\overline{1}\), \(\overline{2}\), \(\overline{3}\),
+    and \(\overline{4}\). (Note: we have followed the usual convention of using the smallest
+    possible non-negative integers as the representatives for our equivalence classes.)
+  </p>
+<p id="p-1182">
+    What we've been discussing here is one of the first examples of a 
+    <!--Style me with CSS--><em>quotient structure</em>.
+    We start with the integers and “mod out” by an equivalence relation. In doing so, we
+    “move to the quotient” which means (in this instance) that we go from \(\Integers\) to a much simpler set
+    having only five elements: \(\{ \overline{0}, \overline{1}, \overline{2}, \overline{3}, 
+    \overline{4} \}\). In moving to the quotient we will generally lose a lot of information,
+    but greatly highlight some particular feature — in this example, properties related to
+    divisibility by 5.
+  </p>
+<p id="p-1183">
+    Given some equivalence relation \(\relR\) defined on a set \(S\) the set of equivalence classes
+    of \(S\) under \(\relR\) is denoted \(S/\relR\) (which is read “\(S\) mod \(\relR\)”). This use of the
+    slash — normally reserved for division — shouldn't cause any confusion since those aren't
+    numbers on either side of the slash but rather a set and a relation. This
+    notation may also clarify why some people denote the equivalence classes above
+    by \(0/\equiv_5\), \(1/\equiv_5\), \(2/\equiv_5\), \(3/\equiv_5\) and \(4/\equiv_5\).
+  </p>
+<p id="p-1184">
+    The set of equivalence
+    classes forms a  <!--Style me with CSS--><em>partition</em> of the set \(S\).
+  </p>
+<article class="definition-like" id="definition-10"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">6.3.2</span>
+</h5>
+<p id="p-1185">
+        A <em class="terminology">partition</em> \(P\) of a set \(S\) is a set of sets such that
+        \begin{equation*}
+          S = \bigcup_{X \in P} X \qquad \mbox{and}  \qquad 
+          \forall X, Y \in P, \; X \neq Y \, \implies \, X \cap Y = \emptyset.
+        \end{equation*}
+      </p></article><p id="p-1186">
+    In words, if you take the union of all the pieces of the partition you'll get the
+    set \(S\), and any pair of sets from the partition that aren't identical are disjoint.
+    Partitions are an inherently useful way of looking at things, although in the real world
+    there are often problems (sets we thought were disjoint turn out to have elements in common,
+    or we discover something that doesn't fit into any of the pieces of our partition), in
+    mathematics we usually find that partitions do just what we would want them to do.
+    Partitions divide some set up into a number of convenient pieces in such a way that we're
+    guaranteed that every element of the set is in one of the pieces and also so that none of
+    the pieces overlap. Partitions are a useful way of dissecting sets, and equivalence relations
+    (via their equivalence classes) give us an easy way of creating partitions — usually with some additional structure to boot! The
+    properties that make a relation an equivalence relation (reflexivity, symmetry and
+    transitivity) are designed to ensure that equivalence classes exist and do provide us
+    with the desired partition. For the beginning proof writer this all may seem very complicated,
+    but take heart! Most of the work has already been done for you by those who created
+    the general theory of equivalence relations and quotient structures. All you have
+    to do (usually) is prove that a given relation is an equivalence relation by verifying
+    that it is indeed reflexive, symmetric and transitive. Let's have a look at another
+    example.
+  </p>
+<p id="p-1187">
+    In Number Theory, the  square-free part of an integer is what remains after we divide-out
+    the largest perfect square that divides it. (This is also known as the
+    <!--Style me with CSS--><em>radical</em> of an integer.)
+    The following table gives the
+    square-free part, \(sf(n)\), for the first several values of \(n\).
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines">9</td>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines">11</td>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+<td class="l m b0 r0 l0 t0 lines">13</td>
+<td class="l m b0 r0 l0 t0 lines">14</td>
+<td class="l m b0 r0 l0 t0 lines">15</td>
+<td class="l m b0 r0 l0 t0 lines">16</td>
+<td class="l m b0 r0 l0 t0 lines">17</td>
+<td class="l m b0 r0 l0 t0 lines">18</td>
+<td class="l m b0 r0 l0 t0 lines">19</td>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(sf(n)\)</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines">11</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">13</td>
+<td class="l m b0 r0 l0 t0 lines">14</td>
+<td class="l m b0 r0 l0 t0 lines">15</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">17</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">19</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+</tr>
+</table>
+<p id="p-1188">
+    It's easy to compute the square-free part of an integer if you know its prime factorization — just reduce all the exponents mod 2. For example<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-37" id="fn-37"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-37" style="display: none;" class="tex2jax_ignore"><span class="footnote">This is the size of largest 
+    sporadic finite simple group, known as “the Monster.”</span></span>
+    \begin{gather*}
+808017424794512875886459904961710757005754368000000000\\
+= 2^{46}\cdot 3^{20}\cdot 5^9\cdot7^6\cdot 11^2\cdot 13^3\cdot 17
+      \cdot 19\cdot 23\cdot 29\cdot 31\cdot 41\cdot 47\cdot 59\cdot 71
+\end{gather*}
+    the square-free part of this number is
+    \begin{gather*}
+5\cdot 13\cdot 17\cdot 19\cdot 23\cdot 29\cdot 31\cdot 41\cdot 47\cdot 59\cdot 71\\
+= 3504253225343845
+\end{gather*}
+    which, while it is still quite a large number, is certainly a good
+    bit smaller than the original!
+  </p>
+<p id="p-1189">
+    We will define an equivalence relation \(\relS\) on the set of natural numbers
+    by using the square-free part:
+    \begin{equation*}
+      \forall x, y \in \Naturals, \; x \relS y \; \iff sf(x) = sf(y)
+    \end{equation*}
+  </p>
+<p id="p-1190">
+    In other words, two natural numbers will be \(\relS\)-related if they have the
+    same square-free parts.
+  </p>
+<article class="exercise-like" id="exercise-61"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">6.3.3</span>
+</h5>
+<p id="p-1191">
+        What is \(1/\relS\)?
+      </p></article><p id="p-1192">
+    Before we proceed to the proof that \(\relS\) is an equivalence relation we'd like
+    you to be cognizant of a bigger picture as you read. Each of the three parts of
+    the proof will have a similar structure. We will show that \(\relS\) has one of the
+    three properties by using the fact that \(=\) has that property. In more advanced
+    work this entire proof could be omitted or replaced by the phrase “\(\relS\) inherits
+    reflexivity, symmetry and transitivity from equality, and is therefore an equivalence
+    relation.” (Nice trick isn't it? But before you're allowed to use it you have
+    to show that you can do it the hard way …)
+  </p>
+<article class="theorem-like" id="theorem-27"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">6.3.4</span>
+</h5>
+<p id="p-1193">
+        The relation \(\relS\) defined by
+        \begin{equation*}
+          \forall x, y \in \Naturals, \; x \relS y \; \iff sf(x) = sf(y)
+        \end{equation*}
+        is an equivalence relation on \(\Naturals\).
+      </p></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-38" id="proof-38"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-38" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1194">
+      We must show that \(\relS\) is reflexive, symmetric and transitive.
+    </p>
+<p id="p-1195">
+      <!--Style me with CSS--><em>reflexive</em> — (Here we must show that \(\forall x \in \Naturals, \; x \relS x\).)
+      Let \(x\) be an arbitrary natural number. Since \(sf(x) = sf(x)\) (this is the reflexive
+      property of \(=\)) it follows from the definition of \(\relS\) that \(x \relS x\).
+    </p>
+<p id="p-1196">
+      <!--Style me with CSS--><em>symmetric</em> — (Here we must show that \(\forall x,y \in \Naturals, \; x \relS y \, 
+      \implies \, y \relS x\).)
+      Let \(x\) and \(y\) be arbitrary natural numbers, and further suppose that \(x \relS y\).
+      Since \(x \relS y\), it follows from the definition of \(\relS\) that \(sf(x) = sf(y)\),
+      obviously then \(sf(y) = sf(x)\) (this is the symmetric property of \(=\)) and so
+      \(y \relS x\).
+    </p>
+<p id="p-1197">
+      <!--Style me with CSS--><em>transitive</em> — (Here we must show that \(\forall x,y,z \in \Naturals, \; x \relS y \,
+      \land \, y \relS z \; \implies \; x \relS z\).)
+      Let \(x\), \(y\) and \(z\) be arbitrary natural numbers, and further suppose that both
+      \(x \relS y\) and \(y \relS z\). From the definition of \(\relS\) we deduce that
+      \(sf(x) = sf(y)\) and \(sf(y) = sf(z)\). Clearly, \(sf(x) = sf(z)\) (this deduction comes
+      from the transitive property of \(=\)), so \(x \relS z\).
+    </p></article></div>
+<p id="p-1198">
+    We'll end this section with an example of an equivalence relation that
+    doesn't “inherit” the three properties from equality.
+  </p>
+<p id="p-1199">
+    A  <!--Style me with CSS--><em>graph</em> is a mathematical structure consisting of
+    two sets, a set \(V\) of points (a.k.a. vertices) and a set<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-38" id="fn-38"><span class="footnote"><sup> 2 </sup></span></a></span><span id="hk-fn-38" style="display: none;" class="tex2jax_ignore"><span class="footnote">Technically, \(E\) is a so-called
+    multiset in many instances — there may be several edges that connect the same pair of vertices.</span></span> \(E\) of edges.
+    The elements of \(E\) may be either ordered or unordered pairs from \(V\).
+    If \(E\) consists of ordered pairs we have a 
+    <!--Style me with CSS--><em>directed graph</em> or <!--Style me with CSS--><em>digraph</em> — the diagrams we have been using to visualize
+    relations! If \(E\) consists of unordered
+    pairs then we are dealing with an <!--Style me with CSS--><em>undirected graph</em>. Since the
+    undirected case is actually the more usual, if the word “graph” appears without
+    a modifier it is assumed that we are talking about an undirected graph.
+  </p>
+<p id="p-1200">
+    The previous paragraph gives a relatively precise definition of a graph
+    in terms of sets, however the real way to think of graphs is in terms
+    of diagrams where a set of dots are connected by paths. (The paths will,
+    of course, need to
+    have arrows on them in digraphs.) Below are a few examples of the
+    diagrams that are used to represent graphs.
+  </p>
+<img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt="">
+  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  <img width="100%" src="images/06d94f01bfecbcbff19166494556e5f5671266b7.png" alt=""><p id="p-1201">
+    Two graphs are said to be  <!--Style me with CSS--><em>isomorphic</em> if they
+    represent the same connections. There must first of all be a one-to-one correspondence
+    between the vertices of the two graphs, and further, a pair of vertices in one
+    graph are connected by some number of edges if and only if the corresponding vertices in the other graph
+    are connected by the same number of edges.
+  </p>
+<article class="exercise-like" id="exercise-62"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">6.3.5</span>
+</h5>
+<p id="p-1202">
+        The four examples of graphs above actually are two pairs of isomorphic graphs.
+        Which pairs are isomorphic?
+      </p></article><p id="p-1203">
+    This word “isomorphic” has a nice etymology. It means “same shape.” Two graphs are
+    isomorphic if they have the same shape. We don't have the tools right now to do a formal
+    proof (in fact we need to look at some further prerequisites before we can really precisely
+    define isomorphism), but isomorphism of graphs is an equivalence relation. Let's at least
+    verify this informally.
+  </p>
+<p id="p-1204">
+    <!--Style me with CSS--><em>Reflexivity</em> Is a graph isomorphic to itself? That is, does a graph have the “same
+    shape” as itself? Clearly!
+  </p>
+<p id="p-1205">
+    <!--Style me with CSS--><em>Symmetry</em> If graph \(A\) is isomorphic to graph \(B\), is it also the case that graph \(B\)
+    is isomorphic to graph \(A\)? I.e. if \(A\) has the “same shape” as \(B\), doesn't \(B\) have the
+    same shape as \(A\)? Of course!
+  </p>
+<p id="p-1206">
+    <!--Style me with CSS--><em>Transitivity</em> Well … the answer here is going to be “Naturally!” but let's wait
+    to delve into this issue when we have a usable formal definition for graph isomorphism. The
+    question at this stage should be clear though: If \(A\) is isomorphic to \(B\) and \(B\) is isomorphic
+    to \(C\), then isn't \(A\) isomorphic to \(C\)?
+  </p>
+<section class="exercises" id="exercises-32"><header title="Exercises 6.3.1 Exercises"><h1 class="heading hide-type" alt="Exercises 6.3.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">6.3.1</span><span class="title">Exercises</span>
+</h1></header><ol id="ol-62" style="list-style-type: lower-alpha;">
+<li id="li-400"><p id="p-1207">
+          Consider the relation \(\relA\) defined by
+          \begin{equation*}
+            \relA = \{ (x,y) \suchthat \; x \, \mbox{has the same astrological sign as}  \, y \}.
+          \end{equation*}
+          Show that \(\relA\) is an equivalence relation.  What equivalence class
+          under \(\relA\) do you belong to?
+        </p></li>
+<li id="li-401"><p id="p-1208">
+          Define a relation \(\square\) on the integers by \(x \square y \; \iff x^2 = y^2\).  Show that \(\square\) is an equivalence relation.  List the equivalence
+          classes \(x/\square\) for \(0 \leq x \leq 5\).
+        </p></li>
+<li id="li-402"><p id="p-1209">
+          Define a relation \(\relA\) on the set of all words by
+          \begin{equation*}
+            w_1 \relA w_2  \iff  w_1 \mbox{ is an anagram of }  w_2.
+          \end{equation*}
+          Show that \(\relA\) is an equivalence relation.  (Words are anagrams
+          if the letters of one can be re-arranged to form the other.  For example, `ART' and `RAT' are anagrams.)
+        </p></li>
+<li id="li-403"><p id="p-1210">
+          The two diagrams below both show a famous graph known as the 
+          Petersen graph.  The picture on the 
+          left is the usual representation which emphasizes its five-fold symmetry.  The picture on the right
+          highlights the fact that the Petersen graph also has a three-fold symmetry.  Label the right-hand diagram
+          using the same letters (A through J) in order to show that these two representations are truly isomorphic.
+          <img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt="">
+          \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+            \reset@font\fontsize{#1}{#2pt}
+            \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+            \selectfont}\fi
+          <img width="100%" src="images/1037ff38287e1a5c52302d9737a3b5b289ff723d.png" alt="">
+        </p></li>
+<li id="li-404"><p id="p-1211">
+          We will use the symbol \(\Integers^{\ast}\) to refer to the set of
+          all integers <!--Style me with CSS--><em>except</em> \(0\).  
+          Define a relation \(\relQ\) on the set of all pairs in \(\Integers \times \Integers^{\ast}\) (pairs of integers where the second coordinate is non-zero) by
+          \((a,b) \relQ (c,d) \; \iff \; ad=bc\).  Show that \(\relQ\) is an 
+          equivalence relation.
+        </p></li>
+<li id="li-405"><p id="p-1212">
+          The relation \(\relQ\) defined in the previous problem partitions
+          the set of all pairs of integers into an interesting set of equivalence
+          classes.  Explain why
+          \begin{equation*}
+            \Rationals  =  (\Integers \times \Integers^{\ast}) / \relQ.
+          \end{equation*}
+          Ultimately, this is the “right” definition of the set 
+          of rational numbers!
+        </p></li>
+<li id="li-406"><p id="p-1213">
+          Reflect back on the proof in problem 5.  Note that we were fairly
+          careful in assuring that the second coordinate in the ordered pairs is
+          non-zero. (This was the whole reason for introducing the 
+          \(\Integers^{\ast}\) notation.)  At what point in the argument did you
+          use this hypothesis?
+        </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

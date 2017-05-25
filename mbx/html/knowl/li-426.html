@@ -1,0 +1,34 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:44-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<article class="list"><h5 class="heading">
+<span class="type">Item</span> <span class="codenumber">d</span>
+</h5>
+<p id="p-1271">
+        Georg Cantor developed a systematic way of listing the rational numbers.
+        By “listing” a set one is actually developing a bijection from \(\Naturals\) to
+        that set.  The method known as “Cantor's Snake” creates a bijection from
+        the naturals to the non-negative rationals.  
+        First we create an infinite table whose rows
+        are indexed by positive integers and whose columns are indexed by non-negative
+        integers — the entries in this table are rational numbers of the form
+        “column index” / “row index.”  We then follow a snake-like path that
+        zig-zags across this table — whenever we encounter a rational number that 
+        we haven't seen before (in lower terms) we write it down.  This is indicated 
+        in the diagram below by circling the entries.
+        <img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt="">
+        \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+          \reset@font\fontsize{#1}{#2pt}
+          \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+          \selectfont}\fi
+        <img width="100%" src="images/aa39e298f21779c6da86ce0b5fbac7aa8b57aea7.png" alt="">
+        Effectively this gives us a function \(f\) which produces the rational number 
+        that would be found in a given position in this list.  For example 
+        \(f(1) = 0/1, f(2) = 1/1\) and \(f(5) = 1/3\).  
+
+        What is \(f(26)\)?  What is \(f(30)\)?  What is \(f^{-1}(3/4)\)? What is \(f^{-1}(6/7)\)?
+      </p></article><span class="incontext"><a href="sec_functions.html#li-426">in-context</a></span>

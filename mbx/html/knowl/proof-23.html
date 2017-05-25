@@ -1,0 +1,49 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:43-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5>
+<p>
+      Suppose \(x\) is an element of \(A \cup B\). By the definition of union we
+      know that
+      \begin{equation*}
+        x \in A \lor x \in B.
+      \end{equation*}
+    </p>
+<p>
+      The conjunctive identity law and the
+      fact that \(x \in A \lor x \notin A\) is a tautology gives us an equivalent
+      logical statement:
+      \begin{equation*}
+        (x \in A \lor x \notin A) \land (x \in A \lor x \in B).
+      \end{equation*}
+    </p>
+<p>
+      Finally, this last statement is equivalent to
+      \begin{equation*}
+        x \in A \lor (x \notin A \land x \in B)
+      \end{equation*}
+      which is the definition of \(x \in A \cup (\overline{A} \cap B)\).
+    </p>
+<p>
+      On the other hand, if we assume that \(x \in A \cup (\overline{A} \cap B)\), it follows that
+      \begin{equation*}
+        x \in A \lor (x \notin A \land x \in B).
+      \end{equation*}
+    </p>
+<p>
+      Applying the distributive law, disjunctive complementarity and the identity law,
+      in sequence we obtain
+      \begin{gather*}
+x \in A \lor (x \notin A \land x \in B)\\
+\cong (x \in A \lor x \notin A) \land (x \in A \lor x \in B)\\
+\cong t \land (x \in A \lor x \in B)\\
+\cong x \in A \lor x \in B
+\end{gather*}
+    </p>
+<p>
+      The last statement in this chain of logical equivalences provides the definition of \(x \in A \cup B\).
+    </p></article><span class="incontext"><a href="section-23.html#proof-23">in-context</a></span>

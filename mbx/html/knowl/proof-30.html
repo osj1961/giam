@@ -1,0 +1,56 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:44-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5>
+<p>
+      (Using mathematical induction on \(n\).)
+    </p>
+<p>
+      <!--Style me with CSS--><em>Basis: </em> When \(n = 2\) the product has only one term, \(1-1/2^2 = 3/4\).
+      On the other hand, the formula is
+      \(\displaystyle \frac{2+1}{2\cdot2} = 3/4\). Since these are equal, the
+      basis is proved.
+    </p>
+<p>
+      <!--Style me with CSS--><em>Inductive step: </em>
+    </p>
+<p>
+      Let \(k\) be a particular but arbitrarily chosen integer such that
+      \begin{equation*}
+        \prod_{j=2}^k \left( 1 - \frac{1}{j^2} \right) \;  = \; \frac{k+1}{2k}.
+      \end{equation*}
+    </p>
+<p>
+      Multiplying<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-34" id="fn-34"><span class="footnote"><sup> 2 </sup></span></a></span><span id="hk-fn-34" style="display: none;" class="tex2jax_ignore"><span class="footnote">Really, the only reason I'm doing this silly proof is to 
+      point out to you that when you're doing the inductive step in a proof of a 
+      formula for a <!--Style me with CSS--><em>product</em>, you don't add to both sides anymore, you <!--Style me with CSS--><em>multiply.</em> You see that, right?  Well, consider yourself to have been pointed out to or … oh, whatever.</span></span> both sides by the \(k+1\)-th term of the product
+      gives
+      \begin{equation*}
+        \left( 1 - \frac{1}{(k+1)^2} \right) \; \cdot \; \prod_{j=2}^k \left( 1 - \frac{1}{j^2} \right)   =  \frac{k+1}{2k} \; \cdot \; \left( 1 - \frac{1}{(k+1)^2} \right).
+      \end{equation*}
+    </p>
+<p>
+      Thus
+      \begin{equation*}
+        \prod_{j=2}^{k+1} \left( 1 - \frac{1}{j^2} \right)   =  \frac{k+1}{2k} \; \cdot \; \left( 1 - \frac{1}{(k+1)^2} \right)
+      \end{equation*}
+      \begin{equation*}
+        = \frac{k+1}{2k} - \frac{(k+1)}{2k(k+1)^2}
+      \end{equation*}
+      \begin{equation*}
+        = \frac{k+1}{2k} - \frac{(1)}{2k(k+1)}
+      \end{equation*}
+      \begin{equation*}
+        = \frac{(k+1)^2 - 1}{2k(k+1)}
+      \end{equation*}
+    </p>\begin{equation*}
+      = \frac{k^2+2k}{2k(k+1)}
+    \end{equation*}\begin{equation*}
+      = \frac{k (k+2)}{2k(k+1)}
+    \end{equation*}\begin{equation*}
+      = \frac{k+2}{2(k+1)}.
+    \end{equation*}</article><span class="incontext"><a href="section-27.html#proof-30">in-context</a></span>

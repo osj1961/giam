@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-05-23T13:30:25-04:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Some algorithms of elementary number theory</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$4.0$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics, version 4.0</span></a></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="sec_num_thry.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_intro.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_rat.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_num_thry.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_intro.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_rat.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link active"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html" class="active">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_ord_rel.html">Ordering relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-37.html">Parity and Counting arguments</a></li>
+<li><a href="section-38.html">The pigeonhole principle</a></li>
+<li><a href="section-39.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-41.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-43.html">Dominance</a></li>
+<li><a href="section-44.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-45.html">Morley's miracle</a></li>
+<li><a href="section-46.html">Five steps into the void</a></li>
+<li><a href="section-47.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_alg"><header title="Section 1.5 Some algorithms of elementary number theory"><h1 class="heading hide-type" alt="Section 1.5 Some algorithms of elementary number theory">
+<span class="type">Section</span><span class="codenumber">1.5</span><span class="title">Some algorithms of elementary number theory</span><a href="sec_alg.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-189">
+    An <!--Style me with CSS--><em>algorithm</em> is simply a set of clear
+    instructions for achieving
+    some task. The Persian mathematician and astronomer
+    Al-Khwarizmi<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-6" id="fn-6"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-6" style="display: none;" class="tex2jax_ignore"><span class="footnote">Abu Ja'far Muhammad ibn Musa al-Khwarizmi</span></span> was a
+    scholar at the House of Wisdom in Baghdad who lived in the 8th and 9th
+    centuries A.D. He is remembered for his algebra treatise <!--Style me with CSS--><em>Hisab
+    al-jabr w'al-muqabala</em> from which we derive the very <!--Style me with CSS--><em>word</em>
+    “algebra,” and a text on the Hindu-Arabic numeration scheme.
+  </p>
+<blockquote>
+  Al-Khwarizmi also wrote a treatise on Hindu-Arabic numerals. The
+  Arabic text is lost but a Latin translation, <!--Style me with CSS--><em>Algoritmi de numero
+  Indorum</em> (in English <!--Style me with CSS--><em>Al-Khwarizmi on the Hindu Art of Reckoning</em>) gave
+  rise to the word algorithm deriving from his name in the
+  title.  <a knowl="./knowl/HisMathArch.html" knowl-id="xref-HisMathArch" alt="Bibliographic Entry 12 " title="Bibliographic Entry 12 ">[12]</a>
+</blockquote>
+<p id="p-190">
+    While the study of algorithms is more properly a subject within
+    Computer Science, a student of Mathematics can derive considerable
+    benefit from it.
+  </p>
+<p id="p-191">
+  There is a big difference between an algorithm description intended
+  for human consumption and one meant for a computer<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-7" id="fn-7"><span class="footnote"><sup> 2 </sup></span></a></span><span id="hk-fn-7" style="display: none;" class="tex2jax_ignore"><span class="footnote">The 
+  whole history of Computer Science could be
+    described as the slow advance whereby computers have become  able to
+    utilize more and more abstracted descriptions of algorithms. 
+    Perhaps in the not-too-distant future machines will be capable of
+    understanding instruction sets that currently require human interpreters.</span></span>.
+  The two favored human-readable forms for describing
+  algorithms are  pseudocode and 
+  flowcharts. The former is text-based
+  and the latter is visual. There are many different modules from which
+  one can build algorithmic structures: for-next loops, do-while loops, if-then
+  statements, goto statements, switch-case structures, etc. We'll use
+  a minimal subset of the choices available.
+
+  </p>
+<ul id="ul-2" style="list-style-type: disc;">
+<li id="li-77"><p id="p-192">
+        Assignment statements
+      </p></li>
+<li id="li-78"><p id="p-193">
+        If-then control statements
+      </p></li>
+<li id="li-79"><p id="p-194">
+        Goto statements
+      </p></li>
+<li id="li-80"><p id="p-195">
+        Return
+      </p></li>
+</ul>
+<p>
+  </p>
+<p id="p-196">
+    We take the view that an algorithm is something like a function, it
+    takes for its input a list of parameters that describe a particular
+    case of some general problem, and produces as its output a solution to
+    that problem. (It should be noted that there are other possibilities — some programs require that the variable in which the output is to
+    be placed be handed them as an input parameter, others have no
+    specific output, their purpose is achieved as a side-effect.) The
+    intermediary between input and output is the algorithm instructions
+    themselves and a set of so-called local variables which are used much
+    the way scrap paper is used in a hand calculation — intermediate
+    calculations are written on them, but they are tossed aside once the
+    final answer has been calculated.
+  </p>
+<p id="p-197">
+    Assignment statements allow us to do all kinds of arithmetic
+    operations (or rather to think of these types of operations as being
+    atomic.) In actuality even a simple procedure like adding two numbers
+    requires an algorithm of sorts, we'll avoid such a fine level of
+    detail. Assignments consist of evaluating some (possibly quite
+    complicated) formula in the inputs and local variables and assigning
+    that value to some local variable. The two uses of the phrase “local
+    variable” in the previous sentence do not need to be distinct, thus
+    \(x = x + 1\) is a perfectly legal assignment.
+  </p>
+<p id="p-198">
+    If-then control statements are decision makers. They first calculate
+    a Boolean expression (this is just a fancy way of saying something
+    that is either <tt class="code-inline tex2jax_ignore">true</tt> or <tt class="code-inline tex2jax_ignore">false</tt>), and send program flow to
+    different locations depending on that result. A small example will
+    serve as an illustration. Suppose that in the body of an algorithm we
+    wish to check if 2 variables, \(x\) and \(y\) are equal, and if they are,
+    increment \(x\) by 1. This is illustrated in <a knowl="./knowl/fig_if-then.html" knowl-id="xref-fig_if-then" alt="Table 1.5.1 " title="Table 1.5.1 ">Figure 1.5.1</a>
+    both in pseudocode and as a flowchart.
+  </p>
+<figure class="figure-like" id="fig_if-then"><table><tr>
+<td class="l m b0 r0 l0 t0 lines">
+          <object type="image/svg+xml" style="width:100%; margin:auto; display:block;" data="images/if_then_flow.svg" alt=""><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object>
+        </td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">
+	<table>
+<tr><td class="l m b0 r0 l0 t0 lines"> If \(x=y\) then</td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">\(x=x+1\)</td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">End If</td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">\(\vdots\)</td></tr>
+</table>
+	</td>
+</tr></table>
+<figcaption><span class="heading">Table</span><span class="codenumber">1.5.1</span>A small example in pseudocode and as a flowchart</figcaption></figure><p id="p-199">
+    Notice the use of indentation in the pseudocode example to indicate
+    the statements that are executed if the Boolean expression is true.
+    These examples also highlight the difference between the two senses
+    that the word “equals” (and the symbol \(=\)) has. In the Boolean
+    expression the sense is that of <!--Style me with CSS--><em>testing</em> equality, in the
+    assignment statements (as the name implies) an <!--Style me with CSS--><em>assignment</em> is
+    being made. In many programming languages this distinction is made
+    explicit, for instance in the C language equality testing is done via
+    the symbol “==” whereas assignment is done using a single equals
+    sign (\(=\)). In Mathematics the equals sign usually indicates equality
+    testing, when the assignment sense is desired the word “let” will
+    generally precede the equality.
+  </p>
+<p id="p-200">
+    While this brief introduction to the means of notating algorithms is by no
+    means complete, it is hopefully sufficient for our purpose which is
+    solely to introduce two algorithms that are important in elementary
+    number theory. The  division algorithm,
+    as presented here, is simply
+    an explicit version of the process one follows to calculate a quotient
+    and remainder using long division. The procedure we give is unusually
+    inefficient — with very little thought one could devise an algorithm
+    that would produce the desired answer using many fewer operations — however the main point here is purely to show that division can be
+    accomplished by essentially mechanical means. The Euclidean algorithm
+    is far more interesting both from a theoretical and a practical
+    perspective. The Euclidean algorithm computes the greatest common
+    divisor (gcd) of two integers. The gcd of of two numbers \(a\) and \(b\)
+    is denoted \(\gcd{a}{b}\) and is the largest integer that divides both
+    \(a\) and \(b\) evenly.
+  </p>
+<p id="p-201">
+    A pseudocode outline of the division algorithm is as follows:
+  </p>
+<figure class="figure-like" id="listing-1"><pre class="code-block tex2jax_ignore"> Algorithm: Division
+
+Inputs: integers n and d.
+
+Local variables: q and r.
+
+Let q = 0. 
+
+Let r = n. 
+
+Label 1.
+
+If r \lt  d then
+
+ Return q and r.
+
+End If
+
+Let q = q + 1.
+
+Let r = r - d.
+
+Goto 1.
+</pre></figure><p id="p-202">
+    This same algorithm is given in flowchart form in
+    <a knowl="./knowl/fig_div_alg.html" knowl-id="xref-fig_div_alg" alt="Figure 1.5.2 " title="Figure 1.5.2 ">Figure 1.5.2</a>.
+  </p>
+<figure class="figure-like" id="fig_div_alg"><object type="image/svg+xml" style="width:100%; margin:auto; display:block;" data="images/div_alg.svg" alt=""><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object><figcaption><span class="heading">Figure</span><span class="codenumber">1.5.2</span>The division algorithm in flowchart form.</figcaption></figure><p id="p-203">
+    Note that in a flowchart the action of a “Goto” statement is clear
+    because an arrow points to the location where program flow is being
+    redirected. In pseudocode a “Label” statement is required which
+    indicates a spot where flow can be redirected via subsequent “Goto”
+    statements. Because of the potential for confusion in complicated
+    algorithms that involve multitudes of Goto statements and their
+    corresponding Labels, this sort of redirection is now deprecated in
+    virtually all popular programming environments.
+  </p>
+<p id="p-204">
+    Before we move on to describe the Euclidean algorithm it might be
+    useful to describe more explicitly what exactly it's <!--Style me with CSS--><em>for</em>.
+    Given a pair of integers, \(a\) and \(b\), there are two quantities that
+    it is important to be able to compute, the 
+    <!--Style me with CSS--><em>least common multiple</em>
+    or lcm, and the 
+    <!--Style me with CSS--><em>greatest common divisor</em> or gcd. The lcm also
+    goes by the name <!--Style me with CSS--><em>lowest common denominator</em> because it is the
+    smallest denominator that could be used as a common denominator in the
+    process of adding two fractions that had \(a\) and \(b\) in their
+    denominators. The gcd and the lcm are related by the formula
+    \begin{equation*}
+      \lcm{a}{b} = \frac{ab}{\gcd{a}{b}},
+    \end{equation*}
+    so they are essentially equivalent as far as representing a
+    computational challenge.
+  </p>
+<p id="p-205">
+    The  Euclidean algorithm depends
+    on a rather extraordinary property of
+    the gcd. Suppose that we are trying to compute \(\gcd{a}{b}\) and that
+    \(a\) is the larger of the two numbers. We first feed \(a\) and \(b\) into
+    the division algorithm to find \(q\) and \(r\) such that \(a = qb +r\). It
+    turns out that \(b\) and \(r\) have the <!--Style me with CSS--><em>same</em> gcd as did \(a\) and
+    \(b\). In other words, \(\gcd{a}{b} = \gcd{b}{r}\), furthermore these
+    numbers are smaller than the ones we started with! This is nice
+    because it means we're now dealing with an easier version of the same
+    problem. In designing an algorithm it is important to formulate a
+    clear <!--Style me with CSS--><em>ending criterion</em>, a condition that tells you you're done.
+    In the case of the Euclidean algorithm, we know we're done when the
+    remainder \(r\) comes out \(0\).
+  </p>
+<p id="p-206">
+    So, here, without further ado is the Euclidean algorithm in
+    pseudocode. A flowchart version is given in <a knowl="./knowl/fig_Euc_alg.html" knowl-id="xref-fig_Euc_alg" alt="Figure 1.5.3 " title="Figure 1.5.3 ">Figure 1.5.3</a>.
+  </p>
+
+  \begin{minipage}[b]{.7\textwidth}
+   Algorithm: Euclidean
+
+  Inputs: integers \(a\) and \(b\).
+
+  Local variables: \(q\) and \(r\).
+
+
+
+  Label 1.
+
+  Let \((q,r)  = \mbox{Division} (a,b)\). 
+
+  If \(r = 0\) then
+
+   Return \(b\).
+
+  End If
+
+  Let \(a = b\).
+
+  Let \(b = r\).
+
+  Goto 1.
+
+  <figure class="figure-like" id="fig_Euc_alg"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/99beb61d144ea16f88a70f462898d5be5db40862.png" alt=""><figcaption><span class="heading">Figure</span><span class="codenumber">1.5.3</span>The Euclidean algorithm in flowchart form.</figcaption></figure><p id="p-207">
+    It should be noted that for small numbers one can find the gcd and lcm
+    quite easily by considering their factorizations into primes. For the
+    moment consider numbers that factor into primes but not into prime
+    powers (that is, their factorizations don't involve exponents). The
+    gcd is the product of the primes that are in common between these
+    factorizations (if there are no primes in common it is 1). The lcm is
+    the product of all the distinct primes
+    that appear in the factorizations. As an example, consider 30 and 42.
+    The factorizations are \(30 = 2\cdot 3\cdot 5\) and \(42 = 2\cdot 3 \cdot
+    7\). The primes that are common to both factorizations are \(2\) and
+    \(3\), thus \(\gcd{30}{42} = 2\cdot 3 = 6\). The set of all the primes
+    that appear in either factorization is \(\{2, 3, 5, 7 \}\) so
+    \(\lcm{30}{42} = 2\cdot 3\cdot 5\cdot 7 = 210\).
+  </p>
+<p id="p-208">
+    The technique just described is of little value for numbers having more
+    than about 50 decimal digits because it rests <!--Style me with CSS--><em>a priori</em> on the
+    ability to find the prime factorizations of the numbers involved.
+    Factoring numbers is easy enough if they're reasonably small,
+    especially if some of their prime factors are small, but in general
+    the problem is considered so difficult that many cryptographic schemes
+    are based on it.
+  </p>
+<section class="exercises" id="exercises-5"><header title="Exercises 1.5.1 Exercises"><h1 class="heading hide-type" alt="Exercises 1.5.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">1.5.1</span><span class="title">Exercises</span>
+</h1></header><ol id="ol-12" style="list-style-type: lower-alpha;">
+<li id="li-81"><p id="p-209">
+          Trace through the division algorithm with inputs \(n=27\) and
+            \(d=5\), each time an assignment statement is encountered write it
+            out.  How many assignments are involved in this particular
+            computation?
+          \hint{
+
+          r=27 
+          q=0  
+          r=27-5=22  
+          q=0+1=1  
+          r=22-5=17  
+          q=1+1=2  
+          r=17-5=12  
+          q=2+1=3  
+          r=12-5=7  
+          q=3+1=4  
+          r=7-5=2  
+          q=4+1=5  
+          return r is 2 and q is 5.
+          }
+        </p></li>
+<li id="li-82"><p id="p-210">
+          Find the gcd's and lcm's of the following pairs of numbers.
+
+
+          \
+          <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(a\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(b\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\gcd{a}{b}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\lcm{a}{b}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">110</td>
+<td class="l m b0 r0 l0 t0 lines">273</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">105</td>
+<td class="l m b0 r0 l0 t0 lines">42</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">168</td>
+<td class="l m b0 r0 l0 t0 lines">189</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table>
+          \hint{For such small numbers you can just find their prime factorizations and use that, although it might be useful to practice your understanding of the Euclidean algorithm by tracing through it to find the gcd's and then using the formula
+          \begin{equation*}
+            \lcm (a,b) = \frac{ab}{\gcd (a,b).}
+          \end{equation*}
+          }
+        </p></li>
+<li id="li-83"><p id="p-211">
+          Formulate a description of the gcd of two numbers in terms of
+            their prime factorizations in the general case (when the
+            factorizations may include powers of the primes involved).
+
+
+
+          \hint{Suppose that one number's prime factorization contains \(p^e\) and the other
+          contains \(p^f\), where \(e \lt  f\). What power of \(p\) will divide both, \(p^e\) or \(p^f\) ?}
+        </p></li>
+<li id="li-84"><p id="p-212">
+          Trace through the Euclidean algorithm with inputs \(a=3731\) and
+            \(b=2730\), each time the assignment statement that calls the division
+            algorithm is encountered write out the expression \(a=qb+r\).   (With the
+            actual values involved !) 
+
+
+
+          \hint{The quotients you obtain should alternate between 1 and 2.}
+        </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

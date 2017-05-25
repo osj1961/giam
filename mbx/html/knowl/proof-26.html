@@ -1,0 +1,37 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:43-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5>
+<p>
+      Let \(n = |A|\) and proceed by induction on \(n\).
+    </p>
+<p>
+      <!--Style me with CSS--><em>Basis:</em> Suppose \(A\) is a finite set and \(|A| = 0\), it follows
+      that \(A = \emptyset\). The power set of \(\emptyset\) is \(\{ \emptyset \}\)
+      which is a set having 1 element. Note that \(2^0 = 1\).
+    </p>
+<p>
+      <!--Style me with CSS--><em>Inductive step:</em> Suppose that \(A\) is a finite set with \(|A| = k+1\). Choose some particular element of \(A\), say \(a\), and note that
+      we can divide the subsets of \(A\) (i.e. elements of \({\mathcal P}(A)\)) into
+      two categories, those that contain \(a\) and those that don't.
+    </p>
+<p>
+      Let \(S_1 = \{ X \in {\mathcal P}(A) \suchthat a \in X \}\) and let
+      \(S_2 = \{ X \in {\mathcal P}(A) \suchthat a \notin X \}\). We have
+      created two sets that contain all the elements of \({\mathcal P}(A)\),
+      and which are disjoint from one another. In symbolic form,
+      \(S_1 \cup S_2 = {\mathcal P}(A)\) and \(S_1 \cap S_2 = \emptyset\).
+      It follows that \(|{\mathcal P}(A)| = |S_1| + |S_2|\).
+    </p>
+<p>
+      Notice that \(S_2\) is actually the power set of the \(k\)-element set
+      \(A \setminus \{ a \}\). By the inductive hypothesis, \(|S_2| = 2^k\).
+      Also, notice that each set in \(S_1\) corresponds uniquely to a set in
+      \(S_2\) if we just remove the element \(a\) from it. This shows that
+      \(|S_1| = |S_2|\). Putting this all together we get that
+      \(|{\mathcal P}(A)| = 2^k + 2^k = 2(2^k) = 2^{k+1}\).
+    </p></article><span class="incontext"><a href="sec_induct.html#proof-26">in-context</a></span>

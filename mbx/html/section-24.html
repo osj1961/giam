@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-05-23T13:30:28-04:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Venn diagrams</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$4.0$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics, version 4.0</span></a></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="section-23.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-4.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_russell.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-23.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-4.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_russell.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link active"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html" class="active">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_ord_rel.html">Ordering relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-37.html">Parity and Counting arguments</a></li>
+<li><a href="section-38.html">The pigeonhole principle</a></li>
+<li><a href="section-39.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-41.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-43.html">Dominance</a></li>
+<li><a href="section-44.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-45.html">Morley's miracle</a></li>
+<li><a href="section-46.html">Five steps into the void</a></li>
+<li><a href="section-47.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-24"><header title="Section 4.4 Venn diagrams"><h1 class="heading hide-type" alt="Section 4.4 Venn diagrams">
+<span class="type">Section</span><span class="codenumber">4.4</span><span class="title">Venn diagrams</span>
+</h1></header><p id="p-881">
+    Hopefully, you've seen
+    Venn diagrams before, but possibly
+    you haven't thought deeply about them. Venn diagrams take
+    advantage of an obvious but important property of closed
+    curves drawn in the plane. They divide the points in the
+    plane into two sets, those that are inside the curve and
+    those that are outside! (Forget for a moment about the points
+    that are on the curve.) This seemingly obvious statement
+    is known as the
+    <!--Style me with CSS--><em>Jordan curve theorem</em>, and actually
+    requires some details. A
+    <!--Style me with CSS--><em>Jordan curve</em> is the sort
+    of curve you might draw if you are required to end where
+    you began and you are required not to cross-over any portion
+    of the curve that has already been drawn. In technical
+    terms such a curve is called <!--Style me with CSS--><em>continuous</em>, <!--Style me with CSS--><em>simple</em>
+    and <!--Style me with CSS--><em>closed</em>.
+    The Jordan curve theorem is one of those statements that hardly
+    seems like it needs a proof, but nevertheless, the proof of this
+    statement is probably the best-remembered work of the famous
+    French mathematician Camille Jordan.
+  </p>
+<p id="p-882">
+    The prototypical Venn diagram is the picture that looks something
+    like the view through a set of binoculars.
+  </p>
+<img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><p id="p-883">
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+<img width="100%" src="images/051a346a81df9ec57da7117dd3aa2b6a101b0149.png" alt=""><p id="p-884">
+    In a Venn diagram the
+    universe of discourse is normally drawn as
+    a rectangular region inside of which all the action occurs. Each
+    set in a Venn diagram is depicted by drawing a simple closed curve — typically a circle, but not necessarily! For instance, if you
+    want to draw a Venn diagram that shows all the possible intersections
+    among four sets, you'll find it's impossible with (only) circles.
+  </p>
+<img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><p id="p-885">
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+<img width="100%" src="images/12474d578463bb437cadc68fceccc43c1cb57ee8.png" alt=""><article class="exercise-like" id="exercise-50"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">4.4.1</span>
+</h5>
+<p id="p-886">
+        Verify that the diagram above has regions representing all 16 possible
+        intersections of 4 sets.
+      </p></article><p id="p-887">
+    There is a certain “zen” to Venn diagrams that must be internalized,
+    but once you have done so they can be used to think very effectively
+    about the relationships between sets. The main deal is that the points
+    inside of one of the simple closed curves are not necessarily in the set — only <!--Style me with CSS--><em>some</em> of the points inside a simple closed curve are in the
+    set, and we don't know precisely where they are! The various simple closed
+    curves in a Venn diagram divide the universe up into a bunch of regions.
+    It might be best to think of these regions as fenced-in areas in which
+    the elements of a set mill about, much like domesticated animals
+    in their pens.
+    One of our main tools in working with Venn diagrams is to deduce that
+    certain of these regions don't contain any elements — we then mark that
+    region with the emptyset symbol (\(\emptyset\)).
+  </p>
+<p id="p-888">
+    Here is a small example of a finite universe.
+  </p>
+<img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><p id="p-889">
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+<img width="100%" src="images/e15fd9b48c7bc9e5306ae11a6739cfe3016759b6.png" alt=""><p id="p-890">
+    And here is the same universe with some Jordan curves
+    used to encircle two subsets.
+  </p>
+<img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><p id="p-891">
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+<img width="100%" src="images/7361edf1b329edf54777aeead51f3b1f036e2742.png" alt=""><p id="p-892">
+    This picture might lead us to think that the set of cartoon characters
+    and the set of horses are disjoint, so we thought it would be nice
+    to add one more element to our universe in order to dispel that notion.
+  </p>
+<img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><p id="p-893">
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+<img width="100%" src="images/c99e101ff086c0701e9195275e3aa6db9da59dec.png" alt=""><p id="p-894">
+    Suppose we have two sets \(A\) and \(B\) and we're interested
+    in proving that \(B \subseteq A\). The job is done if we can show that
+    all of \(B\)'s elements are actually in the eye-shaped region that represents
+    the intersection \(A \cap B\). It's equivalent if we can show that the
+    region marked with \(\emptyset\) in the following diagram is actually empty.
+  </p>
+<img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><p id="p-895">
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+<img width="100%" src="images/a2704906076bfe8653bef6bd8e4a10a473b4e404.png" alt=""><p id="p-896">
+    Let's put all this together. The inclusion \(B \subseteq A\) corresponds
+    to the logical sentence \(M_B \implies M_A\). We know that implications
+    are equivalent to OR statements, so \(M_B \implies M_A \, \cong \, 
+    {\lnot}M_B \lor M_A\). The notion that the region we've
+    indicated above is empty is written as \(\overline{A} \cap B \, = \, \emptyset\),
+    in logical terms this is \({\lnot}M_A \land M_B \, \cong \, c\).
+    Finally, we apply DeMorgan's law and a commutation to get
+    \({\lnot}M_B \lor M_A \, \cong \, t\). You should take note of the
+    convention that when you see a logical sentence just written on the
+    page (as is the case with \(M_B \implies M_A\) in the first sentence
+    of this paragraph) what's being asserted is that the sentence is
+    <!--Style me with CSS--><em>universally true</em>.
+    Thus, writing \(M_B \implies M_A\) is the same thing as writing
+    \(M_B \implies M_A \, \cong \, t\).
+  </p>
+<p id="p-897">
+    One can use information that is known <!--Style me with CSS--><em>a priori</em> when
+    drawing a Venn diagram. For instance if two sets are known
+    to be disjoint, or if one is known to be contained in the other,
+    we can draw Venn diagrams like the following.
+  </p>
+<img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><p id="p-898">
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+<img width="100%" src="images/b88340bcf7213d50ab914e33d13d9e614bc89731.png" alt=""><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><p id="p-899">
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+<img width="100%" src="images/d2e7e6401a131e543ec26cfed6ea856f40e85e09.png" alt=""><p id="p-900">
+    However, both of these situations can also be dealt with
+    by working with Venn diagrams in which the sets are in
+     <!--Style me with CSS--><em>general position</em> — which
+    in this situation means that every possible intersection is
+    shown — and then marking any empty regions with \(\emptyset\).
+  </p>
+<article class="exercise-like" id="exercise-51"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">4.4.2</span>
+</h5>
+<p id="p-901">
+      On a Venn diagram for two sets in general position, indicate
+      the empty regions when
+
+      </p>
+<ul id="ul-6" style="list-style-type: disc;">
+<li id="li-327"><p id="p-902">
+            The sets are disjoint.
+          </p></li>
+<li id="li-328"><p id="p-903">
+            \(A\) is contained in \(B\).
+          </p></li>
+</ul>
+<p>
+      </p>
+<img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><p id="p-904">
+        \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+        \reset@font\fontsize{#1}{#2pt}
+        \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+        \selectfont}\fi
+      </p>
+<img width="100%" src="images/b88340bcf7213d50ab914e33d13d9e614bc89731.png" alt=""></article><p id="p-905">
+    There is a connection, perhaps obvious, between the regions we
+    see in a Venn diagram with sets in general position and the recognizers
+    we studied in the section on digital logic circuits. In fact both
+    of these topics have to do with <!--Style me with CSS--><em>disjunctive normal form</em>. In a Venn diagram with \(k\) sets, we are seeing the universe
+    of discourse broken up into the union of \(2^k\) regions each of which
+    corresponds to an intersection of either one of the sets or its complement.
+    An arbitrary expression involving set-theoretic symbols and these \(k\) sets
+    is true in certain of these \(2^k\) regions and false in the others.
+    We have put the arbitrary expression in disjunctive normal form when
+    we express it as a union of the intersections that describe those regions.
+  </p>
+<img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><p id="p-906">
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+<img width="100%" src="images/51c624bf8c9f15708187010d8928b7e845cb481b.png" alt=""><section class="exercises" id="exercises-24"><header title="Exercises 4.4.1 Exercises"><h1 class="heading hide-type" alt="Exercises 4.4.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">4.4.1</span><span class="title">Exercises</span>
+</h1></header><ol id="ol-50" style="list-style-type: lower-alpha;">
+<li id="li-329"><p id="p-907">
+          Let \(A = \{1,2,4,5\}\), \(B=\{2,3,4,6\}\), and \(C=\{1,2,3,4\}\).  Place each of the elements \(1, \ldots , 6\) in the appropriate regions of a three-set Venn diagram.
+
+          \
+          <img width="75%" src="images/3set_Venn.png" alt="">
+          \hint{The center region contains \(2\) and \(4\).}
+        </p></li>
+<li id="li-330"><p id="p-908">
+          Prove or disprove:
+          \begin{equation*}
+            ( A \cap C \; \subseteq \; B \cap C )  \implies  A \; \subseteq B
+          \end{equation*}
+          \hint{What will be the implications of the region \(A \cap \overline{B} \cap \overline{C}\) being non-empty?}
+        </p></li>
+<li id="li-331"><p id="p-909">
+          Venn diagrams are usually made using simple closed curves 
+          with no further restrictions.  Try creating Venn diagrams for 3, 4 and
+          5 sets (in general position) using rectangular simple closed curves.
+
+          \hint{I found it easier to experiment by making my drawings on graph paper.  I never did  
+          manage to draw the \(5\) set Venn diagram with just rectangles… probably just a lack of persistence.}
+        </p></li>
+<li id="li-332"><p id="p-910">
+          We call a curve <!--Style me with CSS--><em>rectilinear</em> if it is made
+          of line segments that meet at right angles.  If you have ever
+          played with an Etch-a-Sketch you'll know what we mean by the term 
+          “rectilinear.”  The following example of a rectilinear curve may
+          also help to clarify this notion.
+
+          \
+          <img width="73%" src="images/rectilinear.png" alt="">
+          Use rectilinear
+          simple closed curves to create a Venn diagram for 5 sets.
+
+          \hint{Of course, rectangles are rectilinear, so one could use the solution from the previous
+          problem (if, unlike me, you were persistant enough to find it).  Otherwise, 
+          start with the \(4\) set diagram made with rectangles and use your \(5\)th (rectilinear) curve to split
+          each region into \(2\) — don't forget to split the region on the outside too.}
+        </p></li>
+<li id="li-333"><p id="p-911">
+          Argue as to why rectilinear curves will suffice to build
+          any Venn diagram.
+
+          \hint{Fortunately the instructions don't say to <!--Style me with CSS--><em>prove</em> that rectilinear curves will always
+          suffice, so we can be less rigorous.  Try to argue as to why it will alway be possible to add one more rectilinear curve to an existing Venn diagram and split every region into two.
+
+          One might also argue that any continuous curve can be approximated using rectilinear curves.  So if a Venn diagram can be constructed using continuous curves we can also get the job done with rectilinear curves.}
+        </p></li>
+<li id="li-334"><p id="p-912">
+          Find the disjunctive normal form of \(A \cap (B \cup C)\).
+
+          \hint{ \((A \cap B \cap \overline{C}) \cup (A \cap \overline{B} \cap C)\) }
+        </p></li>
+<li id="li-335"><p id="p-913">
+          Find the disjunctive normal form of \((A \triangle B) \triangle C\)
+
+          \hint{It is \((A \cap \overline{B} \cap \overline{C}) \cup (\overline{A} \cap B \cap \overline{C}) \cup (\overline{A} \cap \overline{B} \cap C)\).  Now find the disjunctive normal form of 
+          \(A \triangle (B \triangle C)\).}
+        </p></li>
+<li id="li-336"><p id="p-914">
+          The prototypes for the <!--Style me with CSS--><em>modus ponens</em> and <!--Style me with CSS--><em>modus tollens</em>
+          argument forms are the following:
+          <table><tr>
+<td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.3\textwidth}All men are mortal.  
+              Socrates is a man. 
+              Therefore Socrates is mortal.</td>
+<td class="l m b0 r0 l0 t0 lines">and</td>
+<td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.3\textwidth}All men are mortal.  
+              Zeus is not mortal. 
+              Therefore Zeus is not a man.</td>
+</tr></table>
+          Illustrate these arguments using Venn diagrams.
+
+          \hint{The statement “All men are mortal” would be interpreted on a Venn diagram by showing the
+          set of “All men” as being entirely contained within the set of “mortal beings.”   Socrates is an 
+          element of the inner set.  Zeus, on the other hand, lies outside of the outer set.}
+        </p></li>
+<li id="li-337"><p id="p-915">
+          Use Venn diagrams to convince yourself of the validity of
+          the following containment statement
+          \begin{equation*}
+            (A \cap B) \cup (C \cap D) \; \subseteq \; (A \cup C) \cap (B \cup D).
+          \end{equation*}
+          Now prove it!
+ 
+          \hint{Obviously we'll need one of the \(4\)-set Venn diagrams.}
+        </p></li>
+<li id="li-338"><p id="p-916">
+          Use Venn diagrams to show that the following set equivalence is false.
+          \begin{equation*}
+            (A \cup B) \cap (C \cup D) \; = \; (A \cup C) \cap (B \cup D)
+          \end{equation*}
+          \hint{After constructing Venn diagrams for both sets you should be able to see that there
+          are \(4\) regions where they differ.  One is \(A \cap B \cap \overline{C} \cap \overline{D}\).
+          What are the other three?}
+        </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

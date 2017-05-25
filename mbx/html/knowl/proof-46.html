@@ -1,0 +1,46 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:45-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5>
+<p>
+      (The second proof is algebraic in nature.)
+    </p>
+<p>
+      Consider the sum
+      \begin{equation*}
+        \binom{n-1}{k} + \binom{n-1}{k-1}.
+      \end{equation*}
+    </p>
+<p>
+      Applying the formula we deduced in <a href="sec_counting.html" alt="Section 7.1 Counting" title="Section 7.1 Counting">Section 7.1</a>
+      we get
+      \begin{gather*}
+\binom{n-1}{k} + \binom{n-1}{k-1}\\
+= \frac{(n-1)!}{k! (n-1-k)!}  + \frac{(n-1)!}{(k-1)! ((n-1)-(k-1))!}\\
+= \frac{(n-1)!}{k! (n-k-1)!}  + \frac{(n-1)!}{(k-1)! (n-k)!}
+\end{gather*}
+    </p>
+<p>
+      A common denominator for these fractions is \(k!(n-k)!\). (We will have
+      to multiply the top and bottom of the first fraction by \((n-k)\) and the
+      top and bottom of the second fraction by \(k\).)
+      \begin{gather*}
+= \frac{(n-k)(n-1)!}{k! (n-k) (n-k-1)!}  + \frac{k (n-1)!}{k (k-1)! (n-k)!}\\
+= \frac{(n-k)(n-1)!}{k! (n-k)!}  + \frac{k (n-1)!}{k! (n-k)!}\\
+= \frac{(n-k)(n-1)! + k (n-1)!}{k! (n-k)!}\\
+= \frac{(n-k+k)(n-1)!}{k! (n-k)!}\\
+= \frac{(n)(n-1)!}{k! (n-k)!}\\
+= \frac{n!}{k! (n-k)!}.
+\end{gather*}
+    </p>
+<p>
+      We recognize the final expression as the definition of \(\binom{n}{k}\),
+      so we have proved that
+      \begin{equation*}
+        \binom{n-1}{k} + \binom{n-1}{k-1} = \binom{n}{k}.
+      \end{equation*}
+    </p></article><span class="incontext"><a href="section-38.html#proof-46">in-context</a></span>

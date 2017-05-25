@@ -1,0 +1,51 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:44-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<p><h5 class="heading"><span class="type">Paragraph</span></h5>
+        Prove the following formula for a product.
+        \begin{equation*}
+          \prod_{i=2}^n \left(1 - \frac{1}{i}\right) =  \frac{1}{n}
+        \end{equation*}
+        \hint{
+        Notice that the problem statement didn't specify the domain — but the smallest value of \(n\) that gives
+        a non-empty product on the left-hand side is \(n=2\).
+
+        <span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-33" id="proof-33"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-33" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1029">
+            (By mathematical induction)
+          </p>
+<p id="p-1030">
+            <!--Style me with CSS--><em>Base case:</em> (\(n=2\))
+            For the base case, note that when \(n=2\) we have
+            \begin{equation*}
+              \prod_{i=2}^2 \left(1 - \frac{1}{i}\right)  =   \left(1 - \frac{1}{2}\right)  =  1/2
+            \end{equation*}
+            and, when \(n=2\), the right-hand side (\(1/n\)) also evaluates to \(1/2\).
+          </p>
+<p id="p-1031">
+            <!--Style me with CSS--><em>Inductive step:</em>
+          </p>
+<p id="p-1032">
+            Suppose that \(k&gt;2\) is an integer such that
+            \begin{equation*}
+              \prod_{i=2}^k \left(1 - \frac{1}{i}\right) =  \frac{1}{k}.
+            \end{equation*}
+          </p>
+<p id="p-1033">
+            Then,
+            \begin{gather*}
+\prod_{i=2}^{k+1} \left(1 - \frac{1}{i}\right)\\
+= \left(1 - \frac{1}{k+1}\right) \; \cdot \; \prod_{i=2}^{k} \left(1 - \frac{1}{i}\right)\\
+= \left(1 - \frac{1}{k+1}\right) \; \cdot \; \frac{1}{k}\\
+= \frac{1}{k+1}.
+\end{gather*}
+          </p></article></span>
+
+        The final line skips over a tiny bit of algebraic detail.  You may feel more comfortable if you fill in those steps.
+
+
+        }
+        </p><span class="incontext"><a href="section-27.html#p-1028">in-context</a></span>

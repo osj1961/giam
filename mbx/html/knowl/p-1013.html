@@ -1,0 +1,62 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:44-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<p><h5 class="heading"><span class="type">Paragraph</span></h5>
+        Write an inductive proof of the formula for the sum 
+        of the first \(n\) cubes.
+
+        \hint{
+
+        <article class="theorem-like" id="theorem-19"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">5.2.6</span>
+</h5>\begin{equation*}
+              \forall n \in \Naturals, \; \sum_{k=1}^n k^3 \;= \; \left( \frac{n(n+1)}{2} \right)^2
+            \end{equation*}</article>
+
+        <span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-31" id="proof-31"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-31" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1014">
+            (By mathematical induction)
+          </p>
+<p id="p-1015">
+            <!--Style me with CSS--><em>Base case:</em> (\(n=1\))
+            For the base case, note that when \(n=1\) we have
+            \begin{equation*}
+              \sum_{k=1}^n k^3 \; = \; 1
+            \end{equation*}
+            and
+            \begin{equation*}
+              \left( \frac{n(n+1)}{2} \right)^2  \; = \; 1.
+            \end{equation*}
+          </p>
+<p id="p-1016">
+            <!--Style me with CSS--><em>Inductive step:</em>
+          </p>
+<p id="p-1017">
+            Suppose that \(m&gt;1\) is an integer such that
+            \begin{equation*}
+              \sum_{k=1}^m k^3 \; = \; \left( \frac{m(m+1)}{2} \right)^2
+            \end{equation*}
+          </p>
+<p id="p-1018">
+            Add \((m+1)^3\) to both sides to obtain
+            \begin{equation*}
+              (m+1)^3 + \sum_{k=1}^m k^3 \;= \; \left( \frac{m(m+1)}{2} \right)^2 + (m+1)^3.
+            \end{equation*}
+          </p>
+<p id="p-1019">
+            Thus
+            \begin{gather*}
+\sum_{k=1}^{m+1} k^3 \;= \; \left( \frac{m^2(m+1)^2}{4} \right) + \frac{4(m+1)^3}{4}\\
+\;= \; \left( \frac{m^2(m+1)^2 + 4 (m+1)^3}{4} \right)\\
+\; = \; \left( \frac{(m+1)^2 (m^2 + 4(m+1))}{4} \right)\\
+\; = \; \left( \frac{(m+1)^2 (m^2 + 4m +4)}{4} \right)\\
+\; = \; \left( \frac{(m+1)^2 (m+2)^2}{4} \right)\\
+\; = \; \left( \frac{(m+1)(m+2)}{2} \right)^2
+\end{gather*}
+          </p></article></span>
+
+        }
+        </p><span class="incontext"><a href="section-27.html#p-1013">in-context</a></span>

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-05-23T13:30:25-04:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Rational and irrational numbers</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$4.0$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics, version 4.0</span></a></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="sec_alg.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_intro.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_rel_intro.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_alg.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_intro.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_rel_intro.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link active"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html" class="active">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_ord_rel.html">Ordering relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-37.html">Parity and Counting arguments</a></li>
+<li><a href="section-38.html">The pigeonhole principle</a></li>
+<li><a href="section-39.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-41.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-43.html">Dominance</a></li>
+<li><a href="section-44.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-45.html">Morley's miracle</a></li>
+<li><a href="section-46.html">Five steps into the void</a></li>
+<li><a href="section-47.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_rat"><header title="Section 1.6 Rational and irrational numbers"><h1 class="heading hide-type" alt="Section 1.6 Rational and irrational numbers">
+<span class="type">Section</span><span class="codenumber">1.6</span><span class="title">Rational and irrational numbers</span><a href="sec_rat.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-213">
+    When we first discussed the rational numbers in <a href="sec_basic.html" alt="Section 1.1 Basic sets" title="Section 1.1 Basic sets">Section 1.1</a>
+    we gave the following definition, which isn't quite right.
+    \begin{equation*}
+      \Rationals = \{ \frac{a}{b} \suchthat a \in \Integers \; \mbox{and}  \;
+      b \in \Integers \; \mbox{and}  \; b \neq 0 \}
+    \end{equation*}
+  </p>
+<p id="p-214">
+    We are now in a position to fix the problem.
+  </p>
+<p id="p-215">
+    So what was the problem after all? Essentially this: there are
+    many expressions formed with one integer written above another (with an
+    intervening fraction bar) that represent the exact same rational
+    number. For example \(\frac{3}{6}\) and \(\frac{14}{28}\) are distinct
+    things that appear in the set defined above, but we all know that they
+    both represent the rational number \(\frac{1}{2}\). To eliminate this
+    problem with our definition of the rationals we need to add an
+    additional condition that ensures that such duplicates don't arise.
+    It turns out that what we want is for the numerators and denominators
+    of our fractions to have <!--Style me with CSS--><em>no</em> factors in common. Another way to
+    say this is that the \(a\) and \(b\) from the definition above should be
+    chosen so that \(\gcd{a}{b} = 1\). A pair of numbers whose gcd is 1 are
+    called  <!--Style me with CSS--><em>relatively prime</em>.
+  </p>
+<p id="p-216">
+    We're ready, at last, to give a good, precise definition of the set
+    of rational numbers. (Although it should be noted that we're not
+    quite done fiddling around; an even better definition will be given in
+    <a href="sec_eq_rel.html" alt="Section 6.3 Equivalence relations" title="Section 6.3 Equivalence relations">Section 6.3</a>.)
+    \begin{equation*}
+      \Rationals = \{ \frac{a}{b} \suchthat a,b \in \Integers \; \mbox{and}  \;
+      b \neq 0 \; \mbox{and}  \; \gcd{a}{b}=1 \}.
+    \end{equation*}
+  </p>
+<p id="p-217">
+    As we have in the past, let's parse this with an English translation in parallel.
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\Rationals\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(=\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\{\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">The rational numbers</td>
+<td class="l m b0 r0 l0 t0 lines">are defined to be</td>
+<td class="l m b0 r0 l0 t0 lines">the set of all</td>
+</tr>
+</table>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\displaystyle \frac{a}{b}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\suchthat\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(a,b \in \Integers\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">fractions of the form \(a\) over \(b\)</td>
+<td class="l m b0 r0 l0 t0 lines">such that</td>
+<td class="l m b0 r0 l0 t0 lines">\(a\) and \(b\) are integers</td>
+</tr>
+</table>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">and</td>
+<td class="l m b0 r0 l0 t0 lines">\(b \neq 0\)</td>
+<td class="l m b0 r0 l0 t0 lines">and</td>
+<td class="l m b0 r0 l0 t0 lines">\(\gcd{a}{b}=1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">and</td>
+<td class="l m b0 r0 l0 t0 lines">\(b\) is non-zero</td>
+<td class="l m b0 r0 l0 t0 lines">and</td>
+<td class="l m b0 r0 l0 t0 lines">\(a\) and \(b\) are relatively prime.</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+</table>
+<p id="p-218">
+    Finally, we are ready to face a fundamental problem that was
+    glossed-over in <a href="sec_basic.html" alt="Section 1.1 Basic sets" title="Section 1.1 Basic sets">Section 1.1</a>. We defined two sets
+    back then, \(\Rationals\) and \(\Reals\), the hidden assumption that one
+    makes in asserting that there are two of something is that the two
+    things are distinct. Is this really the case? The reals have been
+    defined (unrigorously) as numbers that measure the magnitudes of
+    physical quantities, so another way to state the question is this:
+    Are there physical quantities (for example lengths) that are <!--Style me with CSS--><em>not</em>
+    rational numbers?
+  </p>
+<p id="p-219">
+    The answer is that <!--Style me with CSS--><em>yes</em> there are numbers that measure lengths
+    which are not rational numbers. With our new and improved definition
+    of what is meant by a rational number we are ready to <!--Style me with CSS--><em>prove</em> that
+    there is at least one length that can't be expressed as a fraction.
+    Using the Pythagorean theorem it's easy to see that the length of the
+    diagonal of a unit square is \(\sqrt{\,2}\). The proof that \(\sqrt{\,2}\) is
+    not rational is usually attributed to the followers of Pythagoras (but
+    probably not to Pythagoras himself). In any case it is a result of
+    great antiquity. The proof is of a type known as
+     <!--Style me with CSS--><em>reductio ad absurdum</em>
+    <span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-8" id="fn-8"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-8" style="display: none;" class="tex2jax_ignore"><span class="footnote">Reduction to an absurdity — better known these 
+    days as proof by contradiction. </span></span>. We show that a given assumption
+    leads logically to an absurdity, a statement that <!--Style me with CSS--><em>can't</em> be true,
+    then we know that the original assumption must itself be false. This
+    method of proof is a bit slippery; one has to first assume the
+    <!--Style me with CSS--><em>exact opposite</em> of what one hopes to prove and then argue (on
+    purpose) towards a ridiculous conclusion.
+  </p>
+<article class="theorem-like" id="theorem-4"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">1.6.1</span>
+</h5>
+<p id="p-220">
+        The number \(\sqrt{\,2}\) is not in the set \(\Rationals\) of
+        rational numbers.
+      </p></article><p id="p-221">
+    Before we can actually give the proof we should prove an intermediary
+    result — but we won't, we'll save this proof for the student to do
+    later (heh, heh, heh…).
+    These sorts of intermediate results, things that don't deserve to be
+    called theorems themselves, but that aren't entirely self-evident are
+    known as  lemmas. It is often the case that in an
+    attempt at proving a statement we find ourselves in need of some small
+    fact. Perhaps it even seems to be true but it's not clear. In such
+    circumstances, good form dictates that we first state and prove the
+    lemma then proceed on to our theorem and its proof. So, here, without
+    its proof is the lemma we'll need.
+  </p>
+<article class="theorem-like" id="lemma-1"><h5 class="heading">
+<span class="type">Lemma</span><span class="codenumber">1.6.2</span>
+</h5>
+<p id="p-222">
+        If the square of an integer is even, then the original
+        integer is even.
+      </p></article><p id="p-223">
+    Given that thoroughness demands that we fill in this gap by actually
+    proving the lemma at a later date, we can now proceed with the proof
+    of our theorem.
+  </p>
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-1" id="proof-1"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-1" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-224">
+      Suppose to the contrary that \(\sqrt{2}\) <!--Style me with CSS--><em>is</em> a rational number.
+      Then by the definition of the set of rational numbers, we know that
+      there are integers
+      \(a\) and \(b\) having the following properties:
+      \(\displaystyle \sqrt{2} = \frac{a}{b}\) and \(\gcd{a}{b} = 1\).
+    </p>
+<p id="p-225">
+      Consider the expression \(\displaystyle \sqrt{2} = \frac{a}{b}\).
+      By squaring both sides of this we obtain
+      \begin{equation*}
+        2 = \frac{a^2}{b^2}.
+      \end{equation*}
+    </p>
+<p id="p-226">
+      This last expression can be rearranged to give
+      \begin{equation*}
+        a^2 = 2 b^2
+      \end{equation*}
+    </p>
+<p id="p-227">
+      An immediate consequence of this last equation is that \(a^2\) is an
+      even number. Using the lemma above we now know that \(a\) is an even
+      integer and hence that there is an integer \(m\) such that \(a=2m\).
+      Substituting this last expression into the previous equation gives
+      \begin{equation*}
+        (2m)^2 = 2 b^2,
+      \end{equation*}
+      thus,
+      \begin{equation*}
+        4m^2 = 2 b^2,
+      \end{equation*}
+      so
+      \begin{equation*}
+        2m^2 = b^2.
+      \end{equation*}
+    </p>
+<p id="p-228">
+      This tells us that \(b^2\) is even, and hence (by the lemma), \(b\) is even.
+    </p>
+<p id="p-229">
+      Finally, we have arrived at the desired absurdity because if \(a\) and
+      \(b\) are both even then \(\gcd{a}{b} \geq 2\), but, on the other hand,
+      one of our initial assumptions is that \(\gcd{a}{b} = 1\).
+    </p></article></div>
+<section class="exercises" id="exercises-6"><header title="Exercises 1.6.1 Exercises"><h1 class="heading hide-type" alt="Exercises 1.6.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">1.6.1</span><span class="title">Exercises</span>
+</h1></header><ol id="ol-13" style="list-style-type: lower-alpha;">
+<li id="li-85"><p id="p-230">
+           Rational Approximation is 
+          a field of mathematics that has received much study.  The main idea 
+          is to find rational numbers that are very good approximations to
+          given irrationals.  For example, \(22/7\) is a well-known rational 
+          approximation to \(\pi\).  Find good rational approximations to 
+          \(\sqrt{2}, \sqrt{3}, \sqrt{5}\) and \(e\).
+
+
+
+
+
+          \hint{One approach is to truncate a decimal approximation and then rationalize. E.g. \(\sqrt{2}\) is approximately 1.4142, so 14142/10000 isn't a bad approximator (although naturally 7071/5000 is better since it involves smaller numbers).}
+        </p></li>
+<li id="li-86"><p id="p-231">
+          The theory of base-\(n\) notation that we looked at in 
+          the sub-section on base-\(n\)  can be extended to deal with real and 
+          rational numbers by introducing a decimal point (which should 
+          probably be re-named in accordance with the base) and adding 
+          digits to the right of it.  For instance \(1.1011\) is binary notation
+          for \(1 \cdot 2^0 + 1 \cdot 2^{-1} + 0 \cdot 2^{-2} + 
+          1\cdot 2^{-3} + 1\cdot 2^{-4}\) or \(\displaystyle 1 + \frac{1}{2} + 
+          \frac{1}{8} + \frac{1}{16} = 1 \frac{11}{16}\).
+
+          Consider the binary number \(.1010010001000010000010000001\ldots\), 
+          is this number rational or irrational?  Why?
+
+
+
+          \hint{Does the rule about rational numbers having terminating or repeating decimal representations carry over to other bases?
+
+
+
+          }
+        </p></li>
+<li id="li-87"><p id="p-232">
+          If a number \(x\) is even, it's easy to show that its square \(x^2\)
+          is even.  The lemma that went unproved in this section asks us to
+          start with a square (\(x^2\)) that is even and deduce that the UN-squared
+          number (\(x\)) is even.  Perform some numerical experimentation to
+          check whether this assertion is reasonable.  Can you give an argument
+          that would prove it?
+
+
+
+          \hint{What if the lemma wasn't true? Can you work out what it would mean if we had a number x such that x2 was even but x itself was odd?}
+        </p></li>
+<li id="li-88"><p id="p-233">
+          The proof that \(\sqrt{2}\) is irrational can be generalized 
+          to show that \(\sqrt{p}\) is irrational for every prime number \(p\).
+          What statement would be equivalent to the lemma about the parity
+          of \(x\) and \(x^2\) in such a generalization?
+
+
+
+          \hint{Hint: Saying “x is even” is the same thing as saying “x is evenly divisible by 2.”  Replace the \(2\) by \(p\) and you're halfway there…}
+        </p></li>
+<li id="li-89"><p id="p-234">
+          Write a proof that \(\sqrt{3}\) is irrational.
+
+
+
+          \hint{You can mostly just copy the argument for \(\sqrt{2}\).}
+        </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

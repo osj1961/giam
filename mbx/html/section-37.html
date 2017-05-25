@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:40-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The pigeonhole principle</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="previous-button toolbar-item button" href="section-36.html">Previous</a><a class="up-button button toolbar-item" href="chapter-7.html">Up</a><a class="next-button button toolbar-item" href="section-38.html">Next</a>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-36.html">Previous</a><a class="up-button button toolbar-item" href="chapter-7.html">Up</a><a class="next-button button toolbar-item" href="section-38.html">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link active"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-36.html">Parity and Counting arguments</a></li>
+<li><a href="section-37.html" class="active">The pigeonhole principle</a></li>
+<li><a href="section-38.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-40.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-42.html">Dominance</a></li>
+<li><a href="section-43.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-44.html">Morley's miracle</a></li>
+<li><a href="section-45.html">Five steps into the void</a></li>
+<li><a href="section-46.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-37"><header title="Section 7.3 The pigeonhole principle"><h1 class="heading hide-type" alt="Section 7.3 The pigeonhole principle">
+<span class="type">Section</span><span class="codenumber">7.3</span><span class="title">The pigeonhole principle</span>
+</h1></header><p id="p-1457">
+    The word  “pigeonhole” can refer to a hole in which a pigeon roosts
+    (i.e. pretty much what it sounds like) or a series of roughly square
+    recesses in a desk in which one could sort correspondence (see <span>&lt;&lt;Unresolved xref, reference "fig_roll_top"; check spelling or use "provisional" attribute&gt;&gt;</span>).
+  </p>
+<figure class="figure-like" id="figure-21"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/d6889d9c7e2bd10475dcf3fd958713d4b135f9be.png" alt=""></figure><p id="p-1458">
+    Whether you prefer to think of roosting birds or letters being sorted,
+    the first and easiest version of the  pigeonhole principle is that if you
+    have more “things” than you have “containers” there must be a container
+    holding at least two things.
+  </p>
+<p id="p-1459">
+    If we have 6 pigeons who are trying to roost in a coop with 5 pigeonholes,
+    two birds will have to share.
+  </p>
+<p id="p-1460">
+    If we have 7 letters to sort and there are 6 pigeonholes in our desk, we
+    will have to put two letters in the same compartment.
+  </p>
+<p id="p-1461">
+    The “things” and the “containers” don't necessarily have to be
+    interpreted in the strict sense that the “things” go <!--Style me with CSS--><em>into</em>
+    the “containers.”
+    For instance, a nice application of the pigeonhole principle is that
+    if there are at least 13 people present in a room, some pair of people
+    will have been born in the same month. In this example the things are the
+    people and the containers are the months of the year.
+  </p>
+<p id="p-1462">
+    The abstract way to phrase the pigeonhole principle is:
+  </p>
+<article class="theorem-like" id="theorem-33"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">7.3.1</span>
+</h5>
+<p id="p-1463">
+        If \(f\) is a function such that \(|\Dom{f}| &gt; |\Rng{f}|\) then \(f\) is not
+        injective.
+      </p></article><p id="p-1464">
+    The proof of this statement is an easy example of proof by contradiction
+    so we'll include it here.
+  </p>
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-43" id="proof-43"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-43" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1465">
+      Suppose to the contrary that \(f\) is a function with
+      \(|\Dom{f}| &gt; |\Rng{f}|\) and that \(f\) is injective. Of course
+      \(f\) is onto its range, so since we are presuming that \(f\) is injective
+      it follows that \(f\) is a bijection between \(\Dom{f}\) and \(\Rng{f}\). Therefore (since \(f\) provides a one-to-one
+      correspondence) \(|\Dom{f}| = |\Rng{f}|\). This clearly contradicts the
+      statement that \(|\Dom{f}| &gt; |\Rng{f}|\).
+    </p></article></span><p id="p-1466">
+    For a statement with an almost trivial proof the pigeonhole principle
+    is very powerful. We can use it to prove a host of existential
+    results — some are fairly silly, others very deep. Here are a few
+    examples:
+  </p>
+<p id="p-1467">
+    There are two people (who are not bald) in New York City having exactly
+    the same number of hairs on their heads.
+  </p>
+<p id="p-1468">
+    There are two books in (insert your favorite library) that have the
+    same number of pages.
+  </p>
+<p id="p-1469">
+    Given \(n\) married couples (so \(2n\) people) if we choose \(n+1\) people
+    we will be forced to choose both members of some couple.
+  </p>
+<p id="p-1470">
+    Suppose we select \(n+1\) numbers from the set \(\{1, 2, 3, \ldots, 2n\}\),
+    we will be forced to have chosen two numbers such that one is divisible
+    by the other.
+  </p>
+
+  \rule{108pt}{1pt}
+
+  <p id="p-1471">
+    We can come up with stronger forms of the pigeonhole principle by
+    considering pigeonholes with capacities. Suppose we have 6 pigeonholes
+    in a desk, each of which can hold 10 letters. What number of letters will
+    guarantee that one of the pigeonholes is full? The largest number of letters
+    we could have without having 10 in some pigeonhole is \(9 \cdot 6 = 54\), so if
+    there are 55 letters we must have 10 letters in some pigeonhole.
+  </p>
+<p id="p-1472">
+    More generally, if we have \(n\) containers, each capable of holding \(m\)
+    objects, than if there are \(n \cdot (m-1) + 1\) objects placed in the
+    containers, we will be assured that one of the containers is at capacity.
+  </p>
+<p id="p-1473">
+    The ordinary pigeonhole principle is the special case \(m=2\) of this
+    stronger version.
+  </p>
+<p id="p-1474">
+    There is an even stronger version, which ordinarily is known as the
+     “strong form of the pigeonhole
+    principle.” In the strong form, we have pigeonholes with an assortment
+    of capacities.
+  </p>
+<article class="theorem-like" id="theorem-34"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">7.3.2</span>
+</h5>
+<p id="p-1475">
+        If there are \(n\) containers having capacities \(m_1, m_2, m_3, \ldots, m_n\),
+        and there are \(1 + \sum_{i=1}^n (m_i - 1)\) objects placed in them, then for
+        some \(i\), container \(i\) has (at least) \(m_i\) objects in it.
+      </p></article><span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-44" id="proof-44"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-44" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1476">
+      If no container holds its full capacity, then the largest the
+      total of the objects could be is \(\sum_{i=1}^n (m_i - 1)\).
+    </p></article></span><section class="exercises" id="exercises-37"><header title="Exercises 7.3.1 Exercises"><h1 class="heading hide-type" alt="Exercises 7.3.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">7.3.1</span><span class="title">Exercises</span>
+</h1></header><ol style="list-style-type: lower-alpha;">
+<li id="li-470"><p id="p-1477">
+          The statement that there are two non-bald New Yorkers with
+          the same number of hairs on their heads requires some careful 
+          estimates to justify it.  Please justify it.
+        </p></li>
+<li id="li-471"><p id="p-1478">
+          A mathematician, who always rises earlier than her spouse, has
+          developed a scheme — using the pigeonhole principle — to ensure that
+          she always has a matching pair of socks.  She keeps only blue socks, green 
+          socks and
+          black socks in her sock drawer — 10 of each.  So as not to wake her 
+          husband she must
+          select some number of socks from her drawer in the early morning dark
+          and take them with her to the adjacent bathroom where she dresses.
+          What number of socks does she choose?
+        </p></li>
+<li id="li-472"><p id="p-1479">
+          If we select \(1001\) numbers from the set \(\{1, 2, 3, \ldots, 2000\}\)
+          it is certain that there will be two numbers selected such that one divides
+          the other.  We can prove this fact by noting that every number in the given
+          set can be expressed in the form \(2^k \cdot m\) where \(m\) is an odd number
+          and using the pigeonhole principle.  Write-up this proof.
+        </p></li>
+<li id="li-473"><p id="p-1480">
+          Given any set of \(53\) integers, show that there are two of them
+          having the property 
+          that either their sum or their difference is evenly divisible by \(103\).
+        </p></li>
+<li id="li-474"><p id="p-1481">
+          Prove that if \(10\) points are placed inside a square of side length 3,
+          there will be 2 points within \(\sqrt{2}\) of one another.
+        </p></li>
+<li id="li-475"><p id="p-1482">
+          Prove that if \(10\) points are placed inside an equilateral triangle
+          of side length 3, there will be 2 points within \(1\) of one another.
+        </p></li>
+<li id="li-476"><p id="p-1483">
+          Prove that in a simple graph (an undirected graph with no 
+          loops or parallel edges) having \(n\) nodes, there must be two nodes 
+          having the same degree.
+        </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:41-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Cantor's theorem</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="previous-button toolbar-item button" href="section-40.html">Previous</a><a class="up-button button toolbar-item" href="ch_card.html">Up</a><a class="next-button button toolbar-item" href="section-42.html">Next</a>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-40.html">Previous</a><a class="up-button button toolbar-item" href="ch_card.html">Up</a><a class="next-button button toolbar-item" href="section-42.html">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-36.html">Parity and Counting arguments</a></li>
+<li><a href="section-37.html">The pigeonhole principle</a></li>
+<li><a href="section-38.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link active"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-40.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html" class="active">Cantor's theorem</a></li>
+<li><a href="section-42.html">Dominance</a></li>
+<li><a href="section-43.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-44.html">Morley's miracle</a></li>
+<li><a href="section-45.html">Five steps into the void</a></li>
+<li><a href="section-46.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_cantors_thm"><header title="Section 8.3 Cantor's theorem"><h1 class="heading hide-type" alt="Section 8.3 Cantor's theorem">
+<span class="type">Section</span><span class="codenumber">8.3</span><span class="title">Cantor's theorem</span><a href="sec_cantors_thm.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-1597">
+    Many people believe that the result known as Cantor's theorem says that
+    the real numbers, \(\Reals\), have a greater cardinality than the natural numbers, \(\Naturals\).
+    That isn't quite right. In fact Cantor's theorem is a much broader statement,
+    one of whose consequences is that \(|\Reals| &gt; |\Naturals|\). Before we go
+    on to discuss Cantor's theorem in full generality, we'll first explore it,
+    essentially, in this simplified form.
+    Once we know that \(|\Reals| \neq |\Naturals|\), we'll be in a position to
+    explore a lot of
+    interesting issues relative to the infinite. In particular, this result
+    means that there are at least two cardinal numbers that are
+    infinite — thus the “infinity is infinity” idea will be discredited.
+    Once we have the full power of Cantor's
+    theorem, we'll see just how completely wrong that concept is.
+  </p>
+<p id="p-1598">
+    To show that some pair of sets are not equivalent it is necessary to show
+    that there cannot be a one-to-one correspondence between them. Ordinarily,
+    one would try to argue by contradiction in such a situation. That is what
+    we'll need to do to show that the reals and the naturals are not equinumerous.
+    We'll presume that they are in fact the same size and try to reach a
+    contradiction.
+  </p>
+<p id="p-1599">
+    What exactly does the assumption that \(\Reals\) and \(\Naturals\) are
+    equivalent mean?
+    It means there is a one-to-one correspondence, that is, a bijective function
+    from \(\Reals\) to \(\Naturals\). In a nutshell, it means that it is
+    possible to list all the real
+    numbers in a singly-infinite list. Now, it is certainly possible to make an
+    infinite list of real numbers (since \(\Naturals \subseteq \Reals\),
+    by listing the naturals themselves
+    we are making an infinite list of reals!). The problem is that we would need
+    to be sure that every real number is on the list somewhere. In fact, since
+    we've used a geometric argument to show that the interval \((0, 1)\) and the
+    set \(\Reals\) are equinumerous, it will be sufficient to presume that there
+    is an infinite list containing all the numbers in the interval \((0, 1)\).
+  </p>
+<article class="exercise-like" id="exercise-73"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">8.3.1</span>
+</h5>
+<p id="p-1600">
+        Notice that, for example, \(\pi-3\) is a real number in
+        \((0, 1)\). Make
+        a list of \(10\) real numbers in the interval \((0, 1)\). Make sure that
+        at least 5 of them are not rational.
+      </p></article><div class="hidden-knowl-wrapper"></div>
+<p id="p-1601">
+    In the previous exercise, you've started the job, but we need to presume
+    that it is truly possible to complete this job. That is, we must presume
+    that there really is an infinite list containing every real number in
+    the interval \((0, 1)\).
+  </p>
+<p id="p-1602">
+    Once we have an infinite list containing every real number in the interval
+    \((0, 1)\) we have to face up to a second issue. What does it really mean
+    to list a particular real number? For instance if \(e-2\) is in the seventh
+    position on our list, is it OK to write “\(e-2\)” there or should we write
+    “0.7182818284590452354…”? Clearly it would be simpler to write
+    “\(e-2\)” but it isn't necessarily possible to do something of that kind
+    for every real
+    number — on the other hand, writing down the decimal expansion is a problem
+    too; in a certain sense, “most” real numbers in (0, 1) have infinitely long
+    decimal expansions. There is also another problem with decimal expansions;
+    they aren't unique. For example, there is really no difference between the
+    finite expansion \(0.5\) and the infinitely long expansion \(0.4\overline{9}\).
+  </p>
+<p id="p-1603">
+    Rather than writing something like “\(e-2\)” or “0.7182818284590452354…”,
+    we are going to in fact write “.1011011111100001010100010110001010001010 …”
+    In other words, we are going to write the base-2 expansions of the real numbers
+    in our list. Now, the issue of non-uniqueness is still there in binary, and
+    in fact if we were to stay in base-10 it would be possible to plug a certain
+    gap in our argument — but the binary version of this argument has some
+    especially nice features.
+    Every binary (or for that matter decimal) expansion corresponds to a unique
+    real number, but it doesn't work out so well the other way around —
+    there are sometimes two different binary expansions that correspond to the
+    same real number. There is a lovely fact that we are not going to prove (you
+    may get to see this result proved in a course in Real Analysis) that points up
+    the problem. Whenever two different binary expansions represent the same
+    real number, one of them is a terminating expansion (it ends in infinitely
+    many 0's) and the other is an infinite expansion (it ends in infinitely many
+    1's). We won't prove this fact, but the gist of the argument is a proof by
+    contradiction — you may be able to get the point by studying <span>&lt;&lt;Unresolved xref, reference "fig_binary_reps"; check spelling or use "provisional" attribute&gt;&gt;</span>.
+    (Try to see how it would be possible to find a number in between two binary
+    expansions that didn't end in all-zeros and all-ones.)
+  </p>
+<figure class="figure-like" id="figure-25"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/3ce32157fb70f1f0244003cfd10fcdbc30799c13.png" alt="">\(2\)\([0, 1]\)</figure><p id="p-1604">
+    So, instead of showing that the set of reals in \((0, 1)\) can't be put
+    in one-to-one
+    correspondence with \(\Naturals\), what we're really going to do is show
+    that their binary expansions can't be put in one-to-one correspondence
+    with \(\Naturals\). Since
+    there are an infinite number of reals that have two different binary expansions
+    this doesn't really do the job as advertised at the beginning of this section.
+    (Perhaps you are getting used to our wily ways by now — yes, this does
+    mean that we're going to ask you to do the real proof in the exercises.)
+    The set of binary numerals, \(\{0, 1\}\), is an instance of a mathematical
+    structure known as a field; basically, that means that it's possible to
+    add, subtract, multiply and divide (but not divide by 0) with them.
+    We are only mentioning this fact so that you'll understand why the set
+    \(\{0, 1\}\) is often referred to as \({\mathbb F}_2\). We're only mentioning that
+    fact so that you'll understand why we call the set of all possible
+    binary expansion \({\mathbb F}_2^\infty\) . Finally, we're only mentioning <!--Style me with CSS--><em>that</em>
+    fact so that we'll have a succinct way of expressing this set.
+    Now we can write “\({\mathbb F}_2^\infty\)” rather than
+    “the set of all possible infinitely-long binary sequences.”
+  </p>
+<p id="p-1605">
+    Suppose we had a listing of all the elements of \({\mathbb F}_2^\infty\). We would have an
+    infinite list of things, each of which is itself an infinite list
+    of 0's and 1's.
+  </p>
+<p id="p-1606">
+    So what? We need to proceed from here to find a contradiction.
+  </p>
+<p id="p-1607">
+    This argument that we've been edging towards is known as Cantor's
+    diagonalization argument. The reason for this name is that our
+    listing of binary representations looks like an enormous table
+    of binary digits and the contradiction is deduced by looking at
+    the diagonal of this infinite-by-infinite table.
+    The diagonal is itself an infinitely long binary string — in other words, the
+    diagonal can be thought of as a binary expansion itself.
+    If we take the complement
+    of the diagonal, (switch every 0 to a 1 and vice versa) we will also
+    have a thing that can be regarded as a binary expansion and this binary
+    expansion can't be one of the ones on the list! This bit-flipped version of
+    the diagonal is different from the first binary expansion in the first
+    position,
+    it is different from the second binary expansion in the second position, it is
+    different from the third binary expansion in the third position, and so on.
+    The very presumption that we could list all of the elements of \({\mathbb F}_2^\infty\)
+    allows us
+    to construct an element of \({\mathbb F}_2^\infty\) that could not be on the list!
+  </p>
+<p id="p-1608">
+    This argument has been generalized many times, so this is the first in a
+    class of things known as diagonal arguments. Diagonal arguments have been
+    used to settle several important mathematical questions. There is a valid
+    diagonal argument that even does what we'd originally set out to do: prove
+    that \(\Naturals\) and \(\Reals\) are not equinumerous. Strangely, the
+    argument can't be made to work in binary, and since you're going to be
+    asked to write it up in the exercises, we want to point out one of the
+    potential pitfalls.
+    If we were to use a diagonal argument to show that \((0, 1)\) isn't countable,
+    we would start by assuming that every element of \((0, 1)\) was written down in
+    a list. For most real numbers in \((0, 1)\) we could write out their
+    binary representation uniquely, but for some we would have to make a
+    choice: should we write down the representation that terminates, or
+    the one that ends in infinitely-many 1's? Suppose we choose to use
+    the terminating representations, then none of the infinite binary
+    strings that end with all 1's will be on the list. It's possible that
+    the thing we get when we complement the diagonal
+    is one of these (unlisted) binary strings so we don't <!--Style me with CSS--><em>necessarily</em>
+    have a contradiction.
+    If we make the other choice — use the infinite binary representation
+    when we have a choice — there is a similar problem.
+    You may think that our use of binary representations for real numbers
+    was foolish in light of the failure of the argument to “go through”
+    in binary.
+    Especially since, as we've alluded to, it can be made to work in decimal.
+    The reason for our apparent stubbornness is that these infinite binary
+    strings do something else that's very nice. An infinitely long binary sequence
+    can be thought of as the indicator function of a subset of N. For example,
+    \(.001101010001\) is the indicator of \(\{2, 3, 5, 7, 11\}\).
+  </p>
+<article class="exercise-like" id="exercise-74"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">8.3.2</span>
+</h5>
+<p id="p-1609">
+        Complete the table.
+      </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">binary expansion</td>
+<td class="l m b0 r0 l0 t0 lines">subset of \(\Naturals\)</td>
+</tr>
+<tr>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(.1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\{0\}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(.0111\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\{2, 4, 6\}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(.\overline{01}\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\{3k + 1 \suchthat k \in \Naturals\}\)</td>
+</tr>
+</table></article><div class="hidden-knowl-wrapper"></div>
+<p id="p-1610">
+    The set, \({\mathbb F}_2^\infty\), we've been working with is in one-to-one correspondence
+    with the power set of the natural numbers, \({\mathcal P}(\Naturals)\).
+    When viewed in this light, the proof we did above showed that the power
+    set of \(\Naturals\) has an infinite cardinality strictly greater than that
+    of \(\Naturals\) itself. In other words, \({\mathcal P}(\Naturals)\) is
+    uncountable.
+  </p>
+<p id="p-1611">
+    What Cantor's theorem says is that this always works. If \(A\) is any set,
+    and \({\mathcal P}(A)\) is its power set then \(|A| \lt  |{\mathcal P}(A)|\).
+    In a way, this more general
+    theorem is easier to prove than the specific case we just handled.
+  </p>
+<article class="theorem-like" id="theorem-39"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">8.3.3</span><span class="title">Cantor</span>
+</h5>
+<p id="p-1612">
+        For all sets \(A\), \(A\) is not equivalent to \({\mathcal P}(A)\).
+      </p></article><span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-51" id="proof-51"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-51" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1613">
+      Suppose that there is a set \(A\) that can be placed in one-to-one
+      correspondence with its power set. Then there is a bijective
+      function \(f : A \longrightarrow {\mathcal P}(A)\). We will deduce
+      a contradiction by constructing a subset of \(A\)
+      (i.e. a member of \({\mathcal P}(A))\) that cannot
+      be in the range of \(f\).
+    </p>
+<p id="p-1614">
+      Let \(S = \{x \in A \suchthat x \notin f(x)\}\).
+    </p>
+<p id="p-1615">
+      If \(S\) is in the range of \(f\), there is a preimage \(y\) such that \(S = f(y)\).
+      But, if such a \(y\) exists then the membership question, \(y \in S\), must
+      either be true or false. If \(y \in S\), then because \(S = f(y)\), and \(S\)
+      consists of those elements that are not in their images, it follows
+      that \(y \notin S\). On the other hand, if \(y \notin S\) then \(y \notin f(y)\) so
+      (by the definition of \(S\)) it follows that \(y \in S\). Either possibility leads to the other, which is a contradiction.
+    </p></article></span><p id="p-1616">
+    Cantor's theorem guarantees that there is an infinite hierarchy of infinite
+    cardinal numbers. Let's put it another way. People have sought a construction
+    that, given an infinite set, could be used to create a strictly larger set.
+    For
+    instance, the Cartesian product works like this if our sets are finite —
+    \(A \times A\) is strictly bigger than \(A\) when \(A\) is a finite set. But, as
+    we've already seen,
+    this is not necessarily so if \(A\) is infinite (remember the “snake” argument
+    that \(\Naturals\) and \(\Naturals \times \Naturals\) are equivalent). The
+    real import of Cantor's theorem is that taking the power set of a set
+    <!--Style me with CSS--><em>does</em> create a set of larger cardinality.
+    So we get an infinite tower of infinite cardinalities, starting with
+    \(\aleph_0 = |\Naturals|\), by successively taking power sets.
+    \begin{equation*}
+      \aleph_0  = |\Naturals| \lt  |{\mathcal P}(\Naturals)| \lt  |{\mathcal P}({\mathcal P}(\Naturals))| \lt  |{\mathcal P}({\mathcal P}({\mathcal P}(\Naturals)))| \lt  \ldots
+    \end{equation*}
+  </p>
+<section class="exercises" id="exercises-41"><header title="Exercises 8.3.1 Exercises"><h1 class="heading hide-type" alt="Exercises 8.3.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">8.3.1</span><span class="title">Exercises</span>
+</h1></header><ol style="list-style-type: lower-alpha;">
+<li id="li-496"><p id="p-1617">
+          Determine a substitution rule — a consistent way of replacing one digit
+          with another along the diagonal so that a diagonalization proof showing
+          that the interval (0, 1) is uncountable will work in decimal. Write up
+          the proof.
+        </p></li>
+<li id="li-497"><p id="p-1618">
+          Can a diagonalization proof showing that the interval (0, 1) is uncountable
+          be made workable in base-3 (ternary) notation?
+        </p></li>
+<li id="li-498"><p id="p-1619">
+          In the proof of Cantor's theorem we construct a set \(S\) that cannot
+          be in the image of a presumed bijection from \(A\) to \({\mathcal P}(A)\).  
+          Suppose \(A = \{1, 2, 3\}\) and f determines the following correspondences: 
+          \(1 \longleftrightarrow \emptyset\),
+          \(2 \longleftrightarrow \{1, 3\}\) and \(3 \longleftrightarrow \{1, 2, 3\}\). 
+          What is \(S\)?
+        </p></li>
+<li id="li-499"><p id="p-1620">
+          An argument very similar to the one embodied in the proof of Cantor's
+          theorem is found in the Barber's paradox. This paradox was
+          originally introduced in the popular press in order to give laypeople an
+          understanding of Cantor's theorem and Russell's paradox. It sounds
+          somewhat sexist to modern ears. (For example, it is presumed without
+          comment that the Barber is male.)
+          <blockquote>
+          In a small town there is a Barber who shaves those men (and
+          only those men) who do not shave themselves. Who shaves
+          the Barber?
+          </blockquote>
+          Explain the similarity to the proof of Cantor's theorem.
+        </p></li>
+<li id="li-500"><p id="p-1621">
+          Cantor's theorem, applied to the set of all sets leads to an interesting
+          paradox. The power set of the set of all sets is a collection of sets, so
+          it must be contained in the set of all sets. Discuss the paradox and
+          determine a way of resolving it.
+        </p></li>
+<li id="li-501"><p id="p-1622">
+          Verify that the final deduction in the proof of Cantor's theorem, 
+          “\((y \in S  \implies  y \notin S) \land  (y \notin S \implies y \in S)\),” 
+          is truly a contradiction.
+        </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:43-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<p><h5 class="heading"><span class="type">Paragraph</span></h5>
+          The alternating sum of factorials provides an interesting
+          example of a sequence of integers.
+          \begin{equation*}
+            1! = 1
+          \end{equation*}
+          \begin{equation*}
+            2! - 1! = 1
+          \end{equation*}
+          \begin{equation*}
+            3! - 2! + 1! = 5
+          \end{equation*}
+          \begin{equation*}
+            4! - 3! + 2! - 1! = 19
+          \end{equation*}
+          et cetera 
+
+           Are they all prime?  (After the first two 1's.)
+
+          \hint{
+
+          Here's some Sage code that would test this conjecture:
+
+          <tt class="code-inline tex2jax_ignore">
+          n=1
+          for i in [2..8]:
+          n = factorial(i) - n
+          show(factor(n))
+          </tt>
+
+          Of course it turns out that going out to \(8\) isn't quite far enough…
+
+          }
+        </p><span class="incontext"><a href="sec_disproofs.html#p-677">in-context</a></span>

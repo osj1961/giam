@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-05-23T13:30:27-04:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Even more direct proofs: By cases and By exhaustion</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$4.0$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics, version 4.0</span></a></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="sec_disproofs.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_proof1.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_exist.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_disproofs.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_proof1.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_exist.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link active"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html" class="active">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_ord_rel.html">Ordering relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-37.html">Parity and Counting arguments</a></li>
+<li><a href="section-38.html">The pigeonhole principle</a></li>
+<li><a href="section-39.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-41.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-43.html">Dominance</a></li>
+<li><a href="section-44.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-45.html">Morley's miracle</a></li>
+<li><a href="section-46.html">Five steps into the void</a></li>
+<li><a href="section-47.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_cases"><header title="Section 3.5 Even more direct proofs: By cases and By exhaustion"><h1 class="heading hide-type" alt="Section 3.5 Even more direct proofs: By cases and By exhaustion">
+<span class="type">Section</span><span class="codenumber">3.5</span><span class="title">Even more direct proofs: By cases and By exhaustion</span><a href="sec_cases.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-691">
+    
+    Proof by exhaustion is the least attractive proof method from
+    an aesthetic perspective. An exhaustive proof consists of literally
+    (and exhaustively) checking every element of the universe to see
+    if the given statement is true for it. Usually, of course, this is
+    impossible because the universe of discourse is infinite; but when the
+    universe of discourse is finite, one certainly can't argue the validity
+    of an exhaustive proof.
+  </p>
+<p id="p-692">
+    In the last few decades the introduction of powerful computational
+    assistance for mathematicians has lead to a funny situation. There
+    is a growing list of important results that have been “proved” by
+    exhaustion using a computer. Important examples of this phenomenon
+    are the non-existence of a
+    
+    projective plane of order 10 <a knowl="./knowl/lam.html" knowl-id="xref-lam" alt="Bibliographic Entry 10 " title="Bibliographic Entry 10 ">[10]</a> and the
+    only known value of a
+    Ramsey number for hypergraphs <a knowl="./knowl/radz.html" knowl-id="xref-radz" alt="Bibliographic Entry 13 " title="Bibliographic Entry 13 ">[13]</a>.
+  </p>
+<p id="p-693">
+    
+    Proof by cases is subtly different from exhaustive proof — for one
+    thing a valid proof by cases can be used in an infinite universe.
+    In a proof by cases one has to divide the universe of discourse into
+    a finite number of sets<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-23" id="fn-23"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-23" style="display: none;" class="tex2jax_ignore"><span class="footnote">It is necessary to provide an argument that 
+    this list of cases is complete!  I.e. that every element of the universe
+    falls into one of the cases.</span></span> and then provide a separate proof for each
+    of the cases. A great many statements about the integers can be proved
+    using the division of integers into even and odd. Another set of
+    cases that is used frequently is the finite number of possible remainders
+    obtained when dividing by an integer \(d\). (Note that even and odd correspond
+    to the remainders \(0\) and \(1\) obtained after division by \(2\).)
+  </p>
+<p id="p-694">
+    A very famous instance of proof by cases is the computer-assisted proof
+    of the
+    
+    four color theorem. The four color theorem is a result known to
+    map makers for quite some time that says that 4 colors are always sufficient
+    to color the nations on a map in such a way that countries sharing a boundary
+    are always colored differently. <span>&lt;&lt;Unresolved xref, reference "fig_Lux_map"; check spelling or use "provisional" attribute&gt;&gt;</span> shows one instance
+    of an arrangement of nations that requires at least four different colors,
+    the theorem says that four colors are <!--Style me with CSS--><em>always</em> enough. It should be noted
+    that real cartographers usually reserve a fifth color for oceans (and other
+    water) and that it is possible to conceive of a map requiring five colors if
+    one allows the nations to be non-contiguous. In 1977,
+     Kenneth Appel and
+    Wolfgang Haken proved the four color
+    theorem by reducing the infinitude of possibilities to
+    1,936 separate cases and analyzing each of these with a computer.
+    The inelegance of a proof by cases is probably proportional to some power of
+    the number of cases, but in any case, this proof is generally considered
+    somewhat inelegant. Ever since the proof was announced there has been an
+    ongoing effort to reduce the number of cases (currently the record is 633
+    cases — still far too many to be checked through without a computer) or to
+    find a proof that does not rely on cases. For a good introductory article on
+    the four color theorem see <a knowl="./knowl/wiki-4color.html" knowl-id="xref-wiki-4color" alt="Bibliographic Entry 6 " title="Bibliographic Entry 6 ">[6]</a>.
+  </p>
+<figure class="figure-like" id="figure-9"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/7165ceb5044216c12890b89bac2815ee915e7f4c.png" alt=""></figure><p id="p-695">
+    Most exhaustive proofs of statements that aren't trivial tend to either be (literally) too exhausting or to seem rather contrived. One example of a situation
+    in which an exhaustive proof of some statement exists is when the statement
+    is thought to be universally true but no general proof is known — yet the
+    statement has been checked for a large number of cases.
+    Goldbach's conjecture
+    is one such statement.
+    Christian Goldbach  <a knowl="./knowl/wiki-goldbach.html" knowl-id="xref-wiki-goldbach" alt="Bibliographic Entry 4 " title="Bibliographic Entry 4 ">[4]</a>
+    was a mathematician born
+    in Königsberg Prussia,
+    who, curiously, did <!--Style me with CSS--><em>not</em> make the
+    conjecture<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-24" id="fn-24"><span class="footnote"><sup> 2 </sup></span></a></span><span id="hk-fn-24" style="display: none;" class="tex2jax_ignore"><span class="footnote">This conjecture was 
+    discussed previously in the exercises of <a href="sec_def.html" alt="Section 1.2 Definitions: Prime numbers" title="Section 1.2 Definitions: Prime numbers">Section 1.2</a></span></span> which bears
+    his name. In a letter to
+    Leonard Euler, Goldbach conjectured that every
+    odd number greater than 5 could be expressed as the sum of three primes (nowadays this is known as the
+     weak Goldbach conjecture). Euler apparently liked the
+    problem and replied to Goldbach stating what is now known as Goldbach's
+    conjecture: Every even number greater than 2 can be expressed as the sum of
+    two primes. This statement has been lying around since 1742, and a great
+    many of the world's best mathematicians have made their attempts at proving it — to no avail! (Well, actually a lot of progress has been made but the result
+    still hasn't been proved.) It's easy to verify the Goldbach conjecture for
+    relatively small even numbers, so what <!--Style me with CSS--><em>has</em> been done is/are proofs by
+    exhaustion of Goldbach's conjecture restricted to finite universes.
+    As of this writing, the conjecture has been verified to be true of
+    all even numbers less than \(2 \times 10^{17}\).
+  </p>
+<p id="p-696">
+    Whenever an exhaustive proof, or a proof by cases exists for some statement
+    it is generally felt that a direct proof would be more esthetically pleasing.
+    If you are in a situation that doesn't admit such a direct proof, you should
+    at least seek a proof by cases using the minimum possible number of cases.
+    For example, consider the following theorem and proof.
+  </p>
+<article class="theorem-like" id="theorem-10"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">3.5.1</span>
+</h5>
+<p id="p-697">
+        \(\forall n \in \Integers \; n^2 \;\) is of the form \(4k\) or
+        \(4k+1\) for some \(k \in \Integers\).
+      </p></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-17" id="proof-17"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-17" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-698">
+    We will consider the four cases determined by the four
+    possible residues mod 4.
+
+    </p>
+<ul id="ul-5" style="list-style-type: disc;">
+<li id="li-262"><p id="p-699">
+          If \(n \equiv 0 \pmod{4}\) then there is an integer \(m\)
+          such that \(n = 4m\).  It follows that \(n^2 = (4m)^2 = 16m^2\) is of the 
+          form \(4k\) where \(k\) is \(4m^2\).
+        </p></li>
+<li id="li-263"><p id="p-700">
+          If \(n \equiv 1 \pmod{4}\) then there is an integer \(m\)
+          such that \(n = 4m+1\).  It follows that \(n^2 = (4m+1)^2 = 16m^2 + 8m + 1\) 
+          is of the form \(4k+1\) where \(k\) is \(4m^2+2m\).
+        </p></li>
+<li id="li-264"><p id="p-701">
+          If \(n \equiv 2 \pmod{4}\) then there is an integer \(m\)
+          such that \(n = 4m+2\).  It follows that \(n^2 = (4m+2)^2 = 16m^2 + 16m + 4\) 
+          is of the form \(4k\) where \(k\) is \(4m^2+4m+1\).
+        </p></li>
+<li id="li-265"><p id="p-702">
+          If \(n \equiv 3 \pmod{4}\) then there is an integer \(m\)
+          such that \(n = 4m+3\).  It follows that \(n^2 = (4m+3)^2 = 16m^2 + 24m + 9\) 
+          is of the form \(4k+1\) where \(k\) is \(4m^2+6m+2\).
+        </p></li>
+</ul>
+<p>
+    </p>
+<p id="p-703">
+      Since these four cases exhaust the possibilities and since the desired
+      result holds in each case, our proof is complete.
+    </p></article></div>
+<p id="p-704">
+    While the proof just stated is certainly valid, the argument is inelegant
+    since a smaller number of cases would suffice.
+  </p>
+<article class="exercise-like" id="exercise-34"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.5.2</span>
+</h5>
+<p id="p-705">
+        The previous theorem can be proved using just two cases. Do so.
+      </p></article><p id="p-706">
+    We'll close this section by asking you to determine an exhaustive proof where
+    the complexity of the argument is challenging but not <!--Style me with CSS--><em>too</em> impossible.
+  </p>
+<p id="p-707">
+     Graph pebbling is an interesting concept originated
+    by the famous combinatorialist  Fan Chung. A “graph”
+    (as the term is used here) is a collection
+    of places or locations which are known as “nodes,” some of which
+    are joined by paths or connections which are known as “edges.”
+    Graphs have been studied by mathematicians for about 400 years, and
+    many interesting problems can be put in this setting. Graph pebbling
+    is a crude version of a broader problem in resource management — often
+    a resource actually gets used in the process of transporting it. Think of
+    the big tanker trucks that are used to transport gasoline. What do they
+    run on? Well, actually they probably burn diesel — but the point is
+    that in order to move the fuel around we have to consume some of it.
+    Graph pebbling takes this to an extreme: in order to move one pebble
+    we must consume one pebble.
+  </p>
+<p id="p-708">
+    Imagine that a bunch of pebbles are randomly
+    distributed on the nodes of a graph, and that we are allowed to do
+    <!--Style me with CSS--><em>graph pebbling moves</em> — we remove two pebbles from some node
+    and place a single pebble on a node that is connected to it.
+    See <span>&lt;&lt;Unresolved xref, reference "fig_pebbling_move"; check spelling or use "provisional" attribute&gt;&gt;</span>.
+  </p>
+<figure class="figure-like" id="figure-10"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/cd84b457db63c0b752ed210a2205dc206ddff1a0.png" alt="">—</figure><figure class="figure-like" id="figure-11"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/18f1e6b14db59b93308543983d9f8311d7062205.png" alt=""></figure><p id="p-709">
+    For any particular graph, we can ask for its <!--Style me with CSS--><em>pebbling number</em>, \(\rho\).
+    This is the smallest number so that if \(\rho\) pebbles are distributed <!--Style me with CSS--><em>in any way whatsoever</em> on the nodes of the graph, it will be possible to use
+    pebbling moves so as to get a pebble to any node.
+  </p>
+<p id="p-710">
+    For example, consider the triangle graph — three nodes which are all
+    mutually connected. The pebbling number of this graph is 3. If we
+    start with one pebble on each node we are already done; if there is a
+    node that has two pebbles on it, we can use a pebbling move to reach
+    either of the other two nodes.
+  </p>
+<article class="exercise-like" id="exercise-35"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.5.3</span>
+</h5>
+<p id="p-711">
+        There is a graph \(C_5\) which consists of 5 nodes connected in a circular
+        fashion. Determine its pebbling number. Prove your answer exhaustively.
+      </p>
+<p id="p-712">
+        Hint: the pebbling number must be greater than 4 because if one pebble is
+        placed on each of 4 nodes the configuration is unmovable (we need to
+        have two pebbles on a node in order to be able to make a pebbling move
+        at all) and so the 5th node can never be reached.
+      </p></article><section class="exercises" id="exercises-19"><header title="Exercises 3.5.1 Exercises"><h1 class="heading hide-type" alt="Exercises 3.5.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">3.5.1</span><span class="title">Exercises</span>
+</h1></header><ol id="ol-41" style="list-style-type: lower-alpha;">
+<li id="li-266"><p id="p-713">
+          Prove that if \(n\) is an odd number then \(n^4 \pmod{16} = 1\).
+
+          \hint{
+
+          While one could perform fairly complicated arithmetic, expanding expression like
+          \((16k+13)^4\) and then regrouping to put it in the form \(16q+1\) (and one would need 
+          to do that work for each of the odd remainders modulo \(16\)),  that would be missing out
+          on the true power of modular notation.  In a “\(\pmod{16}\)” calculation one can simply ignore
+          summands like \(16k\) because they are \(0 \pmod{16}\).  Thus, for example,
+          \begin{equation*}
+            (16k+7)^4 \pmod{16} \; = \; 7^4 \pmod{16} \; = \; 2401 \pmod{16}  \; = \; 1.
+          \end{equation*}
+          So, essentially one just needs to compute the \(4\)th powers of \(1, 3, 5, 7, 9, 11, 13\)  and \(15\), and
+          then reduce them modulo 16.  An even greater economy is possible if one notes that (modulo 16) many
+          of those cases are negatives of one another — so their \(4\)th powers are equal.
+          }
+        </p></li>
+<li id="li-267"><p id="p-714">
+          Prove that every prime number other than 2 and 3 has the form
+          \(6q+1\) or \(6q+5\) for some integer \(q\).  (Hint: this problem involves
+          thinking about cases as well as contrapositives.)
+
+          \hint{It is probably obvious that the "cases" will be the possible remainders mod 6. Numbers of the form 6q+0 will be multiples of 6, so clearly not prime. The other forms that need to be eliminated are 6q+2, 6q+3, and 6q+4.
+          }
+        </p></li>
+<li id="li-268"><p id="p-715">
+          Show that the sum of any three consecutive integers is divisible
+          by 3.
+
+          \hint{Write the sum as \(n + (n+1) + (n+2)\).}
+        </p></li>
+<li id="li-269"><p id="p-716">
+          There is a graph known as \(K_4\) that has \(4\) nodes and there is an edge between every pair of nodes.
+          The pebbling number of \(K_4\) has to be at least \(4\) since it would be possible to put one pebble on each of
+          \(3\) nodes and not be able to reach the remaining node using pebbling moves.  Show that the pebbling number of \(K_4\) is actually \(4\).
+
+          \hint{If there are two pebbles on any node we will be able to reach all the other nodes using pebbling moves
+          (since every pair of nodes is connected).}
+        </p></li>
+<li id="li-270"><p id="p-717">
+          Find the pebbling number of a graph whose nodes are the corners and 
+          whose edges are the, uhmm, edges of a cube.
+
+          \hint{It should be clear that the pebbling number is at least \(8\) — \(7\) pebbles could be distributed, 
+          one to a node, and the \(8\)th node would be unreachable.  It will be easier to play around with this if
+          you figure out how to draw the cube graph “flattened-out” in the plane.}
+        </p></li>
+<li id="li-271"><p id="p-718">
+          A <!--Style me with CSS--><em>vampire number</em> is a \(2n\) digit number \(v\) that factors as \(v=xy\)
+          where \(x\) and \(y\) are \(n\) digit numbers and the digits of \(v\) are the 
+          union of the digits in \(x\) and \(y\) in some order.  The numbers \(x\) and \(y\)
+          are known as the “fangs” of \(v\).  To eliminate trivial
+          cases, pairs of trailing zeros are disallowed.  
+
+          Show that there are no 2-digit vampire numbers.
+
+          Show that there are seven 4-digit vampire numbers.
+
+          \hint{The 2-digit challenge is do-able by hand (just barely).  The \(4\) digit question certainly requires 
+          some computer assistance!}
+        </p></li>
+<li id="li-272"><p id="p-719">
+          Lagrange's theorem on representation of integers as sums of squares
+          says that every positive integer can be expressed as the sum of at most 
+          \(4\) squares.  For example, \(79 = 7^2 + 5^2 + 2^2 + 1^2\).  Show (exhaustively) 
+          that \(15\) can not be represented using fewer than \(4\) squares.
+
+          \hint{Note that \(15 = 3^2 + 2^2 + 1^2 + 1^2\).  Also, if \(15\) were expressible as a sum of fewer than \(4\) squares, the squares involved would be \(1\), \(4\) and \(9\).  It's really not that hard to try all the possibilities.}
+        </p></li>
+<li id="li-273"><p id="p-720">
+          Show that there are exactly \(15\) numbers \(x\) in the range \(1 \leq x \leq 100\) that can't be represented using fewer than \(4\) squares.
+
+
+
+          \hint{The following Sage code generates all the numbers up to \(100\) that <!--Style me with CSS--><em>can</em> be written
+          as the sum of at most \(3\) squares.
+
+          <tt class="code-inline tex2jax_ignore">var('x y z') 
+          a=[s2 for s in [1..10]]  
+          b=[s2 for s in [0..10]]  
+          s = []  
+          for x in a:  
+           for y in b:  
+            for z in b:  
+             s = union(s,[x+y+z])  
+          s = Set(s)  
+          H=Set([1..100]) 
+          show(H.intersection(s))  
+          </tt>
+          }
+        </p></li>
+<li id="li-274"><p id="p-721">
+          The <!--Style me with CSS--><em>trichotomy property</em> of the real 
+          numbers simply states that every real number is either positive or negative 
+          or zero.  Trichotomy can be used to prove many statements by looking at the
+          three cases that it guarantees.  Develop a proof (by cases) that the square of
+          any real number is non-negative.
+
+          \hint{By trichotomy, x is either zero, negative, or positive. If x is zero, its square is zero. If x is negative, its square is positive. If x is positive, its square is also positive.}
+        </p></li>
+<li id="li-275"><p id="p-722">
+          Consider the game called “binary determinant tic-tac-toe”  
+          which is played by two players who alternately fill in the entries of a 
+          \(3 \times 3\) array.  Player One goes first, placing 1's in the array and 
+          player Zero goes second, placing 0's.  Player One's goal is that the 
+          final array have determinant 1, and player Zero's goal is that the 
+          determinant be 0.  The determinant calculations are carried out mod 2.
+
+          Show that player Zero can always win a game of binary determinant tic-tac-toe
+          by the method of exhaustion.
+
+          \hint{If you know something about determinants it would help here.  The determinant will be
+          0 if there are two identical rows (or columns) in the finished array.  Also, if there is a row or column
+          that is all zeros, player Zero wins too.  Also, cyclically permuting either rows or columns has no effect
+          on the determinant of a binary array.  This means we lose no generality in assuming player One's
+          first move goes (say) in the upper-left corner.}
+        </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

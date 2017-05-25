@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-05-23T13:30:27-04:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Containment</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$4.0$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics, version 4.0</span></a></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="sec_basic_set_notions.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-4.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-23.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_basic_set_notions.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-4.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-23.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link active"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html" class="active">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_ord_rel.html">Ordering relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-37.html">Parity and Counting arguments</a></li>
+<li><a href="section-38.html">The pigeonhole principle</a></li>
+<li><a href="section-39.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-41.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-43.html">Dominance</a></li>
+<li><a href="section-44.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-45.html">Morley's miracle</a></li>
+<li><a href="section-46.html">Five steps into the void</a></li>
+<li><a href="section-47.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-22"><header title="Section 4.2 Containment"><h1 class="heading hide-type" alt="Section 4.2 Containment">
+<span class="type">Section</span><span class="codenumber">4.2</span><span class="title">Containment</span>
+</h1></header><p id="p-793">
+    There are two notions of being “inside” a set. A thing may be
+    an <!--Style me with CSS--><em>element</em> of a set, or may be contained as
+    a subset. Distinguishing these two notions of inclusion is essential.
+    One difficulty that sometimes complicates things is that a set may contain
+    other sets <!--Style me with CSS--><em>as elements</em>. For instance, as we saw in the previous
+    section, the elements of a power set are themselves sets.
+  </p>
+<p id="p-794">
+    A set \(A\) is a <!--Style me with CSS--><em>subset</em> of another set \(B\) if all of \(A\)'s elements
+    are also in \(B\). The terminology
+    <!--Style me with CSS--><em>superset</em> is used to refer
+    to \(B\) in this situation, as in “The set of all real-valued functions
+    in one real variable is a superset of the polynomial functions.” The
+    subset/superset relationship is indicated with a symbol that should be
+    thought of as a stylized version of the less-than-or-equal sign, when
+    \(A\) is a subset of \(B\) we write \(A \subseteq B\).
+  </p>
+<p id="p-795">
+    We say that \(A\) is
+    a <!--Style me with CSS--><em>proper subset</em> of \(B\) if \(B\) has some elements that aren't in
+    \(A\), and in this situation we write \(A \subset B\) or if we really want
+    to emphasize the fact that the sets are not equal we can write
+    \(A \subsetneq B\). By the way, if you want to emphasize the superset
+    relationship, all of these symbols can be turned around. So for example
+    \(A \supseteq B\) means that \(A\) is a superset of \(B\) although they could
+    potentially be equal.
+  </p>
+<p id="p-796">
+    As we've seen earlier, the symbol \(\in\) is used between an element of
+    a set and the set that it's in. The following exercise is intended to
+    clarify the distinction between \(\in\) and \(\subseteq\).
+  </p>
+<article class="exercise-like" id="exercise-43"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">4.2.1</span>
+</h5>
+<p id="p-797">
+        Let \(A = \left\{  1, 2, \{ 1 \}, \{ a, b \} \right\}\).
+        Which of the following are true?
+      </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">i) \(\{ a, b \} \subseteq A\).</td>
+<td class="l m b0 r0 l0 t0 lines">vi) \(\{ 1 \} \subseteq A\).</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">ii) \(\{ a, b \} \in A\).</td>
+<td class="l m b0 r0 l0 t0 lines">vii) \(\{ 1 \} \in A\).</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">iii) \(a \in A\).</td>
+<td class="l m b0 r0 l0 t0 lines">viii) \(\{ 2 \} \in A\).</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">iv) \(1 \in A\).</td>
+<td class="l m b0 r0 l0 t0 lines">ix) \(\{ 2 \} \subseteq A\).</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">v) \(1 \subseteq A\).</td>
+<td class="l m b0 r0 l0 t0 lines">x) \(\{\{1\}\} \subseteq A\).</td>
+</tr>
+</table></article><p id="p-798">
+    Another perspective that may help clear up the distinction between
+    \(\in\) and \(\subseteq\) is to consider what they correspond to in Logic.
+    The “element of” symbol \(\in\) is used to construct open sentences
+    that embody the membership question — thus it corresponds to single
+    sentences in Logic. The “set containment” symbol \(\subseteq\) goes
+    between two <!--Style me with CSS--><em>sets</em> and so whatever it corresponds to in Logic
+    should be something that can appropriately be inserted between two
+    sentences. Let's run through a short example to figure out what that
+    might be. To keep things
+    simple we'll work inside the universal set \(U=\{ 1, 2, 3, \ldots 50 \}\).
+    Let \(T\) be the subset of \(U\) consisting of those numbers that are
+    divisible by 10, and let \(F\) be those that are divisible by 5.
+    \begin{equation*}
+      T = \{10, 20, 30, 40, 50 \}
+    \end{equation*}
+    \begin{equation*}
+      F = \{5, 10, 15, 20, 25, 30, 35, 40, 45, 50 \}
+    \end{equation*}
+  </p>
+<p id="p-799">
+    Hopefully it is clear that \(\subseteq\) can be inserted between these two sets
+    like so: \(T \subseteq F\).
+    On the other hand we can re-express the sets \(T\) and \(F\) using set-builder
+    notation in order to see clearly what their membership questions are.
+    \begin{equation*}
+      T = \{ x \in U \; \suchthat \; 10\divides x \}
+    \end{equation*}
+    \begin{equation*}
+      F = \{ x \in U \; \suchthat \; 5\divides x \}
+    \end{equation*}
+  </p>
+<p id="p-800">
+    What logical operator fits nicely between \(10\divides x\) and \(5\divides x\)?
+    Well, of course, it's the implication arrow. It's easy to
+    verify that \(10\divides x \, \implies \, 5\divides x\), and it's equally easy
+    to note that the other direction doesn't work, \(5\divides x \, \nRightarrow \, 10\divides x\) — for instance, \(5\) goes evenly into \(15\), but \(10\) doesn't.
+  </p>
+<p id="p-801">
+    The general statement is: if \(A\) and \(B\) are sets, and \(M_A(x)\) and \(M_B(x)\)
+    are their respective membership questions, then \(A \subseteq B\) corresponds
+    precisely to \(\forall x \in U, M_A(x) \implies M_B(x)\).
+  </p>
+<p id="p-802">
+    Now to many people (me included!) this looks funny at first, \(\subseteq\)
+    in Set theory corresponds to \(\implies\) in Logic. It seems like both
+    of these symbols are arrows of a sort — but they point in opposite
+    directions! Personally, I resolve the apparent discrepancy by thinking
+    about the “strength” of logical predicates. One predicate is stronger
+    than another if it puts more conditions on the elements that would make
+    it true. For example, “\(x\) is doubly-even” is stronger than
+    “\(x\) is (merely) even.” Now, the stronger statement implies the weaker
+    (assuming of course that they are stronger and weaker versions of the
+    same idea). If a number is doubly-even (i.e. divisible by 4) then it
+    is certainly even — but the converse is certainly not true, \(6\) is even
+    but <!--Style me with CSS--><em>not</em> doubly-even. Think of all this in terms of sets now.
+    Which set contains the other, the set of doubly-even numbers or the set
+    of even numbers? Clearly the set that corresponds to more stringent
+    membership criteria is smaller than the set that corresponds
+    to less restrictive criteria, thus the set defined by a weak membership
+    criterion contains the one having a stronger criterion.
+  </p>
+<p id="p-803">
+    If we are asked to prove that one set is contained in another as a subset,
+    \(A \subseteq B\), there are two ways to proceed. We may either argue by
+    thinking about elements, or (although this amounts to the same thing)
+    we can show that \(A\)'s membership criterion
+    implies \(B\)'s membership criterion.
+  </p>
+<article class="exercise-like" id="exercise-44"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">4.2.2</span>
+</h5>
+<p id="p-804">
+        Consider \(S\), the set of perfect squares and \(F\), the set of perfect fourth
+        powers. Which is contained in the other? Can you prove it?
+      </p></article><p id="p-805">
+    We'll end this section with a fairly elementary proof — mainly just to
+    illustrate how one should proceed in proving that one set is contained in
+    another.
+  </p>
+<p id="p-806">
+    Let \(D\) represent the set of all integers that are divisible by 9,
+    \begin{equation*}
+      D = \{ x \in \Integers \suchthat \exists k \in \Integers, \; x=9k \}.
+    \end{equation*}
+  </p>
+<p id="p-807">
+    Let \(C\) represent the set of all integers that are divisible by 3,
+    \begin{equation*}
+      C = \{ x \in \Integers \suchthat \exists k \in \Integers, \; x=3k \}.
+    \end{equation*}
+  </p>
+<p id="p-808">
+    The set \(D\) is contained in \(C\). Let's prove
+    it!
+  </p>
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-22" id="proof-22"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-22" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-809">
+      Suppose that \(x\) is an arbitrary element of \(D\). From the definition
+      of \(D\) it follows that there is an integer \(k\) such that \(x=9k\).
+      We want to show that \(x \in C\), but since \(x=9k\) it is easy to
+      see that \(x = 3(3k)\) which shows (since \(3k\) is clearly an integer)
+      that \(x\) is in \(C\).
+    </p></article></div>
+<section class="exercises" id="exercises-22"><header title="Exercises 4.2.1 Exercises"><h1 class="heading hide-type" alt="Exercises 4.2.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">4.2.1</span><span class="title">Exercises</span>
+</h1></header><ol id="ol-45" style="list-style-type: lower-alpha;">
+<li id="li-295"><p id="p-810">
+          Insert either \(\in\) or \(\subseteq\) in the blanks in the following 
+          sentences (in order to produce true sentences).
+          <table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">i) \(1\) <span class="fillin" style="width: 4.545454545454546em;"></span> \(\{3, 2, 1, \{a, b\}\}\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">iii) \(\{a, b\}\)  <span class="fillin" style="width: 4.545454545454546em;"></span> \(\{3, 2, 1, \{a, b\}\}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">ii) \(\{a\}\) <span class="fillin" style="width: 4.545454545454546em;"></span> \(\{a, \{a, b\}\}\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">iv) \(\{\{a, b\}\}\)  <span class="fillin" style="width: 4.545454545454546em;"></span> \(\{a, \{a, b\}\}\)</td>
+</tr>
+</table>
+          \hint{\(\in\), \(\subseteq\), \(\in\), \(\subseteq\)}
+        </p></li>
+<li id="li-296"><p id="p-811">
+          Suppose that \(p\) is a prime, for each \(n\) in \(\Integers^+\), 
+          define the set \(P_n = \{ x \in \Integers^+ \suchthat \, p^n \divides x \}\).  
+          Conjecture and prove a statement about the containments between these sets.
+
+          \hint{When \(p=2\) we have seen these sets.  \(P_1\) is the even numbers, \(P_2\) is the doubly-even numbers,
+          etc.}
+        </p></li>
+<li id="li-297"><p id="p-812">
+          Provide a counterexample to dispel the notion that a subset must
+          have fewer elements than its superset.
+
+          \hint{A subset is called <!--Style me with CSS--><em>proper</em> if it is neither empty nor equal to the superset.   If
+          we are talking about finite sets then the proper subsets do indeed have fewer elements
+          than the supersets.  Among infinite sets it is possible to have proper subsets having the same 
+          number of elements as their superset, for example there are just as many even natural numbers
+          as there are natural numbers all told.}
+        </p></li>
+<li id="li-298"><p id="p-813">
+          We have seen that \(A \subseteq B\) corresponds to \(M_A \implies M_B\).
+          What corresponds to the contrapositive statement?
+
+          \hint{Turn “logical negation” into “set complement” and reverse the direction of the inclusion.}
+        </p></li>
+<li id="li-299"><p id="p-814">
+          Determine two sets \(A\) and \(B\) such that both of the sentences
+          \(A \in B\) and \(A \subseteq B\) are true.
+
+          \hint{The smallest example I can think of would be \(A=\emptyset\) and \(B=\{\emptyset\}\).  You should come up with a different example.}
+        </p></li>
+<li id="li-300"><p id="p-815">
+          Prove that the set of perfect fourth powers is contained in the
+          set of perfect squares.
+
+          \hint{It would probably be helpful to have precise definitions of the sets described in the problem.
+
+          The fourth powers are
+          \begin{equation*}
+            F = \{x \suchthat \exists y \in \Integers, x=y^4 \}.
+          \end{equation*}
+          The squares are
+          \begin{equation*}
+            S = \{x \suchthat \exists z \in \Integers, x=z^2 \}.
+          \end{equation*}
+          To show that one set is contained in another, we need to show that the first set's membership
+          criterion implies that of the second set.}
+        </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

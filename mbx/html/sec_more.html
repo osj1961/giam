@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-05-23T13:30:27-04:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>More direct proofs</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$4.0$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics, version 4.0</span></a></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="sec_direct.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_proof1.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_contra.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_direct.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_proof1.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_contra.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link active"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html" class="active">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_ord_rel.html">Ordering relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-37.html">Parity and Counting arguments</a></li>
+<li><a href="section-38.html">The pigeonhole principle</a></li>
+<li><a href="section-39.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-41.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-43.html">Dominance</a></li>
+<li><a href="section-44.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-45.html">Morley's miracle</a></li>
+<li><a href="section-46.html">Five steps into the void</a></li>
+<li><a href="section-47.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_more"><header title="Section 3.2 More direct proofs"><h1 class="heading hide-type" alt="Section 3.2 More direct proofs">
+<span class="type">Section</span><span class="codenumber">3.2</span><span class="title">More direct proofs</span><a href="sec_more.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-615">
+    In creating a direct proof we need to look at our hypotheses, consider
+    the desired conclusion, and develop a strategy for transforming A into B.
+    Quite often you'll find it easy to make several deductions from the
+    hypotheses, but none of them seems to be headed in the direction of
+    the desired conclusion. The usual advice at this stage is
+    
+    “Try working backwards from the conclusion.”
+    <span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-20" id="fn-20"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-20" style="display: none;" class="tex2jax_ignore"><span class="footnote">Some people refer to this as the forwards-backwards method, since 
+    you work backwards from the conclusion, but also forwards from the premises, 
+    in the hopes of meeting somewhere in the middle.</span></span>
+  </p>
+<p id="p-616">
+    There is a lovely result known as the
+    
+    “arithmetic-geometric mean inequality”
+    whose proof epitomizes this approach. Basically this inequality compares two
+    different ways of getting an “average” between two real numbers. The
+    <!--Style me with CSS--><em>arithmetic mean</em> of two real numbers \(a\) and \(b\) is the one you're
+    probably used to, \((a+b)/2\). Many people just call this the “mean”
+    of \(a\) and \(b\) without using the modifier “arithmetic” but as we'll
+    see, our notion of what intermediate value to use in between two numbers
+    is dependent on context. Consider the following two sequences of numbers
+    (both of which have a missing entry)
+    \begin{equation*}
+      2  9   16   23   \rule{12pt}{.5pt}   37   44
+    \end{equation*}
+    and
+    \begin{equation*}
+      3  6   12   24   \rule{12pt}{.5pt}   96   192.
+    \end{equation*}
+  </p>
+<p id="p-617">
+    How should we fill in the blanks?
+  </p>
+<p id="p-618">
+    The first sequence is an
+    <!--Style me with CSS--><em>arithmetic sequence</em>.
+    Arithmetic sequences
+    are characterized by the property that the difference between successive
+    terms is a constant. The second sequence is a
+    <!--Style me with CSS--><em>geometric sequence</em>.
+    Geometric sequences have the property that the ratio of successive terms
+    is a constant. The blank in the first sequence should be filled with the
+    arithmetic mean of the surrounding entries \((23+37)/2 = 30\). The blank
+    in the second sequence should be filled using the
+    geometric mean
+    of <!--Style me with CSS--><em>its</em> surrounding entries: \(\sqrt{24\cdot 96} = 48\).
+  </p>
+<p id="p-619">
+    Given that we accept the utility of having two inequivalent concepts
+    of <!--Style me with CSS--><em>mean</em> that can be used in different contexts, it is interesting
+    to see how these two means compare to one another. The
+    arithmetic-geometric mean inequality states that the arithmetic mean
+    is always bigger.
+    \begin{equation*}
+      \forall a,b \in \Reals,   a,b \geq 0 \; \implies \;  \frac{a+b}{2} \geq \sqrt{ab}
+    \end{equation*}
+  </p>
+<p id="p-620">
+    In proving this statement we have little choice but to work backwards
+    from the conclusion because the only hypothesis we have to work with
+    is that \(a\) and \(b\) are non-negative real numbers — which isn't a
+    particularly potent tool. But what should we do?
+    There isn't a good response to that
+    question, we'll just have to try a bunch of different things and hope
+    that something will work out. When we finally get around to writing up
+    our proof though, we'll have to rearrange the statements in the opposite
+    order from the way they were discovered. This means that we would
+    be ill-advised to make any uni-directional inferences, we should
+    strive to make biconditional connections between our statements
+    (or else try to intentionally make converse errors).
+  </p>
+<p id="p-621">
+    The first thing that appeals to your humble author is to eliminate
+    both the fractions and the radicals…
+    \begin{equation*}
+      \frac{a+b}{2} \geq \sqrt{ab}
+    \end{equation*}
+    \begin{equation*}
+      \iff \; a+b \geq 2\sqrt{ab}
+    \end{equation*}
+    \begin{equation*}
+      \iff \; (a+b)^2 \geq 4ab
+    \end{equation*}
+    \begin{equation*}
+      \iff \; a^2+2ab+b^2 \geq 4ab
+    \end{equation*}
+  </p>
+<p id="p-622">
+    One of the steps above involves squaring both sides of an inequality.
+    We need to ask ourselves if this step is really reversible. In other
+    words, is the following conditional true?
+    \begin{equation*}
+      \forall x,y \in \Rnoneg, \, \; 
+      x \geq y \; \implies \sqrt{x} \geq \sqrt{y}
+    \end{equation*}
+  </p>
+<article class="exercise-like" id="exercise-28"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.2.1</span>
+</h5>
+<p id="p-623">
+        Provide a justification for the previous implication.
+      </p></article><p id="p-624">
+    What should we try next? There's really no good justification for
+    this but experience working with quadratic polynomials either in
+    equalities or inequalities leads most people to try “moving everything
+    to one side,” that is, manipulating things so that one side of the
+    equation or inequality is zero.
+    \begin{equation*}
+      a^2+2ab+b^2 \geq 4ab
+    \end{equation*}
+    \begin{equation*}
+      \iff \; a^2-2ab+b^2 \geq 0
+    \end{equation*}
+  </p>
+<p id="p-625">
+    Whoa! We're done! Do you see why? If not, I'll give you one
+    hint: the square of any real number is greater than or equal to
+    zero.
+  </p>
+<article class="exercise-like" id="exercise-29"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.2.2</span>
+</h5>
+<p id="p-626">
+        Re-assemble all of the steps taken in the previous few paragraphs
+        into a proof of the arithmetic-geometric mean inequality.
+      </p></article><section class="exercises" id="exercises-16"><header title="Exercises 3.2.1 Exercises"><h1 class="heading hide-type" alt="Exercises 3.2.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">3.2.1</span><span class="title">Exercises</span>
+</h1></header><ol id="ol-38" style="list-style-type: lower-alpha;">
+<li id="li-235"><p id="p-627">
+          Suppose you have a savings account which bears interest 
+          compounded monthly.  The July statement shows a balance of 
+          $ 2104.87 and the September statement shows a balance $ 2125.97.
+          What would be the balance on the (missing) August statement?
+
+          \hint{A savings account where we are not depositing or withdrawing funds has a balance that is growing geometrically.}
+        </p></li>
+<li id="quad"><p id="p-628">
+          Recall that a quadratic equation \(ax^2+bx+c=0\) has two real solutions
+          if and only if the discriminant \(b^2-4ac\) is positive.  Prove that if 
+          \(a\) and \(c\) have different signs then the quadratic equation has two 
+          real solutions.
+
+          \hint{You don't need all the hypotheses. If \(a\) and \(c\) have different signs, then \(ac\) is a negative quantity}
+        </p></li>
+<li id="li-237"><p id="p-629">
+          Prove that if \(x^3-x^2\) is negative then \(3x+4 \lt  7\).
+
+          \hint{This follows very easily by the method of working backwards from the conclusion. Remember that when multiplying or dividing both sides of an inequality by some number, the direction of the inequality may reverse (unless we know the number involved is positive).  Also, remember that we can't divide by zero, so if we are (just for example, don't know why I'm mentioning it really…) dividing both sides of an inequality by \(x^2\) then we must treat the case where \(x=0\) separately.}
+        </p></li>
+<li id="li-238"><p id="p-630">
+          Prove that for all integers \(a,b,\) and \(c\), if \(a|b\) and \(a|(b+c)\), then
+          \(a|c\).
+        </p></li>
+<li id="li-239"><p id="p-631">
+          Show that if \(x\) is a positive real number, then \(x+\frac{1}{x} \geq 2\). 
+
+          \hint{If you work backwards from the conclusion on this one, you should eventually come to the inequality \((x-1)^2 \geq 0\).  Notice that this inequality is always true — all squares are non-negative. When you go to write-up your proof (writing things in the forward direction), you'll want to acknowledge this truth. Start with something like “Regardless of the value of \(x\), the quantity \((x-1)^2\) is greater than or equal to zero as it is a perfect square.”}
+        </p></li>
+<li id="li-240"><p id="p-632">
+          Prove that for all real numbers \(a,b,\) and \(c\), if \(ac\lt 0\), then the quadratic
+          equation \(ax^{2}+bx+c=0\) has two real solutions.
+
+          <!--Style me with CSS--><em>Hint:</em> The quadratic equation \(ax^{2}+bx+c=0\) has two
+          real solutions if and only if \(b^{2}-4ac&gt;0\) and \(a\neq0\).
+
+          \hint{This is very similar to <a knowl="./knowl/quad.html" knowl-id="xref-quad" alt="Item b " title="Item b ">problem b</a>.}
+        </p></li>
+<li id="li-241"><p id="p-633">
+          Show that \(\binom{n}{k} \cdot \binom{k}{r} \; = \; \binom{n}{r} \cdot \binom{n-r}{k-r}\) (for all integers \(r\), \(k\) and \(n\) with \(r \leq k \leq n\)). 
+
+          \hint{Use the definition of the binomial coefficients as fractions involving factorials:
+
+          E.g. \(\displaystyle\binom{n}{k} \; = \; \frac{n!}{k! (n-k)!}\)
+
+          Write down the definitions, both of the left hand side and the right hand side and consider how you can
+          convert one into the other.}
+        </p></li>
+<li id="li-242"><p id="p-634">
+          In proving the  <!--Style me with CSS--><em>product rule</em> in Calculus using the definition of the derivative, we might start our proof with:
+          \begin{equation*}
+            \frac{\mbox{d} }{\mbox{d} x} \left( f(x) \cdot g(x) \right)
+          \end{equation*}
+          \begin{equation*}
+            = \lim_{h \longrightarrow 0} \frac{f(x+h) \cdot g(x+h) - f(x) \cdot g(x)}{h}
+          \end{equation*}
+          The last two lines of our proof should be:
+          \begin{equation*}
+            = \lim_{h \longrightarrow 0} \frac{f(x+h) - f(x)}{h} \cdot g(x) \; + \; f(x) \cdot \lim_{h \longrightarrow 0} \frac{g(x+h) - g(x)}{h}
+          \end{equation*}
+          \begin{equation*}
+            = \frac{\mbox{d} }{\mbox{d} x}\left( f(x) \right) \cdot g(x) \; + \; f(x) \cdot \frac{\mbox{d} }{\mbox{d} x}\left( g(x) \right)
+          \end{equation*}
+          Fill in the rest of the proof.
+
+          \hint{The critical step is to subtract and add the same thing: \(f(x)g(x+h)\) in the numerator of the fraction
+          in the limit which gives the definition of \(\frac{\mbox{d} }{\mbox{d} x} \left( f(x) \cdot g(x) \right)\).  Also, you'll need to recall the laws of limits (like “the limit of a product is the product of the limits — provided both exist”) }
+        </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:43-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<article class="list"><h5 class="heading">
+<span class="type">Item</span> <span class="codenumber">c</span>
+</h5>
+<p id="p-541">
+        If we allow quantifiers and open sentences in an argument form we
+        get a couple of new argument forms.  Arguments involving existentially quantified 
+        premises are rare — the new forms we are speaking of are called “universal modus 
+        ponens” and “universal modus tollens.”   The minor premises may also be quantified
+        or they may involve particular elements of the universe of discourse — this leads
+        us to distinguish argument subtypes that are termed “universal” and “particular.”
+
+        For example
+        <table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\forall x, A(x) \implies B(x)\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(A(p)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(B(p)\)</td>
+</tr>
+</table>
+        is the particular form of universal modus ponens (here, \(p\)
+        is not a variable — it stands for some particular element of the universe of
+        discourse)
+        and
+        <table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\forall x, A(x) \implies B(x)\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\forall x, {\lnot}B(x)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\forall x, {\lnot}A(x)\)</td>
+</tr>
+</table>
+        is the universal form of (universal) modus tollens.
+
+        Reexamine the arguments from problem (1), determine their forms
+        (including quantifiers) and whether they are universal or particular.
+
+        \hint{
+        Hint: All of them except for one are the particular form — number 4 is the exception.
+
+        Here's an analysis of number 5:
+
+        All fish live in water. 
+        The octopus lives in water.  
+        Therefore, the octopus is a fish. 
+
+        Let \(F(x)\) be the open sentence “x is a fish” and let \(W(x)\) be the open sentence “x lives in water.”
+
+        Our argument has the form
+        <table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\forall x, F(x) \implies W(x)\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(W(\mbox{the octopus} )\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(F(\mbox{the octopus} )\)</td>
+</tr>
+</table>
+        Clearly something is wrong — a converse error has been made — if everything that lived in water was necessarily a fish the argument would be OK (in fact it would then be the particular form of universal modus ponens).  But that is the converse of the major premise given.    
+        }
+      </p></article><span class="incontext"><a href="sec_valid.html#li-214">in-context</a></span>

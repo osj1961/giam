@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-05-23T13:30:25-04:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Definitions of elementary number theory</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$4.0$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics, version 4.0</span></a></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="sec_scary.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_intro.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_alg.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_scary.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_intro.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_alg.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link active"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html" class="active">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_ord_rel.html">Ordering relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-37.html">Parity and Counting arguments</a></li>
+<li><a href="section-38.html">The pigeonhole principle</a></li>
+<li><a href="section-39.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-41.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-43.html">Dominance</a></li>
+<li><a href="section-44.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-45.html">Morley's miracle</a></li>
+<li><a href="section-46.html">Five steps into the void</a></li>
+<li><a href="section-47.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_num_thry"><header title="Section 1.4 Definitions of elementary number theory"><h1 class="heading hide-type" alt="Section 1.4 Definitions of elementary number theory">
+<span class="type">Section</span><span class="codenumber">1.4</span><span class="title">Definitions of elementary number theory</span><a href="sec_num_thry.html" class="permalink">¶ permalink</a>
+</h1></header><section class="subsection" id="even_n_odd"><header title="Subsection 1.4.1 Even and odd"><h1 class="heading hide-type" alt="Subsection 1.4.1 Even and odd">
+<span class="type">Subsection</span><span class="codenumber">1.4.1</span><span class="title">Even and odd</span><a href="sec_num_thry.html#even_n_odd" class="permalink">¶ permalink</a>
+</h1></header><p id="p-95">
+      If you divide a number by 2 and it comes out even (i.e. with
+      no remainder) the number is said to be <!--Style me with CSS--><em>even</em>. So the
+      <!--Style me with CSS--><em>word</em> even is related to division. It turns out that the
+      <!--Style me with CSS--><em>concept</em> even is better understood through thinking about
+      multiplication.
+    </p>
+<article class="definition-like" id="definition-3"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">1.4.1</span>
+</h5>
+<p id="p-96">
+          An integer \(n\) is <em class="terminology">even</em> exactly when there is an integer \(m\)
+          such that \(n = 2m\).
+        </p></article><p id="p-97">
+      You should note that there is a “two-way street” sort of quality
+      to this definition — indeed with most, if not all, definitions. If
+      a number is even, then we are guaranteed the existence of another
+      integer half as big. On the other hand, if we can show that another
+      integer half as big exists, then we know the original number is even.
+      This two-wayness means that the definition is what is known as a
+      <!--Style me with CSS--><em>biconditional</em>, a concept which we'll revisit in
+      <a href="sec_impl.html" alt="Section 2.2 Implication" title="Section 2.2 Implication">Section 2.2</a>.
+    </p>
+<p id="p-98">
+      A lot of people don't believe that \(0\) should be counted as an even
+      number. Now that we are armed with a precise definition, we can
+      answer this question easily. Is there an integer \(x\) such that
+      \(0 = 2x\) ? Certainly! let \(x\) also be \(0\). (Notice that in the
+      definition, nothing was said about \(m\) and \(n\) being distinct from
+      one another.)
+    </p>
+<p id="p-99">
+      An integer is <!--Style me with CSS--><em>odd</em> if it isn't even. That is, amongst integers,
+      there are only two possibilities: even or odd. We can also define
+      oddness without reference to “even.”
+    </p>
+<article class="definition-like" id="definition-4"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">1.4.2</span>
+</h5>
+<p id="p-100">
+          An integer \(n\) is <em class="terminology">odd</em> exactly when there is an integer \(m\)
+          such that \(n = 2m + 1\).
+        </p></article></section><section class="subsection" id="base-n"><header title="Subsection 1.4.2 Decimal and base-n notation"><h1 class="heading hide-type" alt="Subsection 1.4.2 Decimal and base-n notation">
+<span class="type">Subsection</span><span class="codenumber">1.4.2</span><span class="title">Decimal and base-<!--Style me with CSS--><em>n</em> notation</span><a href="sec_num_thry.html#base-n" class="permalink">¶ permalink</a>
+</h1></header><p id="p-101">
+      You can also identify even numbers by considering their
+      decimal representation. Recall that each digit in the
+      decimal representation of a number has a value that depends
+      on its position. For example, the number \(3482\) really means
+      \(3\cdot10^3 + 4\cdot10^2 + 8\cdot10^1 + 2\cdot10^0\). This
+      is also known as place notation.
+      The fact that we use the
+      powers of 10 in our place notation is probably due to the
+      fact that most humans have 10 fingers. It is possible to
+      use <!--Style me with CSS--><em>any</em> number in place of 10. In Computer Science there
+      are 3 other bases in common use: 2, 8 and 16 — these are
+      known (respectively) as binary, octal and hexadecimal notation.
+      When denoting a number using some base other than 10, it is
+      customary to append a subscript indicating the base.
+      So, for example, \(1011_2\) is binary notation meaning
+      \(1\cdot2^3 + 0\cdot2^2 + 1\cdot2^1 + 1\cdot2^0\) or \(8+2+1 = 11\).
+      No matter what base we are using, the rightmost digit of
+      the number multiplies the base raised to the \(0\)-th power.
+      Any number raised to the \(0\)-th power is 1, and the rightmost
+      digit is consequently known as the units digit. We are now
+      prepared to give some statements that are equivalent to our
+      definition of even. These statements truly don't deserve the
+      designation “theorem,” they are immediate consequences of the
+      definition.
+    </p>
+<article class="theorem-like" id="theorem-1"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">1.4.3</span>
+</h5>
+<p id="p-102">
+          An integer is <!--Style me with CSS--><em>even</em> if the units digit in its decimal
+          representation is one of 0, 2, 4, 6 or 8.
+        </p></article><article class="theorem-like" id="theorem-2"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">1.4.4</span>
+</h5>
+<p id="p-103">
+          An integer is <!--Style me with CSS--><em>even</em> if the units digit in its binary
+          representation is 0.
+        </p></article><p id="p-104">
+      For certain problems it is natural to use some particular notational system.
+      For example, the
+      last theorem would tend to indicate that binary numbers are useful
+      in problems dealing with even and odd. Given that there are many different
+      notations that are available to us, it is obviously desirable to have
+      means at our disposal for converting between them. It is possible to
+      develop general rules for converting a base-\(a\) number to a base-\(b\)
+      number (where \(a\) and \(b\) are arbitrary) but it is actually more convenient
+      to pick a “standard” base (and since we're human we'll use base-\(10\))
+      and develop methods for converting between an arbitrary base and the
+      “standard” one. Imagine that in the not-too-distant future we need to
+      convert some numbers from the base-\(7\) system used by the Seven-lobed
+      Amoebazoids from Epsilon Eridani III to the base-\(12\) scheme favored
+      by the Dodecatons of Alpha-Centauri IV. We will need a procedure
+      for converting base-\(7\) to base-\(10\) and another procedure for converting
+      from base-\(10\) to base-\(12\). In the School House Rock episode
+      “Little Twelve Toes” they describe base-\(12\)
+      numeration in a way that is understandable for elementary school
+      children — the digits they use are
+      \(\{1, 2, 3, 4, 5, 6, 7, 8, 9, \delta, \epsilon \}\), the last two digits
+      (which are pronounced “dec” and “el”) are necessary since we need
+      single symbols for the things we ordinarily denote using \(10\) and \(11\).
+    </p>
+<p id="p-105">
+      Converting from some other base to decimal is easy. You just use the
+      definition of place notation. For example, to find what \(451663_7\)
+      represents in decimal, just write
+      \begin{equation*}
+        4 \cdot 7^5 + 5 \cdot 7^4 + 1 \cdot 7^3 + 6 \cdot 7^2 + 6 \cdot 7 + 3 =  4 \cdot 16807 + 5 \cdot 2401 + 1 \cdot 343 + 6 \cdot 49 + 6 \cdot 7 + 3 = 79915.
+      \end{equation*}
+    </p>
+<p id="p-106">
+      (Everything in the line above can be interpreted as a base-\(10\) number,
+      and no subscripts are necessary for base-\(10\).)
+    </p>
+<p id="p-107">
+      Converting from decimal to some other base is harder. There is an algorithm
+      called “repeated division” that we'll explore a bit in the exercises
+      for this section. For the moment, just verify that
+      \(3\delta 2\epsilon 7_{12}\) is also a representation of the
+      number more conventionally written as 79915.
+    </p></section><section class="subsection" id="div"><header title="Subsection 1.4.3 Divisibility"><h1 class="heading hide-type" alt="Subsection 1.4.3 Divisibility">
+<span class="type">Subsection</span><span class="codenumber">1.4.3</span><span class="title">Divisibility</span><a href="sec_num_thry.html#div" class="permalink">¶ permalink</a>
+</h1></header><p id="p-108">
+      The notion of being even has an obvious generalization. Suppose
+      we asked whether \(3\) divided evenly into a given number. Presumably
+      we could make a definition of what it meant to be <!--Style me with CSS--><em>threeven</em>, but
+      rather than doing so (or engaging in any further punnery) we shall
+      instead move to a general definition. We need a notation for the
+      situation when one number divides evenly into another. There are
+      many ways to describe this situation in English, but essentially
+      just one in “math,” we use a vertical bar — <!--Style me with CSS--><em>not</em> a fraction
+      bar. Indeed the difference between this vertical bar and the
+      fraction symbol (\(\divides\) versus \(/\)) needs to
+      be strongly stressed. The vertical bar
+      when placed between two numbers is a symbol which asks the question
+      “Does the first number divide evenly (i.e. with no remainder) into
+      the second?” On the other hand the fraction bar asks you to actually
+      carry out some division. The value of \(2\divides 5\) is <!--Style me with CSS--><em>false</em>, whereas
+      the value of \(2/5\) is \(.4\)
+    </p>
+<p id="p-109">
+      As was the case in defining even, it turns out that it is best
+      to think of multiplication, not division, when making a formal
+      definition of this concept. Given any two integers \(n\) and \(d\)
+      we define the symbol \(d\divides n\) by
+    </p>
+<article class="definition-like" id="definition-5"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">1.4.5</span>
+</h5>
+<p id="p-110">
+          \(d \divides n\) exactly when \(\exists k \in \Integers\) such that \(n = kd\).
+        </p></article><p id="p-111">
+    In spoken language the symbol \(d \divides n\) can be translated in a variety
+    of ways:
+
+    </p>
+<ul id="ul-1" style="list-style-type: disc;">
+<li id="li-33"><p id="p-112">
+          \(d\) is a divisor of \(n\).
+        </p></li>
+<li id="li-34"><p id="p-113">
+          \(d\) divides \(n\) evenly.
+        </p></li>
+<li id="li-35"><p id="p-114">
+          \(d\) is a factor of \(n\).
+        </p></li>
+<li id="li-36"><p id="p-115">
+          \(n\) is an integer multiple of \(d\).
+        </p></li>
+</ul>
+<p>
+    </p>
+<p id="p-116">
+      Although, by far the most popular way of expressing this concept is to just say “\(d\) divides \(n\).”
+    </p></section><section class="subsection" id="floor"><header title="Subsection 1.4.4 Floor and ceiling"><h1 class="heading hide-type" alt="Subsection 1.4.4 Floor and ceiling">
+<span class="type">Subsection</span><span class="codenumber">1.4.4</span><span class="title">Floor and ceiling</span><a href="sec_num_thry.html#floor" class="permalink">¶ permalink</a>
+</h1></header><p id="p-117">
+      Suppose there is an elevator with a capacity of 1300 pounds. A large
+      group of men who all weigh about 200 pounds want to ascend in it. How
+      many should ride at a time? This is just a division problem, 1300/200
+      gives 6.5 men should ride together. Well, obviously putting half a
+      person on an elevator is a bad idea — should we just round-up and
+      let 7 ride together? Not if the 1300 pound capacity rating doesn't
+      have a safety margin! This is an example of the kind of problem
+      in which the floor function is used. The 
+      floor function takes a real number as input and returns the next
+      lower integer.
+    </p>
+<p id="p-118">
+      Suppose after a party we have 43 unopened bottles of beer. We'd like
+      to store them in containers that hold 12 bottles each. How many
+      containers will we need? Again, this is simply a division problem — \(43/12 = 3.58\overline{333}\). So we need 3 boxes and another
+      7 twelfths of a box. Obviously we really need 4 boxes — at least one
+      will have some unused space in it. In this sort of situation
+      we're dealing with the ceiling function.
+      Given a real number, the ceiling function rounds it up to the
+      next integer.
+    </p>
+<p id="p-119">
+      Both of these functions are denoted using symbols that look very
+      much like absolute value bars. The difference lies in some
+      small horizontal strokes.
+    </p>
+<p id="p-120">
+      If \(x\) is a real number, its floor is denoted \(\lfloor x \rfloor\),
+      and its ceiling is denoted \(\lceil x \rceil\). Here are the
+      formal definitions:
+    </p>
+<article class="definition-like" id="definition-6"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">1.4.6</span>
+</h5>
+<p id="p-121">
+          \(y = \lfloor x \rfloor\) exactly when \(y \in \Integers\) and
+          \(y \leq x \lt  y+1\).
+        </p></article><article class="definition-like" id="definition-7"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">1.4.7</span>
+</h5>
+<p id="p-122">
+          \(y = \lceil x \rceil\) exactly when \(y \in \Integers\) and
+          \(y-1 \lt  x \leq y\).
+        </p></article><p id="p-123">
+      Basically, the definition of floor says that \(y\) is an integer
+      that is less than or equal to \(x\), but \(y+1\) definitely exceeds \(x\).
+      The definition of ceiling can be paraphrased similarly.
+    </p></section><section class="subsection" id="div_mod"><header title="Subsection 1.4.5 Div and mod"><h1 class="heading hide-type" alt="Subsection 1.4.5 Div and mod">
+<span class="type">Subsection</span><span class="codenumber">1.4.5</span><span class="title">Div and mod</span><a href="sec_num_thry.html#div_mod" class="permalink">¶ permalink</a>
+</h1></header><p id="p-124">
+      In the next section we'll discuss the so-called division algorithm — this may be over-kill since you certainly already know how to do
+      division! Indeed, in the U.S., long division is usually first studied
+      in the latter half of elementary school, and division problems that
+      don't involve a remainder may be found as early as the first grade.
+      Nevertheless, we're going to discuss this process in sordid detail
+      because it gives us a good setting in which to prove relatively easy
+      statements. Suppose you are setting-up a long division problem in
+      which the integer \(n\) is being divided by a positive divisor \(d\).
+      (If you want to divide by a negative number, just divide by the
+      corresponding positive number and then throw an extra minus sign
+      on at the end.)
+    </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">q</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">d</td>
+<td class="l m b0 r0 l0 t0 lines"><table>
+<tr><td class="l m b1 r0 l0 t0 lines"></td></tr>
+<tr><td class="l m b0 r0 l0 t0 lines">n</td></tr>
+</table></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\vdots\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">r</td>
+</tr>
+</table>
+<p id="p-125">
+      Recall that the answer consists of two parts, a <!--Style me with CSS--><em>quotient</em> \(q\),
+      and a <!--Style me with CSS--><em>remainder</em> \(r\). Of course, \(r\) may be zero, but also, the
+      largest \(r\) can be is \(d-1\). The assertion that this answer uniquely
+      exists is known as the 
+      <!--Style me with CSS--><em>quotient-remainder theorem</em>:
+    </p>
+<article class="theorem-like" id="quo-rem"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">1.4.8</span>
+</h5>
+<p id="p-126">
+          Given integers \(n\) and \(d&gt;0\), there are unique integers \(q\) and \(r\) such
+          that \(n = qd + r\) and \(0 \leq r \lt  d\).
+        </p></article><p id="p-127">
+      The words “div” and “mod” that appear in the title of this
+      subsection provide mathematical shorthand for \(q\) and \(r\). Namely,
+      “\(n \bmod d\)” is a way of expressing the remainder \(r\), and “\(n
+      \tdiv d\)” is a way of expressing the quotient \(q\).
+    </p>
+<p id="p-128">
+      If two integers, \(m\) and \(n\), leave the same remainder when you
+      divide them by \(d\), we say that they are 
+      <!--Style me with CSS--><em>congruent modulo \(d\)</em>.
+      One could express this by writing \(n \bmod d = m \bmod d\), but usually
+      we adopt a shorthand notation
+      \begin{equation*}
+        n \equiv m \pmod{d}.
+      \end{equation*}
+    </p>
+<p id="p-129">
+      If one is in a context in which it is completely clear what \(d\) is, it's
+      acceptable to just write \(n \equiv m\).
+    </p>
+<p id="p-130">
+      The “mod” operation is used quite a lot in mathematics. When we do
+      computations modulo some number \(d\), (this is known as “modular arithmetic”
+      or, sometimes, “clock arithmetic”) some very nice properties of “mod”
+      come in handy:
+      \begin{equation*}
+        x + y \bmod d = ( x \bmod d + y \bmod d ) \bmod d
+      \end{equation*}
+      and
+      \begin{equation*}
+        x \cdot y \bmod d = ( x \bmod d \cdot y \bmod d ) \bmod d.
+      \end{equation*}
+    </p>
+<p id="p-131">
+      These rules mean that we can either do the operations first, then
+      reduce the answer \(\bmod\; d\) or we can do the reduction \(\bmod\; d\)
+      first and then do the operations (although we may have to do one
+      more round of reduction \(\bmod\; d\)).
+    </p>
+<p id="p-132">
+      For example, if we are working \(\bmod\; 10\), and want to compute
+      \(87 \cdot 96 \bmod\; 10\), we can instead just compute \(7 \cdot 6 \bmod\; 10\),
+      which is \(2\).
+    </p></section><section class="subsection" id="binom_coeff"><header title="Subsection 1.4.6 Binomial coefficients"><h1 class="heading hide-type" alt="Subsection 1.4.6 Binomial coefficients">
+<span class="type">Subsection</span><span class="codenumber">1.4.6</span><span class="title">Binomial coefficients</span><a href="sec_num_thry.html#binom_coeff" class="permalink">¶ permalink</a>
+</h1></header><p id="p-133">
+      A “binomial” is a polynomial with 2 terms, for example \(x+1\) or \(a+b\).
+      The numbers that appear as the coefficients when one raises a binomial
+      to some power are — rather surprisingly — known as
+       binomial coefficients.
+    </p>
+<p id="p-134">
+      Let's have a look at the first several powers of \(a+b\).
+      \begin{gather*}
+(a+b)^0 = 1\\
+(a+b)^1 = a+b\\
+(a+b)^2 = a^2 + 2ab + b^2
+\end{gather*}
+    </p>
+<p id="p-135">
+      To go much further than the second power requires a bit of work,
+      but try the following
+    </p>
+<article class="exercise-like" id="exercise-13"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.4.9</span>
+</h5>
+<p id="p-136">
+          Multiply \((a+b)\) and \((a^2 + 2ab + b^2)\) in order to determine \((a+b)^3\).
+          If you feel up to it, multiply \((a^2 + 2ab + b^2)\) times itself in order
+          to find \((a+b)^4\).
+        </p></article><p id="p-137">
+      Since we're interested in the coefficients of these polynomials, it's important
+      to point out that if no coefficient appears in front of a term that means the
+      coefficient is 1.
+    </p>
+<p id="p-138">
+      These binomial coefficients can be placed in an arrangement known as
+        Pascal's triangle
+      <span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-5" id="fn-5"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-5" style="display: none;" class="tex2jax_ignore"><span class="footnote">This triangle was actually known well before Blaise Pascal 
+      began to study it, but it carries his name today.</span></span>, which
+      provides a convenient way to calculate small binomial coefficients
+    </p>
+<figure class="figure-like" id="table-1"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+</table>\(5\)</figure><p id="p-139">
+      Notice that in the triangle there is a border on both sides containing
+      1's and that the numbers on the inside of the triangle are the sum of the
+      two numbers above them. You can use these facts to extend the triangle.
+    </p>
+<article class="exercise-like" id="exercise-14"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.4.10</span>
+</h5>
+<p id="p-140">
+          Add the next two rows to the Pascal triangle in <span>&lt;&lt;Unresolved xref, reference "fig_pascal"; check spelling or use "provisional" attribute&gt;&gt;</span>.
+        </p></article><p id="p-141">
+      Binomial coefficients are denoted using a somewhat strange looking
+      symbol. The number in the \(k\)-th position in row number \(n\) of
+      the triangle is denoted \(\displaystyle \binom{n}{k}\). This looks
+      a little like a fraction, but the fraction bar is missing. Don't
+      put one in! It's <!--Style me with CSS--><em>supposed</em> to be missing. In spoken English
+      you say “\(n\) choose \(k\)” when you encounter the symbol \(\displaystyle \binom{n}{k}\).
+    </p>
+<p id="p-142">
+      There is a formula for the binomial coefficients — which is nice. Otherwise
+      we'd need to complete a pretty huge Pascal triangle in order to compute
+      something like \(\displaystyle \binom{52}{5}\). The formula involves
+       factorial notation. Just to be sure we are
+      all on the same page, we'll define factorials before proceeding.
+    </p>
+<p id="p-143">
+      The symbol for factorials is an exclamation point following a number.
+      This is just a short-hand for expressing the
+      product of all the numbers up to a given one.
+      For example \(7!\) means \(1\cdot 2\cdot 3\cdot 4\cdot 5\cdot 6\cdot 7\).
+      Of course, there's really no need to write the initial \(1\) — also,
+      for some reason people usually write the product in decreasing order
+      (\(7! = 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2)\).
+    </p>
+<p id="p-144">
+      The formula for a binomial coefficient is
+      \begin{equation*}
+        \binom{n}{k} = \frac{n!}{k! \cdot (n-k)!}.
+      \end{equation*}
+    </p>
+<p id="p-145">
+      For example
+      \begin{equation*}
+        \binom{5}{3} = \frac{5!}{3! \cdot (5-3)!} = \frac{1\cdot 2\cdot 3\cdot 4\cdot 5}{(1\cdot 2\cdot 3) \cdot (1\cdot 2)} = 10.
+      \end{equation*}
+    </p>
+<p id="p-146">
+      A slightly more complicated example (and one that gamblers are fond of)
+      is
+      \begin{gather*}
+\binom{52}{5} = \frac{52!}{5! \cdot (52-5)!} 
+         = \frac{1\cdot 2\cdot 3\cdot \cdots 52}{(1\cdot 2\cdot 3 \cdot 4 \cdot 5) \cdot (1\cdot 2 \cdot 3\cdot \cdots 47)}\\
+= \frac{48 \cdot 49 \cdot 50 \cdot 51 \cdot 52}{1\cdot 2\cdot 3 \cdot 4 \cdot 5} = 2598960.
+\end{gather*}
+    </p>
+<p id="p-147">
+      The reason that a gambler might be interested in the number we just calculated
+      is that binomial coefficients do more than just give us the coefficients in the
+      expansion of a binomial. They also can be used to compute how many ways one
+      can choose a subset of a given size from a set. Thus \(\binom{52}{5}\) is the
+      number of ways that one can get a 5 card hand out of a deck of 52 cards.
+    </p>
+<article class="exercise-like" id="exercise-15"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.4.11</span>
+</h5>
+<p id="p-148">
+          There are seven days in a week. In how many ways can one choose a set
+          of three days (per week)?
+        </p></article><section class="exercises" id="exercises-4"><header title="Exercises 1.4.6.1 Exercises"><h1 class="heading hide-type" alt="Exercises 1.4.6.1 Exercises">
+<span class="type">Subsubsection</span><span class="codenumber">1.4.6.1</span><span class="title">Exercises</span>
+</h1></header><ol id="ol-7" style="list-style-type: lower-alpha;">
+<li id="li-37"><p id="p-149">
+          An integer \(n\) is  <!--Style me with CSS--><em>doubly-even</em> 
+          if it is even, and the integer \(m\) guaranteed to exist because 
+          \(n\) is even is itself even.  Is 0 doubly-even?  What are the 
+          first 3 positive, doubly-even integers?
+
+
+
+          \hint{Answers: yes, 0,4 and 8.}
+        </p></li>
+<li id="li-38"><p id="p-150">
+          Dividing an integer by two has an interesting interpretation
+          when using binary notation: simply shift the digits to the right.
+          Thus, \(22 = 10110_2\) when divided by two gives \(1011_2\) which is
+          \(8+2+1=11\).  How can you recognize a doubly-even integer from
+          its binary representation?
+
+
+
+          \hint{Even numbers have a zero in their units place. What digit must also be zero in a doubly-even number's binary representation?}
+        </p></li>
+<li id="li-39"><p id="p-151">
+          The  <!--Style me with CSS--><em>octal</em> representation 
+          of an integer uses powers of 8 in place notation.  The digits of an 
+          octal number run from 0 to 7, one never sees 8's or 9's.  How would 
+          you represent 8 and 9 as octal numbers?  What octal number comes 
+          immediately after \(777_8\)?  What (decimal) number is \(777_8\)?
+
+
+
+
+
+          \hint{Eight is \(10_8\), nine is \(11_8\). The point of asking questions about \(777\), is that (in octal) \(7\) is the digit that is analogous to \(9\) in base-\(10\). Thus \(777_8\) is something like \(999_{10}\) in that the number following both of them is written \(1000\) (although \(1000_8\) and \(1000_{10}\) are certainly not equal!)}
+        </p></li>
+<li id="li-40"><p id="p-152">
+          One method of converting from decimal to some other base is
+          called  <!--Style me with CSS--><em>repeated division</em>.  
+          One divides the number by the base
+          and records the remainder — one then divides the quotient obtained
+          by the base and records the remainder.  Continue dividing the 
+          successive quotients by the base until the quotient is smaller than
+          the base.  Convert 3267 to base-7 using repeated division.  Check 
+          your answer by using the meaning of base-7 place notation.  (For
+          example \(54321_7\) means \(5\cdot7^4 + 4\cdot7^3 + 3 \cdot7^2 +
+          2\cdot7^1 + 1\cdot7^0\).)
+
+
+
+          \hint{It is helpful to write something of the form \(n = qd+r\) at each stage. The first two stages should look like
+          \begin{equation*}
+            3267 \; = \; 466 \cdot 7 + 5
+          \end{equation*}
+          \begin{equation*}
+            466 \; = \; 66 \cdot 7 + 4
+          \end{equation*}
+          you do the rest…
+          }
+        </p></li>
+<li id="li-41"><p id="p-153">
+          State a theorem about the octal representation of even numbers.
+
+
+
+          \hint{One possibility is to mimic the result for base-10 that an even number always ends in 0,2,4,6 or 8.}
+        </p></li>
+<li id="li-42"><p id="p-154">
+          In hexadecimal (base-16) notation one needs 16 “digits,” the
+            ordinary digits are used for 0 through 9, and the letters A through
+            F are used to give single symbols for 10 through 15.  The first  32
+            natural number in hexadecimal are:
+            1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,10,11,12,13,14,15,16, 17,18,19,1A,
+            1B,1C,1D,1E,1F,20. 
+
+            Write the next 10 hexadecimal numbers after \(AB\).
+
+            Write the next 10 hexadecimal numbers after \(FA\).
+
+          \hint{As a check, the tenth number after AB is B5.
+          The tenth hexadecimal number after FA is 104.}
+        </p></li>
+<li id="li-43"><p id="p-155">
+          For conversion between the three bases used most often in 
+          Computer Science we can take binary as the “standard” base and 
+          convert using a table look-up.  Each octal digit will correspond 
+          to a binary triple, and each hexadecimal digit will correspond to 
+          a 4-tuple of binary numbers.  Complete the following tables.  
+          (As a check, the 4-tuple next to \(A\) in the table for
+          hexadecimal should be 1010 — which is nice since \(A\) 
+          is really 10 so if you read that as “ten-ten” it is a good 
+          aid to memory.)
+          <table><tr>
+<td class="l m b0 r0 l0 t0 lines"><table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">octal</td>
+<td class="l m b0 r0 l0 t0 lines">binary</td>
+</tr>
+<tr>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">000</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">001</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"><table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">hexadecimal</td>
+<td class="l m b0 r0 l0 t0 lines">binary</td>
+</tr>
+<tr>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">0000</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">0001</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">0010</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">9</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">A</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">B</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">C</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">D</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">E</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">F</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table></td>
+</tr></table>
+          \hint{
+
+
+
+          This is just counting in binary. Remember the sanity check that the hexadecimal digit A is represented by 1010 in binary.  (\(10_{10} \; = \; A_{16} \; = \; 1010_{2}\))
+
+
+
+          }
+        </p></li>
+<li id="li-44">
+<p id="p-156">
+      Use the tables from the previous problem to make the following conversions.
+
+      </p>
+<ol id="ol-8" style="list-style-type: lower-roman;">
+<li id="li-45"><p id="p-157">
+            Convert \(757_8\) to binary.
+          </p></li>
+<li id="li-46"><p id="p-158">
+            Convert \(1007_8\) to hexadecimal.
+          </p></li>
+<li id="li-47"><p id="p-159">
+            Convert \(100101010110_2\) to octal.
+          </p></li>
+<li id="li-48"><p id="p-160">
+            Convert \(1111101000110101_2\) to hexadecimal.
+          </p></li>
+<li id="li-49"><p id="p-161">
+            Convert \(FEED_{16}\) to binary.
+          </p></li>
+<li id="li-50"><p id="p-162">
+            Convert \(FFFFFF_{16}\) to octal.
+          </p></li>
+</ol>
+<p>
+      </p>\begin{equation*}
+        757_8 = 111 101 111_2
+      \end{equation*}\begin{equation*}
+        1007_8 = 001 000 000 111_2 = 0010 0000 0111_2 = 207_{16}
+      \end{equation*}\begin{equation*}
+        100 101 010 110_2 = 4526_8
+      \end{equation*}</li>
+<li id="li-51">
+<p id="p-163">
+      Try the following conversions between various number systems:
+
+      </p>
+<ol id="ol-9" style="list-style-type: lower-roman;">
+<li id="li-52"><p id="p-164">
+            Convert \(30\) (base 10) to binary.
+          </p></li>
+<li id="li-53"><p id="p-165">
+            Convert \(69\) (base 10) to base 5.
+          </p></li>
+<li id="li-54"><p id="p-166">
+            Convert \(1222_3\) to binary.
+          </p></li>
+<li id="li-55"><p id="p-167">
+            Convert \(1234_7\) to base 10.
+          </p></li>
+<li id="li-56"><p id="p-168">
+            Convert \(EEED_{15}\) to base 12. (Use \(\{1, 2, 3 \ldots 9, d, e\}\) as the digits in base 12.)
+          </p></li>
+<li id="li-57"><p id="p-169">
+            Convert \(678_{9}\) to hexadecimal.
+          </p></li>
+</ol>
+<p>
+      </p>
+</li>
+<li id="li-58"><p id="p-170">
+          It is a well known fact that if a number is divisible by 3, then 3
+            divides the sum of the (decimal) digits of that number.  Is this
+            result true in base 7?  Do you think this result is true in <!--Style me with CSS--><em>any</em> base? 
+ 
+ 
+ 
+          \hint{Might this effect have something to do with 10 being just one bigger than 9 (a multiple of 3)?}
+        </p></li>
+<li id="li-59"><p id="p-171">
+          Suppose that 340 pounds of sand must be placed into bags having
+            a 50 pound capacity.  Write an expression using either floor or
+            ceiling notation for the number of bags required.
+
+
+
+          \hint{Seven 50 pound bags would hold 350 pounds of sand. They'd also be able to handle 340 pounds!}
+        </p></li>
+<li id="li-60"><p id="p-172">
+          True or false?
+          \begin{equation*}
+            \left\lfloor \frac{n}{d}\right\rfloor \lt  \left\lceil \frac{n}{d}\right\rceil
+          \end{equation*}
+          for all integers \(n\) and \(d&gt;0\). Support your claim.
+
+
+
+          \hint{You have to try a bunch of examples.  You should try to make sure the examples
+          you try cover all the possibilities.  The pairs that provide counterexamples (i.e. show the statement is false in general) are relatively sparse, so be systematic.}
+        </p></li>
+<li id="li-61"><p id="p-173">
+          What is the value of \(\lceil\pi\rceil^{2}-\lceil\pi^{2}\rceil\)?
+
+
+
+          \hint{ \(\pi^2 = 9.8696\) }
+        </p></li>
+<li id="li-62"><p id="p-174">
+          Assuming the symbols \(n\),\(d\),\(q\) and \(r\) have meanings as in the
+            quotient-remainder theorem (see page 29 of GIAM ).  Write
+            expressions for \(q\) and \(r\), in terms of \(n\) and \(d\) using floor
+            and/or ceiling notation.
+
+
+
+          \hint{I just can't bring myself to spoil this one for you, you really need to work this out on your own. }
+        </p></li>
+<li id="li-63">
+<p id="p-175">
+      Calculate the following quantities:
+
+      </p>
+<ol id="ol-10" style="list-style-type: lower-roman;">
+<li id="li-64"><p id="p-176">
+            \(3 \mod 5\)
+          </p></li>
+<li id="li-65"><p id="p-177">
+            \(37 \mod 7\)
+          </p></li>
+<li id="li-66"><p id="p-178">
+            \(1000001 \mod 100000\)
+          </p></li>
+<li id="li-67"><p id="p-179">
+            \(6 \tdiv 6\)
+          </p></li>
+<li id="li-68"><p id="p-180">
+            \(7 \tdiv 6\)
+          </p></li>
+<li id="li-69"><p id="p-181">
+            \(1000001 \tdiv 2\)
+          </p></li>
+</ol>
+<p>
+      </p>
+</li>
+<li id="li-70">
+<p id="p-182">
+      Calculate the following binomial coefficients:
+
+      </p>
+<ol id="ol-11" style="list-style-type: lower-roman;">
+<li id="li-71"><p id="p-183">
+            \(\binom{3}{0}\)
+          </p></li>
+<li id="li-72"><p id="p-184">
+            \(\binom{7}{7}\)
+          </p></li>
+<li id="li-73"><p id="p-185">
+            \(\binom{13}{5}\)
+          </p></li>
+<li id="li-74"><p id="p-186">
+            \(\binom{13}{8}\)
+          </p></li>
+<li id="li-75"><p id="p-187">
+            \(\binom{52}{7}\)
+          </p></li>
+</ol>
+<p>
+      </p>
+<tt class="code-inline tex2jax_ignore">nCr</tt>—<tt class="code-inline tex2jax_ignore">nCr</tt><tt class="code-inline tex2jax_ignore">PRB</tt><tt class="code-inline tex2jax_ignore">MATH</tt><tt class="code-inline tex2jax_ignore">binomial(n,k)</tt>
+</li>
+<li id="li-76"><p id="p-188">
+          An ice cream shop sells the following flavors: chocolate, vanilla, 
+          strawberry, coffee, butter pecan, mint chocolate chip and raspberry.
+          How many different bowls of ice cream — with three scoops — can they make?  
+
+
+
+          \hint{You're choosing three things out of a set of size seven…}
+        </p></li>
+</ol></section></section></section></div></main>
+</div>
+</body>
+</html>

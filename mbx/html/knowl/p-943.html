@@ -1,0 +1,26 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:43-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<p><h5 class="heading"><span class="type">Paragraph</span></h5>
+    Soon we'll do an actual example of an inductive
+    proof, but first we have to say something <!--Style me with CSS--><em>REALLY IMPORTANT</em>
+    about such proofs. Pay attention! This is <!--Style me with CSS--><em>REALLY IMPORTANT</em>!
+    When doing the second part of an inductive proof (the inductive step),
+    you are proving a UCS, and if you recall how that's done, you start
+    by assuming the antecedent is true. But the particular UCS we'll
+    be dealing with is \(\forall k,  P_k \implies P_{k+1}\). That means
+    that in the course of proving \(\forall n,  P_n\) we have to <!--Style me with CSS--><em>assume</em>
+    that \(P_k\) is true. Now this sounds very much like the error known
+    as “circular reasoning,” especially as many authors don't even
+    use different letters (\(n\) versus \(k\) in our outline) to distinguish
+    the two statements. (And, quite honestly, we only introduced the variable
+    \(k\) to assuage a certain lingering guilt regarding circular reasoning.)
+    The sentence \(\forall n,  P_n\) is what we're trying to prove, but the
+    sentence we need to prove in order to do that is \(\forall k,  P_k \implies P_{k+1}\).
+    This is subtly different — in proving that \(\forall k,  P_k \implies P_{k+1}\)
+    (which is a UCS!) we assume that \(P_k\) is true <!--Style me with CSS--><em>for some particular value of \(k\)</em>.
+  </p><span class="incontext"><a href="sec_induct.html#p-943">in-context</a></span>

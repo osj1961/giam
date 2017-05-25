@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:40-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Counting</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="previous-button toolbar-item button" href="chapter-7.html">Previous</a><a class="up-button button toolbar-item" href="chapter-7.html">Up</a><a class="next-button button toolbar-item" href="section-36.html">Next</a>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chapter-7.html">Previous</a><a class="up-button button toolbar-item" href="chapter-7.html">Up</a><a class="next-button button toolbar-item" href="section-36.html">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link active"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html" class="active">Counting</a></li>
+<li><a href="section-36.html">Parity and Counting arguments</a></li>
+<li><a href="section-37.html">The pigeonhole principle</a></li>
+<li><a href="section-38.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-40.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-42.html">Dominance</a></li>
+<li><a href="section-43.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-44.html">Morley's miracle</a></li>
+<li><a href="section-45.html">Five steps into the void</a></li>
+<li><a href="section-46.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_counting"><header title="Section 7.1 Counting"><h1 class="heading hide-type" alt="Section 7.1 Counting">
+<span class="type">Section</span><span class="codenumber">7.1</span><span class="title">Counting</span><a href="sec_counting.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-1318">
+    Many results in mathematics are answers to “How many …” questions.
+  </p>
+<p id="p-1319">
+    “How many subsets does a finite set have?”
+  </p>
+<p id="p-1320">
+    “How many handshakes will transpire when \(n\) people first meet?”
+  </p>
+<p id="p-1321">
+    “How many functions are there from a set of size \(n\) to a set of size \(m\)?”
+  </p>
+<p id="p-1322">
+    The title of this section, “Counting,” is not intended to evoke the usual
+    process of counting sheep, or counting change. What we want is to be able
+    to count some collection <!--Style me with CSS--><em>in principle</em> so that we will be able to
+    discover a formula for its size.
+  </p>
+<p id="p-1323">
+    There are two principles that will be indispensable in counting things.
+    These principles are simple, yet powerful, and they have been named in
+    the most unimaginative way possible. The “multiplication rule” which
+    tells us when we should multiply, and the “addition rule” which tells
+    us when we should add.
+  </p>
+<p id="p-1324">
+    Before we describe these principles in detail,
+    we'll have a look at a simpler problem which is most easily described
+    by an example: How many integers are there in the list \((7,8,9,\ldots 44)\)?
+    We could certainly write down all the integers from \(7\) to \(44\) (inclusive)
+    and then count them — although this wouldn't be the best plan if the numbers
+    \(7\) and \(44\) were replaced with (say) \(7,045,356\) and \(22,355,201\). A method
+    that does lead to a generalized ability to count the elements of a finite
+    sequence arises if we think carefully about what exactly a finite sequence
+    <!--Style me with CSS--><em>is</em>.
+  </p>
+<article class="definition-like" id="definition-19"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">7.1.1</span>
+</h5>
+<p id="p-1325">
+        A <em class="terminology">sequence from a set \(S\)</em> is a function from
+        \(\Naturals\) to \(S\).
+      </p></article><article class="definition-like" id="definition-20"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">7.1.2</span>
+</h5>
+<p id="p-1326">
+        A <em class="terminology">finite sequence from a set \(S\)</em> is a
+        function from \(\{0, 1, 2, \ldots , n\}\) to \(S\), where \(n\) is some
+        particular (finite) integer.
+      </p></article><p id="p-1327">
+    Now it is easy to see that there are \(n+1\) elements in the set
+    \(\{0, 1, 2, \ldots , n \}\) so counting the elements of a finite
+    sequence will be easy if we can determine the function involved
+    and figure out what \(n\) is by inverting it (\(n\) is an inverse image
+    for the last element in a listing of the sequence).
+  </p>
+<p id="p-1328">
+    In the example that we started with, the function is \(f(x)=x+7\). We
+    can sum up the process that allows us to count the sequence by saying
+    ``there is a one-to-one correspondence between the lists
+    \begin{equation*}
+      (7, 8, 9, \ldots , 44 )
+    \end{equation*}
+    and
+    \begin{equation*}
+      (0, 1, 2, \ldots , 37 )
+    \end{equation*}
+    and the later has \(38\) entries.''
+  </p>
+<p id="p-1329">
+    More generally, if there is a list of consecutive numbers beginning
+    with \(k\) and ending with \(n\), there will be \(n-k+1\) entries in the
+    list. Lists of consecutive integers represent a relatively simple
+    type of finite sequence. Usually we would have some slightly more
+    interesting function that we'd need to invert.
+  </p>
+<p id="p-1330">
+    The following exercise involves inverting the function \((x+5)^2\).
+  </p>
+<article class="exercise-like" id="exercise-63"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">7.1.3</span>
+</h5>
+<p id="p-1331">
+        How many integers are in the list \((25, 36, 49, \ldots , 10000)\) ?
+      </p></article><div class="hidden-knowl-wrapper"></div>
+<p id="p-1332">
+    We will have a lot more practice with counting the elements of sequences
+    in the exercises at the end of this section, let's continue on our
+    tour of counting by having a look at the addition rule.
+  </p>
+<p id="p-1333">
+    The addition rule says that it is appropriate to add if we can
+    partition a collection into <!--Style me with CSS--><em>disjoint</em> pieces. In other words,
+    if a set \(S\) is the union of two or more subsets and these subsets
+    are mutually disjoint, we can find the size of \(S\) by adding the sizes
+    of the subsets.
+  </p>
+<p id="p-1334">
+    In the game Yahtzee, one rolls 5 dice and (optionally) performs a
+    second roll of some or all of the dice. The object is to achieve
+    several final configurations that are modeled after the hands in
+    Poker. In particular, one configuration, known as a “full house,”
+    is achieved by having two of one number and three of another.
+    (Colloquially, we say “three-of-a-kind plus a pair is a full house.”)
+  </p>
+<p id="p-1335">
+    Now, we could use Yahtzee “hands” to provide us with a whole collection
+    of counting problems once we have our basic counting principles,
+    but for the moment we just want to make a simple (and obvious) point
+    about “full houses” — the pair is either smaller or larger than
+    the three-of-a-kind. This means we can partition the set of all possible
+    full houses into two disjoint sets — the full houses consisting of a small
+    pair and a larger three-of-a-kind and those where the pair is larger
+    than the three-of-a-kind. If we can find some way of counting these
+    two cases separately, then the total number of full houses will be the
+    sum of these numbers.
+  </p>
+<figure class="figure-like" id="figure-18"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/b94598664a64c06fabf22bbd84c98e1c8c7f0333.png" alt=""><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/b94598664a64c06fabf22bbd84c98e1c8c7f0333.png" alt=""></figure><p id="p-1336">
+    The multiplication rule gives
+    us a way of counting things by thinking
+    about how we might construct them. The numbers that are multiplied
+    are the number of choices we have in the construction process.
+    Surprisingly often, the number of choices we can make in a given
+    stage of constructing some configuration is independent of the choices
+    that have gone before — if this is not the case the multiplication rule
+    may not apply.
+  </p>
+<p id="p-1337">
+    If some object can be constructed in \(k\) stages, and if in the first
+    stage we have \(n_1\) choices as to how to proceed, in the second stage
+    we have \(n_2\) choices, <!--Style me with CSS--><em>et cetera</em>. Then the total number of such
+    objects is the product \(n_1n_2 \cdots n_k\).
+  </p>
+<p id="p-1338">
+    A <!--Style me with CSS--><em>permutation of an \(n\)-set</em> (w.l.o.g. \(\{1,2,\ldots , n\}\)) is an ordered \(n\)-tuple where each entry is a distinct element of the
+    \(n\)-set. Generally, a permutation may be regarded as a bijection from
+    an \(n\)-set to itself. Our first use of the multiplication rule will
+    be to count the total number of permutations of \(\{1, 2, 3, \ldots ,n\}\).
+  </p>
+<p id="p-1339">
+    Let's start by counting the permutations of \(\{1, 2, 3\}\).
+    A permutation will be a 3-tuple containing the numbers \(1\), \(2\) and
+    \(3\) in some order. We will think about building such a thing in
+    three stages. First,
+    we must select a number to go in the first position — there are \(3\) choices.
+    Having made that choice, there will only be two possibilities for the number
+    in the second position. Finally there is just one number remaining to put in
+    the third position<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-43" id="fn-43"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-43" style="display: none;" class="tex2jax_ignore"><span class="footnote">People may say you have “no choice” in this 
+    last situation, but what they mean is that you have only one choice.</span></span>.
+    Thus there are \(3\cdot 2\cdot 1 = 6\) permutations of a \(3\) element set.
+  </p>
+<p id="p-1340">
+    The general rule is that there are \(n!\) permutations of \(\{1, 2, \ldots , n\}\).
+  </p>
+<p id="p-1341">
+    There are times when configurations that are like permutations (in that they
+    are ordered and have no duplicates) but don't consist of all \(n\) numbers
+    are useful.
+  </p>
+<article class="definition-like" id="definition-21"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">7.1.4</span>
+</h5>
+<p id="p-1342">
+        A <em class="terminology">\(k\)-permutation from an \(n\)-set</em> is an ordered selection
+        of \(k\) distinct elements from a set of size \(n\).
+      </p></article><p id="p-1343">
+    There are certain natural limitations on the value of \(k\), for instance \(k\)
+    can't be negative — although (arguably) \(k\) can be 0, it makes more sense
+    to think of \(k\) being at least 1. Also, if \(k\) exceeds
+    \(n\) we won't be able to find <!--Style me with CSS--><em>any</em> \(k\)-permutations,
+    since it will be impossible
+    to meet the “distinct” requirement. If \(k\) and \(n\) are equal, there is
+    no difference between a \(k\)-permutation and an ordinary permutation.
+    Therefore, we ordinarily restrict \(k\) to lie in the range \(0 \lt  k \lt  n\).
+  </p>
+<p id="p-1344">
+    The notation \(P(n,k)\) is used for the total number of \(k\)-permutations
+    of a set of size \(n\). For example, \(P(4,2)\) is 12, since there are
+    twelve different ordered pairs having distinct entries where the
+    entries come from \(\{1,2,3,4\}\).
+  </p>
+<article class="exercise-like" id="exercise-64"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">7.1.5</span>
+</h5>
+<p id="p-1345">
+        Write down all twelve \(2\)-permutations of the \(4\)-set \(\{1,2,3,4\}\).
+      </p></article><div class="hidden-knowl-wrapper"></div>
+<p id="p-1346">
+    Counting \(k\)-permutations using the multiplication rule is easy. We
+    build a \(k\)-permutation in \(k\) stages. In stage 1, we pick the first
+    element in the permutation — there are \(n\) possible choices. In
+    stage 2, we pick the second element — there are now only \(n-1\) choices
+    since we may not repeat the first entry. We keep going like this until
+    we've picked \(k\) entries. The number \(P(n,k)\) is the product of \(k\)
+    numbers beginning with \(n\) and descending down to \(n-k+1\). To verify
+    that \(n-k+1\) is really the right lower limit, check that there are indeed
+    \(k\) entries in the sequence
+    \begin{equation*}
+      (n, n-1, n-2, \ldots n-k+1).
+    \end{equation*}
+  </p>
+<p id="p-1347">
+    This verification may be easier if we rewrite the sequence as
+    \begin{equation*}
+      (n-0, n-1, n-2, \ldots n-(k-1) ).
+    \end{equation*}
+  </p>
+<p id="p-1348">
+    Let's have a look at another small example — \(P(8,4)\). There will be 8
+    choices for the first entry in a 4-tuple, 7 choices for the second
+    entry, 6 choices for the third entry and 5 choices for the last entry.
+    (Note that \(5 = 8-4+1\).) Thus \(P(8,4)=8\cdot 7 \cdot 6 \cdot 5 = 1680\).
+  </p>
+<p id="p-1349">
+    Finally, we should take note that it is relatively easy to express \(P(n,k)\)
+    using factorials. If we divide a number factorialized by some smaller
+    number factorialized, we will get a descending product just like those above.
+  </p>
+<article class="exercise-like" id="exercise-65"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">7.1.6</span>
+</h5>
+<p id="p-1350">
+        What factorial would we divide \(8!\) by in order to get \(P(8,4)\)?
+      </p></article><div class="hidden-knowl-wrapper"></div>
+<p id="p-1351">
+    The general rule is that \(P(n,k) = \frac{n!}{(n-k)!}\).
+  </p>
+<p id="p-1352">
+    If we were playing a card game in which we were dealt 5 cards from
+    a deck of 52, we would receive our cards in the form of
+    \(P(52,5) = 52 \cdot 51 \cdot 50 \cdot 49 \cdot 48 = 311875200\) ordered
+    \(5\)-tuples. Normally, we don't really care about what order the cards
+    came to us in. In a card game one ordinarily begins sorting the cards
+    so as to see what hand one has — this is a sure sign that the order the
+    cards were dealt is actually immaterial. How many different orders can
+    five cards be put in? The answer to this question is \(5! = 120\) since
+    what we are discussing is nothing more than a permutation of a set of
+    size 5. Thus, if we say that there are 311,875,200 different possible
+    hands in 5-card poker, we are over-counting things by quite a bit! Any
+    given hand will appear 120 times in that tabulation, which means the
+    right value is \(311875200/120 = 2598960\).
+  </p>
+<p id="p-1353">
+    Okay, so there around 2.6 million
+    different hands in 5-card poker. Unless you plan to become a gambler
+    this isn't really that useful of a piece of information — but if you
+    generalize what we've done in the paragraph above, you'll have found
+    a way to count unordered collections of a given size taken from a set.
+  </p>
+<p id="p-1354">
+    A  <!--Style me with CSS--><em>\(k\)-combination from an \(n\)-set</em> is an
+    unordered selection, without repetitions, of \(k\) things out of \(n\).
+    This is the exact same thing as a subset of size \(k\) of a set of size
+    \(n\), and the number of such things is denoted by several different
+    notations — \(C(n,k)\), \(nCk\) and \(\displaystyle\binom{n}{k}\) among
+    them<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-44" id="fn-44"><span class="footnote"><sup> 2 </sup></span></a></span><span id="hk-fn-44" style="display: none;" class="tex2jax_ignore"><span class="footnote">Watch out for the \(\binom{n}{k}\) notation, it is easy 
+    to confuse it with the fraction \(\left(\frac{n}{k}\right)\).  They are
+    not the same — the fraction bar is <!--Style me with CSS--><em>supposed</em> to be missing
+    in \(\binom{n}{k}\).</span></span>. We can come
+    up with a formula for \(C(n,k)\) by a slightly roundabout argument.
+    Suppose we think of counting the \(k\)-permutations of \(n\) things using the
+    multiplication rule in a different way then we have previously. We'll
+    build a \(k\)-permutation in two stages. First we'll choose \(k\) symbols
+    to put into our permutation — which can be done in \(C(n,k)\) ways. And
+    second, we'll put those \(k\) symbols into a particular order — which
+    can be accomplished in \(k!\) ways. Thus \(P(n,k) = C(n,k) \cdot k!\).
+    Since we already know that \(P(n,k) = \frac{n!}{(n-k)!}\), we can
+    substitute and solve to obtain
+    \begin{equation*}
+      C(n,k) = \frac{n!}{k! \cdot (n-k)!}.
+    \end{equation*}
+  </p>
+<p id="p-1355">
+    It is possible to partition many counting problems into 4 “types”
+    based on the answers to two questions:
+  </p>
+<p id="p-1356">
+    Is order important in the configurations being counted?
+  </p>
+<p id="p-1357">
+    Are we allowed to have repeated elements in a configuration?
+  </p>
+<p id="p-1358">
+    Suppose that we are in the general situation of selecting \(k\) things
+    out of a set of size \(n\). It should be possible to write formulas
+    involving \(n\) and \(k\) in the four cells of the following table.
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">Does order matter?</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\parbox[c]{12pt}{ \begin{sideways} Are repeats okay? \end{sideways} }</td>
+<td class="l m b0 r0 l0 t0 lines"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">Yes</td>
+<td class="l m b0 r0 l0 t0 lines">No</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\parbox[c]{12pt}{ \begin{sideways}  No \end{sideways} }</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\parbox[c]{12pt}{ \begin{sideways}  Yes  \end{sideways} }</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+</table></td>
+</tr>
+</table>
+<p id="p-1359">
+    <!--Style me with CSS--><em>Ordered with repetition</em>
+  </p>
+<p id="p-1360">
+    Selecting a PIN number<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-45" id="fn-45"><span class="footnote"><sup> 3 </sup></span></a></span><span id="hk-fn-45" style="display: none;" class="tex2jax_ignore"><span class="footnote">The phrase “PIN number” is 
+    redundant.  The `N' in PIN stands for “number.”  Anyway, a PIN is
+    a four digit (secret) number used to help ensure that automated banking
+    (such as withdrawing your life's savings) is only done by an authorized
+    individual.</span></span> for your bank account is a good example of
+    the kind of problem that is dealt with in the lower left part of the
+    table. Obviously, the order in which you key-in the digits of your PIN
+    is important. If one's number is 1356, it won't do to put in 6531!
+    Also there is no reason that we couldn't have repeated digits in a PIN.
+    (Although someone who chooses a PIN like 3333 is taking a bit of a security
+    risk! A bad guy looking over your shoulder may easily discern what your
+    PIN is.) A PIN is an ordered selection of 4 things out of 10, where
+    repetition is allowed. There are \(10^4\) possible PINs. We can determine
+    this by thinking of the multiplication principle — there are 10 choices
+    for the first digit of our PIN, since repetition is okay there are still
+    10 choices for our second digit, then (still) 10 choices for the third
+    digit as well as the fourth digit.
+  </p>
+<p id="p-1361">
+    In general, when selecting \(k\) things out of \(n\) possibilities, where order
+    counts and repetition is allowed, there are \(n^k\) possible selections.
+  </p>
+<p id="p-1362">
+    <!--Style me with CSS--><em>Ordered without repetition</em>
+  </p>
+<p id="p-1363">
+    Suppose that one wishes to come up with a password for a computer
+    account. There are 52 letters (both upper and lower case) 10 numerals
+    and 32 symbols and punctuation marks — for a total of 94 different
+    characters that
+    may be used. Some system administrators can be very paranoid about
+    passwords that might be guessable — for instance no password that
+    appears in a dictionary should ever be used on a system where security
+    is a concern. Suppose that your system administrator will reject any
+    password that has repeated symbols, and that passwords must have 8
+    characters. How many passwords are possible?
+  </p>
+<p id="p-1364">
+    This is an instance of a counting problem where we are selecting 8 things
+    out of a set of size 94 — clearly order is important and the system
+    administrator's restriction means that we may not have repeats.
+    The multiplication rule tells us that there are
+    \(94\cdot 93\cdot 92\cdot 91\cdot 90\cdot 89\cdot 88\cdot 87 = 4488223369069440\)
+    different passwords. And in the general case (selecting \(k\) things out
+    of a set of size \(n\), without repetition, and with order counting)
+    there will be \(n!/(n-k)!\) possibilities. This is the number we have
+    denoted previously by \(P(n,k)\).
+  </p>
+<p id="p-1365">
+    <!--Style me with CSS--><em>Unordered without repetition</em>
+  </p>
+<p id="p-1366">
+    This is also a case that we've considered previously. If we are choosing
+    \(k\) things out of \(n\) and order is unimportant and there can be no
+    repetitions, then what we are describing is a \(k\)-subset of the
+    \(n\)-set. There are \(C(n,k) = \frac{n!}{k!(n-k)!}\) distinct subsets.
+    Here, we'll give an example that doesn't sound like we're talking
+    about counting subsets of a particular size. (Although we really are!)
+  </p>
+<p id="p-1367">
+    How many different sequences of 6 strictly increasing numbers can
+    we choose from \(\{1, 2, 3, \ldots 20\}\)?
+  </p>
+<p id="p-1368">
+    Obviously, listing all such sequences would be an arduous task.
+    We might start with \((1,2,3,4,5,6)\) and try to proceed in some
+    orderly fashion to \((15,16,17,18,19,20)\), but unfortunately there
+    are 38,760 such sequences so unless we enlist the aid of a computer
+    we are unlikely to finish this job in a reasonable time. The number
+    we've just given (38,760) is \(C(20,6)\) and so it would seem that we're
+    claiming that this problem is really unordered selection without repetition
+    of 6 things out of 20. Well, actually, some parts of this are clearly
+    right — we are selecting 6 things from a set of size 20, and because
+    our sequences are supposed to be <!--Style me with CSS--><em>strictly</em> increasing there will
+    be no repetitions — but, a strictly increasing sequence is clearly
+    <!--Style me with CSS--><em>ordered</em> and the formula we are using is for <!--Style me with CSS--><em>unordered</em>
+    collections.
+  </p>
+<p id="p-1369">
+    By specifying a particular ordering (strictly increasing) on the sequences
+    we are counting above, we are actually removing the importance of order.
+    Put another way: if order really mattered, the symbols \(1\) through \(6\)
+    could be put into \(720\) different orders — but we only want to count
+    one of those possibilities. Put another other way: there is a one-to-one
+    correspondence between a \(6\)-subset of \(\{1,2,3, \ldots 20\}\) and a
+    strictly increasing sequence. Just make sure the subset is written in
+    increasing order!
+  </p>
+<p id="p-1370">
+    Okay, at this point we have filled-in three out of the four cells in our table.
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">Does order matter?</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\parbox[c]{12pt}{ \begin{sideways} Are repeats okay? \end{sideways} }</td>
+<td class="l m b0 r0 l0 t0 lines"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">Yes</td>
+<td class="l m b0 r0 l0 t0 lines">No</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\parbox[c]{12pt}{ \begin{sideways}  No \end{sideways} }</td>
+<td class="l m b0 r0 l0 t0 lines">\(P(n,k) = \frac{n!}{(n-k)!}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(C(n,k) = \frac{n!}{k!(n-k)!}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\parbox[c]{12pt}{ \begin{sideways}  Yes  \end{sideways} }</td>
+<td class="l m b0 r0 l0 t0 lines">\(n^k\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+</table></td>
+</tr>
+</table>
+<p id="p-1371">
+    What kinds of things are we counting in the lower right part of the table?
+    Unordered selections of \(k\) things out of \(n\) possibilities where there may
+    (or may not!) be repetitions. The game Yahtzee provides a nice example of
+    this type of configuration. When we roll 5 dice, we do not do so
+    one-at-a-time, rather, we roll them as a group — the dice are
+    indistinguishable so there is no way to order our set of 5 outcomes.
+    In fact, it would be quite reasonable to, after one's roll, arrange the
+    die in (say) increasing order. We'll repeat a bit of advice that was given
+    previously: if one is free to rearrange a configuration to suit one's needs,
+    that is a clue that order is <!--Style me with CSS--><em>not</em> important in the configurations
+    under consideration. Finally, are repetitions allowed? The outcomes
+    in Yahtzee are 5 numbers from the set \(\{1,2,3,4,5,6\}\), and while it
+    is possible to have no repetitions, that is a pretty special outcome!
+    In general, the same number can appear on two, or several, or even
+    <!--Style me with CSS--><em>all 5</em> of the die<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-46" id="fn-46"><span class="footnote"><sup> 4 </sup></span></a></span><span id="hk-fn-46" style="display: none;" class="tex2jax_ignore"><span class="footnote">When this happens you are supposed 
+    to jump in the air and yell “Yahtzee!”</span></span>.
+  </p>
+<p id="p-1372">
+    So, how many different outcomes
+    are there when one rolls five dice? To answer this question it will
+    be helpful to think about how we might express such an outcome.
+    Since order is unimportant, we can choose to put the numbers that appear
+    on the individual die in whatever order we like. We may as well place them
+    in increasing order. There will be 5 numbers and each number is between 1
+    and 6. We can list the outcomes systematically by starting with an all-ones
+    Yahtzee:
+  </p>
+<table></table>
+<p id="p-1373">
+    Whew … err, I mean, Yahtzee!
+  </p>
+<p id="p-1374">
+    You can describe a generic element of the above listing by saying “It starts
+    with some number of 1's (which may be zero), then there are some 2's (again,
+    it might be that there are zero 2's), then some (possibly none) 3's,
+    then some 4's (or maybe not), then some
+    5's (I think you probably get the idea) and finally some 6's (sorry for
+    all the parenthetical remarks).”
+  </p>
+<p id="p-1375">
+    We could, of course, actually count the
+    outcomes as listed above (there are 252) but that would be pretty dull — and
+    it wouldn't get us any closer to solving such problems in general. To
+    count things like Yahtzee rolls it will turn out that we can count something
+    related but much simpler — blank-comma arrangements. For the Yahtzee
+    problem we count arrangements of 5 blanks and 5 commas. That is,
+    things like { \rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt},\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt},,\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt},\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt},} and
+    { \rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt},,,,,} and
+    { ,,,\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt},,}.
+    These arrangements of blanks and commas correspond uniquely to Yahtzee
+    rolls — the commas serve to separate different numerical values
+    and the blanks are where we would write-in the 5 outcomes on the die.
+  </p>
+<p id="p-1376">
+    Convince yourself that there really is a one-to-one correspondence
+    between Yahtzee outcomes and arrangements of 5 blanks and 5 commas
+    by doing the following
+  </p>
+<article class="exercise-like" id="exercise-66"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">7.1.7</span>
+</h5>
+<p id="p-1377">
+        What Yahtzee rolls correspond to the following blank-comma arrangements?
+      </p>
+<p id="p-1378">
+        { \rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt},\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt},\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt},\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt},\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt},} { \rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt},\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt},,,,} { ,,,,,\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+      </p>
+<p id="p-1379">
+        What blank-comma arrangements correspond to the following Yahtzee outcomes?
+      </p>
+<p id="p-1380">
+        \(\{2,3,4,5,6\}\) \(\{3,3,3,3,4\}\) \(\{5,5,6,6,6\}\)
+      </p></article><div class="hidden-knowl-wrapper"></div>
+<p id="p-1381">
+    It may seem at first that this blank-comma thing is okay, but that we're
+    still no closer to answering the question we started with. It may seem
+    that way until you realize how easy it is to count these blank-comma
+    arrangements! You see, there are 10 symbols in one of these blank-comma
+    arrangements
+    and if we choose positions for (say) the commas, the blanks will have to go
+    into the other positions — thus every 5-subset of \(\{1,2,3,4,5,6,7,8,9,10\}\)
+    gives us a blank-comma arrangement and every one of <!--Style me with CSS--><em>them</em> gives us
+    a Yahtzee outcome. That is why there are \(C(10, 5) = 252\) outcomes
+    listed in the giant tabulation above.
+  </p>
+<p id="p-1382">
+    In general, when we are selecting \(k\) things from a set of size \(n\)
+    (with repetition and without order) we will need to consider
+    blank-comma arrangements having \(k\) blanks and \(n-1\) commas. As an
+    aid to memory, consider that when you actually write-out the elements
+    of a set it takes one fewer commas than there are elements — for example
+    \(\{1,2,3,4\}\) has 4 elements but we only need 3 commas to separate them.
+    The general answer to our problem is either \(C(k+n-1,k)\) or
+    \(C(k+n-1, n-1)\), depending on whether you want to think about
+    selecting positions for the \(k\) blanks or for the \(n-1\) commas.
+    It turns out that these binomial coefficients are equal so there's
+    no problem with the apparent ambiguity.
+  </p>
+<p id="p-1383">
+    So, finally, our table of counting formulas is complete. We'll produce
+    it here one more time and, while we're at it, ditch the \(C(n,k)\) notation in
+    favor of the more usual “binomial coefficient” notation \(\binom{n}{k}\).
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">Does order matter?</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\parbox[c]{12pt}{ \begin{sideways} Are repeats okay? \end{sideways} }</td>
+<td class="l m b0 r0 l0 t0 lines"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">Yes</td>
+<td class="l m b0 r0 l0 t0 lines">No</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\parbox[c]{12pt}{ \begin{sideways}  No \end{sideways} }</td>
+<td class="l m b0 r0 l0 t0 lines">\(P(n,k) = \frac{n!}{(n-k)!}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{n}{k} = \frac{n!}{k!(n-k)!}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\parbox[c]{12pt}{ \begin{sideways}  Yes  \end{sideways} }</td>
+<td class="l m b0 r0 l0 t0 lines">\(n^k\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{n+k-1}{k}\)</td>
+</tr>
+</table></td>
+</tr>
+</table>
+<section class="exercises" id="exercises-35"><header title="Exercises 7.1.1 Exercises"><h1 class="heading hide-type" alt="Exercises 7.1.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">7.1.1</span><span class="title">Exercises</span>
+</h1></header><ol style="list-style-type: lower-alpha;">
+<li id="li-435"><p id="p-1384">
+    Determine the number of entries in the following sequences.
+
+    <ol style="list-style-type: lower-roman;">
+<li id="li-436"><p id="p-1385">
+          \((999, 1000, 1001, \ldots  2006)\)
+        </p></li>
+<li id="li-437"><p id="p-1386">
+          \((13, 15, 17, \ldots 199)\)
+        </p></li>
+<li id="li-438"><p id="p-1387">
+          \((13, 19, 25, \ldots 601)\)
+        </p></li>
+<li id="li-439"><p id="p-1388">
+          \((5, 10, 17, 26, 37, \ldots 122)\)
+        </p></li>
+<li id="li-440"><p id="p-1389">
+          \((27, 64, 125, 216, \ldots 8000)\)
+        </p></li>
+<li id="li-441"><p id="p-1390">
+          \((7, 11, 19, 35, 67, \ldots 131075)\)
+        </p></li>
+</ol>
+    </p></li>
+<li id="li-442"><p id="p-1391">
+        How many “full houses” are there in Yahtzee?  (A full house is a pair
+        together with a three-of-a-kind.)
+      </p></li>
+<li id="li-443"><p id="p-1392">
+        In how many ways can you get “two pairs” in Yahtzee?
+      </p></li>
+<li id="li-444"><p id="p-1393">
+        Prove that the binomial coefficients \(\displaystyle \binom{n+k-1}{k}\)
+        and \(\displaystyle \binom{n+k-1}{n-1}\) are equal.
+      </p></li>
+<li id="li-445"><p id="p-1394">
+        The “Cryptographer's alphabet” is used to supply small examples
+        in coding and cryptography.  It consists of the first 6 letters, \(\{a, b, c, d, e, f\}\).  How many “words” of length up to 6 can be made with this 
+        alphabet?  (A word need not actually be a word in English, for example 
+        both “fed” and “dfe” would be words in the sense we are using the term.)
+      </p></li>
+<li id="li-446"><p id="p-1395">
+        How many “words” are there of length 4, with distinct letters from the 
+        Cryptographer's alphabet, in which the letters appear in increasing order 
+        alphabetically?  (“Acef” would be one such word, but “cafe” would not.)
+      </p></li>
+<li id="li-447"><p id="p-1396">
+        How many “words” are there of length 4 from the 
+        Cryptographer's alphabet, with repeated letters allowed,
+         in which the letters appear in non-decreasing order alphabetically?
+      </p></li>
+<li id="li-448"><p id="p-1397">
+        How many subsets does a finite set have?
+      </p></li>
+<li id="li-449"><p id="p-1398">
+        How many handshakes will transpire when \(n\) people first meet?
+      </p></li>
+<li id="li-450"><p id="p-1399">
+        How many functions are there from a set of size \(n\) to a set of size \(m\)?
+      </p></li>
+<li id="li-451"><p id="p-1400">
+        How many relations are there from a set of size \(n\) to a set of size \(m\)?
+      </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

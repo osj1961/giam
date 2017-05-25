@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-05-23T13:30:26-04:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Validity of arguments and common errors</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$4.0$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics, version 4.0</span></a></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="sec_deduct.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_logic.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="ch_proof1.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_deduct.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_logic.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="ch_proof1.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link active"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html" class="active">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_ord_rel.html">Ordering relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-37.html">Parity and Counting arguments</a></li>
+<li><a href="section-38.html">The pigeonhole principle</a></li>
+<li><a href="section-39.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-41.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-43.html">Dominance</a></li>
+<li><a href="section-44.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-45.html">Morley's miracle</a></li>
+<li><a href="section-46.html">Five steps into the void</a></li>
+<li><a href="section-47.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_valid"><header title="Section 2.7 Validity of arguments and common errors"><h1 class="heading hide-type" alt="Section 2.7 Validity of arguments and common errors">
+<span class="type">Section</span><span class="codenumber">2.7</span><span class="title">Validity of arguments and common errors</span><a href="sec_valid.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-522">
+    An argument is said to be <!--Style me with CSS--><em>valid</em> or to have a
+    <!--Style me with CSS--><em>valid form</em>
+    if each deduction in it can be justified with one of the rules
+    of inference listed in the previous section. The <!--Style me with CSS--><em>form</em> of
+    an argument might be valid, but still the conclusion may be false
+    if some of the premises are false. So to show that an argument is
+    good we have to be able to do two things: show that the argument
+    is <!--Style me with CSS--><em>valid</em> (i.e. that every step can be justified) and that
+    the argument is
+    <!--Style me with CSS--><em>sound</em>
+    which means that all the premises are
+    true. If you start off with a false premise, you can prove <!--Style me with CSS--><em>anything</em>!
+  </p>
+<p id="p-523">
+    Consider, for example the following “proof” that \(2=1\).
+  </p>
+<blockquote>
+  Suppose that \(a\) and \(b\) are two real numbers such that \(a=b\).
+  <table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">by hypothesis, \(a\) and \(b\) are equal, so</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(a^2 = ab\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">subtracting \(b^2\) from both sides</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(a^2 - b^2 = ab - b^2\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">factoring both sides</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\((a+b)(a-b) = b(a-b)\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">canceling \((a-b)\) from both sides</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(a+b = b\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+</table>
+  Now let \(a\) and \(b\) both have a particular value, \(a=b=1\),
+  and we see that \(1+1=1\), i.e. \(2=1\).
+  </blockquote>
+<p id="p-524">
+    This argument is not sound (thank goodness!) because one of the
+    premises — actually the bad premise appears as one of the
+    justifications of a step — is false. You can argue with
+    perfect logic to achieve complete nonsense if you include
+    false premises.
+  </p>
+<article class="exercise-like" id="exercise-26"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.7.1</span>
+</h5>
+<p id="p-525">
+        It is <!--Style me with CSS--><em>not</em> true that you can always cancel the same thing from
+        both sides of an equation. Under what circumstances is such cancellation
+        disallowed?
+      </p></article><p id="p-526">
+    So, how can you tell if an argument has a valid form? Use a truth table.
+    As an example, we'll verify that the rule of inference known as
+    “destructive dilemma”
+    is valid using a truth table. This argument
+    form contains 4 predicate variables so the truth table will have 16 rows.
+    There is a column for each of the variables, the premises of the argument
+    and its conclusion.
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(A\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(B\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(C\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(D\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(A{\implies}B\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(C{\implies}D\)</td>
+<td class="l m b0 r0 l0 t0 lines">\({\lnot}B \lor {\lnot}D\)</td>
+<td class="l m b0 r0 l0 t0 lines">\({\lnot}A \lor {\lnot}C\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+<td class="l m b0 r0 l0 t0 lines">T</td>
+</tr>
+</table>
+<p id="p-527">
+    Now, mark the lines in which all of the premises of this argument form
+    are true. You should note that <!--Style me with CSS--><em>in every single situation in which
+    all the premises are true</em> the conclusion is also true. That's what
+    makes “destructive dilemma” — and all of its friends — a rule of
+    inference. Whenever all the premises are true so is the conclusion.
+    You should also notice that there are several rows in which the
+    conclusion is true but some one of the premises isn't. That's
+    okay too, isn't it reasonable that the conclusion of an argument
+    can be true, but at the same time the particulars of the argument
+    are unconvincing?
+  </p>
+<p id="p-528">
+    As we've noted earlier, an argument by deductive reasoning can go wrong
+    in only certain well-understood ways. Basically, either the form of the
+    argument is invalid, or at least one of the premises is false. Avoiding
+    false premises in your arguments can be trickier than it sounds — many
+    statements that sound appealing or intuitively clear are actually
+    counter-factual. The other side of the coin, being sure that the
+    <!--Style me with CSS--><em>form</em>
+    of your argument is valid, seems easy enough — just be
+    sure to only use the rules of inference as found in <a knowl="./knowl/tab_roi.html" knowl-id="xref-tab_roi" alt="Table 2.6.2 " title="Table 2.6.2 ">Table 2.6.2</a>.
+    Unfortunately most arguments that you either read or write
+    will be in prose, rather than appearing as a formal list of deductions.
+    When dealing with that setting — using natural rather than formalized
+    language — making errors in form is quite common.
+  </p>
+<p id="p-529">
+    Two invalid forms are usually singled out for criticism, the
+    <!--Style me with CSS--><em>converse error</em> and the
+    <!--Style me with CSS--><em>inverse error</em>. In some sense
+    these two apparently different ways to screw up are really the same thing.
+    Just as a conditional statement and its contrapositive are known to be
+    equivalent, so too are the other related statements — the
+    converse and the inverse — equivalent. The converse error consists of
+    mistaking the implication in a modus ponens form for its converse.
+  </p>
+<p id="p-530">
+    The converse error:
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(B\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(A \implies B\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(A\)</td>
+</tr>
+</table>
+<p id="p-531">
+    Consider, for a moment the following argument.
+  </p>
+<blockquote>
+  If a rhinoceros sees something on fire, it will stomp on it. 
+  A rhinoceros stomped on my duck. 
+  Therefore, the rhino must have thought that my duck was on fire.
+  </blockquote>
+<p id="p-532">
+    It <!--Style me with CSS--><em>is</em> true that rhinoceroses have an instinctive desire to extinguish
+    fires. Also, we can well imagine that if someone made this ridiculous
+    argument that their duck must actually have been crushed by a rhino. But,
+    is the conclusion that the duck was on fire justified? Not really, what
+    the first part of the argument asserts is that “(on fire) implies (rhino
+    stomping)” but couldn't a rhino stomp on something for other reasons?
+    Perhaps the rhino was just ill-tempered. Perhaps the duck was just
+    horrifically unlucky.
+  </p>
+<p id="p-533">
+    The closer the conditional is to being a biconditional, the more reasonable
+    sounding is an argument exhibiting the converse error. Indeed, if the
+    argument actually contains a biconditional, the “converse error” is not
+    an error at all.
+  </p>
+<p id="p-534">
+    The following is a perfectly valid argument, that (sadly) has a false premise.
+  </p>
+<blockquote>
+  You will get an A in your Foundations class if and only if you 
+  read Dr. Fields' book.
+  You read Dr. Fields' book. 
+  Therefore, you will get an A in Foundations.
+  </blockquote>
+<p id="p-535">
+    Suppose that we try changing the major premise of that last argument to
+    something more believable.
+  </p>
+<blockquote>
+  If you read Dr. Fields' book, you will pass your Foundations class. 
+  You did not read Dr. Fields' book. 
+  Therefore, you will not pass Foundations.
+  </blockquote>
+<p id="p-536">
+    This last argument exhibits the so-called <!--Style me with CSS--><em>inverse error</em>. It is by
+    no means meant as a guarantee, but nevertheless, it seems reasonable that
+    if someone reads this book they will pass a course on this material.
+    The second premise is also easy to envision as true, although the
+    “you” that it refers to obviously isn't <!--Style me with CSS--><em>you</em>, because <!--Style me with CSS--><em>you</em>
+    are reading this book! But even if we accept the premises as true, the
+    conclusion doesn't follow. A person might have read some other book that
+    addressed the requisite material in an exemplary way.
+  </p>
+<p id="p-537">
+    Notice that the names for these two errors are derived from the change
+    that would have to be made to convert them to modus ponens. For example,
+    the inverse error is depicted formally by:
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\({\lnot}A\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(A \implies B\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\({\lnot}B\)</td>
+</tr>
+</table>
+<p id="p-538">
+    If we replaced the conditional in this argument form by its <!--Style me with CSS--><em>inverse</em>
+    (\({\lnot}A \implies {\lnot}B\)) then the revised argument would be
+    modus ponens. Similarly, if we replace the conditional in an
+    argument that suffers from the converse error by its converse,
+    we'll have modus ponens.
+  </p>
+<section class="exercises" id="exercises-14"><header title="Exercises 2.7.1 Exercises"><h1 class="heading hide-type" alt="Exercises 2.7.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">2.7.1</span><span class="title">Exercises</span>
+</h1></header><ol id="ol-34" style="list-style-type: lower-alpha;">
+<li id="li-196">
+<p id="p-539">
+    Determine the logical form of the following arguments.  Use symbols
+    to express that form and determine whether the form is valid or invalid.
+    If the form is invalid, determine the type of error made.  Comment on the 
+    soundness of the argument as well, in particular, determine whether any of
+    the premises are questionable.
+
+    </p>
+<ol id="ol-35" style="list-style-type: lower-roman;">
+<li id="li-197"><p id="p-540">
+          All who are guilty are in prison. 
+            George is not in prison.  
+            Therefore, George is not guilty.
+ 
+ 
+ 
+            \hint{ 
+            This looks like modus tollens. Let \(G\) refer to “guilt” and \(P\) refer to “in prison”
+          <table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\forall x, G(x) \implies P(x)\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\({\lnot}P(\mbox{George} )\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\({\lnot}G(\mbox{George} )\)</td>
+</tr>
+</table>
+          You should note that while the form is valid, there is something terribly wrong with this argument. Is it really true that everyone who is guilty of a crime is in prison?
+          }
+        </p></li>
+<li id="li-198"><p id="p-541">
+          If one eats oranges one will have high levels of vitamin C. 
+            You do have high levels of vitamin C. 
+            Therefore, you must eat oranges.
+        </p></li>
+<li id="li-199"><p id="p-542">
+          All fish live in water. 
+            The mackerel is a fish. 
+            Therefore, the mackerel lives in water.
+        </p></li>
+<li id="li-200"><p id="p-543">
+          If you're lazy, don't take math courses.
+            Everyone is lazy. 
+            Therefore, no one should take math courses.
+        </p></li>
+<li id="li-201"><p id="p-544">
+          All fish live in water. 
+            The octopus lives in water. 
+            Therefore, the octopus is a fish.
+        </p></li>
+<li id="li-202"><p id="p-545">
+          If a person goes into politics, they are a scoundrel.
+            Harold has gone into politics. 
+            Therefore, Harold is a scoundrel.
+        </p></li>
+</ol>
+<p>
+    </p>
+</li>
+<li id="li-203"><p id="p-546">
+        Below is a rule of inference that we call extended elimination.
+        <table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\((A \lor B) \lor C\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\({\lnot}A\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\({\lnot}B\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(C\)</td>
+</tr>
+</table>
+        Use a truth table to verify that this rule is valid.
+
+        \hint{
+
+
+
+        In the following truth table the predicate variables occupy the first 3 columns, the argument's 
+        premises are in the next three columns and the conclusion is in the right-most column.  The
+        truth values have already been filled-in.  You only need to identify the critical rows and 
+        verify that the conclusion is true in those rows.
+        <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(A\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(B\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(C\)</td>
+<td class="l m b0 r0 l0 t0 lines">\((A \lor B) \lor C\)</td>
+<td class="l m b0 r0 l0 t0 lines">\({\lnot}A\)</td>
+<td class="l m b0 r0 l0 t0 lines">\({\lnot}B\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(C\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\phi\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table>
+        }
+      </p></li>
+<li id="li-204"><p id="p-547">
+        If we allow quantifiers and open sentences in an argument form we
+        get a couple of new argument forms.  Arguments involving existentially quantified 
+        premises are rare — the new forms we are speaking of are called “universal modus 
+        ponens” and “universal modus tollens.”   The minor premises may also be quantified
+        or they may involve particular elements of the universe of discourse — this leads
+        us to distinguish argument subtypes that are termed “universal” and “particular.”
+
+        For example
+        <table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\forall x, A(x) \implies B(x)\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(A(p)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(B(p)\)</td>
+</tr>
+</table>
+        is the particular form of universal modus ponens (here, \(p\)
+        is not a variable — it stands for some particular element of the universe of
+        discourse)
+        and
+        <table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\forall x, A(x) \implies B(x)\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\forall x, {\lnot}B(x)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\forall x, {\lnot}A(x)\)</td>
+</tr>
+</table>
+        is the universal form of (universal) modus tollens.
+
+        Reexamine the arguments from problem (1), determine their forms
+        (including quantifiers) and whether they are universal or particular.
+
+        \hint{
+        Hint: All of them except for one are the particular form — number 4 is the exception.
+
+        Here's an analysis of number 5:
+
+        All fish live in water. 
+        The octopus lives in water.  
+        Therefore, the octopus is a fish. 
+
+        Let \(F(x)\) be the open sentence “x is a fish” and let \(W(x)\) be the open sentence “x lives in water.”
+
+        Our argument has the form
+        <table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\forall x, F(x) \implies W(x)\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(W(\mbox{the octopus} )\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(F(\mbox{the octopus} )\)</td>
+</tr>
+</table>
+        Clearly something is wrong — a converse error has been made — if everything that lived in water was necessarily a fish the argument would be OK (in fact it would then be the particular form of universal modus ponens).  But that is the converse of the major premise given.    
+        }
+      </p></li>
+<li id="li-205">
+<p id="p-548">
+    Identify the rule of inference being used.
+
+    </p>
+<ol id="ol-36" style="list-style-type: lower-roman;">
+<li id="li-206"><p id="p-549">
+          The Buley Library is very tall.
+
+          Therefore, either the Buley Library is very tall or it has many
+          levels underground.
+
+          \hint{disjunctive addition}
+        </p></li>
+<li id="li-207"><p id="p-550">
+          The grass is green.
+
+          The sky is blue.
+
+          Therefore, the grass is green and the sky is blue.
+
+          \hint{conjunctive addition}
+        </p></li>
+<li id="li-208"><p id="p-551">
+          \(g\) has order 3 or it has order 4.
+
+          If \(g\) has order 3, then \(g\) has an inverse.
+
+          If \(g\) has order 4, then \(g\) has an inverse.
+
+          Therefore, \(g\) has an inverse.
+
+          \hint{constructive dilemma}
+        </p></li>
+<li id="li-209"><p id="p-552">
+          \(x\) is greater than 5 and \(x\) is less than 53.
+
+          Therefore, \(x\) is less than 53.
+
+          \hint{conjunctive simplification}
+        </p></li>
+<li id="li-210"><p id="p-553">
+          If \(a|b\), then \(a\) is a perfect square.
+
+          If \(a|b\), then \(b\) is a perfect square.
+
+          Therefore, if \(a|b\), then \(a\) is a perfect square and \(b\) is
+          a perfect square.
+
+          \hint{Note that the conclusion could be re-expressed as the conjunction of the two conditionals that
+          are found in the premises.  This is conjunctive addition with a bit of “window dressing.”}
+        </p></li>
+</ol>
+<p>
+    </p>
+</li>
+<li id="li-211"><p id="p-554">
+      Read the following proof that the sum of two odd numbers is even.
+      Discuss the rules of inference used.
+
+      <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-6" id="proof-6"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div><div id="hk-proof-6" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-555">
+          Let \(x\) and \(y\) be odd numbers. Then \(x=2k+1\)
+          and \(y=2j+1\) for some integers \(j\) and \(k\). By algebra,
+          \begin{equation*}
+            x+y = 2k+1 + 2j+1 = 2(k+j+1).
+          \end{equation*}
+        </p>
+<p id="p-556">
+          Note that \(k+j+1\) is an integer because \(k\) and \(j\) are integers.
+          Hence \(x+y\) is even.
+        </p></article></div>
+
+      \hint{The definition for “odd” only involves the oddness of a single integer, but the first line of our
+      proof is a conjunction claiming that \(x\) and \(y\) are both odd.  It seems that two conjunctive simplifications, followed by applications of the definition, followed by a conjunctive addition have been used in order to
+      go from the first sentence to the second.}
+      </p></li>
+<li id="li-212"><p id="p-557">
+        Sometimes in constructing a proof we find it necessary to “weaken” an inequality.  For example,
+        we might have already deduced that \(x \lt  y\) but what we need in our argument is that \(x \leq y\).  It is
+        okay to deduce \(x \leq y\) from \(x \lt  y\) because the former is just shorthand for \(x\lt y \lor x=y\).  What
+        rule of inference are we using in order to deduce that \(x \leq y\) is true in this situation?
+
+        \hint{disjunctive addition}
+      </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

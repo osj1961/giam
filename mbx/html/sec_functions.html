@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:40-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Functions</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="previous-button toolbar-item button" href="chapter-6.html">Previous</a><a class="up-button button toolbar-item" href="chapter-6.html">Up</a><a class="next-button button toolbar-item" href="sec_special_functions.html">Next</a>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chapter-6.html">Previous</a><a class="up-button button toolbar-item" href="chapter-6.html">Up</a><a class="next-button button toolbar-item" href="sec_special_functions.html">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link active"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_functions.html" class="active">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-36.html">Parity and Counting arguments</a></li>
+<li><a href="section-37.html">The pigeonhole principle</a></li>
+<li><a href="section-38.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-40.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-42.html">Dominance</a></li>
+<li><a href="section-43.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-44.html">Morley's miracle</a></li>
+<li><a href="section-45.html">Five steps into the void</a></li>
+<li><a href="section-46.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_functions"><header title="Section 6.4 Functions"><h1 class="heading hide-type" alt="Section 6.4 Functions">
+<span class="type">Section</span><span class="codenumber">6.4</span><span class="title">Functions</span><a href="sec_functions.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-1208">
+    The concept of a function is one of the most useful abstractions
+    in mathematics. In fact it is an abstraction that can be further
+    abstracted! For instance an <!--Style me with CSS--><em>operator</em>
+    is an entity which takes functions as inputs and produces functions
+    as outputs, thus an operator is to functions as functions themselves
+    are to numbers. There are many operators that you have certainly
+    encountered already — just not by that name. One of the most
+    famous operators is “differentiation,” when you take the derivative
+    of some function, the answer you obtain is another function.
+    If two different people are given the same differentiation problem
+    and they come up with different answers, we <!--Style me with CSS--><em>know</em> that at least
+    one of them has made a mistake! Similarly, if two calculations of the
+    value of a function are made for the same input, they <!--Style me with CSS--><em>must</em> match.
+  </p>
+<p id="p-1209">
+    The property we are discussing used to be captured by saying that a
+    function needs to be “well-defined.” The old school definition of a
+    function was:
+  </p>
+<article class="definition-like" id="definition-11"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">6.4.1</span>
+</h5>
+<p id="p-1210">
+        A <em class="terminology">function</em> \(f\) is a well-defined rule, that, given any input
+        value \(x\) produces a unique output<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-39" id="fn-39"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-39" style="display: none;" class="tex2jax_ignore"><span class="footnote">The use of the notation 
+        \(f(x)\) to indicate the output of function \(f\) associated with input \(x\) 
+        was instituted by Leonard Euler, and so it is known as Euler notation.</span></span>
+        value \(f(x)\).
+      </p></article><p id="p-1211">
+    A more modern definition of a function is the following.
+  </p>
+<article class="definition-like" id="definition-12"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">6.4.2</span>
+</h5>
+<p id="p-1212">
+        A <em class="terminology">function</em> is a binary relation which does not contain
+        distinct pairs having the same initial element.
+      </p></article><p id="p-1213">
+    When we think of a function as a special type of binary relation,
+    the pairs that are “in” the function have the form \((x, f(x))\),
+    that is, they consist of an input and the corresponding output.
+  </p>
+<p id="p-1214">
+    We have gotten relatively used to relations “on” a set, but recall
+    that the more general situation is that a binary relation is
+    a subset of \(A \times B\). In this setting, if the relation is
+    actually a function \(f\), we say that \(f\) is a function <!--Style me with CSS--><em>from</em> \(A\emph{to}B\). Now, quite often there are input values that simply don't
+    work for a given function (for instance the well-known “you can't take
+    the square root of a negative” rule). Also, it is often the case that
+    certain outputs just can't happen. So, when dealing with a function
+    as a relation contained in \(A \times B\) there are actually four sets
+    that are of interest — the sets \(A\) and \(B\) (of course) but also some
+    sets that we'll denote by \(A'\) and \(B'\). The set \(A'\) consists of those
+    elements of \(A\) that actually appear as the first coordinate of a pair
+    in the relation \(f\). The set \(B'\) consists of those elements of \(B\)
+    that actually appear as the second coordinate of a pair in the relation \(f\).
+    A generic example of how these four sets might look is given in <a knowl="./knowl/fig_generic_function.html" knowl-id="xref-fig_generic_function" alt="Figure 6.4.3 " title="Figure 6.4.3 ">Figure 6.4.3</a>.
+  </p>
+<figure class="figure-like" id="fig_generic_function"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/e4da943afd93931db3290c98ac0d461cf87b9e29.png" alt=""><figcaption><span class="heading">Figure</span><span class="codenumber">6.4.3</span>The sets related to an arbitrary function.</figcaption></figure><p id="p-1215">
+    Sadly, only three of the sets we have just discussed are known to
+    the mathematical world. The set we have denoted \(A'\) is called the
+    <!--Style me with CSS--><em>domain</em> of the function \(f\). The set we have denoted \(B'\) is
+    known as the <!--Style me with CSS--><em>range</em> of the function \(f\). The set we have denoted
+    \(B\) is called the <!--Style me with CSS--><em>codomain</em> of the function \(f\). The set we
+    have been calling \(A\) does not have a name. In fact, the formal
+    definition of the term “function” has been rigged so that there
+    is no difference between the sets \(A\) and \(A'\). This seems a shame,
+    if you think of range and domain as being primary, doesn't it seem
+    odd that we have a way to refer to a superset of the range (i.e. the
+    codomain) but no way of referring to a superset of the domain?
+  </p>
+<p id="p-1216">
+    Nevertheless, this is just the way it is … There is only one
+    set on the input side — the domain of our function.
+  </p>
+<p id="p-1217">
+    The domain of
+    any relation is expressed by writing \(\Dom{\relR}\). Which is
+    defined as follows.
+  </p>
+<article class="definition-like" id="definition-13"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">6.4.4</span>
+</h5>
+<p id="p-1218">
+        If \(\relR\) is a relation from \(A\) to \(B\) then \(\Dom{\relR}\) is
+        a subset of \(A\) defined by
+        \begin{equation*}
+          \Dom{\relR} = \{a \in A \suchthat \exists b \in B, (a,b) \in \relR \}
+        \end{equation*}
+      </p></article><p id="p-1219">
+    We should point out that the notation just given for the domain of a
+    relation \(\relR\), (\(\Dom{\relR}\)) has analogs for the other
+    sets that are involved with a relation. We write \(\Cod{\relR}\)
+    to refer the the codomain of the relation, and \(\Rng{\relR}\)
+    to refer to the range.
+  </p>
+<p id="p-1220">
+    Since we are now thinking of functions as special classes of relations, it follows that a function is just
+    a set of ordered pairs. This means that the identity of a function is
+    tied up, not just with a formula that gives the output for a given input,
+    but also with what values can be used for those inputs. Thus the function
+    \(f(x)=2x\) defined on \(\Reals\) is a completely different animal from
+    the function \(f(x)=2x\) defined on \(\Naturals\). If you really want to
+    specify a function precisely you must give its domain as well as a
+    formula for it. Usually, one does this by writing a formula, then a
+    semicolon, then the domain. (E.g. \(f(x)=x^2;  x \geq 0\).)
+  </p>
+<p id="p-1221">
+    Okay, so, finally, we are prepared to give the real
+    definition of a function.
+  </p>
+<article class="definition-like" id="definition-14"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">6.4.5</span>
+</h5>
+<p id="p-1222">
+        If \(A\) and \(B\) are sets, then \(f\) is a function from \(A\) to \(B\) (which
+        is expressed symbolically by \(f:A\longrightarrow B\)), if and only if
+        \(f\) is a subset of \(A\times B\), \(\Dom{f}=A\) and \(((a,b) \in f \; \land \; (a,c) \in f \; \implies \; b=c\).
+      </p></article><p id="p-1223">
+    Recapping, a function <!--Style me with CSS--><em>must</em> have its domain equal to the set \(A\)
+    where its inputs come from. This is sometimes expressed by saying that
+    a function is <!--Style me with CSS--><em>defined</em> on its domain. A function's range and codomain
+    may be different however. In the event that the range and codomain <!--Style me with CSS--><em>are</em>
+    the same (\(\Cod{\relR} = \Rng{\relR}\))
+    we have a rather special situation and the function is graced by
+    the appellation “surjection.” The term “onto” is also commonly used
+    to describe a surjective function.
+  </p>
+<article class="exercise-like" id="exercise-53"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">6.4.6</span>
+</h5>
+<p id="p-1224">
+        There is an expression in mathematics, “Every function is onto its
+        range.” that really doesn't say very much. Why not?
+      </p></article><div class="hidden-knowl-wrapper"></div>
+<p id="p-1225">
+    If one has elements \(x\) and \(y\), of the domain and codomain, (respectively)
+    and \(y = f(x)\)<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-40" id="fn-40"><span class="footnote"><sup> 2 </sup></span></a></span><span id="hk-fn-40" style="display: none;" class="tex2jax_ignore"><span class="footnote">Or, equivalently, \((x,y) \in f\).</span></span> then one may
+    say that “\(y\) is the image of \(x\)” or that
+    “\(x\) is a preimage of \(y\).” Take careful note of the articles used in
+    these phrases — we say “\(y\) is <!--Style me with CSS--><em>the</em> image of \(x\)” but
+    “\(x\) is <!--Style me with CSS--><em>a</em> preimage of \(y\).” This is because \(y\) is uniquely determined
+    by \(x\), but not vice versa. For example, since the squares of \(2\) and \(-2\) are
+    both \(4\), if we consider the function \(f(x) = x^2\), the image of (say) \(2\)
+    is \(4\), but a preimage for \(4\) could be either \(2\) or \(-2\).
+  </p>
+<p id="p-1226">
+    It would be pleasant if there were a nice way to refer to the preimage of
+    some element, \(y\), of the range. One notation that you have probably
+    seen before is “\(f^{-1}(y)\).” There is a major difficulty with writing
+    down such a thing. By writing “\(f^{-1}\)” you are making a rather
+    vast presumption — that there actually is a function that serves as an
+    inverse for \(f\). Usually, there is not.
+  </p>
+<p id="p-1227">
+    One can define an inverse for any relation, the inverse is formed by
+    simply exchanging the elements in the ordered pairs that make up \(\relR\).
+  </p>
+<article class="definition-like" id="definition-15"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">6.4.7</span>
+</h5>
+<p id="p-1228">
+        The <em class="terminology">inverse relation</em> of a relation \(\relR\)
+        is denoted \(\relR^{-1}\) and
+        \begin{equation*}
+          \relR^{-1} = \{ (y,x) \suchthat (x,y) \in \relR \}.
+        \end{equation*}
+      </p></article><p id="p-1229">
+    In terms of graphs, the inverse and the original relation are related
+    by being reflections in the line \(y=x\). It is possible for one, both,
+    or neither of these to be functions. The canonical example to keep
+    in mind is probably \(f(x) = x^2\) and its inverse.
+  </p>
+<img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt="">
+  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  <img width="100%" src="images/284f365bf5be9a556c2f2761aa3b31e3308102b2.png" alt=""><p id="p-1230">
+    The graph that we obtain by reflecting \(y=f(x)=x^2\) in the line \(y=x\) doesn't
+    pass the vertical line test and so it is the graph of (merely) a relation — not of a function. The function \(g(x) = \sqrt{x}\) that we all know
+    and love is not truly the inverse of \(f(x)\). In fact this function is
+    defined to make a specific (and natural) choice — it returns the positive
+    square root of a number. But this leads to a subtle problem; if we start
+    with a negative number (say \(-3\)) and square it we get a positive number (\(9\))
+    and if we then come along and take the square root we get another positive
+    number (\(3\)). This is problematic since we didn't end up where we started
+    which is what ought to happen if we apply a function followed by its inverse.
+  </p>
+<p id="p-1231">
+    We'll try to handle the general situation in a bit, but for the moment let's
+    consider the nice case: when the inverse of a function is also a function.
+    When exactly does this happen? Well, we have just seen that the inverse
+    of a function doesn't necessarily pass the vertical line test, and it turns
+    out that that is the predominant issue. So, under what circumstances does
+    the inverse pass the vertical line test? When the original function
+    passes the so-called horizontal line test (every horizontal line
+    intersects the graph at most once). Thinking again about \(f(x)=x^2\), there
+    are some horizontal lines that miss the graph entirely, but all horizontal
+    lines of the form \(y=c\) where \(c\) is positive will intersect the graph twice.
+    There are many functions that <!--Style me with CSS--><em>do</em> pass the horizontal line test, for
+    instance, consider \(f(x) = x^3\). Such functions are known as
+    <!--Style me with CSS--><em>injections</em>, this is the same thing as
+    saying a function is “one-to-one.” Injective functions can be inverted — the domain of the inverse function of \(f\) will only be the range, \(\Rng{f}\),
+    which as we have seen may fall short of the being the entire codomain, since
+    \(\Rng{f} \subseteq \Cod{f}\).
+  </p>
+<p id="p-1232">
+    Let's first define injections in a way that is divorced from thinking
+    about their graphs.
+  </p>
+<article class="definition-like" id="definition-16"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">6.4.8</span>
+</h5>
+<p id="p-1233">
+        A function \(f(x)\) is an <em class="terminology">injection</em> iff for all pairs of
+        inputs \(x_1\) and \(x_2\), if \(f(x_1) = f(x_2)\) then \(x_1=x_2\).
+      </p></article><p id="p-1234">
+    This is another of those defining properties that is designed so
+    that when it is true it is vacuously true. An injective function
+    never takes two distinct inputs to the same output. Perhaps the
+    cleanest way to think about injective functions is in terms of
+    preimages — when a function is injective, preimages are unique.
+    Actually, this is a good time to mention something about surjective
+    functions and preimages — if a function is surjective, every element
+    of the codomain <!--Style me with CSS--><em>has</em> a preimage. So, if a function has both
+    of these properties it means that every element of the codomain
+    has one (and only one) preimage.
+  </p>
+<p id="p-1235">
+    A function that is both injective and surjective (one-to-one and onto)
+    is known as a <!--Style me with CSS--><em>bijection</em>. Bijections are tremendously
+    important in mathematics since they provide a way of perfectly matching
+    up the elements of two sets. You will probably spend a good bit of time
+    in the future devising maps between sets and then proving that they are
+    bijections, so we will start practicing that skill now…
+  </p>
+<p id="p-1236">
+    Ordinarily, we will show that a function is a bijection by proving
+    separately that it is both a surjection and an injection.
+  </p>
+<p id="p-1237">
+    To show that a function is surjective we need to show that it is
+    possible to find a preimage for every element of the codomain. If
+    we happen to know what the inverse function is, then it is easy to
+    find a preimage for an arbitrary element. In terms of the taxonomy
+    for proofs that was introduced in <a href="ch_proof1.html" alt="Chapter 3 Proof techniques I — Standard methods" title="Chapter 3 Proof techniques I — Standard methods">Chapter 3</a>, we are talking
+    about a constructive proof of an existential statement. A function \(f\)
+    is surjective iff \(\forall y \in \Cod{f}, \exists x \in \Dom{f}, 
+    y = f(x)\), so to prove surjectivity is to find the \(x\) that “works” for an
+    arbitrary \(y\). If this is done by literally naming \(x\), we have
+    proved the statement constructively.
+  </p>
+<p id="p-1238">
+    To show that a function
+    is an injection, we traditionally prove that the property used in the
+    definition of an injective function is true. Namely, we suppose that
+    \(x_1\) and \(x_2\) are distinct elements of \(\Dom{f}\) and that
+    \(f(x_1)=f(x_2)\) and then we show that actually \(x_1 = x_2\). This is
+    in the spirit of a proof by contradiction — if there were actually
+    distinct elements that get mapped to the same value then \(f\) would <!--Style me with CSS--><em>not</em>
+    be injective, but by deducing that \(x_1=x_2\) we are contradicting that
+    presumption and so, are showing that \(f\) is indeed an injection.
+  </p>
+<p id="p-1239">
+    Let's start by looking at a very simple example,
+    \(f(x)=2x-1; \; x \in \Naturals\). Clearly this function
+    is not a surjection if we are thinking that \(\Cod{f}=\Naturals\)
+    since the outputs are always odd. Let \({\mathcal O} = \{1, 3, 5, 7, \ldots \}\)
+    be the set of odd naturals.
+  </p>
+<article class="theorem-like" id="theorem-28"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">6.4.9</span>
+</h5>
+<p id="p-1240">
+        The function \(f:\Naturals \longrightarrow {\mathcal O}\) defined by
+        \(f(x) = 2x-1\) is a bijection from \(\Naturals\) to \({\mathcal O}\).
+      </p></article><span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-39" id="proof-39"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-39" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1241">
+      First we will show that \(f\) is surjective. Consider an arbitrary element
+      \(y\) of the set \(\mathcal O\). Since \(y \in {\mathcal O}\) it follows that
+      \(y\) is both positive and odd. Thus there is an integer \(k\), such that
+      \(y=2k+1\), but also \(y&gt;0\). From this it follows that \(2k+1 &gt;0\) and so
+      \(k &gt; -1/2\). Since \(k\) is also an integer, this last inequality implies
+      that \(k \in \Znoneg\). (Recall that \(\Znoneg = \{0,1,2,3, \ldots \}\).) We can easily verify that a preimage
+      for \(y\) is \(k+1\), since \(f(k+1) = 2(k+1)-1 = 2k+2-1 = 2k+1 = y\).
+    </p>
+<p id="p-1242">
+      Next we show that \(f\) is injective. Suppose that there are two input
+      values, \(x_1\) and \(x_2\) such that \(f(x_1) = f(x_2)\). Then \(2x_1-1 = 2x_2-1\)
+      and simple algebra leads to \(x_1=x_2\).
+    </p></article></span><p id="p-1243">
+    For a slightly more complicated example
+    consider the function from \(\Naturals\) to \(\Integers\) defined by
+    \begin{equation*}
+      f(x) = \left\{ \begin{array}{cl} x/2 \amp  \mbox{if \(x\) is even}  \\ -(x-1)/2 \amp  \mbox{if \(x\) is odd} 
+      \end{array}  \right.
+    \end{equation*}
+  </p>
+<p id="p-1244">
+    This function does quite a handy little job, it matches up the natural
+    numbers and the integers in pairs. Every even natural gets matched with
+    a positive integer and every odd natural (except 1) gets matched with a
+    negative integer (1 gets paired with 0). This function is really doing
+    something remarkable — common sense would seem to indicate that the integers
+    must be a larger set than the naturals (after all \(\Naturals\) is completely
+    contained inside of \(\Integers\)), but the function \(f\) defined above serves
+    to show that these two sets are <!--Style me with CSS--><em>exactly the same size!</em>
+  </p>
+<article class="theorem-like" id="theorem-29"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">6.4.10</span>
+</h5>
+<p id="p-1245">
+        The function \(f\) defined above is bijective.
+      </p></article><span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-40" id="proof-40"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-40" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1246">
+      First we will show that \(f\) is surjective.
+    </p>
+<p id="p-1247">
+      It suffices to find a preimage for an arbitrary element of \(\Integers\).
+      Suppose that \(y\) is a particular but arbitrarily chosen integer. There
+      are two cases to consider: \(y\leq 0\) and \(y&gt;0\).
+    </p>
+<p id="p-1248">
+      If \(y&gt;0\) then \(x=2y\) is a preimage for \(y\). This follows easily since
+      \(x=2y\) is obviously even and so \(x\)'s image will be
+      defined by the first case in the definition of \(f\). Thus \(f(x) = f(2y) =
+      (2y)/2 = y\).
+    </p>
+<p id="p-1249">
+      If \(y \leq 0\) then \(x=1-2y\) is a preimage for \(y\). Clearly, \(1-2y\) is odd
+      whenever \(y\) is an integer, thus this value for \(x\) will fall into the second
+      case in the definition of \(f\). So, \(f(x) = f(1-2y) = -((1-2y)-1)/2 = -(-2y)/2 = y\).
+    </p>
+<p id="p-1250">
+      Since the cases \(y&gt;0\) and \(y\leq 0\) are exhaustive (that is, every \(y\) in
+      \(\Integers\) falls into one or the other of these cases), and we have found
+      a preimage for \(y\) in both cases, it follows that \(f\) is surjective.
+    </p>
+<p id="p-1251">
+      Next, we will show that \(f\) is injective.
+    </p>
+<p id="p-1252">
+      Suppose that \(x_1\) and \(x_2\) are elements of \(\Naturals\) and that
+      \(f(x_1)=f(x_2)\). Consider the following three cases: \(x_1\) and \(x_2\)
+      are both even, both odd, or have opposite parity.
+    </p>
+<p id="p-1253">
+      If \(x_1\) and \(x_2\) are both even, then by the definition of \(f\) we
+      have \(f(x_1) = x_1/2\) and \(f(x_2) = x_2/2\) and since these functional
+      values are equal, we have \(x_1/2 = x_2/2\). Doubling both sides of this
+      leads to \(x_1=x_2\).
+    </p>
+<p id="p-1254">
+      If \(x_1\) and \(x_2\) are both odd, then by the definition of \(f\) we
+      have \(f(x_1) = -(x_1-1)/2\) and \(f(x_2) = -(x_2-1)/2\) and since these functional
+      values are equal, we have \(-(x_1-1)/2 = -(x_2-1)/2\). A bit more
+      algebra (doubling, negating and adding one to both sides) leads to
+      \(x_1=x_2\).
+    </p>
+<p id="p-1255">
+      If \(x_1\) and \(x_2\) have opposite parity, we will assume w.l.o.g. that
+      \(x_1\) is even and \(x_2\) is odd. The equality \(f(x_1)=f(x_2)\) becomes
+      \(x_1/2 = -(x_2-1)/2\). Note that \(x_1 \geq 2\) so \(f(x_1) = x_1/2 \geq 1\).
+      Also, note that \(x_2 \geq 1\) so
+      \begin{gather*}
+x_2 - 1 \geq 0\\
+(x_2-1)/2 \geq 0\\
+-(x_2-1)/2 \leq 0\\
+f(x_2) \leq 0
+\end{gather*}
+      therefore we have a contradiction since it is impossible
+      for the two values \(f(x_1)\) and \(f(x_2)\) to be equal while \(f(x_1) \geq 1\)
+      and \(f(x_2) \leq 0\).
+    </p>
+<p id="p-1256">
+      Since the last case under consideration leads to a contradiction, it follows
+      that \(x_1\) and \(x_2\) never have opposite parities, and so the first two
+      cases are exhaustive — in both of those cases we reached the desired
+      conclusion that \(x_1 = x_2\) so it follows that \(f\) is injective.
+    </p></article></span><p id="p-1257">
+    We'll conclude this section by mentioning that the ideas of “image”
+    and “preimage” can be extended to sets. If \(S\) is a subset of
+    \(\Dom{f}\) then the <!--Style me with CSS--><em>image of \(S\) under \(f\)</em>
+    is denoted \(f(S)\) and
+    \begin{equation*}
+      f(S) = \{ y \suchthat \exists x \in \Dom{f}, x \in S \land y = f(x) \}.
+    \end{equation*}
+  </p>
+<p id="p-1258">
+    Similarly, if \(T\) is a subset of of \(\Rng{f}\) we can define something akin
+    to the preimage. The <!--Style me with CSS--><em>inverse image
+    of the set \(T\) under the function \(f\)</em> is denoted \(f^{-1}(T)\) and
+    \begin{equation*}
+      f^{-1}(T) = \{ x \suchthat \exists y \in \Cod{f}, y \in T \land y=f(x) \}.
+    \end{equation*}
+  </p>
+<p id="p-1259">
+    Essentially, we have extended the function \(f\) so that it goes between the
+    power sets of its codomain and range! This new notion gives us some elegant
+    ways of restating what it means to be surjective and injective.
+  </p>
+<p id="p-1260">
+    A function \(f\) is surjective iff \(f(\Dom{f}) = \Cod{f}\).
+  </p>
+<p id="p-1261">
+    A function \(f\) is injective iff the inverse images of singletons
+    are always singletons. That is,
+    \begin{equation*}
+      \forall y \in \Rng{f}, \exists x \in \Dom{f},  f^{-1}(\{y\}) = \{x\}.
+    \end{equation*}
+  </p>
+<section class="exercises" id="exercises-33"><header title="Exercises 6.4.1 Exercises"><h1 class="heading hide-type" alt="Exercises 6.4.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">6.4.1</span><span class="title">Exercises</span>
+</h1></header><ol style="list-style-type: lower-alpha;">
+<li id="li-417"><p id="p-1262">
+    For each of the following functions, give its domain, range and a possible codomain.
+
+    <ol style="list-style-type: lower-roman;">
+<li id="li-418"><p id="p-1263">
+          \(f(x) = \sin{(x)}\)
+        </p></li>
+<li id="li-419"><p id="p-1264">
+          \(g(x) = e^x\)
+        </p></li>
+<li id="li-420"><p id="p-1265">
+          \(h(x) = x^2\)
+        </p></li>
+<li id="li-421"><p id="p-1266">
+          \(m(x) = \frac{x^2+1}{x^2-1}\)
+        </p></li>
+<li id="li-422"><p id="p-1267">
+          \(n(x) = \lfloor x \rfloor\)
+        </p></li>
+<li id="li-423"><p id="p-1268">
+          \(p(x) = \langle \cos{(x)}, \sin{(x)} \rangle\)
+        </p></li>
+</ol>
+    </p></li>
+<li id="li-424"><p id="p-1269">
+        Find a bijection from the set of odd squares, \(\{1, 9, 25, 49, \ldots\}\),
+        to the non-negative integers, \(\Znoneg = \{0,1,2,3, \ldots\}\).
+        Prove that the function you just determined is both injective and surjective.
+        Find the inverse function of the bijection above.
+      </p></li>
+<li id="li-425"><p id="p-1270">
+        The natural logarithm function \(\ln (x)\) is defined by a definite
+        integral with the variable \(x\) in the upper limit.
+        \begin{equation*}
+          \ln (x) = \int_{t=1}^{x} \frac{1}{t} \, \mbox{d} t.
+        \end{equation*}
+        From this definition we can deduce that \(\ln (x)\) is strictly increasing on its
+        entire domain, \((0, \infty)\).  Why is this true?
+
+        We can use the above definition with \(x=2\) to find the value of 
+        \(\ln (2) \approx .693\).  We will also take as given the following 
+        rule (which is valid for all logarithmic functions).
+        \begin{equation*}
+          \ln(a^b) = b \ln(a)
+        \end{equation*}
+        Use the above information to show that there is neither an upper bound 
+        nor a lower bound for the values of the natural logarithm.  These facts
+        together with the information that \(\ln\) is strictly increasing show that
+        \(\Rng{\ln} = \Reals\).
+      </p></li>
+<li id="li-426"><p id="p-1271">
+        Georg Cantor developed a systematic way of listing the rational numbers.
+        By “listing” a set one is actually developing a bijection from \(\Naturals\) to
+        that set.  The method known as “Cantor's Snake” creates a bijection from
+        the naturals to the non-negative rationals.  
+        First we create an infinite table whose rows
+        are indexed by positive integers and whose columns are indexed by non-negative
+        integers — the entries in this table are rational numbers of the form
+        “column index” / “row index.”  We then follow a snake-like path that
+        zig-zags across this table — whenever we encounter a rational number that 
+        we haven't seen before (in lower terms) we write it down.  This is indicated 
+        in the diagram below by circling the entries.
+        <img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt="">
+        \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+          \reset@font\fontsize{#1}{#2pt}
+          \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+          \selectfont}\fi
+        <img width="100%" src="images/aa39e298f21779c6da86ce0b5fbac7aa8b57aea7.png" alt="">
+        Effectively this gives us a function \(f\) which produces the rational number 
+        that would be found in a given position in this list.  For example 
+        \(f(1) = 0/1, f(2) = 1/1\) and \(f(5) = 1/3\).  
+
+        What is \(f(26)\)?  What is \(f(30)\)?  What is \(f^{-1}(3/4)\)? What is \(f^{-1}(6/7)\)?
+      </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:44-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5>
+<p>
+      We proceed by induction on \(n\).
+    </p>
+<p>
+      <!--Style me with CSS--><em>Basis: </em> When \(n = 1\) the sum has only one term, \(1^2 = 1\).
+      On the other hand, the formula is
+      \(\displaystyle \frac{1(1+1)(2\cdot 1+1)}{6} = 1\). Since these are equal, the
+      basis is proved.
+    </p>
+<p>
+      <!--Style me with CSS--><em>Inductive step: </em>
+    </p>
+<table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\begin{minipage}{4 in} 
+        Before proceeding with the inductive step, in this box, we will
+        figure out what the right-hand side of our theorem looks like 
+        when \(n\) is replaced with \(k+1\):
+        \begin{gather*}
+\frac{(k+1)((k+1)+1)(2(k+1)+1)}{6}\\
+= \frac{(k+1)(k+2)(2k+3)}{6}\\
+= \frac{(k^2+3k+2)(2k+3)}{6}\\
+= \frac{2k^3+9k^2+13k+6}{6}.
+\end{gather*}</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table>
+<p>
+      By the inductive hypothesis,
+      \begin{equation*}
+        \sum_{j=1}^k j^2 = \frac{k(k+1)(2k+1)}{6}.
+      \end{equation*}
+    </p>
+<p>
+      Adding \((k+1)^2\) to both sides of this equation gives
+      \begin{equation*}
+        (k+1)^2 + \sum_{j=1}^k j^2 = \frac{k(k+1)(2k+1)}{6} + (k+1)^2.
+      \end{equation*}
+    </p>
+<p>
+      Thus,
+      \begin{equation*}
+        \sum_{j=1}^{k+1} j^2 = \frac{k(k+1)(2k+1)}{6} + \frac{6(k+1)^2}{6}.
+      \end{equation*}
+    </p>
+<p>
+      Therefore,
+      \begin{gather*}
+\sum_{j=1}^{k+1} j^2 = \frac{(k^2+k)(2k+1)}{6} + \frac{6(k^2+2k+1)}{6}\\
+= \frac{(2k^3+3k^2+k)+(6k^2+12k+6)}{6}\\
+= \frac{2k^3+9k^2+13k+6}{6}\\
+= \frac{(k^2+3k+2)(2k+3)}{6}\\
+= \frac{(k+1)(k+2)(2k+3)}{6}\\
+= \frac{(k+1)((k+1)+1)(2(k+1)+1)}{6}.
+\end{gather*}
+    </p>
+<p>
+      This proves the inductive step, so the result is true.
+    </p></article><span class="incontext"><a href="section-27.html#proof-29">in-context</a></span>

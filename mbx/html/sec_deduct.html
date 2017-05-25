@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-05-23T13:30:26-04:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Deductive reasoning and Argument forms</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$4.0$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics, version 4.0</span></a></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="sec_quant.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_logic.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_valid.html" title="Next" alt="Next">Next</a></span>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_quant.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_logic.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_valid.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link active"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html" class="active">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_ord_rel.html">Ordering relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-37.html">Parity and Counting arguments</a></li>
+<li><a href="section-38.html">The pigeonhole principle</a></li>
+<li><a href="section-39.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-41.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-43.html">Dominance</a></li>
+<li><a href="section-44.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-45.html">Morley's miracle</a></li>
+<li><a href="section-46.html">Five steps into the void</a></li>
+<li><a href="section-47.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_deduct"><header title="Section 2.6 Deductive reasoning and Argument forms"><h1 class="heading hide-type" alt="Section 2.6 Deductive reasoning and Argument forms">
+<span class="type">Section</span><span class="codenumber">2.6</span><span class="title">Deductive reasoning and Argument forms</span><a href="sec_deduct.html" class="permalink">¶ permalink</a>
+</h1></header><p id="p-495">
+    Deduction 
+    is the process by which we determine new truths from old.
+    It is sometimes claimed that nothing truly new can come from deduction,
+    the truth of a statement that is arrived at by deductive processes was
+    lying (perhaps hidden somewhat) within the hypotheses. This claim is something
+    of a canard, as any Sherlock Holmes aficionado can tell you, the statements
+    that can sometimes be deduced from others can be remarkably surprising.
+    A better
+    argument against deduction is that it is a relatively ineffective way for most
+    human beings to discover new truths — for that purpose inductive processes are
+    superior for the majority of us. Nevertheless, if a chain of deductive reasoning
+    leading from known hypotheses to a particular conclusion can be exhibited, the truth
+    of the conclusion is <!--Style me with CSS--><em>unassailable</em>. For this reason, mathematicians have
+    latched on to deductive reasoning as <!--Style me with CSS--><em>the</em> tool for, if not discovering
+    our theorems, communicating them to others.
+  </p>
+<p id="p-496">
+    The word “argument” has a negative connotation for many people because
+    it seems to have to do with <!--Style me with CSS--><em>disagreement</em>. Arguments within mathematics
+    (as well as many other scholarly areas), while they may be impassioned, should
+    not involve discord. A mathematical argument is a sequence of logically
+    connected statements designed to produce <!--Style me with CSS--><em>agreement</em> as to the validity
+    of a proposition. This “design” generally follows one of two possibilities,
+    inductive reasoning or deductive reasoning. In an inductive argument
+    a long list of premises is presented whose truths are considered to be
+    apparent to all, each of which provides evidence that the desired conclusion
+    is true. So an inductive argument represents a kind of statistical thing,
+    you have all these statements that are true each of which indicates that
+    the conclusion is most likely true… A strong inductive argument
+    amounts to what attorneys call a “preponderance of the evidence.”
+    Occasionally
+    a person who has been convicted of a crime based on a preponderance of the
+    evidence is later found to be innocent. This usually happens when new evidence
+    is discovered that incontrovertibly proves (i.e. shows through deductive
+    means) that he or she cannot be guilty. In a nutshell: inductive arguments
+    can be wrong.
+  </p>
+<p id="p-497">
+    In contrast a deductive argument can only turn out to be wrong under
+    certain well-understood circumstances.
+  </p>
+<p id="p-498">
+    Like an inductive argument, a deductive argument
+    is essentially just a
+    long sequence of statements; but there is some additional structure.
+    The last statement in the list is the <!--Style me with CSS--><em>conclusion</em> — the statement
+    to be proved — those occurring before it are known as
+    <!--Style me with CSS--><em>premises</em>.
+    Premises may be further subdivided into (at least) five sorts: axioms,
+    definitions, previously proved theorems, hypotheses and deductions.
+    Axioms and definitions are often glossed
+    over, indeed, they often go completely unmentioned (but rarely <!--Style me with CSS--><em>unused</em>)
+    in a proof. In the interest of brevity this is quite appropriate, but
+    conceptually, you should think of an argument as being based off of
+    the axioms for the particular area you are working in, and its standard
+    definitions. A rote knowledge of all the other theorems proved up to
+    the one you are working with would generally be considered excessive,
+    but completely memorizing the axioms and standard definitions of a field
+    is essential. Hypotheses are a funny class of premises — they are things
+    which can be assumed true for the sake of the current argument. For
+    example, if the statement you are trying to prove is a conditional,
+    then the antecedent may be assumed true (if the antecedent is false,
+    then the conditional is automatically true!). You should always be
+    careful to list all hypotheses explicitly, and at the end of your
+    proof make sure that each and every hypothesis got used somewhere
+    along the way. If a hypothesis really isn't necessary then you have
+    proved a more general statement (that's a good thing).
+  </p>
+<p id="p-499">
+    Finally, deductions — I should note that the conclusion is also a
+    deduction — obey a very strict rule: every deduction follows from
+    the premises that have already been written down (this includes
+    axioms and definitions that probably won't actually have been written,
+    hypotheses and all the deductions made up to this point) by one of the
+    so-called rules of inference.
+  </p>
+<p id="p-500">
+    Each of the rules of inference actually amounts to a logical tautology
+    that has been re-expressed as a sort of re-writing rule. Each rule
+    of inference will be expressed as a list of logical
+    sentences that are assumed to be among the premises of the argument,
+    a horizontal bar, followed by the symbol \(\therefore\) (which is
+    usually voiced as the word “therefore”) and then a new statement
+    that can be placed among the deductions.
+  </p>
+<p id="p-501">
+    For example, one (very obvious) rule of inference is
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(A \land B\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(B\)</td>
+</tr>
+</table>
+<p id="p-502">
+    This rule is known as
+    <!--Style me with CSS--><em>conjunctive simplification</em>, and
+    is equivalent to the tautology \((A \land B) \implies B\).
+  </p>
+<p id="p-503">
+    The <!--Style me with CSS--><em>modus ponens</em>
+    rule<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-18" id="fn-18"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-18" style="display: none;" class="tex2jax_ignore"><span class="footnote">Latin for “method of affirming”,
+    the related <!--Style me with CSS--><em>modus tollens</em> rule means “method of denying.”</span></span>
+    is one of the most useful.
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(A\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(A \implies B\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(B\)</td>
+</tr>
+</table>
+<p id="p-504">
+    Modus ponens is related to the tautology \((A \land (A \implies B)) \implies B\).
+  </p>
+<p id="p-505">
+    <!--Style me with CSS--><em>Modus tollens</em>
+    is the rule of inference we get if we put modus ponens
+    through the “contrapositive” wringer.
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\({\lnot}B\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(A \implies B\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\({\lnot}A\)</td>
+</tr>
+</table>
+<p id="p-506">
+    Modus tollens is related to the tautology \(({\lnot}B \land (A \implies B)) \implies {\lnot}A\).
+  </p>
+<p id="p-507">
+    Modus ponens and modus tollens are also known as
+    <!--Style me with CSS--><em>syllogisms</em>. A
+    syllogism is an argument form wherein a deduction follows from two premises.
+    There are two other common syllogisms,
+    <!--Style me with CSS--><em>hypothetical syllogism</em> and
+    <!--Style me with CSS--><em>disjunctive syllogism</em>.
+  </p>
+<p id="p-508">
+    Hypothetical syllogism basically asserts a transitivity property for
+    implications.
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(A \implies B\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(B \implies C\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(A \implies C\)</td>
+</tr>
+</table>
+<p id="p-509">
+    Disjunctive syllogism can be thought of as a statement about
+    alternatives, but be careful to remember that in Logic, the disjunction
+    always has the inclusive sense.
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(A \lor B\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\({\lnot}B\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(A\)</td>
+</tr>
+</table>
+<article class="exercise-like" id="exercise-25"><h5 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.6.1</span>
+</h5>
+<p id="p-510">
+        Convert the \(A \lor B\) that appears in the premises of the disjunctive
+        syllogism rule into an equivalent conditional. How is the new argument
+        form related to modus ponens and/or modus tollens?
+      </p></article><p id="p-511">
+    The word “dilemma” usually refers to a situation in which an individual
+    is faced with an impossible choice. A cute example known as the
+    Crocodile's dilemma is as follows:
+  </p>
+<blockquote>
+  A crocodile captures a little boy who has strayed too near the river.  The 
+  child's father appears and the crocodile tells him “Don't worry, I shall 
+  either release your son or I shall eat him.  If you can say, in advance,
+  which I will do, then I shall release him.”  The father responds, “You will
+  eat my son.”  What should the crocodile do?
+  </blockquote>
+<p id="p-512">
+    In logical arguments the word dilemma is used in another sense having to
+    do with certain rules of inference.
+    <!--Style me with CSS--><em>Constructive dilemma</em> is
+    a rule of inference having to do with the conclusion that one of two
+    possibilities must hold.
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(A \implies B\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(C \implies D\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(A \lor C\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(B \lor D\)</td>
+</tr>
+</table>
+<p id="p-513">
+    <!--Style me with CSS--><em>Destructive dilemma</em>
+    is often not listed among the rules
+    of inference because it can easily be obtained by using the constructive
+    dilemma and replacing the implications with their contrapositives.
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(A \implies B\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(C \implies D\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\({\lnot}B \lor {\lnot}D\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\({\lnot}A \lor {\lnot}C\)</td>
+</tr>
+</table>
+<p id="p-514">
+    In <a knowl="./knowl/tab_roi.html" knowl-id="xref-tab_roi" alt="Table 2.6.2 " title="Table 2.6.2 ">Table 2.6.2</a>, the ten most common
+    rules of inference are listed.
+    Note that all of these are equivalent to tautologies that
+    involve conditionals (as opposed to biconditionals), every one of the
+    basic logical equivalences that we established in <a href="sec_le.html" alt="Section 2.3 Logical equivalences" title="Section 2.3 Logical equivalences">Section 2.3</a>
+    is really a tautology involving a biconditional, collectively these are
+    known as the “rules of replacement.”
+    In an argument, any statement
+    allows us to infer a logically equivalent statement. Or, put differently,
+    we could replace any premise with a different, but logically equivalent,
+    premise. You might enjoy trying to determine a minimal set of rules of
+    inference, that together with the rules of replacement would allow one
+    to form all of the same arguments as the ten rules in <a knowl="./knowl/tab_roi.html" knowl-id="xref-tab_roi" alt="Table 2.6.2 " title="Table 2.6.2 ">Table 2.6.2</a>.
+  </p>
+<figure class="figure-like" id="tab_roi"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Name</td>
+<td class="l m b0 r0 l0 t0 lines">Form</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Modus ponens</td>
+<td class="l m b0 r0 l0 t0 lines"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(A\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(A \implies B\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(B\)</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Modus tollens</td>
+<td class="l m b0 r0 l0 t0 lines"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\({\lnot}B\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(A \implies B\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\({\lnot}A\)</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Hypothetical syllogism</td>
+<td class="l m b0 r0 l0 t0 lines"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(A \implies B\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(B \implies C\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(A \implies C\)</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Disjunctive syllogism</td>
+<td class="l m b0 r0 l0 t0 lines"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(A \lor B\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\({\lnot}B\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(A\)</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Constructive dilemma</td>
+<td class="l m b0 r0 l0 t0 lines"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(A \implies B\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(C \implies D\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(A \lor C\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(B \lor D\)</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+</table>
+<figcaption><span class="heading">Table</span><span class="codenumber">2.6.2</span>The rules of inference.</figcaption></figure><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Name</td>
+<td class="l m b0 r0 l0 t0 lines">Form</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Destructive dilemma</td>
+<td class="l m b0 r0 l0 t0 lines"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(A \implies B\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(C \implies D\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\({\lnot}B \lor {\lnot}D\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\({\lnot}A \lor {\lnot}C\)</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Conjunctive simplification</td>
+<td class="l m b0 r0 l0 t0 lines"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(A \land B\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(A\)</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Conjunctive addition</td>
+<td class="l m b0 r0 l0 t0 lines"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(A\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(B\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(A \land B\)</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Disjunctive addition</td>
+<td class="l m b0 r0 l0 t0 lines"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(A\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(A \lor B\)</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Absorption</td>
+<td class="l m b0 r0 l0 t0 lines"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(A \implies B\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(A \implies (A \land B)\)</td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+</table>
+  \vspace{.25in}
+
+  <a knowl="./knowl/tab_roi.html" knowl-id="xref-tab_roi" alt="Table 2.6.2 " title="Table 2.6.2 ">Table 2.6.2</a>: The rules of inference. (continued)
+  <section class="exercises" id="exercises-13"><header title="Exercises 2.6.1 Exercises"><h1 class="heading hide-type" alt="Exercises 2.6.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">2.6.1</span><span class="title">Exercises</span>
+</h1></header><ol id="ol-32" style="list-style-type: lower-alpha;">
+<li id="li-189"><p id="p-515">
+        In the movie “Monty Python and the Holy Grail” we encounter
+        a medieval villager who (with a bit of prompting) makes the 
+        following argument.
+        <blockquote>
+        If she weighs the same as a duck, then she's made of wood. 
+        If she's made of wood then she's a witch. 
+        Therefore, if she weighs the same as a duck, she's a witch.
+        </blockquote>
+        Which rule of inference is he using?
+
+        \hint{
+        This is what many people refer to as the transitive rule of implication.  As an argument form it's known as “hypothetical syllogism.”
+        }
+      </p></li>
+<li id="li-190"><p id="p-516">
+        In constructive dilemma, the antecedent of the conditional 
+        sentences are usually chosen to represent opposite alternatives. 
+        This allows us to introduce their disjunction as a tautology. 
+        Consider the following proof that there is never any reason to worry
+        (found on the walls of an Irish pub).
+        <blockquote>
+        Either you are sick or you are well. 
+        If you are well there's nothing to worry about. 
+        If you are sick there are just two possibilities: 
+        Either you will get better or you will die. 
+        If you are going to get better there's nothing to worry about. 
+        If you are going to die there are just two possibilities:
+        Either you will go to Heaven or to Hell. 
+        If you go to Heaven there is nothing to worry about.
+        If you go to Hell, you'll be so busy shaking hands with all your friends there won't be time to worry \ldots
+        </blockquote>
+        Identify the three tautologies that are introduced in this “proof.”
+
+        \hint{Look at the lines that start with the word "Either."}
+      </p></li>
+<li id="li-191">
+<p id="p-517">
+    For each of the following arguments, write it in symbolic form and determine 
+    which rules of inference are used.
+
+    </p>
+<ol id="ol-33" style="list-style-type: lower-roman;">
+<li id="li-192"><p id="p-518">
+          You are either with us, or you're against us.  And you don't appear to be with us.
+          So, that means you're against us!
+
+          \hint{
+          <table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(W \lor A\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\({\lnot}W\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(A\)</td>
+</tr>
+</table>
+          This is “disjunctive syllogism.”
+          }
+        </p></li>
+<li id="li-193"><p id="p-519">
+          All those who had cars escaped the flooding.  Sandra had a car — therefore, Sandra
+          escaped the flooding.
+
+          \hint{
+          Let \(C(x)\) be the open sentence “x has a car” and let \(E(x)\) be the open sentence “x escaped the flooding.”
+          This argument is actually the particular form of universal modus ponens: (See the final question in the next set of exercises.)
+          <table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\forall x, C(x) \implies E(x)\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(C(\mbox{Sandra} )\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\therefore\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(E(\mbox{Sandra} )\)</td>
+</tr>
+</table>
+          At this stage in the game it would be perfectly fine to just identify this as modus ponens and not worry about the quantifiers that appear.
+          }
+        </p></li>
+<li id="li-194"><p id="p-520">
+          When Johnny goes to the casino, he always gambles 'til he goes broke.  Today, Johnny
+          has money, so Johnny hasn't been to the casino recently.
+        </p></li>
+<li id="li-195"><p id="p-521">
+          (A non-constructive proof that there are 
+          irrational numbers \(a\) and \(b\) such that \(a^b\) is rational.)  
+          Either \(\sqrt{2}^{\sqrt{2}}\) is rational or it is irrational.
+          If \(\sqrt{2}^{\sqrt{2}}\) is rational, we let \(a=b=\sqrt{2}\).
+          Otherwise, we let \(a=\sqrt{2}^{\sqrt{2}}\) and \(b=\sqrt{2}\).
+          (Since \(\sqrt{2}^{\sqrt{2}^{\sqrt{2}}} = 2\), which is rational.) It follows that in either case, there
+          are irrational numbers \(a\) and \(b\) such that \(a^b\) is rational.
+        </p></li>
+</ol>
+<p>
+    </p>
+</li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

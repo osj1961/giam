@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:41-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Morley's miracle</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="extra.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+\renewcommand{\tabcolsep}{2.4pt}
+\def\savedlnot{\lnot}
+\renewcommand{\arraystretch}{.63}
+\renewcommand{\arraystretch}{1}
+\renewcommand{\Naturals}{{\mathbb Z}^{\mbox{\tiny noneg}} }
+\renewcommand{\arraystretch}{.9}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\hint}[1]{ }
+\newcommand{\inlinehint}[1]{ }
+\newcommand{\sageprompt}{ \texttt{sage$&gt;$} }
+\newcommand{\tab}{}
+\newcommand{\blnk}{\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+\newcommand{\suchthat}{\;  \;}
+\newcommand{\divides}{\!\mid\!}
+\newcommand{\tdiv}{\; \mbox{div} \;}
+\newcommand{\restrict}[2]{#1 \,_{\,#2}}
+\newcommand{\lcm}[2]{\mbox{lcm} (#1, #2)}
+\renewcommand{\gcd}[2]{\mbox{gcd} (#1, #2)}
+\newcommand{\Naturals}{{\mathbb N}}
+\newcommand{\Integers}{{\mathbb Z}}
+\newcommand{\Znoneg}{{\mathbb Z}^{\mbox{\tiny noneg}}}
+\newcommand{\Zplus}{{\mathbb N}}
+\newcommand{\Enoneg}{{\mathbb E}^{\mbox{\tiny noneg}}}
+\newcommand{\Qnoneg}{{\mathbb Q}^{\mbox{\tiny noneg}}}
+\newcommand{\Rnoneg}{{\mathbb R}^{\mbox{\tiny noneg}}}
+\newcommand{\Rationals}{{\mathbb Q}}
+\newcommand{\Reals}{{\mathbb R}}
+\newcommand{\Complexes}{{\mathbb C}}
+\newcommand{\relQ}{\mbox{\textsf Q}}
+\newcommand{\relR}{\mbox{\textsf R}}
+\newcommand{\nrelR}{\mbox{$\not${\textsf R}}}
+\newcommand{\relS}{\mbox{\textsf S}}
+\newcommand{\relA}{\mbox{\textsf A}}
+\newcommand{\Dom}[1]{\mbox{Dom}(#1)}
+\newcommand{\Cod}[1]{\mbox{Cod}(#1)}
+\newcommand{\Rng}[1]{\mbox{Rng}(#1)}
+\DeclareMathOperator{\caret}{$\scriptstyle\wedge$}
+\renewcommand{\arraystretch}{.77}
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></h1>
+<p class="byline">Joe Fields</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="previous-button toolbar-item button" href="chapter-9.html">Previous</a><a class="up-button button toolbar-item" href="chapter-9.html">Up</a><a class="next-button button toolbar-item" href="section-45.html">Next</a>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="chapter-9.html">Previous</a><a class="up-button button toolbar-item" href="chapter-9.html">Up</a><a class="next-button button toolbar-item" href="section-45.html">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html"><span class="title">Front Matter</span></a></h2>
+<ul></ul>
+<h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
+<ul>
+<li><a href="sec_basic.html">Basic sets</a></li>
+<li><a href="sec_def.html">Definitions: Prime numbers</a></li>
+<li><a href="sec_scary.html">More scary notation</a></li>
+<li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
+<li><a href="sec_rat.html">Rational and irrational numbers</a></li>
+<li><a href="sec_rel_intro.html">Relations</a></li>
+</ul>
+<h2 class="link"><a href="ch_logic.html"><span class="codenumber">2</span><span class="title">Logic and quantifiers</span></a></h2>
+<ul>
+<li><a href="sec_pred.html">Predicates and Logical Connectives</a></li>
+<li><a href="sec_impl.html">Implication</a></li>
+<li><a href="sec_le.html">Logical equivalences</a></li>
+<li><a href="sec_2_col.html">Two-column proofs</a></li>
+<li><a href="sec_quant.html">Quantified statements</a></li>
+<li><a href="sec_deduct.html">Deductive reasoning and Argument forms</a></li>
+<li><a href="sec_valid.html">Validity of arguments and common errors</a></li>
+</ul>
+<h2 class="link"><a href="ch_proof1.html"><span class="codenumber">3</span><span class="title">Proof techniques I — Standard methods</span></a></h2>
+<ul>
+<li><a href="sec_direct.html">Direct proofs of universal statements</a></li>
+<li><a href="sec_more.html">More direct proofs</a></li>
+<li><a href="sec_contra.html">Indirect proofs: contradiction and contraposition</a></li>
+<li><a href="sec_disproofs.html">Disproofs</a></li>
+<li><a href="sec_cases.html">Even more direct proofs: By cases and By exhaustion</a></li>
+<li><a href="sec_exist.html">Proofs and disproofs of existential statements</a></li>
+</ul>
+<h2 class="link"><a href="chapter-4.html"><span class="codenumber">4</span><span class="title">Sets</span></a></h2>
+<ul>
+<li><a href="sec_basic_set_notions.html">Basic notions of set theory</a></li>
+<li><a href="section-22.html">Containment</a></li>
+<li><a href="section-23.html">Set operations</a></li>
+<li><a href="section-24.html">Venn diagrams</a></li>
+<li><a href="sec_russell.html">Russell's Paradox</a></li>
+</ul>
+<h2 class="link"><a href="chapter-5.html"><span class="codenumber">5</span><span class="title">Proof techniques II — Induction</span></a></h2>
+<ul>
+<li><a href="sec_induct.html">The principle of mathematical induction</a></li>
+<li><a href="section-27.html">Formulas for sums and products</a></li>
+<li><a href="section-28.html">Divisibility statements and other proofs using PMI</a></li>
+<li><a href="section-29.html">The strong form of mathematical induction</a></li>
+</ul>
+<h2 class="link"><a href="chapter-6.html"><span class="codenumber">6</span><span class="title">Relations and functions</span></a></h2>
+<ul>
+<li><a href="section-30.html">Relations</a></li>
+<li><a href="section-31.html">Properties of relations</a></li>
+<li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_functions.html">Functions</a></li>
+<li><a href="sec_special_functions.html">Special functions</a></li>
+</ul>
+<h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
+<ul>
+<li><a href="sec_counting.html">Counting</a></li>
+<li><a href="section-36.html">Parity and Counting arguments</a></li>
+<li><a href="section-37.html">The pigeonhole principle</a></li>
+<li><a href="section-38.html">The algebra of combinations</a></li>
+</ul>
+<h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
+<ul>
+<li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
+<li><a href="section-40.html">Examples of set equivalence</a></li>
+<li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
+<li><a href="section-42.html">Dominance</a></li>
+<li><a href="section-43.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+</ul>
+<h2 class="link active"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
+<ul>
+<li><a href="section-44.html" class="active">Morley's miracle</a></li>
+<li><a href="section-45.html">Five steps into the void</a></li>
+<li><a href="section-46.html">Monge's circle theorem</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="references-1.html">Bibliography</a></li>
+<li><a href="index-part-1.html">Index</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-44"><header title="Section 9.1 Morley's miracle"><h1 class="heading hide-type" alt="Section 9.1 Morley's miracle">
+<span class="type">Section</span><span class="codenumber">9.1</span><span class="title">Morley's miracle</span>
+</h1></header><p id="p-1667">
+    Probably you have heard of the impossibility of trisecting an angle.
+    (Hold on for a quick rant about the importance of understanding your
+    hypotheses…) What's <!--Style me with CSS--><em>actually</em> true is that you can't trisect
+    a generic angle if you accept the restriction of using the old-fashioned
+    tools of Euclidean geometry: the compass and straight-edge. There
+    are a lot of constructions that can't be done using just a
+    straight-edge and compass — angle trisection, duplication of a cube<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-61" id="fn-61"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-61" style="display: none;" class="tex2jax_ignore"><span class="footnote">Duplicating the cube 
+    is also known as the Delian problem — the problem comes from a pronouncement
+    by the oracle of Apollo at Delos that a plague afflicting the Athenians would
+    be lifted if they built an altar to Apollo that was twice as big as the 
+    existing altar.  The existing altar was a cube, one meter on a side, so they
+    carefully built a two meter cube — but the plague raged on.  Apparently what
+    Apollo wanted was a cube that had double the <!--Style me with CSS--><em>volume</em> of the 
+    present altar — it's side length would have to be 
+    \(\sqrt[3]{2} \approx 1.25992\) and since this was Greece and it was around 
+    430 B.C. and there were no electronic calculators, they were basically
+    just screwed.</span></span>, squaring a circle, constructing a regular heptagon, <!--Style me with CSS--><em>et cetera</em>.
+  </p>
+<p id="p-1668">
+    If you allow yourself to use a <!--Style me with CSS--><em>ruler</em> — i.e. a straight-edge with
+    marks on it (indeed you really only need two marks a unit distance apart)
+    then angle trisection <!--Style me with CSS--><em>can</em> be done via what is known as a
+    neusis construction.
+    Nevertheless, because of the central place of Euclid's <!--Style me with CSS--><em>Elements</em> in
+    mathematical training throughout the centuries, and thereby, a very
+    strong predilection towards that which <!--Style me with CSS--><em>is</em> possible via compass and straight-edge
+    alone, it is perhaps not surprising that a perfectly beautiful result that
+    involved trisecting angles went undiscovered until 1899, when Frank Morley
+    stated his Trisector Theorem. There is much more to this result than we will
+    state here — so much more that the name “Morley's Miracle” that has been
+    given to the Trisector theorem is truly justified — but even the simple,
+    initial part of this beautiful theory is arguably miraculous! To learn more
+    about Morley's theorem and its extension see  <a knowl="./knowl/lighthouse.html" knowl-id="xref-lighthouse" alt="Bibliographic Entry 8 " title="Bibliographic Entry 8 ">[8]</a>.
+  </p>
+<p id="p-1669">
+    So, let's state the theorem!
+  </p>
+<p id="p-1670">
+    Start with an arbitrary triangle \({\triangle}ABC\). Trisect each of its angles
+    to obtain a diagram something like that in <span>&lt;&lt;Unresolved xref, reference "fig_morley_setup"; check spelling or use "provisional" attribute&gt;&gt;</span>.
+  </p>
+<figure class="figure-like" id="figure-28"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/c73f4ac3b59465ec0146d68cd40c02f50b2402b4.png" alt="">—</figure><p id="p-1671">
+    The six angle trisectors that we've just drawn intersect one another
+    in quite a few points.
+  </p>
+<article class="exercise-like" id="exercise-75"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">9.1.1</span>
+</h5>
+<p id="p-1672">
+        You could literally count the number of intersection points between the
+        angle trisectors on the diagram, but you should also be able to count them
+        (perhaps we should say “double-count them”) combinatorially. Give it
+        a try!
+      </p></article><div class="hidden-knowl-wrapper"></div>
+<p id="p-1673">
+    Among the points of intersection of the angle trisectors there are three
+    that we will single out — the intersections of adjacent trisectors.
+    In <span>&lt;&lt;Unresolved xref, reference "fig_morley_1st_triangle"; check spelling or use "provisional" attribute&gt;&gt;</span> the intersection of adjacent trisectors
+    are indicated, additionally, we have connected them together to form a
+    small triangle in the center of our original triangle.
+  </p>
+<figure class="figure-like" id="figure-29"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/241c9c2a17fb551fc325aacee1fdfb8cfbbfde90.png" alt="">\({\triangle}ABC\)</figure><p id="p-1674">
+    Are you ready for the miraculous part? Okay, here goes!
+  </p>
+<article class="theorem-like" id="theorem-40"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">9.1.2</span>
+</h5>
+<p id="p-1675">
+        The points of intersection of the adjacent trisectors in an arbitrary
+        triangle \({\triangle}ABC\) form the vertices of an equilateral triangle.
+      </p></article><p id="p-1676">
+    In other words, that little blue triangle in
+    <span>&lt;&lt;Unresolved xref, reference "fig_morley_1st_triangle"; check spelling or use "provisional" attribute&gt;&gt;</span>
+    that kind of <!--Style me with CSS--><em>looks</em> like it might be equilateral actually does have
+    all three sides equal to one another. Furthermore, it doesn't matter what
+    triangle we start with, if we do the construction above we'll get
+    a perfect \(60^\circ - 60^\circ - 60^\circ\) triangle in the middle!
+  </p>
+<p id="p-1677">
+    Sources differ, but it is not clear whether Morley ever proved his
+    theorem. The first valid proof (according to R. K. Guy in  <a knowl="./knowl/lighthouse.html" knowl-id="xref-lighthouse" alt="Bibliographic Entry 8 " title="Bibliographic Entry 8 ">[8]</a>
+    was published in 1909 by M. Satyanarayana  <a knowl="./knowl/satyana.html" knowl-id="xref-satyana" alt="Bibliographic Entry 15 " title="Bibliographic Entry 15 ">[15]</a>. There are now
+    <!--Style me with CSS--><em>many</em> other proofs known, for instance the cut-the-knot website
+    (<tt class="code-inline tex2jax_ignore">http://www.cut-the-knot.org/</tt>) exposits no less than nine different
+    proofs. The proof by Satyanarayana used trigonometry. The proof we'll
+    look at here is arguably the shortest ever produced and it is due to
+    John Conway. It is definitely a “Book proof”!
+  </p>
+<p id="p-1678">
+    Let us suppose that an arbitrary triangle \({\triangle}ABC\) is given.
+    We want to show that the triangle whose vertices are the intersections
+    of the adjacent trisectors is equilateral — this triangle will be
+    referred to as the <!--Style me with CSS--><em>Morley triangle</em>.
+    Let's also denote by
+    \(A\), \(B\) and \(C\) the measures of the angles of \({\triangle}ABC\). (This
+    is what is generally known as an “abuse of notation” — we are intentionally
+    confounding the vertices (\(A\), \(B\) and \(C\)) of the triangle with the
+    measure of the angles at those vertices.) It turns out that it is
+    fairly hard to reason from our knowledge of what the angles \(A\), \(B\) and \(C\)
+    are to deduce that the Morley triangle is equilateral. How does the
+    following plan sound: suppose we construct a triangle, that definitely
+    <!--Style me with CSS--><em>does</em> have an equilateral Morley triangle, whose angles also happen
+    to be \(A\), \(B\) and \(C\). Such a triangle would be
+    
+    similar<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-62" id="fn-62"><span class="footnote"><sup> 2 </sup></span></a></span><span id="hk-fn-62" style="display: none;" class="tex2jax_ignore"><span class="footnote">In Geometry, two objects are said to be <!--Style me with CSS--><em>similar</em> 
+    if one can be made to exactly coincide with the other after a series of 
+    rigid translations, rotations and scalings.  In other words, they have 
+    the same shape if you allow for differences in scale and are allowed to 
+    slide them around and spin them about as needed.</span></span>
+    to the original
+    triangle \({\triangle}ABC\) — if we follow the 
+    similarity transform from the
+    constructed triangle back to \({\triangle}ABC\) we will see that their
+    Morley triangles must coincide; thus if one is equilateral so is the other!
+  </p>
+<p id="p-1679">
+    One of the features of Conway's proof that leads to its great succinctness
+    and beauty is his introduction of some very nice notation.
+    Since we are dealing with angle trisectors, let \(a\), \(b\) and \(c\) be
+    angles such that \(3a=A\), \(3b=B\) and \(3c=C\). Furthermore, let a superscript
+    star denote the angle that is \(\pi/3\) (or \(60^\circ\) if you prefer) greater
+    than a given angle. So, for example,
+    \begin{equation*}
+      a^\star = a + \pi/3
+    \end{equation*}
+    and
+    \begin{equation*}
+      a^{\star\star} = a + 2\pi/3.
+    \end{equation*}
+  </p>
+<p id="p-1680">
+    Now, notice that the sum \(a+b+c\) must be \(\pi/3\). This is an
+    immediate consequence of \(A+B+C=\pi\) which is true for any triangle
+    in the plane. It follows that by distributing two stars amongst
+    the three numbers \(a\), \(b\) and \(c\) we will come up with three
+    quantities which sum to \(\pi\). In other words, there are
+    Euclidean triangles having the following
+    triples as their vertex angles:
+  </p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\((a, b, c^{\star\star})\)</td>
+<td class="l m b0 r0 l0 t0 lines">\((a, b^\star, c^\star)\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\((a, b^{\star\star}, c)\)</td>
+<td class="l m b0 r0 l0 t0 lines">\((a^\star, b^\star, c)\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\((a^{\star\star}, b, c)\)</td>
+<td class="l m b0 r0 l0 t0 lines">\((a^\star, b, c^\star)\)</td>
+</tr>
+</table>
+<article class="exercise-like" id="exercise-76"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">9.1.3</span>
+</h5>
+<p id="p-1681">
+        What would a triangle whose vertex angles are \((0^\star, 0^\star, 0^\star)\)
+        be?
+      </p></article><div class="hidden-knowl-wrapper"></div>
+<p id="p-1682">
+    In a nutshell, Conway's proof consists of starting with an equilateral
+    triangle of unit side length, adding appropriately scaled versions of the
+    six triangles above and ending up with a figure (having an equilateral
+    Morley triangle) similar to \({\triangle}ABC\). The generic picture is
+    given in <span>&lt;&lt;Unresolved xref, reference "fig_morley_conway_puzzle"; check spelling or use "provisional" attribute&gt;&gt;</span>. Before we can really
+    count this argument as a proof, we need to say a bit more about what
+    the phrase “appropriately scaled” means. In order to appropriately
+    scale the triangles (the small acute ones) that appear green in <span>&lt;&lt;Unresolved xref, reference "fig_morley_conway_puzzle"; check spelling or use "provisional" attribute&gt;&gt;</span>
+    we have a relatively easy job — just scale them so that the side
+    opposite the trisected angle has length one; that way they will join
+    perfectly with the central equilateral triangle.
+  </p>
+<figure class="figure-like" id="figure-30"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/5bba84725091f599ee0607bcdb351efa211fca13.png" alt="">\({\triangle}ABC\)</figure><p id="p-1683">
+    The triangles (these are the larger obtuse ones) that appear purple in <span>&lt;&lt;Unresolved xref, reference "fig_morley_conway_puzzle"; check spelling or use "provisional" attribute&gt;&gt;</span> are
+    a bit more puzzling. Ostensibly, we have two different jobs to accomplish — we must scale them so that both of the edges that they will share
+    with green triangles have the correct lengths. How do we know
+    that this won't require two different scaling factors? Conway also
+    developed an elegant argument that handles this question as well.
+    Consider the purple triangle at the bottom of the
+    diagram in <span>&lt;&lt;Unresolved xref, reference "fig_morley_conway_puzzle"; check spelling or use "provisional" attribute&gt;&gt;</span> — it has vertex
+    angles \((a,b,c^{\star\star})\). It is possible to construct triangles
+    similar (via reflections) to the adjacent green triangles
+    \((a, b^\star, c^\star)\) and \((a^\star, b, c^\star)\) <!--Style me with CSS--><em>inside</em> of
+    triangle \((a,b,c^{\star\star})\). To do this just construct two lines that
+    go through the top vertex (where the angle \(c^{\star\star}\) is) that cut
+    the opposite edge at the angle \(c^\star\) in the two possible senses — these two lines
+    will coincide if it should happen that \(c^\star\) is precisely \(\pi/2\)
+    but generally there will be two and it is evident that the two line
+    segments formed have the same length. We scale the purple triangle so
+    that this common length will be 1. See <span>&lt;&lt;Unresolved xref, reference "fig_morley_conway_puzzle_scaling"; check spelling or use "provisional" attribute&gt;&gt;</span>.
+  </p>
+<article class="exercise-like" id="exercise-77"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">9.1.4</span>
+</h5>
+<p id="p-1684">
+        If it should happen that \(c^\star = \pi/2\), what can we
+        say about \(C\)?
+      </p></article><div class="hidden-knowl-wrapper"></div>
+<figure class="figure-like" id="figure-31"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/0c188e3ab031227e0ef106c6fe93bce29dee5f1f.png" alt=""></figure><p id="p-1685">
+    Of course the other two obtuse triangles can be handled in a similar way.
+  </p>
+<section class="exercises" id="exercises-43"><header title="Exercises 9.1.1 Exercises"><h1 class="heading hide-type" alt="Exercises 9.1.1 Exercises">
+<span class="type">Subsection</span><span class="codenumber">9.1.1</span><span class="title">Exercises</span>
+</h1></header><ol style="list-style-type: lower-alpha;">
+<li id="li-506"><p id="p-1686">
+          What value should we get if we sum all of the
+          angles that appear around one of the interior vertices in the 
+          finished diagram?  Verify that all three have the correct sum.
+          <img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt="">
+          \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+            \reset@font\fontsize{#1}{#2pt}
+            \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+            \selectfont}\fi
+          <img width="100%" src="images/7be6d26c2a34cb7f241152c8ae23f22d4b2a4ec1.png" alt="">
+        </p></li>
+<li id="li-507"><p id="p-1687">
+          In this section we talked about similarity.  Two figures in 
+          the plane are 
+          similar if it is possible to turn one into the other
+          by a sequence of mappings: a translation, a rotation and a scaling.  
+
+          Geometric similarity is an equivalence relation.  To fix our
+          notation, let \(T(x,y)\) represent a generic translation, \(R(x,y)\) a rotation
+          and \(S(x,y)\) a scaling — thus a generic similarity is a function from
+          \(\Reals^2\) to \(\Reals^2\) that can be written in the form \(S(R(T(x,y)))\).
+
+          Discuss the three properties of an equivalence relation (reflexivity, symmetry and transitivity) in terms of geometric similarity.
+        </p></li>
+</ol></section></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2017-01-09T20:05:44-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<p><h5 class="heading"><span class="type">Paragraph</span></h5>
+    A  <!--Style me with CSS--><em>\(k\)-combination from an \(n\)-set</em> is an
+    unordered selection, without repetitions, of \(k\) things out of \(n\).
+    This is the exact same thing as a subset of size \(k\) of a set of size
+    \(n\), and the number of such things is denoted by several different
+    notations — \(C(n,k)\), \(nCk\) and \(\displaystyle\binom{n}{k}\) among
+    them<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-44" id="fn-44"><span class="footnote"><sup> 2 </sup></span></a></span><span id="hk-fn-44" style="display: none;" class="tex2jax_ignore"><span class="footnote">Watch out for the \(\binom{n}{k}\) notation, it is easy 
+    to confuse it with the fraction \(\left(\frac{n}{k}\right)\).  They are
+    not the same — the fraction bar is <!--Style me with CSS--><em>supposed</em> to be missing
+    in \(\binom{n}{k}\).</span></span>. We can come
+    up with a formula for \(C(n,k)\) by a slightly roundabout argument.
+    Suppose we think of counting the \(k\)-permutations of \(n\) things using the
+    multiplication rule in a different way then we have previously. We'll
+    build a \(k\)-permutation in two stages. First we'll choose \(k\) symbols
+    to put into our permutation — which can be done in \(C(n,k)\) ways. And
+    second, we'll put those \(k\) symbols into a particular order — which
+    can be accomplished in \(k!\) ways. Thus \(P(n,k) = C(n,k) \cdot k!\).
+    Since we already know that \(P(n,k) = \frac{n!}{(n-k)!}\), we can
+    substitute and solve to obtain
+    \begin{equation*}
+      C(n,k) = \frac{n!}{k! \cdot (n-k)!}.
+    \end{equation*}
+  </p><span class="incontext"><a href="sec_counting.html#p-1354">in-context</a></span>
