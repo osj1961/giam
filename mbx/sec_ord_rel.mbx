@@ -68,23 +68,27 @@
     Consider the set <m>S = \{1, 2, 3, 4, 6, 12 \}</m>. If we look at the
     relation <m>\leq</m> on this set we get the following digraph.
   </p>
-  <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+  <image source="images/e0da09656e4c7db5eeade23fed1105fbd4bdd5f6.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
     \reset@font\fontsize{#1}{#2pt}
     \fontfamily{#3}\fontseries{#4}\fontshape{#5}
     \selectfont}\fi
-  <image source="images/436a863c2d6c7c9056e44600c1dfd48e9ec65d0e.png"/>
+  </p>
+  <image source="images/4cf8b7c14772caf38538259faf8f90786807a110.png"/>
   <p>
     On the other hand, perhaps you noticed these numbers are the
     divisors of <m>12</m>. The divisibility relation will give us our
     first example of a partial order.
   </p>
-  <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+  <image source="images/e49c46bf37d7f410ae45676d890c42b9f8414372.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
     \reset@font\fontsize{#1}{#2pt}
     \fontfamily{#3}\fontseries{#4}\fontshape{#5}
     \selectfont}\fi
-  <image source="images/ce340a76c8bbe55cb044295aa618bbf6f21797b8.png"/>
+  </p>
+  <image source="images/9d375470533a2a1d348a9ab7a02e4f5ae7878bd6.png"/>
   <exercise>
     <statement>
       <p>
@@ -140,15 +144,10 @@
     shown in <xref ref="fig_hasse_diag">Figure</xref>
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/3d9a62f59b2ff660958eab0c027cb5610dfa1edd.png"/>
-    \caption[Some simple Hasse diagrams.]{Hasse diagrams of the set <m>\{1,2,3,4,6,12\}</m> 
-    totally ordered by <m>\leq</m> and partially ordered by <m>\mid</m>.}
+  <figure xml:id="fig_hasse_diag" >
+    <caption>Hasse diagrams of the set <m>\{1,2,3,4,6,12\}</m> 
+    totally ordered by <m>\leq</m> and partially ordered by <m>\mid</m>.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -165,16 +164,11 @@
     (See <xref ref="fig_subset_hasse">Figure</xref>.)
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/16110339655cc0d9bea9f3b235ec066e7036c08c.png"/>
-    \caption[Hasse diagram for <m>({\mathcal P}(\{1,2,3\}), \subseteq)</m>.]{Hasse 
+  <figure xml:id="fig_subset_hasse" >
+    <caption>Hasse 
     diagram for the power set of <m>\{1,2,3\}</m> partially ordered by 
-    set containment.}
+    set containment.</caption>
+    <image source=""/>
   </figure>
 
   <exercise>
@@ -213,16 +207,11 @@
     we show the poset of divisors of <m>72</m> and indicate the grading.
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/23dbef5d86a0eb078c2857ae1182db81f84979d4.png"/>
-    \caption[Hasse diagram of divisors of 72.]{Hasse 
+  <figure xml:id="fig_divisors_of_72" >
+    <caption>Hasse 
     diagram for the divisors of <m>72</m>, partially ordered by 
-    divisibility. This is a graded poset.}
+    divisibility. This is a graded poset.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -271,184 +260,226 @@
     <m>1</m> (the least element) are the prime divisors of <m>72</m>.
   </p>
   <exercises>
+    <exercise>
+      <statement>
+        <p>
+          In population ecology there is a partial order <q>predates</q>
+          which basically means that one organism feeds upon another. Strictly
+          speaking this relation is not transitive; however, if we take the point
+          of view that when a wolf eats a sheep, it is also eating some of the grass
+          that the sheep has fed upon, we see that in a certain sense it is transitive.
+          A chain in this partial order is called a <q>food chain</q> and so-called
+          apex predators are said to <q>sit atop the food chain</q>. Thus <q>apex
+          predator</q> is a term for a maximal element in this poset. When poisons
+          such as mercury and PCBs are introduced into an ecosystem, they tend to
+          collect disproportionately in the apex predators <mdash /> which is why pregnant
+          women and young children should not eat shark or tuna but sardines
+          are fine.
+        </p>
 
-    <ol>
-    <li><p>
-        In population ecology there is a partial order <q>predates</q>
-        which basically means that one organism feeds upon another.  Strictly
-        speaking this relation is not transitive; however, if we take the point
-        of view that when a wolf eats a sheep, it is also eating some of the grass
-        that the sheep has fed upon, we see that in a certain sense it is transitive.
-        A chain in this partial order is called a <q>food chain</q> and so-called 
-        apex predators are said to <q>sit atop the food chain</q>.  Thus <q>apex 
-        predator</q> is a term for a maximal element in this poset.   When poisons
-        such as mercury and PCBs are introduced into an ecosystem, they tend to
-        collect disproportionately in the apex predators <mdash /> which is why pregnant
-        women and young children should not eat shark or tuna but sardines 
-        are fine.
-      </p>
-
-      <p>
-        Below is a small example of an ecology partially ordered by <q>predates</q>
-        <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-        \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+        <p>
+          Below is a small example of an ecology partially ordered by <q>predates</q>
+        </p>
+        <image source="images/a6f8b1cb2af3af5ae392d573e16b6a8486a171fc.png"/>
+        <p>
+          \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
           \reset@font\fontsize{#1}{#2pt}
           \fontfamily{#3}\fontseries{#4}\fontshape{#5}
           \selectfont}\fi
-        <image source="images/637ada8c9af79b631ede3fb03dd78ad789220bd0.png"/>
-        Find the largest antichain in this poset.
-      </p></li>
-
-    <li><p>
-    Referring to the poset given in exercise 1, match the following.
-    <tabular>
-      <row>
-        <cell></cell>
-        <cell></cell>
-      </row>
-      <row>
-        <cell>\begin{minipage}[b]{.4\textwidth}
-
-        <ol>
-          <li>
-            <title>1.</title>
-            <p>
-              An (non-maximal) antichain
-            </p></li>
-
-          <li>
+        </p>
+        <image source="images/ecc5ab82c9752eb3932fbfbfda6017bbe761e740.png"/>
+        <p>
+          Find the largest antichain in this poset.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+    <statement>
+      <p>
+        Referring to the poset given in exercise 1, match the following.
+      </p>
+      <tabular>
+        <row>
+          <cell></cell>
+          <cell>\begin{minipage}[b]{.4\textwidth}
+          <ol>
+            \end{exercise}
+            <exercise>
+              <title>1.</title>
+              <p>
+                An (non-maximal) antichain
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
             <title>2.</title>
-            <p>
-              A maximal antichain
-            </p></li>
-
-          <li>
+            <statement>
+              <p>
+                A maximal antichain
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
             <title>3.</title>
-            <p>
-              A maximal element
-            </p></li>
-
-          <li>
+            <statement>
+              <p>
+                A maximal element
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
             <title>4.</title>
-            <p>
-              A (non-maximal) chain
-            </p></li>
-
-          <li>
+            <statement>
+              <p>
+                A (non-maximal) chain
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
             <title>5.</title>
-            <p>
-              A maximal chain
-            </p></li>
-
-          <li>
+            <statement>
+              <p>
+                A maximal chain
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
             <title>6.</title>
-            <p>
-              A cover for <q>Worms</q>
-            </p></li>
-
-          <li>
+            <statement>
+              <p>
+                A cover for <q>Worms</q>
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
             <title>7.</title>
-            <p>
-              A least element
-            </p></li>
-
-          <li>
-            <title>8.</title>
-            <p>
-              A minimal element
-            </p></li>
-        </ol>
-        </p></cell>
+            <statement>
+              <p>
+                A least element
+              </p>
+            </statement>
+          </exercise>
+          \begin{exercise}[8.] A minimal element
+        </ol></cell>
         <cell>\begin{minipage}[b]{.4\textwidth}
-
         <ol>
-          <li>
+          \end{exercise}
+          <exercise>
             <title>a.</title>
-            <p>
-              Grass
-            </p></li>
-
-          <li>
+            <statement>
+              <p>
+                Grass
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
             <title>b.</title>
-            <p>
-              Goose
-            </p></li>
-
-          <li>
+            <statement>
+              <p>
+                Goose
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
             <title>c.</title>
-            <p>
-              Fox
-            </p></li>
-
-          <li>
+            <statement>
+              <p>
+                Fox
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
             <title>d.</title>
-            <p>
-              <m>\{ \mbox{Grass} , \mbox{Duck}  \}</m>
-            </p></li>
-
-          <li>
+            <statement>
+              <p>
+                <m>\{ \mbox{Grass} , \mbox{Duck}  \}</m>
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
             <title>e.</title>
-            <p>
-              There isn't one!
-            </p></li>
-
-          <li>
+            <statement>
+              <p>
+                There isn't one!
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
             <title>f.</title>
-            <p>
-              <m>\{ \mbox{Fox} , \mbox{Alligator} , \mbox{Cow}  \}</m>
-            </p></li>
-
-          <li>
+            <statement>
+              <p>
+                <m>\{ \mbox{Fox} , \mbox{Alligator} , \mbox{Cow}  \}</m>
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
             <title>g.</title>
-            <p>
-              <m>\{ \mbox{Cow} , \mbox{Duck} ,  \mbox{Goose}  \}</m>
-            </p></li>
-
-          <li>
-            <title>h.</title>
-            <p>
-              <m>\{ \mbox{Worms} , \mbox{Robin} , \mbox{Fox}  \}</m>
-            </p></li>
+            <statement>
+              <p>
+                <m>\{ \mbox{Cow} , \mbox{Duck} ,  \mbox{Goose}  \}</m>
+              </p>
+            </statement>
+          </exercise>
+          \begin{exercise}[h.] <m>\{ \mbox{Worms} , \mbox{Robin} , \mbox{Fox}  \}</m>
         </ol></cell>
       </row>
-    </tabular></li>
-
-    <li><p>
-        The graph of the edges of a cube is one in an infinite sequence of 
-        graphs.  These graphs are defined 
-        recursively by <q>Make two copies of the previous graph then join 
-        corresponding nodes in the two copies with edges.</q>  The <m>0</m>-dimensional
-        `cube' is just a single point.  The <m>1</m>-dimensional cube is a single edge
-        with a node at either end.  The <m>2</m>-dimensional cube is actually a square
-        and the <m>3</m>-dimensional cube is what we usually mean when we say <q>cube.</q>
-        <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-        \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    </tabular>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The graph of the edges of a cube is one in an infinite sequence of
+          graphs. These graphs are defined
+          recursively by <q>Make two copies of the previous graph then join
+          corresponding nodes in the two copies with edges.</q> The <m>0</m>-dimensional
+          `cube' is just a single point. The <m>1</m>-dimensional cube is a single edge
+          with a node at either end. The <m>2</m>-dimensional cube is actually a square
+          and the <m>3</m>-dimensional cube is what we usually mean when we say <q>cube.</q>
+        </p>
+        <image source="images/cab1fb3f3cb68ad636ef43f4be20796bb18bc683.png"/>
+        <p>
+          \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
           \reset@font\fontsize{#1}{#2pt}
           \fontfamily{#3}\fontseries{#4}\fontshape{#5}
           \selectfont}\fi
-        <image source="images/824e9783a68c76521002e3b7a13aaae7230104ce.png"/>
-        Make a careful drawing of a <index><main>hypercube</main></index><em>hypercube</em> <mdash /> which is
-        the name of the graph that follows the ordinary cube in this sequence.
-      </p></li>
-
-    <li><p>
-        Label the nodes of a hypercube with the divisors of <m>210</m> in order to
-        produce a Hasse diagram of the poset determined by the divisibility relation.
-      </p></li>
-
-    <li><p>
-        Label the nodes of a hypercube with the subsets of <m>\{a,b,c,d\}</m> 
-        in order to produce a Hasse diagram of the poset determined by the 
-        subset containment relation.
-      </p></li>
-
-    <li><p>
-        Complete a Hasse diagram for the poset of divisors of 11025 (partially ordered by divisibility).
-      </p></li>
-
-    <li><p>
-        Find a collection of sets so that, when they are partially ordered by <m>\subseteq</m>, we obtain the same Hasse diagram as in the previous problem.
-      </p></li>
-    </ol>
+        </p>
+        <image source="images/ff2bd5d6c306891423f59cb1ccb3180470acfdc6.png"/>
+        <p>
+          Make a careful drawing of a <index><main>hypercube</main></index><em>hypercube</em> <mdash /> which is
+          the name of the graph that follows the ordinary cube in this sequence.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Label the nodes of a hypercube with the divisors of <m>210</m> in order to
+          produce a Hasse diagram of the poset determined by the divisibility relation.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Label the nodes of a hypercube with the subsets of <m>\{a,b,c,d\}</m>
+          in order to produce a Hasse diagram of the poset determined by the
+          subset containment relation.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Complete a Hasse diagram for the poset of divisors of 11025 (partially ordered by divisibility).
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Find a collection of sets so that, when they are partially ordered by <m>\subseteq</m>, we obtain the same Hasse diagram as in the previous problem.
+        </p>
+      </statement>
+    </exercise>
   </exercises>
 </section>

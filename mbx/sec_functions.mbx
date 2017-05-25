@@ -58,7 +58,8 @@
     We have gotten relatively used to relations <q>on</q> a set, but recall
     that the more general situation is that a binary relation is
     a subset of <m>A \times B</m>. In this setting, if the relation is
-    actually a function <m>f</m>, we say that <m>f</m> is a function <em>from</em> <m>A\emph{to}B</m>. Now, quite often there are input values that simply don't
+    actually a function <m>f</m>, we say that <m>f</m> is a function <em>from</em> <m>A</m>
+    <em>to</em> <m>B</m>. Now, quite often there are input values that simply don't
     work for a given function (for instance the well-known <q>you can't take
     the square root of a negative</q> rule). Also, it is often the case that
     certain outputs just can't happen. So, when dealing with a function
@@ -73,12 +74,7 @@
 
   <figure xml:id="fig_generic_function" >
     <caption>The sets related to an arbitrary function.</caption>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/e4da943afd93931db3290c98ac0d461cf87b9e29.png"/>
+    <image source=""/>
   </figure>
 
   <p>
@@ -215,12 +211,14 @@
     or neither of these to be functions. The canonical example to keep
     in mind is probably <m>f(x) = x^2</m> and its inverse.
   </p>
-  <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+  <image source="images/84bdb7199439369a5101f8d2d988891d5d900ef9.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
     \reset@font\fontsize{#1}{#2pt}
     \fontfamily{#3}\fontseries{#4}\fontshape{#5}
     \selectfont}\fi
-  <image source="images/284f365bf5be9a556c2f2761aa3b31e3308102b2.png"/>
+  </p>
+  <image source="images/081b46470c02caeeb91286aa1ecaeb5a77b7f319.png"/>
   <p>
     The graph that we obtain by reflecting <m>y=f(x)=x^2</m> in the line <m>y=x</m> doesn't
     pass the vertical line test and so it is the graph of (merely) a relation <mdash /> not of a function. The function <m>g(x) = \sqrt{x}</m> that we all know
@@ -497,90 +495,125 @@
     </me>
   </p>
   <exercises>
+    <exercise>
+    <statement>
+      <p>
+        For each of the following functions, give its domain, range and a possible codomain.
+        <ol>
+          \end{exercise}
+          <exercise>
+            <p>
+              <m>f(x) = \sin{(x)}</m>
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>g(x) = e^x</m>
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>h(x) = x^2</m>
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>m(x) = \frac{x^2+1}{x^2-1}</m>
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>n(x) = \lfloor x \rfloor</m>
+            </p>
+          </statement>
+        </exercise>
+        \begin{exercise}  <m>p(x) = \langle \cos{(x)}, \sin{(x)} \rangle</m>
+      </ol>
+    </p>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Find a bijection from the set of odd squares, <m>\{1, 9, 25, 49, \ldots\}</m>,
+          to the non-negative integers, <m>\Znoneg = \{0,1,2,3, \ldots\}</m>.
+          Prove that the function you just determined is both injective and surjective.
+          Find the inverse function of the bijection above.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The natural logarithm function <m>\ln (x)</m> is defined by a definite
+          integral with the variable <m>x</m> in the upper limit.
+          <me>
+            \ln (x) = \int_{t=1}^{x} \frac{1}{t} \, \mbox{d} t.
+          </me>
+        </p>
 
-    <ol>
-    <li><p>
-    For each of the following functions, give its domain, range and a possible codomain.
+        <p>
+          From this definition we can deduce that <m>\ln (x)</m> is strictly increasing on its
+          entire domain, <m>(0, \infty)</m>. Why is this true?
+        </p>
 
-    <ol>
-      <li><p>
-          <m>f(x) = \sin{(x)}</m>
-        </p></li>
+        <p>
+          We can use the above definition with <m>x=2</m> to find the value of
+          <m>\ln (2) \approx .693</m>. We will also take as given the following
+          rule (which is valid for all logarithmic functions).
+          <me>
+            \ln(a^b) = b \ln(a)
+          </me>
+        </p>
 
-      <li><p>
-          <m>g(x) = e^x</m>
-        </p></li>
-
-      <li><p>
-          <m>h(x) = x^2</m>
-        </p></li>
-
-      <li><p>
-          <m>m(x) = \frac{x^2+1}{x^2-1}</m>
-        </p></li>
-
-      <li><p>
-          <m>n(x) = \lfloor x \rfloor</m>
-        </p></li>
-
-      <li><p>
-          <m>p(x) = \langle \cos{(x)}, \sin{(x)} \rangle</m>
-        </p></li>
-    </ol>
-    </p></li>
-
-    <li><p>
-        Find a bijection from the set of odd squares, <m>\{1, 9, 25, 49, \ldots\}</m>,
-        to the non-negative integers, <m>\Znoneg = \{0,1,2,3, \ldots\}</m>.
-        Prove that the function you just determined is both injective and surjective.
-        Find the inverse function of the bijection above.
-      </p></li>
-
-    <li><p>
-        The natural logarithm function <m>\ln (x)</m> is defined by a definite
-        integral with the variable <m>x</m> in the upper limit.
-        <me>
-          \ln (x) = \int_{t=1}^{x} \frac{1}{t} \, \mbox{d} t.
-        </me>
-        From this definition we can deduce that <m>\ln (x)</m> is strictly increasing on its
-        entire domain, <m>(0, \infty)</m>.  Why is this true?
-
-        We can use the above definition with <m>x=2</m> to find the value of 
-        <m>\ln (2) \approx .693</m>.  We will also take as given the following 
-        rule (which is valid for all logarithmic functions).
-        <me>
-          \ln(a^b) = b \ln(a)
-        </me>
-        Use the above information to show that there is neither an upper bound 
-        nor a lower bound for the values of the natural logarithm.  These facts
-        together with the information that <m>\ln</m> is strictly increasing show that
-        <m>\Rng{\ln} = \Reals</m>.
-      </p></li>
-
-    <li><p>
-        Georg Cantor developed a systematic way of listing the rational numbers.
-        By <q>listing</q> a set one is actually developing a bijection from <m>\Naturals</m> to
-        that set.  The method known as <q>Cantor's Snake</q> creates a bijection from
-        the naturals to the non-negative rationals.  
-        First we create an infinite table whose rows
-        are indexed by positive integers and whose columns are indexed by non-negative
-        integers <mdash /> the entries in this table are rational numbers of the form
-        <q>column index</q> / <q>row index.</q>  We then follow a snake-like path that
-        zig-zags across this table <mdash /> whenever we encounter a rational number that 
-        we haven't seen before (in lower terms) we write it down.  This is indicated 
-        in the diagram below by circling the entries.
-        <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-        \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+        <p>
+          Use the above information to show that there is neither an upper bound
+          nor a lower bound for the values of the natural logarithm. These facts
+          together with the information that <m>\ln</m> is strictly increasing show that
+          <m>\Rng{\ln} = \Reals</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Georg Cantor developed a systematic way of listing the rational numbers.
+          By <q>listing</q> a set one is actually developing a bijection from <m>\Naturals</m> to
+          that set. The method known as <q>Cantor's Snake</q> creates a bijection from
+          the naturals to the non-negative rationals.
+          First we create an infinite table whose rows
+          are indexed by positive integers and whose columns are indexed by non-negative
+          integers <mdash /> the entries in this table are rational numbers of the form
+          <q>column index</q> / <q>row index.</q> We then follow a snake-like path that
+          zig-zags across this table <mdash /> whenever we encounter a rational number that
+          we haven't seen before (in lower terms) we write it down. This is indicated
+          in the diagram below by circling the entries.
+        </p>
+        <image source="images/a131a9f9e6bc762441a32cbafc45cef085aa4de8.png"/>
+        <p>
+          \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
           \reset@font\fontsize{#1}{#2pt}
           \fontfamily{#3}\fontseries{#4}\fontshape{#5}
           \selectfont}\fi
-        <image source="images/aa39e298f21779c6da86ce0b5fbac7aa8b57aea7.png"/>
-        Effectively this gives us a function <m>f</m> which produces the rational number 
-        that would be found in a given position in this list.  For example 
-        <m>f(1) = 0/1, f(2) = 1/1</m> and <m>f(5) = 1/3</m>.  
+        </p>
+        <image source="images/a84d85596b6fa176bb6a0b54151308930c9a672f.png"/>
+        <p>
+          Effectively this gives us a function <m>f</m> which produces the rational number
+          that would be found in a given position in this list. For example
+          <m>f(1) = 0/1, f(2) = 1/1</m> and <m>f(5) = 1/3</m>.
+        </p>
 
-        What is <m>f(26)</m>?  What is <m>f(30)</m>?  What is <m>f^{-1}(3/4)</m>? What is <m>f^{-1}(6/7)</m>?
-      </p></li>
-    </ol>
+        <p>
+          What is <m>f(26)</m>? What is <m>f(30)</m>? What is <m>f^{-1}(3/4)</m>? What is <m>f^{-1}(6/7)</m>?
+        </p>
+      </statement>
+    </exercise>
   </exercises>
 </section>

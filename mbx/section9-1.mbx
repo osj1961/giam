@@ -47,16 +47,11 @@
     to obtain a diagram something like that in <xref ref="fig_morley_setup">Figure</xref>.
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/c73f4ac3b59465ec0146d68cd40c02f50b2402b4.png"/>
-    \caption[The setup for Morley's Miracle.]{The setup for Morley's 
+  <figure xml:id="fig_morley_setup" >
+    <caption>The setup for Morley's 
     Miracle <mdash /> start with an arbitrary triangle and trisect each of 
-    its angles.}
+    its angles.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -81,16 +76,11 @@
     small triangle in the center of our original triangle.
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/241c9c2a17fb551fc325aacee1fdfb8cfbbfde90.png"/>
-    \caption[The first Morley triangle.]{A triangle is formed whose vertices 
+  <figure xml:id="fig_morley_1st_triangle" >
+    <caption>A triangle is formed whose vertices 
     are the intersections of the adjacent trisectors of the angles of 
-    <m>{\triangle}ABC</m>.}
+    <m>{\triangle}ABC</m>.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -215,17 +205,12 @@
     perfectly with the central equilateral triangle.
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/5bba84725091f599ee0607bcdb351efa211fca13.png"/>
-    \caption[Conway's puzzle proof.]{Conway's proof involves putting 
+  <figure xml:id="fig_morley_conway_puzzle" >
+    <caption>Conway's proof involves putting 
     these pieces together to obtain a triangle (with an equilateral
     Morley triangle) that is similar to  
-    <m>{\triangle}ABC</m>.}
+    <m>{\triangle}ABC</m>.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -256,49 +241,54 @@
     </statement>
   </exercise>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/0c188e3ab031227e0ef106c6fe93bce29dee5f1f.png"/>
-    \caption[Scaling in Conway's puzzle proof.]{The scaling factor for
+  <figure xml:id="fig_morley_conway_puzzle_scaling" >
+    <caption>The scaling factor for
     the obtuse triangles in Conway's puzzle proof is determined so that 
-    the segments constructed in there midsts have unit length.}
+    the segments constructed in there midsts have unit length.</caption>
+    <image source=""/>
   </figure>
 
   <p>
     Of course the other two obtuse triangles can be handled in a similar way.
   </p>
   <exercises>
-
-    <ol>
-      <li><p>
+    <exercise>
+      <statement>
+        <p>
           What value should we get if we sum all of the
-          angles that appear around one of the interior vertices in the 
-          finished diagram?  Verify that all three have the correct sum.
-          <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+          angles that appear around one of the interior vertices in the
+          finished diagram? Verify that all three have the correct sum.
+        </p>
+        <image source="images/662f1ae3e7724a0731a3ffa7c1b59961bdb42156.png"/>
+        <p>
           \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-            \reset@font\fontsize{#1}{#2pt}
-            \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-            \selectfont}\fi
-          <image source="images/7be6d26c2a34cb7f241152c8ae23f22d4b2a4ec1.png"/>
-        </p></li>
-
-      <li><p>
-          In this section we talked about similarity.  Two figures in 
-          the plane are 
+          \reset@font\fontsize{#1}{#2pt}
+          \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+          \selectfont}\fi
+        </p>
+        <image source="images/6fce182d123d3d04330ed0c8e5e823b5449d7ffa.png"/>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          In this section we talked about similarity. Two figures in
+          the plane are
           similar if it is possible to turn one into the other
-          by a sequence of mappings: a translation, a rotation and a scaling.  
+          by a sequence of mappings: a translation, a rotation and a scaling.
+        </p>
 
-          Geometric similarity is an equivalence relation.  To fix our
+        <p>
+          Geometric similarity is an equivalence relation. To fix our
           notation, let <m>T(x,y)</m> represent a generic translation, <m>R(x,y)</m> a rotation
           and <m>S(x,y)</m> a scaling <mdash /> thus a generic similarity is a function from
           <m>\Reals^2</m> to <m>\Reals^2</m> that can be written in the form <m>S(R(T(x,y)))</m>.
+        </p>
 
+        <p>
           Discuss the three properties of an equivalence relation (reflexivity, symmetry and transitivity) in terms of geometric similarity.
-        </p></li>
-    </ol>
+        </p>
+      </statement>
+    </exercise>
   </exercises>
 </section>

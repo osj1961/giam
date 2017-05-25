@@ -186,7 +186,9 @@
       <cell><m>\phi</m></cell>
     </row>
   </tabular>
-  and
+  <p>
+    and
+  </p>
   <tabular>
     <row>
       <cell><m>A</m></cell>
@@ -219,8 +221,6 @@
       <cell><m>\phi</m></cell>
     </row>
   </tabular>
-  .
-
   <p>
     In addition to these connectors we need a modifier (called
     <index><main>negation</main></index><em>negation</em>)
@@ -306,12 +306,7 @@
 
   <figure xml:id="fig_trans" >
     <caption>A schematic representation of a transistor.</caption>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/5fa959a9d49ccd5348d43c5dace7a5db1b0e0d52.png"/>
+    <image source=""/>
   </figure>
 
   <p>
@@ -324,15 +319,10 @@
     are energized then the output at y will be energized.
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/9f7a8052f905d5698fc1a098f9c6d5cdf2d5229d.png"/>
-    \caption[Series connections implement <em>and</em>.]{The connection of two transistors in series provides 
-    an implementation of the <em>and</em> operator.}
+  <figure xml:id="fig_series" >
+    <caption>The connection of two transistors in series provides 
+    an implementation of the <em>and</em> operator.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -346,27 +336,24 @@
     <index><main>inclusive or</main></index>inclusive) sense.
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/b755e1e6a9c1dbd364c806b69e3ebb59c1051fe1.png"/>
-    \caption[Parallel connections implement <em>or</em>.]{The connection of two transistors in parallel provides 
-    an implementation of the <em>or</em> operator.}
+  <figure xml:id="fig_par" >
+    <caption>The connection of two transistors in parallel provides 
+    an implementation of the <em>or</em> operator.</caption>
+    <image source=""/>
   </figure>
 
   <p>
     As a sort of <index><main>logic gates</main></index>graphical shorthand, electronics engineers use the symbols
     below to indicate <index><main>and gates</main></index>and-gates, <index><main>or gates</main></index>or-gates <ampersand /> <index><main>not gates</main></index>not-gates (better known as negators).
   </p>
-  <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+  <image source="images/1cef9903223998dcc4ca7a1a4849ae10f143439e.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
     \reset@font\fontsize{#1}{#2pt}
     \fontfamily{#3}\fontseries{#4}\fontshape{#5}
     \selectfont}\fi
-  <image source="images/e7616f684fd0d6d9fb32d9ac4f2d6e6796fa5c2c.png"/>
+  </p>
+  <image source="images/b7c9eba0d071f0828c95879038ff8fb04bed218e.png"/>
   <p>
     An and-gate has two transistors inside it that are wired in series <mdash /> if both the inputs are energized the output will be too. An
     or-gate has two transistors in parallel inside it. Not-gates
@@ -387,16 +374,10 @@
     2 inputs.
   </p>
 
-  <figure>
-    \
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/156a7cbb2bd04164ee64f13ca3f9753e291741b8.png"/>
-    \caption[Parenthesizations expressed as digital logic circuits.]{Two of the possible ways to parenthesize the conjunction 
-    of four statement variables <mdash /> expressed as digital logic circuits.}
+  <figure xml:id="fig_3ands" >
+    <caption>Two of the possible ways to parenthesize the conjunction 
+    of four statement variables <mdash /> expressed as digital logic circuits.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -493,365 +474,398 @@
     the 4th, 7th and 8th rows of the i/o table above. (These are the rows
     where the output is supposed to be 1.)
   </p>
-  <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+  <image source="images/6670fb09730b4531ff140e39863172e7b7154a04.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
     \reset@font\fontsize{#1}{#2pt}
     \fontfamily{#3}\fontseries{#4}\fontshape{#5}
     \selectfont}\fi
-  <image source="images/ae22c36eb23877e7336ee55ce36fdb752646a641.png"/>
+  </p>
+  <image source="images/ca7d8ff44f450eeb011a5671cb6f3fdf6c7c9056.png"/>
   <p>
     In <xref ref="fig_dnf">Figure</xref> we illustrate how to create a circuit whose
     i/o table is as above using these recognizers.
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/8f4817e0170de864ff94dbfe54de7949c4dbc6d1.png"/>
-    \caption[Disjunctive normal form.]{A digital logic circuit built 
+  <figure xml:id="fig_dnf" >
+    <caption>A digital logic circuit built 
     using disjunctive normal form.  The output of this circuit is 
-    <m>({\lnot}x \land y \land z) \lor (x \land y \land {\lnot}z) \lor (x \land y \land z)</m>.}
+    <m>({\lnot}x \land y \land z) \lor (x \land y \land {\lnot}z) \lor (x \land y \land z)</m>.</caption>
+    <image source=""/>
   </figure>
 
   <exercises>
-
-    <ol>
-      <li><p>
-          Design a digital logic circuit (using and, or <ampersand /> not gates) that 
+    <exercise>
+      <statement>
+        <p>
+          Design a digital logic circuit (using and, or <ampersand /> not gates) that
           implements an exclusive or.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          First, it's essential to know what is meant by the term "exclusive or". This is the interpretation that many people give to the word "or" <mdash /> where "X or Y" means either X is true or Y is true, but that it isn't the case that both X and Y are true. This (wrong) understanding of what "or" means is common because it is often the case that X and Y represent complimentary possibilities: old or new, cold or hot, right or wrong... The truth table for exclusive or (often written xor, pronounced "ex-or", symbolically it is usually <m>\oplus</m>) is
+        </p>
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>X</m></cell>
+            <cell><m>Y</m></cell>
+            <cell><m>X \,\oplus\, Y</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>T</m></cell>
+            <cell><m>T</m></cell>
+            <cell><m>\phi</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>T</m></cell>
+            <cell><m>\phi</m></cell>
+            <cell><m>T</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>\phi</m></cell>
+            <cell><m>T</m></cell>
+            <cell><m>T</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>\phi</m></cell>
+            <cell><m>\phi</m></cell>
+            <cell><m>\phi</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+        <p>
+          So it's true when one, or the other, but not both of its inputs are true. The upshot of the last sentence is that we can write <m>X \oplus Y \; \equiv \; (X \lor Y) \land {\lnot}(X \land Y)</m>.
+        </p>
 
-
-
-          \hint{First, it's essential to know what is meant by the term "exclusive or". This is the interpretation that many people give to the word "or" <mdash /> where "X or Y" means either X is true or Y is true, but that it isn't the case that both X and Y are true. This (wrong) understanding of what "or" means is common because it is often the case that X and Y represent complimentary possibilities: old or new, cold or hot, right or wrong... The truth table for exclusive or (often written xor, pronounced "ex-or", symbolically it is usually <m>\oplus</m>) is
-          <tabular>
-            <row bottom="minor">
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row>
-              <cell><m>X</m></cell>
-              <cell><m>Y</m></cell>
-              <cell><m>X \,\oplus\, Y</m></cell>
-            </row>
-            <row bottom="minor">
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row>
-              <cell><m>T</m></cell>
-              <cell><m>T</m></cell>
-              <cell><m>\phi</m></cell>
-            </row>
-            <row bottom="minor">
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row>
-              <cell><m>T</m></cell>
-              <cell><m>\phi</m></cell>
-              <cell><m>T</m></cell>
-            </row>
-            <row bottom="minor">
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row>
-              <cell><m>\phi</m></cell>
-              <cell><m>T</m></cell>
-              <cell><m>T</m></cell>
-            </row>
-            <row bottom="minor">
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row>
-              <cell><m>\phi</m></cell>
-              <cell><m>\phi</m></cell>
-              <cell><m>\phi</m></cell>
-            </row>
-            <row bottom="minor">
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-          </tabular>
-          So it's true when one, or the other, but not both of its inputs are true.  The upshot of the last sentence is that we can write <m>X \oplus Y \; \equiv \; (X \lor Y) \land {\lnot}(X \land Y)</m>.
-
-          The above reformulation should help<ellipsis /> 
-
-
-
-          }
-        </p></li>
-
-      <li><p>
-          Consider the sentence 
+        <p>
+          The above reformulation should help<ellipsis />
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Consider the sentence
           <q>This is a sentence which does not refer to itself.</q>
           which was given in the beginning of this chapter as an example.
-          Is this sentence a statement?  If so, what is its truth value?
-
-          \hint{The only question in your mind, when deciding whether a sentence is a statement, should be "Does this thing have a definite truth value?"
+          Is this sentence a statement? If so, what is its truth value?
+        </p>
+      </statement>
+      <hint>
+        <p>
+          The only question in your mind, when deciding whether a sentence is a statement, should be "Does this thing have a definite truth value?"
           Well?
+        </p>
 
-          Isn't it just plainly false?}
-        </p></li>
-
-      <li><p>
-          Consider the sentence <q>This sentence is false.</q>  Is this 
+        <p>
+          Isn't it just plainly false?
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Consider the sentence <q>This sentence is false.</q> Is this
           sentence a statement?
-
-          \hint{Try to justify why this sentence can't be either true or false.}
-        </p></li>
-
-      <li><p>
-          Complete truth tables for each of the sentences 
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Try to justify why this sentence can't be either true or false.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Complete truth tables for each of the sentences
           <m>(A \land B) \lor C</m> and
-          <m>A \land (B \lor C)</m>.  Does it seem that these sentences have
+          <m>A \land (B \lor C)</m>. Does it seem that these sentences have
           the same logical content?
-
-          \hint{
-
-
-
+        </p>
+      </statement>
+      <hint>
+        <p>
           A tiny hint here: since the sentences involve 3 variables you'll need truth tables with 8 rows. Here's a template.
-          <tabular>
-            <row bottom="minor">
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row>
-              <cell><m>A</m></cell>
-              <cell><m>B</m></cell>
-              <cell><m>C</m></cell>
-              <cell><m>(A \land B) \lor C</m></cell>
-              <cell><m>A \land (B \lor C)</m></cell>
-            </row>
-            <row bottom="minor">
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row>
-              <cell><m>T</m></cell>
-              <cell><m>T</m></cell>
-              <cell><m>T</m></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row bottom="minor">
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row>
-              <cell><m>T</m></cell>
-              <cell><m>T</m></cell>
-              <cell><m>\phi</m></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row bottom="minor">
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row>
-              <cell><m>T</m></cell>
-              <cell><m>\phi</m></cell>
-              <cell><m>T</m></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row bottom="minor">
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row>
-              <cell><m>T</m></cell>
-              <cell><m>\phi</m></cell>
-              <cell><m>\phi</m></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row bottom="minor">
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row>
-              <cell><m>\phi</m></cell>
-              <cell><m>T</m></cell>
-              <cell><m>T</m></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row bottom="minor">
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row>
-              <cell><m>\phi</m></cell>
-              <cell><m>T</m></cell>
-              <cell><m>\phi</m></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row bottom="minor">
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row>
-              <cell><m>\phi</m></cell>
-              <cell><m>\phi</m></cell>
-              <cell><m>T</m></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row bottom="minor">
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row>
-              <cell><m>\phi</m></cell>
-              <cell><m>\phi</m></cell>
-              <cell><m>\phi</m></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row bottom="minor">
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-          </tabular>
-          }
-        </p></li>
-
-      <li xml:id="ex_nand_nor" ><p>
+        </p>
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>A</m></cell>
+            <cell><m>B</m></cell>
+            <cell><m>C</m></cell>
+            <cell><m>(A \land B) \lor C</m></cell>
+            <cell><m>A \land (B \lor C)</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>T</m></cell>
+            <cell><m>T</m></cell>
+            <cell><m>T</m></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>T</m></cell>
+            <cell><m>T</m></cell>
+            <cell><m>\phi</m></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>T</m></cell>
+            <cell><m>\phi</m></cell>
+            <cell><m>T</m></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>T</m></cell>
+            <cell><m>\phi</m></cell>
+            <cell><m>\phi</m></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>\phi</m></cell>
+            <cell><m>T</m></cell>
+            <cell><m>T</m></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>\phi</m></cell>
+            <cell><m>T</m></cell>
+            <cell><m>\phi</m></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>\phi</m></cell>
+            <cell><m>\phi</m></cell>
+            <cell><m>T</m></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>\phi</m></cell>
+            <cell><m>\phi</m></cell>
+            <cell><m>\phi</m></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+      </hint>
+    </exercise>
+    <exercise xml:id="ex_nand_nor">
+      <statement>
+        <p>
           There are two other logical connectives that are
           used somewhat less commonly than <m>\lor</m> and <m>\land</m>.
-          These are the <index><main>Scheffer stroke</main></index> Scheffer stroke and the 
-          <index><main>Peirce arrow</main></index>Peirce arrow <mdash /> written <m>\vert</m> and <m>\downarrow</m>, respectively <mdash />  they are 
+          These are the <index><main>Scheffer stroke</main></index> Scheffer stroke and the
+          <index><main>Peirce arrow</main></index>Peirce arrow <mdash /> written <m>\vert</m> and <m>\downarrow</m>, respectively <mdash /> they are
           also known as <index><main>NAND</main></index> NAND and <index><main>NOR</main></index> NOR.
+        </p>
 
-           The truth tables for these connectives are:
-          <tabular>
-            <row>
-              <cell><m>A</m></cell>
-              <cell><m>B</m></cell>
-              <cell><m>A \,\vert\, B</m></cell>
-            </row>
-            <row bottom="minor">
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row>
-              <cell><m>T</m></cell>
-              <cell><m>T</m></cell>
-              <cell><m>\phi</m></cell>
-            </row>
-            <row>
-              <cell><m>T</m></cell>
-              <cell><m>\phi</m></cell>
-              <cell><m>T</m></cell>
-            </row>
-            <row>
-              <cell><m>\phi</m></cell>
-              <cell><m>T</m></cell>
-              <cell><m>T</m></cell>
-            </row>
-            <row>
-              <cell><m>\phi</m></cell>
-              <cell><m>\phi</m></cell>
-              <cell><m>T</m></cell>
-            </row>
-          </tabular>
+        <p>
+          The truth tables for these connectives are:
+        </p>
+        <tabular>
+          <row>
+            <cell><m>A</m></cell>
+            <cell><m>B</m></cell>
+            <cell><m>A \,\vert\, B</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>T</m></cell>
+            <cell><m>T</m></cell>
+            <cell><m>\phi</m></cell>
+          </row>
+          <row>
+            <cell><m>T</m></cell>
+            <cell><m>\phi</m></cell>
+            <cell><m>T</m></cell>
+          </row>
+          <row>
+            <cell><m>\phi</m></cell>
+            <cell><m>T</m></cell>
+            <cell><m>T</m></cell>
+          </row>
+          <row>
+            <cell><m>\phi</m></cell>
+            <cell><m>\phi</m></cell>
+            <cell><m>T</m></cell>
+          </row>
+        </tabular>
+        <p>
           and
-          <tabular>
-            <row>
-              <cell><m>A</m></cell>
-              <cell><m>B</m></cell>
-              <cell><m>A \downarrow B</m></cell>
-            </row>
-            <row bottom="minor">
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row>
-              <cell><m>T</m></cell>
-              <cell><m>T</m></cell>
-              <cell><m>\phi</m></cell>
-            </row>
-            <row>
-              <cell><m>T</m></cell>
-              <cell><m>\phi</m></cell>
-              <cell><m>\phi</m></cell>
-            </row>
-            <row>
-              <cell><m>\phi</m></cell>
-              <cell><m>T</m></cell>
-              <cell><m>\phi</m></cell>
-            </row>
-            <row>
-              <cell><m>\phi</m></cell>
-              <cell><m>\phi</m></cell>
-              <cell><m>T</m></cell>
-            </row>
-          </tabular>
+        </p>
+        <tabular>
+          <row>
+            <cell><m>A</m></cell>
+            <cell><m>B</m></cell>
+            <cell><m>A \downarrow B</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>T</m></cell>
+            <cell><m>T</m></cell>
+            <cell><m>\phi</m></cell>
+          </row>
+          <row>
+            <cell><m>T</m></cell>
+            <cell><m>\phi</m></cell>
+            <cell><m>\phi</m></cell>
+          </row>
+          <row>
+            <cell><m>\phi</m></cell>
+            <cell><m>T</m></cell>
+            <cell><m>\phi</m></cell>
+          </row>
+          <row>
+            <cell><m>\phi</m></cell>
+            <cell><m>\phi</m></cell>
+            <cell><m>T</m></cell>
+          </row>
+        </tabular>
+        <p>
           Find an expression for <m>(A\, \land {\lnot}B) \lor C</m>
           using only these new connectives (as well as negation and the
           variable symbols themselves).
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Sorry, I know this is probably the hardest problem in the chapter, but I'm (mostly) not going to help...
+          Just one hint to help you get started: NAND and NOR are the negations of AND and OR (respectively) so, for example, <m>(X \land Y) \; \equiv \; {\lnot}(A \,\vert\, B)</m>.
+        </p>
+      </hint>
+    </exercise>
+    <exercise xml:id="IKK">
+      <statement>
+        <p>
+          The famous logician <index><main>Smullyan, Raymond</main></index> Raymond Smullyan devised
+          a family of logical puzzles around a fictitious place he called
+          <index><main>Knights and Knaves</main></index> <q>the Island of Knights and Knaves.</q> The inhabitants of the island are either knaves, who always make false statements, or knights, who always make truthful statements.
+        </p>
 
-
-          \hint{Sorry, I know this is probably the hardest problem in the chapter, but I'm (mostly) not going to help...
-          Just one hint to help you get started: NAND and NOR are the negations of AND and OR (respectively) so, for example, <m>(X \land Y) \; \equiv \; {\lnot}(A \,\vert\, B)</m>.}
-        </p></li>
-
-      <li xml:id="IKK" ><p>
-          The famous logician <index><main>Smullyan, Raymond</main></index> Raymond Smullyan devised 
-          a family of logical puzzles around a fictitious place he called 
-          <index><main>Knights and Knaves</main></index> <q>the Island of Knights and Knaves.</q>  The inhabitants of the island are either knaves, who always make false statements, or knights, who always make truthful statements.  
-
-          In the most famous knight/knave puzzle, you are in a room which has only two exits.  One leads to certain death and the other to freedom.  There are two 
-          individuals in the room, and you know that one of them is a knight and the other is a knave, but you don't know which.   Your challenge is to determine the door which leads to freedom by asking a single question.
-
-          \hint{Ask one of them what the other one would say to do.}
-        </p></li>
-    </ol>
+        <p>
+          In the most famous knight/knave puzzle, you are in a room which has only two exits. One leads to certain death and the other to freedom. There are two
+          individuals in the room, and you know that one of them is a knight and the other is a knave, but you don't know which. Your challenge is to determine the door which leads to freedom by asking a single question.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Ask one of them what the other one would say to do.
+        </p>
+      </hint>
+    </exercise>
   </exercises>
 </section>

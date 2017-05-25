@@ -91,7 +91,9 @@
     be caused by self-reference of this sort. Consider
   </p>
 
-  The sentence in this box is false.
+  <p>
+    The sentence in this box is false.
+  </p>
 
   <p>
     So a reasonable alternative
@@ -140,25 +142,35 @@
     (as an element) is disallowed.
   </p>
   <exercises>
-
-    <ol>
-      <li><p>
+    <exercise>
+      <statement>
+        <p>
           Verify that <m>(A \implies {\lnot}A) \land ({\lnot}A \implies A)</m>
-          is a logical contradiction in two ways:  by filling out a truth table and 
+          is a logical contradiction in two ways: by filling out a truth table and
           using the laws of logical equivalence.
-
-          \hint{In order to get started on this you'll need to convert the conditionals into equivalent
-          disjunctions.  Recall that <m>X \implies Y \; \equiv \; {\lnot}X \lor Y</m>.}
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          In order to get started on this you'll need to convert the conditionals into equivalent
+          disjunctions. Recall that <m>X \implies Y \; \equiv \; {\lnot}X \lor Y</m>.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           One way out of Russell's paradox is to declare that the collection
           of sets that don't contain themselves as elements is not a set itself.
-          Explain how this circumvents the paradox. 
-
-          \hint{If it's not a set then it doesn't necessarily have to have the property that we
-          can be <em>sure</em> whether an element is in it or not.}
-        </p></li>
-    </ol>
+          Explain how this circumvents the paradox.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          If it's not a set then it doesn't necessarily have to have the property that we
+          can be <em>sure</em> whether an element is in it or not.
+        </p>
+      </hint>
+    </exercise>
   </exercises>
 </section>

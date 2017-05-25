@@ -3,7 +3,7 @@
   <title>Basic sets</title>
   <p>
     It has been said<index><main>Kronecker, Leopold</main></index><fn>Usually attributed to 
-    Kronecker <mdash /> ``Die ganze Zahl schuf der liebe Gott, alles &Uuml;brige 
+    Kronecker <mdash /> <q>Die ganze Zahl schuf der liebe Gott, alles \</q>Ubrige 
     ist Menschenwerk.''</fn> that <q>God invented
     the integers, all else is the work of Man.</q> This is
     a mistranslation. The term <q>integers</q> should
@@ -430,12 +430,13 @@
     has bits of sand nearby, but not (necessarily) on top of it.
   </p>
   <exercises>
-
-    <ol>
-    <li><p>
-        Each of the quantities indexing the rows of the following table
-        is in one or more of the sets which index the columns.  Place a 
-        check mark in a table entry if the quantity is in the set.
+    <exercise>
+      <statement>
+        <p>
+          Each of the quantities indexing the rows of the following table
+          is in one or more of the sets which index the columns. Place a
+          check mark in a table entry if the quantity is in the set.
+        </p>
         <tabular>
           <row bottom="minor">
             <cell></cell>
@@ -590,151 +591,224 @@
             <cell></cell>
           </row>
         </tabular>
-        \hint{Note that these sets contain one another, so if 
-        you determine that a number is a natural number it is automatically 
-        an integer and a rational number and a real number and a complex number<ellipsis />}
-      </p></li>
-
-    <li><p>
-        Write the set <m>\Integers</m> of integers using a singly infinite
-        listing.
-
-
-
-        \hint{What the heck is meant by a <q>singly infinite listing</q>?  To help you figure this out, note that
-        <me>
-          \ldots -3, -2, -1, 0, 1, 2, 3, \ldots
-        </me>
-        is a doubly infinite listing.}
-      </p></li>
-
-    <li><p>
-    Identify each as rational or irrational.
-
-    <ol>
-      <li><p>
-          <m>5021.2121212121\ldots</m>
-        </p></li>
-
-      <li><p>
-          <m>0.2340000000\ldots</m>
-        </p></li>
-
-      <li><p>
-          <m>12.31331133311133331111\ldots</m>
-        </p></li>
-
-      <li><p>
-          <m>\pi</m>
-        </p></li>
-
-      <li><p>
-          <m>2.987654321987654321987654321\ldots</m>
-        </p></li>
-    </ol>
+      </statement>
+      <hint>
+        <p>
+          Note that these sets contain one another, so if
+          you determine that a number is a natural number it is automatically
+          an integer and a rational number and a real number and a complex number<ellipsis />
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Write the set <m>\Integers</m> of integers using a singly infinite
+          listing.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          What the heck is meant by a <q>singly infinite listing</q>? To help you figure this out, note that
+          <me>
+            \ldots -3, -2, -1, 0, 1, 2, 3, \ldots
+          </me>
+          is a doubly infinite listing.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+    <statement>
+      <p>
+        Identify each as rational or irrational.
+        <ol>
+          \end{exercise}
+          <exercise>
+            <p>
+              <m>5021.2121212121\ldots</m>
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>0.2340000000\ldots</m>
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>12.31331133311133331111\ldots</m>
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>\pi</m>
+            </p>
+          </statement>
+        </exercise>
+        \begin{exercise} <m>2.987654321987654321987654321\ldots</m>
+      </ol>
     </p>
+    <hint>
+      <p>
+        rat,rat,irr,irr,rat
+      </p>
+    </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The <q>see and say</q> sequence is produced by first writing a 1,
+          then iterating the following procedure: look at the previous entry
+          and say how many entries there are of each integer and write down what
+          you just said. The first several terms of the <q>see and say</q> sequence
+          are <m>1, 11, 21, 1112, 3112, 211213, 312213, 212223, \ldots</m>. Comment on the
+          rationality (or irrationality) of the number whose decimal digits are obtained
+          by concatenating the <q>see and say</q> sequence.
+          <me>
+            0.1112111123112211213...
+          </me>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Experiment!
+        </p>
 
-    \hint{rat,rat,irr,irr,rat}</li>
+        <p>
+          What would it mean for this number to be rational? If we were to
+          run into an element of the <q>see and say</q> sequence that is its own description, then
+          from that point onward the sequence would get stuck repeating the same thing over and over
+          (and the number whose digits are found by concatenating the elements of the <q>see and say</q>
+          sequence will enter into a repeating pattern.)
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Give a description of the set of rational numbers whose decimal
+          expansions terminate. (Alternatively, you may think of their decimal
+          expansions ending in an infinitely-long string of zeros.)
+        </p>
+      </statement>
+      <hint>
+        <p>
+          If a decimal expansion terminates after, say, k digits, can you figure out how to produce an integer from that number? Think about multiplying by something <ellipsis />
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Find the first 20 decimal places of <m>\pi</m>, <m>3/7</m>, <m>\sqrt{2}</m>,
+          <m>2/5</m>, <m>16/17</m>, <m>\sqrt{3}</m>, <m>1/2</m> and <m>42/100</m>. Classify each of
+          these quantity's decimal expansion as: terminating, having a repeating
+          pattern, or showing no discernible pattern.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          A calculator will generally be inadequate for this problem. You should try using a CAS (Computer Algebra System). I would recommend the Sage computer algebra system because
+          like this book it is free <mdash /> you can download sage and run it on your own system or you can try it out online without installing. Check it out at www.sagemath.org.
+        </p>
 
-    <li><p>
-        The <q>see and say</q> sequence is produced by first writing a 1, 
-        then iterating the following procedure:  look at the previous entry 
-        and say how many entries there are of each integer and write down what 
-        you just said.  The first several terms of the <q>see and say</q> sequence 
-        are <m>1, 11, 21, 1112, 3112, 211213, 312213, 212223, \ldots</m>.  Comment on the
-        rationality (or irrationality) of the number whose decimal digits are obtained 
-        by concatenating the <q>see and say</q> sequence.
-        <me>
-          0.1112111123112211213...
-        </me>
-        \hint{
-        Experiment!
+        <p>
+          You can get sage to output <m>\pi</m> to high accuracy by typing <c>pi.N(digits=21)</c>
+          at the sage<m>></m> prompt.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Consider the process of long division. Does this algorithm give
+          any insight as to why rational numbers have terminating or repeating
+          decimal expansions? Explain.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          You really need to actually sit down and do some long division problems. When in the process do you suddenly realize that the digits are going to repeat? Must this decision point always occur? Why?
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Give an argument as to why the product of two rational numbers
+          is again a rational.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Take for granted that the usual rule for multiplying two fractions is okay to use:
+          <me>
+            \frac{a}{b} * \frac{c}{d} \; = \; \frac{ac}{bd}.
+          </me>
+        </p>
 
-        What would it mean for this number to be rational?  If we were to
-        run into an element of the <q>see and say</q> sequence that is its own description, then
-        from that point onward the sequence would get stuck repeating the same thing over and over
-        (and the number whose digits are found by concatenating the elements of the <q>see and say</q> 
-        sequence will enter into a repeating pattern.)
-        }
-      </p></li>
-
-    <li><p>
-        Give a description of the set of rational numbers whose decimal
-        expansions terminate.  (Alternatively, you may think of their decimal
-        expansions ending in an infinitely-long string of zeros.)
-
-        \hint{If a decimal expansion terminates after, say, k digits, can you figure out how to produce an integer from that number? Think about multiplying by something <ellipsis />}
-      </p></li>
-
-    <li><p>
-        Find the first 20 decimal places of <m>\pi</m>, <m>3/7</m>, <m>\sqrt{2}</m>, 
-          <m>2/5</m>, <m>16/17</m>, <m>\sqrt{3}</m>, <m>1/2</m> and <m>42/100</m>.  Classify each of
-        these quantity's decimal expansion as: terminating, having a repeating
-        pattern, or showing no discernible pattern.
-
-        \hint{A calculator will generally be inadequate for this problem. You should try using a CAS (Computer Algebra System).  I  would recommend the Sage computer algebra system because
-        like this book it is free <mdash /> you can download sage and run it on your own system or you can try it out online without installing.  Check it out at www.sagemath.org.
-
-        You can get sage to output <m>\pi</m> to high accuracy by typing <c>pi.N(digits=21)</c>
-        at the sage<m>></m> prompt.}
-      </p></li>
-
-    <li><p>
-        Consider the process of long division.  Does this algorithm give
-        any insight as to why rational numbers have terminating or repeating
-        decimal expansions?  Explain.
-
-        \hint{You really need to actually sit down and do some long division problems.  When in the process do you suddenly realize that the digits are going to repeat?  Must this decision point always occur? Why?}
-      </p></li>
-
-    <li><p>
-        Give an argument as to why the product of two rational numbers
-        is again a rational.
-
-        \hint{Take for granted that the usual rule for multiplying two fractions is okay to use:
-        <me>
-          \frac{a}{b} * \frac{c}{d} \; = \; \frac{ac}{bd}.
-        </me>
-        How do you know that the result is actually a rational number?}
-      </p></li>
-
-    <li><p>
-    Perform the following computations with complex numbers
-
-    <ol>
-      <li><p>
-          <m>(4 + 3i) - (3 + 2i)</m>
-        </p></li>
-
-      <li><p>
-          <m>(1 + i) + (1 - i)</m>
-        </p></li>
-
-      <li><p>
-          <m>(1 + i) \cdot (1 - i)</m>
-        </p></li>
-
-      <li><p>
-          <m>(2 - 3i) \cdot (3 - 2i)</m>
-        </p></li>
-    </ol>
+        <p>
+          How do you know that the result is actually a rational number?
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+    <statement>
+      <p>
+        Perform the following computations with complex numbers
+        <ol>
+          \end{exercise}
+          <exercise>
+            <p>
+              <m>(4 + 3i) - (3 + 2i)</m>
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>(1 + i) + (1 - i)</m>
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>(1 + i) \cdot (1 - i)</m>
+            </p>
+          </statement>
+        </exercise>
+        \begin{exercise} <m>(2 - 3i) \cdot (3 - 2i)</m>
+      </ol>
     </p>
-
-    \hint{These are straightforward. If you really must verify these somehow, you can go to a CAS like Sage, or you can learn how to enter complex numbers on your graphing calculator. (On my TI-84, you get i by hitting the 2nd key and then the decimal point.)
-    }</li>
-
-    <li><p>
-        The <em>conjugate</em> of a complex number is denoted with a
+    <hint>
+      <p>
+        These are straightforward. If you really must verify these somehow, you can go to a CAS like Sage, or you can learn how to enter complex numbers on your graphing calculator. (On my TI-84, you get i by hitting the 2nd key and then the decimal point.)
+      </p>
+    </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The <em>conjugate</em> of a complex number is denoted with a
           superscript star, and is formed by negating the imaginary part.
-          Thus if <m>z = 3+ 4i</m> then the conjugate of <m>z</m> is  <m>z^\ast = 3-4i</m>.
+          Thus if <m>z = 3+ 4i</m> then the conjugate of <m>z</m> is <m>z^\ast = 3-4i</m>.
           Give an argument as to why the product of a complex number and its
-          conjugate is a real quantity.  (I.e. the imaginary part of
+          conjugate is a real quantity. (I.e. the imaginary part of
           <m>z\cdot z^\ast</m> is necessarily 0, no matter what complex number is
-          used for <m>z</m>.) 
-
-        \hint{This is really easy, but be sure to do it generically. In other words, don't just use examples <mdash /> do the calculation with variables for the real and imaginary parts of the complex number.
-        }
-      </p></li>
-    </ol>
+          used for <m>z</m>.)
+        </p>
+      </statement>
+      <hint>
+        <p>
+          This is really easy, but be sure to do it generically. In other words, don't just use examples <mdash /> do the calculation with variables for the real and imaginary parts of the complex number.
+        </p>
+      </hint>
+    </exercise>
   </exercises>
 </section>

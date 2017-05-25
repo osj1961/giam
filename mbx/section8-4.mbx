@@ -168,16 +168,11 @@
     bijection.
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/100b6b74df3986c4912fb43a1185d8860453ade2.png"/>
-    \caption[Setup for proving the C-B-S theorem.]{Hypotheses for 
+  <figure xml:id="fig_CBS_setup" >
+    <caption>Hypotheses for 
     proving the Cantor-Bernstein-Schr&#xf6;der theorem: 
-    two sets with injective functions going both ways.}
+    two sets with injective functions going both ways.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -238,15 +233,10 @@
     nature) or the sequence may be truly infinite.
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/100b6b74df3986c4912fb43a1185d8860453ade2.png"/>
-    \caption[An <em>A</em>-stopper in the proof of C-B-S.]{An <m>A</m>-stopper
-    is an infinite sequence that terminates to the left in A.}
+  <figure xml:id="fig_A-stopper" >
+    <caption>An <m>A</m>-stopper
+    is an infinite sequence that terminates to the left in A.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -269,31 +259,41 @@
     steps.
   </p>
   <exercises>
-
-    <ol>
-      <li><p>
+    <exercise>
+      <statement>
+        <p>
           How could the clerk at the Hilbert Hotel accommodate a countable
           number of new guests?
-        </p></li>
-
-      <li><p>
-          Let <m>F</m> be the collection of all real-valued functions 
-          defined on the real line.  Find an injection from <m>\Reals</m> to <m>F</m>.  Do you 
-          think it is possible to find an injection going the other way?  In 
-          other words, do you think that <m>F</m> and <m>\Reals</m> are equivalent?  Explain.
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>F</m> be the collection of all real-valued functions
+          defined on the real line. Find an injection from <m>\Reals</m> to <m>F</m>. Do you
+          think it is possible to find an injection going the other way? In
+          other words, do you think that <m>F</m> and <m>\Reals</m> are equivalent? Explain.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Fill in the details of the proof that dominance is an ordering relation.
           (You may simply cite the C-B-S theorem in proving anti-symmetry.)
-        </p></li>
-
-      <li><p>
-          We can inject <m>\Rationals</m> into <m>\Integers</m> by sending 
-          <m>\displaystyle \pm \frac{a}{b}</m> to <m>\displaystyle \pm 2^a3^b</m>.  
-           Use this and another obvious injection to (in light of the C-B-S 
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          We can inject <m>\Rationals</m> into <m>\Integers</m> by sending
+          <m>\displaystyle \pm \frac{a}{b}</m> to <m>\displaystyle \pm 2^a3^b</m>.
+          Use this and another obvious injection to (in light of the C-B-S
           theorem) reaffirm the equivalence of these sets.
-        </p></li>
-    </ol>
+        </p>
+      </statement>
+    </exercise>
   </exercises>
 </section>

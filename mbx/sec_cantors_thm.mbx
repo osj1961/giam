@@ -95,16 +95,11 @@
     expansions that didn't end in all-zeros and all-ones.)
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/3ce32157fb70f1f0244003cfd10fcdbc30799c13.png"/>
-    \caption[Binary representations in the unit interval.]{The base-<m>2</m> 
+  <figure xml:id="fig_binary_reps" >
+    <caption>The base-<m>2</m> 
     expansions of reals in the interval <m>[0, 1]</m> are the leaves of an 
-    infinite tree.}
+    infinite tree.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -312,56 +307,76 @@
     </me>
   </p>
   <exercises>
-
-    <ol>
-      <li><p>
+    <exercise>
+      <statement>
+        <p>
           Determine a substitution rule <mdash /> a consistent way of replacing one digit
           with another along the diagonal so that a diagonalization proof showing
           that the interval (0, 1) is uncountable will work in decimal. Write up
           the proof.
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Can a diagonalization proof showing that the interval (0, 1) is uncountable
           be made workable in base-3 (ternary) notation?
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           In the proof of Cantor's theorem we construct a set <m>S</m> that cannot
-          be in the image of a presumed bijection from <m>A</m> to <m>{\mathcal P}(A)</m>.  
-          Suppose <m>A = \{1, 2, 3\}</m> and f determines the following correspondences: 
+          be in the image of a presumed bijection from <m>A</m> to <m>{\mathcal P}(A)</m>.
+          Suppose <m>A = \{1, 2, 3\}</m> and f determines the following correspondences:
           <m>1 \longleftrightarrow \emptyset</m>,
-          <m>2 \longleftrightarrow \{1, 3\}</m> and <m>3 \longleftrightarrow \{1, 2, 3\}</m>. 
+          <m>2 \longleftrightarrow \{1, 3\}</m> and <m>3 \longleftrightarrow \{1, 2, 3\}</m>.
           What is <m>S</m>?
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           An argument very similar to the one embodied in the proof of Cantor's
           theorem is found in the Barber's paradox. This paradox was
           originally introduced in the popular press in order to give laypeople an
           understanding of Cantor's theorem and Russell's paradox. It sounds
           somewhat sexist to modern ears. (For example, it is presumed without
           comment that the Barber is male.)
-          <blockquote>
-          In a small town there is a Barber who shaves those men (and
-          only those men) who do not shave themselves. Who shaves
-          the Barber?
-          </blockquote>
-          Explain the similarity to the proof of Cantor's theorem.
-        </p></li>
+        </p>
 
-      <li><p>
+        <blockquote>
+        In a small town there is a Barber who shaves those men (and
+        only those men) who do not shave themselves. Who shaves
+        the Barber?
+        </blockquote>
+
+        <p>
+          Explain the similarity to the proof of Cantor's theorem.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Cantor's theorem, applied to the set of all sets leads to an interesting
           paradox. The power set of the set of all sets is a collection of sets, so
           it must be contained in the set of all sets. Discuss the paradox and
           determine a way of resolving it.
-        </p></li>
-
-      <li><p>
-          Verify that the final deduction in the proof of Cantor's theorem, 
-          <q><m>(y \in S  \implies  y \notin S) \land  (y \notin S \implies y \in S)</m>,</q> 
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Verify that the final deduction in the proof of Cantor's theorem,
+          <q><m>(y \in S  \implies  y \notin S) \land  (y \notin S \implies y \in S)</m>,</q>
           is truly a contradiction.
-        </p></li>
-    </ol>
+        </p>
+      </statement>
+    </exercise>
   </exercises>
 </section>

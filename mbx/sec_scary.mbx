@@ -81,26 +81,33 @@
   <exercise>
     <statement>
       <p>
-      Which type of quantification do the following
-      statements have?
+        Which type of quantification do the following
+        statements have?
+        <ol>
+          <li>
+            <p>
+              Every dog has his day.
+            </p>
+          </li>
 
-      <ol>
-        <li><p>
-            Every dog has his day.
-          </p></li>
+          <li>
+            <p>
+              Some days it's just not worth getting out of bed.
+            </p>
+          </li>
 
-        <li><p>
-            Some days it's just not worth getting out of bed.
-          </p></li>
+          <li>
+            <p>
+              There's a party in <em>somebody's</em> dorm this Saturday.
+            </p>
+          </li>
 
-        <li><p>
-            There's a party in <em>somebody's</em> dorm this Saturday.
-          </p></li>
-
-        <li><p>
-            There's someone for everyone.
-          </p></li>
-      </ol>
+          <li>
+            <p>
+              There's someone for everyone.
+            </p>
+          </li>
+        </ol>
       </p>
     </statement>
   </exercise>
@@ -121,46 +128,62 @@
   High School likes to eat.
   </blockquote>
   <exercises>
-
-    <ol>
-      <li><p>
+    <exercise>
+      <statement>
+        <p>
           How many quantifiers (and what sorts) are in the following sentence?
+        </p>
 
-          <q>Everybody has <em>some</em> friend that thinks they know everything about 
+        <p>
+          <q>Everybody has <em>some</em> friend that thinks they know everything about
           a sport.</q>
-  
-
-
-          \hint{Four.}
-        </p></li>
-
-      <li><p>
-          The sentence <q>Every metallic element is a solid at room temperature.</q> 
-          is false.  Why?
-
-
-
-          \hint{The chemical symbol for an element that is an exception is Hg which stands for "Hydro-argyrum" it is also known as "liquid silver" or "quick silver".}
-        </p></li>
-
-      <li><p>
-          The sentence <q>For every pair of (distinct) real numbers there is 
-          another real number between them.</q> is true.  Why?
-
-
-
-          \hint{Think about this: is there any way to (using a formula) find a number that lies in between two other numbers?}
-        </p></li>
-
-      <li><p>
-          Write your own sentences containing four quantifiers.  One
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Four.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The sentence <q>Every metallic element is a solid at room temperature.</q>
+          is false. Why?
+        </p>
+      </statement>
+      <hint>
+        <p>
+          The chemical symbol for an element that is an exception is Hg which stands for "Hydro-argyrum" it is also known as "liquid silver" or "quick silver".
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The sentence <q>For every pair of (distinct) real numbers there is
+          another real number between them.</q> is true. Why?
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Think about this: is there any way to (using a formula) find a number that lies in between two other numbers?
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Write your own sentences containing four quantifiers. One
           sentence in which the quantifiers appear (<m>\forall \exists \forall \exists</m>)
           and another in which they appear (<m>\exists \forall \exists \forall</m>).
-
-
-
-          \hint{You're on your own here. Be inventive!}
-        </p></li>
-    </ol>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          You're on your own here. Be inventive!
+        </p>
+      </hint>
+    </exercise>
   </exercises>
 </section>

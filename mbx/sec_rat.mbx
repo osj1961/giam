@@ -225,76 +225,90 @@
   </proof>
 
   <exercises>
-
-    <ol>
-      <li><p>
-          <index><main>Rational approximation</main></index> Rational Approximation is 
-          a field of mathematics that has received much study.  The main idea 
+    <exercise>
+      <statement>
+        <p>
+          <index><main>Rational approximation</main></index> Rational Approximation is
+          a field of mathematics that has received much study. The main idea
           is to find rational numbers that are very good approximations to
-          given irrationals.  For example, <m>22/7</m> is a well-known rational 
-          approximation to <m>\pi</m>.  Find good rational approximations to 
+          given irrationals. For example, <m>22/7</m> is a well-known rational
+          approximation to <m>\pi</m>. Find good rational approximations to
           <m>\sqrt{2}, \sqrt{3}, \sqrt{5}</m> and <m>e</m>.
-
-
-
-
-
-          \hint{One approach is to truncate a decimal approximation and then rationalize. E.g. <m>\sqrt{2}</m> is approximately 1.4142, so 14142/10000 isn't a bad approximator (although naturally 7071/5000 is better since it involves smaller numbers).}
-        </p></li>
-
-      <li><p>
-          The theory of base-<m>n</m> notation that we looked at in 
-          the sub-section on base-<m>n</m>  can be extended to deal with real and 
-          rational numbers by introducing a decimal point (which should 
-          probably be re-named in accordance with the base) and adding 
-          digits to the right of it.  For instance <m>1.1011</m> is binary notation
+        </p>
+      </statement>
+      <hint>
+        <p>
+          One approach is to truncate a decimal approximation and then rationalize. E.g. <m>\sqrt{2}</m> is approximately 1.4142, so 14142/10000 isn't a bad approximator (although naturally 7071/5000 is better since it involves smaller numbers).
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The theory of base-<m>n</m> notation that we looked at in
+          the sub-section on base-<m>n</m> can be extended to deal with real and
+          rational numbers by introducing a decimal point (which should
+          probably be re-named in accordance with the base) and adding
+          digits to the right of it. For instance <m>1.1011</m> is binary notation
           for <m>1 \cdot 2^0 + 1 \cdot 2^{-1} + 0 \cdot 2^{-2} + 
           1\cdot 2^{-3} + 1\cdot 2^{-4}</m> or <m>\displaystyle 1 + \frac{1}{2} + 
           \frac{1}{8} + \frac{1}{16} = 1 \frac{11}{16}</m>.
+        </p>
 
-          Consider the binary number <m>.1010010001000010000010000001\ldots</m>, 
-          is this number rational or irrational?  Why?
-
-
-
-          \hint{Does the rule about rational numbers having terminating or repeating decimal representations carry over to other bases?
-
-
-
-          }
-        </p></li>
-
-      <li><p>
+        <p>
+          Consider the binary number <m>.1010010001000010000010000001\ldots</m>,
+          is this number rational or irrational? Why?
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Does the rule about rational numbers having terminating or repeating decimal representations carry over to other bases?
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           If a number <m>x</m> is even, it's easy to show that its square <m>x^2</m>
-          is even.  The lemma that went unproved in this section asks us to
+          is even. The lemma that went unproved in this section asks us to
           start with a square (<m>x^2</m>) that is even and deduce that the UN-squared
-          number (<m>x</m>) is even.  Perform some numerical experimentation to
-          check whether this assertion is reasonable.  Can you give an argument
+          number (<m>x</m>) is even. Perform some numerical experimentation to
+          check whether this assertion is reasonable. Can you give an argument
           that would prove it?
-
-
-
-          \hint{What if the lemma wasn't true? Can you work out what it would mean if we had a number x such that x2 was even but x itself was odd?}
-        </p></li>
-
-      <li><p>
-          The proof that <m>\sqrt{2}</m> is irrational can be generalized 
+        </p>
+      </statement>
+      <hint>
+        <p>
+          What if the lemma wasn't true? Can you work out what it would mean if we had a number x such that x2 was even but x itself was odd?
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The proof that <m>\sqrt{2}</m> is irrational can be generalized
           to show that <m>\sqrt{p}</m> is irrational for every prime number <m>p</m>.
           What statement would be equivalent to the lemma about the parity
           of <m>x</m> and <m>x^2</m> in such a generalization?
-
-
-
-          \hint{Hint: Saying <q>x is even</q> is the same thing as saying <q>x is evenly divisible by 2.</q>  Replace the <m>2</m> by <m>p</m> and you're halfway there<ellipsis />}
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Hint: Saying <q>x is even</q> is the same thing as saying <q>x is evenly divisible by 2.</q> Replace the <m>2</m> by <m>p</m> and you're halfway there<ellipsis />
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Write a proof that <m>\sqrt{3}</m> is irrational.
-
-
-
-          \hint{You can mostly just copy the argument for <m>\sqrt{2}</m>.}
-        </p></li>
-    </ol>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          You can mostly just copy the argument for <m>\sqrt{2}</m>.
+        </p>
+      </hint>
+    </exercise>
   </exercises>
 </section>

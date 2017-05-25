@@ -610,56 +610,77 @@
   </proof>
 
   <exercises>
-
-    <ol>
-      <li><p>
+    <exercise>
+      <statement>
+        <p>
           Use the binomial theorem (with <m>x=1000</m> and <m>y=1</m>) to calculate
           <m>1001^6</m>.
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Find <m>(2x+3)^5</m>.
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Find <m>(x^2+y^2)^6</m>.
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           The following diagram contains a 3-dimensional analog of
-          Pascal's triangle that we might call <q>Pascal's tetrahedron.</q> 
+          Pascal's triangle that we might call <q>Pascal's tetrahedron.</q>
           What would the next layer look like?
-          <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+        </p>
+        <image source="images/cb6058c0f87c49e703a7e6580d546f4e9382e00d.png"/>
+        <p>
           \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-            \reset@font\fontsize{#1}{#2pt}
-            \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-            \selectfont}\fi
-          <image source="images/5f3b0e79f0726a4824d60de1f8d8269cc92be3d4.png"/>
-        </p></li>
-
-      <li><p>
+          \reset@font\fontsize{#1}{#2pt}
+          \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+          \selectfont}\fi
+        </p>
+        <image source="images/e039ca027fbc0b5a0d5926f26e3b2934ccd1c2a7.png"/>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           The student government at Lagrange High consists of 24 members chosen
           from amongst the general student body of 210. Additionally, there
           is a steering committee of 5 members chosen from amongst those in
           student government. Use the multiplication rule to determine two different
           formulas for the total number of possible governance structures.
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Prove the identity
           <me>
             \binom{n}{k} \cdot \binom{k}{r} \; = \; \binom{n}{r} \cdot \binom{n-r}{k-r}
           </me>
           combinatorially.
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Prove the binomial theorem.
           <me>
             \forall n \in \Naturals, \; \forall x,y \in \Reals, \; 
             (x+y)^n \; = \; \sum_{k=0}^n \binom{n}{k} x^{n-k}y^k
           </me>
-        </p></li>
-    </ol>
+        </p>
+      </statement>
+    </exercise>
   </exercises>
 </section>

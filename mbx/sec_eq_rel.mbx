@@ -315,12 +315,14 @@
     have arrows on them in digraphs.) Below are a few examples of the
     diagrams that are used to represent graphs.
   </p>
-  <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+  <image source="images/e088af1ad21eb8e10dfdd0f71f50c640058c56b8.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
     \reset@font\fontsize{#1}{#2pt}
     \fontfamily{#3}\fontseries{#4}\fontshape{#5}
     \selectfont}\fi
-  <image source="images/06d94f01bfecbcbff19166494556e5f5671266b7.png"/>
+  </p>
+  <image source="images/3c4bbf2578307a7c7ce180abc9364fb510a30aed.png"/>
   <p>
     Two graphs are said to be <index><main>graph isomorphism</main></index> <em>isomorphic</em> if they
     represent the same connections. There must first of all be a one-to-one correspondence
@@ -362,71 +364,101 @@
     to <m>C</m>, then isn't <m>A</m> isomorphic to <m>C</m>?
   </p>
   <exercises>
-
-    <ol>
-      <li><p>
+    <exercise>
+      <statement>
+        <p>
           Consider the relation <m>\relA</m> defined by
           <me>
             \relA = \{ (x,y) \suchthat \; x \, \mbox{has the same astrological sign as}  \, y \}.
           </me>
-          Show that <m>\relA</m> is an equivalence relation.  What equivalence class
+        </p>
+
+        <p>
+          Show that <m>\relA</m> is an equivalence relation. What equivalence class
           under <m>\relA</m> do you belong to?
-        </p></li>
-
-      <li><p>
-          Define a relation <m>\square</m> on the integers by <m>x \square y \; \iff x^2 = y^2</m>.  Show that <m>\square</m> is an equivalence relation.  List the equivalence
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Define a relation <m>\square</m> on the integers by <m>x \square y \; \iff x^2 = y^2</m>. Show that <m>\square</m> is an equivalence relation. List the equivalence
           classes <m>x/\square</m> for <m>0 \leq x \leq 5</m>.
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Define a relation <m>\relA</m> on the set of all words by
           <me>
             w_1 \relA w_2  \iff  w_1 \mbox{ is an anagram of }  w_2.
           </me>
-          Show that <m>\relA</m> is an equivalence relation.  (Words are anagrams
-          if the letters of one can be re-arranged to form the other.  For example, `ART' and `RAT' are anagrams.)
-        </p></li>
+        </p>
 
-      <li><p>
-          The two diagrams below both show a famous graph known as the 
-          <index><main>Petersen graph</main></index>Petersen graph.  The picture on the 
-          left is the usual representation which emphasizes its five-fold symmetry.  The picture on the right
-          highlights the fact that the Petersen graph also has a three-fold symmetry.  Label the right-hand diagram
+        <p>
+          Show that <m>\relA</m> is an equivalence relation. (Words are anagrams
+          if the letters of one can be re-arranged to form the other. For example, `ART' and `RAT' are anagrams.)
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The two diagrams below both show a famous graph known as the
+          <index><main>Petersen graph</main></index>Petersen graph. The picture on the
+          left is the usual representation which emphasizes its five-fold symmetry. The picture on the right
+          highlights the fact that the Petersen graph also has a three-fold symmetry. Label the right-hand diagram
           using the same letters (A through J) in order to show that these two representations are truly isomorphic.
-          <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+        </p>
+        <image source="images/d6b65bdb192fb6c4980a613203e6003aad0cad4d.png"/>
+        <p>
           \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-            \reset@font\fontsize{#1}{#2pt}
-            \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-            \selectfont}\fi
-          <image source="images/1037ff38287e1a5c52302d9737a3b5b289ff723d.png"/>
-        </p></li>
-
-      <li><p>
+          \reset@font\fontsize{#1}{#2pt}
+          \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+          \selectfont}\fi
+        </p>
+        <image source="images/760789e971ee0a8b5e6ab79e84d64ae8ae3bdd1c.png"/>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           We will use the symbol <m>\Integers^{\ast}</m> to refer to the set of
-          all integers <em>except</em> <m>0</m>.  
+          all integers <em>except</em> <m>0</m>.
           Define a relation <m>\relQ</m> on the set of all pairs in <m>\Integers \times \Integers^{\ast}</m> (pairs of integers where the second coordinate is non-zero) by
-          <m>(a,b) \relQ (c,d) \; \iff \; ad=bc</m>.  Show that <m>\relQ</m> is an 
+          <m>(a,b) \relQ (c,d) \; \iff \; ad=bc</m>. Show that <m>\relQ</m> is an
           equivalence relation.
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           The relation <m>\relQ</m> defined in the previous problem partitions
           the set of all pairs of integers into an interesting set of equivalence
-          classes.  Explain why
+          classes. Explain why
           <me>
             \Rationals  =  (\Integers \times \Integers^{\ast}) / \relQ.
           </me>
-          Ultimately, this is the <q>right</q> definition of the set 
-          of rational numbers!
-        </p></li>
+        </p>
 
-      <li><p>
-          Reflect back on the proof in problem 5.  Note that we were fairly
+        <p>
+          Ultimately, this is the <q>right</q> definition of the set
+          of rational numbers!
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Reflect back on the proof in problem 5. Note that we were fairly
           careful in assuring that the second coordinate in the ordered pairs is
-          non-zero. (This was the whole reason for introducing the 
-          <m>\Integers^{\ast}</m> notation.)  At what point in the argument did you
+          non-zero. (This was the whole reason for introducing the
+          <m>\Integers^{\ast}</m> notation.) At what point in the argument did you
           use this hypothesis?
-        </p></li>
-    </ol>
+        </p>
+      </statement>
+    </exercise>
   </exercises>
 </section>

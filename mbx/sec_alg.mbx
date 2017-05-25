@@ -27,38 +27,45 @@
   </p>
 
   <p>
-  There is a big difference between an algorithm description intended
-  for human consumption and one meant for a computer<fn>The 
-  whole history of Computer Science could be
-    described as the slow advance whereby computers have become  able to
-    utilize more and more abstracted descriptions of algorithms. 
-    Perhaps in the not-too-distant future machines will be capable of
-    understanding instruction sets that currently require human interpreters.</fn>.
-  The two favored human-readable forms for describing
-  algorithms are <index><main>pseudocode</main></index> pseudocode and <index><main>flowchart</main></index>
-  flowcharts. The former is text-based
-  and the latter is visual. There are many different modules from which
-  one can build algorithmic structures: for-next loops, do-while loops, if-then
-  statements, goto statements, switch-case structures, etc. We'll use
-  a minimal subset of the choices available.
+    There is a big difference between an algorithm description intended
+    for human consumption and one meant for a computer<fn>The 
+    whole history of Computer Science could be
+      described as the slow advance whereby computers have become  able to
+      utilize more and more abstracted descriptions of algorithms. 
+      Perhaps in the not-too-distant future machines will be capable of
+      understanding instruction sets that currently require human interpreters.</fn>.
+    The two favored human-readable forms for describing
+    algorithms are <index><main>pseudocode</main></index> pseudocode and <index><main>flowchart</main></index>
+    flowcharts. The former is text-based
+    and the latter is visual. There are many different modules from which
+    one can build algorithmic structures: for-next loops, do-while loops, if-then
+    statements, goto statements, switch-case structures, etc. We'll use
+    a minimal subset of the choices available.
+    <ul>
+      <li>
+        <p>
+          Assignment statements
+        </p>
+      </li>
 
-  <ul>
-    <li><p>
-        Assignment statements
-      </p></li>
+      <li>
+        <p>
+          If-then control statements
+        </p>
+      </li>
 
-    <li><p>
-        If-then control statements
-      </p></li>
+      <li>
+        <p>
+          Goto statements
+        </p>
+      </li>
 
-    <li><p>
-        Goto statements
-      </p></li>
-
-    <li><p>
-        Return
-      </p></li>
-  </ul>
+      <li>
+        <p>
+          Return
+        </p>
+      </li>
+    </ul>
   </p>
 
   <p>
@@ -102,12 +109,7 @@
     <caption>A small example in pseudocode and as a flowchart</caption>
     <tabular>
       <row>
-        <cell><image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-        \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-          \reset@font\fontsize{#1}{#2pt}
-          \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-          \selectfont}\fi
-        <image source="images/680500128ce5572fcef0652e47948f94d53f3cf2.png"/></cell>
+        <cell>\figureinput{figures/if-then_flowchart.tex}</cell>
         <cell></cell>
         <cell>\begin{minipage}[b]{.3\textwidth}
          If <m>x=y</m> then</cell>
@@ -120,9 +122,6 @@
       </row>
       <row>
         <cell>\vdots</cell>
-      </row>
-      <row>
-        <cell></cell>
       </row>
     </tabular>
   </table>
@@ -164,32 +163,54 @@
     A pseudocode outline of the division algorithm is as follows:
   </p>
 
-  \begin{minipage}[b]{.5\textwidth}
-   Algorithm: Division
+  <p>
+    \begin{minipage}[b]{.5\textwidth}
+    Algorithm: Division
+  </p>
 
-  Inputs: integers <m>n</m> and <m>d</m>.
+  <p>
+    Inputs: integers <m>n</m> and <m>d</m>.
+  </p>
 
-  Local variables: <m>q</m> and <m>r</m>.
+  <p>
+    Local variables: <m>q</m> and <m>r</m>.
+  </p>
 
+  <p>
+    Let <m>q = 0</m>.
+  </p>
 
+  <p>
+    Let <m>r = n</m>.
+  </p>
 
-  Let <m>q = 0</m>. 
+  <p>
+    Label 1.
+  </p>
 
-  Let <m>r = n</m>. 
+  <p>
+    If <m>r \lt  d</m> then
+  </p>
 
-  Label 1.
+  <p>
+    Return <m>q</m> and <m>r</m>.
+  </p>
 
-  If <m>r \lt  d</m> then
+  <p>
+    End If
+  </p>
 
-   Return <m>q</m> and <m>r</m>.
+  <p>
+    Let <m>q = q + 1</m>.
+  </p>
 
-  End If
+  <p>
+    Let <m>r = r - d</m>.
+  </p>
 
-  Let <m>q = q + 1</m>.
-
-  Let <m>r = r - d</m>.
-
-  Goto 1.
+  <p>
+    Goto 1.
+  </p>
 
   <p>
     This same algorithm is given in flowchart form in
@@ -198,12 +219,7 @@
 
   <figure xml:id="fig_div_alg" >
     <caption>The division algorithm in flowchart form.</caption>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/1cd7d533c4c571964f41aaddda1a8d923d3c92c8.png"/>
+    <image source=""/>
   </figure>
 
   <p>
@@ -257,39 +273,54 @@
     pseudocode. A flowchart version is given in <xref ref="fig_Euc_alg">Figure</xref>.
   </p>
 
-  \begin{minipage}[b]{.7\textwidth}
-   Algorithm: Euclidean
+  <p>
+    \begin{minipage}[b]{.7\textwidth}
+    Algorithm: Euclidean
+  </p>
 
-  Inputs: integers <m>a</m> and <m>b</m>.
+  <p>
+    Inputs: integers <m>a</m> and <m>b</m>.
+  </p>
 
-  Local variables: <m>q</m> and <m>r</m>.
+  <p>
+    Local variables: <m>q</m> and <m>r</m>.
+  </p>
 
+  <p>
+    Label 1.
+  </p>
 
+  <p>
+    Let <m>(q,r)  = \mbox{Division} (a,b)</m>.
+  </p>
 
-  Label 1.
+  <p>
+    If <m>r = 0</m> then
+  </p>
 
-  Let <m>(q,r)  = \mbox{Division} (a,b)</m>. 
+  <p>
+    Return <m>b</m>.
+  </p>
 
-  If <m>r = 0</m> then
+  <p>
+    End If
+  </p>
 
-   Return <m>b</m>.
+  <p>
+    Let <m>a = b</m>.
+  </p>
 
-  End If
+  <p>
+    Let <m>b = r</m>.
+  </p>
 
-  Let <m>a = b</m>.
-
-  Let <m>b = r</m>.
-
-  Goto 1.
+  <p>
+    Goto 1.
+  </p>
 
   <figure xml:id="fig_Euc_alg" >
     <caption>The Euclidean algorithm in flowchart form.</caption>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/99beb61d144ea16f88a70f462898d5be5db40862.png"/>
+    <image source=""/>
   </figure>
 
   <p>
@@ -318,120 +349,133 @@
     are based on it.
   </p>
   <exercises>
-
-    <ol>
-      <li><p>
+    <exercise>
+      <statement>
+        <p>
           Trace through the division algorithm with inputs <m>n=27</m> and
-            <m>d=5</m>, each time an assignment statement is encountered write it
-            out.  How many assignments are involved in this particular
-            computation?
-          \hint{
-
-          r=27 
-          q=0  
-          r=27-5=22  
-          q=0+1=1  
-          r=22-5=17  
-          q=1+1=2  
-          r=17-5=12  
-          q=2+1=3  
-          r=12-5=7  
-          q=3+1=4  
-          r=7-5=2  
-          q=4+1=5  
+          <m>d=5</m>, each time an assignment statement is encountered write it
+          out. How many assignments are involved in this particular
+          computation?
+        </p>
+      </statement>
+      <hint>
+        <p>
+          r=27
+          q=0
+          r=27-5=22
+          q=0+1=1
+          r=22-5=17
+          q=1+1=2
+          r=17-5=12
+          q=2+1=3
+          r=12-5=7
+          q=3+1=4
+          r=7-5=2
+          q=4+1=5
           return r is 2 and q is 5.
-          }
-        </p></li>
-
-      <li><p>
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Find the gcd's and lcm's of the following pairs of numbers.
-
-
-          \
-          <tabular>
-            <row bottom="minor">
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row>
-              <cell><m>a</m></cell>
-              <cell><m>b</m></cell>
-              <cell><m>\gcd{a}{b}</m></cell>
-              <cell><m>\lcm{a}{b}</m></cell>
-            </row>
-            <row bottom="minor">
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row>
-              <cell>110</cell>
-              <cell>273</cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row bottom="minor">
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row>
-              <cell>105</cell>
-              <cell>42</cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row bottom="minor">
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row>
-              <cell>168</cell>
-              <cell>189</cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row bottom="minor">
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-            </row>
-          </tabular>
-          \hint{For such small numbers you can just find their prime factorizations and use that, although it might be useful to practice your understanding of the Euclidean algorithm by tracing through it to find the gcd's and then using the formula
+        </p>
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>a</m></cell>
+            <cell><m>b</m></cell>
+            <cell><m>\gcd{a}{b}</m></cell>
+            <cell><m>\lcm{a}{b}</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>110</cell>
+            <cell>273</cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>105</cell>
+            <cell>42</cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>168</cell>
+            <cell>189</cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+      </statement>
+      <hint>
+        <p>
+          For such small numbers you can just find their prime factorizations and use that, although it might be useful to practice your understanding of the Euclidean algorithm by tracing through it to find the gcd's and then using the formula
           <me>
             \lcm (a,b) = \frac{ab}{\gcd (a,b).}
           </me>
-          }
-        </p></li>
-
-      <li><p>
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Formulate a description of the gcd of two numbers in terms of
-            their prime factorizations in the general case (when the
-            factorizations may include powers of the primes involved).
-
-
-
-          \hint{Suppose that one number's prime factorization contains <m>p^e</m> and the other
-          contains <m>p^f</m>, where <m>e \lt  f</m>. What power of <m>p</m> will divide both, <m>p^e</m> or <m>p^f</m> ?}
-        </p></li>
-
-      <li><p>
+          their prime factorizations in the general case (when the
+          factorizations may include powers of the primes involved).
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Suppose that one number's prime factorization contains <m>p^e</m> and the other
+          contains <m>p^f</m>, where <m>e \lt  f</m>. What power of <m>p</m> will divide both, <m>p^e</m> or <m>p^f</m> ?
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Trace through the Euclidean algorithm with inputs <m>a=3731</m> and
-            <m>b=2730</m>, each time the assignment statement that calls the division
-            algorithm is encountered write out the expression <m>a=qb+r</m>.   (With the
-            actual values involved !) 
-
-
-
-          \hint{The quotients you obtain should alternate between 1 and 2.}
-        </p></li>
-    </ol>
+          <m>b=2730</m>, each time the assignment statement that calls the division
+          algorithm is encountered write out the expression <m>a=qb+r</m>. (With the
+          actual values involved !)
+        </p>
+      </statement>
+      <hint>
+        <p>
+          The quotients you obtain should alternate between 1 and 2.
+        </p>
+      </hint>
+    </exercise>
   </exercises>
 </section>
