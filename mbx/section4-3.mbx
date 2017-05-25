@@ -153,10 +153,8 @@
     <tabular>
       <row>
         <cell></cell>
-        <cell>\begin{minipage}{.35\textwidth} \Intersection 
-        \version</cell>
-        <cell>\begin{minipage}{.35\textwidth} \Union 
-        \version</cell>
+        <cell>\begin{minipage}{.35\textwidth} Intersectionversion</cell>
+        <cell>\begin{minipage}{.35\textwidth} Unionversion</cell>
       </row>
       <row bottom="minor">
         <cell></cell>
@@ -168,8 +166,8 @@
       </row>
       <row>
         <cell>laws</cell>
-        <cell>\begin{minipage}{.35\textwidth} \<m>A \cap B = B \cap A</m></cell>
-        <cell>\begin{minipage}{.35\textwidth} \<m>A \cup B = B \cup A</m></cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cap B = B \cap A</m></cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cup B = B \cup A</m></cell>
       </row>
       <row bottom="minor">
         <cell></cell>
@@ -181,10 +179,8 @@
       </row>
       <row>
         <cell>laws</cell>
-        <cell>\begin{minipage}{.35\textwidth} \<m>A \cap (B \cap C)</m>  
-        \<m>= (A \cap B) \cap C</m></cell>
-        <cell>\begin{minipage}{.35\textwidth} \<m>A \cup (B \cup C)</m>  
-        \<m>= (A \cup B) \cup C</m></cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cap (B \cap C)</m><m>= (A \cap B) \cap C</m></cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cup (B \cup C)</m> <m>= (A \cup B) \cup C</m></cell>
       </row>
       <row bottom="minor">
         <cell></cell>
@@ -197,10 +193,8 @@
       <row>
         <cell>laws</cell>
         <cell>\begin{minipage}{.35\textwidth} 
-        \<m>A \cap (B \cup C) =</m>   
-        \<m>(A \cap B) \cup (A \cap C)</m></cell>
-        <cell>\begin{minipage}{.35\textwidth} \<m>A \cup (B \cap C) =</m>   
-        \<m>(A \cup B) \cap (A \cup C)</m></cell>
+        <m>A \cap (B \cup C) =</m> <m>(A \cap B) \cup (A \cap C)</m></cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cup (B \cap C) =</m> <m>(A \cup B) \cap (A \cup C)</m></cell>
       </row>
       <row bottom="minor">
         <cell></cell>
@@ -212,10 +206,8 @@
       </row>
       <row>
         <cell>laws</cell>
-        <cell>\begin{minipage}{.35\textwidth} \<m>\overline{A \cap B}</m>  
-        \<m>= \; \overline{A} \cup \overline{B}</m></cell>
-        <cell>\begin{minipage}{.35\textwidth} \<m>\overline{A \cup B}</m> 
-        \<m>= \; \overline{A} \cap \overline{B}</m></cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>\overline{A \cap B}</m> <m>= \; \overline{A} \cup \overline{B}</m></cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>\overline{A \cup B}</m><m>= \; \overline{A} \cap \overline{B}</m></cell>
       </row>
       <row bottom="minor">
         <cell></cell>
@@ -227,8 +219,8 @@
       </row>
       <row>
         <cell>complement</cell>
-        <cell>\begin{minipage}{.35\textwidth} \<m>\overline{\overline{A}} \; = \; A</m></cell>
-        <cell>\begin{minipage}{.35\textwidth} \same</cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>\overline{\overline{A}} \; = \; A</m></cell>
+        <cell>\begin{minipage}{.35\textwidth} same</cell>
       </row>
       <row bottom="minor">
         <cell></cell>
@@ -237,8 +229,8 @@
       </row>
       <row>
         <cell>Complementarity</cell>
-        <cell>\begin{minipage}{.35\textwidth} \<m>A \cap \overline{A} \; = \; \emptyset</m></cell>
-        <cell>\begin{minipage}{.35\textwidth} \<m>A \cup \overline{A} \; = \; U</m></cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cap \overline{A} \; = \; \emptyset</m></cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cup \overline{A} \; = \; U</m></cell>
       </row>
       <row bottom="minor">
         <cell></cell>
@@ -250,8 +242,8 @@
       </row>
       <row>
         <cell>laws</cell>
-        <cell>\begin{minipage}{.35\textwidth} \<m>A \cap U = A</m></cell>
-        <cell>\begin{minipage}{.35\textwidth} \<m>A \cup \emptyset = A</m></cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cap U = A</m></cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cup \emptyset = A</m></cell>
       </row>
       <row bottom="minor">
         <cell></cell>
@@ -260,8 +252,8 @@
       </row>
       <row>
         <cell>Domination</cell>
-        <cell>\begin{minipage}{.35\textwidth}  \<m>A \cap \emptyset = \emptyset</m></cell>
-        <cell>\begin{minipage}{.35\textwidth} \<m>A \cup U = U</m></cell>
+        <cell>\begin{minipage}{.35\textwidth}  <m>A \cap \emptyset = \emptyset</m></cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cup U = U</m></cell>
       </row>
       <row bottom="minor">
         <cell></cell>
@@ -270,8 +262,8 @@
       </row>
       <row>
         <cell>Idempotence</cell>
-        <cell>\begin{minipage}{.35\textwidth} \<m>A \cap A = A</m></cell>
-        <cell>\begin{minipage}{.35\textwidth} \<m>A \cup A = A</m></cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cap A = A</m></cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cup A = A</m></cell>
       </row>
       <row bottom="minor">
         <cell></cell>
@@ -280,8 +272,8 @@
       </row>
       <row>
         <cell>Absorption</cell>
-        <cell>\begin{minipage}{.35\textwidth} \<m>A \cap (A \cup B) = A</m></cell>
-        <cell>\begin{minipage}{.35\textwidth} \<m>A \cup (A \cap B) = A</m></cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cap (A \cup B) = A</m></cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cup (A \cap B) = A</m></cell>
       </row>
     </tabular>
     <index><main>set theoretic equalities</main></index>
@@ -524,191 +516,325 @@
     </row>
   </tabular>
   <exercises>
-
-    <ol>
-    <li><p>
-    Let <m>A = \{1, 2, \{1, 2\}, b\}</m> and let <m>B=\{a, b, \{1, 2\} \}</m>.
-    Find the following:
-
-    <ol>
-      <li><p>
-          <m>A \cap B</m>   \hint{ <m>\{ b,  \{1, 2\} \}</m> }
-        </p></li>
-
-      <li><p>
-          <m>A \cup B</m> \hint{ <m>\{1, 2, a, b, \{1, 2\} \}</m> }
-        </p></li>
-
-      <li><p>
-          <m>A \setminus B</m> \hint{  <m>\{ 1, 2 \}</m> }
-        </p></li>
-
-      <li><p>
-          <m>B \setminus A</m> \hint{ <m>\{ a \}</m> }
-        </p></li>
-
-      <li><p>
-          <m>A \triangle B</m> \hint{ <m>\{ 1, 2, a \}</m> }
-        </p></li>
-    </ol>
-    </p></li>
-
-    <li><p>
-    In a standard deck of playing cards one can distinguish sets
-    based on face-value and/or suit.  Let <m>A, 2, \ldots 9, 10, J, Q</m> and <m>K</m>
-    represent the sets of cards having the various face-values.  Also, let
-    <m>\heartsuit</m>, <m>\spadesuit</m>, <m>\clubsuit</m> and <m>\diamondsuit</m> be the 
-    sets of cards having the possible suits.  Find the following
-
-    <ol>
-      <li><p>
-          <m>A \cap \heartsuit</m> \hint{This is just the ace of hearts.}
-        </p></li>
-
-      <li><p>
-          <m>A \cup \heartsuit</m> \hint{All of the hearts and the other three aces}
-        </p></li>
-
-      <li><p>
-          <m>J \cap (\spadesuit \cup \heartsuit)</m> \hint{ These two cards are known as the one-eyed jacks.}
-        </p></li>
-
-      <li><p>
-          <m>K \cap \heartsuit</m> \hint{The king of hearts, a.k.a. the suicide king.}
-        </p></li>
-
-      <li><p>
-          <m>A \cap K</m> \hint{<m>\emptyset</m> }
-        </p></li>
-
-      <li><p>
-          <m>A \cup K</m> \hint{Eight cards: all four kings and all four aces.}
-        </p></li>
-    </ol>
-    </p></li>
-
-    <li><p>
-        The following is a screenshot from the computational geometry program OpenSCAD (very hand for making models for 3-d printing<ellipsis />)  In computational geometry we use the basice set operations together
-        with a few other types of transformations to create interesting models using simple components.  Across the top of the image below we see 3 sets of points in <m>\Reals^3</m>, a ball, a sort of 3-dimensional plus sign, and a disk.  Let's call the ball <m>A</m>, the plus sign <m>B</m> and the disk <m>C</m>.   The nine shapes shown below them are made from <m>A</m>, <m>B</m> and <m>C</m> using union, intersection and set difference.  Identify them!
-        <image width="37%" source="images/set_ops.png" />
-      </p></li>
-
-    <li><p>
-    Do element-chasing proofs (show that an element is in the left-hand side if and only if it is in the right-hand side) to prove each of the following set equalities.
-
-    <ol>
-      <li><p>
-          <m>\overline{A\cap B} \; = \; \overline{A}\cup\overline{B}</m>
-        </p></li>
-
-      <li><p>
-          <m>A\cup B \; = \; A\cup(\overline{A}\cap B)</m>
-        </p></li>
-
-      <li><p>
-          <m>A\triangle B \; = \; (A\cup B)\setminus(A\cap B)</m>
-        </p></li>
-
-      <li><p>
-          <m>(A\cup B)\setminus C \; = \; (A\setminus C)\cup(B\setminus C)</m>
-        </p></li>
-    </ol>
+    <exercise>
+    <statement>
+      <p>
+        Let <m>A = \{1, 2, \{1, 2\}, b\}</m> and let <m>B=\{a, b, \{1, 2\} \}</m>.
+        Find the following:
+        <ol>
+          \end{exercise}
+          <exercise>
+            <p>
+              <m>A \cap B</m>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              <m>\{ b,  \{1, 2\} \}</m>
+            </p>
+          </hint>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>A \cup B</m>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              <m>\{1, 2, a, b, \{1, 2\} \}</m>
+            </p>
+          </hint>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>A \setminus B</m>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              <m>\{ 1, 2 \}</m>
+            </p>
+          </hint>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>B \setminus A</m>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              <m>\{ a \}</m>
+            </p>
+          </hint>
+        </exercise>
+        \begin{exercise}  <m>A \triangle B</m>
+        <hint>
+          <p>
+            <m>\{ 1, 2, a \}</m>
+          </p>
+        </hint>
+      </ol>
     </p>
+    </exercise>
+    <exercise>
+    <statement>
+      <p>
+        In a standard deck of playing cards one can distinguish sets
+        based on face-value and/or suit. Let <m>A, 2, \ldots 9, 10, J, Q</m> and <m>K</m>
+        represent the sets of cards having the various face-values. Also, let
+        <m>\heartsuit</m>, <m>\spadesuit</m>, <m>\clubsuit</m> and <m>\diamondsuit</m> be the
+        sets of cards having the possible suits. Find the following
+        <ol>
+          \end{exercise}
+          <exercise>
+            <p>
+              <m>A \cap \heartsuit</m>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              This is just the ace of hearts.
+            </p>
+          </hint>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>A \cup \heartsuit</m>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              All of the hearts and the other three aces
+            </p>
+          </hint>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>J \cap (\spadesuit \cup \heartsuit)</m>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              These two cards are known as the one-eyed jacks.
+            </p>
+          </hint>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>K \cap \heartsuit</m>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              The king of hearts, a.k.a. the suicide king.
+            </p>
+          </hint>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>A \cap K</m>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              <m>\emptyset</m>
+            </p>
+          </hint>
+        </exercise>
+        \begin{exercise} <m>A \cup K</m>
+        <hint>
+          <p>
+            Eight cards: all four kings and all four aces.
+          </p>
+        </hint>
+      </ol>
+    </p>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The following is a screenshot from the computational geometry program OpenSCAD (very hand for making models for 3-d printing<ellipsis />) In computational geometry we use the basice set operations together
+          with a few other types of transformations to create interesting models using simple components. Across the top of the image below we see 3 sets of points in <m>\Reals^3</m>, a ball, a sort of 3-dimensional plus sign, and a disk. Let's call the ball <m>A</m>, the plus sign <m>B</m> and the disk <m>C</m>. The nine shapes shown below them are made from <m>A</m>, <m>B</m> and <m>C</m> using union, intersection and set difference. Identify them!
+        </p>
 
-    \hint{Here's the first one (although I'm omiting justifications for each step.
-    <md>
-      <mrow>x \in \overline{A\cap B}</mrow>
-      <mrow>\iff \; {\lnot}(x \in A\cap B)</mrow>
-      <mrow>\iff \; {\lnot}(x \in A \; \land \; x \in B)</mrow>
-      <mrow>\iff \; {\lnot}(x \in A) \; \lor \; {\lnot}(x \in B)</mrow>
-      <mrow>\iff \; x \in \overline{A}  \; \lor \; x \in \overline{B}</mrow>
-      <mrow>\iff \; x \in \overline{A} \cup \overline{B}</mrow>
-    </md>
-    }</li>
+        <p>
+          <image width="37%" source="images/set_ops.png" />
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+    <statement>
+      <p>
+        Do element-chasing proofs (show that an element is in the left-hand side if and only if it is in the right-hand side) to prove each of the following set equalities.
+        <ol>
+          \end{exercise}
+          <exercise>
+            <p>
+              <m>\overline{A\cap B} \; = \; \overline{A}\cup\overline{B}</m>
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>A\cup B \; = \; A\cup(\overline{A}\cap B)</m>
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>A\triangle B \; = \; (A\cup B)\setminus(A\cap B)</m>
+            </p>
+          </statement>
+        </exercise>
+        \begin{exercise} <m>(A\cup B)\setminus C \; = \; (A\setminus C)\cup(B\setminus C)</m>
+      </ol>
+    </p>
+    <hint>
+      <p>
+        Here's the first one (although I'm omiting justifications for each step.
+        <md>
+          <mrow>x \in \overline{A\cap B}</mrow>
+          <mrow>\iff \; {\lnot}(x \in A\cap B)</mrow>
+          <mrow>\iff \; {\lnot}(x \in A \; \land \; x \in B)</mrow>
+          <mrow>\iff \; {\lnot}(x \in A) \; \lor \; {\lnot}(x \in B)</mrow>
+          <mrow>\iff \; x \in \overline{A}  \; \lor \; x \in \overline{B}</mrow>
+          <mrow>\iff \; x \in \overline{A} \cup \overline{B}</mrow>
+        </md>
+      </p>
+    </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          For each positive integer <m>n</m>, we'll define an interval <m>I_n</m>
+          by
+          <me>
+            I_n = [-n, 1/n).
+          </me>
+        </p>
 
-    <li><p>
-        For each positive integer <m>n</m>, we'll define an interval <m>I_n</m>
-        by
-        <me>
-          I_n = [-n, 1/n).
-        </me>
-        Find the union and intersection of all the intervals in this infinite family.
-        <me>
-          \bigcup_{n \in \Naturals} I_n  =
-        </me>
-        <me>
-          \bigcap_{n \in \Naturals} I_n  =
-        </me>
-        \hint{To better understand what is going on, first figure out what the first three or four
-        intervals actually are.
-        <me>
-          I_1 \; = \; \underline{}
-        </me>
-        <me>
-          I_2 \; = \; \underline{}
-        </me>
-        <me>
-          I_3 \; = \; \underline{}
-        </me>
-        <me>
-          I_4 \; = \; \underline{}
-        </me>
-        Any negative real number <m>r</m> will be in the intersection only if  <m>r \geq -1</m>.  Certainly <m>0</m> is in
-        the intersection since it is in each of the intervals.  Are there any positive numbers in the intersection?
+        <p>
+          Find the union and intersection of all the intervals in this infinite family.
+          <me>
+            \bigcup_{n \in \Naturals} I_n  =
+          </me>
+          <me>
+            \bigcap_{n \in \Naturals} I_n  =
+          </me>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          To better understand what is going on, first figure out what the first three or four
+          intervals actually are.
+          <me>
+            I_1 \; = \; \underline{}
+          </me>
+          <me>
+            I_2 \; = \; \underline{}
+          </me>
+          <me>
+            I_3 \; = \; \underline{}
+          </me>
+          <me>
+            I_4 \; = \; \underline{}
+          </me>
+        </p>
 
-        In order to be in the union a real number just needs to be in <em>one</em> of the intervals.
-        }
-      </p></li>
+        <p>
+          Any negative real number <m>r</m> will be in the intersection only if <m>r \geq -1</m>. Certainly <m>0</m> is in
+          the intersection since it is in each of the intervals. Are there any positive numbers in the intersection?
+        </p>
 
-    <li><p>
-        There is a set <m>X</m> such that, for all sets <m>A</m>, we have 
-        <m>X \triangle A = A</m>.  What is <m>X</m>?
-      </p></li>
+        <p>
+          In order to be in the union a real number just needs to be in <em>one</em> of the intervals.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          There is a set <m>X</m> such that, for all sets <m>A</m>, we have
+          <m>X \triangle A = A</m>. What is <m>X</m>?
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          There is a set <m>Y</m> such that, for all sets <m>A</m>, we have
+          <m>Y \triangle A = \overline{A}</m>. What is <m>Y</m>?
+        </p>
+      </statement>
+      <hint>
+        <p>
+          One of the answers to the last two questions is <m>\emptyset</m> and the other is <m>U</m>. Decide
+          which is which.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          In proving a set-theoretic identity, we are basically showing that
+          two sets are equal. One reasonable way to proceed is to show that
+          each is contained in the other. Prove that
+          <m>A \cap (B \cup C) = (A \cap B) \cup (A \cap C)</m> by showing that
+          <m>A \cap (B \cup C) \subseteq (A \cap B) \cup (A \cap C)</m> and
+          <m>(A \cap B) \cup (A \cap C) \subseteq A \cap (B \cup C)</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove that
+          <m>A \cup (B \cap C) = (A \cup B) \cap (A \cup C)</m> by showing that
+          <m>A \cup (B \cap C) \subseteq (A \cup B) \cap (A \cup C)</m> and
+          <m>(A \cup B) \cap (A \cup C) \subseteq A \cup (B \cap C)</m>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          This exercise, as well as the previous one, is really just about converting set-theoretic
+          statements into their logical equivalents, applying some rules of logic that we've already verified,
+          and then returning to a set-theoretic version of things.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove the set-theoretic versions of DeMorgan's laws using the technique
+          discussed in the previous problems.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The previous technique (showing that <m>A=B</m> by arguing that
+          <m>A \subseteq B \; \land \; B \subseteq A</m>) will have an outline something like
+        </p>
 
-    <li><p>
-        There is a set <m>Y</m> such that, for all sets <m>A</m>, we have 
-        <m>Y \triangle A = \overline{A}</m>.  What is <m>Y</m>?
-
-        \hint{One of the answers to the last two questions is <m>\emptyset</m> and the other is <m>U</m>.  Decide
-        which is which.}
-      </p></li>
-
-    <li><p>
-        In proving a set-theoretic identity, we are basically showing that
-        two sets are equal.  One reasonable way to proceed is to show that
-        each is contained in the other.  Prove that 
-        <m>A \cap (B \cup C) = (A \cap B) \cup (A \cap C)</m> by showing that 
-        <m>A \cap (B \cup C) \subseteq (A \cap B) \cup (A \cap C)</m> and 
-        <m>(A \cap B) \cup (A \cap C) \subseteq A \cap (B \cup C)</m>.
-      </p></li>
-
-    <li><p>
-        Prove that 
-        <m>A \cup (B \cap C) = (A \cup B) \cap (A \cup C)</m> by showing that 
-        <m>A \cup (B \cap C) \subseteq (A \cup B) \cap (A \cup C)</m> and 
-        <m>(A \cup B) \cap (A \cup C) \subseteq A \cup (B \cap C)</m>.
-
-        \hint{This exercise, as well as the previous one, is really just about converting set-theoretic
-        statements into their logical equivalents, applying some rules of logic that we've already verified,
-        and then returning to a set-theoretic version of things.}
-      </p></li>
-
-    <li><p>
-        Prove the set-theoretic versions of DeMorgan's laws using the technique
-        discussed in the previous problems.
-      </p></li>
-
-    <li><p>
-      The previous technique (showing that <m>A=B</m> by arguing that
-      <m>A \subseteq B \; \land \; B \subseteq A</m>) will have an outline something like
-
-      <proof>
+        <proof>
         <p>
           First we will show that <m>A \subseteq B</m>.
           Towards that end, suppose <m>x \in A</m>.
         </p>
 
-        <m>\vdots</m>
+        <p>
+          <m>\vdots</m>
+        </p>
 
         <p>
           Thus <m>x \in B</m>.
@@ -719,7 +845,9 @@
           Suppose that <m>x \in B</m>.
         </p>
 
-        <m>\vdots</m>
+        <p>
+          <m>\vdots</m>
+        </p>
 
         <p>
           Thus <m>x \in A</m>.
@@ -728,23 +856,28 @@
         <p>
           Therefore <m>A \subseteq B \; \land \; B \subseteq A</m> so we conclude that <m>A=B</m>.
         </p>
-      </proof>
+        </proof>
 
-      Formulate a proof that <m>A \triangle B \; = \; (A \cup B) \setminus (A \cap B)</m> that follows this outline.
+        <p>
+          Formulate a proof that <m>A \triangle B \; = \; (A \cup B) \setminus (A \cap B)</m> that follows this outline.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          The definition of <m>A \triangle B</m> is <m>(A\setminus B) \cup (B\setminus A)</m>. The definition of
+          <m>X \setminus Y</m> is <m>X \cap \overline{Y}</m>. Restating things in terms of <m>\cap</m> and <m>\cup</m> (and complementation) should help. So your first few lines should be:
+        </p>
 
-      \hint{The definition of <m>A \triangle B</m> is <m>(A\setminus B) \cup (B\setminus A)</m>.  The definition of 
-      <m>X \setminus Y</m> is <m>X \cap \overline{Y}</m>.   Restating things in terms of <m>\cap</m> and <m>\cup</m> (and complementation) should help.  So your first few lines should be:
-      <blockquote>
-      Suppose <m>x \in  A \triangle B</m>.  
+        <blockquote>
+        Suppose <m>x \in  A \triangle B</m>.  
  
-      Then, by definition, <m>x \in (A\setminus B) \cup (B\setminus A)</m>.
+        Then, by definition, <m>x \in (A\setminus B) \cup (B\setminus A)</m>.
  
-       So, <m>x \in (A \cap \overline{B}) \cup (B \cap \overline{A})</m>.
+         So, <m>x \in (A \cap \overline{B}) \cup (B \cap \overline{A})</m>.
    
-      <m>\vdots</m>
-      </blockquote>
-      }
-      </p></li>
-    </ol>
+        <m>\vdots</m>
+        </blockquote>
+      </hint>
+    </exercise>
   </exercises>
 </section>

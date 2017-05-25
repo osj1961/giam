@@ -34,12 +34,10 @@
       <m>\vdots</m>  \begin{minipage}[c]{1.7 in} (Technically, a PCI 
       proof doesn't require a basis.   We recommend that you show that <m>P_0</m> 
       is true anyway.) 
-
-       <em>Inductive step:</em>
+      <em>Inductive step:</em>
 
       <m>\vdots</m>  \begin{minipage}[c]{1.7 in} (Here we must show that <m>\forall k,  \left( \bigwedge_{i=0}^{k-1} P_i \right) \implies P_{k}</m> is true.) 
-
-        Q.E.D.</cell>
+      Q.E.D.</cell>
     </row>
     <row bottom="minor">
       <cell></cell>
@@ -79,9 +77,9 @@
 
   <exercises>
     Give inductive proofs of the following
-
     <ol>
-      <li><p>
+      <li>
+        <p>
           A <q>postage stamp problem</q> is a problem that (typically) asks
           us to determine what total postage values can be produced using two
           sorts of stamps.  Suppose that you have <m>3</m>\cents<nbsp /> stamps and <m>7</m>\cents<nbsp />
@@ -91,19 +89,24 @@
             \forall n \in \Naturals, n \geq 12 \; \implies \;
             \exists x,y \in \Naturals , n = 3x + 7y.
           </me>
-        </p></li>
+        </p>
+      </li>
 
-      <li><p>
+      <li>
+        <p>
           Show that any integer postage of <m>12 \cents</m> or more can be made using
           only <m>4\cents</m> and <m>5\cents</m> stamps.
-        </p></li>
+        </p>
+      </li>
 
-      <li><p>
+      <li>
+        <p>
           The polynomial equation <m>x^2 = x+1</m> has two solutions, 
           <m>\alpha = \frac{1+\sqrt{5}}{2}</m> and <m>\beta = \frac{1-\sqrt{5}}{2}</m>.
           Show that the Fibonacci number <m>F_n</m> is less than or equal to <m>\alpha^{n}</m>
           for all <m>n \geq 0</m>.
-        </p></li>
+        </p>
+      </li>
     </ol>
   </exercises>
 </section>

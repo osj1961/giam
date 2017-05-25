@@ -663,35 +663,45 @@
     <cell></cell>
   </row>
   </tabular>
-  \vspace{.25in}
-
-  <xref ref="tab_roi">Table</xref>: The rules of inference. (continued)
-  <index><main>rules of inference</main></index>
+  <p>
+    <xref ref="tab_roi">Table</xref>: The rules of inference. (continued)
+    <index><main>rules of inference</main></index>
+  </p>
   <exercises>
+    <exercise>
+      <statement>
+        <p>
+          In the movie <q>Monty Python and the Holy Grail</q> we encounter
+          a medieval villager who (with a bit of prompting) makes the
+          following argument.
+        </p>
 
-    <ol>
-    <li><p>
-        In the movie <q>Monty Python and the Holy Grail</q> we encounter
-        a medieval villager who (with a bit of prompting) makes the 
-        following argument.
         <blockquote>
         If she weighs the same as a duck, then she's made of wood. 
         If she's made of wood then she's a witch. 
         Therefore, if she weighs the same as a duck, she's a witch.
         </blockquote>
-        Which rule of inference is he using?
 
-        \hint{
-        This is what many people refer to as the transitive rule of implication.  As an argument form it's known as <q>hypothetical syllogism.</q>
-        }
-      </p></li>
+        <p>
+          Which rule of inference is he using?
+        </p>
+      </statement>
+      <hint>
+        <p>
+          This is what many people refer to as the transitive rule of implication. As an argument form it's known as <q>hypothetical syllogism.</q>
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          In constructive dilemma, the antecedent of the conditional
+          sentences are usually chosen to represent opposite alternatives.
+          This allows us to introduce their disjunction as a tautology.
+          Consider the following proof that there is never any reason to worry
+          (found on the walls of an Irish pub).
+        </p>
 
-    <li><p>
-        In constructive dilemma, the antecedent of the conditional 
-        sentences are usually chosen to represent opposite alternatives. 
-        This allows us to introduce their disjunction as a tautology. 
-        Consider the following proof that there is never any reason to worry
-        (found on the walls of an Irish pub).
         <blockquote>
         Either you are sick or you are well. 
         If you are well there's nothing to worry about. 
@@ -703,90 +713,111 @@
         If you go to Heaven there is nothing to worry about.
         If you go to Hell, you'll be so busy shaking hands with all your friends there won't be time to worry \ldots
         </blockquote>
-        Identify the three tautologies that are introduced in this <q>proof.</q>
 
-        \hint{Look at the lines that start with the word "Either."}
-      </p></li>
-
-    <li><p>
-    For each of the following arguments, write it in symbolic form and determine 
-    which rules of inference are used.
-
-    <ol>
-      <li><p>
-          You are either with us, or you're against us.  And you don't appear to be with us.
-          So, that means you're against us!
-
-          \hint{
-          <tabular>
-            <row>
-              <cell></cell>
-              <cell><m>W \lor A</m></cell>
-            </row>
-            <row>
-              <cell></cell>
-              <cell><m>{\lnot}W</m></cell>
-            </row>
-            <row bottom="minor">
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row>
-              <cell><m>\therefore</m></cell>
-              <cell><m>A</m></cell>
-            </row>
-          </tabular>
-          This is <q>disjunctive syllogism.</q>
-          }
-        </p></li>
-
-      <li><p>
-          All those who had cars escaped the flooding.  Sandra had a car <mdash /> therefore, Sandra
-          escaped the flooding.
-
-          \hint{
-          Let <m>C(x)</m> be the open sentence <q>x has a car</q> and let <m>E(x)</m> be the open sentence <q>x escaped the flooding.</q>
-          This argument is actually the particular form of universal modus ponens: (See the final question in the next set of exercises.)
-          <tabular>
-            <row>
-              <cell></cell>
-              <cell><m>\forall x, C(x) \implies E(x)</m></cell>
-            </row>
-            <row>
-              <cell></cell>
-              <cell><m>C(\mbox{Sandra} )</m></cell>
-            </row>
-            <row bottom="minor">
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row>
-              <cell><m>\therefore</m></cell>
-              <cell><m>E(\mbox{Sandra} )</m></cell>
-            </row>
-          </tabular>
-          At this stage in the game it would be perfectly fine to just identify this as modus ponens and not worry about the quantifiers that appear.
-          }
-        </p></li>
-
-      <li><p>
-          When Johnny goes to the casino, he always gambles 'til he goes broke.  Today, Johnny
-          has money, so Johnny hasn't been to the casino recently.
-        </p></li>
-
-      <li><p>
-          (A non-constructive proof that there are 
-          irrational numbers <m>a</m> and <m>b</m> such that <m>a^b</m> is rational.)  
-          Either <m>\sqrt{2}^{\sqrt{2}}</m> is rational or it is irrational.
-          If <m>\sqrt{2}^{\sqrt{2}}</m> is rational, we let <m>a=b=\sqrt{2}</m>.
-          Otherwise, we let <m>a=\sqrt{2}^{\sqrt{2}}</m> and <m>b=\sqrt{2}</m>.
-          (Since <m>\sqrt{2}^{\sqrt{2}^{\sqrt{2}}} = 2</m>, which is rational.) It follows that in either case, there
-          are irrational numbers <m>a</m> and <m>b</m> such that <m>a^b</m> is rational.
-        </p></li>
-    </ol>
+        <p>
+          Identify the three tautologies that are introduced in this <q>proof.</q>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Look at the lines that start with the word "Either."
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+    <statement>
+      <p>
+        For each of the following arguments, write it in symbolic form and determine
+        which rules of inference are used.
+        <ol>
+          \end{exercise}
+          <exercise>
+            <p>
+              You are either with us, or you're against us. And you don't appear to be with us.
+              So, that means you're against us!
+            </p>
+          </statement>
+          <hint>
+            <tabular>
+              <row>
+                <cell></cell>
+                <cell><m>W \lor A</m></cell>
+              </row>
+              <row>
+                <cell></cell>
+                <cell><m>{\lnot}W</m></cell>
+              </row>
+              <row bottom="minor">
+                <cell></cell>
+                <cell></cell>
+              </row>
+              <row>
+                <cell><m>\therefore</m></cell>
+                <cell><m>A</m></cell>
+              </row>
+            </tabular>
+            <p>
+              This is <q>disjunctive syllogism.</q>
+            </p>
+          </hint>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              All those who had cars escaped the flooding. Sandra had a car <mdash /> therefore, Sandra
+              escaped the flooding.
+            </p>
+          </statement>
+          <hint>
+            <p>
+              Let <m>C(x)</m> be the open sentence <q>x has a car</q> and let <m>E(x)</m> be the open sentence <q>x escaped the flooding.</q>
+              This argument is actually the particular form of universal modus ponens: (See the final question in the next set of exercises.)
+            </p>
+            <tabular>
+              <row>
+                <cell></cell>
+                <cell><m>\forall x, C(x) \implies E(x)</m></cell>
+              </row>
+              <row>
+                <cell></cell>
+                <cell><m>C(\mbox{Sandra} )</m></cell>
+              </row>
+              <row bottom="minor">
+                <cell></cell>
+                <cell></cell>
+              </row>
+              <row>
+                <cell><m>\therefore</m></cell>
+                <cell><m>E(\mbox{Sandra} )</m></cell>
+              </row>
+            </tabular>
+            <p>
+              At this stage in the game it would be perfectly fine to just identify this as modus ponens and not worry about the quantifiers that appear.
+            </p>
+          </hint>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              When Johnny goes to the casino, he always gambles 'til he goes broke. Today, Johnny
+              has money, so Johnny hasn't been to the casino recently.
+            </p>
+          </statement>
+        </exercise>
+        \begin{exercise}  (A non-constructive proof that there are 
+        irrational numbers <m>a</m> and <m>b</m> such that <m>a^b</m> is rational.)  
+        Either <m>\sqrt{2}^{\sqrt{2}}</m> is rational or it is irrational.
+        If <m>\sqrt{2}^{\sqrt{2}}</m> is rational, we let <m>a=b=\sqrt{2}</m>.
+        Otherwise, we let <m>a=\sqrt{2}^{\sqrt{2}}</m> and <m>b=\sqrt{2}</m>.
+        (Since <m>\sqrt{2}^{\sqrt{2}^{\sqrt{2}}} = 2</m>, which is rational.) It follows that in either case, there
+        are irrational numbers <m>a</m> and <m>b</m> such that <m>a^b</m> is rational.
+      </ol>
     </p>
-
-    \hint{I'm leaving the last two for you to do. One small hint: both are valid forms.}</li>
-    </ol>
+    <hint>
+      <p>
+        I'm leaving the last two for you to do. One small hint: both are valid forms.
+      </p>
+    </hint>
+    </exercise>
   </exercises>
 </section>

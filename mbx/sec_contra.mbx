@@ -223,109 +223,159 @@
         <m>\triangle AB'C</m> having
         greater area than any triangle such as <m>\triangle ABC</m> which is not isosceles?
       </p>
-      <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-      \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+      <image source="images/c7dc893b363b75424231702f9251ba28db942487.png"/>
+      <p>
+        \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
         \reset@font\fontsize{#1}{#2pt}
         \fontfamily{#3}\fontseries{#4}\fontshape{#5}
         \selectfont}\fi
-      <image source="images/515f4a63ee16fceb8582dcdd7b356546dbac52e0.png"/>
+      </p>
+      <image source="images/c0f619225405031c79fa7db8d43f099658ccfb1e.png"/>
     </statement>
   </exercise>
   <exercises>
-
-    <ol>
-      <li><p>
+    <exercise>
+      <statement>
+        <p>
           Prove that if the cube of an integer is odd, then that integer is odd.
-
-          \hint{The best hint for this problem is simply to write down the contrapositive statement. It is trivial to prove!}
-        </p></li>
-
-      <li><p>
-          Prove that whenever a prime <m>p</m> does not divide the square of an integer, 
-          it also doesn't divide the original integer. 
+        </p>
+      </statement>
+      <hint>
+        <p>
+          The best hint for this problem is simply to write down the contrapositive statement. It is trivial to prove!
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove that whenever a prime <m>p</m> does not divide the square of an integer,
+          it also doesn't divide the original integer.
           (<m>p \nmid x^2 \; \implies \; p \nmid x</m>)
-
-          \hint{The contrapositive is <m>(p \divides x) \; \implies \; (p \divides x^2)</m>.}
-        </p></li>
-
-      <li><p>
-        Prove (by contradiction) that there is no largest integer.
-
-        \hint{Well, if there was a largest integer <mdash /> let's call it <m>L</m> (for largest) <mdash /> then isn't <m>L+1</m> an integer, and isn't it bigger?  That's the main idea.  A more formal proof might look like this:
+        </p>
+      </statement>
+      <hint>
+        <p>
+          The contrapositive is <m>(p \divides x) \; \implies \; (p \divides x^2)</m>.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove (by contradiction) that there is no largest integer.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Well, if there was a largest integer <mdash /> let's call it <m>L</m> (for largest) <mdash /> then isn't <m>L+1</m> an integer, and isn't it bigger? That's the main idea. A more formal proof might look like this:
+        </p>
 
         <proof>
-          <p>
-            Suppose (by way of contradiction) that there is a largest integer <m>L</m>. Then <m>L \in \Integers</m> and <m>\forall z \in \Integers, L \geq z</m>.
-            Consider the quantity <m>L+1</m>. Clearly <m>L+1</m> is an integer (because it is the sum of two integers) and also
-            <m>L+1 > L</m>. This is a contradiction so the original supposition is false. Hence there is no largest integer.
-          </p>
+        <p>
+          Suppose (by way of contradiction) that there is a largest integer <m>L</m>. Then <m>L \in \Integers</m> and <m>\forall z \in \Integers, L \geq z</m>.
+          Consider the quantity <m>L+1</m>. Clearly <m>L+1</m> is an integer (because it is the sum of two integers) and also
+          <m>L+1 > L</m>. This is a contradiction so the original supposition is false. Hence there is no largest integer.
+        </p>
         </proof>
-
-        }
-        </p></li>
-
-      <li><p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Prove (by contradiction) that there is no smallest positive real number.
-
-          \hint{Assume there was a smallest positive real number <mdash /> might as well call it <m>s</m> (for smallest) <mdash /> what can we do to produce an even smaller number? (But be careful that it needs to remain positive <mdash /> for instance <m>s-1</m> won't work.)}
-        </p></li>
-
-      <li><p>
-          Prove (by contradiction) that the sum of a rational and an irrational 
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Assume there was a smallest positive real number <mdash /> might as well call it <m>s</m> (for smallest) <mdash /> what can we do to produce an even smaller number? (But be careful that it needs to remain positive <mdash /> for instance <m>s-1</m> won't work.)
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove (by contradiction) that the sum of a rational and an irrational
           number is irrational.
-
-          \hint{Suppose that x is rational and y is irrational and their sum (let's call it z) is also rational. Do some algebra to solve for y, and you will see that y (which is, by presumption, irrational) is also the difference of two rational numbers (and hence, rational <mdash /> a contradiction.)
-          }
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Suppose that x is rational and y is irrational and their sum (let's call it z) is also rational. Do some algebra to solve for y, and you will see that y (which is, by presumption, irrational) is also the difference of two rational numbers (and hence, rational <mdash /> a contradiction.)
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Prove (by contraposition) that for all integers <m>x</m> and <m>y</m>, if <m>x+y</m> is odd, then <m>x\neq y</m>.
-
-          \hint{Well, the problem says to do this by contraposition, so let's write down the contrapositive:
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Well, the problem says to do this by contraposition, so let's write down the contrapositive:
           <me>
             \forall x, y \in \Integers, \; x=y \, \implies \, x+y \; \mbox{is even} .
           </me>
-          But proving that is obvious!
-          }
-        </p></li>
+        </p>
 
-      <li><p>
+        <p>
+          But proving that is obvious!
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Prove (by contraposition) that for all real numbers <m>a</m> and <m>b</m>, if <m>ab</m> is irrational, then <m>a</m>
           is irrational or <m>b</m> is irrational.
-
-          \hint{The contrapositive would be:
+        </p>
+      </statement>
+      <hint>
+        <p>
+          The contrapositive would be:
           <me>
             \forall a,b \in \Reals, \; (a \in \Rationals \land b \in \Rationals) \, \implies ab \in \Rationals.
           </me>
-          Wow! Haven't we proved that before?}
-        </p></li>
+        </p>
 
-      <li><p>
+        <p>
+          Wow! Haven't we proved that before?
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           A <index><main>Pythagorean triple</main></index><em>Pythagorean triple</em> is a set of three
-          natural numbers, <m>a</m>, <m>b</m> and <m>c</m>, such that <m>a^2 + b^2 = c^2</m>.  Prove that, in a
-          Pythagorean triple, at least one of <m>a</m> and <m>b</m> is even.  Use either a proof by
+          natural numbers, <m>a</m>, <m>b</m> and <m>c</m>, such that <m>a^2 + b^2 = c^2</m>. Prove that, in a
+          Pythagorean triple, at least one of <m>a</m> and <m>b</m> is even. Use either a proof by
           contradiction or a proof by contraposition.
-
-          \hint{If both <m>a</m> and <m>b</m> are odd then their squares will be 1 mod 4 <mdash /> so the sum of their squares
-          will be 2 mod 4.  But <m>c^2</m> can only be 0 or 1 mod 4, which gives us a contradiction.}
-        </p></li>
-
-      <li><p>
-        Suppose you have 2 pairs of positive real numbers whose products are 1.  That is, you have <m>(a,b)</m> and <m>(c,d)</m> in <m>\Reals^2</m> satisfying <m>ab=cd=1</m>.  Prove that
-        <m>a \lt  c</m> implies that <m>b > d</m>.
-
-         \hint{
-
+        </p>
+      </statement>
+      <hint>
+        <p>
+          If both <m>a</m> and <m>b</m> are odd then their squares will be 1 mod 4 <mdash /> so the sum of their squares
+          will be 2 mod 4. But <m>c^2</m> can only be 0 or 1 mod 4, which gives us a contradiction.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Suppose you have 2 pairs of positive real numbers whose products are 1. That is, you have <m>(a,b)</m> and <m>(c,d)</m> in <m>\Reals^2</m> satisfying <m>ab=cd=1</m>. Prove that
+          <m>a \lt  c</m> implies that <m>b > d</m>.
+        </p>
+      </statement>
+      <hint>
         <proof>
-          <p>
-            Suppose by way of contradiction that <m>a,b,c,d \in \Reals</m> satisfy <m>ab=cd=1</m> and that <m>a\lt c</m> and <m>b \leq d</m>.
-            By multiplying the inequalities we get that <m>ab \lt  cd</m> which contradicts the assumption that both products
-            are equal to 1 (and so must be equal to one another).
-          </p>
+        <p>
+          Suppose by way of contradiction that <m>a,b,c,d \in \Reals</m> satisfy <m>ab=cd=1</m> and that <m>a\lt c</m> and <m>b \leq d</m>.
+          By multiplying the inequalities we get that <m>ab \lt  cd</m> which contradicts the assumption that both products
+          are equal to 1 (and so must be equal to one another).
+        </p>
         </proof>
-
-        }
-        </p></li>
-    </ol>
+      </hint>
+    </exercise>
   </exercises>
 </section>

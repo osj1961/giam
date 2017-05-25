@@ -139,22 +139,10 @@
     sum of these numbers.
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/b94598664a64c06fabf22bbd84c98e1c8c7f0333.png"/>
-    \vspace{.3in}
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/b94598664a64c06fabf22bbd84c98e1c8c7f0333.png"/>
-    \caption[Full houses in Yahtzee.]{In Yahtzee, a full house may consist of 
-    a pair and a larger three-of-a-kind, or vice versa.}
+  <figure xml:id="fig_full_house" >
+    <caption>In Yahtzee, a full house may consist of 
+    a pair and a larger three-of-a-kind, or vice versa.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -355,7 +343,7 @@
     <cell>Does order matter?</cell>
   </row>
   <row>
-  <cell>\parbox[c]{12pt}{ \begin{sideways} Are repeats okay? \end{sideways} }</cell>
+  <cell>\begin{sideways} Are repeats okay? \end{sideways}</cell>
   <cell><tabular>
     <row>
       <cell></cell>
@@ -368,7 +356,7 @@
       <cell></cell>
     </row>
     <row>
-      <cell>\parbox[c]{12pt}{ \begin{sideways}  No \end{sideways} }</cell>
+      <cell>\begin{sideways}  No \end{sideways}</cell>
       <cell></cell>
       <cell></cell>
     </row>
@@ -378,7 +366,7 @@
       <cell></cell>
     </row>
     <row>
-      <cell>\parbox[c]{12pt}{ \begin{sideways}  Yes  \end{sideways} }</cell>
+      <cell>\begin{sideways}  Yes  \end{sideways}</cell>
       <cell></cell>
       <cell></cell>
     </row>
@@ -497,7 +485,7 @@
     <cell>Does order matter?</cell>
   </row>
   <row>
-  <cell>\parbox[c]{12pt}{ \begin{sideways} Are repeats okay? \end{sideways} }</cell>
+  <cell>\begin{sideways} Are repeats okay? \end{sideways}</cell>
   <cell><tabular>
     <row>
       <cell></cell>
@@ -515,7 +503,7 @@
       <cell></cell>
     </row>
     <row>
-      <cell>\parbox[c]{12pt}{ \begin{sideways}  No \end{sideways} }</cell>
+      <cell>\begin{sideways}  No \end{sideways}</cell>
       <cell><m>P(n,k) = \frac{n!}{(n-k)!}</m></cell>
       <cell><m>C(n,k) = \frac{n!}{k!(n-k)!}</m></cell>
     </row>
@@ -525,7 +513,7 @@
       <cell></cell>
     </row>
     <row>
-      <cell>\parbox[c]{12pt}{ \begin{sideways}  Yes  \end{sideways} }</cell>
+      <cell>\begin{sideways}  Yes  \end{sideways}</cell>
       <cell><m>n^k</m></cell>
       <cell></cell>
     </row>
@@ -736,7 +724,7 @@
     <cell>Does order matter?</cell>
   </row>
   <row>
-  <cell>\parbox[c]{12pt}{ \begin{sideways} Are repeats okay? \end{sideways} }</cell>
+  <cell>\begin{sideways} Are repeats okay? \end{sideways}</cell>
   <cell><tabular>
     <row>
       <cell></cell>
@@ -754,7 +742,7 @@
       <cell></cell>
     </row>
     <row>
-      <cell>\parbox[c]{12pt}{ \begin{sideways}  No \end{sideways} }</cell>
+      <cell>\begin{sideways}  No \end{sideways}</cell>
       <cell><m>P(n,k) = \frac{n!}{(n-k)!}</m></cell>
       <cell><m>\binom{n}{k} = \frac{n!}{k!(n-k)!}</m></cell>
     </row>
@@ -764,7 +752,7 @@
       <cell></cell>
     </row>
     <row>
-      <cell>\parbox[c]{12pt}{ \begin{sideways}  Yes  \end{sideways} }</cell>
+      <cell>\begin{sideways}  Yes  \end{sideways}</cell>
       <cell><m>n^k</m></cell>
       <cell><m>\binom{n+k-1}{k}</m></cell>
     </row>
@@ -772,86 +760,128 @@
   </row>
   </tabular>
   <exercises>
-
-    <ol>
-    <li><p>
-    Determine the number of entries in the following sequences.
-
-    <ol>
-      <li><p>
-          <m>(999, 1000, 1001, \ldots  2006)</m>
-        </p></li>
-
-      <li><p>
-          <m>(13, 15, 17, \ldots 199)</m>
-        </p></li>
-
-      <li><p>
-          <m>(13, 19, 25, \ldots 601)</m>
-        </p></li>
-
-      <li><p>
-          <m>(5, 10, 17, 26, 37, \ldots 122)</m>
-        </p></li>
-
-      <li><p>
-          <m>(27, 64, 125, 216, \ldots 8000)</m>
-        </p></li>
-
-      <li><p>
-          <m>(7, 11, 19, 35, 67, \ldots 131075)</m>
-        </p></li>
-    </ol>
-    </p></li>
-
-    <li><p>
-        How many <q>full houses</q> are there in Yahtzee?  (A full house is a pair
-        together with a three-of-a-kind.)
-      </p></li>
-
-    <li><p>
-        In how many ways can you get <q>two pairs</q> in Yahtzee?
-      </p></li>
-
-    <li><p>
-        Prove that the binomial coefficients <m>\displaystyle \binom{n+k-1}{k}</m>
-        and <m>\displaystyle \binom{n+k-1}{n-1}</m> are equal.
-      </p></li>
-
-    <li><p>
-        The <q>Cryptographer's alphabet</q> is used to supply small examples
-        in coding and cryptography.  It consists of the first 6 letters, <m>\{a, b, c, d, e, f\}</m>.  How many <q>words</q> of length up to 6 can be made with this 
-        alphabet?  (A word need not actually be a word in English, for example 
-        both <q>fed</q> and <q>dfe</q> would be words in the sense we are using the term.)
-      </p></li>
-
-    <li><p>
-        How many <q>words</q> are there of length 4, with distinct letters from the 
-        Cryptographer's alphabet, in which the letters appear in increasing order 
-        alphabetically?  (<q>Acef</q> would be one such word, but <q>cafe</q> would not.)
-      </p></li>
-
-    <li><p>
-        How many <q>words</q> are there of length 4 from the 
-        Cryptographer's alphabet, with repeated letters allowed,
-         in which the letters appear in non-decreasing order alphabetically?
-      </p></li>
-
-    <li><p>
-        How many subsets does a finite set have?
-      </p></li>
-
-    <li><p>
-        How many handshakes will transpire when <m>n</m> people first meet?
-      </p></li>
-
-    <li><p>
-        How many functions are there from a set of size <m>n</m> to a set of size <m>m</m>?
-      </p></li>
-
-    <li><p>
-        How many relations are there from a set of size <m>n</m> to a set of size <m>m</m>?
-      </p></li>
-    </ol>
+    <exercise>
+    <statement>
+      <p>
+        Determine the number of entries in the following sequences.
+        <ol>
+          \end{exercise}
+          <exercise>
+            <p>
+              <m>(999, 1000, 1001, \ldots  2006)</m>
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>(13, 15, 17, \ldots 199)</m>
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>(13, 19, 25, \ldots 601)</m>
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>(5, 10, 17, 26, 37, \ldots 122)</m>
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>(27, 64, 125, 216, \ldots 8000)</m>
+            </p>
+          </statement>
+        </exercise>
+        \begin{exercise}  <m>(7, 11, 19, 35, 67, \ldots 131075)</m>
+      </ol>
+    </p>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          How many <q>full houses</q> are there in Yahtzee? (A full house is a pair
+          together with a three-of-a-kind.)
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          In how many ways can you get <q>two pairs</q> in Yahtzee?
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove that the binomial coefficients <m>\displaystyle \binom{n+k-1}{k}</m>
+          and <m>\displaystyle \binom{n+k-1}{n-1}</m> are equal.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The <q>Cryptographer's alphabet</q> is used to supply small examples
+          in coding and cryptography. It consists of the first 6 letters, <m>\{a, b, c, d, e, f\}</m>. How many <q>words</q> of length up to 6 can be made with this
+          alphabet? (A word need not actually be a word in English, for example
+          both <q>fed</q> and <q>dfe</q> would be words in the sense we are using the term.)
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          How many <q>words</q> are there of length 4, with distinct letters from the
+          Cryptographer's alphabet, in which the letters appear in increasing order
+          alphabetically? (<q>Acef</q> would be one such word, but <q>cafe</q> would not.)
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          How many <q>words</q> are there of length 4 from the
+          Cryptographer's alphabet, with repeated letters allowed,
+          in which the letters appear in non-decreasing order alphabetically?
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          How many subsets does a finite set have?
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          How many handshakes will transpire when <m>n</m> people first meet?
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          How many functions are there from a set of size <m>n</m> to a set of size <m>m</m>?
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          How many relations are there from a set of size <m>n</m> to a set of size <m>m</m>?
+        </p>
+      </statement>
+    </exercise>
   </exercises>
 </section>

@@ -203,7 +203,10 @@
     This information is displayed in <xref ref="tab_contra">Table</xref>
   </p>
 
-  <table>
+  <table xml:id="tab_contra" >
+    <caption>The relationship 
+    between a conditional statement, its converse, its inverse and its 
+    contrapositive.</caption>
     <tabular>
     <row>
       <cell></cell>
@@ -220,13 +223,13 @@
     </row>
     <row>
     <cell>\fi
-    \parbox[c]{10pt}{ \begin{sideways} inverses \end{sideways} } 
-    \parbox[c]{10pt}{ 
+     \begin{sideways} inverses \end{sideways}  
+ 
     \ifx\pdfoutput\undefined
     <image width="73%" source="images/vert_arrows.png" />
     \else
     <image width="73%" source="images/vert_arrows.png" />
-    \fi }</cell>
+    \fi</cell>
     <cell><tabular>
       <row bottom="minor">
         <cell></cell>
@@ -303,9 +306,6 @@
     </tabular></cell>
     </row>
     </tabular>
-    \caption[Converse, inverse and contrapositive.]{The relationship 
-    between a conditional statement, its converse, its inverse and its 
-    contrapositive.}
   </table>
 
   <p>
@@ -319,32 +319,32 @@
     is logically the same as <m>{\lnot}A \lor B</m> lends credence to this point of view.
   </p>
   <exercises>
-
-    <ol>
-    <li><p>
-        The transitive property of equality says that if <m>a=b</m> and <m>b=c</m>
-        then <m>a=c</m>.  Does the implication arrow satisfy a transitive property?
-        If so, state it.
-
-
-
-        \hint{
-        I sometimes like to rephrase the implication <m>X \implies Y</m> as <q>X's truth forces Y to be true.</q>  Does that help?
-        If we know that X being true forces Y to be true, and we also know that Y being true will force Z to be true, what can we conclude?
-
-
-
-        }
-      </p></li>
-
-    <li><p>
-        Complete truth tables for the compound sentences <m>A \implies B</m> and
+    <exercise>
+      <statement>
+        <p>
+          The transitive property of equality says that if <m>a=b</m> and <m>b=c</m>
+          then <m>a=c</m>. Does the implication arrow satisfy a transitive property?
+          If so, state it.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          I sometimes like to rephrase the implication <m>X \implies Y</m> as <q>X's truth forces Y to be true.</q> Does that help?
+          If we know that X being true forces Y to be true, and we also know that Y being true will force Z to be true, what can we conclude?
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Complete truth tables for the compound sentences <m>A \implies B</m> and
           <m>{\lnot}A \lor B</m>.
-  
-  
-  
-        \hint{
-        You should definitely be able to do this one on your own, but anyway, here's an outline of the table:
+        </p>
+      </statement>
+      <hint>
+        <p>
+          You should definitely be able to do this one on your own, but anyway, here's an outline of the table:
+        </p>
         <tabular>
           <row bottom="minor">
             <cell></cell>
@@ -413,183 +413,242 @@
             <cell></cell>
           </row>
         </tabular>
-        }
-      </p></li>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Complete a truth table for the compound sentence <m>A \implies (B \implies C)</m> and for the sentence <m>(A \implies B) \implies C</m>. What can you conclude
+          about conditionals and the associative property?
+        </p>
+      </statement>
+      <hint>
+        <p>
+          No help on this one other than to say that the associative property <em>does not</em> hold for implications.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Determine a sentence using the <em>and</em> connector (<m>\land</m>) that
+          gives the negation of <m>A \implies B</m>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Hmmm<ellipsis /> This will seem like a strange hint, but if you were to hear a kid at the playground say <q>Oh yeah? Well, I did call your mom a fatty and you still haven't clobbered me! Owww! OWWW!!! Stop hitting me!!</q>
+        </p>
 
-    <li><p>
-        Complete a truth table for the compound sentence <m>A \implies (B \implies C)</m> and for the sentence <m>(A \implies B) \implies C</m>.  What can you conclude
-        about conditionals and the associative property?
+        <p>
+          What conditional sentence was he attempting to negate?
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Rewrite the sentence <q>Fix the toilet or I won't pay the rent!</q> as
+          a conditional.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          The way I see it there are eight possible ways to arrange "You fix the toilet" and "I'll pay the rent" (or their respective negations) around an implication arrow.
+          Here they all are. You decide which one sounds best.
+        </p>
 
+        <p>
+          If you fix the toilet, then I'll pay the rent.
+          If you fix the toilet, then I won't pay the rent.
+          If you don't fix the toilet, I'll pay the rent.
+          If you don't fix the toilet, then I won't pay the rent.
+          If I payed the rent, then you must have fixed the toilet.
+          If I payed the rent, then you must not have fixed the toilet.
+          If I didn't pay the rent, then you must have fixed the toilet.
+          If I didn't pay the rent, then you must not have fixed the toilet.
+        </p>
 
-
-        \hint{
-        No help on this one other than to say that the associative property <em>does not</em> hold for implications.
-
-
-
-        }
-      </p></li>
-
-    <li><p>
-        Determine a sentence using the <em>and</em> connector (<m>\land</m>) that
-        gives the negation of <m>A \implies B</m>.
-
-
-
-        \hint{Hmmm<ellipsis /> This will seem like a strange hint, but if you were to hear a kid at the playground say <q>Oh yeah? Well, I did call your mom a fatty and you still haven't clobbered me! Owww! OWWW!!! Stop hitting me!!</q>
-
-        What conditional sentence was he attempting to negate?
-        }
-      </p></li>
-
-    <li><p>
-        Rewrite the sentence <q>Fix the toilet or I won't pay the rent!</q> as
-        a conditional.
-
-
-
-        \hint{The way I see it there are eight possible ways to arrange "You fix the toilet" and "I'll pay the rent" (or their respective negations) around an implication arrow.
-        Here they all are. You decide which one sounds best.
-
-        If you fix the toilet, then I'll pay the rent.
-        If you fix the toilet, then I won't pay the rent.
-        If you don't fix the toilet, I'll pay the rent.
-        If you don't fix the toilet, then I won't pay the rent.
-        If I payed the rent, then you must have fixed the toilet.
-        If I payed the rent, then you must not have fixed the toilet.
-        If I didn't pay the rent, then you must have fixed the toilet.
-        If I didn't pay the rent, then you must not have fixed the toilet.
-
-        Some of those are truly strange<ellipsis />
-        }
-      </p></li>
-
-    <li><p>
-        Why is it that the sentence <q>If pigs can fly, I am the king
-        of Mesopotamia.</q> true?
-
-
-
-        \hint{Unless we're talking about some celebrity bringing their pet Vietnamese pot-bellied pig into first class with them, or possibly a catapult of some type... The antecedent (the if part) is false, so Yay! I AM the king of Mesopotamia!! Whoo-hooh! What? I'm not? Oh. But the if-then sentence is true. Bummer.}
-      </p></li>
-
-    <li><p>
-        Express the statement <m>A \implies B</m> using the Peirce arrow and/or the
-        Scheffer stroke. (See <xref ref="ex_nand_nor">Exercise</xref> in the previous section.)
-
-
-
-        \hint{You'll want to use <m>\vert</m>, the Scheffer stroke, aka NAND, because it's truth table contains three <m>T</m>'s and one <m>\phi</m> <mdash /> you'll just need to figure out which of its inputs to negate so as to make that one <m>\phi</m> occur in the second row of the table instead of the first.}
-      </p></li>
-
-    <li><p>
-    Find the contrapositives of the following sentences.
-
-    <ol>
-      <li><p>
-          If you can't do the time, don't do the crime.
-        </p></li>
-
-      <li><p>
-          If you do well in school, you'll get a good job.
-        </p></li>
-
-      <li><p>
-          If you wish others to treat you in a certain way, you must 
+        <p>
+          Some of those are truly strange<ellipsis />
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Why is it that the sentence <q>If pigs can fly, I am the king
+          of Mesopotamia.</q> true?
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Unless we're talking about some celebrity bringing their pet Vietnamese pot-bellied pig into first class with them, or possibly a catapult of some type... The antecedent (the if part) is false, so Yay! I AM the king of Mesopotamia!! Whoo-hooh! What? I'm not? Oh. But the if-then sentence is true. Bummer.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Express the statement <m>A \implies B</m> using the Peirce arrow and/or the
+          Scheffer stroke. (See <xref ref="ex_nand_nor">Exercise</xref> in the previous section.)
+        </p>
+      </statement>
+      <hint>
+        <p>
+          You'll want to use <m>\vert</m>, the Scheffer stroke, aka NAND, because it's truth table contains three <m>T</m>'s and one <m>\phi</m> <mdash /> you'll just need to figure out which of its inputs to negate so as to make that one <m>\phi</m> occur in the second row of the table instead of the first.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+    <statement>
+      <p>
+        Find the contrapositives of the following sentences.
+        <ol>
+          \end{exercise}
+          <exercise>
+            <p>
+              If you can't do the time, don't do the crime.
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              If you do well in school, you'll get a good job.
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              If you wish others to treat you in a certain way, you must
               treat others in that fashion.
-        </p></li>
-
-      <li><p>
-          If it's raining, there must be clouds.
-        </p></li>
-
-      <li><p>
-          If <m>a_n \leq b_n</m>, for all <m>n</m> and <m>\sum_{n=0}^\infty b_n</m> is a 
-          convergent series, then <m>\sum_{n=0}^\infty a_n</m> is a convergent series.
-        </p></li>
-    </ol>
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              If it's raining, there must be clouds.
+            </p>
+          </statement>
+        </exercise>
+        \begin{exercise}  If <m>a_n \leq b_n</m>, for all <m>n</m> and <m>\sum_{n=0}^\infty b_n</m> is a 
+        convergent series, then <m>\sum_{n=0}^\infty a_n</m> is a convergent series.
+      </ol>
     </p>
-
-    \hint{
-
-    <ol>
-      <li><p>
-          If you do the crime, you must do the time.
-        </p></li>
-
-      <li><p>
-          If you don't have a good job, you must've done poorly in school.
-        </p></li>
-
-      <li><p>
-          If you don't treat others in a certain way, you can't hope for others to treat you in that fashion,
-        </p></li>
-
-      <li><p>
-          If there are no clouds, it can't be raining.
-        </p></li>
-
-      <li><p>
-          If  <m>\sum_{n=0}^\infty a_n</m> is not a convergent series, then either <m>a_n \leq b_n</m>, for some <m>n</m> or 
+    <hint>
+      <p>
+        <ol>
+          \end{exercise}
+          <exercise>
+            <statement>
+            <p>
+              If you do the crime, you must do the time.
+            </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+            <p>
+              If you don't have a good job, you must've done poorly in school.
+            </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+            <p>
+              If you don't treat others in a certain way, you can't hope for others to treat you in that fashion,
+            </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+            <p>
+              If there are no clouds, it can't be raining.
+            </p>
+            </statement>
+          </exercise>
+          \begin{exercise} If  <m>\sum_{n=0}^\infty a_n</m> is not a convergent series, then either <m>a_n \leq b_n</m>, for some <m>n</m> or 
           <m>\sum_{n=0}^\infty b_n</m> is not a convergent series.
-        </p></li>
-    </ol>
-    }</li>
+        </ol>
+      </p>
+    </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          What are the converse and inverse of <q>If you watch my back, I'll
+          watch your back.</q>?
+        </p>
+      </statement>
+      <hint>
+        <p>
+          The converse is <q>If I watch your back, then you'll watch my back.</q> (Sounds a little dopey doesn't it <mdash /> likes its sort of a wishful thinking<ellipsis />)
+          The inverse is <q>If you don't watch my back, then I won't watch your back.</q> (Sounds less vapid, but it means the same thing<ellipsis />)
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The integral test in Calculus is used to determine whether an
+          infinite series converges or diverges: Suppose that <m>f(x)</m> is a positive,
+          decreasing,
+          real-valued function with <m>\lim_{x \longrightarrow \infty} f(x) = 0</m>, if
+          the improper integral
+          <m>\int_0^\infty f(x)</m> has a finite value, then the infinite series
+          <m>\sum_{n=1}^\infty f(n)</m> converges.
+        </p>
 
-    <li><p>
-        What are the converse and inverse of <q>If you watch my back, I'll 
-        watch your back.</q>?
+        <p>
+          The integral test should be envisioned by letting the series correspond
+          to a right-hand Riemann sum for the integral, since the function is decreasing,
+          a right-hand Riemann sum is an underestimate for the value of the integral,
+          thus
+          <me>
+            \sum_{n=1}^\infty f(n) \lt  \int_0^\infty f(x).
+          </me>
+        </p>
 
+        <p>
+          Discuss the meanings of and (where possible) provide justifications for
+          the inverse, converse and contrapositive of the conditional statement
+          in the integral test.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          The inverse says <mdash /> if the integral isn't finite, then the series doesn't converge. You can cook-up a function that shows this to be false by (for example) creating one with vertical asymptotes that occur in between the integer <m>x</m>-values. Even one such pole can be enough to make the integral go infinite.
+          The converse says that if the series converges, the integral must be finite. The counter-example we just discussed would work here too.
+        </p>
 
+        <p>
+          The contrapositive says that if the series doesn't converge, then the integral must not be finite. If we were allowed to use discontinuous functions, it isn't too hard to come up with an <m>f</m> that actually has zero area under it <mdash /> just make f be identically zero except at the integer x-values where it will take the same values as the terms of the series. But wait, the function we just described isn't <q>decreasing</q> <mdash /> which is probably why that hypothesis was put in there!
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          On the Island of Knights and Knaves (see <xref ref="IKK">page</xref>) you encounter two individuals named Locke and Demosthenes.
+        </p>
 
-        \hint{
-        The converse is <q>If I watch your back, then you'll watch my back.</q>  (Sounds a little dopey doesn't it <mdash /> likes its sort of a wishful thinking<ellipsis />)
-        The inverse is <q>If you don't watch my back, then I won't watch your back.</q>  (Sounds less vapid, but it means the same thing<ellipsis />)
-        }
-      </p></li>
+        <p>
+          Locke says, <q>Demosthenes is a knave.</q>
+          Demosthenes says <q>Locke and I are knights.</q>
+        </p>
 
-    <li><p>
-        The integral test in Calculus is used to determine whether an
-        infinite series converges or diverges:   Suppose that <m>f(x)</m> is a positive,
-        decreasing, 
-        real-valued function with <m>\lim_{x \longrightarrow \infty} f(x) = 0</m>, if
-        the improper integral
-        <m>\int_0^\infty f(x)</m> has a finite value, then the infinite series 
-        <m>\sum_{n=1}^\infty f(n)</m> converges.
-
-        The integral test should be envisioned by letting the series correspond
-        to a right-hand Riemann sum for the integral, since the function is decreasing,
-        a right-hand Riemann sum is an underestimate for the value of the integral,
-        thus
-        <me>
-          \sum_{n=1}^\infty f(n) \lt  \int_0^\infty f(x).
-        </me>
-        Discuss the meanings of and (where possible) provide justifications for
-        the inverse, converse and contrapositive of the conditional statement 
-        in the integral test.
-
-
-
-        \hint{
-        The inverse says <mdash /> if the integral isn't finite, then the series doesn't converge. You can cook-up a function that shows this to be false by (for example) creating one with vertical asymptotes that occur in between the integer <m>x</m>-values. Even one such pole can be enough to make the integral go infinite.
-        The converse says that if the series converges, the integral must be finite. The counter-example we just discussed would work here too.
-
-        The contrapositive says that if the series doesn't converge, then the integral must not be finite. If we were allowed to use discontinuous functions, it isn't too hard to come up with an <m>f</m> that actually has zero area under it <mdash /> just make f be identically zero except at the integer x-values where it will take the same values as the terms of the series. But wait, the function we just described isn't <q>decreasing</q> <mdash /> which is probably why that hypothesis was put in there!
-        }
-      </p></li>
-
-    <li><p>
-        On the Island of Knights and Knaves (see <xref ref="IKK">page</xref>) you encounter two individuals named Locke and Demosthenes.  
-
-        Locke says, <q>Demosthenes is a knave.</q> 
-        Demosthenes says <q>Locke and I are knights.</q>
-
-        Who is a knight and who a knave?
-
-
-
-        \hint{Could Demosthenes be telling the truth?}
-      </p></li>
-    </ol>
+        <p>
+          Who is a knight and who a knave?
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Could Demosthenes be telling the truth?
+        </p>
+      </hint>
+    </exercise>
   </exercises>
 </section>

@@ -65,16 +65,11 @@
     the four color theorem see<nbsp /><xref ref="wiki-4color" />.
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/7165ceb5044216c12890b89bac2815ee915e7f4c.png"/>
-    \caption[A four-color map.]{The nations surrounding 
+  <figure xml:id="fig_Lux_map" >
+    <caption>The nations surrounding 
     <index><main>Luxembourg</main></index> Luxembourg show 
-    that sometimes 4 colors are required in cartography.}
+    that sometimes 4 colors are required in cartography.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -124,42 +119,45 @@
 
   <proof>
     <p>
-    We will consider the four cases determined by the four
-    possible residues mod 4.
+      We will consider the four cases determined by the four
+      possible residues mod 4.
+      <ul>
+        <li>
+          <title>case i)</title>
+          <p>
+            If <m>n \equiv 0 \pmod{4}</m> then there is an integer <m>m</m>
+            such that <m>n = 4m</m>.  It follows that <m>n^2 = (4m)^2 = 16m^2</m> is of the 
+            form <m>4k</m> where <m>k</m> is <m>4m^2</m>.
+          </p>
+        </li>
 
-    <ul>
-      <li>
-        <title>case i)</title>
-        <p>
-          If <m>n \equiv 0 \pmod{4}</m> then there is an integer <m>m</m>
-          such that <m>n = 4m</m>.  It follows that <m>n^2 = (4m)^2 = 16m^2</m> is of the 
-          form <m>4k</m> where <m>k</m> is <m>4m^2</m>.
-        </p></li>
+        <li>
+          <title>case ii)</title>
+          <p>
+            If <m>n \equiv 1 \pmod{4}</m> then there is an integer <m>m</m>
+            such that <m>n = 4m+1</m>.  It follows that <m>n^2 = (4m+1)^2 = 16m^2 + 8m + 1</m> 
+            is of the form <m>4k+1</m> where <m>k</m> is <m>4m^2+2m</m>.
+          </p>
+        </li>
 
-      <li>
-        <title>case ii)</title>
-        <p>
-          If <m>n \equiv 1 \pmod{4}</m> then there is an integer <m>m</m>
-          such that <m>n = 4m+1</m>.  It follows that <m>n^2 = (4m+1)^2 = 16m^2 + 8m + 1</m> 
-          is of the form <m>4k+1</m> where <m>k</m> is <m>4m^2+2m</m>.
-        </p></li>
+        <li>
+          <title>case iii)</title>
+          <p>
+            If <m>n \equiv 2 \pmod{4}</m> then there is an integer <m>m</m>
+            such that <m>n = 4m+2</m>.  It follows that <m>n^2 = (4m+2)^2 = 16m^2 + 16m + 4</m> 
+            is of the form <m>4k</m> where <m>k</m> is <m>4m^2+4m+1</m>.
+          </p>
+        </li>
 
-      <li>
-        <title>case iii)</title>
-        <p>
-          If <m>n \equiv 2 \pmod{4}</m> then there is an integer <m>m</m>
-          such that <m>n = 4m+2</m>.  It follows that <m>n^2 = (4m+2)^2 = 16m^2 + 16m + 4</m> 
-          is of the form <m>4k</m> where <m>k</m> is <m>4m^2+4m+1</m>.
-        </p></li>
-
-      <li>
-        <title>case iv)</title>
-        <p>
-          If <m>n \equiv 3 \pmod{4}</m> then there is an integer <m>m</m>
-          such that <m>n = 4m+3</m>.  It follows that <m>n^2 = (4m+3)^2 = 16m^2 + 24m + 9</m> 
-          is of the form <m>4k+1</m> where <m>k</m> is <m>4m^2+6m+2</m>.
-        </p></li>
-    </ul>
+        <li>
+          <title>case iv)</title>
+          <p>
+            If <m>n \equiv 3 \pmod{4}</m> then there is an integer <m>m</m>
+            such that <m>n = 4m+3</m>.  It follows that <m>n^2 = (4m+3)^2 = 16m^2 + 24m + 9</m> 
+            is of the form <m>4k+1</m> where <m>k</m> is <m>4m^2+6m+2</m>.
+          </p>
+        </li>
+      </ul>
     </p>
 
     <p>
@@ -209,30 +207,20 @@
     See <xref ref="fig_pebbling_move">Figure</xref>.
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/cd84b457db63c0b752ed210a2205dc206ddff1a0.png"/>
-    \caption[Graph pebbling.]{In graph pebbling problems a collection of pebbles
+  <figure xml:id="fig_pebbling" >
+    <caption>In graph pebbling problems a collection of pebbles
     are distributed on the nodes of a graph.  There is no significance to the 
     particular graph that is shown here, or to the arrangement of pebbles <mdash /> 
-    we are just giving an example.}
+    we are just giving an example.</caption>
+    <image source=""/>
   </figure>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/18f1e6b14db59b93308543983d9f8311d7062205.png"/>
-    \caption[Graph pebbling move.]{A graph pebbling move takes two pebbles off
+  <figure xml:id="fig_pebbling_move" >
+    <caption>A graph pebbling move takes two pebbles off
     of a node and puts one of them on an adjacent node (the other is discarded).
     Notice how node C, which formerly held 3 pebbles, now has only 1 and that 
-    a pebble is now present on node D where previously there was none.}
+    a pebble is now present on node D where previously there was none.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -264,135 +252,197 @@
     </statement>
   </exercise>
   <exercises>
-
-    <ol>
-      <li><p>
+    <exercise>
+      <statement>
+        <p>
           Prove that if <m>n</m> is an odd number then <m>n^4 \pmod{16} = 1</m>.
-
-          \hint{
-
+        </p>
+      </statement>
+      <hint>
+        <p>
           While one could perform fairly complicated arithmetic, expanding expression like
-          <m>(16k+13)^4</m> and then regrouping to put it in the form <m>16q+1</m> (and one would need 
-          to do that work for each of the odd remainders modulo <m>16</m>),  that would be missing out
-          on the true power of modular notation.  In a <q><m>\pmod{16}</m></q> calculation one can simply ignore
-          summands like <m>16k</m> because they are <m>0 \pmod{16}</m>.  Thus, for example,
+          <m>(16k+13)^4</m> and then regrouping to put it in the form <m>16q+1</m> (and one would need
+          to do that work for each of the odd remainders modulo <m>16</m>), that would be missing out
+          on the true power of modular notation. In a <q><m>\pmod{16}</m></q> calculation one can simply ignore
+          summands like <m>16k</m> because they are <m>0 \pmod{16}</m>. Thus, for example,
           <me>
             (16k+7)^4 \pmod{16} \; = \; 7^4 \pmod{16} \; = \; 2401 \pmod{16}  \; = \; 1.
           </me>
-          So, essentially one just needs to compute the <m>4</m>th powers of <m>1, 3, 5, 7, 9, 11, 13</m>  and <m>15</m>, and
-          then reduce them modulo 16.  An even greater economy is possible if one notes that (modulo 16) many
+        </p>
+
+        <p>
+          So, essentially one just needs to compute the <m>4</m>th powers of <m>1, 3, 5, 7, 9, 11, 13</m> and <m>15</m>, and
+          then reduce them modulo 16. An even greater economy is possible if one notes that (modulo 16) many
           of those cases are negatives of one another <mdash /> so their <m>4</m>th powers are equal.
-          }
-        </p></li>
-
-      <li><p>
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Prove that every prime number other than 2 and 3 has the form
-          <m>6q+1</m> or <m>6q+5</m> for some integer <m>q</m>.  (Hint: this problem involves
+          <m>6q+1</m> or <m>6q+5</m> for some integer <m>q</m>. (Hint: this problem involves
           thinking about cases as well as contrapositives.)
-
-          \hint{It is probably obvious that the "cases" will be the possible remainders mod 6. Numbers of the form 6q+0 will be multiples of 6, so clearly not prime. The other forms that need to be eliminated are 6q+2, 6q+3, and 6q+4.
-          }
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          It is probably obvious that the "cases" will be the possible remainders mod 6. Numbers of the form 6q+0 will be multiples of 6, so clearly not prime. The other forms that need to be eliminated are 6q+2, 6q+3, and 6q+4.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Show that the sum of any three consecutive integers is divisible
           by 3.
-
-          \hint{Write the sum as <m>n + (n+1) + (n+2)</m>.}
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Write the sum as <m>n + (n+1) + (n+2)</m>.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           There is a graph known as <m>K_4</m> that has <m>4</m> nodes and there is an edge between every pair of nodes.
           The pebbling number of <m>K_4</m> has to be at least <m>4</m> since it would be possible to put one pebble on each of
-          <m>3</m> nodes and not be able to reach the remaining node using pebbling moves.  Show that the pebbling number of <m>K_4</m> is actually <m>4</m>.
-
-          \hint{If there are two pebbles on any node we will be able to reach all the other nodes using pebbling moves
-          (since every pair of nodes is connected).}
-        </p></li>
-
-      <li><p>
-          Find the pebbling number of a graph whose nodes are the corners and 
+          <m>3</m> nodes and not be able to reach the remaining node using pebbling moves. Show that the pebbling number of <m>K_4</m> is actually <m>4</m>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          If there are two pebbles on any node we will be able to reach all the other nodes using pebbling moves
+          (since every pair of nodes is connected).
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Find the pebbling number of a graph whose nodes are the corners and
           whose edges are the, uhmm, edges of a cube.
-
-          \hint{It should be clear that the pebbling number is at least <m>8</m> <mdash /> <m>7</m> pebbles could be distributed, 
-          one to a node, and the <m>8</m>th node would be unreachable.  It will be easier to play around with this if
-          you figure out how to draw the cube graph <q>flattened-out</q> in the plane.}
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          It should be clear that the pebbling number is at least <m>8</m> <mdash /> <m>7</m> pebbles could be distributed,
+          one to a node, and the <m>8</m>th node would be unreachable. It will be easier to play around with this if
+          you figure out how to draw the cube graph <q>flattened-out</q> in the plane.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           A <index><main>vampire number</main></index><em>vampire number</em> is a <m>2n</m> digit number <m>v</m> that factors as <m>v=xy</m>
-          where <m>x</m> and <m>y</m> are <m>n</m> digit numbers and the digits of <m>v</m> are the 
-          union of the digits in <m>x</m> and <m>y</m> in some order.  The numbers <m>x</m> and <m>y</m>
-          are known as the <q>fangs</q> of <m>v</m>.  To eliminate trivial
-          cases, pairs of trailing zeros are disallowed.  
+          where <m>x</m> and <m>y</m> are <m>n</m> digit numbers and the digits of <m>v</m> are the
+          union of the digits in <m>x</m> and <m>y</m> in some order. The numbers <m>x</m> and <m>y</m>
+          are known as the <q>fangs</q> of <m>v</m>. To eliminate trivial
+          cases, pairs of trailing zeros are disallowed.
+        </p>
 
+        <p>
           Show that there are no 2-digit vampire numbers.
+        </p>
 
+        <p>
           Show that there are seven 4-digit vampire numbers.
-
-          \hint{The 2-digit challenge is do-able by hand (just barely).  The <m>4</m> digit question certainly requires 
-          some computer assistance!}
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          The 2-digit challenge is do-able by hand (just barely). The <m>4</m> digit question certainly requires
+          some computer assistance!
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Lagrange's theorem on representation of integers as sums of squares
-          says that every positive integer can be expressed as the sum of at most 
-          <m>4</m> squares.  For example, <m>79 = 7^2 + 5^2 + 2^2 + 1^2</m>.  Show (exhaustively) 
+          says that every positive integer can be expressed as the sum of at most
+          <m>4</m> squares. For example, <m>79 = 7^2 + 5^2 + 2^2 + 1^2</m>. Show (exhaustively)
           that <m>15</m> can not be represented using fewer than <m>4</m> squares.
-
-          \hint{Note that <m>15 = 3^2 + 2^2 + 1^2 + 1^2</m>.  Also, if <m>15</m> were expressible as a sum of fewer than <m>4</m> squares, the squares involved would be <m>1</m>, <m>4</m> and <m>9</m>.  It's really not that hard to try all the possibilities.}
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Note that <m>15 = 3^2 + 2^2 + 1^2 + 1^2</m>. Also, if <m>15</m> were expressible as a sum of fewer than <m>4</m> squares, the squares involved would be <m>1</m>, <m>4</m> and <m>9</m>. It's really not that hard to try all the possibilities.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Show that there are exactly <m>15</m> numbers <m>x</m> in the range <m>1 \leq x \leq 100</m> that can't be represented using fewer than <m>4</m> squares.
-
-
-
-          \hint{The following Sage code generates all the numbers up to <m>100</m> that <em>can</em> be written
+        </p>
+      </statement>
+      <hint>
+        <p>
+          The following Sage code generates all the numbers up to <m>100</m> that <em>can</em> be written
           as the sum of at most <m>3</m> squares.
+        </p>
 
-          <c>var('x y z') 
-          a=[s<m>\caret</m>2 for s in [1..10]]  
-          b=[s<m>\caret</m>2 for s in [0..10]]  
-          s = []  
-          for x in a:  
-           for y in b:  
-            for z in b:  
-             s = union(s,[x+y+z])  
-          s = Set(s)  
-          H=Set([1..100]) 
-          show(H.intersection(s))  
+        <p>
+          <c>var('x y z')
+          a=[s<m>\caret</m>2 for s in [1..10]]
+          b=[s<m>\caret</m>2 for s in [0..10]]
+          s = []
+          for x in a:
+          for y in b:
+          for z in b:
+          s = union(s,[x+y+z])
+          s = Set(s)
+          H=Set([1..100])
+          show(H.intersection(s))
           </c>
-          }
-        </p></li>
-
-      <li><p>
-          The <index><main>trichotomy property</main></index><em>trichotomy property</em> of the real 
-          numbers simply states that every real number is either positive or negative 
-          or zero.  Trichotomy can be used to prove many statements by looking at the
-          three cases that it guarantees.  Develop a proof (by cases) that the square of
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The <index><main>trichotomy property</main></index><em>trichotomy property</em> of the real
+          numbers simply states that every real number is either positive or negative
+          or zero. Trichotomy can be used to prove many statements by looking at the
+          three cases that it guarantees. Develop a proof (by cases) that the square of
           any real number is non-negative.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          By trichotomy, x is either zero, negative, or positive. If x is zero, its square is zero. If x is negative, its square is positive. If x is positive, its square is also positive.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Consider the game called <q>binary determinant tic-tac-toe</q>
+          which is played by two players who alternately fill in the entries of a
+          <m>3 \times 3</m> array. Player One goes first, placing 1's in the array and
+          player Zero goes second, placing 0's. Player One's goal is that the
+          final array have determinant 1, and player Zero's goal is that the
+          determinant be 0. The determinant calculations are carried out mod 2.
+        </p>
 
-          \hint{By trichotomy, x is either zero, negative, or positive. If x is zero, its square is zero. If x is negative, its square is positive. If x is positive, its square is also positive.}
-        </p></li>
-
-      <li><p>
-          Consider the game called <q>binary determinant tic-tac-toe</q>  
-          which is played by two players who alternately fill in the entries of a 
-          <m>3 \times 3</m> array.  Player One goes first, placing 1's in the array and 
-          player Zero goes second, placing 0's.  Player One's goal is that the 
-          final array have determinant 1, and player Zero's goal is that the 
-          determinant be 0.  The determinant calculations are carried out mod 2.
-
+        <p>
           Show that player Zero can always win a game of binary determinant tic-tac-toe
           by the method of exhaustion.
-
-          \hint{If you know something about determinants it would help here.  The determinant will be
-          0 if there are two identical rows (or columns) in the finished array.  Also, if there is a row or column
-          that is all zeros, player Zero wins too.  Also, cyclically permuting either rows or columns has no effect
-          on the determinant of a binary array.  This means we lose no generality in assuming player One's
-          first move goes (say) in the upper-left corner.}
-        </p></li>
-    </ol>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          If you know something about determinants it would help here. The determinant will be
+          0 if there are two identical rows (or columns) in the finished array. Also, if there is a row or column
+          that is all zeros, player Zero wins too. Also, cyclically permuting either rows or columns has no effect
+          on the determinant of a binary array. This means we lose no generality in assuming player One's
+          first move goes (say) in the upper-left corner.
+        </p>
+      </hint>
+    </exercise>
   </exercises>
 </section>

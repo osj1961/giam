@@ -12,48 +12,52 @@
   </p>
 
   <p>
-  The simplest argument in favor of the validity of PMI is simply that it is
-  axiomatic. This may seem somewhat unsatisfying, but the axioms for
-  the natural number system, known as the <index><main>Peano axioms</main></index>Peano axioms,
-  include one that justifies PMI. The Peano axioms will not be treated
-  thoroughly in this book, but here they are:
+    The simplest argument in favor of the validity of PMI is simply that it is
+    axiomatic. This may seem somewhat unsatisfying, but the axioms for
+    the natural number system, known as the <index><main>Peano axioms</main></index>Peano axioms,
+    include one that justifies PMI. The Peano axioms will not be treated
+    thoroughly in this book, but here they are:
+    <ol>
+      <li>
+        <title>i)</title>
+        <p>
+          There is a least element of <m>\Naturals</m> that we denote by <m>0</m>.
+        </p>
+      </li>
 
-  <ol>
-    <li>
-      <title>i)</title>
-      <p>
-        There is a least element of <m>\Naturals</m> that we denote by <m>0</m>.
-      </p></li>
+      <li>
+        <title>ii)</title>
+        <p>
+          Every natural number <m>a</m> has a successor denoted by <m>s(a)</m>.
+          (Intuitively, think of <m>s(a) = a+1</m>.)
+        </p>
+      </li>
 
-    <li>
-      <title>ii)</title>
-      <p>
-        Every natural number <m>a</m> has a successor denoted by <m>s(a)</m>.
-        (Intuitively, think of <m>s(a) = a+1</m>.)
-      </p></li>
+      <li>
+        <title>iii)</title>
+        <p>
+          There is no natural number whose successor is <m>0</m>.  (In other
+          words, -1 isn't in <m>\Naturals</m>.)
+        </p>
+      </li>
 
-    <li>
-      <title>iii)</title>
-      <p>
-        There is no natural number whose successor is <m>0</m>.  (In other
-        words, -1 isn't in <m>\Naturals</m>.)
-      </p></li>
+      <li>
+        <title>iv)</title>
+        <p>
+          Distinct natural numbers have distinct successors.  
+          (<m>a \neq b \; \implies \; s(a) \neq s(b)</m>)
+        </p>
+      </li>
 
-    <li>
-      <title>iv)</title>
-      <p>
-        Distinct natural numbers have distinct successors.  
-        (<m>a \neq b \; \implies \; s(a) \neq s(b)</m>)
-      </p></li>
-
-    <li>
-      <title>v)</title>
-      <p>
-        If a subset of the natural numbers contains <m>0</m> and also has the
-        property that whenever <m>a \in S</m> it follows that <m>s(a) \in S</m>, then the
-        subset <m>S</m> is actually equal to <m>\Naturals</m>.
-      </p></li>
-  </ol>
+      <li>
+        <title>v)</title>
+        <p>
+          If a subset of the natural numbers contains <m>0</m> and also has the
+          property that whenever <m>a \in S</m> it follows that <m>s(a) \in S</m>, then the
+          subset <m>S</m> is actually equal to <m>\Naturals</m>.
+        </p>
+      </li>
+    </ol>
   </p>
 
   <p>
@@ -86,7 +90,11 @@
     before 303,621 out of the 303,628 dominoes had fallen. (One has to wonder
     what kept those other 7 dominoes upright <ellipsis />)
   </p>
-  <image width="20%" source="images/domino_row.png" />
+
+  <p>
+    <image width="20%" source="images/domino_row.png" />
+  </p>
+
   <p>
     This is the model one should keep in mind when thinking about PMI: domino
     toppling. In setting up a line of dominoes, what do we need to do
@@ -131,12 +139,10 @@
        <em>Basis:</em>
 
       <m>\vdots</m>  \begin{minipage}[c]{1.7 in} (Here we must show that <m>P_0</m> is true.) 
-
-       <em>Inductive step:</em>
+      <em>Inductive step:</em>
 
       <m>\vdots</m>  \begin{minipage}[c]{1.7 in} (Here we must show that <m>\forall k,  P_k \implies P_{k+1}</m> is true.) 
-
-        Q.E.D.</cell>
+      Q.E.D.</cell>
     </row>
     <row bottom="minor">
       <cell></cell>
@@ -243,37 +249,42 @@
   </proof>
 
   <p>
-  Here are a few pieces
-  of advice about proofs by induction:
+    Here are a few pieces
+    of advice about proofs by induction:
+    <ul>
+      <li>
+        <p>
+          Statements that can be proved inductively don't always start out with 
+          <m>P_0</m>.  Sometimes <m>P_1</m> is the first statement in an infinite family.
+          Sometimes its <m>P_5</m>.  Don't get hung up about something that could be
+          handled by renumbering things.
+        </p>
+      </li>
 
-  <ul>
-    <li><p>
-        Statements that can be proved inductively don't always start out with 
-        <m>P_0</m>.  Sometimes <m>P_1</m> is the first statement in an infinite family.
-        Sometimes its <m>P_5</m>.  Don't get hung up about something that could be
-        handled by renumbering things.
-      </p></li>
+      <li>
+        <p>
+          In your final write-up you only need to prove the initial case
+          (whatever it may be) for the basis, but it is a good idea to try 
+          the first several cases while you are in the <q>draft</q> stage.  This
+          can provide insights into how to prove the inductive step, and it may
+          also help you avoid a classic error in which the inductive approach fails
+          essentially just because there is a gap between two of the earlier 
+          dominoes.<fn>See <xref ref="ex_horses">exercise</xref>, the classic fallacious proof that all horses are the same color.</fn>
+        </p>
+      </li>
 
-    <li><p>
-        In your final write-up you only need to prove the initial case
-        (whatever it may be) for the basis, but it is a good idea to try 
-        the first several cases while you are in the <q>draft</q> stage.  This
-        can provide insights into how to prove the inductive step, and it may
-        also help you avoid a classic error in which the inductive approach fails
-        essentially just because there is a gap between two of the earlier 
-        dominoes.<fn>See <xref ref="ex_horses">exercise</xref>, the classic fallacious proof that all horses are the same color.</fn>
-      </p></li>
-
-    <li><p>
-        It is a good idea to write down somewhere just what it is that
-        needs to be proved in the inductive step <mdash /> just don't make it look like 
-        you're assuming what needs to be shown.  For instance in the proof above
-        it might have been nice to start the inductive step with a comment along
-        the following lines, <q>What we need to show is that under the assumption
-        that any set of size <m>k</m> has a power set of size <m>2^k</m>, it follows that
-        a set of size <m>k+1</m> will have a power set of size <m>2^{k+1}</m>.</q>
-      </p></li>
-  </ul>
+      <li>
+        <p>
+          It is a good idea to write down somewhere just what it is that
+          needs to be proved in the inductive step <mdash /> just don't make it look like 
+          you're assuming what needs to be shown.  For instance in the proof above
+          it might have been nice to start the inductive step with a comment along
+          the following lines, <q>What we need to show is that under the assumption
+          that any set of size <m>k</m> has a power set of size <m>2^k</m>, it follows that
+          a set of size <m>k+1</m> will have a power set of size <m>2^{k+1}</m>.</q>
+        </p>
+      </li>
+    </ul>
   </p>
 
   <p>
@@ -296,21 +307,28 @@
     use the symbol <m>\Naturals</m> to indicate the set <m>{\mathbb N} \cup \{ 0 \}</m>.
   </p>
   <exercises>
+    <exercise>
+      <statement>
+        <p>
+          Consider the sequence of numbers that are 1 greater than a multiple of 4.
+          (Such numbers are of the form <m>4j+1</m>.)
+          <me>
+            1, 5, 9, 13, 17, 21, 25, 29, \ldots
+          </me>
+        </p>
 
-    <ol>
-    <li><p>
-        Consider the sequence of numbers that are 1 greater than a multiple of 4.
-        (Such numbers are of the form <m>4j+1</m>.)
-        <me>
-          1, 5, 9, 13, 17, 21, 25, 29, \ldots
-        </me>
-        The sum of the first several numbers in this sequence can be expressed as
-        a polynomial.
-        <me>
-          \sum_{j=0}^n 4j+1 = 2n^2 + 3n + 1
-        </me>
-        Complete the following table in order to provide evidence that the formula
-        above is correct.
+        <p>
+          The sum of the first several numbers in this sequence can be expressed as
+          a polynomial.
+          <me>
+            \sum_{j=0}^n 4j+1 = 2n^2 + 3n + 1
+          </me>
+        </p>
+
+        <p>
+          Complete the following table in order to provide evidence that the formula
+          above is correct.
+        </p>
         <tabular>
           <row>
             <cell><m>n</m></cell>
@@ -348,17 +366,26 @@
             <cell></cell>
           </row>
         </tabular>
-        \hint{I'm leaving the very last one for you to do.}
-      </p></li>
+      </statement>
+      <hint>
+        <p>
+          I'm leaving the very last one for you to do.
+        </p>
+      </hint>
+    </exercise>
+    <exercise xml:id="ex_horses">
+      <statement>
+        <p>
+          What is wrong with the following inductive proof of
+          <q>all horses are the same color.</q>?
+        </p>
 
-    <li xml:id="ex_horses" ><p>
-      What is wrong with the following inductive proof of
-      <q>all horses are the same color.</q>?
+        <p>
+          <em>Theorem</em> Let <m>H</m> be a set of <m>n</m> horses, all horses in <m>H</m>
+          are the same color.
+        </p>
 
-      <em>Theorem</em> Let <m>H</m> be a set of <m>n</m> horses, all horses in <m>H</m> 
-      are the same color.
-
-      <proof>
+        <proof>
         <p>
           We proceed by induction on <m>n</m>.
         </p>
@@ -378,105 +405,141 @@
           <m>H_b</m> contain only horses of this (same) color. Finally, we conclude that
           all the horses in <m>H</m> are the same color.
         </p>
-      </proof>
-
-      \hint{Look carefully at the stage from <m>n=2</m> to <m>n=3</m>.}
-      </p></li>
-
-    <li><p>
-    For each of the following theorems, write the statement that must be
-    proved for the basis <mdash /> then prove it, if you can!
-
-    <ol>
-      <li><p>
-          The sum of the first <m>n</m> positive integers is <m>(n^2+n)/2</m>.
-
-          \hint{The sum of the first <m>0</m> positive integers is <m>(0^2 + 0)/2</m>.  Or, if you
-          prefer to start with something rather than nothing: The sum of the first <m>1</m> positive integers
-          is <m>(1^2+1)/2</m>. }
-        </p></li>
-
-      <li><p>
-          The sum of the first <m>n</m> (positive) odd numbers is <m>n^2</m>.
-
-          \hint{The sum of the first <m>0</m> positive odd numbers is <m>0^2</m>.  Or, the sum of the first <m>1</m> positive odd numbers is <m>1^2</m>.}
-        </p></li>
-
-      <li><p>
-          If <m>n</m> coins are flipped, the probability that all of them 
-          are <q>heads</q> is <m>1/2^n</m>.
-
-          \hint{If <m>1</m> coin is flipped, the the probability that it is <q>heads</q> is <m>1/2</m>. Or if we try it 
-          when <m>n=0</m>, ``If no coins are flipped the probability that all of them are heads is 1.  Does that
-          make sense to you?  Is it reasonable that we would say it is 100<percent /> certain that all of the coins
-          are heads in a set that doesn't contain <em>any</em> coins? }
-        </p></li>
-
-      <li><p>
-          Every <m>2^n \times 2^n</m> chessboard <mdash /> with one square removed <mdash /> can 
-          be tiled perfectly<fn>Here, <q>perfectly tiled</q> means that every trominoe
-          covers 3 squares of the chessboard (nothing hangs over the edge) and that every
-          square of the chessboard is covered by some trominoe.</fn> by L-shaped trominoes.  
-          (A trominoe is like a domino but 
-          made up of <m>3</m> little squares.  There are two kinds, straight
-          <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-          \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-            \reset@font\fontsize{#1}{#2pt}
-            \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-            \selectfont}\fi
-          <image source="images/179d43e045cfb6a76942071cd1855db76d8b4b90.png"/>
-          and L-shaped
-          <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-          \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-            \reset@font\fontsize{#1}{#2pt}
-            \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-            \selectfont}\fi
-          <image source="images/33d989bbe2968ee70084b2870624ab4bea264938.png"/>
-          . This problem is only concerned with
-          the L-shaped trominoes.)
-        </p></li>
-    </ol>
+        </proof>
+      </statement>
+      <hint>
+        <p>
+          Look carefully at the stage from <m>n=2</m> to <m>n=3</m>.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+    <statement>
+      <p>
+        For each of the following theorems, write the statement that must be
+        proved for the basis <mdash /> then prove it, if you can!
+        <ol>
+          \end{exercise}
+          <exercise>
+            <p>
+              The sum of the first <m>n</m> positive integers is <m>(n^2+n)/2</m>.
+            </p>
+          </statement>
+          <hint>
+            <p>
+              The sum of the first <m>0</m> positive integers is <m>(0^2 + 0)/2</m>. Or, if you
+              prefer to start with something rather than nothing: The sum of the first <m>1</m> positive integers
+              is <m>(1^2+1)/2</m>.
+            </p>
+          </hint>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              The sum of the first <m>n</m> (positive) odd numbers is <m>n^2</m>.
+            </p>
+          </statement>
+          <hint>
+            <p>
+              The sum of the first <m>0</m> positive odd numbers is <m>0^2</m>. Or, the sum of the first <m>1</m> positive odd numbers is <m>1^2</m>.
+            </p>
+          </hint>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              If <m>n</m> coins are flipped, the probability that all of them
+              are <q>heads</q> is <m>1/2^n</m>.
+            </p>
+          </statement>
+          <hint>
+            <p>
+              If <m>1</m> coin is flipped, the the probability that it is <q>heads</q> is <m>1/2</m>. Or if we try it
+              when <m>n=0</m>, ``If no coins are flipped the probability that all of them are heads is 1. Does that
+              make sense to you? Is it reasonable that we would say it is 100<percent /> certain that all of the coins
+              are heads in a set that doesn't contain <em>any</em> coins?
+            </p>
+          </hint>
+        </exercise>
+        \begin{exercise} Every <m>2^n \times 2^n</m> chessboard <mdash /> with one square removed <mdash /> can 
+        be tiled perfectly<fn>Here, <q>perfectly tiled</q> means that every trominoe
+        covers 3 squares of the chessboard (nothing hangs over the edge) and that every
+        square of the chessboard is covered by some trominoe.</fn> by L-shaped trominoes.  
+        (A trominoe is like a domino but 
+        made up of <m>3</m> little squares.  There are two kinds, straight
+        <image source="images/4c4f0299c52980538e23e72725b67e3952a50e72.png"/>
+        \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+          \reset@font\fontsize{#1}{#2pt}
+          \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+          \selectfont}\fi
+        <image source="images/38137e93f810c2418fc55a8d20692923c140a7d2.png"/>
+        and L-shaped
+        <image source="images/3d4e8334e001f2ef81d9f88e4a6663ab1db84fad.png"/>
+        \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+          \reset@font\fontsize{#1}{#2pt}
+          \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+          \selectfont}\fi
+        <image source="images/ef5a3af217fede2bf378cd606b250701c2c65ae7.png"/>
+        . This problem is only concerned with
+        the L-shaped trominoes.)
+      </ol>
+    </p>
+    <hint>
+      <p>
+        If <m>n=1</m> we have: ``Every <m>2 \times 2</m> chessboard <mdash /> with one square removed
+        can be tiled perfectly by L-shaped trominoes. This version is trivial to prove. Try formulating
+        the <m>n=0</m> case.
+      </p>
+    </hint>
+    </exercise>
+    <exercise>
+    <statement>
+      <p>
+        Suppose that the rules of the game for PMI were changed so that one
+        did the following:
+        <ul>
+          \end{exercise}
+          <exercise>
+            <p>
+              Basis. Prove that <m>P(0)</m> is true.
+            </p>
+          </statement>
+        </exercise>
+        \begin{exercise} Inductive step.  Prove that for all <m>k</m>, <m>P_k</m> implies <m>P_{k+2}</m>
+      </ul>
     </p>
 
-    \hint{If <m>n=1</m> we have: ``Every <m>2 \times 2</m> chessboard <mdash /> with one square removed
-    can be tiled perfectly by L-shaped trominoes.  This version is trivial to prove.  Try formulating
-    the <m>n=0</m> case.}</li>
-
-    <li><p>
-    Suppose that the rules of the game for PMI were changed so that one
-    did the following:
-
-    <ul>
-      <li><p>
-          Basis.  Prove that <m>P(0)</m> is true.
-        </p></li>
-
-      <li><p>
-          Inductive step.  Prove that for all <m>k</m>, <m>P_k</m> implies <m>P_{k+2}</m>
-        </p></li>
-    </ul>
+    <p>
+      Explain why this would not constitute a valid proof that <m>P_n</m> holds
+      for all natural numbers <m>n</m>.
+      How could we change the basis in this outline to obtain a valid proof?
     </p>
-
-    Explain why this would not constitute a valid proof that <m>P_n</m> holds 
-    for all natural numbers <m>n</m>. 
-     How could we change the basis in this outline to obtain a valid proof?
-
-    \hint{In this modified version, <m>P(0)</m> is not going to imply <m>P(1)</m>. and in fact, none of the odd numbered
-    statements will be proven.  If we change the 
-    basis so that we prove both <m>P(0)</m> and <m>P(1)</m>, all the even statements will be implied by
-    <m>P(0)</m> being true and all the odd statements get forced because <m>P(1)</m> is true.}</li>
-
-    <li><p>
-        If we wanted to prove statements that were indexed by the integers,
-        <me>
-          \forall z \in \Integers, \; P_z,
-        </me>
-        what changes should be made to PMI?
-
-        \hint{A quick change would be to replace <m>\forall k, \; P_k \implies P_{k+1}</m> in the inductive
-        step with <m>\forall k, \; P_k \iff P_{k+1}</m>.  While this would do the trick, a slight improvement 
-        is possible, if we treat the positive and negative cases for <m>k</m> separately.}
-      </p></li>
-    </ol>
+    <hint>
+      <p>
+        In this modified version, <m>P(0)</m> is not going to imply <m>P(1)</m>. and in fact, none of the odd numbered
+        statements will be proven. If we change the
+        basis so that we prove both <m>P(0)</m> and <m>P(1)</m>, all the even statements will be implied by
+        <m>P(0)</m> being true and all the odd statements get forced because <m>P(1)</m> is true.
+      </p>
+    </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          If we wanted to prove statements that were indexed by the integers,
+          <me>
+            \forall z \in \Integers, \; P_z,
+          </me>
+          what changes should be made to PMI?
+        </p>
+      </statement>
+      <hint>
+        <p>
+          A quick change would be to replace <m>\forall k, \; P_k \implies P_{k+1}</m> in the inductive
+          step with <m>\forall k, \; P_k \iff P_{k+1}</m>. While this would do the trick, a slight improvement
+          is possible, if we treat the positive and negative cases for <m>k</m> separately.
+        </p>
+      </hint>
+    </exercise>
   </exercises>
 </section>

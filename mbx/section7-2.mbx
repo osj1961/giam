@@ -232,15 +232,10 @@
     home.
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/814392b309cd02abc53343f63d1981a506316c38.png"/>
-    \caption[K&#xf6;nigsberg, Prussia.]{A simplified map of K&#xf6;nigsberg, Prussia
-    circa 1736.}
+  <figure xml:id="fig_kon_map" >
+    <caption>A simplified map of K&#xf6;nigsberg, Prussia
+    circa 1736.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -252,16 +247,11 @@
     of a node</q> is shorthand for the <q>parity of the <em>degree</em> of the node.</q>
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/c8858de7c1312ecc7247c4836283abd03ea3d051.png"/>
-    \caption[K&#xf6;nigsberg, Prussia as a graph.]{Euler's solution of the ``seven
-    bridges of K&#xf6;nigsberg problem'' involved representing the town
-    as an undirected graph.}
+  <figure xml:id="fig_kon_graph" >
+    <caption>Euler's solution of the <q>seven
+    bridges of K&#xf6;nigsberg problem</q> involved representing the town
+    as an undirected graph.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -278,46 +268,51 @@
   <exercise>
     <statement>
       <p>
-      Try drawing graphs having the following lists of vertex degrees.
-      (In some cases it will be impossible<ellipsis />)
+        Try drawing graphs having the following lists of vertex degrees.
+        (In some cases it will be impossible<ellipsis />)
+        <ul>
+          <li>
+            <title>-</title>
+            <p>
+              <m>\{1,1,2,3,3\}</m>
+            </p>
+          </li>
 
-      <ul>
-        <li>
-          <title>-</title>
-          <p>
-            <m>\{1,1,2,3,3\}</m>
-          </p></li>
+          <li>
+            <title>-</title>
+            <p>
+              <m>\{1,2,3,5\}</m>
+            </p>
+          </li>
 
-        <li>
-          <title>-</title>
-          <p>
-            <m>\{1,2,3,5\}</m>
-          </p></li>
+          <li>
+            <title>-</title>
+            <p>
+              <m>\{1,2,3,4\}</m>
+            </p>
+          </li>
 
-        <li>
-          <title>-</title>
-          <p>
-            <m>\{1,2,3,4\}</m>
-          </p></li>
+          <li>
+            <title>-</title>
+            <p>
+              <m>\{4,4,4,4,5\}</m>
+            </p>
+          </li>
 
-        <li>
-          <title>-</title>
-          <p>
-            <m>\{4,4,4,4,5\}</m>
-          </p></li>
+          <li>
+            <title>-</title>
+            <p>
+              <m>\{3,3,3,3\}</m>
+            </p>
+          </li>
 
-        <li>
-          <title>-</title>
-          <p>
-            <m>\{3,3,3,3\}</m>
-          </p></li>
-
-        <li>
-          <title>-</title>
-          <p>
-            <m>\{3,3,3,3,3\}</m>
-          </p></li>
-      </ul>
+          <li>
+            <title>-</title>
+            <p>
+              <m>\{3,3,3,3,3\}</m>
+            </p>
+          </li>
+        </ul>
       </p>
     </statement>
   </exercise>
@@ -449,18 +444,21 @@
   </p>
 
   <p>
-  Here are two tiling problems regarding square chessboards:
+    Here are two tiling problems regarding square chessboards:
+    <ol>
+      <li>
+        <p>
+          An even-sided square board (e.g. an ordinary <m>8 \times 8</m> board) 
+          with diagonally opposite corners pruned.
+        </p>
+      </li>
 
-  <ol>
-    <li><p>
-        An even-sided square board (e.g. an ordinary <m>8 \times 8</m> board) 
-        with diagonally opposite corners pruned.
-      </p></li>
-
-    <li><p>
-        An odd-sided board with one square pruned.
-      </p></li>
-  </ol>
+      <li>
+        <p>
+          An odd-sided board with one square pruned.
+        </p>
+      </li>
+    </ol>
   </p>
 
   <p>
@@ -476,12 +474,14 @@
         square pruned. One can be tiled by dominoes and the other
         cannot. Which is which?
       </p>
-      <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-      \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+      <image source="images/75665324278ffbbf27adb71f6ca2d4837a3d688f.png"/>
+      <p>
+        \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
         \reset@font\fontsize{#1}{#2pt}
         \fontfamily{#3}\fontseries{#4}\fontshape{#5}
         \selectfont}\fi
-      <image source="images/62e49f14bd79c841ae5a26aef6fb521b517ccae7.png"/>
+      </p>
+      <image source="images/675394a25987b08e74c280fd8ce87ef848bcb39e.png"/>
     </statement>
   </exercise>
   <p>
@@ -600,92 +600,130 @@
   </proof>
 
   <exercises>
-
-    <ol>
-      <li><p>
+    <exercise>
+      <statement>
+        <p>
           A walking tour of K&#xf6;nigsberg such as is described in this section,
           or more generally, a circuit through an arbitrary graph that crosses each
           edge precisely once and begins and ends at the same node is known as
-          an <index><main>Eulerian circuit</main></index> <em>Eulerian circuit</em>.  An <index><main>Eulerian
+          an <index><main>Eulerian circuit</main></index> <em>Eulerian circuit</em>. An <index><main>Eulerian
           path</main></index> <em>Eulerian path</em> also crosses every edge of a graph exactly
-          once but it begins and ends at distinct nodes.  For each of the following
+          once but it begins and ends at distinct nodes. For each of the following
           graphs determine whether an Eulerian circuit or path is possible, and if so,
           draw it.
-          <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+        </p>
+        <image source="images/a7d986cae4d4d5c0cb948b3e01b7606fc1f41eab.png"/>
+        <p>
           \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-            \reset@font\fontsize{#1}{#2pt}
-            \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-            \selectfont}\fi
-          <image source="images/e6fb326566f61256b96d00cf3b328c487457f01e.png"/>
-          <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+          \reset@font\fontsize{#1}{#2pt}
+          \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+          \selectfont}\fi
+        </p>
+        <image source="images/4461cde0210cf133596dbce7efe450f102dab7fd.png"/>
+        <image source="images/cd46b99c4d10ad6c0d4af135a1ffa5c672809007.png"/>
+        <p>
           \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-            \reset@font\fontsize{#1}{#2pt}
-            \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-            \selectfont}\fi
-          <image source="images/b34e7ebf895410623004221cabdcc4ab8ccfb618.png"/>
-        </p></li>
-
-      <li><p>
+          \reset@font\fontsize{#1}{#2pt}
+          \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+          \selectfont}\fi
+        </p>
+        <image source="images/77ac096ebf55735f4e0a8dc2130808ca45660f67.png"/>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Complete the proof of the fact that <q>Every graph has an even number
           of odd nodes.</q>
-        </p></li>
-
-      <li><p>
-          Provide an argument as to why an <m>8 \times 8</m> chessboard with 
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Provide an argument as to why an <m>8 \times 8</m> chessboard with
           two squares pruned from diagonally opposite corners cannot be tiled
           with dominoes.
-        </p></li>
-
-      <li><p>
-          Prove that, if <m>n</m> is odd, any <m>n \times n</m> chessboard with 
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove that, if <m>n</m> is odd, any <m>n \times n</m> chessboard with
           a square the same color as one of its corners pruned can be tiled by
           dominoes.
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           The five <index><main>tetromino</main></index> tetrominoes (familiar to players of the video game
           Tetris) are relatives of dominoes made up of four small squares.
-          <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+        </p>
+        <image source="images/11ff9b9516b6755feae7776cdfcca33b4a4ccfc9.png"/>
+        <p>
           \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-            \reset@font\fontsize{#1}{#2pt}
-            \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-            \selectfont}\fi
-          <image source="images/edb70f1722343170a3d0f1223d24bec8ed042620.png"/>
+          \reset@font\fontsize{#1}{#2pt}
+          \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+          \selectfont}\fi
+        </p>
+        <image source="images/c344d4bdfbbc67bde0f52aea9d5b854eb5cced81.png"/>
+        <p>
           All together these five tetrominoes contain 20 squares
           so it is conceivable that they could be used to tile a <m>4 \times 5</m>
-          chessboard.  Prove that this is actually impossible.
-        </p></li>
-
-      <li><p>
+          chessboard. Prove that this is actually impossible.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           State necessary and sufficient conditions for the existence of
           an Eulerian circuit in a graph.
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           State necessary and sufficient conditions for the existence of
           an Eulerian path in a graph.
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Construct magic squares of order 4 and 5.
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           A magic hexagon of order 2 would consist of filling-in
-          the numbers from 1 to 7 in the hexagonal array below.  The magic
+          the numbers from 1 to 7 in the hexagonal array below. The magic
           condition means that each of the 9 <q>lines</q> of adjacent hexagons
-          would have the same sum.  Is this possible?
-          <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+          would have the same sum. Is this possible?
+        </p>
+        <image source="images/0e8e91be65645eb1923722fabd8a1771b6e94fc1.png"/>
+        <p>
           \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-            \reset@font\fontsize{#1}{#2pt}
-            \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-            \selectfont}\fi
-          <image source="images/b6a60915dca15742036bc112f2f0a52f0fe691a1.png"/>
-        </p></li>
-
-      <li><p>
+          \reset@font\fontsize{#1}{#2pt}
+          \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+          \selectfont}\fi
+        </p>
+        <image source="images/965be1a6b2010b563cbd3180324730c987344bd9.png"/>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Is there a magic hexagon of order 3?
-        </p></li>
-    </ol>
+        </p>
+      </statement>
+    </exercise>
   </exercises>
 </section>

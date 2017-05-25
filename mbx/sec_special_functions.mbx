@@ -66,12 +66,14 @@
     this function is not injective, but the portion of the graph shown
     in bold below passes the horizontal line test.
   </p>
-  <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+  <image source="images/3a207cc3eeff787044373ff19b7bc762a55332c4.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
     \reset@font\fontsize{#1}{#2pt}
     \fontfamily{#3}\fontseries{#4}\fontshape{#5}
     \selectfont}\fi
-  <image source="images/dcd355cffe9f94796d7769fec3a3132463f72e1c.png"/>
+  </p>
+  <image source="images/af80ba62d3295ff33a46993687d833e3bdc34a1f.png"/>
   <p>
     If we restrict the domain of the sine function to the closed interval
     <m>[-\pi/2, \pi/2]</m>, we have an invertible function. The inverse of this
@@ -359,64 +361,88 @@
     </statement>
   </exercise>
   <exercises>
-
-    <ol>
-      <li><p>
+    <exercise>
+      <statement>
+        <p>
           The <m>n</m>-th triangular number, denoted <m>T(n)</m>, is given by the formula
           <m>T(n) = (n^2 + n)/2</m>. If we regard this formula as a function from <m>\Reals</m> to
           <m>\Reals</m>, it fails the horizontal line test and so it is not invertible. Find a
           suitable restriction so that T is invertible.
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           The usual algebraic procedure for inverting <m>T(x) = (x^2+x)/2</m> fails. Use
           your knowledge of the geometry of functions and their inverses to find
           a formula for the inverse. (Hint: it may be instructive to first invert
           the simpler formula <m>S(x) = x^2/2</m> <mdash /> this will get you the right vertical
           scaling factor.)
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           What is <m>\pi_2(W(t))</m>?
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Find a right inverse for <m>f(x) = |x|</m>.
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           In three-dimensional space we have projection functions that go onto
           the three coordinate axes (<m>\pi_1</m>, <m>\pi_2</m> and <m>\pi_3</m>) and we also have
-          projections onto coordinate planes.  For example,
+          projections onto coordinate planes. For example,
           <m>\pi_{12}: \Reals \times \Reals \times \Reals \longrightarrow \Reals \times \Reals</m>, defined by
           <me>
             \pi_{12}((x,y,z)) = (x,y)
           </me>
           is the projection onto the <m>x</m><ndash /><m>y</m> coordinate plane.
+        </p>
 
-          The triple of functions  <m>(\cos{t}, \sin{t}, t)</m> is a parametric
-          expression for a helix.  Let 
+        <p>
+          The triple of functions <m>(\cos{t}, \sin{t}, t)</m> is a parametric
+          expression for a helix. Let
           <m>H = \{ (\cos{t}, \sin{t}, t) \suchthat t \in \Reals \}</m> be the set of all
-          points on the helix.  What is the set <m>\pi_{12}(H)</m> ?  What are the
+          points on the helix. What is the set <m>\pi_{12}(H)</m> ? What are the
           sets <m>\pi_{13}(H)</m> and <m>\pi_{23}(H)</m>?
-        </p></li>
-
-      <li><p>
-          Consider the set <m>\{1, 2, 3, \ldots, 10\}</m>.  Express the characteristic
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Consider the set <m>\{1, 2, 3, \ldots, 10\}</m>. Express the characteristic
           function of the subset <m>S = \{1, 2, 3 \}</m> as a set of ordered pairs.
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           If <m>S</m> and <m>T</m> are subsets of a set <m>D</m>, what is the product of
           their characteristic functions <m>1_S \cdot 1_T</m> ?
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Evaluate the sum
           <me>
             \sum_{i=1}^{10} \frac{1}{i} \cdot [ i \; \mbox{is prime}  ].
           </me>
-        </p></li>
-    </ol>
+        </p>
+      </statement>
+    </exercise>
   </exercises>
 </section>

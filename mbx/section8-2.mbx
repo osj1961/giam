@@ -218,16 +218,11 @@
     shown in <xref ref="fig_cantors_snake_2">Figure</xref>.
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/38801261154b29b75d3eaa641a112455cfa69944.png"/>
-    \caption[Cantor's snake.]{Cantor's snake winds through the set 
+  <figure xml:id="fig_cantors_snake_2" >
+    <caption>Cantor's snake winds through the set 
     <m>\Naturals \times \Naturals</m> encountering its
-    elements one after the other.}
+    elements one after the other.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -389,16 +384,11 @@
     see <xref ref="fig_equiv_intervals">Figure</xref>
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/2bcefbfb09a99dbe16ef0c628696bfd1b4ffc452.png"/>
-    \caption[Equivalent intervals.]{Projection from a point can be 
+  <figure xml:id="fig_equiv_intervals" >
+    <caption>Projection from a point can be 
     used to show that intervals of 
-    different lengths contain the same number of points.}
+    different lengths contain the same number of points.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -427,15 +417,10 @@
     half-plane are equinumerous.
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/1f98e827e140667b06ab91a89dea792324374986.png"/>
-    \caption[An interval is equivalent to a semi-circle.]{Vertical projection 
-    provides a bijective correspondence between an interval and a semi-circle. }
+  <figure xml:id="fig_interval_n_semicircle" >
+    <caption>Vertical projection 
+    provides a bijective correspondence between an interval and a semi-circle.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -487,45 +472,60 @@
     the interval <m>(0, 1)</m>.
   </p>
   <exercises>
-
-    <ol>
-      <li><p>
+    <exercise>
+      <statement>
+        <p>
           Prove that positive numbers of the form <m>3k +1</m> are equinumerous with
           positive numbers of the form <m>4k + 2</m>.
-        </p></li>
-
-      <li><p>
-          Prove that <m>\displaystyle f(x) =  c + \frac{(x-a)(d-c)}{(b-a)}</m> 
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove that <m>\displaystyle f(x) =  c + \frac{(x-a)(d-c)}{(b-a)}</m>
           provides a bijection from the interval <m>[a, b]</m> to the interval <m>[c, d]</m>.
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Prove that any two circles are equinumerous (as sets of points).
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Determine a formula for the bijection from <m>(-1, 1)</m> to the line <m>y = 1</m>
           determined by vertical projection onto the upper half of the unit circle,
           followed by projection from the point <m>(0, 0)</m>.
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           It is possible to generalize the argument that shows a line segment is
-          equivalent to a line to higher dimensions.   In two dimensions we would
+          equivalent to a line to higher dimensions. In two dimensions we would
           show that the unit disk (the interior of the unit circle) is equinumerous
-          with the entire plane <m>\Reals \times \Reals</m>.   In three dimensions we would show that
+          with the entire plane <m>\Reals \times \Reals</m>. In three dimensions we would show that
           the unit ball (the interior of the unit sphere) is equinumerous with the
-          entire space <m>\Reals^3 = \Reals \times \Reals \times \Reals</m>.  Here we 
+          entire space <m>\Reals^3 = \Reals \times \Reals \times \Reals</m>. Here we
           would like you to prove the two-dimensional case.
+        </p>
 
+        <p>
           Gnomonic projection is a style of map rendering in which a portion of a
-          sphere is projected onto a plane that is tangent to the sphere.  The 
-          sphere's center is used as the point to project from.  Combine 
+          sphere is projected onto a plane that is tangent to the sphere. The
+          sphere's center is used as the point to project from. Combine
           vertical projection from the unit disk
           in the x<ndash />y plane to the upper half of the unit sphere <m>x^2 + y^2 + z^2 = 1</m>,
           with gnomonic projection from the unit sphere to the plane z = 1, to
           deduce a bijection between the unit disk and the (infinite) plane.
-        </p></li>
-    </ol>
+        </p>
+      </statement>
+    </exercise>
   </exercises>
 </section>

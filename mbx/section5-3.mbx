@@ -425,59 +425,84 @@
   </exercise>
   <exercises>
     Give inductive proofs of the following
-
     <ol>
-      <li><p>
+      <li>
+        <p>
           <m>\forall x \in \Naturals, \; 3 \divides x^3-x</m>
-        </p></li>
+        </p>
+      </li>
 
-      <li><p>
+      <li>
+        <p>
           <m>\forall x \in \Naturals, \; 3 \divides x^3+5x</m>
-        </p></li>
+        </p>
+      </li>
 
-      <li><p>
+      <li>
+        <p>
           <m>\forall x \in \Naturals, \; 11 \divides x^{11}+10x</m>
-        </p></li>
+        </p>
+      </li>
 
-      <li><p>
+      <li>
+        <p>
           <m>\forall n \in \Naturals, \; 3 \divides 4^n-1</m>
-        </p></li>
+        </p>
+      </li>
 
-      <li><p>
+      <li>
+        <p>
           <m>\forall n \in \Naturals, \; 6 \divides (3n^{2}+3n-12)</m>
-        </p></li>
+        </p>
+      </li>
 
-      <li><p>
+      <li>
+        <p>
           <m>\forall n \in \Naturals, \; 5 \divides (n^{5}-5n^{3}+14n)</m>
-        </p></li>
+        </p>
+      </li>
 
-      <li><p>
+      <li>
+        <p>
           <m>\forall n \in \Naturals, \; 4 \divides (13^{n}+4n-1)</m>
-        </p></li>
+        </p>
+      </li>
 
-      <li><p>
+      <li>
+        <p>
           <m>\forall n \in \Naturals, \; 7 \divides 8^n+6</m>
-        </p></li>
+        </p>
+      </li>
 
-      <li><p>
+      <li>
+        <p>
           <m>\forall n \in \Naturals, \; 6 \divides 2n^3 - 2n - 12</m>
-        </p></li>
+        </p>
+      </li>
 
-      <li><p>
+      <li>
+        <p>
           <m>\forall n \geq 3 \in \Naturals, \; 3n^2+3n+1 \lt  2n^3</m>
-        </p></li>
+        </p>
+      </li>
 
-      <li><p>
+      <li>
+        <p>
           <m>\forall n > 3 \in \Naturals, \; n^3 \lt  3^n</m>
-        </p></li>
+        </p>
+      </li>
 
-      <li><p>
+      <li>
+        <p>
           <m>\forall n \geq 3 \in \Naturals, \; n^{3}+3>n^{2}+3n+1</m>
-        </p></li>
+        </p>
+      </li>
 
-      <li><p>
+      <li>
+        <p>
           <m>\forall x \geq 4 \in \Naturals, \; x^22^x \leq 4^x</m>
-        </p></li>
+        </p>
+      </li>
     </ol>
   </exercises>
 </section>

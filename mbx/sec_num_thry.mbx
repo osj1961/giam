@@ -188,26 +188,33 @@
     </definition>
 
     <p>
-    In spoken language the symbol <m>d \divides n</m> can be translated in a variety
-    of ways:
+      In spoken language the symbol <m>d \divides n</m> can be translated in a variety
+      of ways:
+      <ul>
+        <li>
+          <p>
+            <m>d</m> is a divisor of <m>n</m>.
+          </p>
+        </li>
 
-    <ul>
-      <li><p>
-          <m>d</m> is a divisor of <m>n</m>.
-        </p></li>
+        <li>
+          <p>
+            <m>d</m> divides <m>n</m> evenly.
+          </p>
+        </li>
 
-      <li><p>
-          <m>d</m> divides <m>n</m> evenly.
-        </p></li>
+        <li>
+          <p>
+            <m>d</m> is a factor of <m>n</m>.
+          </p>
+        </li>
 
-      <li><p>
-          <m>d</m> is a factor of <m>n</m>.
-        </p></li>
-
-      <li><p>
-          <m>n</m> is an integer multiple of <m>d</m>.
-        </p></li>
-    </ul>
+        <li>
+          <p>
+            <m>n</m> is an integer multiple of <m>d</m>.
+          </p>
+        </li>
+      </ul>
     </p>
 
     <p>
@@ -431,7 +438,8 @@
       provides a convenient way to calculate small binomial coefficients
     </p>
 
-    <table>
+    <table xml:id="fig_pascal" >
+      <caption>The first <m>5</m> rows of Pascal's triangle (which are numbered 0 through 4 \ldots).</caption>
       <tabular>
         <row>
           <cell></cell>
@@ -490,8 +498,6 @@
         </row>
       </tabular>
       \vspace{.2in}
-
-      \caption[Pascal's triangle.]{The first <m>5</m> rows of Pascal's triangle (which are numbered 0 through 4 \ldots).}
     </table>
 
     <p>
@@ -573,104 +579,132 @@
       </statement>
     </exercise>
     <exercises>
-
-      <ol>
-      <li><p>
-          An integer <m>n</m> is <index><main>doubly-even</main></index> <em>doubly-even</em> 
-          if it is even, and the integer <m>m</m> guaranteed to exist because 
-          <m>n</m> is even is itself even.  Is 0 doubly-even?  What are the 
-          first 3 positive, doubly-even integers?
-
-
-
-          \hint{Answers: yes, 0,4 and 8.}
-        </p></li>
-
-      <li><p>
-          Dividing an integer by two has an interesting interpretation
-          when using binary notation: simply shift the digits to the right.
-          Thus, <m>22 = 10110_2</m> when divided by two gives <m>1011_2</m> which is
-          <m>8+2+1=11</m>.  How can you recognize a doubly-even integer from
-          its binary representation?
-
-
-
-          \hint{Even numbers have a zero in their units place. What digit must also be zero in a doubly-even number's binary representation?}
-        </p></li>
-
-      <li><p>
-          The <index><main>octal representation</main></index> <em>octal</em> representation 
-          of an integer uses powers of 8 in place notation.  The digits of an 
-          octal number run from 0 to 7, one never sees 8's or 9's.  How would 
-          you represent 8 and 9 as octal numbers?  What octal number comes 
-          immediately after <m>777_8</m>?  What (decimal) number is <m>777_8</m>?
-
-
-
-
-
-          \hint{Eight is <m>10_8</m>, nine is <m>11_8</m>. The point of asking questions about <m>777</m>, is that (in octal) <m>7</m> is the digit that is analogous to <m>9</m> in base-<m>10</m>. Thus <m>777_8</m> is something like <m>999_{10}</m> in that the number following both of them is written <m>1000</m> (although <m>1000_8</m> and <m>1000_{10}</m> are certainly not equal!)}
-        </p></li>
-
-      <li><p>
-          One method of converting from decimal to some other base is
-          called <index><main>repeated division algorithm</main></index> <em>repeated division</em>.  
-          One divides the number by the base
-          and records the remainder <mdash /> one then divides the quotient obtained
-          by the base and records the remainder.  Continue dividing the 
-          successive quotients by the base until the quotient is smaller than
-          the base.  Convert 3267 to base-7 using repeated division.  Check 
-          your answer by using the meaning of base-7 place notation.  (For
-          example <m>54321_7</m> means <m>5\cdot7^4 + 4\cdot7^3 + 3 \cdot7^2 +
-          2\cdot7^1 + 1\cdot7^0</m>.)
-
-
-
-          \hint{It is helpful to write something of the form <m>n = qd+r</m> at each stage. The first two stages should look like
-          <me>
-            3267 \; = \; 466 \cdot 7 + 5
-          </me>
-          <me>
-            466 \; = \; 66 \cdot 7 + 4
-          </me>
-          you do the rest<ellipsis />
-          }
-        </p></li>
-
-      <li><p>
-          State a theorem about the octal representation of even numbers.
-
-
-
-          \hint{One possibility is to mimic the result for base-10 that an even number always ends in 0,2,4,6 or 8.}
-        </p></li>
-
-      <li><p>
-          In hexadecimal (base-16) notation one needs 16 <q>digits,</q> the
+      <exercise>
+        <statement>
+          <p>
+            An integer <m>n</m> is <index><main>doubly-even</main></index> <em>doubly-even</em>
+            if it is even, and the integer <m>m</m> guaranteed to exist because
+            <m>n</m> is even is itself even. Is 0 doubly-even? What are the
+            first 3 positive, doubly-even integers?
+          </p>
+        </statement>
+        <hint>
+          <p>
+            Answers: yes, 0,4 and 8.
+          </p>
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Dividing an integer by two has an interesting interpretation
+            when using binary notation: simply shift the digits to the right.
+            Thus, <m>22 = 10110_2</m> when divided by two gives <m>1011_2</m> which is
+            <m>8+2+1=11</m>. How can you recognize a doubly-even integer from
+            its binary representation?
+          </p>
+        </statement>
+        <hint>
+          <p>
+            Even numbers have a zero in their units place. What digit must also be zero in a doubly-even number's binary representation?
+          </p>
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            The <index><main>octal representation</main></index> <em>octal</em> representation
+            of an integer uses powers of 8 in place notation. The digits of an
+            octal number run from 0 to 7, one never sees 8's or 9's. How would
+            you represent 8 and 9 as octal numbers? What octal number comes
+            immediately after <m>777_8</m>? What (decimal) number is <m>777_8</m>?
+          </p>
+        </statement>
+        <hint>
+          <p>
+            Eight is <m>10_8</m>, nine is <m>11_8</m>. The point of asking questions about <m>777</m>, is that (in octal) <m>7</m> is the digit that is analogous to <m>9</m> in base-<m>10</m>. Thus <m>777_8</m> is something like <m>999_{10}</m> in that the number following both of them is written <m>1000</m> (although <m>1000_8</m> and <m>1000_{10}</m> are certainly not equal!)
+          </p>
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            One method of converting from decimal to some other base is
+            called <index><main>repeated division algorithm</main></index> <em>repeated division</em>.
+            One divides the number by the base
+            and records the remainder <mdash /> one then divides the quotient obtained
+            by the base and records the remainder. Continue dividing the
+            successive quotients by the base until the quotient is smaller than
+            the base. Convert 3267 to base-7 using repeated division. Check
+            your answer by using the meaning of base-7 place notation. (For
+            example <m>54321_7</m> means <m>5\cdot7^4 + 4\cdot7^3 + 3 \cdot7^2 +
+            2\cdot7^1 + 1\cdot7^0</m>.)
+          </p>
+        </statement>
+        <hint>
+          <p>
+            It is helpful to write something of the form <m>n = qd+r</m> at each stage. The first two stages should look like
+            <me>
+              3267 \; = \; 466 \cdot 7 + 5
+            </me>
+            <me>
+              466 \; = \; 66 \cdot 7 + 4
+            </me>
+            you do the rest<ellipsis />
+          </p>
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            State a theorem about the octal representation of even numbers.
+          </p>
+        </statement>
+        <hint>
+          <p>
+            One possibility is to mimic the result for base-10 that an even number always ends in 0,2,4,6 or 8.
+          </p>
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            In hexadecimal (base-16) notation one needs 16 <q>digits,</q> the
             ordinary digits are used for 0 through 9, and the letters A through
-            F are used to give single symbols for 10 through 15.  The first  32
+            F are used to give single symbols for 10 through 15. The first 32
             natural number in hexadecimal are:
             1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,10,11,12,13,14,15,16, 17,18,19,1A,
-            1B,1C,1D,1E,1F,20. 
+            1B,1C,1D,1E,1F,20.
+          </p>
 
+          <p>
             Write the next 10 hexadecimal numbers after <m>AB</m>.
+          </p>
 
+          <p>
             Write the next 10 hexadecimal numbers after <m>FA</m>.
-
-          \hint{As a check, the tenth number after AB is B5.
-          The tenth hexadecimal number after FA is 104.}
-        </p></li>
-
-      <li><p>
-          For conversion between the three bases used most often in 
-          Computer Science we can take binary as the <q>standard</q> base and 
-          convert using a table look-up.  Each octal digit will correspond 
-          to a binary triple, and each hexadecimal digit will correspond to 
-          a 4-tuple of binary numbers.  Complete the following tables.  
-          (As a check, the 4-tuple next to <m>A</m> in the table for
-          hexadecimal should be 1010 <mdash /> which is nice since <m>A</m> 
-          is really 10 so if you read that as <q>ten-ten</q> it is a good 
-          aid to memory.)
+          </p>
+        </statement>
+        <hint>
+          <p>
+            As a check, the tenth number after AB is B5.
+            The tenth hexadecimal number after FA is 104.
+          </p>
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            For conversion between the three bases used most often in
+            Computer Science we can take binary as the <q>standard</q> base and
+            convert using a table look-up. Each octal digit will correspond
+            to a binary triple, and each hexadecimal digit will correspond to
+            a 4-tuple of binary numbers. Complete the following tables.
+            (As a check, the 4-tuple next to <m>A</m> in the table for
+            hexadecimal should be 1010 <mdash /> which is nice since <m>A</m>
+            is really 10 so if you read that as <q>ten-ten</q> it is a good
+            aid to memory.)
+          </p>
           <tabular>
           <row>
           <cell><tabular>
@@ -896,211 +930,292 @@
           </tabular></cell>
           </row>
           </tabular>
-          \hint{
-
-
-
-          This is just counting in binary. Remember the sanity check that the hexadecimal digit A is represented by 1010 in binary.  (<m>10_{10} \; = \; A_{16} \; = \; 1010_{2}</m>)
-
-
-
-          }
-        </p></li>
-
-      <li><p>
-      Use the tables from the previous problem to make the following conversions.
-
-      <ol>
-        <li><p>
-            Convert <m>757_8</m> to binary.
-          </p></li>
-
-        <li><p>
-            Convert <m>1007_8</m> to hexadecimal.
-          </p></li>
-
-        <li><p>
-            Convert <m>100101010110_2</m> to octal.
-          </p></li>
-
-        <li><p>
-            Convert <m>1111101000110101_2</m> to hexadecimal.
-          </p></li>
-
-        <li><p>
-            Convert <m>FEED_{16}</m> to binary.
-          </p></li>
-
-        <li><p>
-            Convert <m>FFFFFF_{16}</m> to octal.
-          </p></li>
-      </ol>
+        </statement>
+        <hint>
+          <p>
+            This is just counting in binary. Remember the sanity check that the hexadecimal digit A is represented by 1010 in binary. (<m>10_{10} \; = \; A_{16} \; = \; 1010_{2}</m>)
+          </p>
+        </hint>
+      </exercise>
+      <exercise>
+      <statement>
+        <p>
+          Use the tables from the previous problem to make the following conversions.
+          <ol>
+            \end{exercise}
+            <exercise>
+              <p>
+                Convert <m>757_8</m> to binary.
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+              <p>
+                Convert <m>1007_8</m> to hexadecimal.
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+              <p>
+                Convert <m>100101010110_2</m> to octal.
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+              <p>
+                Convert <m>1111101000110101_2</m> to hexadecimal.
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+              <p>
+                Convert <m>FEED_{16}</m> to binary.
+              </p>
+            </statement>
+          </exercise>
+          \begin{exercise} Convert <m>FFFFFF_{16}</m> to octal.
+        </ol>
       </p>
-
-      \hint{Answers for the first three:
-      <me>
-        757_8 = 111 101 111_2
-      </me>
-      <me>
-        1007_8 = 001 000 000 111_2 = 0010 0000 0111_2 = 207_{16}
-      </me>
-      <me>
-        100 101 010 110_2 = 4526_8
-      </me>
-      }</li>
-
-      <li><p>
-      Try the following conversions between various number systems:
-
-      <ol>
-        <li><p>
-            Convert <m>30</m> (base 10) to binary.
-          </p></li>
-
-        <li><p>
-            Convert <m>69</m> (base 10) to base 5.
-          </p></li>
-
-        <li><p>
-            Convert <m>1222_3</m> to binary.
-          </p></li>
-
-        <li><p>
-            Convert <m>1234_7</m> to base 10.
-          </p></li>
-
-        <li><p>
-            Convert <m>EEED_{15}</m> to base 12. (Use <m>\{1, 2, 3 \ldots 9, d, e\}</m> as the digits in base 12.)
-          </p></li>
-
-        <li><p>
-            Convert <m>678_{9}</m> to hexadecimal.
-          </p></li>
-      </ol>
-      </p></li>
-
-      <li><p>
-          It is a well known fact that if a number is divisible by 3, then 3
-            divides the sum of the (decimal) digits of that number.  Is this
-            result true in base 7?  Do you think this result is true in <em>any</em> base? 
- 
- 
- 
-          \hint{Might this effect have something to do with 10 being just one bigger than 9 (a multiple of 3)?}
-        </p></li>
-
-      <li><p>
-          Suppose that 340 pounds of sand must be placed into bags having
-            a 50 pound capacity.  Write an expression using either floor or
-            ceiling notation for the number of bags required.
-
-
-
-          \hint{Seven 50 pound bags would hold 350 pounds of sand. They'd also be able to handle 340 pounds!}
-        </p></li>
-
-      <li><p>
-          True or false?
+      <hint>
+        <p>
+          Answers for the first three:
           <me>
-            \left\lfloor \frac{n}{d}\right\rfloor \lt  \left\lceil \frac{n}{d}\right\rceil
+            757_8 = 111 101 111_2
           </me>
-          for all integers <m>n</m> and <m>d>0</m>. Support your claim.
-
-
-
-          \hint{You have to try a bunch of examples.  You should try to make sure the examples
-          you try cover all the possibilities.  The pairs that provide counterexamples (i.e. show the statement is false in general) are relatively sparse, so be systematic.}
-        </p></li>
-
-      <li><p>
-          What is the value of <m>\lceil\pi\rceil^{2}-\lceil\pi^{2}\rceil</m>?
-
-
-
-          \hint{ <m>\pi^2 = 9.8696</m> }
-        </p></li>
-
-      <li><p>
-          Assuming the symbols <m>n</m>,<m>d</m>,<m>q</m> and <m>r</m> have meanings as in the
-            quotient-remainder theorem (see page 29 of GIAM ).  Write
+          <me>
+            1007_8 = 001 000 000 111_2 = 0010 0000 0111_2 = 207_{16}
+          </me>
+          <me>
+            100 101 010 110_2 = 4526_8
+          </me>
+        </p>
+      </hint>
+      </exercise>
+      <exercise>
+      <statement>
+        <p>
+          Try the following conversions between various number systems:
+          <ol>
+            \end{exercise}
+            <exercise>
+              <p>
+                Convert <m>30</m> (base 10) to binary.
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+              <p>
+                Convert <m>69</m> (base 10) to base 5.
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+              <p>
+                Convert <m>1222_3</m> to binary.
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+              <p>
+                Convert <m>1234_7</m> to base 10.
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+              <p>
+                Convert <m>EEED_{15}</m> to base 12. (Use <m>\{1, 2, 3 \ldots 9, d, e\}</m> as the digits in base 12.)
+              </p>
+            </statement>
+          </exercise>
+          \begin{exercise} Convert <m>678_{9}</m> to hexadecimal.
+        </ol>
+      </p>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            It is a well known fact that if a number is divisible by 3, then 3
+            divides the sum of the (decimal) digits of that number. Is this
+            result true in base 7? Do you think this result is true in <em>any</em> base?
+          </p>
+        </statement>
+        <hint>
+          <p>
+            Might this effect have something to do with 10 being just one bigger than 9 (a multiple of 3)?
+          </p>
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Suppose that 340 pounds of sand must be placed into bags having
+            a 50 pound capacity. Write an expression using either floor or
+            ceiling notation for the number of bags required.
+          </p>
+        </statement>
+        <hint>
+          <p>
+            Seven 50 pound bags would hold 350 pounds of sand. They'd also be able to handle 340 pounds!
+          </p>
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            True or false?
+            <me>
+              \left\lfloor \frac{n}{d}\right\rfloor \lt  \left\lceil \frac{n}{d}\right\rceil
+            </me>
+            for all integers <m>n</m> and <m>d>0</m>. Support your claim.
+          </p>
+        </statement>
+        <hint>
+          <p>
+            You have to try a bunch of examples. You should try to make sure the examples
+            you try cover all the possibilities. The pairs that provide counterexamples (i.e. show the statement is false in general) are relatively sparse, so be systematic.
+          </p>
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            What is the value of <m>\lceil\pi\rceil^{2}-\lceil\pi^{2}\rceil</m>?
+          </p>
+        </statement>
+        <hint>
+          <p>
+            <m>\pi^2 = 9.8696</m>
+          </p>
+        </hint>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Assuming the symbols <m>n</m>,<m>d</m>,<m>q</m> and <m>r</m> have meanings as in the
+            quotient-remainder theorem (see page 29 of GIAM ). Write
             expressions for <m>q</m> and <m>r</m>, in terms of <m>n</m> and <m>d</m> using floor
             and/or ceiling notation.
-
-
-
-          \hint{I just can't bring myself to spoil this one for you, you really need to work this out on your own. }
-        </p></li>
-
-      <li><p>
-      Calculate the following quantities:
-
-      <ol>
-        <li><p>
-            <m>3 \mod 5</m>
-          </p></li>
-
-        <li><p>
-            <m>37 \mod 7</m>
-          </p></li>
-
-        <li><p>
-            <m>1000001 \mod 100000</m>
-          </p></li>
-
-        <li><p>
-            <m>6 \tdiv 6</m>
-          </p></li>
-
-        <li><p>
-            <m>7 \tdiv 6</m>
-          </p></li>
-
-        <li><p>
-            <m>1000001 \tdiv 2</m>
-          </p></li>
-      </ol>
+          </p>
+        </statement>
+        <hint>
+          <p>
+            I just can't bring myself to spoil this one for you, you really need to work this out on your own.
+          </p>
+        </hint>
+      </exercise>
+      <exercise>
+      <statement>
+        <p>
+          Calculate the following quantities:
+          <ol>
+            \end{exercise}
+            <exercise>
+              <p>
+                <m>3 \mod 5</m>
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+              <p>
+                <m>37 \mod 7</m>
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+              <p>
+                <m>1000001 \mod 100000</m>
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+              <p>
+                <m>6 \tdiv 6</m>
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+              <p>
+                <m>7 \tdiv 6</m>
+              </p>
+            </statement>
+          </exercise>
+          \begin{exercise}  <m>1000001 \tdiv 2</m>
+        </ol>
       </p>
-
-      \hint{The even numbered ones are 2, 1, 500000.}</li>
-
-      <li><p>
-      Calculate the following binomial coefficients:
-
-      <ol>
-        <li><p>
-            <m>\binom{3}{0}</m>
-          </p></li>
-
-        <li><p>
-            <m>\binom{7}{7}</m>
-          </p></li>
-
-        <li><p>
-            <m>\binom{13}{5}</m>
-          </p></li>
-
-        <li><p>
-            <m>\binom{13}{8}</m>
-          </p></li>
-
-        <li><p>
-            <m>\binom{52}{7}</m>
-          </p></li>
-      </ol>
+      <hint>
+        <p>
+          The even numbered ones are 2, 1, 500000.
+        </p>
+      </hint>
+      </exercise>
+      <exercise>
+      <statement>
+        <p>
+          Calculate the following binomial coefficients:
+          <ol>
+            \end{exercise}
+            <exercise>
+              <p>
+                <m>\binom{3}{0}</m>
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+              <p>
+                <m>\binom{7}{7}</m>
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+              <p>
+                <m>\binom{13}{5}</m>
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+              <p>
+                <m>\binom{13}{8}</m>
+              </p>
+            </statement>
+          </exercise>
+          \begin{exercise}  <m>\binom{52}{7}</m>
+        </ol>
       </p>
-
-      \hint{The even numbered ones are 1 and 1287. The TI-84 calculates binomial coefficients. The symbol used is <c>nCr</c> (which is placed between the numbers <mdash /> i.e. it is an infix operator). You get <c>nCr</c> as the 3rd item in the <c>PRB</c> menu under <c>MATH</c>. In sage the command is <c>binomial(n,k)</c>.}</li>
-
-      <li><p>
-          An ice cream shop sells the following flavors: chocolate, vanilla, 
-          strawberry, coffee, butter pecan, mint chocolate chip and raspberry.
-          How many different bowls of ice cream <mdash /> with three scoops <mdash /> can they make?  
-
-
-
-          \hint{You're choosing three things out of a set of size seven<ellipsis />}
-        </p></li>
-      </ol>
+      <hint>
+        <p>
+          The even numbered ones are 1 and 1287. The TI-84 calculates binomial coefficients. The symbol used is <c>nCr</c> (which is placed between the numbers <mdash /> i.e. it is an infix operator). You get <c>nCr</c> as the 3rd item in the <c>PRB</c> menu under <c>MATH</c>. In sage the command is <c>binomial(n,k)</c>.
+        </p>
+      </hint>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            An ice cream shop sells the following flavors: chocolate, vanilla,
+            strawberry, coffee, butter pecan, mint chocolate chip and raspberry.
+            How many different bowls of ice cream <mdash /> with three scoops <mdash /> can they make?
+          </p>
+        </statement>
+        <hint>
+          <p>
+            You're choosing three things out of a set of size seven<ellipsis />
+          </p>
+        </hint>
+      </exercise>
     </exercises>
   </subsection>
 </section>

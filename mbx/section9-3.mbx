@@ -7,12 +7,14 @@
     the same size.</q> It's not that hard, and after a while most people come
     up with
   </p>
-  <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+  <image source="images/f5eac7982895dd63dc40948606194f5c563b300d.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
     \reset@font\fontsize{#1}{#2pt}
     \fontfamily{#3}\fontseries{#4}\fontshape{#5}
     \selectfont}\fi
-  <image source="images/52637fedbd2fc34b78317ac81b2180e00d1e48e8.png"/>
+  </p>
+  <image source="images/0b4f032a368ed2c2c82f8800cf4c86ed17d6e399.png"/>
   <p>
     The kicker comes when you next ask them to <q>use six matches to form
     4 (equal sized) triangles.</q> There's a picture of the solution to
@@ -47,15 +49,10 @@
     <xref ref="fig_monge1">Figure</xref>. So, uhmm, just have a look<ellipsis />
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/74deff9eac9f5b7da63197a9d357535da645f955.png"/>
-    \caption[Setup for Monge's circle theorem.]{The setup for Monge's circle theorem: three randomly placed circles <mdash /> we are also showing the external tangents to
-    one pair of circles.}
+  <figure xml:id="fig_monge1" >
+    <caption>The setup for Monge's circle theorem: three randomly placed circles <mdash /> we are also showing the external tangents to
+    one pair of circles.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -85,16 +82,11 @@
     external tangents lie on a line (shown dashed in the figure).
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/c26dbe1c132cd49151d97680803b6a78f9cc1bc3.png"/>
-    \caption[Example of Monge's circle theorem.]{An example of Monge's 
+  <figure xml:id="fig_monge2" >
+    <caption>An example of Monge's 
     circle theorem.  The three pairs of external 
-    tangents to the circles intersect in points which are collinear.}
+    tangents to the circles intersect in points which are collinear.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -139,22 +131,23 @@
     cones!
   </p>
 
-  <figure>
+  <figure xml:id="fig_4triangles" >
+    <caption>Six matchstick (actually, pencils are a lot easier to hold) can be arranged three-dimensionally to create
+    four triangles.</caption>
     <image width="100%" source="images/pencil_tetrahedron.png" />
-    \caption[Four triangles bounded by 6 line segments]{Six matchstick (actually, pencils are a lot easier to hold) can be arranged three-dimensionally to create
-    four triangles.}
   </figure>
 
   <exercises>
-
-    <ol>
-      <li><p>
+    <exercise>
+      <statement>
+        <p>
           There is a scenario where the proof we have sketched for
-          Monge's circle theorem doesn't really work.  Can you envision it?
+          Monge's circle theorem doesn't really work. Can you envision it?
           Hint: consider two relatively large spheres and one that is quite
           small.
-        </p></li>
-    </ol>
+        </p>
+      </statement>
+    </exercise>
   </exercises>
   <p>
     \phantomsection

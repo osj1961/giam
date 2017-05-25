@@ -162,50 +162,67 @@
   <exercises>
     Write two-column proofs that verify each of the following
     logical equivalences.
-
     <ol>
-      <li><p>
+      <li>
+        <p>
           <m>A \lor (A \land B) \; \cong \; A \land (A \lor B)</m>
-        </p></li>
+        </p>
+      </li>
 
-      <li><p>
+      <li>
+        <p>
           <m>(A \land {\lnot}B) \lor A \; \cong \; A</m>
-        </p></li>
+        </p>
+      </li>
 
-      <li><p>
+      <li>
+        <p>
           <m>A \lor B \; \cong \; A \lor ({\lnot}A \land B)</m>
-        </p></li>
+        </p>
+      </li>
 
-      <li><p>
+      <li>
+        <p>
           <m>{\lnot}(A \lor {\lnot}B) \lor ({\lnot}A \land {\lnot}B) \; \cong \; {\lnot}A</m>
-        </p></li>
+        </p>
+      </li>
 
-      <li><p>
+      <li>
+        <p>
           <m>A \; \cong \; A \land ((A \lor {\lnot}B) \lor (A \lor B))</m>
-        </p></li>
+        </p>
+      </li>
 
-      <li><p>
+      <li>
+        <p>
           <m>(A \land {\lnot}B) \land ({\lnot}A \lor B) \; \cong \; c</m>
-        </p></li>
+        </p>
+      </li>
 
-      <li><p>
+      <li>
+        <p>
           <m>A \; \cong \; A \land (A \lor (A \land (B \lor C)))</m>
-        </p></li>
+        </p>
+      </li>
 
-      <li><p>
+      <li>
+        <p>
           <m>{\lnot}(A \land B) \land {\lnot}(A \land C) \; \cong \; {\lnot}A \lor ({\lnot}B \land {\lnot}C)</m>
-        </p></li>
+        </p>
+      </li>
     </ol>
-    \hint{
-    Here's the last one:
+    <hint>
+      <p>
+        Here's the last one:
+      </p>
 
-    <proof>
+      <proof>
       <p>
         <m>{\lnot}(A \land B) \land {\lnot}(A \land C)</m>
       </p>
 
       <p>
-        \text{ DeMorgan's law (times 2) }
+        DeMorgan's law (times 2)
       </p>
 
       <p>
@@ -213,14 +230,13 @@
       </p>
 
       <p>
-        \text{ Distributive law }
+        Distributive law
       </p>
 
       <p>
         <m>\equiv    {\lnot}A \lor ({\lnot}B \land {\lnot}C)</m>
       </p>
-    </proof>
-
-    }
+      </proof>
+    </hint>
   </exercises>
 </section>

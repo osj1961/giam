@@ -12,21 +12,26 @@
   </p>
 
   <p>
-  A relation that has three of the properties we'll discuss:
+    A relation that has three of the properties we'll discuss:
+    <ol>
+      <li>
+        <p>
+          <index><main>reflexivity</main></index> reflexivity
+        </p>
+      </li>
 
-  <ol>
-    <li><p>
-        <index><main>reflexivity</main></index> reflexivity
-      </p></li>
+      <li>
+        <p>
+          <index><main>symmetry</main></index>symmetry
+        </p>
+      </li>
 
-    <li><p>
-        <index><main>symmetry</main></index>symmetry
-      </p></li>
-
-    <li><p>
-        <index><main>transitivity</main></index>transitivity
-      </p></li>
-  </ol>
+      <li>
+        <p>
+          <index><main>transitivity</main></index>transitivity
+        </p>
+      </li>
+    </ol>
   </p>
 
   <p>
@@ -35,21 +40,26 @@
   </p>
 
   <p>
-  A relation that has another set of three properties:
+    A relation that has another set of three properties:
+    <ol>
+      <li>
+        <p>
+          <index><main>reflexivity</main></index>reflexivity
+        </p>
+      </li>
 
-  <ol>
-    <li><p>
-        <index><main>reflexivity</main></index>reflexivity
-      </p></li>
+      <li>
+        <p>
+          <index><main>anti-symmetry</main></index>anti-symmetry
+        </p>
+      </li>
 
-    <li><p>
-        <index><main>anti-symmetry</main></index>anti-symmetry
-      </p></li>
-
-    <li><p>
-        <index><main>transitivity</main></index>transitivity
-      </p></li>
-  </ol>
+      <li>
+        <p>
+          <index><main>transitivity</main></index>transitivity
+        </p>
+      </li>
+    </ol>
   </p>
 
   <p>
@@ -69,53 +79,43 @@
     we tried to define them for a relation from a set to a different set.
   </p>
 
-  <table>
+  <table xml:id="tab_rel_props" >
+    <caption>Properties that relations may (or may not) have.</caption>
     <tabular>
       <row bottom="minor">
         <cell></cell>
       </row>
       <row>
-        <cell>\begin{minipage}{.95\textwidth} \A relation <m>\relR</m> on a set <m>S</m> is <em>reflexive</em> iff  
-         \<m>\displaystyle \forall a \in S,  a \relR a</m>  
-         <q>Everything is related to itself.</q></cell>
+        <cell>\begin{minipage}{.95\textwidth} A relation <m>\relR</m> on a set <m>S</m> is <em>reflexive</em> iff<m>\displaystyle \forall a \in S,  a \relR a</m><q>Everything is related to itself.</q></cell>
       </row>
       <row bottom="minor">
         <cell></cell>
       </row>
       <row>
-        <cell>\begin{minipage}{.95\textwidth} \A relation <m>\relR</m> on a set <m>S</m> is <em>irreflexive</em> iff 
-         \<m>\displaystyle \forall a \in S,  a \nrelR a</m>  
-         <q>Nothing is related to itself.</q></cell>
+        <cell>\begin{minipage}{.95\textwidth} A relation <m>\relR</m> on a set <m>S</m> is <em>irreflexive</em> iff<m>\displaystyle \forall a \in S,  a \nrelR a</m> <q>Nothing is related to itself.</q></cell>
       </row>
       <row bottom="minor">
         <cell></cell>
       </row>
       <row>
-        <cell>\begin{minipage}{.95\textwidth} \A relation <m>\relR</m> on a set <m>S</m> is <em>symmetric</em> iff 
-         \<m>\displaystyle \forall a,b \in S,  a \relR b \; \implies \; b \relR a</m>  
-         <q>No one-way streets.</q></cell>
+        <cell>\begin{minipage}{.95\textwidth} A relation <m>\relR</m> on a set <m>S</m> is <em>symmetric</em> iff<m>\displaystyle \forall a,b \in S,  a \relR b \; \implies \; b \relR a</m> <q>No one-way streets.</q></cell>
       </row>
       <row bottom="minor">
         <cell></cell>
       </row>
       <row>
-        <cell>\begin{minipage}{.95\textwidth} \A relation <m>\relR</m> on a set <m>S</m> is <em>anti-symmetric</em> iff 
-         \<m>\displaystyle \forall a,b \in S,  a \relR b \; \land b \relR a  \implies  a=b</m> 
-         <q>Only one-way streets.</q></cell>
+        <cell>\begin{minipage}{.95\textwidth} A relation <m>\relR</m> on a set <m>S</m> is <em>anti-symmetric</em> iff<m>\displaystyle \forall a,b \in S,  a \relR b \; \land b \relR a  \implies  a=b</m><q>Only one-way streets.</q></cell>
       </row>
       <row bottom="minor">
         <cell></cell>
       </row>
       <row>
-        <cell>\begin{minipage}{.95\textwidth} \A relation <m>\relR</m> on a set <m>S</m> is <em>transitive</em> iff 
-         \<m>\displaystyle \forall a,b,c \in S,  a \relR b \; \land \; b \relR c  \implies  a \relR c</m>  
-         <q>Whenever there's a roundabout route, there's a direct route.</q></cell>
+        <cell>\begin{minipage}{.95\textwidth} A relation <m>\relR</m> on a set <m>S</m> is <em>transitive</em> iff<m>\displaystyle \forall a,b,c \in S,  a \relR b \; \land \; b \relR c  \implies  a \relR c</m> <q>Whenever there's a roundabout route, there's a direct route.</q></cell>
       </row>
       <row bottom="minor">
         <cell></cell>
       </row>
     </tabular>
-    \caption[Properties of relations.]{Properties that relations may (or may not) have.}
     <index><main>Properties of relations</main></index>
   </table>
 
@@ -176,12 +176,14 @@
     a relation this means that the following digraph <em>is</em> the digraph of a symmetric
     relation (although it is neither reflexive nor irreflexive).
   </p>
-  <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+  <image source="images/6fe00a598149fe09d35b3aa7efeb23736a49259e.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
     \reset@font\fontsize{#1}{#2pt}
     \fontfamily{#3}\fontseries{#4}\fontshape{#5}
     \selectfont}\fi
-  <image source="images/67472c3d737d99b38f2b47b3fd60beecaf5ef376.png"/>
+  </p>
+  <image source="images/af095404b11ebde97b0de84e62dee6faf7f5d322.png"/>
   <p>
     Anti-symmetry is described as meaning <q>only one-way streets</q> but the definition is given
     as:
@@ -189,7 +191,7 @@
 
   <blockquote>
   A relation <m>\relR</m> on a set <m>S</m> is <em>anti-symmetric</em> iff 
-  \<m>\displaystyle \forall a,b \in S,  a \relR b \; \land b \relR a  \implies  a=b</m>.
+  <m>\displaystyle \forall a,b \in S,  a \relR b \; \land b \relR a  \implies  a=b</m>.
   </blockquote>
 
   <p>
@@ -200,7 +202,7 @@
 
   <blockquote>
   (Alternate definition) A relation <m>\relR</m> on a set <m>S</m> is <em>anti-symmetric</em> iff 
-  \<m>\displaystyle \forall a,b \in S,  a \relR b \; \implies \; b \nrelR a</m>.
+  <m>\displaystyle \forall a,b \in S,  a \relR b \; \implies \; b \nrelR a</m>.
   </blockquote>
 
   <p>
@@ -240,7 +242,7 @@
 
   <blockquote>
   A relation <m>\relR</m> on a set <m>S</m> is <em>transitive</em> iff 
-  \<m>\displaystyle \forall a,b,c \in S,  a \relR b \; \land \; b \relR c  \implies  a \relR c</m>
+  <m>\displaystyle \forall a,b,c \in S,  a \relR b \; \land \; b \relR c  \implies  a \relR c</m>
   </blockquote>
 
   <p>
@@ -272,84 +274,110 @@
   <p>
     If a relation <m>\relR</m> is reflexive we will never see a node that doesn't have a loop.
   </p>
-  <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+  <image source="images/96638a5184a52adccae56c363c7e5184a46df0eb.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
     \reset@font\fontsize{#1}{#2pt}
     \fontfamily{#3}\fontseries{#4}\fontshape{#5}
     \selectfont}\fi
-  <image source="images/67472c3d737d99b38f2b47b3fd60beecaf5ef376.png"/>
+  </p>
+  <image source="images/af095404b11ebde97b0de84e62dee6faf7f5d322.png"/>
   <p>
     If a relation <m>\relR</m> is irreflexive we will never see a node that <em>does</em> have a loop!
   </p>
-  <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+  <image source="images/e4757399a574ae944573708eb55e004b9d6a0fc4.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
     \reset@font\fontsize{#1}{#2pt}
     \fontfamily{#3}\fontseries{#4}\fontshape{#5}
     \selectfont}\fi
-  <image source="images/676d8b869c1207d1e90ca0e21e36a31960c22efa.png"/>
+  </p>
+  <image source="images/70b2fa2a97ffdab75f4f77e6e448a108d9b4f088.png"/>
   <p>
     If a relation <m>\relR</m> is symmetric we will never see a pair of nodes that are connected in one
     direction only.
   </p>
-  <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+  <image source="images/86be35e54c1dec77717cd0013a89b7cc5908400a.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
     \reset@font\fontsize{#1}{#2pt}
     \fontfamily{#3}\fontseries{#4}\fontshape{#5}
     \selectfont}\fi
-  <image source="images/723606658130c989e2a80cd94e0e0a8bb3a40478.png"/>
+  </p>
+  <image source="images/ee89b18c703631850043f3e8d67898f56ba7ee2b.png"/>
   <p>
     If a relation <m>\relR</m> is anti-symmetric we will never see a pair of nodes that are connected in both
     directions.
   </p>
-  <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+  <image source="images/6f1dab30dcf5a97f03b9be5fd899782b1f556164.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
     \reset@font\fontsize{#1}{#2pt}
     \fontfamily{#3}\fontseries{#4}\fontshape{#5}
     \selectfont}\fi
-  <image source="images/85a8e3337e6137d4fbf8350620dcef7b3f1b42d5.png"/>
+  </p>
+  <image source="images/0b2f670964b3ff618917e0fc7ff85df9d2d6b1d0.png"/>
   <p>
     If a relation <m>\relR</m> is transitive the thing we will never see is a bit harder to describe.
     There will never be a pair of arrows meeting head to tail <em>without</em> there also being an
     arrow going from the tail of the first to the head of the second.
   </p>
-  <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+  <image source="images/2f31001fc5cf799c930aa0cf45b38edf6f14bcdc.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
     \reset@font\fontsize{#1}{#2pt}
     \fontfamily{#3}\fontseries{#4}\fontshape{#5}
     \selectfont}\fi
-  <image source="images/bc0b953fba8179897e94412c6ab5170f106ce980.png"/>
+  </p>
+  <image source="images/a96df1ef163ebbc111155410857f6261b63fafc3.png"/>
   <exercises>
-
-    <ol>
-      <li><p>
-          Consider the relation <m>\relS</m> defined by 
+    <exercise>
+      <statement>
+        <p>
+          Consider the relation <m>\relS</m> defined by
           <m>\relS = \{ (x,y) \suchthat \; x \, \mbox{is smarter than}  \, y \}</m>.
-          Is <m>\relS</m> symmetric or anti-symmetric?  Explain.
-        </p></li>
-
-      <li><p>
-          Consider the relation <m>\relA</m> defined by 
+          Is <m>\relS</m> symmetric or anti-symmetric? Explain.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Consider the relation <m>\relA</m> defined by
           <m>\relA = \{ (x,y) \suchthat \; x \, \mbox{has the same astrological sign as}  \, y \}</m>.
-          Is <m>\relA</m> symmetric or anti-symmetric?  Explain.
-        </p></li>
-
-      <li><p>
+          Is <m>\relA</m> symmetric or anti-symmetric? Explain.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Explain why both of the relations just described (in problems 1 and 2)
           have the transitive property.
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           For each of the five properties, name a relation that has it
           and a relation that doesn't.
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Show by counterexample that <q><m>\divides</m></q> (divisibility) is not symmetric as a relation on <m>\Integers</m>.
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Prove that <q><m>\divides</m></q> is an ordering relation (you must verify that it is reflexive, anti-symmetric and transitive).
-        </p></li>
-    </ol>
+        </p>
+      </statement>
+    </exercise>
   </exercises>
 </section>

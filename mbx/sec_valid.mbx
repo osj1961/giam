@@ -421,81 +421,97 @@
     we'll have modus ponens.
   </p>
   <exercises>
-
-    <ol>
-    <li><p>
-    Determine the logical form of the following arguments.  Use symbols
-    to express that form and determine whether the form is valid or invalid.
-    If the form is invalid, determine the type of error made.  Comment on the 
-    soundness of the argument as well, in particular, determine whether any of
-    the premises are questionable.
-
-    <ol>
-      <li><p>
-          All who are guilty are in prison. 
-            George is not in prison.  
-            Therefore, George is not guilty.
- 
- 
- 
-            \hint{ 
-            This looks like modus tollens. Let <m>G</m> refer to <q>guilt</q> and <m>P</m> refer to <q>in prison</q>
-          <tabular>
-            <row>
-              <cell></cell>
-              <cell><m>\forall x, G(x) \implies P(x)</m></cell>
-            </row>
-            <row>
-              <cell></cell>
-              <cell><m>{\lnot}P(\mbox{George} )</m></cell>
-            </row>
-            <row bottom="minor">
-              <cell></cell>
-              <cell></cell>
-            </row>
-            <row>
-              <cell><m>\therefore</m></cell>
-              <cell><m>{\lnot}G(\mbox{George} )</m></cell>
-            </row>
-          </tabular>
-          You should note that while the form is valid, there is something terribly wrong with this argument. Is it really true that everyone who is guilty of a crime is in prison?
-          }
-        </p></li>
-
-      <li><p>
-          If one eats oranges one will have high levels of vitamin C. 
-            You do have high levels of vitamin C. 
-            Therefore, you must eat oranges.
-        </p></li>
-
-      <li><p>
-          All fish live in water. 
-            The mackerel is a fish. 
-            Therefore, the mackerel lives in water.
-        </p></li>
-
-      <li><p>
-          If you're lazy, don't take math courses.
-            Everyone is lazy. 
-            Therefore, no one should take math courses.
-        </p></li>
-
-      <li><p>
-          All fish live in water. 
-            The octopus lives in water. 
-            Therefore, the octopus is a fish.
-        </p></li>
-
-      <li><p>
-          If a person goes into politics, they are a scoundrel.
-            Harold has gone into politics. 
-            Therefore, Harold is a scoundrel.
-        </p></li>
-    </ol>
-    </p></li>
-
-    <li><p>
-        Below is a rule of inference that we call extended elimination.
+    <exercise>
+    <statement>
+      <p>
+        Determine the logical form of the following arguments. Use symbols
+        to express that form and determine whether the form is valid or invalid.
+        If the form is invalid, determine the type of error made. Comment on the
+        soundness of the argument as well, in particular, determine whether any of
+        the premises are questionable.
+        <ol>
+          \end{exercise}
+          <exercise>
+            <p>
+              All who are guilty are in prison.
+              George is not in prison.
+              Therefore, George is not guilty.
+            </p>
+          </statement>
+          <hint>
+            <p>
+              This looks like modus tollens. Let <m>G</m> refer to <q>guilt</q> and <m>P</m> refer to <q>in prison</q>
+            </p>
+            <tabular>
+              <row>
+                <cell></cell>
+                <cell><m>\forall x, G(x) \implies P(x)</m></cell>
+              </row>
+              <row>
+                <cell></cell>
+                <cell><m>{\lnot}P(\mbox{George} )</m></cell>
+              </row>
+              <row bottom="minor">
+                <cell></cell>
+                <cell></cell>
+              </row>
+              <row>
+                <cell><m>\therefore</m></cell>
+                <cell><m>{\lnot}G(\mbox{George} )</m></cell>
+              </row>
+            </tabular>
+            <p>
+              You should note that while the form is valid, there is something terribly wrong with this argument. Is it really true that everyone who is guilty of a crime is in prison?
+            </p>
+          </hint>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              If one eats oranges one will have high levels of vitamin C.
+              You do have high levels of vitamin C.
+              Therefore, you must eat oranges.
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              All fish live in water.
+              The mackerel is a fish.
+              Therefore, the mackerel lives in water.
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              If you're lazy, don't take math courses.
+              Everyone is lazy.
+              Therefore, no one should take math courses.
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              All fish live in water.
+              The octopus lives in water.
+              Therefore, the octopus is a fish.
+            </p>
+          </statement>
+        </exercise>
+        \begin{exercise} If a person goes into politics, they are a scoundrel.
+          Harold has gone into politics. 
+          Therefore, Harold is a scoundrel.
+      </ol>
+    </p>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Below is a rule of inference that we call extended elimination.
+        </p>
         <tabular>
           <row>
             <cell></cell>
@@ -518,16 +534,17 @@
             <cell><m>C</m></cell>
           </row>
         </tabular>
-        Use a truth table to verify that this rule is valid.
-
-        \hint{
-
-
-
-        In the following truth table the predicate variables occupy the first 3 columns, the argument's 
-        premises are in the next three columns and the conclusion is in the right-most column.  The
-        truth values have already been filled-in.  You only need to identify the critical rows and 
-        verify that the conclusion is true in those rows.
+        <p>
+          Use a truth table to verify that this rule is valid.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          In the following truth table the predicate variables occupy the first 3 columns, the argument's
+          premises are in the next three columns and the conclusion is in the right-most column. The
+          truth values have already been filled-in. You only need to identify the critical rows and
+          verify that the conclusion is true in those rows.
+        </p>
         <tabular>
           <row bottom="minor">
             <cell></cell>
@@ -701,18 +718,22 @@
             <cell></cell>
           </row>
         </tabular>
-        }
-      </p></li>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          If we allow quantifiers and open sentences in an argument form we
+          get a couple of new argument forms. Arguments involving existentially quantified
+          premises are rare <mdash /> the new forms we are speaking of are called <q>universal modus
+          ponens</q> and <q>universal modus tollens.</q> The minor premises may also be quantified
+          or they may involve particular elements of the universe of discourse <mdash /> this leads
+          us to distinguish argument subtypes that are termed <q>universal</q> and <q>particular.</q>
+        </p>
 
-    <li><p>
-        If we allow quantifiers and open sentences in an argument form we
-        get a couple of new argument forms.  Arguments involving existentially quantified 
-        premises are rare <mdash /> the new forms we are speaking of are called <q>universal modus 
-        ponens</q> and <q>universal modus tollens.</q>   The minor premises may also be quantified
-        or they may involve particular elements of the universe of discourse <mdash /> this leads
-        us to distinguish argument subtypes that are termed <q>universal</q> and <q>particular.</q>
-
-        For example
+        <p>
+          For example
+        </p>
         <tabular>
           <row>
             <cell></cell>
@@ -731,10 +752,12 @@
             <cell><m>B(p)</m></cell>
           </row>
         </tabular>
-        is the particular form of universal modus ponens (here, <m>p</m>
-        is not a variable <mdash /> it stands for some particular element of the universe of
-        discourse)
-        and
+        <p>
+          is the particular form of universal modus ponens (here, <m>p</m>
+          is not a variable <mdash /> it stands for some particular element of the universe of
+          discourse)
+          and
+        </p>
         <tabular>
           <row>
             <cell></cell>
@@ -753,23 +776,37 @@
             <cell><m>\forall x, {\lnot}A(x)</m></cell>
           </row>
         </tabular>
-        is the universal form of (universal) modus tollens.
+        <p>
+          is the universal form of (universal) modus tollens.
+        </p>
 
-        Reexamine the arguments from problem (1), determine their forms
-        (including quantifiers) and whether they are universal or particular.
+        <p>
+          Reexamine the arguments from problem (1), determine their forms
+          (including quantifiers) and whether they are universal or particular.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Hint: All of them except for one are the particular form <mdash /> number 4 is the exception.
+        </p>
 
-        \hint{
-        Hint: All of them except for one are the particular form <mdash /> number 4 is the exception.
+        <p>
+          Here's an analysis of number 5:
+        </p>
 
-        Here's an analysis of number 5:
+        <p>
+          All fish live in water.
+          The octopus lives in water.
+          Therefore, the octopus is a fish.
+        </p>
 
-        All fish live in water. 
-        The octopus lives in water.  
-        Therefore, the octopus is a fish. 
+        <p>
+          Let <m>F(x)</m> be the open sentence <q>x is a fish</q> and let <m>W(x)</m> be the open sentence <q>x lives in water.</q>
+        </p>
 
-        Let <m>F(x)</m> be the open sentence <q>x is a fish</q> and let <m>W(x)</m> be the open sentence <q>x lives in water.</q>
-
-        Our argument has the form
+        <p>
+          Our argument has the form
+        </p>
         <tabular>
           <row>
             <cell></cell>
@@ -788,72 +825,116 @@
             <cell><m>F(\mbox{the octopus} )</m></cell>
           </row>
         </tabular>
-        Clearly something is wrong <mdash /> a converse error has been made <mdash /> if everything that lived in water was necessarily a fish the argument would be OK (in fact it would then be the particular form of universal modus ponens).  But that is the converse of the major premise given.    
-        }
-      </p></li>
+        <p>
+          Clearly something is wrong <mdash /> a converse error has been made <mdash /> if everything that lived in water was necessarily a fish the argument would be OK (in fact it would then be the particular form of universal modus ponens). But that is the converse of the major premise given.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+    <statement>
+      <p>
+        Identify the rule of inference being used.
+        <ol>
+          \end{exercise}
+          <exercise>
+            <p>
+              The Buley Library is very tall.
+            </p>
 
-    <li><p>
-    Identify the rule of inference being used.
+            <p>
+              Therefore, either the Buley Library is very tall or it has many
+              levels underground.
+            </p>
+          </statement>
+          <hint>
+            <p>
+              disjunctive addition
+            </p>
+          </hint>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              The grass is green.
+            </p>
 
-    <ol>
-      <li><p>
-          The Buley Library is very tall.
+            <p>
+              The sky is blue.
+            </p>
 
-          Therefore, either the Buley Library is very tall or it has many
-          levels underground.
+            <p>
+              Therefore, the grass is green and the sky is blue.
+            </p>
+          </statement>
+          <hint>
+            <p>
+              conjunctive addition
+            </p>
+          </hint>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>g</m> has order 3 or it has order 4.
+            </p>
 
-          \hint{disjunctive addition}
-        </p></li>
+            <p>
+              If <m>g</m> has order 3, then <m>g</m> has an inverse.
+            </p>
 
-      <li><p>
-          The grass is green.
+            <p>
+              If <m>g</m> has order 4, then <m>g</m> has an inverse.
+            </p>
 
-          The sky is blue.
+            <p>
+              Therefore, <m>g</m> has an inverse.
+            </p>
+          </statement>
+          <hint>
+            <p>
+              constructive dilemma
+            </p>
+          </hint>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>x</m> is greater than 5 and <m>x</m> is less than 53.
+            </p>
 
-          Therefore, the grass is green and the sky is blue.
+            <p>
+              Therefore, <m>x</m> is less than 53.
+            </p>
+          </statement>
+          <hint>
+            <p>
+              conjunctive simplification
+            </p>
+          </hint>
+        </exercise>
+        \begin{exercise} If <m>a|b</m>, then <m>a</m> is a perfect square.
 
-          \hint{conjunctive addition}
-        </p></li>
+        If <m>a|b</m>, then <m>b</m> is a perfect square.
 
-      <li><p>
-          <m>g</m> has order 3 or it has order 4.
+        Therefore, if <m>a|b</m>, then <m>a</m> is a perfect square and <m>b</m> is
+        a perfect square.
+        <hint>
+          <p>
+            Note that the conclusion could be re-expressed as the conjunction of the two conditionals that
+            are found in the premises. This is conjunctive addition with a bit of <q>window dressing.</q>
+          </p>
+        </hint>
+      </ol>
+    </p>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Read the following proof that the sum of two odd numbers is even.
+          Discuss the rules of inference used.
+        </p>
 
-          If <m>g</m> has order 3, then <m>g</m> has an inverse.
-
-          If <m>g</m> has order 4, then <m>g</m> has an inverse.
-
-          Therefore, <m>g</m> has an inverse.
-
-          \hint{constructive dilemma}
-        </p></li>
-
-      <li><p>
-          <m>x</m> is greater than 5 and <m>x</m> is less than 53.
-
-          Therefore, <m>x</m> is less than 53.
-
-          \hint{conjunctive simplification}
-        </p></li>
-
-      <li><p>
-          If <m>a|b</m>, then <m>a</m> is a perfect square.
-
-          If <m>a|b</m>, then <m>b</m> is a perfect square.
-
-          Therefore, if <m>a|b</m>, then <m>a</m> is a perfect square and <m>b</m> is
-          a perfect square.
-
-          \hint{Note that the conclusion could be re-expressed as the conjunction of the two conditionals that
-          are found in the premises.  This is conjunctive addition with a bit of <q>window dressing.</q>}
-        </p></li>
-    </ol>
-    </p></li>
-
-    <li><p>
-      Read the following proof that the sum of two odd numbers is even.
-      Discuss the rules of inference used.
-
-      <proof>
+        <proof>
         <p>
           Let <m>x</m> and <m>y</m> be odd numbers. Then <m>x=2k+1</m>
           and <m>y=2j+1</m> for some integers <m>j</m> and <m>k</m>. By algebra,
@@ -866,21 +947,30 @@
           Note that <m>k+j+1</m> is an integer because <m>k</m> and <m>j</m> are integers.
           Hence <m>x+y</m> is even.
         </p>
-      </proof>
-
-      \hint{The definition for <q>odd</q> only involves the oddness of a single integer, but the first line of our
-      proof is a conjunction claiming that <m>x</m> and <m>y</m> are both odd.  It seems that two conjunctive simplifications, followed by applications of the definition, followed by a conjunctive addition have been used in order to
-      go from the first sentence to the second.}
-      </p></li>
-
-    <li><p>
-        Sometimes in constructing a proof we find it necessary to <q>weaken</q> an inequality.  For example,
-        we might have already deduced that <m>x \lt  y</m> but what we need in our argument is that <m>x \leq y</m>.  It is
-        okay to deduce <m>x \leq y</m> from <m>x \lt  y</m> because the former is just shorthand for <m>x\lt y \lor x=y</m>.  What
-        rule of inference are we using in order to deduce that <m>x \leq y</m> is true in this situation?
-
-        \hint{disjunctive addition}
-      </p></li>
-    </ol>
+        </proof>
+      </statement>
+      <hint>
+        <p>
+          The definition for <q>odd</q> only involves the oddness of a single integer, but the first line of our
+          proof is a conjunction claiming that <m>x</m> and <m>y</m> are both odd. It seems that two conjunctive simplifications, followed by applications of the definition, followed by a conjunctive addition have been used in order to
+          go from the first sentence to the second.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Sometimes in constructing a proof we find it necessary to <q>weaken</q> an inequality. For example,
+          we might have already deduced that <m>x \lt  y</m> but what we need in our argument is that <m>x \leq y</m>. It is
+          okay to deduce <m>x \leq y</m> from <m>x \lt  y</m> because the former is just shorthand for <m>x\lt y \lor x=y</m>. What
+          rule of inference are we using in order to deduce that <m>x \leq y</m> is true in this situation?
+        </p>
+      </statement>
+      <hint>
+        <p>
+          disjunctive addition
+        </p>
+      </hint>
+    </exercise>
   </exercises>
 </section>
