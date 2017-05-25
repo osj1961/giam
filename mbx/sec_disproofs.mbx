@@ -189,27 +189,37 @@
     </statement>
   </exercise>
   <exercises>
-
-    <ol>
-      <li><p>
+    <exercise>
+      <statement>
+        <p>
           Find a polynomial that assumes only prime values for
           a reasonably large range of inputs.
-
-          \hint{It sort of depends on what is meant by <q>a reasonably large range of inputs.</q>  For example the polynomial <m>p(x) = 2x+1</m> gives primes three times in a row (at <m>x=1,2</m> and <m>3</m>).  See if you can do better than that.
-          }
-        </p></li>
-
-      <li><p>
-          Find a counterexample to the conjecture that <m>\forall a,b,c \in \Integers, a \divides bc \; \implies \; a \divides b \, \lor \, a \divides c</m>  using only powers of 2.
-
-          \hint{The intent of the problem is that you find three numbers, <m>a</m>, <m>b</m> and <m>c</m>, that are all powers 
-          of <m>2</m> and such that <m>a</m> divides the product <m>bc</m>, but neither of the factors separately. For instance, 
-          if you pick <m>a=16</m>, then you would need to choose <m>b</m> and <m>c</m> so that <m>16</m> doesn't divide evenly 
+        </p>
+      </statement>
+      <hint>
+        <p>
+          It sort of depends on what is meant by <q>a reasonably large range of inputs.</q> For example the polynomial <m>p(x) = 2x+1</m> gives primes three times in a row (at <m>x=1,2</m> and <m>3</m>). See if you can do better than that.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Find a counterexample to the conjecture that <m>\forall a,b,c \in \Integers, a \divides bc \; \implies \; a \divides b \, \lor \, a \divides c</m> using only powers of 2.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          The intent of the problem is that you find three numbers, <m>a</m>, <m>b</m> and <m>c</m>, that are all powers
+          of <m>2</m> and such that <m>a</m> divides the product <m>bc</m>, but neither of the factors separately. For instance,
+          if you pick <m>a=16</m>, then you would need to choose <m>b</m> and <m>c</m> so that <m>16</m> doesn't divide evenly
           into them (they would need to be less than <m>16</m><ellipsis />) but so that their product <em>is</em> divisible by <m>16</m>.
-          }
-        </p></li>
-
-      <li><p>
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           The alternating sum of factorials provides an interesting
           example of a sequence of integers.
           <me>
@@ -224,84 +234,137 @@
           <me>
             4! - 3! + 2! - 1! = 19
           </me>
-          et cetera 
+          et cetera
+        </p>
 
-           Are they all prime?  (After the first two 1's.)
-
-          \hint{
-
+        <p>
+          Are they all prime? (After the first two 1's.)
+        </p>
+      </statement>
+      <hint>
+        <p>
           Here's some Sage code that would test this conjecture:
+        </p>
 
+        <p>
           <c>
           n=1
           for i in [2..8]:
           n = factorial(i) - n
           show(factor(n))
           </c>
+        </p>
 
+        <p>
           Of course it turns out that going out to <m>8</m> isn't quite far enough<ellipsis />
-
-          }
-        </p></li>
-
-      <li><p>
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           It has been conjectured that whenever <m>p</m> is prime, <m>2^p - 1</m> is
-          also prime.  Find a minimal counterexample.
-
-          \hint{I would definitely seek help at your friendly neighborhood CAS.  In Sage 
+          also prime. Find a minimal counterexample.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          I would definitely seek help at your friendly neighborhood CAS. In Sage
           you can loop over the first several prime numbers using the following syntax.
+        </p>
 
+        <p>
           <c>for p in [2,3,5,7,11,13]:</c>
+        </p>
 
-           If you want to automate that somewhat, there is a Sage function that returns a list
-          of all the primes in some range.  So the following does the same thing.
+        <p>
+          If you want to automate that somewhat, there is a Sage function that returns a list
+          of all the primes in some range. So the following does the same thing.
+        </p>
 
+        <p>
           <c>for p in primes(2,13):</c>
-          }
-        </p></li>
-
-      <li><p>
-          True or false:  The sum of any two irrational numbers is irrational.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          True or false: The sum of any two irrational numbers is irrational.
           Prove your answer.
-
-          \hint{This statement and the next are negations of one another.  Your answers should reflect that.}
-        </p></li>
-
-      <li><p>
-          True or false:  There are two irrational numbers whose sum is rational.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          This statement and the next are negations of one another. Your answers should reflect that.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          True or false: There are two irrational numbers whose sum is rational.
           Prove your answer.
-
-          \hint{If a number is irrational, isn't its negative also irrational?  That's actually a pretty huge hint.}
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          If a number is irrational, isn't its negative also irrational? That's actually a pretty huge hint.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           True or false: The product of any two irrational numbers is irrational.
           Prove your answer.
-
-          \hint{This one and the next are negations too. Aren't they?}
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          This one and the next are negations too. Aren't they?
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           True or false: There are two irrational numbers whose product is rational.
           Prove your answer.
-
-          \hint{The two numbers <em>could</em> be equal couldn't they?}
-        </p></li>
-
-      <li><p>
-          True or false:  Whenever an integer <m>n</m> is a divisor of the square of an integer, <m>m^2</m>, it follows that <m>n</m> is a divisor of <m>m</m> as well.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          The two numbers <em>could</em> be equal couldn't they?
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          True or false: Whenever an integer <m>n</m> is a divisor of the square of an integer, <m>m^2</m>, it follows that <m>n</m> is a divisor of <m>m</m> as well.
           (In symbols, <m>\forall n \in \Integers, \forall m \in \Integers, n \mid m^2 \; \implies \; n \mid m</m>.)
           Prove your answer.
-
-          \hint{Hint: List all of the divisors of <m>36 = (2\cdot 3)^2</m>.  See if any of them are bigger than <m>6</m>.}
-        </p></li>
-
-      <li><p>
-          In an exercise in <xref ref="sec_more">Section</xref> we proved that the quadratic 
-          equation <m>ax^2 + bx + c = 0</m> has two solutions if <m>ac \lt  0</m>.  Find a counterexample which shows that this implication cannot be replaced with a biconditional.  
-
-          \hint{We'd want <m>ac</m> to be positive (so <m>a</m> and <m>c</m> have the same sign) but nevertheless have <m>b^2-4ac > 0</m>.  It seems that if we make <m>b</m> sufficiently large that could happen.}
-        </p></li>
-    </ol>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Hint: List all of the divisors of <m>36 = (2\cdot 3)^2</m>. See if any of them are bigger than <m>6</m>.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          In an exercise in <xref ref="sec_more">Section</xref> we proved that the quadratic
+          equation <m>ax^2 + bx + c = 0</m> has two solutions if <m>ac \lt  0</m>. Find a counterexample which shows that this implication cannot be replaced with a biconditional.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          We'd want <m>ac</m> to be positive (so <m>a</m> and <m>c</m> have the same sign) but nevertheless have <m>b^2-4ac > 0</m>. It seems that if we make <m>b</m> sufficiently large that could happen.
+        </p>
+      </hint>
+    </exercise>
   </exercises>
 </section>

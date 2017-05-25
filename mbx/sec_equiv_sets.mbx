@@ -17,24 +17,29 @@
   </p>
 
   <p>
-  A couple of examples may be in order.
+    A couple of examples may be in order.
+    <ul>
+      <li>
+        <p>
+          If <m>A = \{1, 2, 3\}</m> and <m>B = \{a, b, c\}</m> then <m>A</m> and <m>B</m> are equivalent.
+        </p>
+      </li>
 
-  <ul>
-    <li><p>
-        If <m>A = \{1, 2, 3\}</m> and <m>B = \{a, b, c\}</m> then <m>A</m> and <m>B</m> are equivalent.
-      </p></li>
+      <li>
+        <p>
+          Since the empty set is unique <mdash /> <m>\emptyset</m> is the only set having 0 elements <mdash /> it
+          follows that there are no other sets equivalent to it.
+        </p>
+      </li>
 
-    <li><p>
-        Since the empty set is unique <mdash /> <m>\emptyset</m> is the only set having 0 elements <mdash /> it
-        follows that there are no other sets equivalent to it.
-      </p></li>
-
-    <li><p>
-        Every singleton set<fn>Recall that a 
-        singleton set is a set having just one element.</fn> 
-        is equivalent to every other singleton set.
-      </p></li>
-  </ul>
+      <li>
+        <p>
+          Every singleton set<fn>Recall that a 
+          singleton set is a set having just one element.</fn> 
+          is equivalent to every other singleton set.
+        </p>
+      </li>
+    </ul>
   </p>
 
   <p>
@@ -177,27 +182,37 @@
     between such sets and <m>\Naturals</m> and haven't been able to find them <mdash /> we literally mean that it can't be done; and it is has been proved that it can't be done! Sets having cardinalities that are this ridiculously huge are known as <index><main>uncountable</main></index> <em>uncountable</em>.
   </p>
   <exercises>
-
-    <ol>
-      <li><p>
+    <exercise>
+      <statement>
+        <p>
           Name four sets in the equivalence class of <m>\{1, 2, 3\}</m>.
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Prove that set equivalence is an equivalence relation.
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Construct a Venn diagram showing the relationships between the sets of
           sets which are finite, infinite, countable, denumerable and uncountable.
-        </p></li>
-
-      <li><p>
-          Place the sets <m>\Naturals</m>, <m>\Reals</m>, <m>\Rationals</m>, <m>\Integers</m>, <m>\Integers \times \Integers</m>, <m>\Complexes</m>, <m>\Naturals_{2007}</m> and <m>\emptyset</m>; 
-          somewhere on the Venn diagram above. (Note to students (and graders): 
-          there are no wrong answers to this question, the point is to see what 
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Place the sets <m>\Naturals</m>, <m>\Reals</m>, <m>\Rationals</m>, <m>\Integers</m>, <m>\Integers \times \Integers</m>, <m>\Complexes</m>, <m>\Naturals_{2007}</m> and <m>\emptyset</m>;
+          somewhere on the Venn diagram above. (Note to students (and graders):
+          there are no wrong answers to this question, the point is to see what
           your intuition about these sets says at this point.)
-        </p></li>
-    </ol>
+        </p>
+      </statement>
+    </exercise>
   </exercises>
 </section>

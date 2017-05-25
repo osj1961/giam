@@ -105,14 +105,14 @@
     An example involving the ternary relation <q>betweenness</q> can be had
     from the following diagram.
   </p>
-  <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+  <image source="images/1e85854965786f74b84bd3e0305d43d77bd59a02.png"/>
   <p>
     \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
     \reset@font\fontsize{#1}{#2pt}
     \fontfamily{#3}\fontseries{#4}\fontshape{#5}
     \selectfont}\fi
   </p>
-  <image source="images/a553abcd621275f12bb7a898b1a96928b23a2a0a.png"/>
+  <image source="images/86086560a89987f5ca7ad1ef110eb1a61cb2152a.png"/>
   <p>
     The betweenness relation on the points in this diagram consists of the
     following triples.
@@ -133,40 +133,46 @@
     </statement>
   </exercise>
   <exercises>
-
-    <ol>
-      <li><p>
-          Consider the numbers from 1 to 10.  Give the set of pairs of these numbers that 
+    <exercise>
+      <statement>
+        <p>
+          Consider the numbers from 1 to 10. Give the set of pairs of these numbers that
           corresponds to the divisibility relation.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          A pair is <q>in</q> the relation when the first number gazinta the second number. <m>1</m> gazinta anything, <m>2</m> gazinta the even numbers, <m>3</m> gazinta <m>3</m>, <m>6</m> and <m>9</m>, etc. (Also a number always gazinta itself.)
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The <index><main>domain</main></index><em>domain</em> of a function (or binary relation)
+          is the set of numbers appearing in the first coordinate. The <index><main>range</main></index>
+          <em>range</em> of a function (or binary relation) is the set of numbers
+          appearing in the second coordinate.
+        </p>
 
-
-
-          \hint{A pair is <q>in</q> the relation when the first number gazinta the second number.  <m>1</m> gazinta anything, <m>2</m> gazinta the even numbers, <m>3</m> gazinta <m>3</m>, <m>6</m> and <m>9</m>, etc. (Also a number always gazinta itself.)}
-        </p></li>
-
-      <li><p>
-          The <index><main>domain</main></index><em>domain</em> of a function (or binary relation) 
-          is the set of numbers appearing in the first coordinate.  The <index><main>range</main></index> 
-          <em>range</em> of a function (or binary relation) is the set of numbers 
-          appearing in the second coordinate.  
-
+        <p>
           Consider the set <m>\{0,1,2,3,4,5,6\}</m> and the function <m>f(x) = x^2 \pmod{7}</m>.
           Express this function as a relation by explicitly writing out the set of
-          ordered pairs it contains.  What is the range of this function?
- 
- 
- 
-          \hint{
-          <me>
-            f \; = \; \{(0,0), (1,1), (2,4), (3,2), (4,2), (5,4), (6,1)\}
-          </me>
-          <me>
-            \Rng{f} \;= \; \{0,1,2,4\}
-          </me>
-          }
-        </p></li>
-
-      <li><p>
+          ordered pairs it contains. What is the range of this function?
+        </p>
+      </statement>
+      <hint>
+        <me>
+          f \; = \; \{(0,0), (1,1), (2,4), (3,2), (4,2), (5,4), (6,1)\}
+        </me>
+        <me>
+          \Rng{f} \;= \; \{0,1,2,4\}
+        </me>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           What relation on the numbers from 1 to 10 does the following set of ordered pairs
           represent?
           <md>
@@ -181,48 +187,69 @@
             <mrow>(9,9), (9,10),</mrow>
             <mrow>(10,10) \}</mrow>
           </md>
-          \hint{ Less-than-or-equal-to }
-        </p></li>
-
-      <li><p>
-          Draw a five-pointed star, label all 10 points. There are 40 triples of these 
-          labels that satisfy the betweenness relation.  List them.
-
-
-
-          \hint{
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Less-than-or-equal-to
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Draw a five-pointed star, label all 10 points. There are 40 triples of these
+          labels that satisfy the betweenness relation. List them.
+        </p>
+      </statement>
+      <hint>
+        <p>
           Yeah, hmmm. Forty is kind of a lot...
           Let's look at the points (E,F,G and B) on the horizontal line in the diagram below. The triples involving these four points are: (E,F,G), (G,F,E), (E,F,B), (B,F,E), (E,G,B), (B,G,E), (F,G,B), (B,G,F).
+        </p>
 
-
-
-          \
+        <p>
           <image width="73%" source="images/star.png" />
-          }
-        </p></li>
-
-      <li><p>
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Sketch a graph of the relation
           <me>
             \{ (x,y) \suchthat x,y \in \Reals \; \mbox{and}  \; y > x^2 \}.
           </me>
-          \hint{Is this the region above or below the curve <m>y=x^2</m>?}
-        </p></li>
-
-      <li><p>
-          A function <m>f(x)</m> is said to be <index><main>invertible function</main></index> 
-          <em>invertible</em> if there is another function <m>g(x)</m> such that 
-          <m>g(f(x)) = x</m> for all values of <m>x</m>.  (Usually, the inverse function,
-          <m>g(x)</m> would be denoted <m>f^{-1}(x)</m>.)   Suppose a function is presented 
-          to you as a relation <mdash /> that is, you are just given a set of pairs.  
-          How can you distinguish whether the function represented by this list 
-          of input/output pairs is invertible?  How can you produce the inverse 
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Is this the region above or below the curve <m>y=x^2</m>?
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          A function <m>f(x)</m> is said to be <index><main>invertible function</main></index>
+          <em>invertible</em> if there is another function <m>g(x)</m> such that
+          <m>g(f(x)) = x</m> for all values of <m>x</m>. (Usually, the inverse function,
+          <m>g(x)</m> would be denoted <m>f^{-1}(x)</m>.) Suppose a function is presented
+          to you as a relation <mdash /> that is, you are just given a set of pairs.
+          How can you distinguish whether the function represented by this list
+          of input/output pairs is invertible? How can you produce the inverse
           (as a set of ordered pairs)?
- 
-          \hint{If <m>f</m> sends <m>x</m> to <m>y</m>, then we want <m>f^{-1}</m> to send <m>y</m> back to <m>x</m>.  So the inverse just has the pairs in <m>f</m> reversed.  When is the inverse going to fail to be a function?}
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          If <m>f</m> sends <m>x</m> to <m>y</m>, then we want <m>f^{-1}</m> to send <m>y</m> back to <m>x</m>. So the inverse just has the pairs in <m>f</m> reversed. When is the inverse going to fail to be a function?
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           There is a relation known as <q>has color</q> which goes from the
           set
           <me>
@@ -232,11 +259,18 @@
           <me>
             C = \{orange, red, green, yellow\}.
           </me>
+        </p>
+
+        <p>
           What pairs are in <q>has color</q>?
-   
-          \hint{Depending on your personal experience level with fruit there may be different answers.  Certainly
-          (orange, orange) will be one of the pairs, but (orange, green) happens too!}
-        </p></li>
-    </ol>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Depending on your personal experience level with fruit there may be different answers. Certainly
+          (orange, orange) will be one of the pairs, but (orange, green) happens too!
+        </p>
+      </hint>
+    </exercise>
   </exercises>
 </section>

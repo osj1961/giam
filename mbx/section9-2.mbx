@@ -24,15 +24,10 @@
     See <xref ref="fig_the_army">Figure</xref>.
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/fd64742391c71fe2fdaafbc7e6606f57975728a6.png"/>
-    \caption[An infinite army in the lower half-plane.]{An infinite number of
-    checkers occupying the integer lattice points such that <m>y\leq 0</m>.}
+  <figure xml:id="fig_the_army" >
+    <caption>An infinite number of
+    checkers occupying the integer lattice points such that <m>y\leq 0</m>.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -104,26 +99,16 @@
     a scout 1, 2 and 3 steps into the void.
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/907b8e124b85d6affcf3f2afe17b3cf86059f809.png"/>
-    \caption[Moving one step into the void is trivial.]{One man is sacrificed in 
-    order to move a scout one step into enemy territory.}
+  <figure xml:id="fig_one_step" >
+    <caption>One man is sacrificed in 
+    order to move a scout one step into enemy territory.</caption>
+    <image source=""/>
   </figure>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/acb792ad17007c1ecd0cab609eab7fec75586481.png"/>
-    \caption[Moving two steps into the void is more difficult.]{Three man are sacrificed in 
-    order to move a scout two steps into enemy territory.}
+  <figure xml:id="fig_two_steps" >
+    <caption>Three man are sacrificed in 
+    order to move a scout two steps into enemy territory.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -132,15 +117,10 @@
     that can place a man two steps in <mdash /> shifted up by one unit.
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/287b9f7ee1d05413ef80edd0ca3983c2d2e5af4c.png"/>
-    \caption[Moving three steps into the void takes 8 men.]{Eight men are needed to
-    get a scout 3 steps into the void.}
+  <figure xml:id="fig_three_steps" >
+    <caption>Eight men are needed to
+    get a scout 3 steps into the void.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -189,14 +169,9 @@
     sum of the values of the men in our army must be convergent.
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/7d10df1de998061b6b7b9eefc4c9780b9611e798.png"/>
-    \caption[The taxicab distance to <m>(0,5)</m>.]{The taxicab distance to <m>(0,5)</m>.}
+  <figure xml:id="fig_taxicab_distance" >
+    <caption>The taxicab distance to <m>(0,5)</m>.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -227,14 +202,9 @@
     move gets made. See <xref ref="fig_finding_r">Figure</xref>.
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/3e691cb0291dca0d9e564e9dff568b0ca22ef274.png"/>
-    \caption[Finding <m>r</m>.]{In making a checker-jump move, two men valued <m>r^{k+1}</m> and <m>r^{k+2}</m> are replaced by a single man valued <m>r^k</m>.}
+  <figure xml:id="fig_finding_r" >
+    <caption>In making a checker-jump move, two men valued <m>r^{k+1}</m> and <m>r^{k+2}</m> are replaced by a single man valued <m>r^k</m>.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -348,25 +318,31 @@
     in a finite number of moves.
   </p>
   <exercises>
-
-    <ol>
-      <li><p>
+    <exercise>
+      <statement>
+        <p>
           Do the algebra (and show all your work!) to prove that invariant
           defined in this section actually has the value 1 for the set of all the
           men occupying the <m>x</m>-axis and the lower half-plane.
-        </p></li>
-
-      <li><p>
-          <q>Escape of the clones</q> is a  nice puzzle, originally proposed by Maxim Kontsevich.  The game
-          is played on an infinite checkerboard restricted to the first quadrant <mdash /> that is the squares may be 
-          identified with points having integer coordinates <m>(x,y)</m> with <m>x>0</m> and <m>y>0</m>.  The <q>clones</q> are markers
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <q>Escape of the clones</q> is a nice puzzle, originally proposed by Maxim Kontsevich. The game
+          is played on an infinite checkerboard restricted to the first quadrant <mdash /> that is the squares may be
+          identified with points having integer coordinates <m>(x,y)</m> with <m>x>0</m> and <m>y>0</m>. The <q>clones</q> are markers
           (checkers, coins, small rocks, whatever<ellipsis />) that can move in only one fashion <mdash /> if the squares immediately
-          above and to the right of a clone are empty, then it can make a <q>clone move.</q>   The clone moves one space
-          up and a copy is placed in the cell one to the right.  We begin with three clones occupying cells <m>(1,1), (2,1)</m> and <m>(1,2)</m> <mdash /> we'll refer to those three checkerboard squares as <q>the prison.</q>  The question is this:  can these
+          above and to the right of a clone are empty, then it can make a <q>clone move.</q> The clone moves one space
+          up and a copy is placed in the cell one to the right. We begin with three clones occupying cells <m>(1,1), (2,1)</m> and <m>(1,2)</m> <mdash /> we'll refer to those three checkerboard squares as <q>the prison.</q> The question is this: can these
           three clones escape the prison?
+        </p>
 
+        <p>
           You must either demonstrate a sequence of moves that frees all three clones or provide an argument that the task is impossible.
-        </p></li>
-    </ol>
+        </p>
+      </statement>
+    </exercise>
   </exercises>
 </section>

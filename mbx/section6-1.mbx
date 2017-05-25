@@ -35,16 +35,11 @@
     relation, <m>\in</m>, is a <em>relation from <m>A</m> to <m>B</m></em>.
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/62760dcfe62684b7880031b7c4706b1baf91d5b8.png"/>
-    \caption[An example of a relation.]{The <q>element of</q> relation 
+  <figure xml:id="fig_rel1" >
+    <caption>The <q>element of</q> relation 
     is an example of a relation that goes <em>from</em> one set <em>to</em> a 
-    different set.}
+    different set.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -66,16 +61,11 @@
     different sets) or <q>a relation on <m>A</m></q> (when there is only one).
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/19232cde722ed254a07302ca9b1fa057a5fd5cff.png"/>
-    \caption[An example of the <q>divides</q> relation.]{The <q>divides</q> relation 
+  <figure xml:id="fig_rel2" >
+    <caption>The <q>divides</q> relation 
     is an example of a relation that goes from a set to itself.  In this example 
-    we say that we have a relation <em>on</em> the set of divisors of 6.}
+    we say that we have a relation <em>on</em> the set of divisors of 6.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -83,12 +73,14 @@
     in two different places in a Venn diagram. The diagram in <xref ref="fig_rel2">Figure</xref>
     should really look like this:
   </p>
-  <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-  \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+  <image source="images/56f03a4ca93c31cf67756f8d6c8f41c881482184.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
     \reset@font\fontsize{#1}{#2pt}
     \fontfamily{#3}\fontseries{#4}\fontshape{#5}
     \selectfont}\fi
-  <image source="images/6b4b7e3e0df4a590634855378b309741614b5a72.png"/>
+  </p>
+  <image source="images/31bb60bd3341d6c6bd0bd31858aa6d54d61a934c.png"/>
   <p>
     Indeed, this representation is definitely preferable, although it may be more crowded.
     A picture such as this is
@@ -208,15 +200,10 @@
     given in <xref ref="fig_lt_graph">Figure</xref>.
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/3ffa561084fa50b73553353e66863fae5e2444ee.png"/>
-    \caption[The graph of the <q>less than</q> relation.]{The <q>less than</q> relation 
-    can be viewed as a subset of <m>\Reals \times \Reals</m>, i.e. it can be graphed.}
+  <figure xml:id="fig_lt_graph" >
+    <caption>The <q>less than</q> relation 
+    can be viewed as a subset of <m>\Reals \times \Reals</m>, i.e. it can be graphed.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -225,16 +212,11 @@
     given in <xref ref="fig_div_graph">Figure</xref>.
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/3ffa561084fa50b73553353e66863fae5e2444ee.png"/>
-    \caption[The graph of the divisibility relation.]{The divisibility relation 
+  <figure xml:id="fig_div_graph" >
+    <caption>The divisibility relation 
     can be graphed.  Only those points (as indicated) with integer coordinates 
-    are in the graph.}
+    are in the graph.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -312,14 +294,14 @@
       \relS \; = \; \{(a,y), (b,w), (b,x), (b,z) \}.
     </me>
   </p>
-  <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
+  <image source="images/17ec8e8a3f4225fbe6d4f30e1646c94cdf4e3cb8.png"/>
   <p>
     \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
     \reset@font\fontsize{#1}{#2pt}
     \fontfamily{#3}\fontseries{#4}\fontshape{#5}
     \selectfont}\fi
   </p>
-  <image source="images/ebcdce919b9a2ec1f5a6e9009a0a96317a7dfa49.png"/>
+  <image source="images/c6f6bcd2128c5c07deed5a22353b4ad58dbddf65.png"/>
   <exercise>
     <statement>
       <p>
@@ -333,44 +315,61 @@
     </statement>
   </exercise>
   <exercises>
-
-    <ol>
-      <li><p>
-          The <index><main>lexicographic order</main></index><em>lexicographic order</em>, 
+    <exercise>
+      <statement>
+        <p>
+          The <index><main>lexicographic order</main></index><em>lexicographic order</em>,
           <m>\lt _{\mbox{lex} }</m>, is a relation on the
           set of all words, where <m>x \lt _{\mbox{lex} } y</m> means that <m>x</m> would come before
-          <m>y</m> in the dictionary.  Consider just the three letter words like <q>iff</q>,
-          <q>fig</q>, <q>the</q>, et cetera.  Come up with a usable definition for
+          <m>y</m> in the dictionary. Consider just the three letter words like <q>iff</q>,
+          <q>fig</q>, <q>the</q>, et cetera. Come up with a usable definition for
           <m>x_1x_2x_3  \lt _{\mbox{lex} } y_1y_2y_3</m>.
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           What is the graph of <q><m>=</m></q> in <m>\Reals \times \Reals</m>?
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           The <index><main>inverse relation</main></index> <em>inverse</em> of a relation <m>\relR</m>
-          is denoted <m>\relR^{-1}</m>.  It contains exactly the same ordered pairs
-          as <m>\relR</m> but with the order switched.  (So technically, they aren't
+          is denoted <m>\relR^{-1}</m>. It contains exactly the same ordered pairs
+          as <m>\relR</m> but with the order switched. (So technically, they aren't
           <em>exactly</em> the same ordered pairs <ellipsis />)
           <me>
             \relR^{-1} = \{ (b,a) \suchthat (a,b) \in \relR \}
           </me>
-          Define a relation <m>\relS</m> on <m>\Reals \times \Reals</m> by
-          <m>\relS = \{ (x,y) \suchthat y = \sin x \}</m>.  What is <m>\relS^{-1}</m>?
-          Draw a single graph containing <m>\relS</m> and <m>\relS^{-1}</m>.
-        </p></li>
+        </p>
 
-      <li><p>
+        <p>
+          Define a relation <m>\relS</m> on <m>\Reals \times \Reals</m> by
+          <m>\relS = \{ (x,y) \suchthat y = \sin x \}</m>. What is <m>\relS^{-1}</m>?
+          Draw a single graph containing <m>\relS</m> and <m>\relS^{-1}</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           The <q>socks and shoes</q> rule is a very silly little mnemonic
-          for remembering how to invert a composition.  If we think of undoing
+          for remembering how to invert a composition. If we think of undoing
           the process of putting on our socks and shoes (that's socks first, then
           shoes) we have to first remove our shoes, <em>then</em> take off our socks.
+        </p>
 
+        <p>
           The socks and shoes rule is valid for relations as well.
+        </p>
 
+        <p>
           Prove that <m>(\relS \circ \relR)^{-1} = \relR^{-1} \circ \relS^{-1}</m>.
-        </p></li>
-    </ol>
+        </p>
+      </statement>
+    </exercise>
   </exercises>
 </section>

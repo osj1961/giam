@@ -141,65 +141,110 @@
     </statement>
   </exercise>
   <exercises>
-
-    <ol>
-      <li><p>
-          Suppose you have a savings account which bears interest 
-          compounded monthly.  The July statement shows a balance of 
+    <exercise>
+      <statement>
+        <p>
+          Suppose you have a savings account which bears interest
+          compounded monthly. The July statement shows a balance of
           <dollar /> 2104.87 and the September statement shows a balance <dollar /> 2125.97.
           What would be the balance on the (missing) August statement?
-
-          \hint{A savings account where we are not depositing or withdrawing funds has a balance that is growing geometrically.}
-        </p></li>
-
-      <li xml:id="quad" ><p>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          A savings account where we are not depositing or withdrawing funds has a balance that is growing geometrically.
+        </p>
+      </hint>
+    </exercise>
+    <exercise xml:id="quad">
+      <statement>
+        <p>
           Recall that a quadratic equation <m>ax^2+bx+c=0</m> has two real solutions
-          if and only if the discriminant <m>b^2-4ac</m> is positive.  Prove that if 
-          <m>a</m> and <m>c</m> have different signs then the quadratic equation has two 
+          if and only if the discriminant <m>b^2-4ac</m> is positive. Prove that if
+          <m>a</m> and <m>c</m> have different signs then the quadratic equation has two
           real solutions.
-
-          \hint{You don't need all the hypotheses. If <m>a</m> and <m>c</m> have different signs, then <m>ac</m> is a negative quantity}
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          You don't need all the hypotheses. If <m>a</m> and <m>c</m> have different signs, then <m>ac</m> is a negative quantity
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Prove that if <m>x^3-x^2</m> is negative then <m>3x+4 \lt  7</m>.
-
-          \hint{This follows very easily by the method of working backwards from the conclusion. Remember that when multiplying or dividing both sides of an inequality by some number, the direction of the inequality may reverse (unless we know the number involved is positive).  Also, remember that we can't divide by zero, so if we are (just for example, don't know why I'm mentioning it really<ellipsis />) dividing both sides of an inequality by <m>x^2</m> then we must treat the case where <m>x=0</m> separately.}
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          This follows very easily by the method of working backwards from the conclusion. Remember that when multiplying or dividing both sides of an inequality by some number, the direction of the inequality may reverse (unless we know the number involved is positive). Also, remember that we can't divide by zero, so if we are (just for example, don't know why I'm mentioning it really<ellipsis />) dividing both sides of an inequality by <m>x^2</m> then we must treat the case where <m>x=0</m> separately.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Prove that for all integers <m>a,b,</m> and <m>c</m>, if <m>a|b</m> and <m>a|(b+c)</m>, then
           <m>a|c</m>.
-        </p></li>
-
-      <li><p>
-          Show that if <m>x</m> is a positive real number, then <m>x+\frac{1}{x} \geq 2</m>. 
-
-          \hint{If you work backwards from the conclusion on this one, you should eventually come to the inequality <m>(x-1)^2 \geq 0</m>.  Notice that this inequality is always true <mdash /> all squares are non-negative. When you go to write-up your proof (writing things in the forward direction), you'll want to acknowledge this truth. Start with something like <q>Regardless of the value of <m>x</m>, the quantity <m>(x-1)^2</m> is greater than or equal to zero as it is a perfect square.</q>}
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Show that if <m>x</m> is a positive real number, then <m>x+\frac{1}{x} \geq 2</m>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          If you work backwards from the conclusion on this one, you should eventually come to the inequality <m>(x-1)^2 \geq 0</m>. Notice that this inequality is always true <mdash /> all squares are non-negative. When you go to write-up your proof (writing things in the forward direction), you'll want to acknowledge this truth. Start with something like <q>Regardless of the value of <m>x</m>, the quantity <m>(x-1)^2</m> is greater than or equal to zero as it is a perfect square.</q>
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Prove that for all real numbers <m>a,b,</m> and <m>c</m>, if <m>ac\lt 0</m>, then the quadratic
           equation <m>ax^{2}+bx+c=0</m> has two real solutions.
+        </p>
 
+        <p>
           <em>Hint:</em> The quadratic equation <m>ax^{2}+bx+c=0</m> has two
           real solutions if and only if <m>b^{2}-4ac>0</m> and <m>a\neq0</m>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          This is very similar to <xref ref="quad">problem</xref>.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Show that <m>\binom{n}{k} \cdot \binom{k}{r} \; = \; \binom{n}{r} \cdot \binom{n-r}{k-r}</m> (for all integers <m>r</m>, <m>k</m> and <m>n</m> with <m>r \leq k \leq n</m>).
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Use the definition of the binomial coefficients as fractions involving factorials:
+        </p>
 
-          \hint{This is very similar to <xref ref="quad">problem</xref>.}
-        </p></li>
-
-      <li><p>
-          Show that <m>\binom{n}{k} \cdot \binom{k}{r} \; = \; \binom{n}{r} \cdot \binom{n-r}{k-r}</m> (for all integers <m>r</m>, <m>k</m> and <m>n</m> with <m>r \leq k \leq n</m>). 
-
-          \hint{Use the definition of the binomial coefficients as fractions involving factorials:
-
+        <p>
           E.g. <m>\displaystyle\binom{n}{k} \; = \; \frac{n!}{k! (n-k)!}</m>
+        </p>
 
+        <p>
           Write down the definitions, both of the left hand side and the right hand side and consider how you can
-          convert one into the other.}
-        </p></li>
-
-      <li><p>
+          convert one into the other.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           In proving the <index><main>product rule</main></index> <em>product rule</em> in Calculus using the definition of the derivative, we might start our proof with:
           <me>
             \frac{\mbox{d} }{\mbox{d} x} \left( f(x) \cdot g(x) \right)
@@ -207,6 +252,9 @@
           <me>
             = \lim_{h \longrightarrow 0} \frac{f(x+h) \cdot g(x+h) - f(x) \cdot g(x)}{h}
           </me>
+        </p>
+
+        <p>
           The last two lines of our proof should be:
           <me>
             = \lim_{h \longrightarrow 0} \frac{f(x+h) - f(x)}{h} \cdot g(x) \; + \; f(x) \cdot \lim_{h \longrightarrow 0} \frac{g(x+h) - g(x)}{h}
@@ -214,11 +262,18 @@
           <me>
             = \frac{\mbox{d} }{\mbox{d} x}\left( f(x) \right) \cdot g(x) \; + \; f(x) \cdot \frac{\mbox{d} }{\mbox{d} x}\left( g(x) \right)
           </me>
-          Fill in the rest of the proof.
+        </p>
 
-          \hint{The critical step is to subtract and add the same thing: <m>f(x)g(x+h)</m> in the numerator of the fraction
-          in the limit which gives the definition of <m>\frac{\mbox{d} }{\mbox{d} x} \left( f(x) \cdot g(x) \right)</m>.  Also, you'll need to recall the laws of limits (like <q>the limit of a product is the product of the limits <mdash /> provided both exist</q>) }
-        </p></li>
-    </ol>
+        <p>
+          Fill in the rest of the proof.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          The critical step is to subtract and add the same thing: <m>f(x)g(x+h)</m> in the numerator of the fraction
+          in the limit which gives the definition of <m>\frac{\mbox{d} }{\mbox{d} x} \left( f(x) \cdot g(x) \right)</m>. Also, you'll need to recall the laws of limits (like <q>the limit of a product is the product of the limits <mdash /> provided both exist</q>)
+        </p>
+      </hint>
+    </exercise>
   </exercises>
 </section>

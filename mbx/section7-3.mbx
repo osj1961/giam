@@ -7,15 +7,10 @@
     recesses in a desk in which one could sort correspondence (see <xref ref="fig_roll_top">Figure</xref>).
   </p>
 
-  <figure>
-    <image source="images/3773292f0c8831b3ef36257060e3ec94c0790646.png"/>
-    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
-      \reset@font\fontsize{#1}{#2pt}
-      \fontfamily{#3}\fontseries{#4}\fontshape{#5}
-      \selectfont}\fi
-    <image source="images/d6889d9c7e2bd10475dcf3fd958713d4b135f9be.png"/>
-    \caption[A desk with pigeonholes.]{Pigeonholes in an old-fashioned roll top
-    desk could be used to sort letters.}
+  <figure xml:id="fig_roll_top" >
+    <caption>Pigeonholes in an old-fashioned roll top
+    desk could be used to sort letters.</caption>
+    <image source=""/>
   </figure>
 
   <p>
@@ -102,7 +97,9 @@
     by the other.
   </p>
 
-  \rule{108pt}{1pt}
+  <p>
+    \rule{108pt}{1pt}
+  </p>
 
   <p>
     We can come up with stronger forms of the pigeonhole principle by
@@ -149,55 +146,74 @@
   </proof>
 
   <exercises>
-
-    <ol>
-      <li><p>
+    <exercise>
+      <statement>
+        <p>
           The statement that there are two non-bald New Yorkers with
-          the same number of hairs on their heads requires some careful 
-          estimates to justify it.  Please justify it.
-        </p></li>
-
-      <li><p>
+          the same number of hairs on their heads requires some careful
+          estimates to justify it. Please justify it.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           A mathematician, who always rises earlier than her spouse, has
           developed a scheme <mdash /> using the pigeonhole principle <mdash /> to ensure that
-          she always has a matching pair of socks.  She keeps only blue socks, green 
+          she always has a matching pair of socks. She keeps only blue socks, green
           socks and
-          black socks in her sock drawer <mdash /> 10 of each.  So as not to wake her 
+          black socks in her sock drawer <mdash /> 10 of each. So as not to wake her
           husband she must
           select some number of socks from her drawer in the early morning dark
           and take them with her to the adjacent bathroom where she dresses.
           What number of socks does she choose?
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           If we select <m>1001</m> numbers from the set <m>\{1, 2, 3, \ldots, 2000\}</m>
           it is certain that there will be two numbers selected such that one divides
-          the other.  We can prove this fact by noting that every number in the given
+          the other. We can prove this fact by noting that every number in the given
           set can be expressed in the form <m>2^k \cdot m</m> where <m>m</m> is an odd number
-          and using the pigeonhole principle.  Write-up this proof.
-        </p></li>
-
-      <li><p>
+          and using the pigeonhole principle. Write-up this proof.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Given any set of <m>53</m> integers, show that there are two of them
-          having the property 
+          having the property
           that either their sum or their difference is evenly divisible by <m>103</m>.
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Prove that if <m>10</m> points are placed inside a square of side length 3,
           there will be 2 points within <m>\sqrt{2}</m> of one another.
-        </p></li>
-
-      <li><p>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
           Prove that if <m>10</m> points are placed inside an equilateral triangle
           of side length 3, there will be 2 points within <m>1</m> of one another.
-        </p></li>
-
-      <li><p>
-          Prove that in a simple graph (an undirected graph with no 
-          loops or parallel edges) having <m>n</m> nodes, there must be two nodes 
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove that in a simple graph (an undirected graph with no
+          loops or parallel edges) having <m>n</m> nodes, there must be two nodes
           having the same degree.
-        </p></li>
-    </ol>
+        </p>
+      </statement>
+    </exercise>
   </exercises>
 </section>
