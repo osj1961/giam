@@ -1,0 +1,304 @@
+
+<section xml:id="sec_cont">
+  <title>Containment</title>
+  <p>
+    There are two notions of being <q>inside</q> a set. A thing may be
+    an <em>element</em> of a set, or may be contained as
+    a subset. Distinguishing these two notions of inclusion is essential.
+    One difficulty that sometimes complicates things is that a set may contain
+    other sets <em>as elements</em>. For instance, as we saw in the previous
+    section, the elements of a power set are themselves sets.
+  </p>
+
+  <p>
+    A set <m>A</m> is a <index><main>subset</main></index><em>subset</em> of another set <m>B</m> if all of <m>A</m>'s elements
+    are also in <m>B</m>. The terminology
+    <index><main>superset</main></index><em>superset</em> is used to refer
+    to <m>B</m> in this situation, as in <q>The set of all real-valued functions
+    in one real variable is a superset of the polynomial functions.</q> The
+    subset/superset relationship is indicated with a symbol that should be
+    thought of as a stylized version of the less-than-or-equal sign, when
+    <m>A</m> is a subset of <m>B</m> we write <m>A \subseteq B</m>.
+  </p>
+
+  <p>
+    We say that <m>A</m> is
+    a <index><main>proper subset</main></index><em>proper subset</em> of <m>B</m> if <m>B</m> has some elements that aren't in
+    <m>A</m>, and in this situation we write <m>A \subset B</m> or if we really want
+    to emphasize the fact that the sets are not equal we can write
+    <m>A \subsetneq B</m>. By the way, if you want to emphasize the superset
+    relationship, all of these symbols can be turned around. So for example
+    <m>A \supseteq B</m> means that <m>A</m> is a superset of <m>B</m> although they could
+    potentially be equal.
+  </p>
+
+  <p>
+    As we've seen earlier, the symbol <m>\in</m> is used between an element of
+    a set and the set that it's in. The following exercise is intended to
+    clarify the distinction between <m>\in</m> and <m>\subseteq</m>.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Let <m>A = \left\{  1, 2, \{ 1 \}, \{ a, b \} \right\}</m>.
+        Which of the following are true?
+      </p>
+      <tabular>
+        <row>
+          <cell>i) <m>\{ a, b \} \subseteq A</m>.</cell>
+          <cell>vi) <m>\{ 1 \} \subseteq A</m>.</cell>
+        </row>
+        <row>
+          <cell>ii) <m>\{ a, b \} \in A</m>.</cell>
+          <cell>vii) <m>\{ 1 \} \in A</m>.</cell>
+        </row>
+        <row>
+          <cell>iii) <m>a \in A</m>.</cell>
+          <cell>viii) <m>\{ 2 \} \in A</m>.</cell>
+        </row>
+        <row>
+          <cell>iv) <m>1 \in A</m>.</cell>
+          <cell>ix) <m>\{ 2 \} \subseteq A</m>.</cell>
+        </row>
+        <row>
+          <cell>v) <m>1 \subseteq A</m>.</cell>
+          <cell>x) <m>\{\{1\}\} \subseteq A</m>.</cell>
+        </row>
+      </tabular>
+    </statement>
+  </exercise>
+  <p>
+    Another perspective that may help clear up the distinction between
+    <m>\in</m> and <m>\subseteq</m> is to consider what they correspond to in Logic.
+    The <q>element of</q> symbol <m>\in</m> is used to construct open sentences
+    that embody the membership question <mdash /> thus it corresponds to single
+    sentences in Logic. The <q>set containment</q> symbol <m>\subseteq</m> goes
+    between two <em>sets</em> and so whatever it corresponds to in Logic
+    should be something that can appropriately be inserted between two
+    sentences. Let's run through a short example to figure out what that
+    might be. To keep things
+    simple we'll work inside the universal set <m>U=\{ 1, 2, 3, \ldots 50 \}</m>.
+    Let <m>T</m> be the subset of <m>U</m> consisting of those numbers that are
+    divisible by 10, and let <m>F</m> be those that are divisible by 5.
+    <me>
+      T = \{10, 20, 30, 40, 50 \}
+    </me>
+    <me>
+      F = \{5, 10, 15, 20, 25, 30, 35, 40, 45, 50 \}
+    </me>
+  </p>
+
+  <p>
+    Hopefully it is clear that <m>\subseteq</m> can be inserted between these two sets
+    like so: <m>T \subseteq F</m>.
+    On the other hand we can re-express the sets <m>T</m> and <m>F</m> using set-builder
+    notation in order to see clearly what their membership questions are.
+    <me>
+      T = \{ x \in U \; \suchthat \; 10\divides x \}
+    </me>
+    <me>
+      F = \{ x \in U \; \suchthat \; 5\divides x \}
+    </me>
+  </p>
+
+  <p>
+    What logical operator fits nicely between <m>10\divides x</m> and <m>5\divides x</m>?
+    Well, of course, it's the implication arrow. It's easy to
+    verify that <m>10\divides x \, \implies \, 5\divides x</m>, and it's equally easy
+    to note that the other direction doesn't work, <m>5\divides x \, \nRightarrow \, 10\divides x</m> <mdash /> for instance, <m>5</m> goes evenly into <m>15</m>, but <m>10</m> doesn't.
+  </p>
+
+  <p>
+    The general statement is: if <m>A</m> and <m>B</m> are sets, and <m>M_A(x)</m> and <m>M_B(x)</m>
+    are their respective membership questions, then <m>A \subseteq B</m> corresponds
+    precisely to <m>\forall x \in U, M_A(x) \implies M_B(x)</m>.
+  </p>
+
+  <p>
+    Now to many people (me included!) this looks funny at first, <m>\subseteq</m>
+    in Set theory corresponds to <m>\implies</m> in Logic. It seems like both
+    of these symbols are arrows of a sort <mdash /> but they point in opposite
+    directions! Personally, I resolve the apparent discrepancy by thinking
+    about the <q>strength</q> of logical predicates. One predicate is stronger
+    than another if it puts more conditions on the elements that would make
+    it true. For example, <q><m>x</m> is doubly-even</q> is stronger than
+    <q><m>x</m> is (merely) even.</q> Now, the stronger statement implies the weaker
+    (assuming of course that they are stronger and weaker versions of the
+    same idea). If a number is doubly-even (i.e. divisible by 4) then it
+    is certainly even <mdash /> but the converse is certainly not true, <m>6</m> is even
+    but <em>not</em> doubly-even. Think of all this in terms of sets now.
+    Which set contains the other, the set of doubly-even numbers or the set
+    of even numbers? Clearly the set that corresponds to more stringent
+    membership criteria is smaller than the set that corresponds
+    to less restrictive criteria, thus the set defined by a weak membership
+    criterion contains the one having a stronger criterion.
+  </p>
+
+  <p>
+    If we are asked to prove that one set is contained in another as a subset,
+    <m>A \subseteq B</m>, there are two ways to proceed. We may either argue by
+    thinking about elements, or (although this amounts to the same thing)
+    we can show that <m>A</m>'s membership criterion
+    implies <m>B</m>'s membership criterion.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Consider <m>S</m>, the set of perfect squares and <m>F</m>, the set of perfect fourth
+        powers. Which is contained in the other? Can you prove it?
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    We'll end this section with a fairly elementary proof <mdash /> mainly just to
+    illustrate how one should proceed in proving that one set is contained in
+    another.
+  </p>
+
+  <p>
+    Let <m>D</m> represent the set of all integers that are divisible by 9,
+    <me>
+      D = \{ x \in \Integers \suchthat \exists k \in \Integers, \; x=9k \}.
+    </me>
+  </p>
+
+  <p>
+    Let <m>C</m> represent the set of all integers that are divisible by 3,
+    <me>
+      C = \{ x \in \Integers \suchthat \exists k \in \Integers, \; x=3k \}.
+    </me>
+  </p>
+
+  <p>
+    The set <m>D</m> is contained in <m>C</m>. Let's prove
+    it!
+  </p>
+
+  <proof>
+    <p>
+      Suppose that <m>x</m> is an arbitrary element of <m>D</m>. From the definition
+      of <m>D</m> it follows that there is an integer <m>k</m> such that <m>x=9k</m>.
+      We want to show that <m>x \in C</m>, but since <m>x=9k</m> it is easy to
+      see that <m>x = 3(3k)</m> which shows (since <m>3k</m> is clearly an integer)
+      that <m>x</m> is in <m>C</m>.
+    </p>
+  </proof>
+
+  <exercises>
+    <exercise>
+      <statement>
+        <p>
+          Insert either <m>\in</m> or <m>\subseteq</m> in the blanks in the following
+          sentences (in order to produce true sentences).
+        </p>
+        <tabular>
+          <row>
+            <cell>i) <m>1</m> <fillin /> <m>\{3, 2, 1, \{a, b\}\}</m></cell>
+            <cell></cell>
+            <cell>iii) <m>\{a, b\}</m>  <fillin /> <m>\{3, 2, 1, \{a, b\}\}</m></cell>
+          </row>
+          <row>
+            <cell>ii) <m>\{a\}</m> <fillin /> <m>\{a, \{a, b\}\}</m></cell>
+            <cell></cell>
+            <cell>iv) <m>\{\{a, b\}\}</m>  <fillin /> <m>\{a, \{a, b\}\}</m></cell>
+          </row>
+        </tabular>
+      </statement>
+      <hint>
+        <p>
+          <m>\in</m>, <m>\subseteq</m>, <m>\in</m>, <m>\subseteq</m>
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Suppose that <m>p</m> is a prime, for each <m>n</m> in <m>\Integers^+</m>,
+          define the set <m>P_n = \{ x \in \Integers^+ \suchthat \, p^n \divides x \}</m>.
+          Conjecture and prove a statement about the containments between these sets.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          When <m>p=2</m> we have seen these sets. <m>P_1</m> is the even numbers, <m>P_2</m> is the doubly-even numbers,
+          etc.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Provide a counterexample to dispel the notion that a subset must
+          have fewer elements than its superset.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          A subset is called <em>proper</em> if it is neither empty nor equal to the superset. If
+          we are talking about finite sets then the proper subsets do indeed have fewer elements
+          than the supersets. Among infinite sets it is possible to have proper subsets having the same
+          number of elements as their superset, for example there are just as many even natural numbers
+          as there are natural numbers all told.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          We have seen that <m>A \subseteq B</m> corresponds to <m>M_A \implies M_B</m>.
+          What corresponds to the contrapositive statement?
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Turn <q>logical negation</q> into <q>set complement</q> and reverse the direction of the inclusion.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Determine two sets <m>A</m> and <m>B</m> such that both of the sentences
+          <m>A \in B</m> and <m>A \subseteq B</m> are true.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          The smallest example I can think of would be <m>A=\emptyset</m> and <m>B=\{\emptyset\}</m>. You should come up with a different example.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove that the set of perfect fourth powers is contained in the
+          set of perfect squares.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          It would probably be helpful to have precise definitions of the sets described in the problem.
+        </p>
+
+        <p>
+          The fourth powers are
+          <me>
+            F = \{x \suchthat \exists y \in \Integers, x=y^4 \}.
+          </me>
+        </p>
+
+        <p>
+          The squares are
+          <me>
+            S = \{x \suchthat \exists z \in \Integers, x=z^2 \}.
+          </me>
+        </p>
+
+        <p>
+          To show that one set is contained in another, we need to show that the first set's membership
+          criterion implies that of the second set.
+        </p>
+      </hint>
+    </exercise>
+  </exercises>
+</section>

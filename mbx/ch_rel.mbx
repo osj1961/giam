@@ -1,0 +1,15 @@
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ch_rel">
+  <title>Relations and functions</title>
+  <introduction>
+    <p>
+      <em>If evolution really works, how come mothers only have two hands? <ndash />Milton Berle</em>
+    </p>
+  </introduction>
+  <xi:include  href="sec_rels.mbx" />
+  <xi:include  href="sec_rel_props.mbx" />
+  <xi:include  href="sec_eq_rel.mbx" />
+  <xi:include  href="sec_ord_rel.mbx" />
+  <xi:include  href="sec_functions.mbx" />
+  <xi:include  href="sec_special_functions.mbx" />
+</chapter>

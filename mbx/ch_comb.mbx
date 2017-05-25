@@ -1,0 +1,896 @@
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ch_comb">
+  <title>Proof techniques III <mdash /> Combinatorics</title>
+  <introduction>
+    <p>
+      <em>Tragedy is when I cut my finger. Comedy is when you fall into an open sewer and die. <ndash />Mel Brooks </em>
+    </p>
+
+    <p>
+      {Counting} Many results in mathematics are answers to <q>How many <ellipsis /></q> questions.
+    </p>
+
+    <p>
+      <q>How many subsets does a finite set have?</q>
+    </p>
+
+    <p>
+      <q>How many handshakes will transpire when <m>n</m> people first meet?</q>
+    </p>
+
+    <p>
+      <q>How many functions are there from a set of size <m>n</m> to a set of size <m>m</m>?</q>
+    </p>
+
+    <p>
+      The title of this section, <q>Counting,</q> is not intended to evoke the usual
+      process of counting sheep, or counting change. What we want is to be able
+      to count some collection <em>in principle</em> so that we will be able to
+      discover a formula for its size.
+    </p>
+
+    <p>
+      There are two principles that will be indispensable in counting things.
+      These principles are simple, yet powerful, and they have been named in
+      the most unimaginative way possible. The <q>multiplication rule</q> which
+      tells us when we should multiply, and the <q>addition rule</q> which tells
+      us when we should add.
+    </p>
+
+    <p>
+      Before we describe these principles in detail,
+      we'll have a look at a simpler problem which is most easily described
+      by an example: How many integers are there in the list <m>(7,8,9,\ldots 44)</m>?
+      We could certainly write down all the integers from <m>7</m> to <m>44</m> (inclusive)
+      and then count them <mdash /> although this wouldn't be the best plan if the numbers
+      <m>7</m> and <m>44</m> were replaced with (say) <m>7,045,356</m> and <m>22,355,201</m>. A method
+      that does lead to a generalized ability to count the elements of a finite
+      sequence arises if we think carefully about what exactly a finite sequence
+      <em>is</em>.
+    </p>
+
+    <definition>
+      <statement>
+        <p>
+          A <index><main>sequence</main></index><term>sequence from a set <m>S</m></term> is a function from
+          <m>\Naturals</m> to <m>S</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <definition>
+      <statement>
+        <p>
+          A <index><main>finite sequence</main></index><term>finite sequence from a set <m>S</m></term> is a
+          function from <m>\{0, 1, 2, \ldots , n\}</m> to <m>S</m>, where <m>n</m> is some
+          particular (finite) integer.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      Now it is easy to see that there are <m>n+1</m> elements in the set
+      <m>\{0, 1, 2, \ldots , n \}</m> so counting the elements of a finite
+      sequence will be easy if we can determine the function involved
+      and figure out what <m>n</m> is by inverting it (<m>n</m> is an inverse image
+      for the last element in a listing of the sequence).
+    </p>
+
+    <p>
+      In the example that we started with, the function is <m>f(x)=x+7</m>. We
+      can sum up the process that allows us to count the sequence by saying
+      ``there is a one-to-one correspondence between the lists
+      <me>
+        (7, 8, 9, \ldots , 44 )
+      </me>
+      and
+      <me>
+        (0, 1, 2, \ldots , 37 )
+      </me>
+      and the later has <m>38</m> entries.''
+    </p>
+
+    <p>
+      More generally, if there is a list of consecutive numbers beginning
+      with <m>k</m> and ending with <m>n</m>, there will be <m>n-k+1</m> entries in the
+      list. Lists of consecutive integers represent a relatively simple
+      type of finite sequence. Usually we would have some slightly more
+      interesting function that we'd need to invert.
+    </p>
+
+    <p>
+      The following exercise involves inverting the function <m>(x+5)^2</m>.
+    </p>
+    <exercise>
+      <statement>
+        <p>
+          How many integers are in the list <m>(25, 36, 49, \ldots , 10000)</m> ?
+        </p>
+      </statement>
+    </exercise>
+    <p>
+      We will have a lot more practice with counting the elements of sequences
+      in the exercises at the end of this section, let's continue on our
+      tour of counting by having a look at the addition rule.
+    </p>
+
+    <p>
+      The <index><main>addition rule</main></index>addition rule says that it is appropriate to add if we can
+      partition a collection into <em>disjoint</em> pieces. In other words,
+      if a set <m>S</m> is the union of two or more subsets and these subsets
+      are mutually disjoint, we can find the size of <m>S</m> by adding the sizes
+      of the subsets.
+    </p>
+
+    <p>
+      In the game <index><main>Yahtzee</main></index>Yahtzee, one rolls 5 dice and (optionally) performs a
+      second roll of some or all of the dice. The object is to achieve
+      several final configurations that are modeled after the hands in
+      Poker. In particular, one configuration, known as a <q>full house,</q>
+      is achieved by having two of one number and three of another.
+      (Colloquially, we say <q>three-of-a-kind plus a pair is a full house.</q>)
+    </p>
+
+    <p>
+      Now, we could use Yahtzee <q>hands</q> to provide us with a whole collection
+      of counting problems once we have our basic counting principles,
+      but for the moment we just want to make a simple (and obvious) point
+      about <q>full houses</q> <mdash /> the pair is either smaller or larger than
+      the three-of-a-kind. This means we can partition the set of all possible
+      full houses into two disjoint sets <mdash /> the full houses consisting of a small
+      pair and a larger three-of-a-kind and those where the pair is larger
+      than the three-of-a-kind. If we can find some way of counting these
+      two cases separately, then the total number of full houses will be the
+      sum of these numbers.
+    </p>
+
+    <figure xml:id="fig_full_house" >
+      <caption>In Yahtzee, a full house may consist of 
+      a pair and a larger three-of-a-kind, or vice versa.</caption>
+      <image source=""/>
+    </figure>
+
+    <p>
+      The <index><main>multiplication rule</main></index>multiplication rule gives
+      us a way of counting things by thinking
+      about how we might construct them. The numbers that are multiplied
+      are the number of choices we have in the construction process.
+      Surprisingly often, the number of choices we can make in a given
+      stage of constructing some configuration is independent of the choices
+      that have gone before <mdash /> if this is not the case the multiplication rule
+      may not apply.
+    </p>
+
+    <p>
+      If some object can be constructed in <m>k</m> stages, and if in the first
+      stage we have <m>n_1</m> choices as to how to proceed, in the second stage
+      we have <m>n_2</m> choices, <em>et cetera</em>. Then the total number of such
+      objects is the product <m>n_1n_2 \cdots n_k</m>.
+    </p>
+
+    <p>
+      A <index><main>permutation</main></index><em>permutation of an <m>n</m>-set</em> (w.l.o.g. <m>\{1,2,\ldots , n\}</m>) is an ordered <m>n</m>-tuple where each entry is a distinct element of the
+      <m>n</m>-set. Generally, a permutation may be regarded as a bijection from
+      an <m>n</m>-set to itself. Our first use of the multiplication rule will
+      be to count the total number of permutations of <m>\{1, 2, 3, \ldots ,n\}</m>.
+    </p>
+
+    <p>
+      Let's start by counting the permutations of <m>\{1, 2, 3\}</m>.
+      A permutation will be a 3-tuple containing the numbers <m>1</m>, <m>2</m> and
+      <m>3</m> in some order. We will think about building such a thing in
+      three stages. First,
+      we must select a number to go in the first position <mdash /> there are <m>3</m> choices.
+      Having made that choice, there will only be two possibilities for the number
+      in the second position. Finally there is just one number remaining to put in
+      the third position<fn>People may say you have <q>no choice</q> in this 
+      last situation, but what they mean is that you have only one choice.</fn>.
+      Thus there are <m>3\cdot 2\cdot 1 = 6</m> permutations of a <m>3</m> element set.
+    </p>
+
+    <p>
+      The general rule is that there are <m>n!</m> permutations of <m>\{1, 2, \ldots , n\}</m>.
+    </p>
+
+    <p>
+      There are times when configurations that are like permutations (in that they
+      are ordered and have no duplicates) but don't consist of all <m>n</m> numbers
+      are useful.
+    </p>
+
+    <definition>
+      <statement>
+        <p>
+          A <term><m>k</m>-permutation from an <m>n</m>-set</term> is an ordered selection
+          of <m>k</m> distinct elements from a set of size <m>n</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      There are certain natural limitations on the value of <m>k</m>, for instance <m>k</m>
+      can't be negative <mdash /> although (arguably) <m>k</m> can be 0, it makes more sense
+      to think of <m>k</m> being at least 1. Also, if <m>k</m> exceeds
+      <m>n</m> we won't be able to find <em>any</em> <m>k</m>-permutations,
+      since it will be impossible
+      to meet the <q>distinct</q> requirement. If <m>k</m> and <m>n</m> are equal, there is
+      no difference between a <m>k</m>-permutation and an ordinary permutation.
+      Therefore, we ordinarily restrict <m>k</m> to lie in the range <m>0 \lt  k \lt  n</m>.
+    </p>
+
+    <p>
+      The notation <m>P(n,k)</m> is used for the total number of <m>k</m>-permutations
+      of a set of size <m>n</m>. For example, <m>P(4,2)</m> is 12, since there are
+      twelve different ordered pairs having distinct entries where the
+      entries come from <m>\{1,2,3,4\}</m>.
+    </p>
+    <exercise>
+      <statement>
+        <p>
+          Write down all twelve <m>2</m>-permutations of the <m>4</m>-set <m>\{1,2,3,4\}</m>.
+        </p>
+      </statement>
+    </exercise>
+    <p>
+      Counting <m>k</m>-permutations using the multiplication rule is easy. We
+      build a <m>k</m>-permutation in <m>k</m> stages. In stage 1, we pick the first
+      element in the permutation <mdash /> there are <m>n</m> possible choices. In
+      stage 2, we pick the second element <mdash /> there are now only <m>n-1</m> choices
+      since we may not repeat the first entry. We keep going like this until
+      we've picked <m>k</m> entries. The number <m>P(n,k)</m> is the product of <m>k</m>
+      numbers beginning with <m>n</m> and descending down to <m>n-k+1</m>. To verify
+      that <m>n-k+1</m> is really the right lower limit, check that there are indeed
+      <m>k</m> entries in the sequence
+      <me>
+        (n, n-1, n-2, \ldots n-k+1).
+      </me>
+    </p>
+
+    <p>
+      This verification may be easier if we rewrite the sequence as
+      <me>
+        (n-0, n-1, n-2, \ldots n-(k-1) ).
+      </me>
+    </p>
+
+    <p>
+      Let's have a look at another small example <mdash /> <m>P(8,4)</m>. There will be 8
+      choices for the first entry in a 4-tuple, 7 choices for the second
+      entry, 6 choices for the third entry and 5 choices for the last entry.
+      (Note that <m>5 = 8-4+1</m>.) Thus <m>P(8,4)=8\cdot 7 \cdot 6 \cdot 5 = 1680</m>.
+    </p>
+
+    <p>
+      Finally, we should take note that it is relatively easy to express <m>P(n,k)</m>
+      using factorials. If we divide a number factorialized by some smaller
+      number factorialized, we will get a descending product just like those above.
+    </p>
+    <exercise>
+      <statement>
+        <p>
+          What factorial would we divide <m>8!</m> by in order to get <m>P(8,4)</m>?
+        </p>
+      </statement>
+    </exercise>
+    <p>
+      The general rule is that <m>P(n,k) = \frac{n!}{(n-k)!}</m>.
+    </p>
+
+    <p>
+      If we were playing a card game in which we were dealt 5 cards from
+      a deck of 52, we would receive our cards in the form of
+      <m>P(52,5) = 52 \cdot 51 \cdot 50 \cdot 49 \cdot 48 = 311875200</m> ordered
+      <m>5</m>-tuples. Normally, we don't really care about what order the cards
+      came to us in. In a card game one ordinarily begins sorting the cards
+      so as to see what hand one has <mdash /> this is a sure sign that the order the
+      cards were dealt is actually immaterial. How many different orders can
+      five cards be put in? The answer to this question is <m>5! = 120</m> since
+      what we are discussing is nothing more than a permutation of a set of
+      size 5. Thus, if we say that there are 311,875,200 different possible
+      hands in 5-card poker, we are over-counting things by quite a bit! Any
+      given hand will appear 120 times in that tabulation, which means the
+      right value is <m>311875200/120 = 2598960</m>.
+    </p>
+
+    <p>
+      Okay, so there around 2.6 million
+      different hands in 5-card poker. Unless you plan to become a gambler
+      this isn't really that useful of a piece of information <mdash /> but if you
+      generalize what we've done in the paragraph above, you'll have found
+      a way to count unordered collections of a given size taken from a set.
+    </p>
+
+    <p>
+      A <index><main>combination</main></index> <em><m>k</m>-combination from an <m>n</m>-set</em> is an
+      unordered selection, without repetitions, of <m>k</m> things out of <m>n</m>.
+      This is the exact same thing as a subset of size <m>k</m> of a set of size
+      <m>n</m>, and the number of such things is denoted by several different
+      notations <mdash /> <m>C(n,k)</m>, <m>nCk</m> and <m>\displaystyle\binom{n}{k}</m> among
+      them<fn>Watch out for the <m>\binom{n}{k}</m> notation, it is easy 
+      to confuse it with the fraction <m>\left(\frac{n}{k}\right)</m>.  They are
+      not the same <mdash /> the fraction bar is <em>supposed</em> to be missing
+      in <m>\binom{n}{k}</m>.</fn>. We can come
+      up with a formula for <m>C(n,k)</m> by a slightly roundabout argument.
+      Suppose we think of counting the <m>k</m>-permutations of <m>n</m> things using the
+      multiplication rule in a different way then we have previously. We'll
+      build a <m>k</m>-permutation in two stages. First we'll choose <m>k</m> symbols
+      to put into our permutation <mdash /> which can be done in <m>C(n,k)</m> ways. And
+      second, we'll put those <m>k</m> symbols into a particular order <mdash /> which
+      can be accomplished in <m>k!</m> ways. Thus <m>P(n,k) = C(n,k) \cdot k!</m>.
+      Since we already know that <m>P(n,k) = \frac{n!}{(n-k)!}</m>, we can
+      substitute and solve to obtain
+      <me>
+        C(n,k) = \frac{n!}{k! \cdot (n-k)!}.
+      </me>
+    </p>
+
+    <p>
+      It is possible to partition many counting problems into 4 <q>types</q>
+      based on the answers to two questions:
+    </p>
+
+    <p>
+      Is order important in the configurations being counted?
+    </p>
+
+    <p>
+      Are we allowed to have repeated elements in a configuration?
+    </p>
+
+    <p>
+      Suppose that we are in the general situation of selecting <m>k</m> things
+      out of a set of size <m>n</m>. It should be possible to write formulas
+      involving <m>n</m> and <m>k</m> in the four cells of the following table.
+    </p>
+    <tabular>
+    <row>
+      <cell></cell>
+      <cell>Does order matter?</cell>
+    </row>
+    <row>
+    <cell>\begin{sideways} Are repeats okay? \end{sideways}</cell>
+    <cell><tabular>
+      <row>
+        <cell></cell>
+        <cell>Yes</cell>
+        <cell>No</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>\begin{sideways}  No \end{sideways}</cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>\begin{sideways}  Yes  \end{sideways}</cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+    </tabular></cell>
+    </row>
+    </tabular>
+    <p>
+      <em>Ordered with repetition</em>
+    </p>
+
+    <p>
+      Selecting a <index><main>PIN</main></index>PIN number<fn>The phrase <q>PIN number</q> is 
+      redundant.  The `N' in PIN stands for <q>number.</q>  Anyway, a PIN is
+      a four digit (secret) number used to help ensure that automated banking
+      (such as withdrawing your life's savings) is only done by an authorized
+      individual.</fn> for your bank account is a good example of
+      the kind of problem that is dealt with in the lower left part of the
+      table. Obviously, the order in which you key-in the digits of your PIN
+      is important. If one's number is 1356, it won't do to put in 6531!
+      Also there is no reason that we couldn't have repeated digits in a PIN.
+      (Although someone who chooses a PIN like 3333 is taking a bit of a security
+      risk! A bad guy looking over your shoulder may easily discern what your
+      PIN is.) A PIN is an ordered selection of 4 things out of 10, where
+      repetition is allowed. There are <m>10^4</m> possible PINs. We can determine
+      this by thinking of the multiplication principle <mdash /> there are 10 choices
+      for the first digit of our PIN, since repetition is okay there are still
+      10 choices for our second digit, then (still) 10 choices for the third
+      digit as well as the fourth digit.
+    </p>
+
+    <p>
+      In general, when selecting <m>k</m> things out of <m>n</m> possibilities, where order
+      counts and repetition is allowed, there are <m>n^k</m> possible selections.
+    </p>
+
+    <p>
+      <em>Ordered without repetition</em>
+    </p>
+
+    <p>
+      Suppose that one wishes to come up with a password for a computer
+      account. There are 52 letters (both upper and lower case) 10 numerals
+      and 32 symbols and punctuation marks <mdash /> for a total of 94 different
+      characters that
+      may be used. Some system administrators can be very paranoid about
+      passwords that might be guessable <mdash /> for instance no password that
+      appears in a dictionary should ever be used on a system where security
+      is a concern. Suppose that your system administrator will reject any
+      password that has repeated symbols, and that passwords must have 8
+      characters. How many passwords are possible?
+    </p>
+
+    <p>
+      This is an instance of a counting problem where we are selecting 8 things
+      out of a set of size 94 <mdash /> clearly order is important and the system
+      administrator's restriction means that we may not have repeats.
+      The multiplication rule tells us that there are
+      <m>94\cdot 93\cdot 92\cdot 91\cdot 90\cdot 89\cdot 88\cdot 87 = 4488223369069440</m>
+      different passwords. And in the general case (selecting <m>k</m> things out
+      of a set of size <m>n</m>, without repetition, and with order counting)
+      there will be <m>n!/(n-k)!</m> possibilities. This is the number we have
+      denoted previously by <m>P(n,k)</m>.
+    </p>
+
+    <p>
+      <em>Unordered without repetition</em>
+    </p>
+
+    <p>
+      This is also a case that we've considered previously. If we are choosing
+      <m>k</m> things out of <m>n</m> and order is unimportant and there can be no
+      repetitions, then what we are describing is a <m>k</m>-subset of the
+      <m>n</m>-set. There are <m>C(n,k) = \frac{n!}{k!(n-k)!}</m> distinct subsets.
+      Here, we'll give an example that doesn't sound like we're talking
+      about counting subsets of a particular size. (Although we really are!)
+    </p>
+
+    <p>
+      How many different sequences of 6 strictly increasing numbers can
+      we choose from <m>\{1, 2, 3, \ldots 20\}</m>?
+    </p>
+
+    <p>
+      Obviously, listing all such sequences would be an arduous task.
+      We might start with <m>(1,2,3,4,5,6)</m> and try to proceed in some
+      orderly fashion to <m>(15,16,17,18,19,20)</m>, but unfortunately there
+      are 38,760 such sequences so unless we enlist the aid of a computer
+      we are unlikely to finish this job in a reasonable time. The number
+      we've just given (38,760) is <m>C(20,6)</m> and so it would seem that we're
+      claiming that this problem is really unordered selection without repetition
+      of 6 things out of 20. Well, actually, some parts of this are clearly
+      right <mdash /> we are selecting 6 things from a set of size 20, and because
+      our sequences are supposed to be <em>strictly</em> increasing there will
+      be no repetitions <mdash /> but, a strictly increasing sequence is clearly
+      <em>ordered</em> and the formula we are using is for <em>unordered</em>
+      collections.
+    </p>
+
+    <p>
+      By specifying a particular ordering (strictly increasing) on the sequences
+      we are counting above, we are actually removing the importance of order.
+      Put another way: if order really mattered, the symbols <m>1</m> through <m>6</m>
+      could be put into <m>720</m> different orders <mdash /> but we only want to count
+      one of those possibilities. Put another other way: there is a one-to-one
+      correspondence between a <m>6</m>-subset of <m>\{1,2,3, \ldots 20\}</m> and a
+      strictly increasing sequence. Just make sure the subset is written in
+      increasing order!
+    </p>
+
+    <p>
+      Okay, at this point we have filled-in three out of the four cells in our table.
+    </p>
+    <tabular>
+    <row>
+      <cell></cell>
+      <cell>Does order matter?</cell>
+    </row>
+    <row>
+    <cell>\begin{sideways} Are repeats okay? \end{sideways}</cell>
+    <cell><tabular>
+      <row>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell>Yes</cell>
+        <cell>No</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>\begin{sideways}  No \end{sideways}</cell>
+        <cell><m>P(n,k) = \frac{n!}{(n-k)!}</m></cell>
+        <cell><m>C(n,k) = \frac{n!}{k!(n-k)!}</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>\begin{sideways}  Yes  \end{sideways}</cell>
+        <cell><m>n^k</m></cell>
+        <cell></cell>
+      </row>
+    </tabular></cell>
+    </row>
+    </tabular>
+    <p>
+      What kinds of things are we counting in the lower right part of the table?
+      Unordered selections of <m>k</m> things out of <m>n</m> possibilities where there may
+      (or may not!) be repetitions. The game Yahtzee provides a nice example of
+      this type of configuration. When we roll 5 dice, we do not do so
+      one-at-a-time, rather, we roll them as a group <mdash /> the dice are
+      indistinguishable so there is no way to order our set of 5 outcomes.
+      In fact, it would be quite reasonable to, after one's roll, arrange the
+      die in (say) increasing order. We'll repeat a bit of advice that was given
+      previously: if one is free to rearrange a configuration to suit one's needs,
+      that is a clue that order is <em>not</em> important in the configurations
+      under consideration. Finally, are repetitions allowed? The outcomes
+      in Yahtzee are 5 numbers from the set <m>\{1,2,3,4,5,6\}</m>, and while it
+      is possible to have no repetitions, that is a pretty special outcome!
+      In general, the same number can appear on two, or several, or even
+      <em>all 5</em> of the die<fn>When this happens you are supposed 
+      to jump in the air and yell <q>Yahtzee!</q></fn>.
+    </p>
+
+    <p>
+      So, how many different outcomes
+      are there when one rolls five dice? To answer this question it will
+      be helpful to think about how we might express such an outcome.
+      Since order is unimportant, we can choose to put the numbers that appear
+      on the individual die in whatever order we like. We may as well place them
+      in increasing order. There will be 5 numbers and each number is between 1
+      and 6. We can list the outcomes systematically by starting with an all-ones
+      Yahtzee:
+    </p>
+    <tabular>
+      (1,1,1,1,1)  \= (1,1,1,1,2)  \= (1,1,1,1,3)  \= (1,1,1,1,4)  \= (1,1,1,1,5)  \= (1,1,1,1,6) 
+ 
+      (1,1,1,2,2) \> (1,1,1,2,3) \> (1,1,1,2,4) \> (1,1,1,2,5) \> (1,1,1,2,6) \> (1,1,1,3,3) 
+ 
+      (1,1,1,3,4) \> (1,1,1,3,5) \> (1,1,1,3,6) \> (1,1,1,4,4) \> (1,1,1,4,5) \> (1,1,1,4,6) 
+ 
+      (1,1,1,5,5) \> (1,1,1,5,6) \> (1,1,1,6,6) \> (1,1,2,2,2) \> (1,1,2,2,3) \> (1,1,2,2,4) 
+ 
+      (1,1,2,2,5) \> (1,1,2,2,6) \> (1,1,2,3,3) \> (1,1,2,3,4) \> (1,1,2,3,5) \> (1,1,2,3,6) 
+ 
+      (1,1,2,4,4) \> (1,1,2,4,5) \> (1,1,2,4,6) \> (1,1,2,5,5) \> (1,1,2,5,6) \> (1,1,2,6,6) 
+ 
+      (1,1,3,3,3) \> (1,1,3,3,4) \> (1,1,3,3,5) \> (1,1,3,3,6) \> (1,1,3,4,4) \> (1,1,3,4,5) 
+ 
+      (1,1,3,4,6) \> (1,1,3,5,5) \> (1,1,3,5,6) \> (1,1,3,6,6) \> (1,1,4,4,4) \> (1,1,4,4,5) 
+ 
+      (1,1,4,4,6) \> (1,1,4,5,5) \> (1,1,4,5,6) \> (1,1,4,6,6) \> (1,1,5,5,5) \> (1,1,5,5,6) 
+ 
+      (1,1,5,6,6) \> (1,1,6,6,6) \> (1,2,2,2,2) \> (1,2,2,2,3) \> (1,2,2,2,4) \> (1,2,2,2,5) 
+ 
+      (1,2,2,2,6) \> (1,2,2,3,3) \> (1,2,2,3,4) \> (1,2,2,3,5) \> (1,2,2,3,6) \> (1,2,2,4,4) 
+ 
+      (1,2,2,4,5) \> (1,2,2,4,6) \> (1,2,2,5,5) \> (1,2,2,5,6) \> (1,2,2,6,6) \> (1,2,3,3,3) 
+ 
+      (1,2,3,3,4) \> (1,2,3,3,5) \> (1,2,3,3,6) \> (1,2,3,4,4) \> (1,2,3,4,5) \> (1,2,3,4,6) 
+ 
+      (1,2,3,5,5) \> (1,2,3,5,6) \> (1,2,3,6,6) \> (1,2,4,4,4) \> (1,2,4,4,5) \> (1,2,4,4,6) 
+ 
+      (1,2,4,5,5) \> (1,2,4,5,6) \> (1,2,4,6,6) \> (1,2,5,5,5) \> (1,2,5,5,6) \> (1,2,5,6,6) 
+ 
+      (1,2,6,6,6) \> (1,3,3,3,3) \> (1,3,3,3,4) \> (1,3,3,3,5) \> (1,3,3,3,6) \> (1,3,3,4,4) 
+ 
+      (1,3,3,4,5) \> (1,3,3,4,6) \> (1,3,3,5,5) \> (1,3,3,5,6) \> (1,3,3,6,6) \> (1,3,4,4,4) 
+ 
+      (1,3,4,4,5) \> (1,3,4,4,6) \> (1,3,4,5,5) \> (1,3,4,5,6) \> (1,3,4,6,6) \> (1,3,5,5,5) 
+ 
+      (1,3,5,5,6) \> (1,3,5,6,6) \> (1,3,6,6,6) \> (1,4,4,4,4) \> (1,4,4,4,5) \> (1,4,4,4,6) 
+ 
+      (1,4,4,5,5) \> (1,4,4,5,6) \> (1,4,4,6,6) \> (1,4,5,5,5) \> (1,4,5,5,6) \> (1,4,5,6,6) 
+ 
+      (1,4,6,6,6) \> (1,5,5,5,5) \> (1,5,5,5,6) \> (1,5,5,6,6) \> (1,5,6,6,6) \> (1,6,6,6,6) 
+ 
+      (2,2,2,2,2) \> (2,2,2,2,3) \> (2,2,2,2,4) \> (2,2,2,2,5) \> (2,2,2,2,6) \> (2,2,2,3,3) 
+ 
+      (2,2,2,3,4) \> (2,2,2,3,5) \> (2,2,2,3,6) \> (2,2,2,4,4) \> (2,2,2,4,5) \> (2,2,2,4,6) 
+ 
+      (2,2,2,5,5) \> (2,2,2,5,6) \> (2,2,2,6,6) \> (2,2,3,3,3) \> (2,2,3,3,4) \> (2,2,3,3,5) 
+ 
+      (2,2,3,3,6) \> (2,2,3,4,4) \> (2,2,3,4,5) \> (2,2,3,4,6) \> (2,2,3,5,5) \> (2,2,3,5,6) 
+ 
+      (2,2,3,6,6) \> (2,2,4,4,4) \> (2,2,4,4,5) \> (2,2,4,4,6) \> (2,2,4,5,5) \> (2,2,4,5,6) 
+ 
+      (2,2,4,6,6) \> (2,2,5,5,5) \> (2,2,5,5,6) \> (2,2,5,6,6) \> (2,2,6,6,6) \> (2,3,3,3,3) 
+ 
+      (2,3,3,3,4) \> (2,3,3,3,5) \> (2,3,3,3,6) \> (2,3,3,4,4) \> (2,3,3,4,5) \> (2,3,3,4,6) 
+ 
+      (2,3,3,5,5) \> (2,3,3,5,6) \> (2,3,3,6,6) \> (2,3,4,4,4) \> (2,3,4,4,5) \> (2,3,4,4,6) 
+ 
+      (2,3,4,5,5) \> (2,3,4,5,6) \> (2,3,4,6,6) \> (2,3,5,5,5) \> (2,3,5,5,6) \> (2,3,5,6,6) 
+ 
+      (2,3,6,6,6) \> (2,4,4,4,4) \> (2,4,4,4,5) \> (2,4,4,4,6) \> (2,4,4,5,5) \> (2,4,4,5,6) 
+ 
+      (2,4,4,6,6) \> (2,4,5,5,5) \> (2,4,5,5,6) \> (2,4,5,6,6) \> (2,4,6,6,6) \> (2,5,5,5,5) 
+ 
+      (2,5,5,5,6) \> (2,5,5,6,6) \> (2,5,6,6,6) \> (2,6,6,6,6) \> (3,3,3,3,3) \> (3,3,3,3,4) 
+ 
+      (3,3,3,3,5) \> (3,3,3,3,6) \> (3,3,3,4,4) \> (3,3,3,4,5) \> (3,3,3,4,6) \> (3,3,3,5,5) 
+ 
+      (3,3,3,5,6) \> (3,3,3,6,6) \> (3,3,4,4,4) \> (3,3,4,4,5) \> (3,3,4,4,6) \> (3,3,4,5,5) 
+ 
+      (3,3,4,5,6) \> (3,3,4,6,6) \> (3,3,5,5,5) \> (3,3,5,5,6) \> (3,3,5,6,6) \> (3,3,6,6,6) 
+ 
+      (3,4,4,4,4) \> (3,4,4,4,5) \> (3,4,4,4,6) \> (3,4,4,5,5) \> (3,4,4,5,6) \> (3,4,4,6,6) 
+ 
+      (3,4,5,5,5) \> (3,4,5,5,6) \> (3,4,5,6,6) \> (3,4,6,6,6) \> (3,5,5,5,5) \> (3,5,5,5,6) 
+ 
+      (3,5,5,6,6) \> (3,5,6,6,6) \> (3,6,6,6,6) \> (4,4,4,4,4) \> (4,4,4,4,5) \> (4,4,4,4,6) 
+ 
+      (4,4,4,5,5) \> (4,4,4,5,6) \> (4,4,4,6,6) \> (4,4,5,5,5) \> (4,4,5,5,6) \> (4,4,5,6,6) 
+ 
+      (4,4,6,6,6) \> (4,5,5,5,5) \> (4,5,5,5,6) \> (4,5,5,6,6) \> (4,5,6,6,6) \> (4,6,6,6,6) 
+ 
+      (5,5,5,5,5) \> (5,5,5,5,6) \> (5,5,5,6,6) \> (5,5,6,6,6) \> (5,6,6,6,6) \> (6,6,6,6,6)
+    </tabular>
+    <p>
+      Whew <ellipsis /> err, I mean, Yahtzee!
+    </p>
+
+    <p>
+      You can describe a generic element of the above listing by saying <q>It starts
+      with some number of 1's (which may be zero), then there are some 2's (again,
+      it might be that there are zero 2's), then some (possibly none) 3's,
+      then some 4's (or maybe not), then some
+      5's (I think you probably get the idea) and finally some 6's (sorry for
+      all the parenthetical remarks).</q>
+    </p>
+
+    <p>
+      We could, of course, actually count the
+      outcomes as listed above (there are 252) but that would be pretty dull <mdash /> and
+      it wouldn't get us any closer to solving such problems in general. To
+      count things like Yahtzee rolls it will turn out that we can count something
+      related but much simpler <mdash /> blank-comma arrangements. For the Yahtzee
+      problem we count arrangements of 5 blanks and 5 commas. That is,
+      things like { \rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt},\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt},,\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt},\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt},} and
+      { \rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt},,,,,} and
+      { ,,,\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt},,}.
+      These arrangements of blanks and commas correspond uniquely to Yahtzee
+      rolls <mdash /> the commas serve to separate different numerical values
+      and the blanks are where we would write-in the 5 outcomes on the die.
+    </p>
+
+    <p>
+      Convince yourself that there really is a one-to-one correspondence
+      between Yahtzee outcomes and arrangements of 5 blanks and 5 commas
+      by doing the following
+    </p>
+    <exercise>
+      <statement>
+        <p>
+          What Yahtzee rolls correspond to the following blank-comma arrangements?
+        </p>
+
+        <p>
+          { \rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt},\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt},\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt},\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt},\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt},} { \rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt},\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt},,,,} { ,,,,,\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}\rule{.4pt}{1.2pt}\rule{9pt}{.4pt}\rule{.4pt}{1.2pt}}
+        </p>
+
+        <p>
+          What blank-comma arrangements correspond to the following Yahtzee outcomes?
+        </p>
+
+        <p>
+          <m>\{2,3,4,5,6\}</m> <m>\{3,3,3,3,4\}</m> <m>\{5,5,6,6,6\}</m>
+        </p>
+      </statement>
+    </exercise>
+    <p>
+      It may seem at first that this blank-comma thing is okay, but that we're
+      still no closer to answering the question we started with. It may seem
+      that way until you realize how easy it is to count these blank-comma
+      arrangements! You see, there are 10 symbols in one of these blank-comma
+      arrangements
+      and if we choose positions for (say) the commas, the blanks will have to go
+      into the other positions <mdash /> thus every 5-subset of <m>\{1,2,3,4,5,6,7,8,9,10\}</m>
+      gives us a blank-comma arrangement and every one of <em>them</em> gives us
+      a Yahtzee outcome. That is why there are <m>C(10, 5) = 252</m> outcomes
+      listed in the giant tabulation above.
+    </p>
+
+    <p>
+      In general, when we are selecting <m>k</m> things from a set of size <m>n</m>
+      (with repetition and without order) we will need to consider
+      blank-comma arrangements having <m>k</m> blanks and <m>n-1</m> commas. As an
+      aid to memory, consider that when you actually write-out the elements
+      of a set it takes one fewer commas than there are elements <mdash /> for example
+      <m>\{1,2,3,4\}</m> has 4 elements but we only need 3 commas to separate them.
+      The general answer to our problem is either <m>C(k+n-1,k)</m> or
+      <m>C(k+n-1, n-1)</m>, depending on whether you want to think about
+      selecting positions for the <m>k</m> blanks or for the <m>n-1</m> commas.
+      It turns out that these binomial coefficients are equal so there's
+      no problem with the apparent ambiguity.
+    </p>
+
+    <p>
+      So, finally, our table of counting formulas is complete. We'll produce
+      it here one more time and, while we're at it, ditch the <m>C(n,k)</m> notation in
+      favor of the more usual <q>binomial coefficient</q> notation <m>\binom{n}{k}</m>.
+    </p>
+    <tabular>
+    <row>
+      <cell></cell>
+      <cell>Does order matter?</cell>
+    </row>
+    <row>
+    <cell>\begin{sideways} Are repeats okay? \end{sideways}</cell>
+    <cell><tabular>
+      <row>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell>Yes</cell>
+        <cell>No</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>\begin{sideways}  No \end{sideways}</cell>
+        <cell><m>P(n,k) = \frac{n!}{(n-k)!}</m></cell>
+        <cell><m>\binom{n}{k} = \frac{n!}{k!(n-k)!}</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>\begin{sideways}  Yes  \end{sideways}</cell>
+        <cell><m>n^k</m></cell>
+        <cell><m>\binom{n+k-1}{k}</m></cell>
+      </row>
+    </tabular></cell>
+    </row>
+    </tabular>
+    <exercises>
+      <exercise>
+      <statement>
+        <p>
+          Determine the number of entries in the following sequences.
+          <ol>
+            \end{exercise}
+            <exercise>
+              <p>
+                <m>(999, 1000, 1001, \ldots  2006)</m>
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+              <p>
+                <m>(13, 15, 17, \ldots 199)</m>
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+              <p>
+                <m>(13, 19, 25, \ldots 601)</m>
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+              <p>
+                <m>(5, 10, 17, 26, 37, \ldots 122)</m>
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+              <p>
+                <m>(27, 64, 125, 216, \ldots 8000)</m>
+              </p>
+            </statement>
+          </exercise>
+          \begin{exercise}  <m>(7, 11, 19, 35, 67, \ldots 131075)</m>
+        </ol>
+      </p>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            How many <q>full houses</q> are there in Yahtzee? (A full house is a pair
+            together with a three-of-a-kind.)
+          </p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            In how many ways can you get <q>two pairs</q> in Yahtzee?
+          </p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            Prove that the binomial coefficients <m>\displaystyle \binom{n+k-1}{k}</m>
+            and <m>\displaystyle \binom{n+k-1}{n-1}</m> are equal.
+          </p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            The <q>Cryptographer's alphabet</q> is used to supply small examples
+            in coding and cryptography. It consists of the first 6 letters, <m>\{a, b, c, d, e, f\}</m>. How many <q>words</q> of length up to 6 can be made with this
+            alphabet? (A word need not actually be a word in English, for example
+            both <q>fed</q> and <q>dfe</q> would be words in the sense we are using the term.)
+          </p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            How many <q>words</q> are there of length 4, with distinct letters from the
+            Cryptographer's alphabet, in which the letters appear in increasing order
+            alphabetically? (<q>Acef</q> would be one such word, but <q>cafe</q> would not.)
+          </p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            How many <q>words</q> are there of length 4 from the
+            Cryptographer's alphabet, with repeated letters allowed,
+            in which the letters appear in non-decreasing order alphabetically?
+          </p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            How many subsets does a finite set have?
+          </p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            How many handshakes will transpire when <m>n</m> people first meet?
+          </p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            How many functions are there from a set of size <m>n</m> to a set of size <m>m</m>?
+          </p>
+        </statement>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            How many relations are there from a set of size <m>n</m> to a set of size <m>m</m>?
+          </p>
+        </statement>
+      </exercise>
+    </exercises>
+  </introduction>
+  <xi:include  href="sec_parity.mbx" />
+  <xi:include  href="sec_pigeonhole.mbx" />
+  <xi:include  href="sec_alg_comb.mbx" />
+</chapter>

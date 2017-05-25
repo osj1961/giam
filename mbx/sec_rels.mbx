@@ -1,0 +1,375 @@
+
+<section xml:id="sec_rels">
+  <title>Relations</title>
+  <p>
+    A <em>relation</em> in mathematics is a symbol that can be placed between
+    two numbers (or variables) to create a logical statement (or open sentence).
+    The main point here is that the insertion of a relation symbol between
+    two numbers creates a statement whose value is either true or false.
+    For example, we have previously seen the divisibility symbol (<m>\mid</m>) and noted
+    the common error of mistaking it for the division symbol (<m>/</m>); one of these
+    tells us to perform an arithmetic operation, the other asks us whether
+    <em>if</em> such an operation were performed there would be a remainder.
+    There are many other symbols that we have seen which have this characteristic,
+    the most important is probably <m>=</m>, but there are lots: <m>\neq</m>, <m>\lt</m>, <m>\leq</m>,
+    <m>></m>, <m>\geq</m> all work this way <mdash /> if we place them between two numbers
+    we get a Boolean thing, it's either true or false. If, instead of numbers,
+    we think of placing sets on either side of a relation symbol, then
+    <m>=</m>, <m>\subseteq</m> and <m>\supseteq</m> are valid relation symbols. If we think
+    of placing logical expressions on either side of a relation then,
+    honestly, <em>any</em> of the logical symbols is a relation, but we normally
+    think of <m>\land</m> and <m>\lor</m> as operators and give things like <m>\equiv</m>,
+    <m>\implies</m> and <m>\iff</m> the status of relations.
+  </p>
+
+  <p>
+    In the examples we've looked at the things on either side of a relation
+    are of the same type. This is usually, but not always, the case. The
+    prevalence of relations with the same kind of things being compared has
+    even lead to the aphorism <q>Don't compare apples and oranges.</q> Think
+    about the symbol <m>\in</m> for a moment. As we've seen previously, it
+    isn't usually appropriate to put <em>sets</em> on either side of this,
+    we might have numbers or other objects on the left and sets on the right.
+    Let's look at a small example. Let <m>A = \{1,2,3,a,b\}</m> and let
+    <m>B=\{ \{1,2,a\}, \{1,3,5,7,\ldots\}, \{1\} \}</m>. The <q>element of</q>
+    relation, <m>\in</m>, is a <em>relation from <m>A</m> to <m>B</m></em>.
+  </p>
+
+  <figure xml:id="fig_rel1" >
+    <caption>The <q>element of</q> relation 
+    is an example of a relation that goes <em>from</em> one set <em>to</em> a 
+    different set.</caption>
+    <image source=""/>
+  </figure>
+
+  <p>
+    A diagram such as we have given in <xref ref="fig_rel1">Figure</xref> seems like a
+    very natural thing. Such pictures certainly give us an easy visual
+    tool for thinking
+    about relations. But we should point out certain hidden assumptions.
+    First, they'll only work if we are dealing with finite sets, or sets
+    like the odd numbers in our example (sets that are infinite but could
+    in principle be listed). Second, by drawing the two sets separately,
+    it seems that we are assuming they are not only different, but
+    <em>disjoint</em>. The sets not only need not be disjoint, but often
+    (most of the time!) we have relations that go from a set to itself
+    so the sets in a picture like this may be identical. In <xref ref="fig_rel2">Figure</xref>
+    we illustrate the divisibility relation on the set of all divisors of
+    6 <mdash /> this is an example in which the sets on either side of the relation
+    are the same. Notice the linguistic distinction, we can talk about
+    either <q>a relation from <m>A</m> to <m>B</m></q> (when there are really two
+    different sets) or <q>a relation on <m>A</m></q> (when there is only one).
+  </p>
+
+  <figure xml:id="fig_rel2" >
+    <caption>The <q>divides</q> relation 
+    is an example of a relation that goes from a set to itself.  In this example 
+    we say that we have a relation <em>on</em> the set of divisors of 6.</caption>
+    <image source=""/>
+  </figure>
+
+  <p>
+    Purists will note that it is really inappropriate to represent the same set
+    in two different places in a Venn diagram. The diagram in <xref ref="fig_rel2">Figure</xref>
+    should really look like this:
+  </p>
+  <image source="images/56f03a4ca93c31cf67756f8d6c8f41c881482184.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/31bb60bd3341d6c6bd0bd31858aa6d54d61a934c.png"/>
+  <p>
+    Indeed, this representation is definitely preferable, although it may be more crowded.
+    A picture such as this is
+    known as the <index><main>directed graph</main></index><em>directed graph</em> (a.k.a. <index><main>digraph</main></index><em>digraph</em>)
+    of the relation.
+  </p>
+
+  <p>
+    Recall that when we were discussing sets we said the best way to describe
+    a set is simply to list all of its elements. Well, what is the best
+    way to describe a relation? In the same spirit, it would seem we should
+    explicitly list all the things that make the relation true. But it takes
+    a <em>pair</em> of things, one to go on the left side and one to go on the
+    right, to make a relation true (or for that matter false!). Also it should
+    be evident that order is important in this context, for example <m>2\lt 3</m> is true
+    but <m>3\lt 2</m> isn't. The identity of a relation is so intimately tied up with
+    the set of ordered pairs that make it true, that when dealing with abstract
+    relations we <em>define them</em> as sets of ordered pairs.
+  </p>
+
+  <p>
+    Given two sets, <m>A</m> and <m>B</m>, the <index><main>Cartesian product</main></index>
+    <em>Cartesian product of <m>A</m> and <m>B</m></em>
+    is the set of all ordered pairs <m>(a,b)</m> where <m>a</m> is in <m>A</m> and <m>b</m> is in <m>B</m>.
+    We denote the Cartesian product using the symbol <times />.
+    <me>
+      A \times B = \{ (a,b) \suchthat a \in A \land b \in B \}
+    </me>
+  </p>
+
+  <p>
+    From here on out
+    in your mathematical career you'll need to take note of the context that
+    the symbol <times /> appears in. If it appears between numbers go ahead and
+    multiply, but if it appears between sets you're doing something different <mdash /> forming the Cartesian product.
+  </p>
+
+  <p>
+    The familiar <m>x</m><ndash /><m>y</m> plane, is often called the Cartesian plane. This
+    is done for two reasons. <index><main>Descartes, Rene</main></index>Rene Descartes, the famous
+    mathematician and philosopher, was the first to consider coordinatizing
+    the plane and thus is responsible for our current understanding of the
+    relationship between geometry and algebra. Rene Descartes' name is also
+    memorialized in the definition of the Cartesian product of sets, and the
+    plane is nothing more than the product <m>\Reals \times \Reals</m>. Indeed,
+    the plane provided the very first example of the concept that was later
+    generalized to the Cartesian product of sets.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Suppose <m>A = \{1,2,3\}</m> and <m>B = \{a,b,c\}</m>. Is <m>(a,1)</m> in the Cartesian
+        product <m>A \times B</m>? List all elements of <m>A \times B</m>.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    In the abstract, we can define a relation as <em>any</em> subset of an
+    appropriate Cartesian product. So an abstract relation <m>\relR</m> from a set
+    <m>A</m> to a set <m>B</m> is just some subset of <m>A \times B</m>. Similarly, a
+    relation <m>\relR</m> on a set <m>S</m> is defined by a subset of <m>S \times S</m>.
+    This definition looks a little bit strange when we apply it to an
+    actual (concrete) relation that we already know about. Consider the
+    relation <q>less than.</q> To describe <q>less than</q> as a subset of
+    a Cartesian product we must write
+    <me>
+      \lt  \; = \; \{ (x,y) \in \Reals \times \Reals \suchthat y-x \in \Reals^+ \}.
+    </me>
+  </p>
+
+  <p>
+    This looks funny.
+  </p>
+
+  <p>
+    Also, if we have defined some relation <m>\relR \subseteq A \times B</m>, then in order
+    to say that a particular pair, <m>(a,b)</m>, of things make the relation true we
+    have to write
+    <me>
+      a\relR b.
+    </me>
+  </p>
+
+  <p>
+    This looks funny too.
+  </p>
+
+  <p>
+    Despite the strange appearances, these
+    examples do express the correct way to deal with relations.
+  </p>
+
+  <p>
+    Let's do a completely made-up example. Suppose <m>A</m> is the set
+    <m>\{a,e,i,o,u\}</m> and <m>B</m> is the set <m>\{r,s,t,l,n\}</m> and we define
+    a relation from <m>A</m> to <m>B</m> by
+    <me>
+      \relR = \{ (a,s), (a,t), (a,n), (e,t), (e,l), (e,n), (i,s), (i,t), (o,r), (o,n), (u,s) \}.
+    </me>
+  </p>
+
+  <p>
+    Then, for example, because <m>(e,t) \in \relR</m> we can write <m>e \relR t</m>. We indicate the
+    negation of the concept that two elements are related by drawing a slash
+    through the name of the relation, for example the notation <m>\neq</m> is certainly
+    familiar to you, as is <m>\nless</m> (although in this latter case we
+    would normally write <m>\geq</m> instead). We can denote the fact that
+    <m>(a,l)</m> is not a pair that makes the relation true by writing <m>a \nrelR l</m>.
+  </p>
+
+  <p>
+    We should mention another way of visualizing
+    relations. When we are dealing with a relation on <m>\Reals</m>, the
+    relation is actually a subset of <m>\Reals \times \Reals</m>, that means
+    we can view the relation as a subset of the <m>x</m><ndash /><m>y</m> plane. In other
+    words, we can graph it. The graph of the <q><m>\lt</m></q> relation is
+    given in <xref ref="fig_lt_graph">Figure</xref>.
+  </p>
+
+  <figure xml:id="fig_lt_graph" >
+    <caption>The <q>less than</q> relation 
+    can be viewed as a subset of <m>\Reals \times \Reals</m>, i.e. it can be graphed.</caption>
+    <image source=""/>
+  </figure>
+
+  <p>
+    A relation on any set that is a subset of <m>\Reals</m> can likewise be
+    graphed. The graph of the <q><m>\mid</m></q> relation is
+    given in <xref ref="fig_div_graph">Figure</xref>.
+  </p>
+
+  <figure xml:id="fig_div_graph" >
+    <caption>The divisibility relation 
+    can be graphed.  Only those points (as indicated) with integer coordinates 
+    are in the graph.</caption>
+    <image source=""/>
+  </figure>
+
+  <p>
+    Eventually, we will get around to defining functions as relations that
+    have a certain nice property. For the moment, we'll just note that
+    some of the operations that you are used to using with functions
+    also apply with relations. When one function <q>undoes</q> what another
+    function <q>does</q> we say the functions are inverses. For example,
+    the function <m>f(x)=2x</m> (i.e. doubling) and the function <m>g(x)=x/2</m> (halving)
+    are inverse functions because, no matter what number we start with, if we
+    double it and then halve that result, we end up with the original number.
+    The <index><main>inverse, of a relation</main></index>inverse of a relation <m>\relR</m> is written <m>\relR^{-1}</m> and it consists of
+    the reversals of the pairs in <m>\relR</m>,
+    <me>
+      \relR^{-1} = \{ (b,a) \suchthat (a,b) \in \relR \}.
+    </me>
+  </p>
+
+  <p>
+    This can also be expressed by writing
+    <me>
+      b\relR^{-1}a \; \iff \; a\relR b.
+    </me>
+  </p>
+
+  <p>
+    The process of <q>doing one function and then doing another</q> is known
+    as <index><main>composition, of functions</main></index>functional composition. For instance,
+    if <m>f(x) = 2x+1</m> and <m>g(x) = \sqrt{x}</m>, then we can compose them (in two
+    different orders) to obtain either <m>f(g(x)) = 2\sqrt{x}+1</m> or
+    <m>g(f(x)) = \sqrt{2x+1}</m>. When composing functions there is an <q>intermediate
+    result</q> that you get by applying the first function to your input, and then
+    you calculate the second function's value at the intermediate result.
+    (For example, in calculating <m>g(f(4))</m> we get the intermediate result
+    <m>f(4) = 9</m> and then we go on to calculate <m>g(9) = 3</m>.)
+  </p>
+
+  <p>
+    The definition of the <index><main>composition, of relations</main></index><em>composite</em>
+    of two relations focuses very much on this idea
+    of the intermediate result. Suppose <m>\relR</m> is a relation from
+    <m>A</m> to <m>B</m> and <m>\relS</m> is a relation from <m>B</m> to <m>C</m> then the composite
+    <m>\relS \circ \relR</m> is given by
+    <me>
+      \relS \circ \relR \; = \; \{ (a,c) \suchthat \exists b \in B, (a,b) \in \relR \, \land (b,c) \in \relS \}.
+    </me>
+  </p>
+
+  <p>
+    In this definition, <m>b</m> is the <q>intermediate result,</q> if there is no such
+    <m>b</m> that serves to connect <m>a</m> to <m>c</m> then <m>(a,c)</m> won't be in the composite.
+    Also, notice that this is the composition <m>\relR</m> first, then <m>\relS</m>, but
+    it is written as <m>\relS \circ \relR</m> <mdash /> watch out for this! The
+    compositions of relations should be read from right to left. This convention
+    makes sense when you consider functional composition, <m>f(g(x))</m> means <m>g</m>
+    first, then <m>f</m> so if we use the <q>little circle</q> notation for the
+    composition of relations we have <m>f \circ g (x) = f(g(x))</m> which is nice
+    because the symbols <m>f</m> and <m>g</m> appear in the same order. But beware! there
+    are atavists out there who write their compositions the other way around.
+  </p>
+
+  <p>
+    You should probably have a diagram like the following in mind while thinking
+    about the composition of relations. Here, we have the set <m>A=\{1,2,3,4\}</m>,
+    the set <m>B</m> is <m>\{a,b,c,d\}</m> and <m>C=\{w,x,y,z\}</m>. The relation
+    <m>\relR</m> goes from <m>A</m> to <m>B</m> and consists of the following set of pairs,
+    <me>
+      \relR \; = \; \{(1,a), (1,c), (2,d), (3,c), (3,d) \}.
+    </me>
+  </p>
+
+  <p>
+    And
+    <me>
+      \relS \; = \; \{(a,y), (b,w), (b,x), (b,z) \}.
+    </me>
+  </p>
+  <image source="images/17ec8e8a3f4225fbe6d4f30e1646c94cdf4e3cb8.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/c6f6bcd2128c5c07deed5a22353b4ad58dbddf65.png"/>
+  <exercise>
+    <statement>
+      <p>
+        Notice that the composition <m>\relR \circ \relS</m> is impossible (or, more
+        properly, it is empty). Why?
+      </p>
+
+      <p>
+        What is the (only) pair in the composition <m>\relS \circ \relR</m> ?
+      </p>
+    </statement>
+  </exercise>
+  <exercises>
+    <exercise>
+      <statement>
+        <p>
+          The <index><main>lexicographic order</main></index><em>lexicographic order</em>,
+          <m>\lt _{\mbox{lex} }</m>, is a relation on the
+          set of all words, where <m>x \lt _{\mbox{lex} } y</m> means that <m>x</m> would come before
+          <m>y</m> in the dictionary. Consider just the three letter words like <q>iff</q>,
+          <q>fig</q>, <q>the</q>, et cetera. Come up with a usable definition for
+          <m>x_1x_2x_3  \lt _{\mbox{lex} } y_1y_2y_3</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          What is the graph of <q><m>=</m></q> in <m>\Reals \times \Reals</m>?
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The <index><main>inverse relation</main></index> <em>inverse</em> of a relation <m>\relR</m>
+          is denoted <m>\relR^{-1}</m>. It contains exactly the same ordered pairs
+          as <m>\relR</m> but with the order switched. (So technically, they aren't
+          <em>exactly</em> the same ordered pairs <ellipsis />)
+          <me>
+            \relR^{-1} = \{ (b,a) \suchthat (a,b) \in \relR \}
+          </me>
+        </p>
+
+        <p>
+          Define a relation <m>\relS</m> on <m>\Reals \times \Reals</m> by
+          <m>\relS = \{ (x,y) \suchthat y = \sin x \}</m>. What is <m>\relS^{-1}</m>?
+          Draw a single graph containing <m>\relS</m> and <m>\relS^{-1}</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The <q>socks and shoes</q> rule is a very silly little mnemonic
+          for remembering how to invert a composition. If we think of undoing
+          the process of putting on our socks and shoes (that's socks first, then
+          shoes) we have to first remove our shoes, <em>then</em> take off our socks.
+        </p>
+
+        <p>
+          The socks and shoes rule is valid for relations as well.
+        </p>
+
+        <p>
+          Prove that <m>(\relS \circ \relR)^{-1} = \relR^{-1} \circ \relS^{-1}</m>.
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
+</section>

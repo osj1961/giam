@@ -1,0 +1,1072 @@
+
+<section xml:id="sec_le">
+  <title>Logical equivalences</title>
+  <p>
+    Some logical statements are <q>the same.</q> For example, in the last
+    section, we discussed the fact that a conditional
+    and its contrapositive have the same logical content. Wouldn't
+    we be justified in writing something like the following?
+    <me>
+      A \implies B \; = \; {\lnot}B \implies {\lnot}A
+    </me>
+  </p>
+
+  <p>
+    Well, one pretty serious objection to doing that is that the
+    equals sign (<m>=</m>) has already got a job; it is used to indicate that
+    two numerical quantities are the same. What we're doing here is
+    really sort of a different thing! Nevertheless, there is a concept
+    of <q>sameness</q> between certain compound statements, and we need a
+    symbolic way of expressing it. There are two notations in common
+    use. The notation that seems to be preferred by logicians is the
+    biconditional (<m>\iff</m>). The notation we'll use
+    in the rest of this book is an equals sign with a bit of extra decoration
+    on it (<m>\cong</m>).
+  </p>
+
+  <p>
+    Thus we can can either write
+    <me>
+      (A \implies B) \; \iff \; ({\lnot}B \implies {\lnot}A)
+    </me>
+    or
+    <me>
+      A \implies B \; \cong \; {\lnot}B \implies {\lnot}A.
+    </me>
+  </p>
+
+  <p>
+    I like the latter, but use whichever form you like <mdash /> no one
+    will have any problem understanding either.
+  </p>
+
+  <p>
+    The formal definition of <index><main>logical equivalence</main></index><em>logical equivalence</em>,
+    which is what we've
+    been describing, is this: two compound sentences are logically equivalent
+    if in a truth table (that contains all possible combinations of the
+    truth values of the predicate variables in its rows) the truth values
+    of the two sentences are equal in every row.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Consider the two compound sentences <m>A \lor B</m> and <m>A \lor ({\lnot}A \land B)</m>.
+        There are a total of 2 predicate variables between them, so a truth table
+        with 4 rows will suffice. Fill out the missing entries in the truth
+        table and determine whether the statements are equivalent.
+      </p>
+      <tabular>
+        <row>
+          <cell><m>A</m></cell>
+          <cell><m>B</m></cell>
+          <cell><m>A \lor B</m></cell>
+          <cell><m>A \lor ({\lnot}A \land B)</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>T</cell>
+          <cell>T</cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>T</cell>
+          <cell><m>\phi</m></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>\phi</m></cell>
+          <cell>T</cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>\phi</m></cell>
+          <cell><m>\phi</m></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+      </tabular>
+    </statement>
+  </exercise>
+  <p>
+    One could, in principle, verify all logical equivalences by filling out
+    truth tables. Indeed, in the exercises for this section we will ask you
+    to develop a certain facility at this task. While this activity can
+    be somewhat fun, and many of my students want the filling-out of truth
+    tables to
+    be a significant portion of their midterm exam, you will probably eventually
+    come to find it somewhat tedious. A slightly more mature approach to logical
+    equivalences is this: use a set of basic equivalences <mdash /> which themselves
+    may be verified via truth tables <mdash /> as the basic <em>rules</em> or
+    <index><main>laws of logical equivalence</main></index><em>laws</em>
+    of logical equivalence, and develop a strategy for converting one
+    sentence into another using these rules. This process will feel very
+    familiar, it is like <q>doing</q> algebra, but the rules one is allowed
+    to use are subtly different.
+  </p>
+
+  <p>
+    First we have the <index><main>commutative law</main></index><em>commutative laws</em>,
+    one each for conjunction
+    and disjunction. It's worth noting that there <em>isn't</em> a commutative
+    law for implication.
+  </p>
+
+  <p>
+    The commutative property of conjunction says that <m>A \land B \cong B \land A</m>.
+    This is quite an apparent statement from the perspective of linguistics.
+    Surely it's the same thing to say <q>the weather is cold and snowy</q> as it is to
+    say <q>the weather is snowy and cold.</q>
+    This commutative property is also clear
+    from the perspective of digital logic circuits.
+  </p>
+  <image source="images/03b05d0b4fceb3d4e12e99e6d8513d6e72480ab6.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/13a4bf90fd18ae4f7b22882a3f9a216512f41f7d.png"/>
+  <p>
+    The commutative property of disjunctions is equally transparent from
+    the perspective of a circuit diagram.
+  </p>
+  <image source="images/ee77e34c7b241472b5a870ed2f83b21df5d350d1.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/9723cc4e62fff56610a2260b1428d4b3bc1cd556.png"/>
+  <p>
+    The <index><main>associative law</main></index><em>associative laws</em> also have something to do with what order operations
+    are done. One could think of the difference in the following terms:
+    Commutative properties
+    involve spatial or physical order and the associative properties involve
+    temporal order. The associative law of addition could be used to say we'll
+    get the same result if we add 2 and 3 first, then add 4, or if we add 2 to the
+    sum of 3 and 4 (i.e. that <m>(2+3)+4</m> is the same as <m>2+(3+4)</m>.) Note that
+    physically, the numbers are in the same order (2 then 3 then 4) in both
+    expressions but that the parentheses indicate a precedence in <em>when</em> the
+    plus signs are evaluated.
+  </p>
+
+  <p>
+    The associative law of conjunction states that <m>A \land (B \land C) \cong
+    (A \land B) \land C</m>. In visual terms, this means the following two
+    circuit diagrams are equivalent.
+  </p>
+  <image source="images/2f78b2cbca635365be3ac5a80adf83acd418f656.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/a577579429161bee1931ea6df3c9eedb1dae7ec5.png"/>
+  <p>
+    The associative law of disjunction states that <m>A \lor (B \lor C) \cong
+    (A \lor B) \lor C</m>. Visually, this looks like:
+  </p>
+  <image source="images/a854512900c9102e9a6f9474fea9b61e4b3af549.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/82df02e310a688ef1d5361c7b17cc41c835b6c65.png"/>
+  <exercise>
+    <statement>
+      <p>
+        In a situation where <em>both</em> associativity and commutativity pertain
+        the symbols involved can appear in any order and with any reasonable
+        parenthesization. In how many different ways can the sum <m>2+3+4</m>
+        be expressed? Only consider expression that are fully parenthesized.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    The next type of basic logical equivalences we'll consider are the
+    so-called <index><main>distributive law</main></index><em>distributive laws</em>.
+    Distributive laws involve the
+    interaction of two operations, when we distribute multiplication
+    over a sum, we effectively replace one instance of an operand <em>and the associated operator</em>, with two instances, as is illustrated
+    below.
+  </p>
+  <image source="images/209809ad4e3d8a5f9d1cf388e9443192fe7a5d5b.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/48a25cd3cc9cf747ddb66b5e9358509e4b0793e9.png"/>
+  <p>
+    The logical operators <m>\land</m> and <m>\lor</m> each distribute over the other.
+    Thus we have the distributive law of conjunction over disjunction, which
+    is expressed in the equivalence
+    <m>A \land (B \lor C) \cong (A \land B) \lor (A \land C)</m>
+    and in the following digital logic circuit diagram.
+  </p>
+  <image source="images/7b23d79334384bc517ec5ddc33ee5d8fa3db9ad0.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/b54b1075c3cb1028322e8ab9ed00a5f7f285ea4a.png"/>
+  <p>
+    We also have the distributive law of disjunction over conjunction
+    which is given by the equivalence
+    <m>A \lor (B \land C) \cong (A \lor B) \land (A \lor C)</m> and in the
+    circuit diagram:
+  </p>
+  <image source="images/4918b72a18e0c030247b7783a273f6c87666685b.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/7b6f223fb60b900aecc079371fa58b6e85728699.png"/>
+  <p>
+    Traditionally, the laws we've just stated would be called
+    <em>left</em>-distributive laws and we would also need to state
+    that there are <em>right</em>-distributive laws that apply. Since,
+    in the current setting, we have already said that the commutative
+    law is valid, this isn't really necessary.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        State the right-hand versions of the distributive laws.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    The next set of laws we'll consider come from trying to
+    figure out what the distribution of a minus sign over a sum
+    (<m>-(x+y) = -x + -y</m>)
+    should correspond to in Boolean algebra. At first blush one
+    might assume the analogous thing in Boolean algebra would be
+    something like <m>{\lnot}(A \land B) \cong {\lnot}A \land {\lnot}B</m>,
+    but we can easily dismiss this by looking at a truth table.
+  </p>
+  <tabular>
+    <row>
+      <cell><m>A</m></cell>
+      <cell><m>B</m></cell>
+      <cell><m>{\lnot}(A \land B)</m></cell>
+      <cell><m>{\lnot}A \land {\lnot}B</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>T</cell>
+      <cell>T</cell>
+      <cell><m>\phi</m></cell>
+      <cell><m>\phi</m></cell>
+    </row>
+    <row>
+      <cell>T</cell>
+      <cell><m>\phi</m></cell>
+      <cell>T</cell>
+      <cell><m>\phi</m></cell>
+    </row>
+    <row>
+      <cell><m>\phi</m></cell>
+      <cell>T</cell>
+      <cell>T</cell>
+      <cell><m>\phi</m></cell>
+    </row>
+    <row>
+      <cell><m>\phi</m></cell>
+      <cell><m>\phi</m></cell>
+      <cell>T</cell>
+      <cell>T</cell>
+    </row>
+  </tabular>
+  <p>
+    What actually works is a set of rules known as
+    <index><main>DeMorgan's laws</main></index>DeMorgan's laws, which
+    basically say that you distribute the negative sign but
+    you also must change the operator. As logical equivalences,
+    DeMorgan's laws are
+    <me>
+      {\lnot}(A \land B) \; \cong \; {\lnot}A \lor {\lnot}B
+    </me>
+    and
+    <me>
+      {\lnot}(A \lor B) \; \cong \; {\lnot}A \land {\lnot}B.
+    </me>
+  </p>
+
+  <p>
+    In ordinary arithmetic there are two notions of <q>inverse.</q> The
+    <em>negative</em> of a number is known as its additive inverse and
+    the <em>reciprocal</em> of a number is its multiplicative inverse.
+    These notions lead to a couple of equations,
+    <me>
+      x + -x = 0
+    </me>
+    and
+    <me>
+      x \cdot \frac{1}{x} = 1.
+    </me>
+  </p>
+
+  <p>
+    Boolean algebra only has one <q>inverse</q> concept, the denial
+    of a predicate (i.e. logical negation), but the equations above have analogues, as do
+    the symbols <m>0</m> and <m>1</m> that appear in them. First, consider
+    the Boolean expression <m>A \lor {\lnot}A</m>. This is the logical <em>or</em>
+    of a statement and its exact opposite; when one is true the other is
+    false and vice versa. But, the disjunction <m>A \lor {\lnot}A</m>, is
+    always true! We use the symbol <m>t</m> (which stands for
+    <index><main>tautology</main></index><em>tautology</em>)
+    to represent a compound sentence whose truth value is always true.
+    A tautology (<m>t</m>) is to Boolean algebra something like a zero (<m>0</m>)
+    is to arithmetic. Similar thinking about the Boolean expression
+    <m>A \land {\lnot}A</m> leads to the definition of the symbol <m>c</m> (which
+    stands for <index><main>contradiction</main></index><em>contradiction</em>) to
+    represent a sentence that is always
+    false. The rules we have been discussing are known as
+    <index><main>complementarity laws</main></index><em>complementarity laws</em>:
+    <me>
+      A \lor {\lnot}A \; \cong \; t \mbox{ and } 
+      A \land {\lnot}A \; \cong \; c
+    </me>
+  </p>
+
+  <p>
+    Now that we have the special logical sentences represented by <m>t</m> and <m>c</m>
+    we can present the so-called <index><main>identity laws</main></index><em>identity laws</em>,
+    <m>A \land t \cong A</m> and
+    <m>A \lor c \cong A</m>. If you <q>and</q> a statement with something that is always
+    true, this new compound has the exact same truth values as the original.
+    If you <q>or</q> a statement with something that is always false, the new compound
+    statement is also unchanged from the original. Thus performing a
+    conjunction with a tautology has no effect <mdash /> sort of like multiplying by 1.
+    Performing a disjunction with a contradiction also has no effect <mdash /> this is
+    somewhat akin to adding 0.
+  </p>
+
+  <p>
+    The number 0 has a special property: <m>0 \cdot x = 0</m> is an equation that
+    holds no matter what <m>x</m> is. This is known as a domination property. Note
+    that there isn't a dominance rule that involves 1.
+    On the Boolean side,
+    <em>both</em> the symbols <m>t</m> and <m>c</m> have related domination rules.
+    <me>
+      A \lor t \cong t \mbox{ and }  
+      A \land c \cong c
+    </me>
+  </p>
+
+  <p>
+    In mathematics the word <index><main>idempotent</main></index><em>idempotent</em> is used to describe situations where
+    the powers of a thing are equal to that thing. For example, because every power of <m>1</m> <em>is</em> <m>1</m>, we say that <m>1</m> is an idempotent. Both of the Boolean operations
+    have idempotence relations that just always work (regardless of the operand).
+    In ordinary algebra idempotents are very rare (<m>0</m> and <m>1</m> are the only
+    ones that come to mind), but in Boolean algebra <em>every</em> statement
+    is equivalent to its square <mdash /> where the square of <m>A</m> can be interpreted
+    either as <m>A \land A</m> or as <m>A \lor A</m>.
+    <me>
+      A \lor A \cong A \mbox{ and } 
+      A \land A \cong A
+    </me>
+  </p>
+
+  <p>
+    There are a couple of properties of the logical negation operator
+    that should be stated, though probably they seem self-evident.
+    If you form the denial of a denial, you come back to the
+    same thing as the original; also the symbols <m>c</m> and <m>t</m> are negations
+    of one another.
+    <me>
+      \lnot({\lnot}A) \cong A \mbox{ and } 
+      {\lnot}t  \cong c
+    </me>
+  </p>
+
+  <p>
+    Finally, we should mention a really strange property, called
+    <index><main>absorption</main></index><em>absorption</em>,
+    which states that the expressions <m>A \land (A \lor B)</m> and <m>A \lor (A \land B)</m>
+    don't actually have anything to do with <m>B</m> at all! Both of the preceding
+    statements are equivalent to <m>A</m>.
+    <me>
+      A \land (A \lor B) \cong A \mbox{ and } 
+      A \lor (A \land B) \cong A
+    </me>
+  </p>
+
+  <p>
+    In <xref ref="tab_bool_equiv">Table</xref>, we have collected all of these basic logical
+    equivalences in one place.
+  </p>
+
+  <table xml:id="tab_bool_equiv" >
+    <caption>Basic logical equivalences.</caption>
+    <tabular>
+      <row>
+        <cell></cell>
+        <cell>Conjunctiveversion</cell>
+        <cell>Disjunctiveversion</cell>
+        <cell>Algebraicanalog</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell><index><main>commutative law</main></index>Commutative</cell>
+      </row>
+      <row>
+        <cell>laws</cell>
+        <cell><m>A \land B \cong B \land A</m></cell>
+        <cell><m>A \lor B \cong B \lor A</m></cell>
+        <cell><m>2+3 = 3+2</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell><index><main>associative law</main></index>Associative</cell>
+      </row>
+      <row>
+        <cell>laws</cell>
+        <cell><m>A \land (B \land C)</m><m>\cong (A \land B) \land C</m></cell>
+        <cell><m>A \lor (B \lor C)</m> <m>\cong (A \lor B) \lor C</m></cell>
+        <cell><m>2+(3+4)</m> <m>= (2+3)+4</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell><index><main>distributive law</main></index>Distributive</cell>
+      </row>
+      <row>
+        <cell>laws</cell>
+        <cell><m>A \land (B \lor C) \cong</m> <m>(A \land B) \lor (A \land C)</m></cell>
+        <cell><m>A \lor (B \land C) \cong</m> <m>(A \lor B) \land (A \lor C)</m></cell>
+        <cell><m>2\cdot(3+4)</m> <m>= (2\cdot 3 + 2\cdot 4)</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell><index><main>DeMorgan's law</main></index>DeMorgan's</cell>
+      </row>
+      <row>
+        <cell>laws</cell>
+        <cell><m>{\lnot}(A \land B)</m> <m>\cong \; {\lnot}A \lor {\lnot}B</m></cell>
+        <cell><m>{\lnot}(A \lor B)</m><m>\cong \; {\lnot}A \land {\lnot}B</m></cell>
+        <cell>none</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell><index><main>double negation</main></index>Double negation</cell>
+        <cell><m>{\lnot}({\lnot}A) \; \cong \; A</m></cell>
+        <cell>same</cell>
+        <cell><m>-(-2) = 2</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell><index><main>complementarity law</main></index>Complementarity</cell>
+        <cell><m>A \land {\lnot}A \; \cong \; c</m></cell>
+        <cell><m>A \lor {\lnot}A \; \cong \; t</m></cell>
+        <cell><m>2 + (-2) = 0</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell><index><main>identity law</main></index>Identity</cell>
+      </row>
+      <row>
+        <cell>laws</cell>
+        <cell><m>A \land t \cong A</m></cell>
+        <cell><m>A \lor c \cong A</m></cell>
+        <cell><m>7 + 0 = 7</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell><index><main>domination law</main></index>Domination</cell>
+        <cell><m>A \land c \cong c</m></cell>
+        <cell><m>A \lor t \cong t</m></cell>
+        <cell><m>7 \cdot 0 = 0</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell><index><main>idempotence</main></index>Idempotence</cell>
+        <cell><m>A \land A \cong A</m></cell>
+        <cell><m>A \lor A \cong A</m></cell>
+        <cell><m>1 \cdot 1 = 1</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell><index><main>absorption</main></index>Absorption</cell>
+        <cell><m>A \land (A \lor B) \cong A</m></cell>
+        <cell><m>A \lor (A \land B) \cong A</m></cell>
+        <cell>none</cell>
+      </row>
+    </tabular>
+    <index><main>rules of replacement</main></index>
+  </table>
+
+  <exercises>
+    <exercise>
+      <statement>
+        <p>
+          There are 3 operations used in basic algebra (addition,
+          multiplication and exponentiation) and thus
+          there are potentially 6 different distributive laws. State
+          all 6 <q>laws</q> and determine which 2 are actually valid.
+          (As an example, the distributive law of addition over multiplication
+          would look like <m>x + (y \cdot z) = (x + y) \cdot (x + z)</m>, this isn't
+          one of the true ones.)
+        </p>
+      </statement>
+      <hint>
+        <p>
+          These <q>laws</q> should probably be layed-out in a big 3 by 3 table. Such a table would of course have 9 cells, but we won't be using the cells on the diagonal because they would involve an operation distributing over itself. (That can't happen, can it?)
+          I'm going to put a few of the entries in, and you do the rest.
+        </p>
+        <tabular>
+          <row>
+            <cell></cell>
+            <cell><m>+</m></cell>
+            <cell><m>\ast</m></cell>
+            <cell><m>\caret</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>+</m></cell>
+            <cell><m>\emptyset</m></cell>
+            <cell><md>
+              <mrow>x+(y\ast z)</mrow>
+              <mrow>= (x+y) \ast (x+z)</mrow>
+            </md></cell>
+            <cell><md>
+              <mrow>x+(y^z)</mrow>
+              <mrow>= (x+y)^{(x+z)}</mrow>
+            </md></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>\ast</m></cell>
+            <cell><md>
+              <mrow>x \ast (y+z)</mrow>
+              <mrow>= (x \ast y) + (x \ast z)</mrow>
+            </md></cell>
+            <cell><m>\emptyset</m></cell>
+            <cell></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>\caret</m></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell><m>\emptyset</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+      </hint>
+    </exercise>
+    <exercise>
+    <statement>
+      <p>
+        Use truth tables to verify or disprove the following
+        logical equivalences.
+        <ol>
+          \end{exercise}
+          <exercise>
+            <p>
+              <m>(A \land B) \lor B \; \cong \; (A \lor B) \land B</m>
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>A \land (B \lor {\lnot}A) \; \cong \; A \land B</m>
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>(A \land {\lnot}B) \lor ({\lnot}A \land {\lnot}B) \cong
+              (A \lor {\lnot}B) \land ({\lnot}A \lor {\lnot}B)</m>
+            </p>
+          </statement>
+        </exercise>
+        \begin{exercise} The absorption laws.
+      </ol>
+    </p>
+    <hint>
+      <p>
+        You should be able to do these on your own.
+      </p>
+    </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Draw pairs of related digital logic circuits that illustrate
+          DeMorgan's laws.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Here's the pair that shows the negation of an AND is the same as the OR of the same inputs negated.
+        </p>
+
+        <p>
+          <image width="73%" source="images/DeMorgan.png" />
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+    <statement>
+      <p>
+        Find the negation of each of the following and simplify as much as possible.
+        <ol>
+          \end{exercise}
+          <exercise>
+            <p>
+              <m>(A \lor B) \; \iff \; C</m>
+            </p>
+          </statement>
+        </exercise>
+        \begin{exercise} <m>(A \lor B) \; \implies \; (A \land B)</m>
+      </ol>
+    </p>
+    <hint>
+      <p>
+        Neither of these is particularly amenable to simplification. Nor, perhaps, is it readily
+        apparent what <q>simplify</q> means in this context! My interpretation is that we should look
+        for a logically equivalent expression using the fewest number of operators and if possible
+        <em>not</em> using the more complicated operators (<m>\implies</m> and <m>\iff</m>). However, if we try
+        to rewrite the first statement's negation using only <m>\land</m>, <m>\lor</m> and <m>\lnot</m> we get things
+        that look a lot more complicated than <m>(A \lor B) \; \iff \; {\lnot}C</m> <mdash /> the quick way to negate a
+        biconditional is simply to negate one of its parts.
+      </p>
+
+      <p>
+        The second statement's negation turns out to be the same thing as exclusive or, so a particularly
+        simple response would be to write <m>A \oplus B</m> although that feels a bit like cheating, so
+        maybe we should answer with <m>(A \lor B) \land {\lnot}(A \land B)</m> <mdash /> but that answer is what we
+        would get by simply applying the rule for negating a conditional and doing no further simplification.
+      </p>
+    </hint>
+    </exercise>
+    <exercise>
+    <statement>
+      <p>
+        Because a conditional sentence is equivalent to a certain disjunction, and
+        because DeMorgan's law tells us that the negation of a disjunction is a conjunction,
+        it follows that the negation of a conditional is a conjunction. Find denials (the negation
+        of a sentence is often called its <q>denial</q>) for each of the following conditionals.
+        <ol>
+          \end{exercise}
+          <exercise>
+            <p>
+              <q>If you smoke, you'll get lung cancer.</q>
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <q>If a substance glitters, it is not necessarily gold.</q>
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <q>If there is smoke, there must also be fire.</q>
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <q>If a number is squared, the result is positive.</q>
+            </p>
+          </statement>
+        </exercise>
+        \begin{exercise} <q>If a matrix is square, it is invertible.</q>
+      </ol>
+    </p>
+    <hint>
+      <p>
+        <ol>
+          \end{exercise}
+          <exercise>
+            <statement>
+            <p>
+              <q>You smoke and you haven't got lung cancer.</q>
+            </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+            <p>
+              <q>A substance glitters and it is necessarily gold.</q>
+            </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+            <p>
+              <q>There is smoke,and there isn't fire.</q>
+            </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <statement>
+            <p>
+              <q>A number is squared, and the result is not positive.</q>
+            </p>
+            </statement>
+          </exercise>
+          \begin{exercise} <q>A matrix is square and it is not invertible.</q>
+        </ol>
+      </p>
+    </hint>
+    </exercise>
+    <exercise>
+    <statement>
+      <p>
+        The so-called <q>ethic of reciprocity</q> is an idea that has come
+        up in many of the world's religions and philosophies.
+        Below are statements of the ethic
+        from several sources. Discuss their logical meanings and determine which (if
+        any) are logically equivalent.
+        <ol>
+          \end{exercise}
+          <exercise>
+            <p>
+              <q>One should not behave towards others in a way which is disagreeable to oneself.</q> Mencius Vii.A.4 (Hinduism)
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <q>None of you [truly] believes until he wishes for his brother what he wishes for himself.</q> Number 13 of Imam <q>Al-Nawawi's Forty Hadiths.</q> (Islam)
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <q>And as ye would that men should do to you, do ye also to them likewise.</q> Luke 6:31, King James Version. (Christianity)
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <q>What is hateful to you, do not to your fellow man. This is the law: all the rest is commentary.</q> Talmud, Shabbat 31a. (Judaism)
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <q>An it harm no one, do what thou wilt</q> (Wicca)
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <q>What you would avoid suffering yourself, seek not to impose on others.</q> (the Greek philosopher Epictetus <mdash /> first century A.D.)
+            </p>
+          </statement>
+        </exercise>
+        \begin{exercise} <q>Do not do unto others as you expect they should do unto you. Their tastes may not be the same.</q> (the Irish playwright George Bernard Shaw <mdash /> 20th century A.D.)
+      </ol>
+    </p>
+    <hint>
+      <p>
+        The ones from Wicca and George Bernard Shaw are just there for laughs.
+      </p>
+
+      <p>
+        For the remainder, you may want to contrast how restrictive they seem. For example the Christian version is (in my opinion) a lot stronger than the one from the Talmud <mdash /> <q>treat others as you would want to be treated</q> restricts your actions both in terms of what you would like done to you and in terms of what you wouldn't like done to you; <q>Don't treat your fellows in a way that would be hateful to you.</q> is leaving you a lot more freedom of action, since it only prohibits you from doing those things you wouldn't want done to yourself to others. The Hindus, Epictetus and the Jews (and the Wiccans for that matter) seem to be expressing roughly the same sentiment <mdash /> and promoting an ethic that is rather more easy for humans to conform to!
+      </p>
+
+      <p>
+        From a logical perspective it might be nice to define open sentences:
+        <me>
+          W(x,y) \; = \; \mbox{``x would want y done to him.''}
+        </me>
+        <me>
+          N(x,y)  \; = \; \mbox{``x would not want y done to him.''}
+        </me>
+        <me>
+          D(x,y)  \; = \; \mbox{``do y to x.''}
+        </me>
+        <me>
+          DD(x,y)  \; = \; \mbox{``don't do y to x.''}
+        </me>
+      </p>
+
+      <p>
+        In which case, the aphorism from Luke would be
+        <me>
+          (W(you, y) \implies  D(others, y)) \land (N(you, y) \implies DD(others, y))
+        </me>
+      </p>
+    </hint>
+    </exercise>
+    <exercise>
+    <statement>
+      <p>
+        You encounter two natives of the land of knights and knaves. Fill
+        in an explanation for each line of the proofs of their identities.
+        <ol>
+          \end{exercise}
+          <exercise>
+            <p>
+              Natasha says, <q>Boris is a knave.</q>
+            </p>
+
+            <p>
+              Boris says, <q>Natasha and I are knights.</q>
+            </p>
+
+            <p>
+              <em>Claim:</em> Natasha is a knight, and Boris is a knave.
+            </p>
+          </statement>
+          <proof>
+            <p>
+              If Natasha is a knave, then Boris is a knight.
+            </p>
+
+            <p>
+              If Boris is a knight, then Natasha is a knight.
+            </p>
+
+            <p>
+              Therefore, if Natasha is a knave, then Natasha is a knight.
+            </p>
+
+            <p>
+              Hence Natasha is a knight.
+            </p>
+
+            <p>
+              Therefore, Boris is a knave.
+            </p>
+          </proof>
+
+        </exercise>
+        \begin{exercise} Bonaparte says <q>I am a knight and Wellington is a knave.</q>
+
+        Wellington says <q>I would tell you that B is a knight.</q>
+
+        <em>Claim:</em> Bonaparte is a knight and Wellington is a knave.
+
+        <proof>
+          <p>
+            Either Wellington is a knave or Wellington is a knight.
+          </p>
+
+          <p>
+            If Wellington is a knight it follows that Bonaparte is a knight.
+          </p>
+
+          <p>
+            If Bonaparte is a knight then Wellington is a knave.
+          </p>
+
+          <p>
+            So, if Wellington is a knight then Wellington is a knave (which is impossible!)
+          </p>
+
+          <p>
+            Thus, Wellington is a knave.
+          </p>
+
+          <p>
+            Since Wellington is a knave, his statement <q>I would tell you that Bonaparte is a knight</q> is false.
+          </p>
+
+          <p>
+            So Wellington would in fact tell us that Bonaparte is a knave.
+          </p>
+
+          <p>
+            Since Wellington is a knave we conclude that Bonaparte is a knight.
+          </p>
+
+          <p>
+            Thus Bonaparte is a knight and Wellington is a knave (as claimed).
+          </p>
+        </proof>
+        <hint>
+          <p>
+            Here's the second one:
+          </p>
+
+          <proof>
+          <p>
+            Either Wellington is a knave or Wellington is a knight.
+          </p>
+
+          <p>
+            It's either one thing or the other!
+          </p>
+
+          <p>
+            If Wellington is a knight it follows that Bonaparte is a knight.
+          </p>
+
+          <p>
+            That's what he said he would tell us and if he's a knight we can trust him.
+          </p>
+
+          <p>
+            If Bonaparte is a knight then Wellington is a knave.
+          </p>
+
+          <p>
+            True, because that is one of the things Bonaparte states.
+          </p>
+
+          <p>
+            So, if Wellington is a knight then Wellington is a knave (which is impossible!)
+          </p>
+
+          <p>
+            This is just summing up what was deduced above.
+          </p>
+
+          <p>
+            Thus, Wellington is a knave.
+          </p>
+
+          <p>
+            Because the other possibility leads to something <em>im</em>possible.
+          </p>
+
+          <p>
+            Since Wellington is a knave, his statement <q>I would tell you that Bonaparte is a knight</q> is false.
+          </p>
+
+          <p>
+            Knave's statements are always false!
+          </p>
+
+          <p>
+            So Wellington would in fact tell us that Bonaparte is a knave.
+          </p>
+
+          <p>
+            He was lying when he said he would tell us B is a knight.
+          </p>
+
+          <p>
+            Since Wellington is a knave we conclude that Bonaparte is a knight.
+          </p>
+
+          <p>
+            Wait, now I'm confused<ellipsis /> can you do this part?
+          </p>
+
+          <p>
+            Thus Bonaparte is a knight and Wellington is a knave (as claimed).
+          </p>
+
+          <p>
+            Just summarizing.
+          </p>
+          </proof>
+        </hint>
+      </ol>
+    </p>
+    </exercise>
+  </exercises>
+</section>

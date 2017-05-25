@@ -1,0 +1,219 @@
+
+<section xml:id="sec_pigeonhole">
+  <title>The pigeonhole principle</title>
+  <p>
+    The word <index><main>pigeonhole</main></index> <q>pigeonhole</q> can refer to a hole in which a pigeon roosts
+    (i.e. pretty much what it sounds like) or a series of roughly square
+    recesses in a desk in which one could sort correspondence (see <xref ref="fig_roll_top">Figure</xref>).
+  </p>
+
+  <figure xml:id="fig_roll_top" >
+    <caption>Pigeonholes in an old-fashioned roll top
+    desk could be used to sort letters.</caption>
+    <image source=""/>
+  </figure>
+
+  <p>
+    Whether you prefer to think of roosting birds or letters being sorted,
+    the first and easiest version of the <index><main>pigeonhole principle</main></index> pigeonhole principle is that if you
+    have more <q>things</q> than you have <q>containers</q> there must be a container
+    holding at least two things.
+  </p>
+
+  <p>
+    If we have 6 pigeons who are trying to roost in a coop with 5 pigeonholes,
+    two birds will have to share.
+  </p>
+
+  <p>
+    If we have 7 letters to sort and there are 6 pigeonholes in our desk, we
+    will have to put two letters in the same compartment.
+  </p>
+
+  <p>
+    The <q>things</q> and the <q>containers</q> don't necessarily have to be
+    interpreted in the strict sense that the <q>things</q> go <em>into</em>
+    the <q>containers.</q>
+    For instance, a nice application of the pigeonhole principle is that
+    if there are at least 13 people present in a room, some pair of people
+    will have been born in the same month. In this example the things are the
+    people and the containers are the months of the year.
+  </p>
+
+  <p>
+    The abstract way to phrase the pigeonhole principle is:
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        If <m>f</m> is a function such that <m>|\Dom{f}| > |\Rng{f}|</m> then <m>f</m> is not
+        injective.
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    The proof of this statement is an easy example of proof by contradiction
+    so we'll include it here.
+  </p>
+
+  <proof>
+    <p>
+      Suppose to the contrary that <m>f</m> is a function with
+      <m>|\Dom{f}| > |\Rng{f}|</m> and that <m>f</m> is injective. Of course
+      <m>f</m> is onto its range, so since we are presuming that <m>f</m> is injective
+      it follows that <m>f</m> is a bijection between <m>\Dom{f}</m> and <m>\Rng{f}</m>. Therefore (since <m>f</m> provides a one-to-one
+      correspondence) <m>|\Dom{f}| = |\Rng{f}|</m>. This clearly contradicts the
+      statement that <m>|\Dom{f}| > |\Rng{f}|</m>.
+    </p>
+  </proof>
+
+  <p>
+    For a statement with an almost trivial proof the pigeonhole principle
+    is very powerful. We can use it to prove a host of existential
+    results <mdash /> some are fairly silly, others very deep. Here are a few
+    examples:
+  </p>
+
+  <p>
+    There are two people (who are not bald) in New York City having exactly
+    the same number of hairs on their heads.
+  </p>
+
+  <p>
+    There are two books in (insert your favorite library) that have the
+    same number of pages.
+  </p>
+
+  <p>
+    Given <m>n</m> married couples (so <m>2n</m> people) if we choose <m>n+1</m> people
+    we will be forced to choose both members of some couple.
+  </p>
+
+  <p>
+    Suppose we select <m>n+1</m> numbers from the set <m>\{1, 2, 3, \ldots, 2n\}</m>,
+    we will be forced to have chosen two numbers such that one is divisible
+    by the other.
+  </p>
+
+  <p>
+    \rule{108pt}{1pt}
+  </p>
+
+  <p>
+    We can come up with stronger forms of the pigeonhole principle by
+    considering pigeonholes with capacities. Suppose we have 6 pigeonholes
+    in a desk, each of which can hold 10 letters. What number of letters will
+    guarantee that one of the pigeonholes is full? The largest number of letters
+    we could have without having 10 in some pigeonhole is <m>9 \cdot 6 = 54</m>, so if
+    there are 55 letters we must have 10 letters in some pigeonhole.
+  </p>
+
+  <p>
+    More generally, if we have <m>n</m> containers, each capable of holding <m>m</m>
+    objects, than if there are <m>n \cdot (m-1) + 1</m> objects placed in the
+    containers, we will be assured that one of the containers is at capacity.
+  </p>
+
+  <p>
+    The ordinary pigeonhole principle is the special case <m>m=2</m> of this
+    stronger version.
+  </p>
+
+  <p>
+    There is an even stronger version, which ordinarily is known as the
+    <index><main>pigeonhole principle, strong form</main></index> <q>strong form of the pigeonhole
+    principle.</q> In the strong form, we have pigeonholes with an assortment
+    of capacities.
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        If there are <m>n</m> containers having capacities <m>m_1, m_2, m_3, \ldots, m_n</m>,
+        and there are <m>1 + \sum_{i=1}^n (m_i - 1)</m> objects placed in them, then for
+        some <m>i</m>, container <m>i</m> has (at least) <m>m_i</m> objects in it.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      If no container holds its full capacity, then the largest the
+      total of the objects could be is <m>\sum_{i=1}^n (m_i - 1)</m>.
+    </p>
+  </proof>
+
+  <exercises>
+    <exercise>
+      <statement>
+        <p>
+          The statement that there are two non-bald New Yorkers with
+          the same number of hairs on their heads requires some careful
+          estimates to justify it. Please justify it.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          A mathematician, who always rises earlier than her spouse, has
+          developed a scheme <mdash /> using the pigeonhole principle <mdash /> to ensure that
+          she always has a matching pair of socks. She keeps only blue socks, green
+          socks and
+          black socks in her sock drawer <mdash /> 10 of each. So as not to wake her
+          husband she must
+          select some number of socks from her drawer in the early morning dark
+          and take them with her to the adjacent bathroom where she dresses.
+          What number of socks does she choose?
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          If we select <m>1001</m> numbers from the set <m>\{1, 2, 3, \ldots, 2000\}</m>
+          it is certain that there will be two numbers selected such that one divides
+          the other. We can prove this fact by noting that every number in the given
+          set can be expressed in the form <m>2^k \cdot m</m> where <m>m</m> is an odd number
+          and using the pigeonhole principle. Write-up this proof.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Given any set of <m>53</m> integers, show that there are two of them
+          having the property
+          that either their sum or their difference is evenly divisible by <m>103</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove that if <m>10</m> points are placed inside a square of side length 3,
+          there will be 2 points within <m>\sqrt{2}</m> of one another.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove that if <m>10</m> points are placed inside an equilateral triangle
+          of side length 3, there will be 2 points within <m>1</m> of one another.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove that in a simple graph (an undirected graph with no
+          loops or parallel edges) having <m>n</m> nodes, there must be two nodes
+          having the same degree.
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
+</section>

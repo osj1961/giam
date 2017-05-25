@@ -1,0 +1,159 @@
+
+<section xml:id="sec_monge">
+  <title>Monge's circle theorem</title>
+  <p>
+    There's a nice sequence of matchstick puzzles that starts with
+    <q>Use nine non-overlapping matchsticks to form 4 triangles (all of
+    the same size.</q> It's not that hard, and after a while most people come
+    up with
+  </p>
+  <image source="images/f5eac7982895dd63dc40948606194f5c563b300d.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/0b4f032a368ed2c2c82f8800cf4c86ed17d6e399.png"/>
+  <p>
+    The kicker comes when you next ask them to <q>use six matches to form
+    4 (equal sized) triangles.</q> There's a picture of the solution to
+    this new puzzle at the back of this section. The answer involves
+    thinking three-dimensionally, so <mdash /> with that hint <mdash /> give it a try for a
+    while before looking in the back.
+  </p>
+
+  <p>
+    <index><main>Monge's circle theorem</main></index>Monge's circle theorem has
+    nothing to do with matchsticks, but it is a
+    <em>sweet</em> example of a proof that works by moving to a higher dimension.
+    People often talk about <q>thinking outside of the box</q> when discussing
+    critical thinking, but the mathematical idea of moving to a higher dimension
+    is even more powerful. When we have a <q>box</q> in 2-dimensional space which
+    we then regard as sitting in a 3-dimensional space we find that the box
+    doesn't even <em>have</em> an inside or an outside anymore! We get <q>outside
+    the box</q> by literally erasing the notion that there <em>is</em> an inside
+    of the box!
+  </p>
+
+  <p>
+    The setup for Monge's circle theorem consists of three random circles
+    drawn in the plane. Well, to be honest they can't be entirely random <mdash /> we can't allow a circle that is entirely inside another circle. Because,
+    if a circle was entirely inside another, there would be no external tangents
+    and Monge's circle theorem is about external tangents.
+  </p>
+
+  <p>
+    I could probably write a few hundred words to explain the concept of
+    external tangents to a pair of circles, or you could just have a look at
+    <xref ref="fig_monge1">Figure</xref>. So, uhmm, just have a look<ellipsis />
+  </p>
+
+  <figure xml:id="fig_monge1" >
+    <caption>The setup for Monge's circle theorem: three randomly placed circles <mdash /> we are also showing the external tangents to
+    one pair of circles.</caption>
+    <image source=""/>
+  </figure>
+
+  <p>
+    Notice how the external tangents<fn>The reason I keep saying <q>external tangents</q> is that there are also <em>internal</em> tangents.</fn> to two of the circles meet in a point? Unless the circles just happen to have exactly the same size
+    (And what are the odds of that?) this is going to be the case. Each pair of external tangents are going to meet in a point. There are three such pairs of external tangents and so they determine three points. I suppose, since these three
+    points are determined in a fairly complicated way from three randomly chosen
+    circles, that we would expect the three points to be pretty much random.
+    Monge's circle theorem says that that isn't so.
+  </p>
+
+  <theorem>
+    <title>Monge's Circle Theorem</title>
+    <statement>
+      <p>
+        If three circles of different radii in the Euclidean plane are
+        chosen so that no circle lies in the interior of another, the
+        three pairs of external tangents to these circles meet in
+        points which are collinear.
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    In <xref ref="fig_monge2">Figure</xref> we see a complete example of Monge's Circle theorem
+    in action. There are three random circles. There are three pairs of external
+    tangents. The three points determined by the intersection of the pairs of
+    external tangents lie on a line (shown dashed in the figure).
+  </p>
+
+  <figure xml:id="fig_monge2" >
+    <caption>An example of Monge's 
+    circle theorem.  The three pairs of external 
+    tangents to the circles intersect in points which are collinear.</caption>
+    <image source=""/>
+  </figure>
+
+  <p>
+    We won't even try to write-up a formal proof of the circle theorem.
+    Not that it can't be done <mdash /> it's just that you can probably get the
+    point better via an informal discussion.
+  </p>
+
+  <p>
+    The main idea is simply to move to 3-dimensional space. Imagine the
+    original flat plane containing our three random circles as being the
+    plane <m>z=0</m> in Euclidean 3-space. Replace the three circles by three
+    spheres of the same radius and having the same centers <mdash /> clearly the
+    intersections of these spheres with the plane <m>z=0</m> will be our original
+    circles. While pairs of circles are encompassed by two lines (the external
+    tangents that we've been discussing so much), when we have a pair of spheres
+    in 3-space, they are encompassed by a cone which lies tangent to both
+    spheres<fn>As before, when the spheres happen to have identical radii 
+    we get a degenerate case <mdash /> the cone becomes a cylinder.</fn>. Notice that
+    the cones that lie tangent to a pair of spheres intersect the plane
+    precisely in those infamous external tangents.
+  </p>
+
+  <p>
+    Well, okay, we've moved to 3-d. We've replaced our circles with spheres
+    and our external tangents with tangent cones. The points of intersection
+    of the external tangents are now the tips of the cones. But, what good has this all done?
+    Is there any reason to believe that the tips of those cones lie in a line?
+  </p>
+
+  <p>
+    Actually, yes! There is a plane that touches all three spheres tangentially.
+    Actually, there are two such planes, one that touches them all on their
+    upper surfaces and one that touches them all on their lower surfaces. Oh
+    damn! There are actually <em>lots</em> of planes that are tangent to all three spheres
+    but only one that lies above the three of them. That plane intersects the
+    plane <m>z=0</m> in a line <mdash /> nothing fancy there; any pair of non-parallel planes
+    will intersect in a line (and the only way the planes we are discussing
+    would be parallel is if all three spheres just happened to be the same size).
+    But that plane also lies tangent to the cones that envelope our spheres
+    and so that plane (as well as the plane <m>z=0</m>) contains the tips of the
+    cones!
+  </p>
+
+  <figure xml:id="fig_4triangles" >
+    <caption>Six matchstick (actually, pencils are a lot easier to hold) can be arranged three-dimensionally to create
+    four triangles.</caption>
+    <image width="100%" source="images/pencil_tetrahedron.png" />
+  </figure>
+
+  <exercises>
+    <exercise>
+      <statement>
+        <p>
+          There is a scenario where the proof we have sketched for
+          Monge's circle theorem doesn't really work. Can you envision it?
+          Hint: consider two relatively large spheres and one that is quite
+          small.
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
+  <p>
+    \phantomsection
+  </p>
+
+  <p>
+    \phantomsection
+  </p>
+</section>
