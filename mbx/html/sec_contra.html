@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2017-01-10T23:30:58-05:00    *-->
+<!--*    on 2017-05-23T13:30:27-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -45,7 +45,7 @@ MathJax.Hub.Config({
 <link href="extra.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$4.0$\ }
 \renewcommand{\tabcolsep}{2.4pt}
 \def\savedlnot{\lnot}
 \renewcommand{\arraystretch}{.63}
@@ -90,7 +90,7 @@ MathJax.Hub.Config({
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></a></h1>
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics, version 4.0</span></a></h1>
 <p class="byline">Joe Fields</p>
 </div>
 </div></div>
@@ -189,7 +189,7 @@ MathJax.Hub.Config({
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_contra"><header title="Section 3.3 Indirect proofs: contradiction and contraposition"><h1 class="heading hide-type" alt="Section 3.3 Indirect proofs: contradiction and contraposition">
 <span class="type">Section</span><span class="codenumber">3.3</span><span class="title">Indirect proofs: contradiction and contraposition</span><a href="sec_contra.html" class="permalink">¶ permalink</a>
-</h1></header><p id="p-629">
+</h1></header><p id="p-635">
     Suppose we are trying to prove that all thrackles are polycyclic
     <span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-21" id="fn-21"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-21" style="display: none;" class="tex2jax_ignore"><span class="footnote">Both of these strange sounding words represent real 
     mathematical concepts, however, they don't have anything to do 
@@ -207,17 +207,17 @@ MathJax.Hub.Config({
     Such an argument is known as 
     <!--Style me with CSS--><em>proof by contradiction</em>.
   </p>
-<p id="p-630">
+<p id="p-636">
     Quite possibly the sweetest indirect proof known is Euclid's proof that there
     are an infinite number of primes.
   </p>
 <article class="theorem-like" id="theorem-7"><h5 class="heading">
 <span class="type">Theorem</span><span class="codenumber">3.3.1</span>
 </h5>
-<p id="p-631">
+<p id="p-637">
         (Euclid) The set of all prime numbers is infinite.
       </p></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-11" id="proof-11"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
-<div id="hk-proof-11" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-632">
+<div id="hk-proof-11" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-638">
       Suppose on the contrary that there are only a finite number
       of primes. This finite set of prime numbers could, in principle, be listed
       in ascending order.
@@ -225,14 +225,14 @@ MathJax.Hub.Config({
         \{ p_1, p_2, p_3, \ldots , p_n \}
       \end{equation*}
     </p>
-<p id="p-633">
+<p id="p-639">
       Consider the number \(N\) formed by adding 1 to the product of all of these
       primes.
       \begin{equation*}
         N = 1 + \prod_{k=1}^n p_k
       \end{equation*}
     </p>
-<p id="p-634">
+<p id="p-640">
       Clearly, \(N\) is much larger than the largest prime \(p_n\), so \(N\) cannot
       be a prime number itself. Thus \(N\) must be a product of some of the
       primes in the list. Suppose that \(p_j\) is one of the primes that
@@ -240,11 +240,11 @@ MathJax.Hub.Config({
       \(1\) upon division by \(p_j\). This is a contradiction since we cannot have
       both \(p_j \divides N\) and \(p_j \nmid N\).
     </p>
-<p id="p-635">
+<p id="p-641">
       Since the supposition that there are only finitely many primes leads to
       a contradiction, there must indeed be an infinite number of primes.
     </p></article></div>
-<p id="p-636">
+<p id="p-642">
     If you are working on proving a UCS and the direct approach seems to be
     failing you may find that another indirect approach,
     proof by contraposition,
@@ -254,20 +254,20 @@ MathJax.Hub.Config({
     method <!--Style me with CSS--><em>is</em> indirect because a proof by contraposition can usually
     be recast as a proof by contradiction fairly easily.
   </p>
-<p id="p-637">
+<p id="p-643">
     The easiest proof I know of using the method of contraposition (and possibly
     the nicest example of this technique)
     is the proof of the lemma we stated in <a href="sec_rat.html" alt="Section 1.6 Rational and irrational numbers" title="Section 1.6 Rational and irrational numbers">Section 1.6</a> in the course
     of proving that \(\sqrt{2}\) wasn't rational. In case you've forgotten
     we needed the fact that whenever \(x^2\) is an even number, so is \(x\).
   </p>
-<p id="p-638">
+<p id="p-644">
     Let's first phrase this as a UCS.
     \begin{equation*}
       \forall x \in \Integers, \; x^2 \, \mbox{even}  \; \implies x \, \mbox{even}
     \end{equation*}
   </p>
-<p id="p-639">
+<p id="p-645">
     Perhaps you tried to prove this result earlier. If so you probably
     came across the conceptual problem that all you have to work with
     is the evenness of \(x^2\) which doesn't give you much ammunition
@@ -278,14 +278,14 @@ MathJax.Hub.Config({
       \implies x^2 \, \mbox{not even}
     \end{equation*}
   </p>
-<p id="p-640">
+<p id="p-646">
     Now, since \(x\) and \(x^2\) are integers, there is only one alternative to being
     even — so we can re-express the contrapositive as
     \begin{equation*}
       \forall x \in \Integers, \; x \, \mbox{odd}  \; \implies x^2 \, \mbox{odd} .
     \end{equation*}
   </p>
-<p id="p-641">
+<p id="p-647">
     Without further ado, here is the proof:
   </p>
 <article class="theorem-like" id="theorem-8"><h5 class="heading">
@@ -294,14 +294,14 @@ MathJax.Hub.Config({
         \forall x \in \Integers, \; x^2 \, \mbox{even}  \; 
         \implies x \, \mbox{even}
       \end{equation*}</article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-12" id="proof-12"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
-<div id="hk-proof-12" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-642">
+<div id="hk-proof-12" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-648">
       This statement is logically equivalent to
       \begin{equation*}
         \forall x \in \Integers, \; x \, \mbox{odd}  \; \implies x^2 \, \mbox{odd}
       \end{equation*}
       so we prove that instead.
     </p>
-<p id="p-643">
+<p id="p-649">
       Suppose that \(x\) is a particular but arbitrarily chosen integer
       such that \(x\) is odd. Since \(x\) is odd, there is an integer \(k\) such that
       \(x=2k+1\). It follows that
@@ -309,18 +309,18 @@ MathJax.Hub.Config({
       Finally, we see that \(x^2\) must be odd because it is of the form \(2m+1\), where
       \(m = 2k^2 + 2k\) is clearly an integer.
     </p></article></div>
-<p id="p-644">
+<p id="p-650">
     Let's have a look at a proof of the same statement done by contradiction.
   </p>
 <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-13" id="proof-13"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
-<div id="hk-proof-13" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-645">
+<div id="hk-proof-13" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-651">
       We wish to show that
       \begin{equation*}
         \forall x \in \Integers, \; x^2 \, \mbox{even}  \; 
         \implies x \, \mbox{even} .
       \end{equation*}
     </p>
-<p id="p-646">
+<p id="p-652">
       Suppose to the contrary that there is an integer \(x\) such that
       \(x^2\) is even but \(x\) is odd.<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-22" id="fn-22"><span class="footnote"><sup> 2 </sup></span></a></span><span id="hk-fn-22" style="display: none;" class="tex2jax_ignore"><span class="footnote">Recall that the negation of 
       a UCS is an existentially quantified conjunction.</span></span> Since \(x\) is
@@ -328,7 +328,7 @@ MathJax.Hub.Config({
       simple arithmetic, we obtain \(x^2 = 4m^2+4m+1\) which is clearly odd.
       This is a contradiction because (by assumption) \(x^2\) is even.
     </p></article></div>
-<p id="p-647">
+<p id="p-653">
     The main problem in applying the method of proof by contradiction
     is that it usually involves “cleverness.” You have to come up
     with some reason why the presumption that the theorem is false leads
@@ -341,17 +341,17 @@ MathJax.Hub.Config({
     and reasonable even if their formulation caused us some sort
     of Gordian-level mental anguish.
   </p>
-<p id="p-648">
+<p id="p-654">
     We'll end this section with an example from Geometry.
   </p>
 <article class="theorem-like" id="theorem-9"><h5 class="heading">
 <span class="type">Theorem</span><span class="codenumber">3.3.3</span>
 </h5>
-<p id="p-649">
+<p id="p-655">
         Among all triangles inscribed in a fixed circle, the one with maximum
         area is equilateral.
       </p></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-14" id="proof-14"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
-<div id="hk-proof-14" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-650">
+<div id="hk-proof-14" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-656">
       We'll proceed by contradiction. Suppose to the contrary that there is a
       triangle, \(\triangle ABC\), inscribed in a circle having maximum area that
       is not equilateral. Since \(\triangle ABC\) is not equilateral, there are
@@ -366,13 +366,13 @@ MathJax.Hub.Config({
       This is a contradiction since \(\triangle ABC\) was presumed to have
       maximal area.
     </p>
-<p id="p-651">
+<p id="p-657">
       We leave the actual construction \(\triangle AB'C\) to the following exercise.
     </p></article></div>
-<article class="exercise-like" id="exercise-20"><h5 class="heading">
+<article class="exercise-like" id="exercise-30"><h5 class="heading">
 <span class="type">Exercise</span><span class="codenumber">3.3.4</span>
 </h5>
-<p id="p-652">
+<p id="p-658">
         Where should we place the point \(B'\) in order to create a triangle
         \(\triangle AB'C\) having
         greater area than any triangle such as \(\triangle ABC\) which is not isosceles?
@@ -384,25 +384,25 @@ MathJax.Hub.Config({
         \selectfont}\fi
       <img width="100%" src="images/515f4a63ee16fceb8582dcdd7b356546dbac52e0.png" alt=""></article><section class="exercises" id="exercises-17"><header title="Exercises 3.3.1 Exercises"><h1 class="heading hide-type" alt="Exercises 3.3.1 Exercises">
 <span class="type">Subsection</span><span class="codenumber">3.3.1</span><span class="title">Exercises</span>
-</h1></header><ol id="ol-40" style="list-style-type: lower-alpha;">
-<li id="li-253"><p id="p-653">
+</h1></header><ol id="ol-39" style="list-style-type: lower-alpha;">
+<li id="li-243"><p id="p-659">
           Prove that if the cube of an integer is odd, then that integer is odd.
 
           \hint{The best hint for this problem is simply to write down the contrapositive statement. It is trivial to prove!}
         </p></li>
-<li id="li-254"><p id="p-654">
+<li id="li-244"><p id="p-660">
           Prove that whenever a prime \(p\) does not divide the square of an integer, 
           it also doesn't divide the original integer. 
           (\(p \nmid x^2 \; \implies \; p \nmid x\))
 
           \hint{The contrapositive is \((p \divides x) \; \implies \; (p \divides x^2)\).}
         </p></li>
-<li id="li-255"><p id="p-655">
+<li id="li-245"><p id="p-661">
         Prove (by contradiction) that there is no largest integer.
 
         \hint{Well, if there was a largest integer — let's call it \(L\) (for largest) — then isn't \(L+1\) an integer, and isn't it bigger?  That's the main idea.  A more formal proof might look like this:
 
-        <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-15" id="proof-15"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div><div id="hk-proof-15" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-656">
+        <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-15" id="proof-15"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div><div id="hk-proof-15" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-662">
             Suppose (by way of contradiction) that there is a largest integer \(L\). Then \(L \in \Integers\) and \(\forall z \in \Integers, L \geq z\).
             Consider the quantity \(L+1\). Clearly \(L+1\) is an integer (because it is the sum of two integers) and also
             \(L+1 &gt; L\). This is a contradiction so the original supposition is false. Hence there is no largest integer.
@@ -410,19 +410,19 @@ MathJax.Hub.Config({
 
         }
         </p></li>
-<li id="li-256"><p id="p-657">
+<li id="li-246"><p id="p-663">
           Prove (by contradiction) that there is no smallest positive real number.
 
           \hint{Assume there was a smallest positive real number — might as well call it \(s\) (for smallest) — what can we do to produce an even smaller number? (But be careful that it needs to remain positive — for instance \(s-1\) won't work.)}
         </p></li>
-<li id="li-257"><p id="p-658">
+<li id="li-247"><p id="p-664">
           Prove (by contradiction) that the sum of a rational and an irrational 
           number is irrational.
 
           \hint{Suppose that x is rational and y is irrational and their sum (let's call it z) is also rational. Do some algebra to solve for y, and you will see that y (which is, by presumption, irrational) is also the difference of two rational numbers (and hence, rational — a contradiction.)
           }
         </p></li>
-<li id="li-258"><p id="p-659">
+<li id="li-248"><p id="p-665">
           Prove (by contraposition) that for all integers \(x\) and \(y\), if \(x+y\) is odd, then \(x\neq y\).
 
           \hint{Well, the problem says to do this by contraposition, so let's write down the contrapositive:
@@ -432,7 +432,7 @@ MathJax.Hub.Config({
           But proving that is obvious!
           }
         </p></li>
-<li id="li-259"><p id="p-660">
+<li id="li-249"><p id="p-666">
           Prove (by contraposition) that for all real numbers \(a\) and \(b\), if \(ab\) is irrational, then \(a\)
           is irrational or \(b\) is irrational.
 
@@ -442,7 +442,7 @@ MathJax.Hub.Config({
           \end{equation*}
           Wow! Haven't we proved that before?}
         </p></li>
-<li id="li-260"><p id="p-661">
+<li id="li-250"><p id="p-667">
           A <!--Style me with CSS--><em>Pythagorean triple</em> is a set of three
           natural numbers, \(a\), \(b\) and \(c\), such that \(a^2 + b^2 = c^2\).  Prove that, in a
           Pythagorean triple, at least one of \(a\) and \(b\) is even.  Use either a proof by
@@ -451,13 +451,13 @@ MathJax.Hub.Config({
           \hint{If both \(a\) and \(b\) are odd then their squares will be 1 mod 4 — so the sum of their squares
           will be 2 mod 4.  But \(c^2\) can only be 0 or 1 mod 4, which gives us a contradiction.}
         </p></li>
-<li id="li-261"><p id="p-662">
+<li id="li-251"><p id="p-668">
         Suppose you have 2 pairs of positive real numbers whose products are 1.  That is, you have \((a,b)\) and \((c,d)\) in \(\Reals^2\) satisfying \(ab=cd=1\).  Prove that
         \(a \lt  c\) implies that \(b &gt; d\).
 
          \hint{
 
-        <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-16" id="proof-16"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div><div id="hk-proof-16" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-663">
+        <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-16" id="proof-16"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div><div id="hk-proof-16" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-669">
             Suppose by way of contradiction that \(a,b,c,d \in \Reals\) satisfy \(ab=cd=1\) and that \(a\lt c\) and \(b \leq d\).
             By multiplying the inequalities we get that \(ab \lt  cd\) which contradicts the assumption that both products
             are equal to 1 (and so must be equal to one another).

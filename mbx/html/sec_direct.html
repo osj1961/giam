@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2017-01-10T23:30:58-05:00    *-->
+<!--*    on 2017-05-23T13:30:27-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -45,7 +45,7 @@ MathJax.Hub.Config({
 <link href="extra.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$4.0$\ }
 \renewcommand{\tabcolsep}{2.4pt}
 \def\savedlnot{\lnot}
 \renewcommand{\arraystretch}{.63}
@@ -90,7 +90,7 @@ MathJax.Hub.Config({
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></a></h1>
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics, version 4.0</span></a></h1>
 <p class="byline">Joe Fields</p>
 </div>
 </div></div>
@@ -189,7 +189,7 @@ MathJax.Hub.Config({
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_direct"><header title="Section 3.1 Direct proofs of universal statements"><h1 class="heading hide-type" alt="Section 3.1 Direct proofs of universal statements">
 <span class="type">Section</span><span class="codenumber">3.1</span><span class="title">Direct proofs of universal statements</span><a href="sec_direct.html" class="permalink">¶ permalink</a>
-</h1></header><p id="p-553">
+</h1></header><p id="p-559">
     If you form the product of 4 consecutive numbers, the result will be one
     less than a perfect square. Try it!
     \begin{equation*}
@@ -202,10 +202,10 @@ MathJax.Hub.Config({
       3 \cdot 4 \cdot 5 \cdot 6 = 360 = 19^2 - 1
     \end{equation*}
   </p>
-<p id="p-554">
+<p id="p-560">
     It always works!
   </p>
-<p id="p-555">
+<p id="p-561">
     The three calculations that we've carried out above constitute an
     inductive argument in favor of the result. If you like we can try
     a bunch of further examples,
@@ -218,7 +218,7 @@ MathJax.Hub.Config({
     but really, no matter how many examples we produce, we haven't
     <!--Style me with CSS--><em>proved</em> the statement — we've just given evidence.
   </p>
-<p id="p-556">
+<p id="p-562">
     Generally, the first thing to do in proving a universal statement like
     this is to rephrase it as a conditional. The resulting statement is a
     <!--Style me with CSS--><em>Universal Conditional Statement</em>
@@ -233,7 +233,7 @@ MathJax.Hub.Config({
       \implies \exists k \in \Integers, a{\cdot}b{\cdot}c{\cdot}d = k^2 -1
     \end{equation*}
   </p>
-<p id="p-557">
+<p id="p-563">
     The antecedent of the UCS is that \(a,b,c\) and \(d\) must be
     <!--Style me with CSS--><em>consecutive</em>. By concentrating our attention on what it
     means to be consecutive, we should quickly realize that the original
@@ -248,28 +248,28 @@ MathJax.Hub.Config({
 </h5>\begin{equation*}
         \forall a \in \Integers, \exists k \in \Integers, 
         a(a+1)(a+2)(a+3) = k^2 - 1.
-      \end{equation*}</article><p id="p-558">
+      \end{equation*}</article><p id="p-564">
     In this simplistic example, the only thing we need to do is come
     up with a value for \(k\) given that we know what \(a\) is. In other
     words, a “proof” of this statement involves doing some algebra.
   </p>
-<p id="p-559">
+<p id="p-565">
     Without further ado…
   </p>
 <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-7" id="proof-7"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
-<div id="hk-proof-7" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-560">
+<div id="hk-proof-7" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-566">
       Suppose that \(a\) is a particular but arbitrarily chosen
       integer. Consider the product of the 4 consecutive integers, \(a\),
       \(a+1\), \(a+2\) and \(a+3\). We would like to show that this product is
       one less than the square of an integer \(k\). Let \(k\) be \(a^2+3a+1\).
     </p>
-<p id="p-561">
+<p id="p-567">
       First, note that
       \begin{equation*}
         a(a+1)(a+2)(a+3) = a^4 + 6a^3 + 11a^2 + 6a.
       \end{equation*}
     </p>
-<p id="p-562">
+<p id="p-568">
       Then, note that
       \begin{gather*}
 k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
@@ -277,7 +277,7 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
 = a^4 + 6a^3 + 11a^2 + 6a.
 \end{gather*}
     </p></article></div>
-<p id="p-563">
+<p id="p-569">
     Now, if you followed the algebra above, (none of which was particularly
     difficult) the proof stands as a completely valid argument showing the
     truth of our proposition, but this is <!--Style me with CSS--><em>very</em> unsatisfying! All
@@ -293,7 +293,7 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
     at something, but if your guess works out, you can write
     a perfectly correct proof.
   </p>
-<p id="p-564">
+<p id="p-570">
     In devising the proof above, we multiplied out the consecutive numbers
     and then realized that we'd be done if we could find a polynomial in
     \(a\) whose square was \(a^4  + 6a^3 + 11a^2 + 6a + 1\). Now, obviously,
@@ -303,7 +303,7 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
     and comparing that result with what we want, we pretty quickly realize
     that \(m\) had better be 3. So it wasn't magic after all!
   </p>
-<p id="p-565">
+<p id="p-571">
     This seems like a good time to make a comment on polynomial arithmetic.
     
     Many people give up (or go searching for a computer algebra system)
@@ -342,7 +342,7 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
 <td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
 </table>
-<p id="p-566">
+<p id="p-572">
     Now, fill in the entries of the table by multiplying the corresponding
     row and column headers.
   </p>
@@ -372,14 +372,14 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
 <td class="l m b0 r0 l0 t0 lines">\(6a\)</td>
 </tr>
 </table>
-<p id="p-567">
+<p id="p-573">
     Finally add up all the entries of the table, combining any like terms.
   </p>
-<p id="p-568">
+<p id="p-574">
     You should note that the F.O.I.L rule is just a mnemonic for the case when
     the table has 2 rows and 2 columns.
   </p>
-<p id="p-569">
+<p id="p-575">
     Okay, let's get back to doing proofs. We are going to do a lot of
     proofs involving the concepts of elementary number theory so, as a
     convenience, all of the definitions that were made in <a href="ch_intro.html" alt="Chapter 1 Introduction and notation" title="Chapter 1 Introduction and notation">Chapter 1</a>
@@ -420,7 +420,7 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
 <tr><td class="l m b0 r0 l0 t0 lines">\\(p\) is prime \(\iff\)   
         \\((p&gt;1)  \land  (\forall x,y \in \Integers^+, \; p=xy \; \implies \; x=1 \, \lor \,  y=1)\)</td></tr>
 </table>
-<figcaption><span class="heading">Table</span><span class="codenumber">3.1.2</span>The definitions of elementary number theory restated.</figcaption></figure><p id="p-570">
+<figcaption><span class="heading">Table</span><span class="codenumber">3.1.2</span>The definitions of elementary number theory restated.</figcaption></figure><p id="p-576">
     In this section we are concerned with
     direct proofs of universal statements.
     Such statements come in two flavors — those that appear to involve
@@ -429,13 +429,13 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
 <blockquote>
   Every prime greater than two is odd.
   </blockquote>
-<p id="p-571">
+<p id="p-577">
     versus
   </p>
 <blockquote>
   For all integers \(n\), if \(n\) is a prime greater than two, then \(n\) is odd.
   </blockquote>
-<p id="p-572">
+<p id="p-578">
     These two forms can readily be transformed one into the other, so
     we will always concentrate on the latter. A direct proof of a UCS
     always follows a form known as
@@ -457,7 +457,7 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
         Q.E.D.</td></tr>
 <tr><td class="l m b1 r0 l0 t0 lines"></td></tr>
 </table>
-<p id="p-573">
+<p id="p-579">
     Okay, so this outline is pretty crappy. It tells you how to start and
     end a direct proof, but those obnoxious dot-dot-dots in the middle are
     where all the real work has to go. If I could tell you (even in outline)
@@ -470,14 +470,14 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
     of accomplishment is proportional to the difficulty of the puzzles you
     attempt. So let's attempt another…
   </p>
-<p id="p-574">
+<p id="p-580">
     In <a knowl="./knowl/tab_defs.html" knowl-id="xref-tab_defs" alt="Table 3.1.2 " title="Table 3.1.2 ">Table 3.1.2</a> one of the very handy notions defined is that
     of the <!--Style me with CSS--><em>floor</em> of a real number.
     \begin{equation*}
       y = \lfloor x \rfloor \; \iff \; (y \in \mathbb Z \; \land \; y \leq x \lt  y+1).
     \end{equation*}
   </p>
-<p id="p-575">
+<p id="p-581">
     There is a sad tendency for people to apply old rules in new situations
     just because of a chance similarity in the notation. The brackets used
     in notating the floor function look very similar to ordinary parentheses,
@@ -486,12 +486,12 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
       \lfloor x + y \rfloor = \lfloor x \rfloor + \lfloor y \rfloor
     \end{equation*}
   </p>
-<article class="exercise-like" id="exercise-17"><h5 class="heading">
+<article class="exercise-like" id="exercise-27"><h5 class="heading">
 <span class="type">Exercise</span><span class="codenumber">3.1.3</span>
 </h5>
-<p id="p-576">
+<p id="p-582">
         Find a counterexample to the previous “rule.”
-      </p></article><p id="p-577">
+      </p></article><p id="p-583">
     What is (perhaps) surprising is that if one of the numbers involved is an
     integer then the “rule” really works.
   </p>
@@ -500,11 +500,11 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
 </h5>\begin{equation*}
         \forall x \in \Reals, \, \forall n \in \Integers, \, 
         \lfloor x + n \rfloor = \lfloor x \rfloor + \lfloor n \rfloor
-      \end{equation*}</article><p id="p-578">
+      \end{equation*}</article><p id="p-584">
     Since the floor of an integer <!--Style me with CSS--><em>is</em> that integer, we could restate this
     as \(\lfloor x + n \rfloor = \lfloor x \rfloor +  n\).
   </p>
-<p id="p-579">
+<p id="p-585">
     Now, let's try rephrasing this theorem as a UCS: If \(x\) is a real number
     and \(n\) is an integer, then \(\lfloor x + n \rfloor = \lfloor x \rfloor +  n\).
     This is bad … it appears that the only hypotheses that we can use
@@ -518,7 +518,7 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
       \land \; \, a \leq x \lt  a+1.
     \end{equation*}
   </p>
-<p id="p-580">
+<p id="p-586">
     The only other floor function that appears in the statement of the theorem
     (perhaps even more prominently)
     is \(\lfloor x + n\rfloor\), here, the definition gives us
@@ -527,7 +527,7 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
       b \in \Integers \; \, \land \; \, b \leq x + n \lt  b+1.
     \end{equation*}
   </p>
-<p id="p-581">
+<p id="p-587">
     These definitions are our only available tools so we'll certainly <!--Style me with CSS--><em>have</em>
     to make use of them, and it's important to notice that that is a good thing;
     the definitions allow us to work with something well-understood
@@ -538,7 +538,7 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
     testament to the power of <!--Style me with CSS--><em>naming</em> things.
   </p>
 <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-8" id="proof-8"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
-<div id="hk-proof-8" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-582">
+<div id="hk-proof-8" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-588">
       Suppose that \(x\) is a particular but arbitrary real number
       and that \(n\) is a particular but arbitrary integer. Let
       \(a = \lfloor x \rfloor\). By the definition of the floor function
@@ -554,7 +554,7 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
         \lfloor x + n \rfloor = \lfloor x \rfloor + n.
       \end{equation*}
     </p></article></div>
-<p id="p-583">
+<p id="p-589">
   As we've seen in the examples presented in this section, coming up
   with a proof can sometimes involve a bit of ingenuity. But, sometimes,
   there is a “follow your nose” sort of approach that will
@@ -564,32 +564,32 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
 
   </p>
 <ul id="ul-3" style="list-style-type: disc;">
-<li id="li-223"><p id="p-584">
+<li id="li-213"><p id="p-590">
         Before anything else, determine precisely what hypotheses you
         can use.
       </p></li>
-<li id="li-224"><p id="p-585">
+<li id="li-214"><p id="p-591">
         Jot down the definitions of <!--Style me with CSS--><em>anything</em> in the statement of 
         the theorem.
       </p></li>
-<li id="li-225"><p id="p-586">
+<li id="li-215"><p id="p-592">
         There are 26 letters at your disposal (and even more if you know
         Greek) (and you can always throw on subscripts!) don't be stingy with
         letters.  The nastiest mistake you can make is to use the same variable
         for two different things.
       </p></li>
-<li id="li-226"><p id="p-587">
+<li id="li-216"><p id="p-593">
         Please write a rough draft first.  Write two drafts!  Even if you
         can write beautiful, lucid prose on the first go around, it won't fly
         when it comes to organizing a proof.
       </p></li>
-<li id="li-227"><p id="p-588">
+<li id="li-217"><p id="p-594">
         The statements in a proof are supposed to be logical statements.
         That means they should be Boolean (statements that are either true or false).
         An algebraic expression all by itself doesn't count, an inequality or an 
         equality does.
       </p></li>
-<li id="li-228"><p id="p-589">
+<li id="li-218"><p id="p-595">
         Don't say “if” when you mean “since.”  Really!  If you start a
         proof about rational numbers like so:
         <blockquote>
@@ -601,7 +601,7 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
         that \(x\) is rational, then acting as if you're in doubt of that fact by
         writing “if”?   You mean “since.”
       </p></li>
-<li id="li-229"><p id="p-590">
+<li id="li-219"><p id="p-596">
         Mark off the beginning and the end of your proofs as a hint to your
         readers.  In this book we start off a proof by writing <!--Style me with CSS--><em>Proof:</em> in 
         italics and we end every proof with the abbreviation 
@@ -613,7 +613,7 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
 </ul>
 <p>
   </p>
-<p id="p-591">
+<p id="p-597">
     We'll close this section with a word about axioms. The axioms in any
     given area of math are your most fundamental tools. Axioms don't
     need to be proved — we are supposed to just accept them! A very common
@@ -638,9 +638,9 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
   </p>
 <section class="exercises" id="exercises-15"><header title="Exercises 3.1.1 Exercises"><h1 class="heading hide-type" alt="Exercises 3.1.1 Exercises">
 <span class="type">Subsection</span><span class="codenumber">3.1.1</span><span class="title">Exercises</span>
-</h1></header><ol id="ol-38" style="list-style-type: lower-alpha;">
-<li id="li-230">
-<p id="p-592">
+</h1></header><ol id="ol-37" style="list-style-type: lower-alpha;">
+<li id="li-220">
+<p id="p-598">
       Every prime number greater than 3 is of one of the two forms
       \(6k+1\) or \(6k+5\).  What statement(s) could be used as hypotheses in
       proving this theorem?
@@ -653,17 +653,17 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
 
       </p>
 <ul id="ul-4" style="list-style-type: disc;">
-<li id="li-231"><p id="p-593">
+<li id="li-221"><p id="p-599">
             \(p\) is a <span class="fillin" style="width: 4.545454545454546em;"></span> number, and
           </p></li>
-<li id="li-232"><p id="p-594">
+<li id="li-222"><p id="p-600">
             \(p\) is greater than <span class="fillin" style="width: 4.545454545454546em;"></span>.
           </p></li>
 </ul>
 <p>
       </p>
 </li>
-<li id="li-233"><p id="p-595">
+<li id="li-223"><p id="p-601">
           Prove that 129 is odd.
 
           \hint{
@@ -677,7 +677,7 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
 
           }
         </p></li>
-<li id="li-234"><p id="p-596">
+<li id="li-224"><p id="p-602">
           Prove that the sum of two rational numbers is a rational number.
 
           \hint{
@@ -690,13 +690,13 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
 
           }
         </p></li>
-<li id="li-235"><p id="p-597">
+<li id="li-225"><p id="p-603">
         Prove that the sum of an odd number and an even number is odd.
 
 
         \hint{
 
-        <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-9" id="proof-9"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div><div id="hk-proof-9" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-598">
+        <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-9" id="proof-9"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div><div id="hk-proof-9" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-604">
             Suppose that \(x\) is an odd number and \(y\) is an even number. Since \(x\) is odd there is an
             integer \(k\) such that \(x=2k+1\). Furthermore, since \(y\) is even, there is an integer \(m\) such that
             \(y=2m\). By substitution, we can express the sum \(x+y\) as \(x+y = (2k+1) + (2m) = 2(k+m) + 1\).
@@ -705,7 +705,7 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
 
         }
         </p></li>
-<li id="li-236"><p id="p-599">
+<li id="li-226"><p id="p-605">
           Prove that if the sum of two integers is even, then so is their
           difference.
 
@@ -719,7 +719,7 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
 
           }
         </p></li>
-<li id="li-237"><p id="p-600">
+<li id="li-227"><p id="p-606">
           Prove that for every real number \(x\), \(\frac{2}{3} \lt  x \lt  \frac{3}{4} \; \implies \; \lfloor 12x \rfloor = 8\).
 
           \hint{
@@ -742,7 +742,7 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
 
           }
         </p></li>
-<li id="li-238"><p id="p-601">
+<li id="li-228"><p id="p-607">
           Prove that if \(x\) is an odd integer, then \(x^2\) is of the form
           \(4k+1\) for some integer \(k\).
 
@@ -756,7 +756,7 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
 
           }
         </p></li>
-<li id="li-239"><p id="p-602">
+<li id="li-229"><p id="p-608">
           Prove that for all integers \(a\) and \(b\), if \(a\) is odd and \(6 \divides (a+b)\), then \(b\) is odd.
 
           \hint{
@@ -769,12 +769,12 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
 
           }
         </p></li>
-<li id="li-240"><p id="p-603">
+<li id="li-230"><p id="p-609">
         Prove that \(\forall x\in\Reals, \, x\not\in\Integers \, \implies \, \lfloor x\rfloor+\lfloor-x\rfloor=-1\).
 
         \hint{
 
-        <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-10" id="proof-10"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div><div id="hk-proof-10" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-604">
+        <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-10" id="proof-10"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div><div id="hk-proof-10" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-610">
             Suppose that \(x\) is a real number and \(x\not\in\Integers\). Let \(a = \lfloor x \rfloor\). By the definition
             of the floor function we have \(a \in\Integers\) and \(a \leq x \lt  a+1\). Since \(x \not\in\Integers\) we
             know that \(x \neq a\) so we may strengthen the inequality to \(a \lt  x \lt  a+1\). Multiplying this inequality
@@ -784,7 +784,7 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
 
         }
         </p></li>
-<li id="li-241"><p id="p-605">
+<li id="li-231"><p id="p-611">
           Define the <!--Style me with CSS--><em>evenness</em> of an integer \(n\) by:
           \begin{equation*}
             \mbox{evenness}  (n) = k \; \iff \;  
@@ -794,7 +794,7 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
 
           \hint{Well, the statement is that the evenness of a product is the sum of the evennesses of the factors…}
         </p></li>
-<li id="li-242"><p id="p-606">
+<li id="li-232"><p id="p-612">
           Suppose that \(a\), \(b\) and \(c\) are integers such that \(a \divides b\)
           and \(b \divides c\).  Prove that \(a \divides c\).
 
@@ -802,7 +802,7 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
           This one is pretty straightforward. Be sure to not reuse any variables. Particularly, the fact that \(a \divides b\) tells us (because of the definition of divisibility) that there is an integer \(k\) such that \(b = ak\).  It is not okay to also use \(k\) when converting the statement “\(b \divides c\).”
           }
         </p></li>
-<li id="li-243"><p id="p-607">
+<li id="li-233"><p id="p-613">
           Suppose that \(a\), \(b\), \(c\) and \(d\) are integers with \(a \neq c\).
           Further, suppose that \(x\) is a real number satisfying the equation
           \begin{equation*}
@@ -814,7 +814,7 @@ k^2 - 1 = (a^2 + 3a +1)^2 - 1\\
           \hint{Cross multiply and solve for \(x\).  If you need to divide by an expression, it had 
           better be non-zero!}
         </p></li>
-<li id="li-244"><p id="p-608">
+<li id="li-234"><p id="p-614">
           Show that if two positive integers \(a\) and \(b\) satisfy \(a \divides b\emph{and}b \divides a\) then they are equal.
 
           \hint{From the definition of divisibility, you get two integers \(j\) and \(k\), such that 

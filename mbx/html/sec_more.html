@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2017-01-10T23:30:58-05:00    *-->
+<!--*    on 2017-05-23T13:30:27-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -45,7 +45,7 @@ MathJax.Hub.Config({
 <link href="extra.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$4.0$\ }
 \renewcommand{\tabcolsep}{2.4pt}
 \def\savedlnot{\lnot}
 \renewcommand{\arraystretch}{.63}
@@ -90,7 +90,7 @@ MathJax.Hub.Config({
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></a></h1>
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics, version 4.0</span></a></h1>
 <p class="byline">Joe Fields</p>
 </div>
 </div></div>
@@ -189,7 +189,7 @@ MathJax.Hub.Config({
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_more"><header title="Section 3.2 More direct proofs"><h1 class="heading hide-type" alt="Section 3.2 More direct proofs">
 <span class="type">Section</span><span class="codenumber">3.2</span><span class="title">More direct proofs</span><a href="sec_more.html" class="permalink">¶ permalink</a>
-</h1></header><p id="p-609">
+</h1></header><p id="p-615">
     In creating a direct proof we need to look at our hypotheses, consider
     the desired conclusion, and develop a strategy for transforming A into B.
     Quite often you'll find it easy to make several deductions from the
@@ -201,7 +201,7 @@ MathJax.Hub.Config({
     you work backwards from the conclusion, but also forwards from the premises, 
     in the hopes of meeting somewhere in the middle.</span></span>
   </p>
-<p id="p-610">
+<p id="p-616">
     There is a lovely result known as the
     
     “arithmetic-geometric mean inequality”
@@ -221,10 +221,10 @@ MathJax.Hub.Config({
       3  6   12   24   \rule{12pt}{.5pt}   96   192.
     \end{equation*}
   </p>
-<p id="p-611">
+<p id="p-617">
     How should we fill in the blanks?
   </p>
-<p id="p-612">
+<p id="p-618">
     The first sequence is an
     <!--Style me with CSS--><em>arithmetic sequence</em>.
     Arithmetic sequences
@@ -238,7 +238,7 @@ MathJax.Hub.Config({
     geometric mean
     of <!--Style me with CSS--><em>its</em> surrounding entries: \(\sqrt{24\cdot 96} = 48\).
   </p>
-<p id="p-613">
+<p id="p-619">
     Given that we accept the utility of having two inequivalent concepts
     of <!--Style me with CSS--><em>mean</em> that can be used in different contexts, it is interesting
     to see how these two means compare to one another. The
@@ -248,7 +248,7 @@ MathJax.Hub.Config({
       \forall a,b \in \Reals,   a,b \geq 0 \; \implies \;  \frac{a+b}{2} \geq \sqrt{ab}
     \end{equation*}
   </p>
-<p id="p-614">
+<p id="p-620">
     In proving this statement we have little choice but to work backwards
     from the conclusion because the only hypothesis we have to work with
     is that \(a\) and \(b\) are non-negative real numbers — which isn't a
@@ -262,7 +262,7 @@ MathJax.Hub.Config({
     strive to make biconditional connections between our statements
     (or else try to intentionally make converse errors).
   </p>
-<p id="p-615">
+<p id="p-621">
     The first thing that appeals to your humble author is to eliminate
     both the fractions and the radicals…
     \begin{equation*}
@@ -278,7 +278,7 @@ MathJax.Hub.Config({
       \iff \; a^2+2ab+b^2 \geq 4ab
     \end{equation*}
   </p>
-<p id="p-616">
+<p id="p-622">
     One of the steps above involves squaring both sides of an inequality.
     We need to ask ourselves if this step is really reversible. In other
     words, is the following conditional true?
@@ -287,12 +287,12 @@ MathJax.Hub.Config({
       x \geq y \; \implies \sqrt{x} \geq \sqrt{y}
     \end{equation*}
   </p>
-<article class="exercise-like" id="exercise-18"><h5 class="heading">
+<article class="exercise-like" id="exercise-28"><h5 class="heading">
 <span class="type">Exercise</span><span class="codenumber">3.2.1</span>
 </h5>
-<p id="p-617">
+<p id="p-623">
         Provide a justification for the previous implication.
-      </p></article><p id="p-618">
+      </p></article><p id="p-624">
     What should we try next? There's really no good justification for
     this but experience working with quadratic polynomials either in
     equalities or inequalities leads most people to try “moving everything
@@ -305,21 +305,21 @@ MathJax.Hub.Config({
       \iff \; a^2-2ab+b^2 \geq 0
     \end{equation*}
   </p>
-<p id="p-619">
+<p id="p-625">
     Whoa! We're done! Do you see why? If not, I'll give you one
     hint: the square of any real number is greater than or equal to
     zero.
   </p>
-<article class="exercise-like" id="exercise-19"><h5 class="heading">
+<article class="exercise-like" id="exercise-29"><h5 class="heading">
 <span class="type">Exercise</span><span class="codenumber">3.2.2</span>
 </h5>
-<p id="p-620">
+<p id="p-626">
         Re-assemble all of the steps taken in the previous few paragraphs
         into a proof of the arithmetic-geometric mean inequality.
       </p></article><section class="exercises" id="exercises-16"><header title="Exercises 3.2.1 Exercises"><h1 class="heading hide-type" alt="Exercises 3.2.1 Exercises">
 <span class="type">Subsection</span><span class="codenumber">3.2.1</span><span class="title">Exercises</span>
-</h1></header><ol id="ol-39" style="list-style-type: lower-alpha;">
-<li id="li-245"><p id="p-621">
+</h1></header><ol id="ol-38" style="list-style-type: lower-alpha;">
+<li id="li-235"><p id="p-627">
           Suppose you have a savings account which bears interest 
           compounded monthly.  The July statement shows a balance of 
           $ 2104.87 and the September statement shows a balance $ 2125.97.
@@ -327,7 +327,7 @@ MathJax.Hub.Config({
 
           \hint{A savings account where we are not depositing or withdrawing funds has a balance that is growing geometrically.}
         </p></li>
-<li id="quad"><p id="p-622">
+<li id="quad"><p id="p-628">
           Recall that a quadratic equation \(ax^2+bx+c=0\) has two real solutions
           if and only if the discriminant \(b^2-4ac\) is positive.  Prove that if 
           \(a\) and \(c\) have different signs then the quadratic equation has two 
@@ -335,21 +335,21 @@ MathJax.Hub.Config({
 
           \hint{You don't need all the hypotheses. If \(a\) and \(c\) have different signs, then \(ac\) is a negative quantity}
         </p></li>
-<li id="li-247"><p id="p-623">
+<li id="li-237"><p id="p-629">
           Prove that if \(x^3-x^2\) is negative then \(3x+4 \lt  7\).
 
           \hint{This follows very easily by the method of working backwards from the conclusion. Remember that when multiplying or dividing both sides of an inequality by some number, the direction of the inequality may reverse (unless we know the number involved is positive).  Also, remember that we can't divide by zero, so if we are (just for example, don't know why I'm mentioning it really…) dividing both sides of an inequality by \(x^2\) then we must treat the case where \(x=0\) separately.}
         </p></li>
-<li id="li-248"><p id="p-624">
+<li id="li-238"><p id="p-630">
           Prove that for all integers \(a,b,\) and \(c\), if \(a|b\) and \(a|(b+c)\), then
           \(a|c\).
         </p></li>
-<li id="li-249"><p id="p-625">
+<li id="li-239"><p id="p-631">
           Show that if \(x\) is a positive real number, then \(x+\frac{1}{x} \geq 2\). 
 
           \hint{If you work backwards from the conclusion on this one, you should eventually come to the inequality \((x-1)^2 \geq 0\).  Notice that this inequality is always true — all squares are non-negative. When you go to write-up your proof (writing things in the forward direction), you'll want to acknowledge this truth. Start with something like “Regardless of the value of \(x\), the quantity \((x-1)^2\) is greater than or equal to zero as it is a perfect square.”}
         </p></li>
-<li id="li-250"><p id="p-626">
+<li id="li-240"><p id="p-632">
           Prove that for all real numbers \(a,b,\) and \(c\), if \(ac\lt 0\), then the quadratic
           equation \(ax^{2}+bx+c=0\) has two real solutions.
 
@@ -358,7 +358,7 @@ MathJax.Hub.Config({
 
           \hint{This is very similar to <a knowl="./knowl/quad.html" knowl-id="xref-quad" alt="Item b " title="Item b ">problem b</a>.}
         </p></li>
-<li id="li-251"><p id="p-627">
+<li id="li-241"><p id="p-633">
           Show that \(\binom{n}{k} \cdot \binom{k}{r} \; = \; \binom{n}{r} \cdot \binom{n-r}{k-r}\) (for all integers \(r\), \(k\) and \(n\) with \(r \leq k \leq n\)). 
 
           \hint{Use the definition of the binomial coefficients as fractions involving factorials:
@@ -368,7 +368,7 @@ MathJax.Hub.Config({
           Write down the definitions, both of the left hand side and the right hand side and consider how you can
           convert one into the other.}
         </p></li>
-<li id="li-252"><p id="p-628">
+<li id="li-242"><p id="p-634">
           In proving the  <!--Style me with CSS--><em>product rule</em> in Calculus using the definition of the derivative, we might start our proof with:
           \begin{equation*}
             \frac{\mbox{d} }{\mbox{d} x} \left( f(x) \cdot g(x) \right)

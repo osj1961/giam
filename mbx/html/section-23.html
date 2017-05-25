@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2017-01-10T23:30:58-05:00    *-->
+<!--*    on 2017-05-23T13:30:28-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -45,7 +45,7 @@ MathJax.Hub.Config({
 <link href="extra.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$4.0$\ }
 \renewcommand{\tabcolsep}{2.4pt}
 \def\savedlnot{\lnot}
 \renewcommand{\arraystretch}{.63}
@@ -90,7 +90,7 @@ MathJax.Hub.Config({
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></a></h1>
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics, version 4.0</span></a></h1>
 <p class="byline">Joe Fields</p>
 </div>
 </div></div>
@@ -189,11 +189,11 @@ MathJax.Hub.Config({
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-23"><header title="Section 4.3 Set operations"><h1 class="heading hide-type" alt="Section 4.3 Set operations">
 <span class="type">Section</span><span class="codenumber">4.3</span><span class="title">Set operations</span>
-</h1></header><p id="p-810">
+</h1></header><p id="p-816">
     In this section we'll continue to develop the correspondence between
     Logic and Set theory.
   </p>
-<p id="p-811">
+<p id="p-817">
     The logical connectors \(\land\) and \(\lor\) correspond to the set-theoretic
     notions of
     union (\(\cup\)) and
@@ -201,7 +201,7 @@ MathJax.Hub.Config({
     designed to provide a mnemonic for the correspondence; the Set theory
     symbols are just rounded versions of those from Logic.
   </p>
-<p id="p-812">
+<p id="p-818">
     Explicitly, if \(P(x)\) and \(Q(x)\) are open sentences, then
     the <!--Style me with CSS--><em>union</em> of the corresponding truth sets \(S_P\) and \(S_Q\)
     is defined by
@@ -209,14 +209,14 @@ MathJax.Hub.Config({
       S_P \cup S_Q \; = \{ x \in U \suchthat P(x) \lor Q(x) \}.
     \end{equation*}
   </p>
-<article class="exercise-like" id="exercise-35"><h5 class="heading">
+<article class="exercise-like" id="exercise-45"><h5 class="heading">
 <span class="type">Exercise</span><span class="codenumber">4.3.1</span>
 </h5>
-<p id="p-813">
+<p id="p-819">
         Suppose two sets \(A\) and \(B\) are given. Re-express the previous
         definition of “union” using their membership criteria, \(M_A(x) =\)
         “\(x \in A\)” and \(M_B(x) =\) “\(x \in B\).”
-      </p></article><p id="p-814">
+      </p></article><p id="p-820">
     The union of more than two sets can be expressed using a big union
     symbol. For example, consider the family of real intervals defined
     by \(I_n = (n,n+1]\).<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-27" id="fn-27"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-27" style="display: none;" class="tex2jax_ignore"><span class="footnote">The elements 
@@ -228,31 +228,31 @@ MathJax.Hub.Config({
       \Reals \; = \; \bigcup_{n\in\Integers} I_n.
     \end{equation*}
   </p>
-<p id="p-815">
+<p id="p-821">
     The intersection of two sets is conceptualized as “what they have in common”
     but the precise definition is found by considering conjunctions,
     \begin{equation*}
       A \cap B \; = \; \{ x \in U \suchthat x \in A \; \land \; x \in B \}.
     \end{equation*}
   </p>
-<article class="exercise-like" id="exercise-36"><h5 class="heading">
+<article class="exercise-like" id="exercise-46"><h5 class="heading">
 <span class="type">Exercise</span><span class="codenumber">4.3.2</span>
 </h5>
-<p id="p-816">
+<p id="p-822">
         With reference to two open sentences \(P(x)\) and \(Q(x)\), define the
         intersection of their truth sets, \(S_P \cap S_Q\).
-      </p></article><p id="p-817">
+      </p></article><p id="p-823">
     There is also a “big” version of the intersection symbol. Using
     the same family of intervals as before,
     \begin{equation*}
       \mbox{\(\emptyset\)}  \; = \; \bigcap_{n\in\Integers} I_n.
     \end{equation*}
   </p>
-<p id="p-818">
+<p id="p-824">
     Of course the intersection of any distinct pair of these intervals is empty
     so the statement above isn't particularly strong.
   </p>
-<p id="p-819">
+<p id="p-825">
     Negation in Logic corresponds to
     complementation in Set theory. The
     <!--Style me with CSS--><em>complement</em> of a set \(A\) is usually denoted by \(\overline{A}\)
@@ -281,7 +281,7 @@ MathJax.Hub.Config({
     last paragraph, this text was nothing more than a very long
     sequence of zeros and ones in the memory of my computer…
   </p>
-<p id="p-820">
+<p id="p-826">
     Every rule that we learned in <a href="ch_logic.html" alt="Chapter 2 Logic and quantifiers" title="Chapter 2 Logic and quantifiers">Chapter 2</a>
     (see <a knowl="./knowl/tab_bool_equiv.html" knowl-id="xref-tab_bool_equiv" alt="Table 2.3.4 " title="Table 2.3.4 ">Table 2.3.4</a>) has a set-theoretic equivalent.
     These set-theoretic versions are
@@ -293,24 +293,24 @@ MathJax.Hub.Config({
     \{\sqrt{1},\sqrt{4},\sqrt{9}\}\), but people seem to be used to this
     so there's no sense in quibbling.
   </p>
-<article class="exercise-like" id="exercise-37"><h5 class="heading">
+<article class="exercise-like" id="exercise-47"><h5 class="heading">
 <span class="type">Exercise</span><span class="codenumber">4.3.3</span>
 </h5>
-<p id="p-821">
+<p id="p-827">
         Develop a useful definition for set equality. In other words,
         come up with a (quantified) logical statement that means the
         same thing as “\(A = B\)” for two arbitrary sets \(A\) and \(B\).
-      </p></article><article class="exercise-like" id="exercise-38"><h5 class="heading">
+      </p></article><article class="exercise-like" id="exercise-48"><h5 class="heading">
 <span class="type">Exercise</span><span class="codenumber">4.3.4</span>
 </h5>
-<p id="p-822">
+<p id="p-828">
         What symbol in Logic should go between the membership criteria
         \(M_A(x)\) and \(M_B(x)\) if \(A\) and \(B\) are equal sets?
-      </p></article><p id="p-823">
+      </p></article><p id="p-829">
     In <a knowl="./knowl/tab_set_equiv.html" knowl-id="xref-tab_set_equiv" alt="Table 4.3.5 " title="Table 4.3.5 ">Table 4.3.5</a> the rules governing the interactions
     between the set theoretic operations are collected.
   </p>
-<p id="p-824">
+<p id="p-830">
     We are now in a position somewhat similar to when we jumped from
     proving logical assertions with truth tables to doing two-column
     proofs. We have two different approaches for showing that two
@@ -442,27 +442,27 @@ MathJax.Hub.Config({
 <td class="l m b0 r0 l0 t0 lines">\begin{minipage}{.35\textwidth} \\(A \cup (A \cap B) = A\)</td>
 </tr>
 </table>
-<figcaption><span class="heading">Table</span><span class="codenumber">4.3.5</span>Basic set theoretic equalities.</figcaption></figure><p id="p-825">
+<figcaption><span class="heading">Table</span><span class="codenumber">4.3.5</span>Basic set theoretic equalities.</figcaption></figure><p id="p-831">
     Before we proceed much further in our study of set theory it would be a
     good idea to give you an example. We're going to prove the same assertion
     in two different ways — once via element chasing and once using the
     basic set theoretic equalities from <a knowl="./knowl/tab_set_equiv.html" knowl-id="xref-tab_set_equiv" alt="Table 4.3.5 " title="Table 4.3.5 ">Table 4.3.5</a>.
   </p>
-<p id="p-826">
+<p id="p-832">
     The statement we'll prove is \(A \cup B \; = \; A \cup (\overline{A} \cap B)\).
   </p>
-<p id="p-827">
+<p id="p-833">
     First, by chasing elements:
   </p>
 <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-23" id="proof-23"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
-<div id="hk-proof-23" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-828">
+<div id="hk-proof-23" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-834">
       Suppose \(x\) is an element of \(A \cup B\). By the definition of union we
       know that
       \begin{equation*}
         x \in A \lor x \in B.
       \end{equation*}
     </p>
-<p id="p-829">
+<p id="p-835">
       The conjunctive identity law and the
       fact that \(x \in A \lor x \notin A\) is a tautology gives us an equivalent
       logical statement:
@@ -470,20 +470,20 @@ MathJax.Hub.Config({
         (x \in A \lor x \notin A) \land (x \in A \lor x \in B).
       \end{equation*}
     </p>
-<p id="p-830">
+<p id="p-836">
       Finally, this last statement is equivalent to
       \begin{equation*}
         x \in A \lor (x \notin A \land x \in B)
       \end{equation*}
       which is the definition of \(x \in A \cup (\overline{A} \cap B)\).
     </p>
-<p id="p-831">
+<p id="p-837">
       On the other hand, if we assume that \(x \in A \cup (\overline{A} \cap B)\), it follows that
       \begin{equation*}
         x \in A \lor (x \notin A \land x \in B).
       \end{equation*}
     </p>
-<p id="p-832">
+<p id="p-838">
       Applying the distributive law, disjunctive complementarity and the identity law,
       in sequence we obtain
       \begin{gather*}
@@ -493,10 +493,10 @@ x \in A \lor (x \notin A \land x \in B)\\
 \cong x \in A \lor x \in B
 \end{gather*}
     </p>
-<p id="p-833">
+<p id="p-839">
       The last statement in this chain of logical equivalences provides the definition of \(x \in A \cup B\).
     </p></article></div>
-<p id="p-834">
+<p id="p-840">
     A two-column proof of the same statement looks like this:
   </p>
 <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-24" id="proof-24"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
@@ -526,7 +526,7 @@ x \in A \lor (x \notin A \land x \in B)\\
 <td class="l m b0 r0 l0 t0 lines">Distributive law</td>
 </tr>
 </table></article></div>
-<p id="p-835">
+<p id="p-841">
     There are some notions within Set theory that don't have any clear
     parallels in Logic. One of these is essentially a generalization
     of the concept of “complements.” If you think of the set \(\overline{A}\)
@@ -539,11 +539,11 @@ x \in A \lor (x \notin A \land x \in B)\\
       A \setminus B = A \cap \overline{B}.
     \end{equation*}
   </p>
-<p id="p-836">
+<p id="p-842">
     The difference, \(A \setminus B\), consists of those elements of \(A\) that aren't in \(B\). In some developments of Set theory, the difference of sets is
     defined first and then complementation is defined by \(\overline{A} = U \setminus A\).
   </p>
-<p id="p-837">
+<p id="p-843">
     The difference of sets (like the difference of real numbers) is not a
     commutative operation. In other words \(A \setminus B \neq B \setminus A\)
     (in general). It is possible to define an operation that acts somewhat
@@ -555,28 +555,28 @@ x \in A \lor (x \notin A \land x \in B)\\
       A \triangle B = (A \setminus B) \cup (B\setminus A).
     \end{equation*}
   </p>
-<article class="exercise-like" id="exercise-39"><h5 class="heading">
+<article class="exercise-like" id="exercise-49"><h5 class="heading">
 <span class="type">Exercise</span><span class="codenumber">4.3.6</span>
 </h5>
-<p id="p-838">
+<p id="p-844">
         Show that \(A \triangle B = (A \cup B) \setminus (A \cap B)\).
-      </p></article><p id="p-839">
+      </p></article><p id="p-845">
     Come on! You read right past that exercise without even pausing!
   </p>
-<p id="p-840">
+<p id="p-846">
     What? You say you <!--Style me with CSS--><em>did</em> try it and it was too hard?
   </p>
-<p id="p-841">
+<p id="p-847">
     Okay, just for you (and this time only) I've prepared an aid to
     help you through…
   </p>
-<p id="p-842">
+<p id="p-848">
     On the next page is a two-column proof of the result you need to
     prove, but the lines of the proof are all scrambled.
     Make a copy and cut out all the pieces and then glue them together
     into a valid proof.
   </p>
-<p id="p-843">
+<p id="p-849">
     So, no more excuses, just do it!
   </p>
 <table>
@@ -659,35 +659,35 @@ x \in A \lor (x \notin A \land x \in B)\\
 </table>
 <section class="exercises" id="exercises-23"><header title="Exercises 4.3.1 Exercises"><h1 class="heading hide-type" alt="Exercises 4.3.1 Exercises">
 <span class="type">Subsection</span><span class="codenumber">4.3.1</span><span class="title">Exercises</span>
-</h1></header><ol id="ol-47" style="list-style-type: lower-alpha;">
-<li id="li-311">
-<p id="p-844">
+</h1></header><ol id="ol-46" style="list-style-type: lower-alpha;">
+<li id="li-301">
+<p id="p-850">
     Let \(A = \{1, 2, \{1, 2\}, b\}\) and let \(B=\{a, b, \{1, 2\} \}\).
     Find the following:
 
     </p>
-<ol id="ol-48" style="list-style-type: lower-roman;">
-<li id="li-312"><p id="p-845">
+<ol id="ol-47" style="list-style-type: lower-roman;">
+<li id="li-302"><p id="p-851">
           \(A \cap B\)   \hint{ \(\{ b,  \{1, 2\} \}\) }
         </p></li>
-<li id="li-313"><p id="p-846">
+<li id="li-303"><p id="p-852">
           \(A \cup B\) \hint{ \(\{1, 2, a, b, \{1, 2\} \}\) }
         </p></li>
-<li id="li-314"><p id="p-847">
+<li id="li-304"><p id="p-853">
           \(A \setminus B\) \hint{  \(\{ 1, 2 \}\) }
         </p></li>
-<li id="li-315"><p id="p-848">
+<li id="li-305"><p id="p-854">
           \(B \setminus A\) \hint{ \(\{ a \}\) }
         </p></li>
-<li id="li-316"><p id="p-849">
+<li id="li-306"><p id="p-855">
           \(A \triangle B\) \hint{ \(\{ 1, 2, a \}\) }
         </p></li>
 </ol>
 <p>
     </p>
 </li>
-<li id="li-317">
-<p id="p-850">
+<li id="li-307">
+<p id="p-856">
     In a standard deck of playing cards one can distinguish sets
     based on face-value and/or suit.  Let \(A, 2, \ldots 9, 10, J, Q\) and \(K\)
     represent the sets of cards having the various face-values.  Also, let
@@ -695,50 +695,50 @@ x \in A \lor (x \notin A \land x \in B)\\
     sets of cards having the possible suits.  Find the following
 
     </p>
-<ol id="ol-49" style="list-style-type: lower-roman;">
-<li id="li-318"><p id="p-851">
+<ol id="ol-48" style="list-style-type: lower-roman;">
+<li id="li-308"><p id="p-857">
           \(A \cap \heartsuit\) \hint{This is just the ace of hearts.}
         </p></li>
-<li id="li-319"><p id="p-852">
+<li id="li-309"><p id="p-858">
           \(A \cup \heartsuit\) \hint{All of the hearts and the other three aces}
         </p></li>
-<li id="li-320"><p id="p-853">
+<li id="li-310"><p id="p-859">
           \(J \cap (\spadesuit \cup \heartsuit)\) \hint{ These two cards are known as the one-eyed jacks.}
         </p></li>
-<li id="li-321"><p id="p-854">
+<li id="li-311"><p id="p-860">
           \(K \cap \heartsuit\) \hint{The king of hearts, a.k.a. the suicide king.}
         </p></li>
-<li id="li-322"><p id="p-855">
+<li id="li-312"><p id="p-861">
           \(A \cap K\) \hint{\(\emptyset\) }
         </p></li>
-<li id="li-323"><p id="p-856">
+<li id="li-313"><p id="p-862">
           \(A \cup K\) \hint{Eight cards: all four kings and all four aces.}
         </p></li>
 </ol>
 <p>
     </p>
 </li>
-<li id="li-324"><p id="p-857">
+<li id="li-314"><p id="p-863">
         The following is a screenshot from the computational geometry program OpenSCAD (very hand for making models for 3-d printing…)  In computational geometry we use the basice set operations together
         with a few other types of transformations to create interesting models using simple components.  Across the top of the image below we see 3 sets of points in \(\Reals^3\), a ball, a sort of 3-dimensional plus sign, and a disk.  Let's call the ball \(A\), the plus sign \(B\) and the disk \(C\).   The nine shapes shown below them are made from \(A\), \(B\) and \(C\) using union, intersection and set difference.  Identify them!
         <img width="37%" src="images/set_ops.png" alt="">
       </p></li>
-<li id="li-325">
-<p id="p-858">
+<li id="li-315">
+<p id="p-864">
     Do element-chasing proofs (show that an element is in the left-hand side if and only if it is in the right-hand side) to prove each of the following set equalities.
 
     </p>
-<ol id="ol-50" style="list-style-type: lower-roman;">
-<li id="li-326"><p id="p-859">
+<ol id="ol-49" style="list-style-type: lower-roman;">
+<li id="li-316"><p id="p-865">
           \(\overline{A\cap B} \; = \; \overline{A}\cup\overline{B}\)
         </p></li>
-<li id="li-327"><p id="p-860">
+<li id="li-317"><p id="p-866">
           \(A\cup B \; = \; A\cup(\overline{A}\cap B)\)
         </p></li>
-<li id="li-328"><p id="p-861">
+<li id="li-318"><p id="p-867">
           \(A\triangle B \; = \; (A\cup B)\setminus(A\cap B)\)
         </p></li>
-<li id="li-329"><p id="p-862">
+<li id="li-319"><p id="p-868">
           \((A\cup B)\setminus C \; = \; (A\setminus C)\cup(B\setminus C)\)
         </p></li>
 </ol>
@@ -751,7 +751,7 @@ x \in \overline{A\cap B}\\
 \iff \; x \in \overline{A}  \; \lor \; x \in \overline{B}\\
 \iff \; x \in \overline{A} \cup \overline{B}
 \end{gather*}</li>
-<li id="li-330"><p id="p-863">
+<li id="li-320"><p id="p-869">
         For each positive integer \(n\), we'll define an interval \(I_n\)
         by
         \begin{equation*}
@@ -784,18 +784,18 @@ x \in \overline{A\cap B}\\
         In order to be in the union a real number just needs to be in <!--Style me with CSS--><em>one</em> of the intervals.
         }
       </p></li>
-<li id="li-331"><p id="p-864">
+<li id="li-321"><p id="p-870">
         There is a set \(X\) such that, for all sets \(A\), we have 
         \(X \triangle A = A\).  What is \(X\)?
       </p></li>
-<li id="li-332"><p id="p-865">
+<li id="li-322"><p id="p-871">
         There is a set \(Y\) such that, for all sets \(A\), we have 
         \(Y \triangle A = \overline{A}\).  What is \(Y\)?
 
         \hint{One of the answers to the last two questions is \(\emptyset\) and the other is \(U\).  Decide
         which is which.}
       </p></li>
-<li id="li-333"><p id="p-866">
+<li id="li-323"><p id="p-872">
         In proving a set-theoretic identity, we are basically showing that
         two sets are equal.  One reasonable way to proceed is to show that
         each is contained in the other.  Prove that 
@@ -803,7 +803,7 @@ x \in \overline{A\cap B}\\
         \(A \cap (B \cup C) \subseteq (A \cap B) \cup (A \cap C)\) and 
         \((A \cap B) \cup (A \cap C) \subseteq A \cap (B \cup C)\).
       </p></li>
-<li id="li-334"><p id="p-867">
+<li id="li-324"><p id="p-873">
         Prove that 
         \(A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\) by showing that 
         \(A \cup (B \cap C) \subseteq (A \cup B) \cap (A \cup C)\) and 
@@ -813,27 +813,27 @@ x \in \overline{A\cap B}\\
         statements into their logical equivalents, applying some rules of logic that we've already verified,
         and then returning to a set-theoretic version of things.}
       </p></li>
-<li id="li-335"><p id="p-868">
+<li id="li-325"><p id="p-874">
         Prove the set-theoretic versions of DeMorgan's laws using the technique
         discussed in the previous problems.
       </p></li>
-<li id="li-336"><p id="p-869">
+<li id="li-326"><p id="p-875">
       The previous technique (showing that \(A=B\) by arguing that
       \(A \subseteq B \; \land \; B \subseteq A\)) will have an outline something like
 
-      <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-25" id="proof-25"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div><div id="hk-proof-25" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-870">
+      <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-25" id="proof-25"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div><div id="hk-proof-25" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-876">
           First we will show that \(A \subseteq B\).
           Towards that end, suppose \(x \in A\).
-        </p>\(\vdots\)<p id="p-871">
+        </p>\(\vdots\)<p id="p-877">
           Thus \(x \in B\).
         </p>
-<p id="p-872">
+<p id="p-878">
           Now, we will show that \(B \subseteq A\).
           Suppose that \(x \in B\).
-        </p>\(\vdots\)<p id="p-873">
+        </p>\(\vdots\)<p id="p-879">
           Thus \(x \in A\).
         </p>
-<p id="p-874">
+<p id="p-880">
           Therefore \(A \subseteq B \; \land \; B \subseteq A\) so we conclude that \(A=B\).
         </p></article></div>
 

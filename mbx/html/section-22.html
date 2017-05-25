@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2017-01-10T23:30:58-05:00    *-->
+<!--*    on 2017-05-23T13:30:27-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -45,7 +45,7 @@ MathJax.Hub.Config({
 <link href="extra.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$4.0$\ }
 \renewcommand{\tabcolsep}{2.4pt}
 \def\savedlnot{\lnot}
 \renewcommand{\arraystretch}{.63}
@@ -90,7 +90,7 @@ MathJax.Hub.Config({
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></a></h1>
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics, version 4.0</span></a></h1>
 <p class="byline">Joe Fields</p>
 </div>
 </div></div>
@@ -189,7 +189,7 @@ MathJax.Hub.Config({
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-22"><header title="Section 4.2 Containment"><h1 class="heading hide-type" alt="Section 4.2 Containment">
 <span class="type">Section</span><span class="codenumber">4.2</span><span class="title">Containment</span>
-</h1></header><p id="p-787">
+</h1></header><p id="p-793">
     There are two notions of being “inside” a set. A thing may be
     an <!--Style me with CSS--><em>element</em> of a set, or may be contained as
     a subset. Distinguishing these two notions of inclusion is essential.
@@ -197,7 +197,7 @@ MathJax.Hub.Config({
     other sets <!--Style me with CSS--><em>as elements</em>. For instance, as we saw in the previous
     section, the elements of a power set are themselves sets.
   </p>
-<p id="p-788">
+<p id="p-794">
     A set \(A\) is a <!--Style me with CSS--><em>subset</em> of another set \(B\) if all of \(A\)'s elements
     are also in \(B\). The terminology
     <!--Style me with CSS--><em>superset</em> is used to refer
@@ -207,7 +207,7 @@ MathJax.Hub.Config({
     thought of as a stylized version of the less-than-or-equal sign, when
     \(A\) is a subset of \(B\) we write \(A \subseteq B\).
   </p>
-<p id="p-789">
+<p id="p-795">
     We say that \(A\) is
     a <!--Style me with CSS--><em>proper subset</em> of \(B\) if \(B\) has some elements that aren't in
     \(A\), and in this situation we write \(A \subset B\) or if we really want
@@ -217,15 +217,15 @@ MathJax.Hub.Config({
     \(A \supseteq B\) means that \(A\) is a superset of \(B\) although they could
     potentially be equal.
   </p>
-<p id="p-790">
+<p id="p-796">
     As we've seen earlier, the symbol \(\in\) is used between an element of
     a set and the set that it's in. The following exercise is intended to
     clarify the distinction between \(\in\) and \(\subseteq\).
   </p>
-<article class="exercise-like" id="exercise-33"><h5 class="heading">
+<article class="exercise-like" id="exercise-43"><h5 class="heading">
 <span class="type">Exercise</span><span class="codenumber">4.2.1</span>
 </h5>
-<p id="p-791">
+<p id="p-797">
         Let \(A = \left\{  1, 2, \{ 1 \}, \{ a, b \} \right\}\).
         Which of the following are true?
       </p>
@@ -250,7 +250,7 @@ MathJax.Hub.Config({
 <td class="l m b0 r0 l0 t0 lines">v) \(1 \subseteq A\).</td>
 <td class="l m b0 r0 l0 t0 lines">x) \(\{\{1\}\} \subseteq A\).</td>
 </tr>
-</table></article><p id="p-792">
+</table></article><p id="p-798">
     Another perspective that may help clear up the distinction between
     \(\in\) and \(\subseteq\) is to consider what they correspond to in Logic.
     The “element of” symbol \(\in\) is used to construct open sentences
@@ -270,7 +270,7 @@ MathJax.Hub.Config({
       F = \{5, 10, 15, 20, 25, 30, 35, 40, 45, 50 \}
     \end{equation*}
   </p>
-<p id="p-793">
+<p id="p-799">
     Hopefully it is clear that \(\subseteq\) can be inserted between these two sets
     like so: \(T \subseteq F\).
     On the other hand we can re-express the sets \(T\) and \(F\) using set-builder
@@ -282,18 +282,18 @@ MathJax.Hub.Config({
       F = \{ x \in U \; \suchthat \; 5\divides x \}
     \end{equation*}
   </p>
-<p id="p-794">
+<p id="p-800">
     What logical operator fits nicely between \(10\divides x\) and \(5\divides x\)?
     Well, of course, it's the implication arrow. It's easy to
     verify that \(10\divides x \, \implies \, 5\divides x\), and it's equally easy
     to note that the other direction doesn't work, \(5\divides x \, \nRightarrow \, 10\divides x\) — for instance, \(5\) goes evenly into \(15\), but \(10\) doesn't.
   </p>
-<p id="p-795">
+<p id="p-801">
     The general statement is: if \(A\) and \(B\) are sets, and \(M_A(x)\) and \(M_B(x)\)
     are their respective membership questions, then \(A \subseteq B\) corresponds
     precisely to \(\forall x \in U, M_A(x) \implies M_B(x)\).
   </p>
-<p id="p-796">
+<p id="p-802">
     Now to many people (me included!) this looks funny at first, \(\subseteq\)
     in Set theory corresponds to \(\implies\) in Logic. It seems like both
     of these symbols are arrows of a sort — but they point in opposite
@@ -312,42 +312,42 @@ MathJax.Hub.Config({
     to less restrictive criteria, thus the set defined by a weak membership
     criterion contains the one having a stronger criterion.
   </p>
-<p id="p-797">
+<p id="p-803">
     If we are asked to prove that one set is contained in another as a subset,
     \(A \subseteq B\), there are two ways to proceed. We may either argue by
     thinking about elements, or (although this amounts to the same thing)
     we can show that \(A\)'s membership criterion
     implies \(B\)'s membership criterion.
   </p>
-<article class="exercise-like" id="exercise-34"><h5 class="heading">
+<article class="exercise-like" id="exercise-44"><h5 class="heading">
 <span class="type">Exercise</span><span class="codenumber">4.2.2</span>
 </h5>
-<p id="p-798">
+<p id="p-804">
         Consider \(S\), the set of perfect squares and \(F\), the set of perfect fourth
         powers. Which is contained in the other? Can you prove it?
-      </p></article><p id="p-799">
+      </p></article><p id="p-805">
     We'll end this section with a fairly elementary proof — mainly just to
     illustrate how one should proceed in proving that one set is contained in
     another.
   </p>
-<p id="p-800">
+<p id="p-806">
     Let \(D\) represent the set of all integers that are divisible by 9,
     \begin{equation*}
       D = \{ x \in \Integers \suchthat \exists k \in \Integers, \; x=9k \}.
     \end{equation*}
   </p>
-<p id="p-801">
+<p id="p-807">
     Let \(C\) represent the set of all integers that are divisible by 3,
     \begin{equation*}
       C = \{ x \in \Integers \suchthat \exists k \in \Integers, \; x=3k \}.
     \end{equation*}
   </p>
-<p id="p-802">
+<p id="p-808">
     The set \(D\) is contained in \(C\). Let's prove
     it!
   </p>
 <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-22" id="proof-22"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
-<div id="hk-proof-22" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-803">
+<div id="hk-proof-22" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-809">
       Suppose that \(x\) is an arbitrary element of \(D\). From the definition
       of \(D\) it follows that there is an integer \(k\) such that \(x=9k\).
       We want to show that \(x \in C\), but since \(x=9k\) it is easy to
@@ -356,8 +356,8 @@ MathJax.Hub.Config({
     </p></article></div>
 <section class="exercises" id="exercises-22"><header title="Exercises 4.2.1 Exercises"><h1 class="heading hide-type" alt="Exercises 4.2.1 Exercises">
 <span class="type">Subsection</span><span class="codenumber">4.2.1</span><span class="title">Exercises</span>
-</h1></header><ol id="ol-46" style="list-style-type: lower-alpha;">
-<li id="li-305"><p id="p-804">
+</h1></header><ol id="ol-45" style="list-style-type: lower-alpha;">
+<li id="li-295"><p id="p-810">
           Insert either \(\in\) or \(\subseteq\) in the blanks in the following 
           sentences (in order to produce true sentences).
           <table>
@@ -374,7 +374,7 @@ MathJax.Hub.Config({
 </table>
           \hint{\(\in\), \(\subseteq\), \(\in\), \(\subseteq\)}
         </p></li>
-<li id="li-306"><p id="p-805">
+<li id="li-296"><p id="p-811">
           Suppose that \(p\) is a prime, for each \(n\) in \(\Integers^+\), 
           define the set \(P_n = \{ x \in \Integers^+ \suchthat \, p^n \divides x \}\).  
           Conjecture and prove a statement about the containments between these sets.
@@ -382,7 +382,7 @@ MathJax.Hub.Config({
           \hint{When \(p=2\) we have seen these sets.  \(P_1\) is the even numbers, \(P_2\) is the doubly-even numbers,
           etc.}
         </p></li>
-<li id="li-307"><p id="p-806">
+<li id="li-297"><p id="p-812">
           Provide a counterexample to dispel the notion that a subset must
           have fewer elements than its superset.
 
@@ -392,19 +392,19 @@ MathJax.Hub.Config({
           number of elements as their superset, for example there are just as many even natural numbers
           as there are natural numbers all told.}
         </p></li>
-<li id="li-308"><p id="p-807">
+<li id="li-298"><p id="p-813">
           We have seen that \(A \subseteq B\) corresponds to \(M_A \implies M_B\).
           What corresponds to the contrapositive statement?
 
           \hint{Turn “logical negation” into “set complement” and reverse the direction of the inclusion.}
         </p></li>
-<li id="li-309"><p id="p-808">
+<li id="li-299"><p id="p-814">
           Determine two sets \(A\) and \(B\) such that both of the sentences
           \(A \in B\) and \(A \subseteq B\) are true.
 
           \hint{The smallest example I can think of would be \(A=\emptyset\) and \(B=\{\emptyset\}\).  You should come up with a different example.}
         </p></li>
-<li id="li-310"><p id="p-809">
+<li id="li-300"><p id="p-815">
           Prove that the set of perfect fourth powers is contained in the
           set of perfect squares.
 

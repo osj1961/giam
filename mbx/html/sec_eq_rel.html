@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2017-01-10T23:31:00-05:00    *-->
+<!--*    on 2017-05-23T13:30:29-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -45,7 +45,7 @@ MathJax.Hub.Config({
 <link href="extra.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$4.0$\ }
 \renewcommand{\tabcolsep}{2.4pt}
 \def\savedlnot{\lnot}
 \renewcommand{\arraystretch}{.63}
@@ -90,7 +90,7 @@ MathJax.Hub.Config({
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></a></h1>
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics, version 4.0</span></a></h1>
 <p class="byline">Joe Fields</p>
 </div>
 </div></div>
@@ -189,7 +189,7 @@ MathJax.Hub.Config({
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_eq_rel"><header title="Section 6.3 Equivalence relations"><h1 class="heading hide-type" alt="Section 6.3 Equivalence relations">
 <span class="type">Section</span><span class="codenumber">6.3</span><span class="title">Equivalence relations</span><a href="sec_eq_rel.html" class="permalink">¶ permalink</a>
-</h1></header><p id="p-1170">
+</h1></header><p id="p-1176">
     The main idea of an equivalence relation is that it is something like
     equality, but not quite. Usually there is some property that
     we can name, so that equivalent things share that property. For
@@ -204,10 +204,10 @@ MathJax.Hub.Config({
 <article class="definition-like" id="definition-9"><h5 class="heading">
 <span class="type">Definition</span><span class="codenumber">6.3.1</span>
 </h5>
-<p id="p-1171">
+<p id="p-1177">
         A relation \(\relR\) on a set \(S\) is an <em class="terminology">equivalence relation</em>
         iff \(\relR\) is reflexive, symmetric and transitive.
-      </p></article><p id="p-1172">
+      </p></article><p id="p-1178">
     Probably the most important equivalence relation we've seen to date
     is “congruence mod \(m\)” which we will denote using the symbol \(\equiv_m\).
     This relation may even be more interesting than
@@ -224,7 +224,7 @@ MathJax.Hub.Config({
       \overline{11} = \{ \ldots, -9, -4, 1, 6, 11, 16, \ldots \}
     \end{equation*}
   </p>
-<p id="p-1173">
+<p id="p-1179">
     It's easy to see that we will get the exact same set if we choose any other element
     of the equivalence class (in place of 11), which leads us to an infinite list of set
     equalities,
@@ -232,19 +232,19 @@ MathJax.Hub.Config({
       \overline{1} = \overline{6} = \overline{11} = \ldots
     \end{equation*}
   </p>
-<p id="p-1174">
+<p id="p-1180">
     And similarly,
     \begin{equation*}
       \overline{2} = \overline{7} = \overline{12} = \ldots
     \end{equation*}
   </p>
-<p id="p-1175">
+<p id="p-1181">
     In fact, there are really just 5 different sets that form the
     equivalence classes mod 5: \(\overline{0}\), \(\overline{1}\), \(\overline{2}\), \(\overline{3}\),
     and \(\overline{4}\). (Note: we have followed the usual convention of using the smallest
     possible non-negative integers as the representatives for our equivalence classes.)
   </p>
-<p id="p-1176">
+<p id="p-1182">
     What we've been discussing here is one of the first examples of a 
     <!--Style me with CSS--><em>quotient structure</em>.
     We start with the integers and “mod out” by an equivalence relation. In doing so, we
@@ -254,7 +254,7 @@ MathJax.Hub.Config({
     but greatly highlight some particular feature — in this example, properties related to
     divisibility by 5.
   </p>
-<p id="p-1177">
+<p id="p-1183">
     Given some equivalence relation \(\relR\) defined on a set \(S\) the set of equivalence classes
     of \(S\) under \(\relR\) is denoted \(S/\relR\) (which is read “\(S\) mod \(\relR\)”). This use of the
     slash — normally reserved for division — shouldn't cause any confusion since those aren't
@@ -262,20 +262,20 @@ MathJax.Hub.Config({
     notation may also clarify why some people denote the equivalence classes above
     by \(0/\equiv_5\), \(1/\equiv_5\), \(2/\equiv_5\), \(3/\equiv_5\) and \(4/\equiv_5\).
   </p>
-<p id="p-1178">
+<p id="p-1184">
     The set of equivalence
     classes forms a  <!--Style me with CSS--><em>partition</em> of the set \(S\).
   </p>
 <article class="definition-like" id="definition-10"><h5 class="heading">
 <span class="type">Definition</span><span class="codenumber">6.3.2</span>
 </h5>
-<p id="p-1179">
+<p id="p-1185">
         A <em class="terminology">partition</em> \(P\) of a set \(S\) is a set of sets such that
         \begin{equation*}
           S = \bigcup_{X \in P} X \qquad \mbox{and}  \qquad 
           \forall X, Y \in P, \; X \neq Y \, \implies \, X \cap Y = \emptyset.
         \end{equation*}
-      </p></article><p id="p-1180">
+      </p></article><p id="p-1186">
     In words, if you take the union of all the pieces of the partition you'll get the
     set \(S\), and any pair of sets from the partition that aren't identical are disjoint.
     Partitions are an inherently useful way of looking at things, although in the real world
@@ -295,7 +295,7 @@ MathJax.Hub.Config({
     that it is indeed reflexive, symmetric and transitive. Let's have a look at another
     example.
   </p>
-<p id="p-1181">
+<p id="p-1187">
     In Number Theory, the  square-free part of an integer is what remains after we divide-out
     the largest perfect square that divides it. (This is also known as the
     <!--Style me with CSS--><em>radical</em> of an integer.)
@@ -373,7 +373,7 @@ MathJax.Hub.Config({
 <td class="l m b0 r0 l0 t0 lines">5</td>
 </tr>
 </table>
-<p id="p-1182">
+<p id="p-1188">
     It's easy to compute the square-free part of an integer if you know its prime factorization — just reduce all the exponents mod 2. For example<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-37" id="fn-37"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-37" style="display: none;" class="tex2jax_ignore"><span class="footnote">This is the size of largest 
     sporadic finite simple group, known as “the Monster.”</span></span>
     \begin{gather*}
@@ -389,23 +389,23 @@ MathJax.Hub.Config({
     which, while it is still quite a large number, is certainly a good
     bit smaller than the original!
   </p>
-<p id="p-1183">
+<p id="p-1189">
     We will define an equivalence relation \(\relS\) on the set of natural numbers
     by using the square-free part:
     \begin{equation*}
       \forall x, y \in \Naturals, \; x \relS y \; \iff sf(x) = sf(y)
     \end{equation*}
   </p>
-<p id="p-1184">
+<p id="p-1190">
     In other words, two natural numbers will be \(\relS\)-related if they have the
     same square-free parts.
   </p>
-<article class="exercise-like" id="exercise-51"><h5 class="heading">
+<article class="exercise-like" id="exercise-61"><h5 class="heading">
 <span class="type">Exercise</span><span class="codenumber">6.3.3</span>
 </h5>
-<p id="p-1185">
+<p id="p-1191">
         What is \(1/\relS\)?
-      </p></article><p id="p-1186">
+      </p></article><p id="p-1192">
     Before we proceed to the proof that \(\relS\) is an equivalence relation we'd like
     you to be cognizant of a bigger picture as you read. Each of the three parts of
     the proof will have a similar structure. We will show that \(\relS\) has one of the
@@ -418,22 +418,22 @@ MathJax.Hub.Config({
 <article class="theorem-like" id="theorem-27"><h5 class="heading">
 <span class="type">Theorem</span><span class="codenumber">6.3.4</span>
 </h5>
-<p id="p-1187">
+<p id="p-1193">
         The relation \(\relS\) defined by
         \begin{equation*}
           \forall x, y \in \Naturals, \; x \relS y \; \iff sf(x) = sf(y)
         \end{equation*}
         is an equivalence relation on \(\Naturals\).
       </p></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-38" id="proof-38"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
-<div id="hk-proof-38" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1188">
+<div id="hk-proof-38" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1194">
       We must show that \(\relS\) is reflexive, symmetric and transitive.
     </p>
-<p id="p-1189">
+<p id="p-1195">
       <!--Style me with CSS--><em>reflexive</em> — (Here we must show that \(\forall x \in \Naturals, \; x \relS x\).)
       Let \(x\) be an arbitrary natural number. Since \(sf(x) = sf(x)\) (this is the reflexive
       property of \(=\)) it follows from the definition of \(\relS\) that \(x \relS x\).
     </p>
-<p id="p-1190">
+<p id="p-1196">
       <!--Style me with CSS--><em>symmetric</em> — (Here we must show that \(\forall x,y \in \Naturals, \; x \relS y \, 
       \implies \, y \relS x\).)
       Let \(x\) and \(y\) be arbitrary natural numbers, and further suppose that \(x \relS y\).
@@ -441,7 +441,7 @@ MathJax.Hub.Config({
       obviously then \(sf(y) = sf(x)\) (this is the symmetric property of \(=\)) and so
       \(y \relS x\).
     </p>
-<p id="p-1191">
+<p id="p-1197">
       <!--Style me with CSS--><em>transitive</em> — (Here we must show that \(\forall x,y,z \in \Naturals, \; x \relS y \,
       \land \, y \relS z \; \implies \; x \relS z\).)
       Let \(x\), \(y\) and \(z\) be arbitrary natural numbers, and further suppose that both
@@ -449,11 +449,11 @@ MathJax.Hub.Config({
       \(sf(x) = sf(y)\) and \(sf(y) = sf(z)\). Clearly, \(sf(x) = sf(z)\) (this deduction comes
       from the transitive property of \(=\)), so \(x \relS z\).
     </p></article></div>
-<p id="p-1192">
+<p id="p-1198">
     We'll end this section with an example of an equivalence relation that
     doesn't “inherit” the three properties from equality.
   </p>
-<p id="p-1193">
+<p id="p-1199">
     A  <!--Style me with CSS--><em>graph</em> is a mathematical structure consisting of
     two sets, a set \(V\) of points (a.k.a. vertices) and a set<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-38" id="fn-38"><span class="footnote"><sup> 2 </sup></span></a></span><span id="hk-fn-38" style="display: none;" class="tex2jax_ignore"><span class="footnote">Technically, \(E\) is a so-called
     multiset in many instances — there may be several edges that connect the same pair of vertices.</span></span> \(E\) of edges.
@@ -465,7 +465,7 @@ MathJax.Hub.Config({
     undirected case is actually the more usual, if the word “graph” appears without
     a modifier it is assumed that we are talking about an undirected graph.
   </p>
-<p id="p-1194">
+<p id="p-1200">
     The previous paragraph gives a relatively precise definition of a graph
     in terms of sets, however the real way to think of graphs is in terms
     of diagrams where a set of dots are connected by paths. (The paths will,
@@ -478,36 +478,36 @@ MathJax.Hub.Config({
     \reset@font\fontsize{#1}{#2pt}
     \fontfamily{#3}\fontseries{#4}\fontshape{#5}
     \selectfont}\fi
-  <img width="100%" src="images/06d94f01bfecbcbff19166494556e5f5671266b7.png" alt=""><p id="p-1195">
+  <img width="100%" src="images/06d94f01bfecbcbff19166494556e5f5671266b7.png" alt=""><p id="p-1201">
     Two graphs are said to be  <!--Style me with CSS--><em>isomorphic</em> if they
     represent the same connections. There must first of all be a one-to-one correspondence
     between the vertices of the two graphs, and further, a pair of vertices in one
     graph are connected by some number of edges if and only if the corresponding vertices in the other graph
     are connected by the same number of edges.
   </p>
-<article class="exercise-like" id="exercise-52"><h5 class="heading">
+<article class="exercise-like" id="exercise-62"><h5 class="heading">
 <span class="type">Exercise</span><span class="codenumber">6.3.5</span>
 </h5>
-<p id="p-1196">
+<p id="p-1202">
         The four examples of graphs above actually are two pairs of isomorphic graphs.
         Which pairs are isomorphic?
-      </p></article><p id="p-1197">
+      </p></article><p id="p-1203">
     This word “isomorphic” has a nice etymology. It means “same shape.” Two graphs are
     isomorphic if they have the same shape. We don't have the tools right now to do a formal
     proof (in fact we need to look at some further prerequisites before we can really precisely
     define isomorphism), but isomorphism of graphs is an equivalence relation. Let's at least
     verify this informally.
   </p>
-<p id="p-1198">
+<p id="p-1204">
     <!--Style me with CSS--><em>Reflexivity</em> Is a graph isomorphic to itself? That is, does a graph have the “same
     shape” as itself? Clearly!
   </p>
-<p id="p-1199">
+<p id="p-1205">
     <!--Style me with CSS--><em>Symmetry</em> If graph \(A\) is isomorphic to graph \(B\), is it also the case that graph \(B\)
     is isomorphic to graph \(A\)? I.e. if \(A\) has the “same shape” as \(B\), doesn't \(B\) have the
     same shape as \(A\)? Of course!
   </p>
-<p id="p-1200">
+<p id="p-1206">
     <!--Style me with CSS--><em>Transitivity</em> Well … the answer here is going to be “Naturally!” but let's wait
     to delve into this issue when we have a usable formal definition for graph isomorphism. The
     question at this stage should be clear though: If \(A\) is isomorphic to \(B\) and \(B\) is isomorphic
@@ -515,8 +515,8 @@ MathJax.Hub.Config({
   </p>
 <section class="exercises" id="exercises-32"><header title="Exercises 6.3.1 Exercises"><h1 class="heading hide-type" alt="Exercises 6.3.1 Exercises">
 <span class="type">Subsection</span><span class="codenumber">6.3.1</span><span class="title">Exercises</span>
-</h1></header><ol id="ol-63" style="list-style-type: lower-alpha;">
-<li id="li-410"><p id="p-1201">
+</h1></header><ol id="ol-62" style="list-style-type: lower-alpha;">
+<li id="li-400"><p id="p-1207">
           Consider the relation \(\relA\) defined by
           \begin{equation*}
             \relA = \{ (x,y) \suchthat \; x \, \mbox{has the same astrological sign as}  \, y \}.
@@ -524,11 +524,11 @@ MathJax.Hub.Config({
           Show that \(\relA\) is an equivalence relation.  What equivalence class
           under \(\relA\) do you belong to?
         </p></li>
-<li id="li-411"><p id="p-1202">
+<li id="li-401"><p id="p-1208">
           Define a relation \(\square\) on the integers by \(x \square y \; \iff x^2 = y^2\).  Show that \(\square\) is an equivalence relation.  List the equivalence
           classes \(x/\square\) for \(0 \leq x \leq 5\).
         </p></li>
-<li id="li-412"><p id="p-1203">
+<li id="li-402"><p id="p-1209">
           Define a relation \(\relA\) on the set of all words by
           \begin{equation*}
             w_1 \relA w_2  \iff  w_1 \mbox{ is an anagram of }  w_2.
@@ -536,7 +536,7 @@ MathJax.Hub.Config({
           Show that \(\relA\) is an equivalence relation.  (Words are anagrams
           if the letters of one can be re-arranged to form the other.  For example, `ART' and `RAT' are anagrams.)
         </p></li>
-<li id="li-413"><p id="p-1204">
+<li id="li-403"><p id="p-1210">
           The two diagrams below both show a famous graph known as the 
           Petersen graph.  The picture on the 
           left is the usual representation which emphasizes its five-fold symmetry.  The picture on the right
@@ -549,14 +549,14 @@ MathJax.Hub.Config({
             \selectfont}\fi
           <img width="100%" src="images/1037ff38287e1a5c52302d9737a3b5b289ff723d.png" alt="">
         </p></li>
-<li id="li-414"><p id="p-1205">
+<li id="li-404"><p id="p-1211">
           We will use the symbol \(\Integers^{\ast}\) to refer to the set of
           all integers <!--Style me with CSS--><em>except</em> \(0\).  
           Define a relation \(\relQ\) on the set of all pairs in \(\Integers \times \Integers^{\ast}\) (pairs of integers where the second coordinate is non-zero) by
           \((a,b) \relQ (c,d) \; \iff \; ad=bc\).  Show that \(\relQ\) is an 
           equivalence relation.
         </p></li>
-<li id="li-415"><p id="p-1206">
+<li id="li-405"><p id="p-1212">
           The relation \(\relQ\) defined in the previous problem partitions
           the set of all pairs of integers into an interesting set of equivalence
           classes.  Explain why
@@ -566,7 +566,7 @@ MathJax.Hub.Config({
           Ultimately, this is the “right” definition of the set 
           of rational numbers!
         </p></li>
-<li id="li-416"><p id="p-1207">
+<li id="li-406"><p id="p-1213">
           Reflect back on the proof in problem 5.  Note that we were fairly
           careful in assuring that the second coordinate in the ordered pairs is
           non-zero. (This was the whole reason for introducing the 

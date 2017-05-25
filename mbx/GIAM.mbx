@@ -2,7 +2,7 @@
 <mathbook xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
 <docinfo>
 <macros>
-\newcommand{\versionNum}{$3.2$\ }
+\newcommand{\versionNum}{$4.0$\ }
 \renewcommand{\tabcolsep}{2.4pt}
 \def\savedlnot{\lnot}
 \renewcommand{\arraystretch}{.63}
@@ -52,7 +52,7 @@
 
 
 <book>
-<title>A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</title>
+<title>A Gentle Introduction to the Art of Mathematics, version 4.0</title>
 <frontmatter>
 <titlepage>
 <author>

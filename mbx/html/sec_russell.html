@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2017-01-10T23:30:59-05:00    *-->
+<!--*    on 2017-05-23T13:30:28-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -45,7 +45,7 @@ MathJax.Hub.Config({
 <link href="extra.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$4.0$\ }
 \renewcommand{\tabcolsep}{2.4pt}
 \def\savedlnot{\lnot}
 \renewcommand{\arraystretch}{.63}
@@ -90,7 +90,7 @@ MathJax.Hub.Config({
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></a></h1>
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics, version 4.0</span></a></h1>
 <p class="byline">Joe Fields</p>
 </div>
 </div></div>
@@ -189,7 +189,7 @@ MathJax.Hub.Config({
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_russell"><header title="Section 4.5 Russell's Paradox"><h1 class="heading hide-type" alt="Section 4.5 Russell's Paradox">
 <span class="type">Section</span><span class="codenumber">4.5</span><span class="title">Russell's Paradox</span><a href="sec_russell.html" class="permalink">¶ permalink</a>
-</h1></header><p id="p-911">
+</h1></header><p id="p-917">
     There is no Nobel prize category for mathematics.<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-28" id="fn-28"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-28" style="display: none;" class="tex2jax_ignore"><span class="footnote">There are prizes
     considered equivalent to the Nobel in stature — the Fields Medal, awarded every four years by the International Mathematical Union to up to four mathematical researchers under the age of forty, and the Abel Prize, awarded annually by the King of Norway.</span></span> Alfred Nobel's will
     called for the awarding of annual prizes in physics, chemistry, physiology
@@ -203,10 +203,10 @@ MathJax.Hub.Config({
     and an immensely wealthy and powerful man, when he decided to endow
     a set of annual prizes for “those who, during the preceding year, shall have conferred the greatest benefit on mankind” pointedly left out mathematicians.
   </p>
-<p id="p-912">
+<p id="p-918">
     One major flaw in this theory is that Nobel was never married.
   </p>
-<p id="p-913">
+<p id="p-919">
     In all likelihood, Nobel simply didn't view mathematics as a field
     which provides benefits for mankind — at least not directly.
     The broadest division within mathematics is between the “pure”
@@ -222,26 +222,26 @@ MathJax.Hub.Config({
     “in recognition of his varied and significant writings in which he
     champions humanitarian ideals and freedom of thought”).
   </p>
-<p id="p-914">
+<p id="p-920">
     Bertrand Russell was one of the twentieth century's most colorful
     intellectuals. He helped revolutionize the foundations of mathematics,
     but was perhaps better known as a philosopher. It's hard to conceive
     of <!--Style me with CSS--><em>anyone</em> who would characterize Russell as an applied mathematician!
   </p>
-<p id="p-915">
+<p id="p-921">
     Russell was an ardent anti-war and anti-nuclear activist. He achieved a
     status (shared with Albert Einstein, but very few others) as an eminent
     scientist who was also a powerful moral authority. Russell's mathematical
     work was of a very abstruse foundational sort; he was concerned with
     the idea of reducing all mathematical thought to Logic and Set theory.
   </p>
-<p id="p-916">
+<p id="p-922">
     In the beginning of our investigations into Set theory we mentioned
     that the notion of a “set of all sets” leads to something paradoxical.
     Now we're ready to look more closely into that remark and hopefully
     gain an understanding of Russell's paradox.
   </p>
-<p id="p-917">
+<p id="p-923">
     By this point you should be okay with the notion of a set that
     contains other sets, but would it be okay for a set to contain
     <!--Style me with CSS--><em>itself</em>? That is, would it make sense to have a set
@@ -250,7 +250,7 @@ MathJax.Hub.Config({
       A = \{ 1, 2, A \}?
     \end{equation*}
   </p>
-<p id="p-918">
+<p id="p-924">
     The set \(A\) has three elements, \(1\), \(2\) and itself. So we
     could write
     \begin{equation*}
@@ -266,26 +266,26 @@ MathJax.Hub.Config({
     \end{equation*}
     et cetera.
   </p>
-<p id="p-919">
+<p id="p-925">
     This obviously seems like a problem. Indeed, often paradoxes seem to
     be caused by self-reference of this sort. Consider
   </p>
 
   The sentence in this box is false.
 
-  <p id="p-920">
+  <p id="p-926">
     So a reasonable alternative
     is to “do” math among the sets that don't exhibit this particular
     pathology.
   </p>
-<p id="p-921">
+<p id="p-927">
     Thus, inside the set of all sets we are singling out a particular subset
     that consists of sets which don't contain themselves.
     \begin{equation*}
       {\mathcal S} = \{ A \suchthat \; A \,\mbox{is a set}  \; \land \; A \notin A \}
     \end{equation*}
   </p>
-<p id="p-922">
+<p id="p-928">
     Now within the universal set we're working in (the set of all sets) there
     are only two possibilities: a given set is either in \({\mathcal S}\) or
     it is in its complement \(\overline{\mathcal S}\). Russell's paradox
@@ -293,16 +293,16 @@ MathJax.Hub.Config({
     to \({\mathcal S}\) itself, the problem is that each alternative leads us
     to the other!
   </p>
-<p id="p-923">
+<p id="p-929">
     If we assume that \({\mathcal S} \in {\mathcal S}\), then it must be the
     case that \({\mathcal S}\) satisfies the membership criterion for \({\mathcal S}\).
     Thus, \({\mathcal S} \notin {\mathcal S}\).
   </p>
-<p id="p-924">
+<p id="p-930">
     On the other hand, if we assume that \({\mathcal S} \notin {\mathcal S}\),
     then we see that \({\mathcal S}\) does indeed satisfy the membership criterion for \({\mathcal S}\). Thus \({\mathcal S} \in {\mathcal S}\).
   </p>
-<p id="p-925">
+<p id="p-931">
     Russell himself developed a workaround for the paradox which
     bears his name. Together with Alfred North Whitehead he published
     a 3 volume work entitled <!--Style me with CSS--><em>Principia Mathematica</em><span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-29" id="fn-29"><span class="footnote"><sup> 2 </sup></span></a></span><span id="hk-fn-29" style="display: none;" class="tex2jax_ignore"><span class="footnote">Isaac Newton
@@ -316,8 +316,8 @@ MathJax.Hub.Config({
   </p>
 <section class="exercises" id="exercises-25"><header title="Exercises 4.5.1 Exercises"><h1 class="heading hide-type" alt="Exercises 4.5.1 Exercises">
 <span class="type">Subsection</span><span class="codenumber">4.5.1</span><span class="title">Exercises</span>
-</h1></header><ol id="ol-52" style="list-style-type: lower-alpha;">
-<li id="li-349"><p id="p-926">
+</h1></header><ol id="ol-51" style="list-style-type: lower-alpha;">
+<li id="li-339"><p id="p-932">
           Verify that \((A \implies {\lnot}A) \land ({\lnot}A \implies A)\)
           is a logical contradiction in two ways:  by filling out a truth table and 
           using the laws of logical equivalence.
@@ -325,7 +325,7 @@ MathJax.Hub.Config({
           \hint{In order to get started on this you'll need to convert the conditionals into equivalent
           disjunctions.  Recall that \(X \implies Y \; \equiv \; {\lnot}X \lor Y\).}
         </p></li>
-<li id="li-350"><p id="p-927">
+<li id="li-340"><p id="p-933">
           One way out of Russell's paradox is to declare that the collection
           of sets that don't contain themselves as elements is not a set itself.
           Explain how this circumvents the paradox. 

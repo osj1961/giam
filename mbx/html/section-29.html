@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2017-01-10T23:30:59-05:00    *-->
+<!--*    on 2017-05-23T13:30:28-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -45,7 +45,7 @@ MathJax.Hub.Config({
 <link href="extra.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$4.0$\ }
 \renewcommand{\tabcolsep}{2.4pt}
 \def\savedlnot{\lnot}
 \renewcommand{\arraystretch}{.63}
@@ -90,7 +90,7 @@ MathJax.Hub.Config({
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></a></h1>
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics, version 4.0</span></a></h1>
 <p class="byline">Joe Fields</p>
 </div>
 </div></div>
@@ -189,7 +189,7 @@ MathJax.Hub.Config({
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-29"><header title="Section 5.4 The strong form of mathematical induction"><h1 class="heading hide-type" alt="Section 5.4 The strong form of mathematical induction">
 <span class="type">Section</span><span class="codenumber">5.4</span><span class="title">The strong form of mathematical induction</span>
-</h1></header><p id="p-1087">
+</h1></header><p id="p-1093">
     The strong form of mathematical induction (a.k.a. the principle of
     complete induction, PCI; also a.k.a. course-of-values induction)
     is so-called because the hypotheses one
@@ -201,7 +201,7 @@ MathJax.Hub.Config({
       \forall k (P_0 \land P_1 \land \ldots \land  P_{k-1}) \implies P_k.
     \end{equation*}
   </p>
-<p id="p-1088">
+<p id="p-1094">
     An outline of a strong inductive proof is:
   </p>
 <table>
@@ -226,7 +226,7 @@ MathJax.Hub.Config({
         Q.E.D.</td></tr>
 <tr><td class="l m b1 r0 l0 t0 lines"></td></tr>
 </table>
-<p id="p-1089">
+<p id="p-1095">
     It's fairly common that we won't truly need all of the statements from \(P_0\)
     to \(P_{k-1}\) to be true, but just one of them (and we don't know <!--Style me with CSS--><em>a priori</em>
     which one). The following is a classic result; the proof that all numbers
@@ -235,11 +235,11 @@ MathJax.Hub.Config({
 <article class="theorem-like" id="theorem-26"><h5 class="heading">
 <span class="type">Theorem</span><span class="codenumber">5.4.1</span>
 </h5>
-<p id="p-1090">
+<p id="p-1096">
         For all natural numbers \(n\), \(n &gt; 1\) implies \(n\) has a prime
         factor.
       </p></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-37" id="proof-37"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
-<div id="hk-proof-37" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1091">
+<div id="hk-proof-37" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1097">
       (By strong induction)
       Consider an arbitrary natural number \(n&gt;1\). If \(n\) is prime then \(n\) clearly
       has a prime factor (itself), so suppose that \(n\) is not prime. By
@@ -257,8 +257,8 @@ MathJax.Hub.Config({
 </h1></header>
     Give inductive proofs of the following
 
-    <ol id="ol-58" style="list-style-type: lower-alpha;">
-<li id="li-391"><p id="p-1092">
+    <ol id="ol-57" style="list-style-type: lower-alpha;">
+<li id="li-381"><p id="p-1098">
           A “postage stamp problem” is a problem that (typically) asks
           us to determine what total postage values can be produced using two
           sorts of stamps.  Suppose that you have \(3\)\cents  stamps and \(7\)\cents 
@@ -269,11 +269,11 @@ MathJax.Hub.Config({
             \exists x,y \in \Naturals , n = 3x + 7y.
           \end{equation*}
         </p></li>
-<li id="li-392"><p id="p-1093">
+<li id="li-382"><p id="p-1099">
           Show that any integer postage of \(12 \cents\) or more can be made using
           only \(4\cents\) and \(5\cents\) stamps.
         </p></li>
-<li id="li-393"><p id="p-1094">
+<li id="li-383"><p id="p-1100">
           The polynomial equation \(x^2 = x+1\) has two solutions, 
           \(\alpha = \frac{1+\sqrt{5}}{2}\) and \(\beta = \frac{1-\sqrt{5}}{2}\).
           Show that the Fibonacci number \(F_n\) is less than or equal to \(\alpha^{n}\)

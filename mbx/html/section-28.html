@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2017-01-10T23:30:59-05:00    *-->
+<!--*    on 2017-05-23T13:30:28-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -45,7 +45,7 @@ MathJax.Hub.Config({
 <link href="extra.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$4.0$\ }
 \renewcommand{\tabcolsep}{2.4pt}
 \def\savedlnot{\lnot}
 \renewcommand{\arraystretch}{.63}
@@ -90,7 +90,7 @@ MathJax.Hub.Config({
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></a></h1>
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics, version 4.0</span></a></h1>
 <p class="byline">Joe Fields</p>
 </div>
 </div></div>
@@ -189,7 +189,7 @@ MathJax.Hub.Config({
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-28"><header title="Section 5.3 Divisibility statements and other proofs using PMI"><h1 class="heading hide-type" alt="Section 5.3 Divisibility statements and other proofs using PMI">
 <span class="type">Section</span><span class="codenumber">5.3</span><span class="title">Divisibility statements and other proofs using PMI</span>
-</h1></header><p id="p-1037">
+</h1></header><p id="p-1043">
     There is a very famous result known as
     Fermat's Little Theorem.
     This would probably be abbreviated FLT except for two things.
@@ -213,24 +213,24 @@ MathJax.Hub.Config({
 <blockquote>
   Cuius rei demonstrationem mirabilem sane detexi hanc marginis exiguitas non caperet.
   </blockquote>
-<p id="p-1038">
+<p id="p-1044">
     In English:
   </p>
 <blockquote>
   I have discovered a truly remarkable proof of this that the margin of this page is too small to contain.
   </blockquote>
-<p id="p-1039">
+<p id="p-1045">
     Between 1670 and 1994 a lot of famous mathematicians worked on FLT but
     never found the “demonstrationem mirabilem.” Finally in 1994, Andrew Wiles
     of Princeton announced a proof of FLT, but in Wiles's own words, his is “a twentieth century proof” it can't be the proof Fermat had in mind.
   </p>
-<p id="p-1040">
+<p id="p-1046">
     These days most people believe that Fermat was mistaken. Probably he thought
     a proof technique that works for small values of \(n\) could be generalized.
     It remains a tantalizing question, can a proof of FLT using only methods
     available in the 17th century be accomplished?
   </p>
-<p id="p-1041">
+<p id="p-1047">
     Part of the reason that so many people spent so much effort on FLT
     over the centuries is that Fermat had an excellent record as regards
     being correct about his theorems and proofs. The result known as Fermat's
@@ -241,13 +241,13 @@ MathJax.Hub.Config({
 <article class="theorem-like" id="theorem-21"><h5 class="heading">
 <span class="type">Theorem</span><span class="codenumber">5.3.1</span><span class="title">Fermat's Little Theorem</span>
 </h5>
-<p id="p-1042">
+<p id="p-1048">
         For every prime number \(p\), and for all integers \(x\), the \(p\)-th
         power of \(x\) and \(x\) itself are congruent mod \(p\). Symbolically:
         \begin{equation*}
           x^p \equiv x \pmod{p}
         \end{equation*}
-      </p></article><p id="p-1043">
+      </p></article><p id="p-1049">
     A slight restatement of Fermat's little theorem is that \(p\) is
     always a divisor of \(x^p-x\) (assuming \(p\) is a prime and \(x\) is an integer).
     Math professors enjoy using their knowledge of Fermat's little theorem
@@ -257,7 +257,7 @@ MathJax.Hub.Config({
       \forall n \in \Naturals,  3 \divides (n^3 + 2n + 6).
     \end{equation*}
   </p>
-<p id="p-1044">
+<p id="p-1050">
     This is really just the \(p=3\) case of Fermat's little theorem
     with a little camouflage added: \(n^3 + 2n + 6 = (n^3-n)+3(n+2)\).
     But let's have a look at proving this statement using PMI.
@@ -265,22 +265,22 @@ MathJax.Hub.Config({
 <article class="theorem-like" id="theorem-22"><h5 class="heading">
 <span class="type">Theorem</span><span class="codenumber">5.3.2</span>
 </h5>
-<p id="p-1045">
+<p id="p-1051">
         \(\forall n \in \Naturals,  3 \divides (n^3 + 2n + 6)\)
       </p></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-34" id="proof-34"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
-<div id="hk-proof-34" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1046">
+<div id="hk-proof-34" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1052">
       (By mathematical induction)
     </p>
-<p id="p-1047">
+<p id="p-1053">
       <!--Style me with CSS--><em>Basis:</em> Clearly \(3 \divides 6\).
     </p>
-<p id="p-1048">
+<p id="p-1054">
       <!--Style me with CSS--><em>Inductive step:</em>
     </p>
-<p id="p-1049">
+<p id="p-1055">
       (We need to show that \(3 \divides (k^3 + 2k + 6) \; \implies \; 3 \divides ((k+1)^3 + 2(k+1) + 6\).)
     </p>
-<p id="p-1050">
+<p id="p-1056">
       Consider the quantity \((k+1)^3 + 2(k+1) + 6\).
       \begin{gather*}
 (k+1)^3 + 2(k+1) + 6\\
@@ -289,7 +289,7 @@ MathJax.Hub.Config({
 = (k^3 + 2k + 6) + 3(k^2 + k + 1).
 \end{gather*}
     </p>
-<p id="p-1051">
+<p id="p-1057">
       By the inductive hypothesis, 3 is a divisor of \(k^3 + 2k + 6\) so there
       is an integer \(m\) such that \(k^3 + 2k + 6 = 3m\).
       Thus,
@@ -299,23 +299,23 @@ MathJax.Hub.Config({
 = 3(m + k^2 + k + 1).
 \end{gather*}
     </p>
-<p id="p-1052">
+<p id="p-1058">
       This equation shows that 3 is a divisor of \((k+1)^3 + 2(k+1) + 6\), which
       is the desired conclusion.
     </p></article></div>
-<article class="exercise-like" id="exercise-45"><h5 class="heading">
+<article class="exercise-like" id="exercise-55"><h5 class="heading">
 <span class="type">Exercise</span><span class="codenumber">5.3.3</span>
 </h5>
-<p id="p-1053">
+<p id="p-1059">
         Devise an inductive proof of the statement, \(\forall n \in \Naturals, 5 \divides x^5+4x-10\).
-      </p></article><p id="p-1054">
+      </p></article><p id="p-1060">
     There is one other subtle trick for devising statements to be
     proved by PMI that you should know about. An example should
     suffice to make it clear. Notice that \(7\) is equivalent to \(1 \pmod{6}\),
     it follows that any power of \(7\) is also \(1 \pmod{6}\). So, if we subtract
     \(1\) from some power of 7 we will have a number that is divisible by \(6\).
   </p>
-<p id="p-1055">
+<p id="p-1061">
     The proof (by PMI) of a statement like this requires another subtle little
     trick. Somewhere along the way in the proof you'll need the identity \(7=6+1\).
   </p>
@@ -324,19 +324,19 @@ MathJax.Hub.Config({
 </h5>\begin{equation*}
         \forall n \in \Naturals, \; 6 \divides 7^n-1
       \end{equation*}</article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-35" id="proof-35"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
-<div id="hk-proof-35" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1056">
+<div id="hk-proof-35" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1062">
       (By PMI)
     </p>
-<p id="p-1057">
+<p id="p-1063">
       <!--Style me with CSS--><em>Basis:</em> Note that \(7^0-1\) is \(0\) and also that \(6 \divides 0\).
     </p>
-<p id="p-1058">
+<p id="p-1064">
       <!--Style me with CSS--><em>Inductive step:</em>
     </p>
-<p id="p-1059">
+<p id="p-1065">
       (We need to show that if \(6 \divides 7^k-1\) then \(6 \divides 7^{k+1}-1\).)
     </p>
-<p id="p-1060">
+<p id="p-1066">
       Consider the quantity \(7^{k+1}-1\).
       \begin{gather*}
 7^{k+1}-1 = 7 \cdot 7^k -1\\
@@ -345,17 +345,17 @@ MathJax.Hub.Config({
 = 6(7^k) + (7^k - 1)
 \end{gather*}
     </p>
-<p id="p-1061">
+<p id="p-1067">
       By the inductive hypothesis, \(6 \divides 7^k - 1\) so there is
       an integer \(m\) such that \(7^k - 1 = 6m\). It follows that
       \begin{equation*}
         7^{k+1}-1 = 6(7^k) + 6m.
       \end{equation*}
     </p>
-<p id="p-1062">
+<p id="p-1068">
       So, clearly, \(6\) is a divisor of \(7^{k+1}-1\).
     </p></article></div>
-<p id="p-1063">
+<p id="p-1069">
     Mathematical induction
     can often be used to prove inequalities. There are quite a few examples
     of families of statements where there is an inequality for every natural
@@ -366,7 +366,7 @@ MathJax.Hub.Config({
     Just remember that if you have an inequality and you make the big
     side even bigger, the resulting statement is certainly still true!
   </p>
-<p id="p-1064">
+<p id="p-1070">
     Consider the sequences \(2^n\) and \(n!\).
   </p>
 <table>
@@ -411,7 +411,7 @@ MathJax.Hub.Config({
 <td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
 </table>
-<p id="p-1065">
+<p id="p-1071">
     As the table illustrates, for small values of \(n\), \(2^n &gt; n!\). But from \(n=4\)
     onward the inequality is reversed.
   </p>
@@ -420,14 +420,14 @@ MathJax.Hub.Config({
 </h5>\begin{equation*}
         \forall n \geq 4 \in \Naturals, 2^n \lt  n!
       \end{equation*}</article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-36" id="proof-36"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
-<div id="hk-proof-36" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1066">
+<div id="hk-proof-36" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1072">
       (By mathematical induction)
     </p>
-<p id="p-1067">
+<p id="p-1073">
       <!--Style me with CSS--><em>Basis:</em> When \(n=4\) we have \(2^4 \lt  4!\), which is certainly
       true (\(16 \lt  24\)).
     </p>
-<p id="p-1068">
+<p id="p-1074">
       <!--Style me with CSS--><em>Inductive step:</em> Suppose that \(k\) is a natural number
       with \(k &gt; 4\), and that \(2^k \lt  k!\). Multiply the left hand side of this
       inequality by \(2\) and the right hand side by \(k+1\)<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-36" id="fn-36"><span class="footnote"><sup> 2 </sup></span></a></span><span id="hk-fn-36" style="display: none;" class="tex2jax_ignore"><span class="footnote">It might be 
@@ -438,13 +438,13 @@ MathJax.Hub.Config({
         2\cdot 2^{k} \lt  (k+1) \cdot k!.
       \end{equation*}
     </p>
-<p id="p-1069">
+<p id="p-1075">
       So
       \begin{equation*}
         2^{k+1} \lt  (k+1)!.
       \end{equation*}
     </p></article></div>
-<p id="p-1070">
+<p id="p-1076">
     The observant Calculus student will certainly be aware of the fact
     that, asymptotically, exponential functions grow faster than polynomial
     functions. That is, if you have a base \(b\) which is greater than 1, the
@@ -509,7 +509,7 @@ MathJax.Hub.Config({
 <td class="l m b0 r0 l0 t0 lines">64</td>
 </tr>
 </table>
-<p id="p-1071">
+<p id="p-1077">
     If we think of a “race” between the sequences \(n^2\) and \(2^n\), notice
     that \(2^n\) starts out with the lead. The two sequences are tied when
     \(n=2\). Briefly, \(n^2\) goes into the lead but they are tied again when
@@ -521,7 +521,7 @@ MathJax.Hub.Config({
 <article class="theorem-like" id="theorem-25"><h5 class="heading">
 <span class="type">Theorem</span><span class="codenumber">5.3.6</span>
 </h5>
-<p id="p-1072">
+<p id="p-1078">
         For all natural numbers \(n\), if \(n \geq 4\) then \(n^2 \leq 2^n\).
       </p></article><blockquote>
 <!--Style me with CSS--><em>Proof:</em><!--Style me with CSS--><em>Basis:</em> When \(n=4\) we have \(4^2 \leq 2^4\), which is 
@@ -546,10 +546,10 @@ MathJax.Hub.Config({
 
       Q.E.D.???
   </blockquote>
-<article class="exercise-like" id="exercise-46"><h5 class="heading">
+<article class="exercise-like" id="exercise-56"><h5 class="heading">
 <span class="type">Exercise</span><span class="codenumber">5.3.7</span>
 </h5>
-<p id="p-1073">
+<p id="p-1079">
         Prove the lemma: For all \(n \in \Naturals\), if \(n \geq 4\) then
         \(2n+1 \leq n^2\).
       </p></article><section class="exercises" id="exercises-28"><header title="Exercises 5.3.1 Exercises"><h1 class="heading hide-type" alt="Exercises 5.3.1 Exercises">
@@ -557,44 +557,44 @@ MathJax.Hub.Config({
 </h1></header>
     Give inductive proofs of the following
 
-    <ol id="ol-57" style="list-style-type: lower-alpha;">
-<li id="li-378"><p id="p-1074">
+    <ol id="ol-56" style="list-style-type: lower-alpha;">
+<li id="li-368"><p id="p-1080">
           \(\forall x \in \Naturals, \; 3 \divides x^3-x\)
         </p></li>
-<li id="li-379"><p id="p-1075">
+<li id="li-369"><p id="p-1081">
           \(\forall x \in \Naturals, \; 3 \divides x^3+5x\)
         </p></li>
-<li id="li-380"><p id="p-1076">
+<li id="li-370"><p id="p-1082">
           \(\forall x \in \Naturals, \; 11 \divides x^{11}+10x\)
         </p></li>
-<li id="li-381"><p id="p-1077">
+<li id="li-371"><p id="p-1083">
           \(\forall n \in \Naturals, \; 3 \divides 4^n-1\)
         </p></li>
-<li id="li-382"><p id="p-1078">
+<li id="li-372"><p id="p-1084">
           \(\forall n \in \Naturals, \; 6 \divides (3n^{2}+3n-12)\)
         </p></li>
-<li id="li-383"><p id="p-1079">
+<li id="li-373"><p id="p-1085">
           \(\forall n \in \Naturals, \; 5 \divides (n^{5}-5n^{3}+14n)\)
         </p></li>
-<li id="li-384"><p id="p-1080">
+<li id="li-374"><p id="p-1086">
           \(\forall n \in \Naturals, \; 4 \divides (13^{n}+4n-1)\)
         </p></li>
-<li id="li-385"><p id="p-1081">
+<li id="li-375"><p id="p-1087">
           \(\forall n \in \Naturals, \; 7 \divides 8^n+6\)
         </p></li>
-<li id="li-386"><p id="p-1082">
+<li id="li-376"><p id="p-1088">
           \(\forall n \in \Naturals, \; 6 \divides 2n^3 - 2n - 12\)
         </p></li>
-<li id="li-387"><p id="p-1083">
+<li id="li-377"><p id="p-1089">
           \(\forall n \geq 3 \in \Naturals, \; 3n^2+3n+1 \lt  2n^3\)
         </p></li>
-<li id="li-388"><p id="p-1084">
+<li id="li-378"><p id="p-1090">
           \(\forall n &gt; 3 \in \Naturals, \; n^3 \lt  3^n\)
         </p></li>
-<li id="li-389"><p id="p-1085">
+<li id="li-379"><p id="p-1091">
           \(\forall n \geq 3 \in \Naturals, \; n^{3}+3&gt;n^{2}+3n+1\)
         </p></li>
-<li id="li-390"><p id="p-1086">
+<li id="li-380"><p id="p-1092">
           \(\forall x \geq 4 \in \Naturals, \; x^22^x \leq 4^x\)
         </p></li>
 </ol></section></section></div></main>

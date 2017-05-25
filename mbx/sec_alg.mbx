@@ -112,20 +112,22 @@
         </cell>
         <cell></cell>
         <cell>
-         If <m>x=y</m> then</cell>
-      </row>
-      <row>
+	<tabular>
+	<row>
+         <cell> If <m>x=y</m> then</cell>
+      	</row>
+      	<row>
         <cell><m>x=x+1</m></cell>
-      </row>
-      <row>
+      	</row>
+      	<row>
         <cell>End If</cell>
-      </row>
-      <row>
+      	</row>
+      	<row>
         <cell><m>\vdots</m></cell>
-      </row>
-      <row>
-        <cell></cell>
-      </row>
+      	</row>
+	</tabular>
+	</cell>
+	</row>
     </tabular>
   </table>
 

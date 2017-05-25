@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2017-01-09T14:55:11-05:00    *-->
+<!--*    on 2017-05-23T00:27:17-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -45,7 +45,7 @@ MathJax.Hub.Config({
 <link href="extra.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$4.0$\ }
 \renewcommand{\tabcolsep}{2.4pt}
 \def\savedlnot{\lnot}
 \renewcommand{\arraystretch}{.63}
@@ -88,21 +88,21 @@ MathJax.Hub.Config({
 \newcommand{\gt}{ &gt; }
 \newcommand{\amp}{ &amp; }
 \)</div>
-<header id="masthead"><div class="banner"><div class="container">
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></h1>
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics, version 4.0</span></a></h1>
 <p class="byline">Joe Fields</p>
 </div>
 </div></div>
 <nav id="primary-navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
-<a class="previous-button toolbar-item button" href="sec_induct.html">Previous</a><a class="up-button button toolbar-item" href="chapter-5.html">Up</a><a class="next-button button toolbar-item" href="section-27.html">Next</a>
+<button class="sidebar-left-toggle-button button active" onclick="window.location.href='index.html'">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-part-1.html" title="Index" alt="Index">Index</a><span class="threebuttons"><a class="previous-button toolbar-item button" href="sec_induct.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-5.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-27.html" title="Next" alt="Next">Next</a></span>
 </div>
 <button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_induct.html">Previous</a><a class="up-button button toolbar-item" href="chapter-5.html">Up</a><a class="next-button button toolbar-item" href="section-27.html">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_induct.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="chapter-5.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-27.html" title="Next" alt="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
@@ -110,10 +110,10 @@ MathJax.Hub.Config({
 <ul></ul>
 <h2 class="link"><a href="ch_intro.html"><span class="codenumber">1</span><span class="title">Introduction and notation</span></a></h2>
 <ul>
-<li><a href="sec_basic.html">Basic sets</a></li>
 <li><a href="sec_def.html">Definitions: Prime numbers</a></li>
 <li><a href="sec_scary.html">More scary notation</a></li>
 <li><a href="sec_num_thry.html">Definitions of elementary number theory</a></li>
+<li><a href="sec_alg.html">Some algorithms of elementary number theory</a></li>
 <li><a href="sec_rat.html">Rational and irrational numbers</a></li>
 <li><a href="sec_rel_intro.html">Relations</a></li>
 </ul>
@@ -156,29 +156,30 @@ MathJax.Hub.Config({
 <li><a href="section-29.html">Relations</a></li>
 <li><a href="section-30.html">Properties of relations</a></li>
 <li><a href="sec_eq_rel.html">Equivalence relations</a></li>
+<li><a href="sec_ord_rel.html">Ordering relations</a></li>
 <li><a href="sec_functions.html">Functions</a></li>
 <li><a href="sec_special_functions.html">Special functions</a></li>
 </ul>
 <h2 class="link"><a href="chapter-7.html"><span class="codenumber">7</span><span class="title">Proof techniques III — Combinatorics</span></a></h2>
 <ul>
 <li><a href="sec_counting.html">Counting</a></li>
-<li><a href="section-35.html">Parity and Counting arguments</a></li>
-<li><a href="section-36.html">The pigeonhole principle</a></li>
-<li><a href="section-37.html">The algebra of combinations</a></li>
+<li><a href="section-36.html">Parity and Counting arguments</a></li>
+<li><a href="section-37.html">The pigeonhole principle</a></li>
+<li><a href="section-38.html">The algebra of combinations</a></li>
 </ul>
 <h2 class="link"><a href="ch_card.html"><span class="codenumber">8</span><span class="title">Cardinality</span></a></h2>
 <ul>
 <li><a href="sec_equiv_sets.html">Equivalent sets</a></li>
-<li><a href="section-39.html">Examples of set equivalence</a></li>
+<li><a href="section-40.html">Examples of set equivalence</a></li>
 <li><a href="sec_cantors_thm.html">Cantor's theorem</a></li>
-<li><a href="section-41.html">Dominance</a></li>
-<li><a href="section-42.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
+<li><a href="section-42.html">Dominance</a></li>
+<li><a href="section-43.html">The continuum hypothesis and the generalized continuum hypothesis</a></li>
 </ul>
 <h2 class="link"><a href="chapter-9.html"><span class="codenumber">9</span><span class="title">Proof techniques IV — Magic</span></a></h2>
 <ul>
-<li><a href="section-43.html">Morley's miracle</a></li>
-<li><a href="section-44.html">Five steps into the void</a></li>
-<li><a href="section-45.html">Monge's circle theorem</a></li>
+<li><a href="section-44.html">Morley's miracle</a></li>
+<li><a href="section-45.html">Five steps into the void</a></li>
+<li><a href="section-46.html">Monge's circle theorem</a></li>
 </ul>
 <h2 class="link"><a href="backmatter-1.html"><span class="title">Back Matter</span></a></h2>
 <ul>
@@ -187,7 +188,7 @@ MathJax.Hub.Config({
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-26"><header title="Section 5.2 Formulas for sums and products"><h1 class="heading hide-type" alt="Section 5.2 Formulas for sums and products">
 <span class="type">Section</span><span class="codenumber">5.2</span><span class="title">Formulas for sums and products</span>
-</h1></header><p id="p-950">
+</h1></header><p id="p-932">
     Gauss, when only a child, found a formula for
     summing the first 100 natural numbers (or so the story goes…).
     This formula, and his clever method for justifying it, can be easily
@@ -203,7 +204,7 @@ MathJax.Hub.Config({
 \sum_{j=1}^n j^3 = \frac{n^2(n+1)^2}{4}.
 \end{gather*}
   </p>
-<p id="p-951">
+<p id="p-933">
     A really industrious author might also include the sum of the
     fourth powers. Jacob Bernoulli (a truly industrious individual)
     got excited enough to find formulas for the sums of the first
@@ -220,7 +221,7 @@ MathJax.Hub.Config({
   \begin{equation*}
     91,409,924,241,424,243,424,241,924,242,500.
   \end{equation*}</blockquote>
-<p id="p-952">
+<p id="p-934">
     To the beginning calculus student, the beauty of the above relationships may
     be somewhat dimmed by the memorization challenge that they represent. It
     is fortunate then, that the right-hand side of the third formula is just
@@ -234,10 +235,10 @@ MathJax.Hub.Config({
       \sum_{j=1}^n j^3 = \left( \sum_{j=1}^n j \right)^2.
     \end{equation*}
   </p>
-<p id="p-953">
+<p id="p-935">
     The sum of the cubes of the first \(n\) numbers is the square of their sum.
   </p>
-<p id="p-954">
+<p id="p-936">
     For completeness we should include the following formula which
     should be thought of as the sum of the zeroth powers of the first \(n\)
     naturals.
@@ -246,19 +247,18 @@ MathJax.Hub.Config({
     \end{equation*}
   </p>
 <article class="exercise-like" id="exercise-43"><h5 class="heading">
-<span class="type">Exercise</span> <span class="codenumber">5.2.1</span>
+<span class="type">Exercise</span><span class="codenumber">5.2.1</span>
 </h5>
-<p id="p-955">
+<p id="p-937">
         Use the above formulas to approximate the integral
         \begin{equation*}
           \int_{x=0}^{10} x^3 - 2x +3 \mbox{d} x
         \end{equation*}
-      </p></article><div class="hidden-knowl-wrapper"></div>
-<p id="p-956">
+      </p></article><p id="p-938">
     Our challenge today is not to merely memorize these formulas but
     to prove their validity. We'll use PMI.
   </p>
-<p id="p-957">
+<p id="p-939">
     Before we start in on a proof, it's important to figure out where
     we're trying to go. In proving the formula that Gauss discovered
     by induction we need to show that the \(k+1\)–th version of the
@@ -266,50 +266,50 @@ MathJax.Hub.Config({
     proceeding on to read the proof do the following
   </p>
 <article class="exercise-like" id="exercise-44"><h5 class="heading">
-<span class="type">Exercise</span> <span class="codenumber">5.2.2</span>
+<span class="type">Exercise</span><span class="codenumber">5.2.2</span>
 </h5>
-<p id="p-958">
+<p id="p-940">
         Write down the \(k+1\)–th version of the formula for the sum of
         the first \(n\) naturals. (You have to replace every \(n\) with
         a \(k+1\).)
-      </p></article><div class="hidden-knowl-wrapper"></div>
-<article class="theorem-like" id="theorem-16"><h5 class="heading">
+      </p></article><article class="theorem-like" id="theorem-16"><h5 class="heading">
 <span class="type">Theorem</span><span class="codenumber">5.2.3</span>
 </h5>\begin{equation*}
         \forall n \in \Naturals, \; \sum_{j=1}^n j = \frac{n(n+1)}{2}
-      \end{equation*}</article><span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-28" id="proof-28"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-28" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-959">
+      \end{equation*}</article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-28" id="proof-28"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-28" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-941">
       We proceed by induction on \(n\).
     </p>
-<p id="p-960">
+<p id="p-942">
       <!--Style me with CSS--><em>Basis: </em> Notice that when \(n=0\) the sum on the left-hand side
       has no terms in it! This is known as an  empty sum, and by
       definition, an empty sum's value is \(0\). Also, when
       \(n=0\) the formula on the right-hand side becomes \((0 \cdot 1)/2\) and this is
-      \(0\) as well.<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-31" id="fn-31"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-31" style="display: none;" class="tex2jax_ignore"><span class="footnote">If you'd prefer to avoid the “empty sum” argument, 
+      \(0\) as well.<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-30" id="fn-30"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-30" style="display: none;" class="tex2jax_ignore"><span class="footnote">If you'd prefer to avoid the “empty sum” argument, 
       you can choose to use \(n=1\) as the basis case.  The theorem should 
       be restated so the universe of discourse is <!--Style me with CSS--><em>positive</em> naturals.</span></span>
     </p>
-<p id="p-961">
+<p id="p-943">
       <!--Style me with CSS--><em>Inductive step: </em> Consider the sum on the left-hand side of
       the \(k+1\)–th version of our formula.
       \begin{equation*}
         \sum_{j=1}^{k+1} j
       \end{equation*}
     </p>
-<p id="p-962">
+<p id="p-944">
       We can separate out the last term of this sum.
       \begin{equation*}
         = (k+1) + \sum_{j=1}^{k} j
       \end{equation*}
     </p>
-<p id="p-963">
+<p id="p-945">
       Next, we can use the inductive hypothesis to replace the sum (the part
       that goes from 1 to \(k\)) with a formula.
       \begin{equation*}
         = (k+1) + \frac{k(k+1)}{2}
       \end{equation*}
     </p>
-<p id="p-964">
+<p id="p-946">
       From here on out it's just algebra …
       \begin{equation*}
         = \frac{2(k+1)}{2} + \frac{k(k+1)}{2}
@@ -320,7 +320,8 @@ MathJax.Hub.Config({
       \begin{equation*}
         = \frac{(k+1) \cdot (k+2)}{2}.
       \end{equation*}
-    </p></article></span><p id="p-965">
+    </p></article></div>
+<p id="p-947">
     Notice how the inductive step in this proof works. We start by writing
     down the left-hand side of \(P_{k+1}\), we pull out the last term
     so we've got the left-hand side of \(P_{k}\) (plus something else), then
@@ -328,7 +329,7 @@ MathJax.Hub.Config({
     at the right-hand side of \(P_{k+1}\). Overall, we've just transformed the
     left-hand side of the statement we wish to prove into its right-hand side.
   </p>
-<p id="p-966">
+<p id="p-948">
     There is another way to organize the inductive steps in proofs like these
     that works by manipulating entire equalities (rather than just one side
     or the other of them).
@@ -349,7 +350,7 @@ MathJax.Hub.Config({
   \end{equation*}
   Q.E.D.
   </blockquote>
-<p id="p-967">
+<p id="p-949">
     Oftentimes one can save considerable effort in an inductive
     proof by creatively using the factored form during intermediate steps.
     On the other hand, sometimes it is easier to just simplify everything
@@ -366,16 +367,17 @@ MathJax.Hub.Config({
 <span class="type">Theorem</span><span class="codenumber">5.2.4</span>
 </h5>\begin{equation*}
         \forall n \in \Zplus, \; \sum_{j=1}^n j^2 = \frac{n(n+1)(2n+1)}{6}
-      \end{equation*}</article><span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-29" id="proof-29"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-29" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-968">
+      \end{equation*}</article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-29" id="proof-29"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-29" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-950">
       We proceed by induction on \(n\).
     </p>
-<p id="p-969">
+<p id="p-951">
       <!--Style me with CSS--><em>Basis: </em> When \(n = 1\) the sum has only one term, \(1^2 = 1\).
       On the other hand, the formula is
       \(\displaystyle \frac{1(1+1)(2\cdot 1+1)}{6} = 1\). Since these are equal, the
       basis is proved.
     </p>
-<p id="p-970">
+<p id="p-952">
       <!--Style me with CSS--><em>Inductive step: </em>
     </p>
 <table>
@@ -414,25 +416,25 @@ MathJax.Hub.Config({
 <td class="l m b1 r0 l0 t0 lines"></td>
 </tr>
 </table>
-<p id="p-971">
+<p id="p-953">
       By the inductive hypothesis,
       \begin{equation*}
         \sum_{j=1}^k j^2 = \frac{k(k+1)(2k+1)}{6}.
       \end{equation*}
     </p>
-<p id="p-972">
+<p id="p-954">
       Adding \((k+1)^2\) to both sides of this equation gives
       \begin{equation*}
         (k+1)^2 + \sum_{j=1}^k j^2 = \frac{k(k+1)(2k+1)}{6} + (k+1)^2.
       \end{equation*}
     </p>
-<p id="p-973">
+<p id="p-955">
       Thus,
       \begin{equation*}
         \sum_{j=1}^{k+1} j^2 = \frac{k(k+1)(2k+1)}{6} + \frac{6(k+1)^2}{6}.
       \end{equation*}
     </p>
-<p id="p-974">
+<p id="p-956">
       Therefore,
       \begin{gather*}
 \sum_{j=1}^{k+1} j^2 = \frac{(k^2+k)(2k+1)}{6} + \frac{6(k^2+2k+1)}{6}\\
@@ -443,13 +445,14 @@ MathJax.Hub.Config({
 = \frac{(k+1)((k+1)+1)(2(k+1)+1)}{6}.
 \end{gather*}
     </p>
-<p id="p-975">
+<p id="p-957">
       This proves the inductive step, so the result is true.
-    </p></article></span><p id="p-976">
+    </p></article></div>
+<p id="p-958">
     Notice how the last four lines of the proof are the same as those in
     the box above containing our scratch work? (Except in the reverse order.)
   </p>
-<p id="p-977">
+<p id="p-959">
     We'll end this section by demonstrating one more use of this technique.
     This time we'll look at a formula for a product rather than a sum.
   </p>
@@ -457,7 +460,7 @@ MathJax.Hub.Config({
 <span class="type">Theorem</span><span class="codenumber">5.2.5</span>
 </h5>\begin{equation*}
         \forall n \geq 2 \in \Integers, \prod_{j=2}^n \left( 1 - \frac{1}{j^2} \right) \;  = \; \frac{n+1}{2n}.
-      \end{equation*}</article><p id="p-978">
+      \end{equation*}</article><p id="p-960">
     Before preceding with the proof let's look at an example (although this
     has nothing to do with proving anything, it's really not a bad idea — it can
     keep you from wasting a lot of time trying to prove something that isn't
@@ -466,46 +469,47 @@ MathJax.Hub.Config({
       \left(1-\frac{1}{2^2}\right) \cdot \left(1-\frac{1}{3^2}\right) \cdot \left(1-\frac{1}{4^2}\right).
     \end{equation*}
   </p>
-<p id="p-979">
+<p id="p-961">
     This simplifies to
     \begin{equation*}
       \left( 1-\frac{1}{4} \right) \cdot \left( 1-\frac{1}{9} \right) \cdot 
       \left( 1-\frac{1}{16} \right)  =  \left( \frac{3}{4} \right) \cdot \left( \frac{8}{9} \right) \cdot \left( \frac{15}{16} \right)  =  \frac{360}{576}.
     \end{equation*}
   </p>
-<p id="p-980">
+<p id="p-962">
     The formula on the right-hand side is
     \begin{equation*}
       \frac{4+1}{2 \cdot 4}  = \frac{5}{8}.
     \end{equation*}
   </p>
-<p id="p-981">
+<p id="p-963">
     Well! These two expressions are <!--Style me with CSS--><em>clearly</em> not equal to one another…
     What? You say they are? Just give me a second with my calculator…
   </p>
-<p id="p-982">
+<p id="p-964">
     Alright then. I guess we can't dodge doing the proof…
   </p>
-<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-30" id="proof-30"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-30" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-983">
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-30" id="proof-30"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-30" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-965">
       (Using mathematical induction on \(n\).)
     </p>
-<p id="p-984">
+<p id="p-966">
       <!--Style me with CSS--><em>Basis: </em> When \(n = 2\) the product has only one term, \(1-1/2^2 = 3/4\).
       On the other hand, the formula is
       \(\displaystyle \frac{2+1}{2\cdot2} = 3/4\). Since these are equal, the
       basis is proved.
     </p>
-<p id="p-985">
+<p id="p-967">
       <!--Style me with CSS--><em>Inductive step: </em>
     </p>
-<p id="p-986">
+<p id="p-968">
       Let \(k\) be a particular but arbitrarily chosen integer such that
       \begin{equation*}
         \prod_{j=2}^k \left( 1 - \frac{1}{j^2} \right) \;  = \; \frac{k+1}{2k}.
       \end{equation*}
     </p>
-<p id="p-987">
-      Multiplying<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-32" id="fn-32"><span class="footnote"><sup> 2 </sup></span></a></span><span id="hk-fn-32" style="display: none;" class="tex2jax_ignore"><span class="footnote">Really, the only reason I'm doing this silly proof is to 
+<p id="p-969">
+      Multiplying<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-31" id="fn-31"><span class="footnote"><sup> 2 </sup></span></a></span><span id="hk-fn-31" style="display: none;" class="tex2jax_ignore"><span class="footnote">Really, the only reason I'm doing this silly proof is to 
       point out to you that when you're doing the inductive step in a proof of a 
       formula for a <!--Style me with CSS--><em>product</em>, you don't add to both sides anymore, you <!--Style me with CSS--><em>multiply.</em> You see that, right?  Well, consider yourself to have been pointed out to or … oh, whatever.</span></span> both sides by the \(k+1\)-th term of the product
       gives
@@ -513,7 +517,7 @@ MathJax.Hub.Config({
         \left( 1 - \frac{1}{(k+1)^2} \right) \; \cdot \; \prod_{j=2}^k \left( 1 - \frac{1}{j^2} \right)   =  \frac{k+1}{2k} \; \cdot \; \left( 1 - \frac{1}{(k+1)^2} \right).
       \end{equation*}
     </p>
-<p id="p-988">
+<p id="p-970">
       Thus
       \begin{equation*}
         \prod_{j=2}^{k+1} \left( 1 - \frac{1}{j^2} \right)   =  \frac{k+1}{2k} \; \cdot \; \left( 1 - \frac{1}{(k+1)^2} \right)
@@ -533,10 +537,11 @@ MathJax.Hub.Config({
       = \frac{k (k+2)}{2k(k+1)}
     \end{equation*}\begin{equation*}
       = \frac{k+2}{2(k+1)}.
-    \end{equation*}</article></span><section class="exercises" id="exercises-26"><header title="Exercises 5.2.1 Exercises"><h1 class="heading hide-type" alt="Exercises 5.2.1 Exercises">
+    \end{equation*}</article></div>
+<section class="exercises" id="exercises-26"><header title="Exercises 5.2.1 Exercises"><h1 class="heading hide-type" alt="Exercises 5.2.1 Exercises">
 <span class="type">Subsection</span><span class="codenumber">5.2.1</span><span class="title">Exercises</span>
-</h1></header><ol style="list-style-type: lower-alpha;">
-<li id="li-362"><p id="p-989">
+</h1></header><ol id="ol-53" style="list-style-type: lower-alpha;">
+<li id="li-351"><p id="p-971">
         Write an inductive proof of the formula for the sum 
         of the first \(n\) cubes.
 
@@ -548,10 +553,10 @@ MathJax.Hub.Config({
               \forall n \in \Naturals, \; \sum_{k=1}^n k^3 \;= \; \left( \frac{n(n+1)}{2} \right)^2
             \end{equation*}</article>
 
-        <span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-31" id="proof-31"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-31" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-990">
+        <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-31" id="proof-31"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div><div id="hk-proof-31" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-972">
             (By mathematical induction)
           </p>
-<p id="p-991">
+<p id="p-973">
             <!--Style me with CSS--><em>Base case:</em> (\(n=1\))
             For the base case, note that when \(n=1\) we have
             \begin{equation*}
@@ -562,22 +567,22 @@ MathJax.Hub.Config({
               \left( \frac{n(n+1)}{2} \right)^2  \; = \; 1.
             \end{equation*}
           </p>
-<p id="p-992">
+<p id="p-974">
             <!--Style me with CSS--><em>Inductive step:</em>
           </p>
-<p id="p-993">
+<p id="p-975">
             Suppose that \(m&gt;1\) is an integer such that
             \begin{equation*}
               \sum_{k=1}^m k^3 \; = \; \left( \frac{m(m+1)}{2} \right)^2
             \end{equation*}
           </p>
-<p id="p-994">
+<p id="p-976">
             Add \((m+1)^3\) to both sides to obtain
             \begin{equation*}
               (m+1)^3 + \sum_{k=1}^m k^3 \;= \; \left( \frac{m(m+1)}{2} \right)^2 + (m+1)^3.
             \end{equation*}
           </p>
-<p id="p-995">
+<p id="p-977">
             Thus
             \begin{gather*}
 \sum_{k=1}^{m+1} k^3 \;= \; \left( \frac{m^2(m+1)^2}{4} \right) + \frac{4(m+1)^3}{4}\\
@@ -587,11 +592,11 @@ MathJax.Hub.Config({
 \; = \; \left( \frac{(m+1)^2 (m+2)^2}{4} \right)\\
 \; = \; \left( \frac{(m+1)(m+2)}{2} \right)^2
 \end{gather*}
-          </p></article></span>
+          </p></article></div>
 
         }
         </p></li>
-<li id="li-363"><p id="p-996">
+<li id="li-352"><p id="p-978">
           Find a formula for the sum of the first \(n\) fourth powers.
 
           \hint{
@@ -600,7 +605,7 @@ MathJax.Hub.Config({
           \end{equation*}
           }
         </p></li>
-<li id="li-364"><p id="p-997">
+<li id="li-353"><p id="p-979">
           The sum of the first \(n\) natural numbers is sometimes called
           the \(n\)-th triangular number \(T_n\).  Triangular numbers are so-named
           because one can represent them with triangular shaped arrangements 
@@ -617,7 +622,7 @@ MathJax.Hub.Config({
 
           \hint{The formula is \(\frac{n(n+1)(n+2)}{6}\).}
         </p></li>
-<li id="li-365"><p id="p-998">
+<li id="li-354"><p id="p-980">
         Consider the alternating sum of squares:
         \begin{gather*}
 1\\
@@ -636,10 +641,10 @@ MathJax.Hub.Config({
               \forall n \in \Naturals, \; \sum_{i=1}^n (-1)^{i-1} i^2 \;= \; (-1)^{n-1} \frac{n(n+1)}{2}
             \end{equation*}</article>
 
-        <span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-32" id="proof-32"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-32" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-999">
+        <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-32" id="proof-32"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div><div id="hk-proof-32" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-981">
             (By mathematical induction)
           </p>
-<p id="p-1000">
+<p id="p-982">
             <!--Style me with CSS--><em>Base case:</em> (\(n=1\))
             For the base case, note that when \(n=1\) we have
             \begin{equation*}
@@ -650,16 +655,16 @@ MathJax.Hub.Config({
               (-1)^{n-1} \frac{n(n+1)}{2} \;= \; 1.
             \end{equation*}
           </p>
-<p id="p-1001">
+<p id="p-983">
             <!--Style me with CSS--><em>Inductive step:</em>
           </p>
-<p id="p-1002">
+<p id="p-984">
             Suppose that \(k&gt;1\) is an integer such that
             \begin{equation*}
               \sum_{i=1}^k (-1)^{i-1} i^2 \;= \; (-1)^{k-1} \frac{k(k+1)}{2}.
             \end{equation*}
           </p>
-<p id="p-1003">
+<p id="p-985">
             Adding \((-1)^{k} (k+1)^2\) to both sides gives
             \begin{gather*}
 \sum_{i=1}^{k+1} (-1)^{i-1} i^2 \;= \; (-1)^{k-1} \frac{k(k+1)}{2} + (-1)^{k} (k+1)^2\\
@@ -669,11 +674,11 @@ MathJax.Hub.Config({
 \;= \; (-1)^{k} \frac{(k+1)(2(k+1)-k)}{2}\\
 \;= \; (-1)^{k} \frac{(k+1)(k+2)}{2}
 \end{gather*}
-          </p></article></span>
+          </p></article></div>
 
         }
         </p></li>
-<li id="li-366"><p id="p-1004">
+<li id="li-355"><p id="p-986">
         Prove the following formula for a product.
         \begin{equation*}
           \prod_{i=2}^n \left(1 - \frac{1}{i}\right) =  \frac{1}{n}
@@ -682,10 +687,10 @@ MathJax.Hub.Config({
         Notice that the problem statement didn't specify the domain — but the smallest value of \(n\) that gives
         a non-empty product on the left-hand side is \(n=2\).
 
-        <span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-33" id="proof-33"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-33" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1005">
+        <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-33" id="proof-33"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div><div id="hk-proof-33" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-987">
             (By mathematical induction)
           </p>
-<p id="p-1006">
+<p id="p-988">
             <!--Style me with CSS--><em>Base case:</em> (\(n=2\))
             For the base case, note that when \(n=2\) we have
             \begin{equation*}
@@ -693,16 +698,16 @@ MathJax.Hub.Config({
             \end{equation*}
             and, when \(n=2\), the right-hand side (\(1/n\)) also evaluates to \(1/2\).
           </p>
-<p id="p-1007">
+<p id="p-989">
             <!--Style me with CSS--><em>Inductive step:</em>
           </p>
-<p id="p-1008">
+<p id="p-990">
             Suppose that \(k&gt;2\) is an integer such that
             \begin{equation*}
               \prod_{i=2}^k \left(1 - \frac{1}{i}\right) =  \frac{1}{k}.
             \end{equation*}
           </p>
-<p id="p-1009">
+<p id="p-991">
             Then,
             \begin{gather*}
 \prod_{i=2}^{k+1} \left(1 - \frac{1}{i}\right)\\
@@ -710,21 +715,21 @@ MathJax.Hub.Config({
 = \left(1 - \frac{1}{k+1}\right) \; \cdot \; \frac{1}{k}\\
 = \frac{1}{k+1}.
 \end{gather*}
-          </p></article></span>
+          </p></article></div>
 
         The final line skips over a tiny bit of algebraic detail.  You may feel more comfortable if you fill in those steps.
 
 
         }
         </p></li>
-<li id="li-367"><p id="p-1010">
+<li id="li-356"><p id="p-992">
           Prove \(\displaystyle \sum_{j=0}^{n}(4j+1) \; = \; 2n^{2}+3n+1\) for all
           integers \(n \geq 0\).
         </p></li>
-<li id="li-368"><p id="p-1011">
+<li id="li-357"><p id="p-993">
           Prove \(\displaystyle \sum_{i=1}^{n}\frac{1}{(2i-1)(2i+1)} \; = \; \frac{n}{2n+1}\) for all natural numbers \(n\).
         </p></li>
-<li id="li-369"><p id="p-1012">
+<li id="li-358"><p id="p-994">
           The  <!--Style me with CSS--><em>Fibonacci numbers</em> are a sequence of integers defined by
           the rule that a number in the sequence is the sum of the two that 
           precede it.

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2017-01-10T23:30:59-05:00    *-->
+<!--*    on 2017-05-23T13:30:28-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -45,7 +45,7 @@ MathJax.Hub.Config({
 <link href="extra.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$4.0$\ }
 \renewcommand{\tabcolsep}{2.4pt}
 \def\savedlnot{\lnot}
 \renewcommand{\arraystretch}{.63}
@@ -90,7 +90,7 @@ MathJax.Hub.Config({
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></a></h1>
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics, version 4.0</span></a></h1>
 <p class="byline">Joe Fields</p>
 </div>
 </div></div>
@@ -189,7 +189,7 @@ MathJax.Hub.Config({
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_induct"><header title="Section 5.1 The principle of mathematical induction"><h1 class="heading hide-type" alt="Section 5.1 The principle of mathematical induction">
 <span class="type">Section</span><span class="codenumber">5.1</span><span class="title">The principle of mathematical induction</span><a href="sec_induct.html" class="permalink">¶ permalink</a>
-</h1></header><p id="p-929">
+</h1></header><p id="p-935">
     The Principle of Mathematical Induction (PMI) may be the least intuitive
     proof method available to us. Indeed, at first, PMI may feel somewhat like
     grabbing yourself by the seat of your pants and lifting yourself into
@@ -198,7 +198,7 @@ MathJax.Hub.Config({
     technique. It is one of the most important tools in your mathematical
     kit!
   </p>
-<p id="p-930">
+<p id="p-936">
   The simplest argument in favor of the validity of PMI is simply that it is
   axiomatic. This may seem somewhat unsatisfying, but the axioms for
   the natural number system, known as the Peano axioms,
@@ -206,23 +206,23 @@ MathJax.Hub.Config({
   thoroughly in this book, but here they are:
 
   </p>
-<ol id="ol-53" style="list-style-type: decimal;">
-<li id="li-351"><p id="p-931">
+<ol id="ol-52" style="list-style-type: decimal;">
+<li id="li-341"><p id="p-937">
         There is a least element of \(\Naturals\) that we denote by \(0\).
       </p></li>
-<li id="li-352"><p id="p-932">
+<li id="li-342"><p id="p-938">
         Every natural number \(a\) has a successor denoted by \(s(a)\).
         (Intuitively, think of \(s(a) = a+1\).)
       </p></li>
-<li id="li-353"><p id="p-933">
+<li id="li-343"><p id="p-939">
         There is no natural number whose successor is \(0\).  (In other
         words, -1 isn't in \(\Naturals\).)
       </p></li>
-<li id="li-354"><p id="p-934">
+<li id="li-344"><p id="p-940">
         Distinct natural numbers have distinct successors.  
         (\(a \neq b \; \implies \; s(a) \neq s(b)\))
       </p></li>
-<li id="li-355"><p id="p-935">
+<li id="li-345"><p id="p-941">
         If a subset of the natural numbers contains \(0\) and also has the
         property that whenever \(a \in S\) it follows that \(s(a) \in S\), then the
         subset \(S\) is actually equal to \(\Naturals\).
@@ -230,25 +230,25 @@ MathJax.Hub.Config({
 </ol>
 <p>
   </p>
-<p id="p-936">
+<p id="p-942">
     The last axiom is the one that justifies PMI. Basically, if \(0\) is in
     a subset, and the subset has this property about successors<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-30" id="fn-30"><span class="footnote"><sup> 1 </sup></span></a></span><span id="hk-fn-30" style="display: none;" class="tex2jax_ignore"><span class="footnote">Whenever a number is in it, the number's successor must be in it.</span></span>, then \(1\) must
     be in it. But if \(1\) is in it, then \(1\)'s successor (\(2\)) must be in it.
     And so on …
   </p>
-<p id="p-937">
+<p id="p-943">
     The subset ends up having every natural number in it.
   </p>
-<article class="exercise-like" id="exercise-42"><h5 class="heading">
+<article class="exercise-like" id="exercise-52"><h5 class="heading">
 <span class="type">Exercise</span><span class="codenumber">5.1.1</span>
 </h5>
-<p id="p-938">
+<p id="p-944">
         Verify that the following symbolic formulation has the same content
         as the version of the 5th Peano axiom given above.
         \begin{equation*}
           \forall S \subseteq \Naturals \; ( 0 \in S ) \land (\forall a \in \Naturals, a \in S \, \implies s(a) \in S) \implies  \; S=\Naturals
         \end{equation*}
-      </p></article><p id="p-939">
+      </p></article><p id="p-945">
     On August 16th 2003, Ma Lihua of Beijing, China earned her place in the
     record books by single-handedly setting up an arrangement of dominoes
     standing on end (actually, the setup took 7 weeks and was almost ruined by
@@ -257,7 +257,7 @@ MathJax.Hub.Config({
     before 303,621 out of the 303,628 dominoes had fallen. (One has to wonder
     what kept those other 7 dominoes upright …)
   </p>
-<img width="20%" src="images/domino_row.png" alt=""><p id="p-940">
+<img width="20%" src="images/domino_row.png" alt=""><p id="p-946">
     This is the model one should keep in mind when thinking about PMI: domino
     toppling. In setting up a line of dominoes, what do we need to do
     in order to ensure that they will all fall when the toppling begins?
@@ -268,7 +268,7 @@ MathJax.Hub.Config({
     (barring the action of cockroaches) is for someone to knock over the
     first domino. This is analogous to \(0 \in S\).
   </p>
-<p id="p-941">
+<p id="p-947">
     Rather than continuing to talk about subsets of the naturals, it will
     be convenient to recast our discussion in terms of infinite families
     of logical statements. If we have a sequence of statements, (one
@@ -281,7 +281,7 @@ MathJax.Hub.Config({
     of an inductive proof are known, respectively, as the <!--Style me with CSS--><em>basis</em>
     and the <!--Style me with CSS--><em>inductive step</em>.
   </p>
-<p id="p-942">
+<p id="p-948">
     An outline for a proof using PMI:
   </p>
 <table>
@@ -304,7 +304,7 @@ MathJax.Hub.Config({
         Q.E.D.</td></tr>
 <tr><td class="l m b1 r0 l0 t0 lines"></td></tr>
 </table>
-<p id="p-943">
+<p id="p-949">
     Soon we'll do an actual example of an inductive
     proof, but first we have to say something <!--Style me with CSS--><em>REALLY IMPORTANT</em>
     about such proofs. Pay attention! This is <!--Style me with CSS--><em>REALLY IMPORTANT</em>!
@@ -323,7 +323,7 @@ MathJax.Hub.Config({
     This is subtly different — in proving that \(\forall k,  P_k \implies P_{k+1}\)
     (which is a UCS!) we assume that \(P_k\) is true <!--Style me with CSS--><em>for some particular value of \(k\)</em>.
   </p>
-<p id="p-944">
+<p id="p-950">
     The sentence \(P_k\) is known as the
     <!--Style me with CSS--><em>inductive hypothesis</em>.
     Think about it this way: If we were doing an entirely separate
@@ -333,7 +333,7 @@ MathJax.Hub.Config({
     \(\forall n,  P_n\). Thus we can compartmentalize our way out of the
     difficulty!
   </p>
-<p id="p-945">
+<p id="p-951">
     Okay, so on to an example. In <a href="sec_basic_set_notions.html" alt="Section 4.1 Basic notions of set theory" title="Section 4.1 Basic notions of set theory">Section 4.1</a>
     we discovered a formula relating the sizes of a set \(A\) and its
     power set \({\mathcal P}(A)\). If \(|A| = n\) then \(|{\mathcal P}(A)| = 2^n\).
@@ -353,29 +353,29 @@ MathJax.Hub.Config({
     \end{equation*}
     et cetera.
   </p>
-<p id="p-946">
+<p id="p-952">
     This is exactly the sort of situation in which we use induction.
   </p>
 <article class="theorem-like" id="theorem-15"><h5 class="heading">
 <span class="type">Theorem</span><span class="codenumber">5.1.2</span>
 </h5>
-<p id="p-947">
+<p id="p-953">
         For all finite sets \(A\), \(\displaystyle |A| = n \implies  |{\mathcal P}(A)| = 2^n\).
       </p></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-26" id="proof-26"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
-<div id="hk-proof-26" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-948">
+<div id="hk-proof-26" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-954">
       Let \(n = |A|\) and proceed by induction on \(n\).
     </p>
-<p id="p-949">
+<p id="p-955">
       <!--Style me with CSS--><em>Basis:</em> Suppose \(A\) is a finite set and \(|A| = 0\), it follows
       that \(A = \emptyset\). The power set of \(\emptyset\) is \(\{ \emptyset \}\)
       which is a set having 1 element. Note that \(2^0 = 1\).
     </p>
-<p id="p-950">
+<p id="p-956">
       <!--Style me with CSS--><em>Inductive step:</em> Suppose that \(A\) is a finite set with \(|A| = k+1\). Choose some particular element of \(A\), say \(a\), and note that
       we can divide the subsets of \(A\) (i.e. elements of \({\mathcal P}(A)\)) into
       two categories, those that contain \(a\) and those that don't.
     </p>
-<p id="p-951">
+<p id="p-957">
       Let \(S_1 = \{ X \in {\mathcal P}(A) \suchthat a \in X \}\) and let
       \(S_2 = \{ X \in {\mathcal P}(A) \suchthat a \notin X \}\). We have
       created two sets that contain all the elements of \({\mathcal P}(A)\),
@@ -383,7 +383,7 @@ MathJax.Hub.Config({
       \(S_1 \cup S_2 = {\mathcal P}(A)\) and \(S_1 \cap S_2 = \emptyset\).
       It follows that \(|{\mathcal P}(A)| = |S_1| + |S_2|\).
     </p>
-<p id="p-952">
+<p id="p-958">
       Notice that \(S_2\) is actually the power set of the \(k\)-element set
       \(A \setminus \{ a \}\). By the inductive hypothesis, \(|S_2| = 2^k\).
       Also, notice that each set in \(S_1\) corresponds uniquely to a set in
@@ -391,19 +391,19 @@ MathJax.Hub.Config({
       \(|S_1| = |S_2|\). Putting this all together we get that
       \(|{\mathcal P}(A)| = 2^k + 2^k = 2(2^k) = 2^{k+1}\).
     </p></article></div>
-<p id="p-953">
+<p id="p-959">
   Here are a few pieces
   of advice about proofs by induction:
 
   </p>
 <ul id="ul-7" style="list-style-type: disc;">
-<li id="li-356"><p id="p-954">
+<li id="li-346"><p id="p-960">
         Statements that can be proved inductively don't always start out with 
         \(P_0\).  Sometimes \(P_1\) is the first statement in an infinite family.
         Sometimes its \(P_5\).  Don't get hung up about something that could be
         handled by renumbering things.
       </p></li>
-<li id="li-357"><p id="p-955">
+<li id="li-347"><p id="p-961">
         In your final write-up you only need to prove the initial case
         (whatever it may be) for the basis, but it is a good idea to try 
         the first several cases while you are in the “draft” stage.  This
@@ -412,7 +412,7 @@ MathJax.Hub.Config({
         essentially just because there is a gap between two of the earlier 
         dominoes.<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-31" id="fn-31"><span class="footnote"><sup> 2 </sup></span></a></span><span id="hk-fn-31" style="display: none;" class="tex2jax_ignore"><span class="footnote">See <a knowl="./knowl/ex_horses.html" knowl-id="xref-ex_horses" alt="Item b " title="Item b ">exercise b</a>, the classic fallacious proof that all horses are the same color.</span></span>
       </p></li>
-<li id="li-358"><p id="p-956">
+<li id="li-348"><p id="p-962">
         It is a good idea to write down somewhere just what it is that
         needs to be proved in the inductive step — just don't make it look like 
         you're assuming what needs to be shown.  For instance in the proof above
@@ -424,10 +424,10 @@ MathJax.Hub.Config({
 </ul>
 <p>
   </p>
-<p id="p-957">
+<p id="p-963">
     We'll close this section with a short discussion about nothing.
   </p>
-<p id="p-958">
+<p id="p-964">
     When we first introduced the natural numbers (\(\Naturals\)) in <a href="ch_intro.html" alt="Chapter 1 Introduction and notation" title="Chapter 1 Introduction and notation">Chapter 1</a> we decided to follow the convention that the smallest natural number is 1.
     You may have noticed that the Peano axioms mentioned in the beginning of this
     section treat \(0\) as the smallest natural number. Many people follow Dr. Peano's
@@ -436,15 +436,15 @@ MathJax.Hub.Config({
       \Naturals \, = \, \{ 1, 2, 3, \ldots \}
     \end{equation*}
   </p>
-<p id="p-959">
+<p id="p-965">
     Despite our stubbornness, we are forced to admit that many inductive proofs are
     made easier by treating the “first” case as being in truth the one numbered \(0\). We'll
     use the symbol \(\Naturals\) to indicate the set \({\mathbb N} \cup \{ 0 \}\).
   </p>
 <section class="exercises" id="exercises-26"><header title="Exercises 5.1.1 Exercises"><h1 class="heading hide-type" alt="Exercises 5.1.1 Exercises">
 <span class="type">Subsection</span><span class="codenumber">5.1.1</span><span class="title">Exercises</span>
-</h1></header><ol id="ol-54" style="list-style-type: lower-alpha;">
-<li id="li-359"><p id="p-960">
+</h1></header><ol id="ol-53" style="list-style-type: lower-alpha;">
+<li id="li-349"><p id="p-966">
         Consider the sequence of numbers that are 1 greater than a multiple of 4.
         (Such numbers are of the form \(4j+1\).)
         \begin{equation*}
@@ -496,21 +496,21 @@ MathJax.Hub.Config({
 </table>
         \hint{I'm leaving the very last one for you to do.}
       </p></li>
-<li id="ex_horses"><p id="p-961">
+<li id="ex_horses"><p id="p-967">
       What is wrong with the following inductive proof of
       “all horses are the same color.”?
 
       <!--Style me with CSS--><em>Theorem</em> Let \(H\) be a set of \(n\) horses, all horses in \(H\) 
       are the same color.
 
-      <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-27" id="proof-27"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div><div id="hk-proof-27" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-962">
+      <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-27" id="proof-27"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div><div id="hk-proof-27" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-968">
           We proceed by induction on \(n\).
         </p>
-<p id="p-963">
+<p id="p-969">
           <!--Style me with CSS--><em>Basis: </em> Suppose \(H\) is a set containing 1 horse. Clearly
           this horse is the same color as itself.
         </p>
-<p id="p-964">
+<p id="p-970">
           <!--Style me with CSS--><em>Inductive step: </em> Given a set of \(k+1\) horses \(H\) we can
           construct two sets of \(k\) horses. Suppose \(H = \{ h_1, h_2, h_3, \ldots h_{k+1} \}\). Define \(H_a = \{ h_1, h_2, h_3, \ldots h_{k} \}\) (i.e. \(H_a\) contains
           just the first \(k\) horses) and \(H_b = \{ h_2, h_3, h_4, \ldots h_{k+1} \}\)
@@ -523,26 +523,26 @@ MathJax.Hub.Config({
 
       \hint{Look carefully at the stage from \(n=2\) to \(n=3\).}
       </p></li>
-<li id="li-361">
-<p id="p-965">
+<li id="li-351">
+<p id="p-971">
     For each of the following theorems, write the statement that must be
     proved for the basis — then prove it, if you can!
 
     </p>
-<ol id="ol-55" style="list-style-type: lower-roman;">
-<li id="li-362"><p id="p-966">
+<ol id="ol-54" style="list-style-type: lower-roman;">
+<li id="li-352"><p id="p-972">
           The sum of the first \(n\) positive integers is \((n^2+n)/2\).
 
           \hint{The sum of the first \(0\) positive integers is \((0^2 + 0)/2\).  Or, if you
           prefer to start with something rather than nothing: The sum of the first \(1\) positive integers
           is \((1^2+1)/2\). }
         </p></li>
-<li id="li-363"><p id="p-967">
+<li id="li-353"><p id="p-973">
           The sum of the first \(n\) (positive) odd numbers is \(n^2\).
 
           \hint{The sum of the first \(0\) positive odd numbers is \(0^2\).  Or, the sum of the first \(1\) positive odd numbers is \(1^2\).}
         </p></li>
-<li id="li-364"><p id="p-968">
+<li id="li-354"><p id="p-974">
           If \(n\) coins are flipped, the probability that all of them 
           are “heads” is \(1/2^n\).
 
@@ -551,7 +551,7 @@ MathJax.Hub.Config({
           make sense to you?  Is it reasonable that we would say it is 100% certain that all of the coins
           are heads in a set that doesn't contain <!--Style me with CSS--><em>any</em> coins? }
         </p></li>
-<li id="li-365"><p id="p-969">
+<li id="li-355"><p id="p-975">
           Every \(2^n \times 2^n\) chessboard — with one square removed — can 
           be tiled perfectly<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-32" id="fn-32"><span class="footnote"><sup> 3 </sup></span></a></span><span id="hk-fn-32" style="display: none;" class="tex2jax_ignore"><span class="footnote">Here, “perfectly tiled” means that every trominoe
           covers 3 squares of the chessboard (nothing hangs over the edge) and that every
@@ -577,23 +577,23 @@ MathJax.Hub.Config({
 </ol>
 <p>
     </p>\(n=1\)\(2 \times 2\)—\(n=0\)</li>
-<li id="li-366">
-<p id="p-970">
+<li id="li-356">
+<p id="p-976">
     Suppose that the rules of the game for PMI were changed so that one
     did the following:
 
     </p>
 <ul id="ul-8" style="list-style-type: disc;">
-<li id="li-367"><p id="p-971">
+<li id="li-357"><p id="p-977">
           Basis.  Prove that \(P(0)\) is true.
         </p></li>
-<li id="li-368"><p id="p-972">
+<li id="li-358"><p id="p-978">
           Inductive step.  Prove that for all \(k\), \(P_k\) implies \(P_{k+2}\)
         </p></li>
 </ul>
 <p>
     </p>\(P_n\)\(n\)\(P(0)\)\(P(1)\)\(P(0)\)\(P(1)\)\(P(0)\)\(P(1)\)</li>
-<li id="li-369"><p id="p-973">
+<li id="li-359"><p id="p-979">
         If we wanted to prove statements that were indexed by the integers,
         \begin{equation*}
           \forall z \in \Integers, \; P_z,

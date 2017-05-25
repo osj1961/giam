@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2017-01-10T23:30:56-05:00    *-->
+<!--*    on 2017-05-23T13:30:25-04:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -45,7 +45,7 @@ MathJax.Hub.Config({
 <link href="extra.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$3.2$\ }
+<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\versionNum}{$4.0$\ }
 \renewcommand{\tabcolsep}{2.4pt}
 \def\savedlnot{\lnot}
 \renewcommand{\arraystretch}{.63}
@@ -90,7 +90,7 @@ MathJax.Hub.Config({
 \)</div>
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
-<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics\\ {\small Version \versionNum  N  }</span></a></h1>
+<h1 class="heading"><a href="index.html"><span class="title">A Gentle Introduction to the Art of Mathematics, version 4.0</span></a></h1>
 <p class="byline">Joe Fields</p>
 </div>
 </div></div>
@@ -189,7 +189,7 @@ MathJax.Hub.Config({
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_alg"><header title="Section 1.5 Some algorithms of elementary number theory"><h1 class="heading hide-type" alt="Section 1.5 Some algorithms of elementary number theory">
 <span class="type">Section</span><span class="codenumber">1.5</span><span class="title">Some algorithms of elementary number theory</span><a href="sec_alg.html" class="permalink">¶ permalink</a>
-</h1></header><p id="p-183">
+</h1></header><p id="p-189">
     An <!--Style me with CSS--><em>algorithm</em> is simply a set of clear
     instructions for achieving
     some task. The Persian mathematician and astronomer
@@ -206,12 +206,12 @@ MathJax.Hub.Config({
   rise to the word algorithm deriving from his name in the
   title.  <a knowl="./knowl/HisMathArch.html" knowl-id="xref-HisMathArch" alt="Bibliographic Entry 12 " title="Bibliographic Entry 12 ">[12]</a>
 </blockquote>
-<p id="p-184">
+<p id="p-190">
     While the study of algorithms is more properly a subject within
     Computer Science, a student of Mathematics can derive considerable
     benefit from it.
   </p>
-<p id="p-185">
+<p id="p-191">
   There is a big difference between an algorithm description intended
   for human consumption and one meant for a computer<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-fn-7" id="fn-7"><span class="footnote"><sup> 2 </sup></span></a></span><span id="hk-fn-7" style="display: none;" class="tex2jax_ignore"><span class="footnote">The 
   whole history of Computer Science could be
@@ -229,22 +229,22 @@ MathJax.Hub.Config({
 
   </p>
 <ul id="ul-2" style="list-style-type: disc;">
-<li id="li-87"><p id="p-186">
+<li id="li-77"><p id="p-192">
         Assignment statements
       </p></li>
-<li id="li-88"><p id="p-187">
+<li id="li-78"><p id="p-193">
         If-then control statements
       </p></li>
-<li id="li-89"><p id="p-188">
+<li id="li-79"><p id="p-194">
         Goto statements
       </p></li>
-<li id="li-90"><p id="p-189">
+<li id="li-80"><p id="p-195">
         Return
       </p></li>
 </ul>
 <p>
   </p>
-<p id="p-190">
+<p id="p-196">
     We take the view that an algorithm is something like a function, it
     takes for its input a list of parameters that describe a particular
     case of some general problem, and produces as its output a solution to
@@ -257,7 +257,7 @@ MathJax.Hub.Config({
     calculations are written on them, but they are tossed aside once the
     final answer has been calculated.
   </p>
-<p id="p-191">
+<p id="p-197">
     Assignment statements allow us to do all kinds of arithmetic
     operations (or rather to think of these types of operations as being
     atomic.) In actuality even a simple procedure like adding two numbers
@@ -268,7 +268,7 @@ MathJax.Hub.Config({
     variable” in the previous sentence do not need to be distinct, thus
     \(x = x + 1\) is a perfectly legal assignment.
   </p>
-<p id="p-192">
+<p id="p-198">
     If-then control statements are decision makers. They first calculate
     a Boolean expression (this is just a fancy way of saying something
     that is either <tt class="code-inline tex2jax_ignore">true</tt> or <tt class="code-inline tex2jax_ignore">false</tt>), and send program flow to
@@ -278,21 +278,21 @@ MathJax.Hub.Config({
     increment \(x\) by 1. This is illustrated in <a knowl="./knowl/fig_if-then.html" knowl-id="xref-fig_if-then" alt="Table 1.5.1 " title="Table 1.5.1 ">Figure 1.5.1</a>
     both in pseudocode and as a flowchart.
   </p>
-<figure class="figure-like" id="fig_if-then"><table>
-<tr>
+<figure class="figure-like" id="fig_if-then"><table><tr>
 <td class="l m b0 r0 l0 t0 lines">
           <object type="image/svg+xml" style="width:100%; margin:auto; display:block;" data="images/if_then_flow.svg" alt=""><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object>
         </td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines">
-         If \(x=y\) then</td>
-</tr>
+	<table>
+<tr><td class="l m b0 r0 l0 t0 lines"> If \(x=y\) then</td></tr>
 <tr><td class="l m b0 r0 l0 t0 lines">\(x=x+1\)</td></tr>
 <tr><td class="l m b0 r0 l0 t0 lines">End If</td></tr>
 <tr><td class="l m b0 r0 l0 t0 lines">\(\vdots\)</td></tr>
-<tr><td class="l m b0 r0 l0 t0 lines"></td></tr>
 </table>
-<figcaption><span class="heading">Table</span><span class="codenumber">1.5.1</span>A small example in pseudocode and as a flowchart</figcaption></figure><p id="p-193">
+	</td>
+</tr></table>
+<figcaption><span class="heading">Table</span><span class="codenumber">1.5.1</span>A small example in pseudocode and as a flowchart</figcaption></figure><p id="p-199">
     Notice the use of indentation in the pseudocode example to indicate
     the statements that are executed if the Boolean expression is true.
     These examples also highlight the difference between the two senses
@@ -306,7 +306,7 @@ MathJax.Hub.Config({
     testing, when the assignment sense is desired the word “let” will
     generally precede the equality.
   </p>
-<p id="p-194">
+<p id="p-200">
     While this brief introduction to the means of notating algorithms is by no
     means complete, it is hopefully sufficient for our purpose which is
     solely to introduce two algorithms that are important in elementary
@@ -323,7 +323,7 @@ MathJax.Hub.Config({
     is denoted \(\gcd{a}{b}\) and is the largest integer that divides both
     \(a\) and \(b\) evenly.
   </p>
-<p id="p-195">
+<p id="p-201">
     A pseudocode outline of the division algorithm is as follows:
   </p>
 <figure class="figure-like" id="listing-1"><pre class="code-block tex2jax_ignore"> Algorithm: Division
@@ -349,11 +349,11 @@ Let q = q + 1.
 Let r = r - d.
 
 Goto 1.
-</pre></figure><p id="p-196">
+</pre></figure><p id="p-202">
     This same algorithm is given in flowchart form in
     <a knowl="./knowl/fig_div_alg.html" knowl-id="xref-fig_div_alg" alt="Figure 1.5.2 " title="Figure 1.5.2 ">Figure 1.5.2</a>.
   </p>
-<figure class="figure-like" id="fig_div_alg"><object type="image/svg+xml" style="width:100%; margin:auto; display:block;" data="images/div_alg.svg" alt=""><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object><figcaption><span class="heading">Figure</span><span class="codenumber">1.5.2</span>The division algorithm in flowchart form.</figcaption></figure><p id="p-197">
+<figure class="figure-like" id="fig_div_alg"><object type="image/svg+xml" style="width:100%; margin:auto; display:block;" data="images/div_alg.svg" alt=""><p style="margin:auto">&lt;&lt;SVG image is unavailable, or your browser cannot render it&gt;&gt;</p></object><figcaption><span class="heading">Figure</span><span class="codenumber">1.5.2</span>The division algorithm in flowchart form.</figcaption></figure><p id="p-203">
     Note that in a flowchart the action of a “Goto” statement is clear
     because an arrow points to the location where program flow is being
     redirected. In pseudocode a “Label” statement is required which
@@ -363,7 +363,7 @@ Goto 1.
     corresponding Labels, this sort of redirection is now deprecated in
     virtually all popular programming environments.
   </p>
-<p id="p-198">
+<p id="p-204">
     Before we move on to describe the Euclidean algorithm it might be
     useful to describe more explicitly what exactly it's <!--Style me with CSS--><em>for</em>.
     Given a pair of integers, \(a\) and \(b\), there are two quantities that
@@ -381,7 +381,7 @@ Goto 1.
     so they are essentially equivalent as far as representing a
     computational challenge.
   </p>
-<p id="p-199">
+<p id="p-205">
     The  Euclidean algorithm depends
     on a rather extraordinary property of
     the gcd. Suppose that we are trying to compute \(\gcd{a}{b}\) and that
@@ -396,7 +396,7 @@ Goto 1.
     In the case of the Euclidean algorithm, we know we're done when the
     remainder \(r\) comes out \(0\).
   </p>
-<p id="p-200">
+<p id="p-206">
     So, here, without further ado is the Euclidean algorithm in
     pseudocode. A flowchart version is given in <a knowl="./knowl/fig_Euc_alg.html" knowl-id="xref-fig_Euc_alg" alt="Figure 1.5.3 " title="Figure 1.5.3 ">Figure 1.5.3</a>.
   </p>
@@ -426,7 +426,7 @@ Goto 1.
 
   Goto 1.
 
-  <figure class="figure-like" id="fig_Euc_alg"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/99beb61d144ea16f88a70f462898d5be5db40862.png" alt=""><figcaption><span class="heading">Figure</span><span class="codenumber">1.5.3</span>The Euclidean algorithm in flowchart form.</figcaption></figure><p id="p-201">
+  <figure class="figure-like" id="fig_Euc_alg"><img width="100%" src="images/3773292f0c8831b3ef36257060e3ec94c0790646.png" alt=""><img width="100%" src="images/99beb61d144ea16f88a70f462898d5be5db40862.png" alt=""><figcaption><span class="heading">Figure</span><span class="codenumber">1.5.3</span>The Euclidean algorithm in flowchart form.</figcaption></figure><p id="p-207">
     It should be noted that for small numbers one can find the gcd and lcm
     quite easily by considering their factorizations into primes. For the
     moment consider numbers that factor into primes but not into prime
@@ -441,7 +441,7 @@ Goto 1.
     that appear in either factorization is \(\{2, 3, 5, 7 \}\) so
     \(\lcm{30}{42} = 2\cdot 3\cdot 5\cdot 7 = 210\).
   </p>
-<p id="p-202">
+<p id="p-208">
     The technique just described is of little value for numbers having more
     than about 50 decimal digits because it rests <!--Style me with CSS--><em>a priori</em> on the
     ability to find the prime factorizations of the numbers involved.
@@ -452,8 +452,8 @@ Goto 1.
   </p>
 <section class="exercises" id="exercises-5"><header title="Exercises 1.5.1 Exercises"><h1 class="heading hide-type" alt="Exercises 1.5.1 Exercises">
 <span class="type">Subsection</span><span class="codenumber">1.5.1</span><span class="title">Exercises</span>
-</h1></header><ol id="ol-13" style="list-style-type: lower-alpha;">
-<li id="li-91"><p id="p-203">
+</h1></header><ol id="ol-12" style="list-style-type: lower-alpha;">
+<li id="li-81"><p id="p-209">
           Trace through the division algorithm with inputs \(n=27\) and
             \(d=5\), each time an assignment statement is encountered write it
             out.  How many assignments are involved in this particular
@@ -475,7 +475,7 @@ Goto 1.
           return r is 2 and q is 5.
           }
         </p></li>
-<li id="li-92"><p id="p-204">
+<li id="li-82"><p id="p-210">
           Find the gcd's and lcm's of the following pairs of numbers.
 
 
@@ -542,7 +542,7 @@ Goto 1.
           \end{equation*}
           }
         </p></li>
-<li id="li-93"><p id="p-205">
+<li id="li-83"><p id="p-211">
           Formulate a description of the gcd of two numbers in terms of
             their prime factorizations in the general case (when the
             factorizations may include powers of the primes involved).
@@ -552,7 +552,7 @@ Goto 1.
           \hint{Suppose that one number's prime factorization contains \(p^e\) and the other
           contains \(p^f\), where \(e \lt  f\). What power of \(p\) will divide both, \(p^e\) or \(p^f\) ?}
         </p></li>
-<li id="li-94"><p id="p-206">
+<li id="li-84"><p id="p-212">
           Trace through the Euclidean algorithm with inputs \(a=3731\) and
             \(b=2730\), each time the assignment statement that calls the division
             algorithm is encountered write out the expression \(a=qb+r\).   (With the
