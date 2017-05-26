@@ -10,8 +10,8 @@
     </p>
   </introduction>
   <xi:include  href="sec_equiv_sets.mbx" />
-  <xi:include  href="section8-2.mbx" />
+  <xi:include  href="sec_examp_set_eq.mbx" />
   <xi:include  href="sec_cantors_thm.mbx" />
-  <xi:include  href="section8-4.mbx" />
-  <xi:include  href="section8-5.mbx" />
+  <xi:include  href="sec_dominance.mbx" />
+  <xi:include  href="sec_ch_gch.mbx" />
 </chapter>

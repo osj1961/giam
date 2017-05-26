@@ -1,0 +1,531 @@
+
+<section xml:id="sec_examp_set_eq">
+  <title>Examples of set equivalence</title>
+  <p>
+    There is an ancient conundrum about what happens when an irresistible force
+    meets an immovable object. In a similar spirit there are sometimes heated
+    debates among young children concerning which super-hero will win a fight.
+    Can Wolverine take Batman? What about the Incredible Hulk versus the
+    Thing? Certainly Superman is at the top of the heap in this ordering. Or is
+    he? Would the man of steel even engage in a fight with a female super-hero,
+    say Wonder Woman? (Remember the 1950's sensibilities of Clark Kent's
+    alter ego.)
+  </p>
+
+  <p>
+    To many people the current topic will seem about as sensible as the schoolyard
+    discussions just alluded to. We are concerned with knowing whether
+    one infinite set is bigger than another, or are they the same size. There are
+    generally three reasons that people disdain to consider such questions. The
+    first is that, like super-heros, infinite sets are just products of the imagination.
+    The second is that there can be no difference because <q>infinite is infinite</q> <mdash /> once you get to the size we call infinity, you can't add something to that to
+    get to a bigger infinity. The third is that the answers to questions like this
+    are not going to earn me big piles of money so <q>who cares?</q>
+  </p>
+
+  <p>
+    Point one is actually pretty valid. Physicists have determined that we
+    appear to inhabit a universe of finite scope, containing a finite number of
+    subatomic particles, so in reality there can be no infinite sets. Nevertheless,
+    the axioms we use to study many fields in mathematics guarantee that the
+    objects of consideration are indeed infinite in number. Infinity appears as a
+    concept even when we know it can't appear in actuality.
+    Point two, the <q>there's only one size of infinity</q> argument is wrong. We'll
+    see an informal argument showing that there are at least two sizes of infinity,
+    and a more formal theorem that shows there is actually an infinite hierarchy
+    of infinities in <xref ref="sec_cantors_thm">Section</xref>
+  </p>
+
+  <p>
+    Point three, <q>who cares?</q> is in some sense the toughest of all to deal with.
+    Hopefully you'll enjoy the clever arguments to come for their own intrinsic
+    beauty. But, if you can figure a way to make big piles of money using this
+    stuff that would be nice too.
+  </p>
+
+  <p>
+    Let's get started.
+  </p>
+
+  <p>
+    Which set is bigger <mdash /> the natural numbers, <m>\Naturals</m> or the set,
+    <m>\Enoneg</m>, of nonnegative even numbers?
+    Both are clearly infinite, so the <q>infinity is infinity</q> camp might be lead
+    to the correct conclusion through invalid reasoning. On the other hand,
+    the even numbers are contained in the natural numbers so there's a pretty
+    compelling case for saying the evens are somehow smaller than the naturals.
+    The mathematically rigorous way to show that these sets have the same
+    cardinality is by displaying a one-to-one correspondence. Given an even
+    number how can we produce a natural to pair it with? And, given a natural
+    how can we produce an even number to pair with it?
+    The map <m>f : N \longrightarrow \Enoneg</m> defined by <m>f(x) = 2x</m>
+    is clearly a function,
+    and just about as clearly, injective<fn>If <m>x</m> and <m>y</m> are 
+    different numbers that map to the same value, then f(x) = f(y) so
+    2x = 2y. But we can cancel the 2's and derive that x = y, which is a contradiction.</fn>. Is the map <m>f</m> also a surjection? In other
+    words, is every non-negative even number the image of some natural under
+    <m>f</m>? Given some non-negative even number <m>e</m> we need to be able to come
+    up with an <m>x</m> such that <m>f(x) = e</m>. Well, since <m>e</m> is an even number, by the
+    definition of <q>even</q> we know that there is an integer <m>k</m> such that <m>e = 2k</m>
+    and since <m>e</m> is either zero or positive it follows that <m>k</m> must also be
+    either <m>0</m> or positive. It turns out that <m>k</m> is actually the <m>x</m> we
+    are searching for. Put more
+    succinctly, every non-negative even number <m>2k</m> has a preimage, <m>k</m>, under the
+    map <m>f</m>. So <m>f</m> maps <m>\Naturals</m> surjectively onto <m>\Enoneg</m>.
+    Now the sets we've just considered,
+    <me>
+      \Naturals \; = \; \{0, 1, 2, 3, 4, 5, 6, \ldots \}
+    </me>
+    and
+    <me>
+      \Enoneg \; = \; \{0, 2, 4, 6, 8, 10, 12, \ldots \}
+    </me>
+    both have the feature that they can be listed <mdash /> at
+    least in principle. There is a first element, followed by a
+    second element, followed by a third element,
+    et cetera, in each set. The next set we'll look at, Z, can't be listed so easily.
+    To list the integers we need to let the dot-dot-dots go both forward (towards
+    positive infinity) and backwards (towards negative infinity),
+    <me>
+      \Integers \; = \; \{ \ldots , -3, -2, -1, 0, 1, 2, 3, \ldots \}.
+    </me>
+  </p>
+
+  <p>
+    To show that the integers are actually equinumerous with the natural
+    numbers (which is what we're about to do <mdash /> and by the way, isn't that pretty
+    remarkable?) we need, essentially, to figure out a way to list the integers in
+    a singly infinite list. Using the symbol <m>\pm</m> we can arrange for a singly infinite
+    listing, and if you think about what the symbol <m>\pm</m> means you'll probably
+    come up with
+    <me>
+      \Integers \; = \; \{0, 1, -1, 2, -2, 3, -3, \ldots \}.
+    </me>
+  </p>
+
+  <p>
+    This singly infinite listing of the integers does the job
+    we're after in a sense <mdash /> it displays a one-to-one correspondence with <m>\Naturals</m>. In fact
+    any singly infinite listing can be thought of as displaying a one-to-one correspondence with <m>\Naturals</m> <mdash /> the first entry (or should we say zeroth entry?) in the list is corresponded
+    with 0, the second entry is corresponded with 1, and so on.
+  </p>
+  <tabular>
+    <row>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>0</m></cell>
+      <cell><m>1</m></cell>
+      <cell><m>2</m></cell>
+      <cell><m>3</m></cell>
+      <cell><m>4</m></cell>
+      <cell><m>5</m></cell>
+      <cell><m>6</m></cell>
+      <cell><m>7</m></cell>
+      <cell><m>\ldots</m></cell>
+    </row>
+    <row>
+      <cell><m>\updownarrow</m></cell>
+      <cell><m>\updownarrow</m></cell>
+      <cell><m>\updownarrow</m></cell>
+      <cell><m>\updownarrow</m></cell>
+      <cell><m>\updownarrow</m></cell>
+      <cell><m>\updownarrow</m></cell>
+      <cell><m>\updownarrow</m></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>0</m></cell>
+      <cell><m>1</m></cell>
+      <cell><m>-1</m></cell>
+      <cell><m>2</m></cell>
+      <cell><m>-2</m></cell>
+      <cell><m>3</m></cell>
+      <cell><m>-3</m></cell>
+      <cell><m>4</m></cell>
+      <cell><m>\ldots</m></cell>
+    </row>
+  </tabular>
+  <p>
+    To make all of this precise we need to be able to explicitly give the
+    one-to-one correspondence. It isn't enough to have a picture
+    of it <mdash /> we need a
+    formula. Notice that the negative integers are all paired with even naturals
+    and the positive integers are all paired with odd naturals. This observation
+    leads us to a piecewise definition for a function that gives the bijection we
+    seek
+    <me>
+      f(x) = \left\{ \begin{array}{cl} -x/2  \amp  \mbox{if x is even} \\
+      (x + 1)/2 \amp  \mbox{if x is odd} 
+      \end{array}  \right. .
+    </me>
+  </p>
+
+  <p>
+    By the way, notice that since 0 is even it falls into the first case, and
+    fortunately that formula gives the <q>right</q> value.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        The inverse function, <m>f^{-1}</m>, must also be defined piecewise, but
+        based on whether the input is positive or negative. Define the inverse function.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    The examples we've done so far have shown that the integers,
+    the natural numbers and the even naturals all have the same
+    cardinality. This is the first infinite cardinal number, known
+    as <m>\aleph_0</m>. In a certain sense we could view both
+    of the equivalences we've shown as demonstrating that
+    <m>2 \cdot \infty = \infty</m>. Our next example will lend
+    credence to the rule: <m>\infty \cdot \infty = \infty</m>.
+    The Cartesian product of two finite sets (the set of all
+    ordered pairs with entries from the sets in question) has
+    cardinality equal to the product of the cardinalities of
+    the sets. What do you suppose will happen if we let the sets
+    be infinite? For instance, what is the cardinality of
+    <m>\Naturals \times \Naturals</m>? Consider this:
+    the subset of ordered pairs that start with a 0 can be thought of as a copy
+    of <m>\Naturals</m> sitting inside this Cartesian product. In fact
+    the subset of ordered pairs
+    starting with any particular number gives another copy of <m>\Naturals</m>
+    inside <m>\Naturals \times \Naturals</m>. There
+    are infinitely many copies of <m>\Naturals</m> sitting inside of
+    <m>\Naturals \times \Naturals</m>! This just really ought
+    to get us to a larger cardinality. The surprising result that it
+    <em>doesn't</em> involves an idea sometimes known as
+    <index><main>Cantor's Snake</main></index> <q>Cantor's Snake</q> <mdash /> a trick that allows
+    us to list the elements of <m>\Naturals \times \Naturals</m> in a singly
+    infinite list<fn>Cantor's snake was originally created to show 
+    that <m>\Qnoneg</m> and <m>\Naturals</m> are equinumerous.
+    This function was introduced in the exercises for 
+    <xref ref="sec_functions">Section</xref>.   The version we are presenting
+    here avoids certain complications.</fn>.
+    You can visualize the set <m>\Naturals \times \Naturals</m> as the
+    points having integer coordinates
+    in the first quadrant (together with the origin and the positive
+    <m>x</m> and <m>y</m> axes).
+    This set of points and the path through them known as Cantor's snake is
+    shown in <xref ref="fig_cantors_snake_2">Figure</xref>.
+  </p>
+
+  <figure xml:id="fig_cantors_snake_2" >
+    <caption>Cantor's snake winds through the set 
+    <m>\Naturals \times \Naturals</m> encountering its
+    elements one after the other.</caption>
+    <image source=""/>
+  </figure>
+
+  <p>
+    The diagram in <xref ref="fig_cantors_snake_2">Figure</xref> gives a visual form of the one-to-one correspondence
+    we seek. In tabular form we would have something like the following.
+  </p>
+  <tabular>
+    <row>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>0</m></cell>
+      <cell><m>1</m></cell>
+      <cell><m>2</m></cell>
+      <cell><m>3</m></cell>
+      <cell><m>4</m></cell>
+      <cell><m>5</m></cell>
+      <cell><m>6</m></cell>
+      <cell><m>7</m></cell>
+      <cell><m>8</m></cell>
+      <cell><m>\ldots</m></cell>
+    </row>
+    <row>
+      <cell><m>\updownarrow</m></cell>
+      <cell><m>\updownarrow</m></cell>
+      <cell><m>\updownarrow</m></cell>
+      <cell><m>\updownarrow</m></cell>
+      <cell><m>\updownarrow</m></cell>
+      <cell><m>\updownarrow</m></cell>
+      <cell><m>\updownarrow</m></cell>
+      <cell><m>\updownarrow</m></cell>
+      <cell><m>\updownarrow</m></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>(0, 0)</m></cell>
+      <cell><m>(0, 1)</m></cell>
+      <cell><m>(1, 0)</m></cell>
+      <cell><m>(0, 2)</m></cell>
+      <cell><m>(1, 1)</m></cell>
+      <cell><m>(2, 0)</m></cell>
+      <cell><m>(0, 3)</m></cell>
+      <cell><m>(1,2)</m></cell>
+      <cell><m>(2, 1)</m></cell>
+      <cell><m>\ldots</m></cell>
+    </row>
+  </tabular>
+  <p>
+    We need to produce a formula. In truth, we should really produce two
+    formulas. One that takes an ordered pair <m>(x, y)</m> and produces a number <m>n</m>.
+    Another that takes a number <m>n</m> and produces an ordered pair <m>(x, y)</m> The
+    number <m>n</m> tells us where the pair <m>(x, y)</m> lies in our infinite listing.
+    There is a
+    problem though: the second formula (that gives the map from <m>\Naturals</m>
+    to <m>\Naturals \times \Naturals</m>)
+    is really hard to write down <mdash /> it's easier to describe the map
+    algorithmically.
+    A simple observation will help us to deduce the various formulas. The
+    ordered pairs along the <m>y</m>-axis (those of the form (0, something)) correspond
+    to triangular numbers. In fact the pair <m>(0, n)</m> will correspond to the <m>n</m>-th triangular
+    number, <m>T(n) = (n^2 + n)/2</m>. The ordered pairs along the descending
+    slanted line starting from <m>(0, n)</m> all have the feature that the sum of their
+    coordinates is <m>n</m> (because as the <m>x</m>-coordinate is increasing, the
+    <m>y</m>-coordinate
+    is decreasing). So, given an ordered pair <m>(x, y)</m>, the number corresponding
+    to the position at the upper end of the slanted line it is on (which will have
+    coordinates <m>(0, x+y)</m>) will be <m>T(x+y)</m>, and the pair <m>(x, y)</m> occurs in the listing exactly <m>x</m> positions after <m>(0, x + y)</m>. Thus, the function
+    <m>f : \Naturals \times \Naturals \longrightarrow N</m> is
+    given by
+    <me>
+      f(x, y) \; = \; x + T(x + y) = x + \frac{(x + y)^2 + (x + y)}{2}.
+    </me>
+  </p>
+
+  <p>
+    To go the other direction <mdash /> that is, to take a position
+    in the listing and
+    derive an ordered pair <mdash /> we need to figure out where a given number lies
+    relative to the triangular numbers. For instance, try to figure out what
+    <m>(x, y)</m> pair position number <m>13</m> will correspond with. Well, the next smaller
+    triangular number is <m>10</m> which is <m>T(4)</m>, so <m>13</m> will be the number of an
+    ordered pair along the descending line whose <m>y</m>-intercept is <m>4</m>.
+    In fact, <m>13</m> will be paired
+    with an ordered pair having a <m>3</m> in the <m>x</m>-coordinate (since <m>13</m> is <m>3</m>
+    larger than <m>10</m>) so it follows that <m>f^{-1}(13) = (3, 1)</m>.
+  </p>
+
+  <p>
+    Of course we need to generalize this procedure. One of the hardest parts
+    of finding that generalization is finding the number <m>4</m> in the above example
+    (when we just happen to notice that <m>T(4)=10</m> ). What we're really doing
+    there is inverting the function <m>T(n)</m>. Finding an inverse for
+    <m>T(n) = (n^2+n)/2</m> was the essence of one of the exercises in
+    <xref ref="sec_special_functions">Section</xref>.
+    The parabola <m>y = (x^2 + x)/2</m> has roots at <m>0</m> and <m>-1</m> and is scaled by a
+    factor of <m>1/2</m> relative to the <q>standard</q> parabola <m>y = x^2</m>.
+    Its vertex is at
+    <m>(-1/2,-1/8)</m>. The graph of the inverse relation is, of course, obtained by
+    reflecting through the line <m>y = x</m> and by considering scaling and horizontal/
+    vertical translations we can deduce a formula for a function that gives a
+    right inverse for <m>T</m>,
+    <me>
+      T^{-1}(x) = \sqrt{2x + 1/4} - 1/2.
+    </me>
+  </p>
+
+  <p>
+    So, given <m>n</m>, a position in the listing, we calculate <m>A = \lfloor \sqrt{2n + 1/4}-1/2 \rfloor</m>. The <m>x</m>-coordinate of our ordered pair is <m>n-T(A)</m>
+    and the <m>y</m>-coordinate is <m>A-x</m>.
+    It is not pretty, but the above discussion can be translated into a formula
+    for <m>f^{-1}</m>.
+    <md>
+      <mrow>f^{-1}(n) \; = \; \left( n - \frac{ \lfloor \sqrt{2n + 1/4} - 1/2 \rfloor^2 + \lfloor \sqrt{2n + 1/4} - 1/2 \rfloor}{2} , \right.</mrow>
+      <mrow>\left. \lfloor \sqrt{2n + 1/4} - 1/2  \rfloor - n + \frac{\lfloor \sqrt{2n + 1/4} - 1/2 \rfloor^2 + \lfloor \sqrt{2n + 1/4} - 1/2 \rfloor}{2} \right).</mrow>
+    </md>
+  </p>
+
+  <p>
+    When restricted to the appropriate sets (<m>f</m>'s domain
+    is restricted to <m>\Naturals \times \Naturals</m>
+    and <m>f^{-1}</m>'s domain is restricted to <m>\Naturals</m>),
+    these functions are two-sided inverses
+    for one another. That fact is sufficient to prove that <m>f</m>
+    is bijective.
+    So far we have shown that the sets <m>\Enoneg</m>, <m>\Naturals</m>, <m>\Integers</m> and
+    <m>\Naturals \times \Naturals</m> all have
+    the same cardinality <mdash /> <m>\aleph_0</m>. We plan to provide an argument that there
+    actually are other infinite cardinals in the next section. Before leaving the
+    present topic (examples of set equivalence) we'd like to present another nice
+    technique for deriving the bijective correspondences we use to show that sets
+    are equivalent <mdash /> geometric constructions.
+    Consider the set of points on the line segment <m>[0, 1]</m>.
+    Now consider the set
+    of points on the line segment <m>[0, 2]</m>. This second line
+    segment, being twice as
+    long as the first, must have a lot more points on it. Right?
+  </p>
+
+  <p>
+    Well, perhaps you're getting used to this sort of thing<ellipsis />
+    The interval <m>[0, 1]</m> is a subset of the interval <m>[0, 2]</m>,
+    but since both represent infinite sets of points
+    it's possible they actually have the same cardinality.
+    We can prove that this is so using a geometric technique.
+    We position the line segments appropriately
+    and then use projection from a carefully chosen point to
+    develop a bijection. Imagine both intervals as lying on
+    the <m>x</m>-axis in the <m>x</m>-<m>y</m> plane. Shift the
+    smaller interval up one unit so that it lies on the line
+    <m>y = 1</m>. Now, use projection
+    from the point <m>(0, 2)</m>, to visualize the correspondence
+    see <xref ref="fig_equiv_intervals">Figure</xref>
+  </p>
+
+  <figure xml:id="fig_equiv_intervals" >
+    <caption>Projection from a point can be 
+    used to show that intervals of 
+    different lengths contain the same number of points.</caption>
+    <image source=""/>
+  </figure>
+
+  <p>
+    By considering appropriate projections we can prove that any two arbitrary
+    intervals (say <m>[a, b]</m> and <m>[c, d]</m>) have the same cardinalities! It also
+    isn't all that hard to derive a formula for a bijective function between two
+    intervals.
+    <me>
+      f(x) = c + \frac{(x - a)(d - c)}{(b - a)}
+    </me>
+  </p>
+
+  <p>
+    There are other geometric constructions which we can use to show that
+    there are the same number of points in a variety of entities. For example,
+    consider the upper half of the unit circle (Remember the unit circle from
+    Trig? All points <m>(x, y)</m> satisfying <m>x^2 + y^2 = 1</m>.) This is a
+    semi-circle having a radius of 1, so the arclength of said semi-circle
+    is <m>\pi</m>. It isn't hard to imagine
+    that this semi-circular arc contains the same number of points as an interval
+    of length <m>\pi</m>, and we've already argued that all intervals contain the same
+    number of points<ellipsis /> But, a nice example of geometric projection <mdash />
+    vertical projection (a.k.a. <m>\pi_1</m>) <mdash /> can be used to show that
+    (for example) the interval
+    <m>(-1, 1)</m> and the portion of the unit circle lying in the upper
+    half-plane are equinumerous.
+  </p>
+
+  <figure xml:id="fig_interval_n_semicircle" >
+    <caption>Vertical projection 
+    provides a bijective correspondence between an interval and a semi-circle.</caption>
+    <image source=""/>
+  </figure>
+
+  <p>
+    Once the bijection is understood geometrically it is fairly simple to provide
+    formulas. To go from the semi-circle to the interval, we just forget
+    about the y-coordinate:
+    <me>
+      f(x, y) = x.
+    </me>
+  </p>
+
+  <p>
+    To go in the other direction we need to recompute the missing y-value:
+    <me>
+      f^{-1}(x) = (x, \sqrt{1 - x^2}).
+    </me>
+  </p>
+
+  <p>
+    Now we're ready to put some of these ideas together in order to prove
+    something really quite remarkable. It may be okay to say that line segments
+    of different lengths are equinumerous <mdash /> although ones intuition still balks
+    at the idea that a line a mile long only has the same number of points on
+    it as a line an inch long (or, if you prefer, make that a centimeter versus
+    a kilometer). Would you believe that the entire line <mdash /> that is the infinitely
+    extended line <mdash /> has no more points on it than a tiny little segment? You
+    should be ready to prove this one yourself.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Find a point such that projection from that point determines a
+        one-to-one correspondence between the portion of the unit circle in the upper
+        half plane and the line <m>y = 1</m>.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    In the exercises from <xref ref="sec_equiv_sets">Section</xref> you were supposed
+    to show that set
+    equivalence is an equivalence relation. Part of that proof should have been
+    showing that the relation is transitive, and that really just comes down to
+    showing that the composition of two bijections is itself a bijection. If you
+    didn't make it through that exercise give it another try now, but whether
+    or not you can finish that proof it should be evident what that transitivity
+    means to us in the current situation. Any pair of line segments are the same
+    size <mdash /> a line segment (i.e. an interval) and a semi-circle are the same size <mdash /> the semi-circle and an infinite line are the same size <mdash /> transitivity tells us that
+    an infinitely extended line has the same number of points as (for example)
+    the interval <m>(0, 1)</m>.
+  </p>
+  <exercises>
+    <exercise>
+      <statement>
+        <p>
+          Prove that positive numbers of the form <m>3k +1</m> are equinumerous with
+          positive numbers of the form <m>4k + 2</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove that <m>\displaystyle f(x) =  c + \frac{(x-a)(d-c)}{(b-a)}</m>
+          provides a bijection from the interval <m>[a, b]</m> to the interval <m>[c, d]</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove that any two circles are equinumerous (as sets of points).
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Determine a formula for the bijection from <m>(-1, 1)</m> to the line <m>y = 1</m>
+          determined by vertical projection onto the upper half of the unit circle,
+          followed by projection from the point <m>(0, 0)</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          It is possible to generalize the argument that shows a line segment is
+          equivalent to a line to higher dimensions. In two dimensions we would
+          show that the unit disk (the interior of the unit circle) is equinumerous
+          with the entire plane <m>\Reals \times \Reals</m>. In three dimensions we would show that
+          the unit ball (the interior of the unit sphere) is equinumerous with the
+          entire space <m>\Reals^3 = \Reals \times \Reals \times \Reals</m>. Here we
+          would like you to prove the two-dimensional case.
+        </p>
+
+        <p>
+          Gnomonic projection is a style of map rendering in which a portion of a
+          sphere is projected onto a plane that is tangent to the sphere. The
+          sphere's center is used as the point to project from. Combine
+          vertical projection from the unit disk
+          in the x<ndash />y plane to the upper half of the unit sphere <m>x^2 + y^2 + z^2 = 1</m>,
+          with gnomonic projection from the unit sphere to the plane z = 1, to
+          deduce a bijection between the unit disk and the (infinite) plane.
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
+</section>

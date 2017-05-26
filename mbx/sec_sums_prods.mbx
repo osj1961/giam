@@ -1,0 +1,853 @@
+
+<section xml:id="sec_sums_prods">
+  <title>Formulas for sums and products</title>
+  <p>
+    Gauss, when only a child, found a formula for
+    summing the first 100 natural numbers (or so the story goes<ellipsis />).
+    This formula, and his clever method for justifying it, can be easily
+    generalized to the sum of the first <m>n</m> naturals.
+    While learning calculus, notably during the study of Riemann sums,
+    one encounters other summation formulas. For example, in approximating the
+    integral of the function <m>f(x)=x^2</m> from <m>0</m> to <m>100</m> one needs the sum of
+    the first 100 <em>squares</em>. For this reason, somewhere in almost
+    every calculus book one will find the following formulas collected:
+    <md>
+      <mrow>\sum_{j=1}^n j = \frac{n(n+1)}{2}</mrow>
+      <mrow>\sum_{j=1}^n j^2 = \frac{n(n+1)(2n+1)}{6}</mrow>
+      <mrow>\sum_{j=1}^n j^3 = \frac{n^2(n+1)^2}{4}.</mrow>
+    </md>
+  </p>
+
+  <p>
+    A really industrious author might also include the sum of the
+    fourth powers. Jacob Bernoulli (a truly industrious individual)
+    got excited enough to find formulas for the sums of the first
+    ten powers of the naturals. Actually, Bernoulli went much further. His work
+    on sums of powers lead to the definition of what are now known as Bernoulli
+    numbers and let him calculate <m>\sum_{j=1}^{1000}j^{10}</m> in
+    about seven minutes <mdash /> long before the advent of calculators! In<nbsp /><xref ref="struik" />, Bernoulli is
+    quoted:
+  </p>
+
+  <blockquote>
+  With the help of this table it took me less than half of a quarter of an hour
+  to find that the tenth powers of the first 1000 numbers being added together 
+  will yield the sum
+  <me>
+    91,409,924,241,424,243,424,241,924,242,500.
+  </me>
+  </blockquote>
+
+  <p>
+    To the beginning calculus student, the beauty of the above relationships may
+    be somewhat dimmed by the memorization challenge that they represent. It
+    is fortunate then, that the right-hand side of the third formula is just
+    the square of the right-hand side of the first formula. And of course,
+    the right-hand side of the first formula is something that can be deduced
+    by a six year old child (provided that he is a super-genius!) This happy
+    coincidence leaves us to apply most of our rote memorization energy to
+    formula number two, because the first and third formulas are related by
+    the following rather bizarre-looking equation,
+    <me>
+      \sum_{j=1}^n j^3 = \left( \sum_{j=1}^n j \right)^2.
+    </me>
+  </p>
+
+  <p>
+    The sum of the cubes of the first <m>n</m> numbers is the square of their sum.
+  </p>
+
+  <p>
+    For completeness we should include the following formula which
+    should be thought of as the sum of the zeroth powers of the first <m>n</m>
+    naturals.
+    <me>
+      \sum_{j=1}^n 1 = n
+    </me>
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Use the above formulas to approximate the integral
+        <me>
+          \int_{x=0}^{10} x^3 - 2x +3 \mbox{d} x
+        </me>
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    Our challenge today is not to merely memorize these formulas but
+    to prove their validity. We'll use PMI.
+  </p>
+
+  <p>
+    Before we start in on a proof, it's important to figure out where
+    we're trying to go. In proving the formula that Gauss discovered
+    by induction we need to show that the <m>k+1</m><ndash />th version of the
+    formula holds, assuming that the <m>k</m><ndash />th version does. Before
+    proceeding on to read the proof do the following
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Write down the <m>k+1</m><ndash />th version of the formula for the sum of
+        the first <m>n</m> naturals. (You have to replace every <m>n</m> with
+        a <m>k+1</m>.)
+      </p>
+    </statement>
+  </exercise>
+
+  <theorem>
+    <statement>
+      <me>
+        \forall n \in \Naturals, \; \sum_{j=1}^n j = \frac{n(n+1)}{2}
+      </me>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      We proceed by induction on <m>n</m>.
+    </p>
+
+    <p>
+      <em>Basis: </em> Notice that when <m>n=0</m> the sum on the left-hand side
+      has no terms in it! This is known as an <index><main>empty sum</main></index> empty sum, and by
+      definition, an empty sum's value is <m>0</m>. Also, when
+      <m>n=0</m> the formula on the right-hand side becomes <m>(0 \cdot 1)/2</m> and this is
+      <m>0</m> as well.<fn>If you'd prefer to avoid the <q>empty sum</q> argument, 
+      you can choose to use <m>n=1</m> as the basis case.  The theorem should 
+      be restated so the universe of discourse is <em>positive</em> naturals.</fn>
+    </p>
+
+    <p>
+      <em>Inductive step: </em> Consider the sum on the left-hand side of
+      the <m>k+1</m><ndash />th version of our formula.
+      <me>
+        \sum_{j=1}^{k+1} j
+      </me>
+    </p>
+
+    <p>
+      We can separate out the last term of this sum.
+      <me>
+        = (k+1) + \sum_{j=1}^{k} j
+      </me>
+    </p>
+
+    <p>
+      Next, we can use the inductive hypothesis to replace the sum (the part
+      that goes from 1 to <m>k</m>) with a formula.
+      <me>
+        = (k+1) + \frac{k(k+1)}{2}
+      </me>
+    </p>
+
+    <p>
+      From here on out it's just algebra <ellipsis />
+      <me>
+        = \frac{2(k+1)}{2} + \frac{k(k+1)}{2}
+      </me>
+      <me>
+        = \frac{2(k+1) + k(k+1)}{2}
+      </me>
+      <me>
+        = \frac{(k+1) \cdot (k+2)}{2}.
+      </me>
+    </p>
+  </proof>
+
+  <p>
+    Notice how the inductive step in this proof works. We start by writing
+    down the left-hand side of <m>P_{k+1}</m>, we pull out the last term
+    so we've got the left-hand side of <m>P_{k}</m> (plus something else), then
+    we apply the inductive hypothesis and do some algebra until we arrive
+    at the right-hand side of <m>P_{k+1}</m>. Overall, we've just transformed the
+    left-hand side of the statement we wish to prove into its right-hand side.
+  </p>
+
+  <p>
+    There is another way to organize the inductive steps in proofs like these
+    that works by manipulating entire equalities (rather than just one side
+    or the other of them).
+  </p>
+
+  <blockquote>
+  <em>Inductive step (alternate): </em>  By the inductive 
+  hypothesis, we can write
+  <me>
+    \sum_{j=1}^{k} j = \frac{k(k+1)}{2}.
+  </me>
+  Adding <m>(k+1)</m> to both side of this yields
+  <me>
+    \sum_{j=1}^{k+1} j = (k+1) + \frac{k(k+1)}{2}.
+  </me>
+  Next, we can simplify the right-hand side of this to obtain
+  <me>
+    \sum_{j=1}^{k+1} j = \frac{(k+1)(k+2)}{2}.
+  </me>
+  Q.E.D.
+  </blockquote>
+
+  <p>
+    Oftentimes one can save considerable effort in an inductive
+    proof by creatively using the factored form during intermediate steps.
+    On the other hand, sometimes it is easier to just simplify everything
+    completely, and also, completely simplify the expression on the
+    right-hand side of <m>P(k+1)</m> and then verify that the two things are
+    equal. This is basically just another take on the technique of
+    <q>working backwards from the conclusion.</q> Just remember that
+    in writing-up your proof you need to make it look as if you reasoned
+    directly from the premises to the conclusion. We'll illustrate
+    what we've been discussing in this paragraph while proving
+    the formula for the sum of the squares of the first <m>n</m> positive integers.
+  </p>
+
+  <theorem>
+    <statement>
+      <me>
+        \forall n \in \Zplus, \; \sum_{j=1}^n j^2 = \frac{n(n+1)(2n+1)}{6}
+      </me>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      We proceed by induction on <m>n</m>.
+    </p>
+
+    <p>
+      <em>Basis: </em> When <m>n = 1</m> the sum has only one term, <m>1^2 = 1</m>.
+      On the other hand, the formula is
+      <m>\displaystyle \frac{1(1+1)(2\cdot 1+1)}{6} = 1</m>. Since these are equal, the
+      basis is proved.
+    </p>
+
+    <p>
+      <em>Inductive step: </em>
+    </p>
+    <tabular>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell>\begin{minipage}{4 in} 
+        Before proceeding with the inductive step, in this box, we will
+        figure out what the right-hand side of our theorem looks like 
+        when <m>n</m> is replaced with <m>k+1</m>:
+        <md>
+          <mrow>\frac{(k+1)((k+1)+1)(2(k+1)+1)}{6}</mrow>
+          <mrow>= \frac{(k+1)(k+2)(2k+3)}{6}</mrow>
+          <mrow>= \frac{(k^2+3k+2)(2k+3)}{6}</mrow>
+          <mrow>= \frac{2k^3+9k^2+13k+6}{6}.</mrow>
+        </md></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+    </tabular>
+    <p>
+      By the inductive hypothesis,
+      <me>
+        \sum_{j=1}^k j^2 = \frac{k(k+1)(2k+1)}{6}.
+      </me>
+    </p>
+
+    <p>
+      Adding <m>(k+1)^2</m> to both sides of this equation gives
+      <me>
+        (k+1)^2 + \sum_{j=1}^k j^2 = \frac{k(k+1)(2k+1)}{6} + (k+1)^2.
+      </me>
+    </p>
+
+    <p>
+      Thus,
+      <me>
+        \sum_{j=1}^{k+1} j^2 = \frac{k(k+1)(2k+1)}{6} + \frac{6(k+1)^2}{6}.
+      </me>
+    </p>
+
+    <p>
+      Therefore,
+      <md>
+        <mrow>\sum_{j=1}^{k+1} j^2 = \frac{(k^2+k)(2k+1)}{6} + \frac{6(k^2+2k+1)}{6}</mrow>
+        <mrow>= \frac{(2k^3+3k^2+k)+(6k^2+12k+6)}{6}</mrow>
+        <mrow>= \frac{2k^3+9k^2+13k+6}{6}</mrow>
+        <mrow>= \frac{(k^2+3k+2)(2k+3)}{6}</mrow>
+        <mrow>= \frac{(k+1)(k+2)(2k+3)}{6}</mrow>
+        <mrow>= \frac{(k+1)((k+1)+1)(2(k+1)+1)}{6}.</mrow>
+      </md>
+    </p>
+
+    <p>
+      This proves the inductive step, so the result is true.
+    </p>
+  </proof>
+
+  <p>
+    Notice how the last four lines of the proof are the same as those in
+    the box above containing our scratch work? (Except in the reverse order.)
+  </p>
+
+  <p>
+    We'll end this section by demonstrating one more use of this technique.
+    This time we'll look at a formula for a product rather than a sum.
+  </p>
+
+  <theorem>
+    <statement>
+      <me>
+        \forall n \geq 2 \in \Integers, \prod_{j=2}^n \left( 1 - \frac{1}{j^2} \right) \;  = \; \frac{n+1}{2n}.
+      </me>
+    </statement>
+  </theorem>
+
+  <p>
+    Before preceding with the proof let's look at an example (although this
+    has nothing to do with proving anything, it's really not a bad idea <mdash /> it can
+    keep you from wasting a lot of time trying to prove something that isn't
+    actually true!) When <m>n = 4</m> the product is
+    <me>
+      \left(1-\frac{1}{2^2}\right) \cdot \left(1-\frac{1}{3^2}\right) \cdot \left(1-\frac{1}{4^2}\right).
+    </me>
+  </p>
+
+  <p>
+    This simplifies to
+    <me>
+      \left( 1-\frac{1}{4} \right) \cdot \left( 1-\frac{1}{9} \right) \cdot 
+      \left( 1-\frac{1}{16} \right)  =  \left( \frac{3}{4} \right) \cdot \left( \frac{8}{9} \right) \cdot \left( \frac{15}{16} \right)  =  \frac{360}{576}.
+    </me>
+  </p>
+
+  <p>
+    The formula on the right-hand side is
+    <me>
+      \frac{4+1}{2 \cdot 4}  = \frac{5}{8}.
+    </me>
+  </p>
+
+  <p>
+    Well! These two expressions are <em>clearly</em> not equal to one another<ellipsis />
+    What? You say they are? Just give me a second with my calculator<ellipsis />
+  </p>
+
+  <p>
+    Alright then. I guess we can't dodge doing the proof<ellipsis />
+  </p>
+
+  <proof>
+    <p>
+      (Using mathematical induction on <m>n</m>.)
+    </p>
+
+    <p>
+      <em>Basis: </em> When <m>n = 2</m> the product has only one term, <m>1-1/2^2 = 3/4</m>.
+      On the other hand, the formula is
+      <m>\displaystyle \frac{2+1}{2\cdot2} = 3/4</m>. Since these are equal, the
+      basis is proved.
+    </p>
+
+    <p>
+      <em>Inductive step: </em>
+    </p>
+
+    <p>
+      Let <m>k</m> be a particular but arbitrarily chosen integer such that
+      <me>
+        \prod_{j=2}^k \left( 1 - \frac{1}{j^2} \right) \;  = \; \frac{k+1}{2k}.
+      </me>
+    </p>
+
+    <p>
+      Multiplying<fn>Really, the only reason I'm doing this silly proof is to 
+      point out to you that when you're doing the inductive step in a proof of a 
+      formula for a <em>product</em>, you don't add to both sides anymore, you <em>multiply.</em> You see that, right?  Well, consider yourself to have been pointed out to or <ellipsis /> oh, whatever.</fn> both sides by the <m>k+1</m>-th term of the product
+      gives
+      <me>
+        \left( 1 - \frac{1}{(k+1)^2} \right) \; \cdot \; \prod_{j=2}^k \left( 1 - \frac{1}{j^2} \right)   =  \frac{k+1}{2k} \; \cdot \; \left( 1 - \frac{1}{(k+1)^2} \right).
+      </me>
+    </p>
+
+    <p>
+      Thus
+      <me>
+        \prod_{j=2}^{k+1} \left( 1 - \frac{1}{j^2} \right)   =  \frac{k+1}{2k} \; \cdot \; \left( 1 - \frac{1}{(k+1)^2} \right)
+      </me>
+      <me>
+        = \frac{k+1}{2k} - \frac{(k+1)}{2k(k+1)^2}
+      </me>
+      <me>
+        = \frac{k+1}{2k} - \frac{(1)}{2k(k+1)}
+      </me>
+      <me>
+        = \frac{(k+1)^2 - 1}{2k(k+1)}
+      </me>
+    </p>
+    <me>
+      = \frac{k^2+2k}{2k(k+1)}
+    </me>
+    <me>
+      = \frac{k (k+2)}{2k(k+1)}
+    </me>
+    <me>
+      = \frac{k+2}{2(k+1)}.
+    </me>
+  </proof>
+
+  <exercises>
+    <exercise>
+      <p>
+        Write an inductive proof of the formula for the sum
+        of the first <m>n</m> cubes.
+      </p>
+      <hint>
+        <theorem>
+          <statement>
+          <me>
+            \forall n \in \Naturals, \; \sum_{k=1}^n k^3 \;= \; \left( \frac{n(n+1)}{2} \right)^2
+          </me>
+          </statement>
+        </theorem>
+
+        <proof>
+        <p>
+          (By mathematical induction)
+        </p>
+
+        <p>
+          <em>Base case:</em> (<m>n=1</m>)
+          For the base case, note that when <m>n=1</m> we have
+          <me>
+            \sum_{k=1}^n k^3 \; = \; 1
+          </me>
+          and
+          <me>
+            \left( \frac{n(n+1)}{2} \right)^2  \; = \; 1.
+          </me>
+        </p>
+
+        <p>
+          <em>Inductive step:</em>
+        </p>
+
+        <p>
+          Suppose that <m>m>1</m> is an integer such that
+          <me>
+            \sum_{k=1}^m k^3 \; = \; \left( \frac{m(m+1)}{2} \right)^2
+          </me>
+        </p>
+
+        <p>
+          Add <m>(m+1)^3</m> to both sides to obtain
+          <me>
+            (m+1)^3 + \sum_{k=1}^m k^3 \;= \; \left( \frac{m(m+1)}{2} \right)^2 + (m+1)^3.
+          </me>
+        </p>
+
+        <p>
+          Thus
+          <md>
+            <mrow>\sum_{k=1}^{m+1} k^3 \;= \; \left( \frac{m^2(m+1)^2}{4} \right) + \frac{4(m+1)^3}{4}</mrow>
+            <mrow>\;= \; \left( \frac{m^2(m+1)^2 + 4 (m+1)^3}{4} \right)</mrow>
+            <mrow>\; = \; \left( \frac{(m+1)^2 (m^2 + 4(m+1))}{4} \right)</mrow>
+            <mrow>\; = \; \left( \frac{(m+1)^2 (m^2 + 4m +4)}{4} \right)</mrow>
+            <mrow>\; = \; \left( \frac{(m+1)^2 (m+2)^2}{4} \right)</mrow>
+            <mrow>\; = \; \left( \frac{(m+1)(m+2)}{2} \right)^2</mrow>
+          </md>
+        </p>
+        </proof>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Find a formula for the sum of the first <m>n</m> fourth powers.
+        </p>
+      </statement>
+      <hint>
+        <me>
+          \frac{n\cdot(n+1)\cdot(2n+1)\cdot(3n^2+3n-1)}{30}
+        </me>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The sum of the first <m>n</m> natural numbers is sometimes called
+          the <m>n</m>-th triangular number <index><main>triangular numbers</main></index><m>T_n</m>. Triangular numbers are so-named
+          because one can represent them with triangular shaped arrangements
+          of dots.
+        </p>
+        <image source="images/e8c8d9ecedfa603d897cbadb172a11d26bf23e87.png"/>
+        <p>
+          \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+          \reset@font\fontsize{#1}{#2pt}
+          \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+          \selectfont}\fi
+        </p>
+        <image source="images/95f7e29601e7b89449ac168dc327647ae33e7678.png"/>
+        <p>
+          The first several triangular numbers are 1, 3, 6, 10, 15, et cetera.
+        </p>
+
+        <p>
+          Determine a formula for the sum of the first <m>n</m> triangular numbers <m>\displaystyle \left( \sum_{i=1}^n T_i \right)</m> and prove it using PMI.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          The formula is <m>\frac{n(n+1)(n+2)}{6}</m>.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <p>
+        Consider the alternating sum of squares:
+        <md>
+          <mrow>1</mrow>
+          <mrow>1 - 4 = -3</mrow>
+          <mrow>1 - 4 + 9 = 6</mrow>
+          <mrow>1 - 4 + 9 - 16 = -10</mrow>
+          <mrow>\mbox{et cetera}</mrow>
+        </md>
+      </p>
+
+      <p>
+        Guess a general formula for <m>\sum_{i=1}^n (-1)^{i-1} i^2</m>, and prove it using PMI.
+      </p>
+      <hint>
+        <theorem>
+          <statement>
+          <me>
+            \forall n \in \Naturals, \; \sum_{i=1}^n (-1)^{i-1} i^2 \;= \; (-1)^{n-1} \frac{n(n+1)}{2}
+          </me>
+          </statement>
+        </theorem>
+
+        <proof>
+        <p>
+          (By mathematical induction)
+        </p>
+
+        <p>
+          <em>Base case:</em> (<m>n=1</m>)
+          For the base case, note that when <m>n=1</m> we have
+          <me>
+            \sum_{i=1}^n (-1)^{i-1} i^2 \;= \; 1
+          </me>
+          and also
+          <me>
+            (-1)^{n-1} \frac{n(n+1)}{2} \;= \; 1.
+          </me>
+        </p>
+
+        <p>
+          <em>Inductive step:</em>
+        </p>
+
+        <p>
+          Suppose that <m>k>1</m> is an integer such that
+          <me>
+            \sum_{i=1}^k (-1)^{i-1} i^2 \;= \; (-1)^{k-1} \frac{k(k+1)}{2}.
+          </me>
+        </p>
+
+        <p>
+          Adding <m>(-1)^{k} (k+1)^2</m> to both sides gives
+          <md>
+            <mrow>\sum_{i=1}^{k+1} (-1)^{i-1} i^2 \;= \; (-1)^{k-1} \frac{k(k+1)}{2} + (-1)^{k} (k+1)^2</mrow>
+            <mrow>\;= \; (-1)^{k-1} \frac{k(k+1)}{2} - (-1)^{k-1} (k+1)^2</mrow>
+            <mrow>\;= \; (-1)^{k-1} \left( \frac{k(k+1)}{2} -  \frac{2(k+1)^2}{2} \right)</mrow>
+            <mrow>\;= \; (-1)^{k} \left( \frac{2(k+1)^2}{2} - \frac{k(k+1)}{2} \right)</mrow>
+            <mrow>\;= \; (-1)^{k} \frac{(k+1)(2(k+1)-k)}{2}</mrow>
+            <mrow>\;= \; (-1)^{k} \frac{(k+1)(k+2)}{2}</mrow>
+          </md>
+        </p>
+        </proof>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove the following formula for a product.
+          <me>
+            \prod_{i=2}^n \left(1 - \frac{1}{i}\right) =  \frac{1}{n}
+          </me>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Notice that the problem statement didn't specify the domain <mdash /> but the smallest value of <m>n</m> that gives
+          a non-empty product on the left-hand side is <m>n=2</m>.
+        </p>
+
+        <proof>
+        <p>
+          (By mathematical induction)
+        </p>
+
+        <p>
+          <em>Base case:</em> (<m>n=2</m>)
+          For the base case, note that when <m>n=2</m> we have
+          <me>
+            \prod_{i=2}^2 \left(1 - \frac{1}{i}\right)  =   \left(1 - \frac{1}{2}\right)  =  1/2
+          </me>
+          and, when <m>n=2</m>, the right-hand side (<m>1/n</m>) also evaluates to <m>1/2</m>.
+        </p>
+
+        <p>
+          <em>Inductive step:</em>
+        </p>
+
+        <p>
+          Suppose that <m>k\geq2</m> is an integer such that
+          <me>
+            \prod_{i=2}^k \left(1 - \frac{1}{i}\right) =  \frac{1}{k}.
+          </me>
+        </p>
+
+        <p>
+          Then,
+          <md>
+            <mrow>\prod_{i=2}^{k+1} \left(1 - \frac{1}{i}\right)</mrow>
+            <mrow>= \left(1 - \frac{1}{k+1}\right) \; \cdot \; \prod_{i=2}^{k} \left(1 - \frac{1}{i}\right)</mrow>
+            <mrow>= \left(1 - \frac{1}{k+1}\right) \; \cdot \; \frac{1}{k}</mrow>
+            <mrow>= \frac{1}{k+1}.</mrow>
+          </md>
+        </p>
+        </proof>
+
+        <p>
+          The final line skips over a tiny bit of algebraic detail. You may feel more comfortable if you fill in those steps.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove <m>\displaystyle \sum_{j=0}^{n}(4j+1) \; = \; 2n^{2}+3n+1</m> for all
+          integers <m>n \geq 0</m>.
+        </p>
+      </statement>
+      <hint>
+        <proof>
+        <p>
+          (By mathematical induction)
+        </p>
+
+        <p>
+          <em>Base case:</em> (<m>n=0</m>)
+          For the base case, note that when <m>n=0</m> we have
+          <me>
+            \sum_{j=0}^{n}(4j+1) \; = \; (4\cdot 0 + 1 \; = \; 1
+          </me>
+          also, when <m>n=0</m>,
+          <me>
+            2n^2+3n+1 \; = \; 2\cdot 0^2 +3\cdot 0 + 1 \; = \; 1.
+          </me>
+        </p>
+
+        <p>
+          <em>Inductive step:</em>
+        </p>
+
+        <p>
+          Suppose that <m>k \geq 0</m> is an integer such that
+          <me>
+            \sum_{j=0}^{k}(4j+1) \; = \; 2k^{2}+3k+1.
+          </me>
+        </p>
+
+        <p>
+          (We want to show that <m>\displaystyle \sum_{j=0}^{k+1}(4j+1) \; = \; 2(k+1)^{2}+3(k+1)+1</m>.)
+        </p>
+
+        <p>
+          So consider the sum <m>\displaystyle \sum_{j=0}^{k+1}(4j+1)</m>:
+          <md>
+            <mrow>\sum_{j=0}^{k+1}(4j+1)</mrow>
+            <mrow>= \; 4(k+1)+1 \; + \; \sum_{j=0}^{k}(4j+1)</mrow>
+            <mrow>= \;  4(k+1)+1 \; + \; 2k^{2}+3k+1</mrow>
+            <mrow>= \;</mrow>
+            <mrow>= \;</mrow>
+            <mrow>= \;</mrow>
+          </md>
+        </p>
+        </proof>
+
+        <p>
+          Notice that the last line given in the proof is where the inductive hypothesis gets used. The actual last line of the proof is fairly easy to determine (hint: it is given in the "We want to show" sentence.) So now you just have to fill in the gaps<ellipsis />
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove <m>\displaystyle \sum_{i=1}^{n}\frac{1}{(2i-1)(2i+1)} \; = \; \frac{n}{2n+1}</m> for all natural numbers <m>n</m>.
+        </p>
+      </statement>
+      <hint>
+        <proof>
+        <p>
+          (By mathematical induction)
+        </p>
+
+        <p>
+          <em>Base case:</em> (<m>n=0</m>)
+          For the base case, note that when <m>n=0</m>
+          <me>
+            \sum_{j=0}^{n} \frac{1}{(2i-1)(2i+1)}
+          </me>
+          contains no terms. Thus its value is 0.
+        </p>
+
+        <p>
+          And, <m>\displaystyle \frac{n}{2n+1}</m> also evaluates to 0 when <m>n=0</m>.
+        </p>
+
+        <p>
+          <em>Inductive step:</em>
+        </p>
+
+        <p>
+          By the inductive hypothesis we may write
+          <me>
+            \sum_{i=1}^{k} \frac{1}{(2i-1)(2i+1)} \; = \; \frac{k}{2k+1}.
+          </me>
+        </p>
+
+        <p>
+          Adding <m>\displaystyle  \frac{1}{(2(k+1)-1)(2(k+1)+1)}</m> to both side of this gives
+          <me>
+            \sum_{i=1}^{k+1} \frac{1}{(2i-1)(2i+1)} \; = \; \frac{k}{2k+1} \; + \; \frac{1}{(2(k+1)-1)(2(k+1)+1)}.
+          </me>
+        </p>
+
+        <p>
+          To complete the proof we must verify that
+          <me>
+            \frac{k}{2k+1} \; + \; \frac{1}{(2(k+1)-1)(2(k+1)+1)} = \frac{k+1}{2(k+1)+1}.
+          </me>
+        </p>
+
+        <p>
+          Note that
+          <md>
+            <mrow>\frac{k}{2k+1} \; + \; \frac{1}{(2(k+1)-1)(2(k+1)+1)}</mrow>
+            <mrow>= \frac{k}{2k+1} \; + \; \frac{1}{(2k+1)(2k+3)}</mrow>
+            <mrow>= \frac{k(2k+3)}{(2k+1)(2k+3)} \; + \; \frac{1}{(2k+1)(2k+3)}</mrow>
+            <mrow>= \frac{k(2k+3)+1}{(2k+1)(2k+3)}</mrow>
+            <mrow>= \frac{2k^2+3k+1}{(2k+1)(2k+3)}</mrow>
+            <mrow>= \frac{(2k+1)(k+1)}{(2k+1)(2k+3)}</mrow>
+            <mrow>= \frac{k+1}{2k+3} \; = \; \frac{k+1}{2(k+1)+1}</mrow>
+          </md>
+          as desired.
+        </p>
+        </proof>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The <index><main>Fibonacci numbers</main></index> <em>Fibonacci numbers</em> are a sequence of integers defined by
+          the rule that a number in the sequence is the sum of the two that
+          precede it.
+          <me>
+            F_{n+2} = F_n + F_{n+1}
+          </me>
+        </p>
+
+        <p>
+          The first two Fibonacci numbers (actually the zeroth and the first)
+          are both 1.
+        </p>
+
+        <p>
+          Thus, the first several Fibonacci numbers are
+          <me>
+            F_0 = 1, F_1=1, F_2=2, F_3=3, F_4=5, F_5=8, F_6=13, F_7=21, \; \mbox{et cetera}
+          </me>
+        </p>
+
+        <p>
+          Use mathematical induction to prove the following formula involving
+          Fibonacci numbers.
+          <me>
+            \sum_{i=0}^n (F_i)^2 \, = \, F_n \cdot F_{n+1}
+          </me>
+        </p>
+      </statement>
+      <hint>
+        <proof>
+        <p>
+          (by induction)
+        </p>
+
+        <p>
+          <em>Base case:</em> (<m>n=0</m>)
+        </p>
+
+        <p>
+          For the base case, note that when <m>n=0</m>
+          <me>
+            \sum_{i=0}^{n} (F_i)^2 \; = \; 1.
+          </me>
+        </p>
+
+        <p>
+          And, <m>\displaystyle F_n \cdot F_{n+1} \; = \; F_0 \cdot F_1 \; = \; 1 \cdot 1 \; = \; 1</m>.
+        </p>
+
+        <p>
+          <em>Inductive step:</em>
+        </p>
+
+        <p>
+          By the inductive hypothesis we may write
+          <me>
+            \sum_{i=0}^k (F_i)^2 \; = \; F_k \cdot F_{k+1}.
+          </me>
+        </p>
+
+        <p>
+          Adding <m>(F_{k+1})^2</m> to both sides gives
+          <me>
+            \sum_{i=0}^{k+1} (F_i)^2 \; = \; F_k \cdot F_{k+1} + (F_{k+1})^2.
+          </me>
+        </p>
+
+        <p>
+          Finally, note that (using factoring and the defining property of the Fibonacci numbers)
+          we can show that
+          <md>
+            <mrow>F_k \cdot F_{k+1} + (F_{k+1})^2</mrow>
+            <mrow>= \; F_{k+1} \cdot (F_k + F_{k+1})</mrow>
+            <mrow>= \; F_{k+1} \cdot F_{k+2}</mrow>
+          </md>
+        </p>
+
+        <p>
+          So the inductive step has been proved and the result follows by PMI.
+        </p>
+        </proof>
+      </hint>
+    </exercise>
+  </exercises>
+</section>

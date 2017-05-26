@@ -1,0 +1,485 @@
+
+<section xml:id="sec_ord_rel">
+  <title>Ordering relations</title>
+  <p>
+    The prototype for ordering relations is <m>\leq</m>. Although a case
+    could be made for using <m>\lt</m> as the prototypical ordering relation.
+    These two relations differ in one important sense: <m>\leq</m> is reflexive
+    and <m>\lt</m> is irreflexive. Various authors, having made different
+    choices as to which of these is the more prototypical, have
+    defined ordering relations in slightly different ways. The
+    majority view seems to be that an ordering relation is
+    reflexive (which means that
+    ordering relations are modeled after <m>\leq</m>).
+    We would really like to take the contrary position <mdash /> we always
+    root for the underdog <mdash /> but one of our favorite ordering
+    relation (divisibility) is reflexive and it would be eliminated
+    if we made the other choice<fn>If you insist on making the other 
+    choice, you will have a <q>strict ordering relation</q> a.k.a. an <q>irreflexive 
+    ordering relation</q></fn>. So<ellipsis />
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        A relation <m>\relR</m> on a set <m>S</m> is an
+        <index><main>ordering relation</main></index><term>ordering relation</term>
+        iff <m>\relR</m> is reflexive, anti-symmetric and transitive.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Now, we've used <m>\leq</m> to decide what properties an ordering relation
+    should have, but we should point out that most ordering relations
+    don't do nearly as good a job as <m>\leq</m> does. The <m>\leq</m> relation
+    imposes what is known as a <index><main>total order</main></index><em>total order</em>
+    on the sets that it acts on (you should note that it can't be used
+    to compare complex numbers, but it can be placed between reals or
+    any of the sets of numbers that are contained in <m>\Reals</m>.) Most
+    ordering relations only create what is known as a <index><main>partial order</main></index>
+    <em>partial order</em> on the sets they act on. In a total ordering
+    (a.k.a. a linear ordering) every pair of elements can be compared
+    and we can use the ordering relation to decide which order they go
+    in. In a partial ordering there may be elements that are incomparable.
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        If <m>x</m> and <m>y</m> are elements of a set <m>S</m> and <m>\relR</m> is an ordering
+        relation on <m>S</m> then we say <m>x</m> and <m>y</m> are <term>comparable</term> if
+        <m>x\relR y \; \lor \; y\relR x</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <definition>
+    <statement>
+      <p>
+        If <m>x</m> and <m>y</m> are elements of a set <m>S</m> and <m>\relR</m> is an ordering
+        relation on <m>S</m> then we say <m>x</m> and <m>y</m> are <term>incomparable</term> if
+        neither <m>x\relR y</m> nor <m>y\relR x</m> is true.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Consider the set <m>S = \{1, 2, 3, 4, 6, 12 \}</m>. If we look at the
+    relation <m>\leq</m> on this set we get the following digraph.
+  </p>
+  <image source="images/e0da09656e4c7db5eeade23fed1105fbd4bdd5f6.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/4cf8b7c14772caf38538259faf8f90786807a110.png"/>
+  <p>
+    On the other hand, perhaps you noticed these numbers are the
+    divisors of <m>12</m>. The divisibility relation will give us our
+    first example of a partial order.
+  </p>
+  <image source="images/e49c46bf37d7f410ae45676d890c42b9f8414372.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/9d375470533a2a1d348a9ab7a02e4f5ae7878bd6.png"/>
+  <exercise>
+    <statement>
+      <p>
+        Which elements in the above partial order are incomparable?
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    A set together with an ordering relation creates a mathematical
+    structure known as a <index><main>partially ordered set</main></index><em>partially
+    ordered set</em>. Since that is a bit of a mouthful, the abbreviated
+    form <index><main>poset</main></index><em>poset</em> is actually heard more commonly.
+    If one wishes to refer to a poset it is necessary to identify
+    both the set and the ordering relation. Thus, if <m>S</m> is a set
+    and <m>\relR</m> is an ordering relation, we write <m>(S, \relR)</m> to
+    denote the corresponding poset.
+  </p>
+
+  <p>
+    The digraphs given above for two posets having the same underlying
+    set provide an existence proof <mdash /> the same set may have different
+    orders imposed upon it. They also highlight another issue <mdash /> these
+    digraphs for ordering relations get pretty crowded! <index><main>Hasse diagrams</main></index>
+    Hasse diagrams
+    for posets (named after the famous German mathematician
+    <index><main>Hasse, Helmut</main></index>Helmut Hasse) are a way of displaying all the
+    information in a poset's digraph, but much more succinctly. There
+    are features of a Hasse diagram that correspond to each of the
+    properties that an ordering relation must have.
+  </p>
+
+  <p>
+    Since ordering relations are always reflexive, there will always
+    be loops at every vertex in the digraph. In a Hasse diagram we
+    leave out the loops.
+  </p>
+
+  <p>
+    Since ordering relations are anti-symmetric, every edge in the digraph
+    will go in one direction or the other. In a Hasse diagram we arrange
+    the vertices so that that direction is <em>upward</em> <mdash /> that way we
+    can leave out all the arrowheads without losing any information.
+  </p>
+
+  <p>
+    The final simplification that we make in creating a Hasse diagram for
+    a poset has to do with the transitivity property <mdash /> we leave out any
+    connections that could be deduced because of transitivity.
+  </p>
+
+  <p>
+    Hasse diagrams for the two orderings that we've been discussing are
+    shown in <xref ref="fig_hasse_diag">Figure</xref>
+  </p>
+
+  <figure xml:id="fig_hasse_diag" >
+    <caption>Hasse diagrams of the set <m>\{1,2,3,4,6,12\}</m> 
+    totally ordered by <m>\leq</m> and partially ordered by <m>\mid</m>.</caption>
+    <image source=""/>
+  </figure>
+
+  <p>
+    Often there is some feature of the elements of the set being ordered
+    that allows us to arrange a Hasse diagram in <q>ranks.</q> For example,
+    consider <m>{\mathcal P}(\{1,2,3\})</m>, the set of all subsets of a three
+    element set <mdash /> this set can be partially ordered using the <m>\subseteq</m>
+    relation. (Technically, we should verify that this relation is reflexive,
+    anti-symmetric and transitive before proceeding, but by now you know
+    why subset containment is denoted using a rounded version of <m>\leq</m>.)
+    Subsets of the same size can't possibly be included one in the other
+    unless they happen to be equal! This allows us to draw the Hasse
+    diagram for this set with the nodes arranged in four rows.
+    (See <xref ref="fig_subset_hasse">Figure</xref>.)
+  </p>
+
+  <figure xml:id="fig_subset_hasse" >
+    <caption>Hasse 
+    diagram for the power set of <m>\{1,2,3\}</m> partially ordered by 
+    set containment.</caption>
+    <image source=""/>
+  </figure>
+
+  <exercise>
+    <statement>
+      <p>
+        Try drawing a Hasse diagram for the partially ordered set
+        <me>
+          ({\mathcal P}(\{1,2,3,4\}),\subseteq).
+        </me>
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    Posets like <m>({\mathcal P}(\{1,2,3\}), \subseteq)</m> that can be laid out
+    in ranks are known as <index><main>graded poset</main></index> <em>graded posets</em>. Things
+    in a graded poset that have the same rank are always incomparable.
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        A <term>graded poset</term> is a triple <m>(S, \relR, \rho)</m>, where <m>S</m> is a set,
+        <m>\relR</m> is an ordering relation, and <m>\rho</m> is a function from <m>S</m> to <m>\Integers</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    In the example we've been considering (the graded poset of subsets of a set
+    partially ordered by set inclusion), the grading function <m>\rho</m> takes a
+    subset to its size. That is, <m>\rho(A) = |A|</m>. Another nice example of
+    a graded poset is the set of divisors of some number partially ordered
+    by the divisibility relation (<m>\mid</m>). In this case the grading function
+    takes a number to its total degree <mdash /> the sum of all the exponents
+    appearing in its prime factorization. In <xref ref="fig_divisors_of_72">Figure</xref>
+    we show the poset of divisors of <m>72</m> and indicate the grading.
+  </p>
+
+  <figure xml:id="fig_divisors_of_72" >
+    <caption>Hasse 
+    diagram for the divisors of <m>72</m>, partially ordered by 
+    divisibility. This is a graded poset.</caption>
+    <image source=""/>
+  </figure>
+
+  <p>
+    We will end this section by giving a small collection of terminology
+    relevant to partially ordered sets.
+  </p>
+
+  <p>
+    A <index><main>chain</main></index><em>chain</em> in a poset is a subset of the elements, all
+    of which are comparable. If you restrict your attention to a chain within
+    a poset, you will be looking at a total order.
+    An <index><main>antichain</main></index><em>antichain</em> in a poset is a subset
+    of the elements, none of which are comparable. Thus, for example, a subset
+    of elements having the same rank (in a graded poset) is an antichain.
+    Chains and antichains are said to be <em>maximal</em> if it
+    is not possible to add further elements to them (whilst maintaining the
+    properties that make them chains and/or antichains). An element <m>x</m>, that
+    appears above another element <m>y</m> <mdash /> and connected to it <mdash /> in a Hasse
+    diagram is said to <index><main>cover, in a poset</main></index><em>cover</em> it. In this situation
+    you may also say that <m>x</m> is an <index><main>successor</main></index><em>immediate successor</em> of
+    <m>y</m>. A <index><main>maximal element, in a poset</main></index><em>maximal element</em> is an element that is not covered by any other element. Similarly, a
+    <index><main>minimal element, in a poset</main></index><em>minimal element</em> is an element that is not a cover of any other element. If a chain is maximal, it follows that it
+    must contain both a maximal and a minimal element (with respect to the
+    surrounding poset). The collection of all maximal elements forms an antichain,
+    as does (separately) the collection of all minimal elements. Finally,
+    we have the notions of <index><main>greatest element, in a poset</main></index>
+    <em>greatest element</em> (a.k.a. <index><main>top, in a poset</main></index>top) and
+    <index><main>least element, in a poset</main></index><em>least element</em> (a.k.a.
+    <index><main>bottom, in a poset</main></index>bottom) <mdash /> the greatest element is greater than every
+    other element in the poset, the least element is smaller than every other element. Please be careful to distinguish these
+    concepts from maximal and minimal elements <mdash /> a greatest element is
+    automatically maximal, and a least element is always minimal, but it
+    is possible to have a poset with no greatest element that nevertheless
+    has one or more maximal elements, and it is possible to have a poset with no
+    least element that has one or more minimal elements.
+  </p>
+
+  <p>
+    In the poset of divisors of <m>72</m>, the subset <m>\{2, 6, 12, 24\}</m> is a chain.
+    Since it would be possible to add both <m>1</m> and <m>72</m> to this chain and still
+    have a chain, this chain is not maximal. (But, of course,
+    <m>\{1, 2, 6, 12, 24, 72\}</m> is.) On the other hand,
+    <m>\{8, 12, 18\}</m> is an antichain (indeed, this is a maximal antichain).
+    This poset has both a top and a bottom <mdash /> <m>1</m> is the least element
+    and <m>72</m> is the greatest element. Notice that the elements which cover
+    <m>1</m> (the least element) are the prime divisors of <m>72</m>.
+  </p>
+  <exercises>
+    <exercise>
+      <statement>
+        <p>
+          In population ecology there is a partial order <q>predates</q>
+          which basically means that one organism feeds upon another. Strictly
+          speaking this relation is not transitive; however, if we take the point
+          of view that when a wolf eats a sheep, it is also eating some of the grass
+          that the sheep has fed upon, we see that in a certain sense it is transitive.
+          A chain in this partial order is called a <q>food chain</q> and so-called
+          apex predators are said to <q>sit atop the food chain</q>. Thus <q>apex
+          predator</q> is a term for a maximal element in this poset. When poisons
+          such as mercury and PCBs are introduced into an ecosystem, they tend to
+          collect disproportionately in the apex predators <mdash /> which is why pregnant
+          women and young children should not eat shark or tuna but sardines
+          are fine.
+        </p>
+
+        <p>
+          Below is a small example of an ecology partially ordered by <q>predates</q>
+        </p>
+        <image source="images/a6f8b1cb2af3af5ae392d573e16b6a8486a171fc.png"/>
+        <p>
+          \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+          \reset@font\fontsize{#1}{#2pt}
+          \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+          \selectfont}\fi
+        </p>
+        <image source="images/ecc5ab82c9752eb3932fbfbfda6017bbe761e740.png"/>
+        <p>
+          Find the largest antichain in this poset.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+    <statement>
+      <p>
+        Referring to the poset given in exercise 1, match the following.
+      </p>
+      <tabular>
+        <row>
+          <cell></cell>
+          <cell>\begin{minipage}[b]{.4\textwidth}
+          <ol>
+            \end{exercise}
+            <exercise>
+              <title>1.</title>
+              <p>
+                An (non-maximal) antichain
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <title>2.</title>
+            <statement>
+              <p>
+                A maximal antichain
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <title>3.</title>
+            <statement>
+              <p>
+                A maximal element
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <title>4.</title>
+            <statement>
+              <p>
+                A (non-maximal) chain
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <title>5.</title>
+            <statement>
+              <p>
+                A maximal chain
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <title>6.</title>
+            <statement>
+              <p>
+                A cover for <q>Worms</q>
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <title>7.</title>
+            <statement>
+              <p>
+                A least element
+              </p>
+            </statement>
+          </exercise>
+          \begin{exercise}[8.] A minimal element
+        </ol></cell>
+        <cell>\begin{minipage}[b]{.4\textwidth}
+        <ol>
+          \end{exercise}
+          <exercise>
+            <title>a.</title>
+            <statement>
+              <p>
+                Grass
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <title>b.</title>
+            <statement>
+              <p>
+                Goose
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <title>c.</title>
+            <statement>
+              <p>
+                Fox
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <title>d.</title>
+            <statement>
+              <p>
+                <m>\{ \mbox{Grass} , \mbox{Duck}  \}</m>
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <title>e.</title>
+            <statement>
+              <p>
+                There isn't one!
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <title>f.</title>
+            <statement>
+              <p>
+                <m>\{ \mbox{Fox} , \mbox{Alligator} , \mbox{Cow}  \}</m>
+              </p>
+            </statement>
+          </exercise>
+          <exercise>
+            <title>g.</title>
+            <statement>
+              <p>
+                <m>\{ \mbox{Cow} , \mbox{Duck} ,  \mbox{Goose}  \}</m>
+              </p>
+            </statement>
+          </exercise>
+          \begin{exercise}[h.] <m>\{ \mbox{Worms} , \mbox{Robin} , \mbox{Fox}  \}</m>
+        </ol></cell>
+      </row>
+    </tabular>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The graph of the edges of a cube is one in an infinite sequence of
+          graphs. These graphs are defined
+          recursively by <q>Make two copies of the previous graph then join
+          corresponding nodes in the two copies with edges.</q> The <m>0</m>-dimensional
+          `cube' is just a single point. The <m>1</m>-dimensional cube is a single edge
+          with a node at either end. The <m>2</m>-dimensional cube is actually a square
+          and the <m>3</m>-dimensional cube is what we usually mean when we say <q>cube.</q>
+        </p>
+        <image source="images/cab1fb3f3cb68ad636ef43f4be20796bb18bc683.png"/>
+        <p>
+          \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+          \reset@font\fontsize{#1}{#2pt}
+          \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+          \selectfont}\fi
+        </p>
+        <image source="images/ff2bd5d6c306891423f59cb1ccb3180470acfdc6.png"/>
+        <p>
+          Make a careful drawing of a <index><main>hypercube</main></index><em>hypercube</em> <mdash /> which is
+          the name of the graph that follows the ordinary cube in this sequence.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Label the nodes of a hypercube with the divisors of <m>210</m> in order to
+          produce a Hasse diagram of the poset determined by the divisibility relation.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Label the nodes of a hypercube with the subsets of <m>\{a,b,c,d\}</m>
+          in order to produce a Hasse diagram of the poset determined by the
+          subset containment relation.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Complete a Hasse diagram for the poset of divisors of 11025 (partially ordered by divisibility).
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Find a collection of sets so that, when they are partially ordered by <m>\subseteq</m>, we obtain the same Hasse diagram as in the previous problem.
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
+</section>

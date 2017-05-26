@@ -1,0 +1,383 @@
+
+<section xml:id="sec_rel_props">
+  <title>Properties of relations</title>
+  <p>
+    There are two special classes of relations that we will study
+    in the next two sections, equivalence relations and ordering relations.
+    The prototype for an equivalence relation is the ordinary notion
+    of numerical equality, <m>=</m>. The prototypical ordering relation
+    is <m>\leq</m>. Each of these has certain salient properties that are the
+    root causes of their importance. In this section we will study a
+    compendium of properties that a relation may or may not have.
+  </p>
+
+  <p>
+    A relation that has three of the properties we'll discuss:
+    <ol>
+      <li>
+        <p>
+          <index><main>reflexivity</main></index> reflexivity
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <index><main>symmetry</main></index>symmetry
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <index><main>transitivity</main></index>transitivity
+        </p>
+      </li>
+    </ol>
+  </p>
+
+  <p>
+    is said to be an equivalence relation; it will in some ways resemble
+    <m>=</m>.
+  </p>
+
+  <p>
+    A relation that has another set of three properties:
+    <ol>
+      <li>
+        <p>
+          <index><main>reflexivity</main></index>reflexivity
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <index><main>anti-symmetry</main></index>anti-symmetry
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <index><main>transitivity</main></index>transitivity
+        </p>
+      </li>
+    </ol>
+  </p>
+
+  <p>
+    is called an ordering relation; it will resemble <m>\leq</m>.
+  </p>
+
+  <p>
+    Additionally, there is a property known as irreflexivity that many
+    relations have.
+  </p>
+
+  <p>
+    There are a total of 5 properties that we have named, and we will discuss
+    them all more thoroughly. But first, we'll state the formal definitions.
+    Take note that these properties are all stated for a relation that goes
+    from a set to itself, indeed, most of them wouldn't even make sense if
+    we tried to define them for a relation from a set to a different set.
+  </p>
+
+  <table xml:id="tab_rel_props" >
+    <caption>Properties that relations may (or may not) have.</caption>
+    <tabular>
+      <row bottom="minor">
+        <cell></cell>
+      </row>
+      <row>
+        <cell>\begin{minipage}{.95\textwidth} A relation <m>\relR</m> on a set <m>S</m> is <em>reflexive</em> iff<m>\displaystyle \forall a \in S,  a \relR a</m><q>Everything is related to itself.</q></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+      </row>
+      <row>
+        <cell>\begin{minipage}{.95\textwidth} A relation <m>\relR</m> on a set <m>S</m> is <em>irreflexive</em> iff<m>\displaystyle \forall a \in S,  a \nrelR a</m> <q>Nothing is related to itself.</q></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+      </row>
+      <row>
+        <cell>\begin{minipage}{.95\textwidth} A relation <m>\relR</m> on a set <m>S</m> is <em>symmetric</em> iff<m>\displaystyle \forall a,b \in S,  a \relR b \; \implies \; b \relR a</m> <q>No one-way streets.</q></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+      </row>
+      <row>
+        <cell>\begin{minipage}{.95\textwidth} A relation <m>\relR</m> on a set <m>S</m> is <em>anti-symmetric</em> iff<m>\displaystyle \forall a,b \in S,  a \relR b \; \land b \relR a  \implies  a=b</m><q>Only one-way streets.</q></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+      </row>
+      <row>
+        <cell>\begin{minipage}{.95\textwidth} A relation <m>\relR</m> on a set <m>S</m> is <em>transitive</em> iff<m>\displaystyle \forall a,b,c \in S,  a \relR b \; \land \; b \relR c  \implies  a \relR c</m> <q>Whenever there's a roundabout route, there's a direct route.</q></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+      </row>
+    </tabular>
+    <index><main>Properties of relations</main></index>
+  </table>
+
+  <p>
+    The digraph of a relation that is reflexive will have little loops at every vertex.
+    The digraph of a relation that is irreflexive will contain no loops at all.
+    Hopefully it is clear that these concepts represent extreme opposite possibilities <mdash /> they are <em>not</em> however negations of one another.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Find the logical denial of the property that says a relation is reflexive
+        <me>
+          {\lnot}(\forall a \in S,  a \relR a).
+        </me>
+      </p>
+
+      <p>
+        How does this differ from the defining property for <q>irreflexive</q>?
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    If a relation <m>\relR</m> is defined on some subset <m>S</m> of the reals, then it can be graphed
+    in the Euclidean plane. Reflexivity for <m>\relR</m> can be interpreted in terms of the line
+    <m>L</m> defined by the equation <m>y=x</m>. Every point in <m>(S \times S) \cap L</m>
+    must be in <m>\relR</m>. A similar statement can be made concerning the irreflexive property.
+    If a relation <m>\relR</m> is irreflexive its graph completely avoids the line <m>y=x</m>.
+  </p>
+
+  <p>
+    Note that the reflexive and irreflexive properties are defined with a single quantified
+    variable. Symmetry and anti-symmetry require two universally quantified variables for
+    their definitions.
+  </p>
+
+  <blockquote>
+  A relation <m>\relR</m> on a set <m>S</m> is <em>symmetric</em> iff
+  <me>
+    \forall a,b \in S,  a \relR b \; \implies \; b \relR a.
+  </me>
+  </blockquote>
+
+  <p>
+    This can be interpreted in terms of digraphs as follows: If a connection
+    from <m>a</m> to <m>b</m> exists in the digraph of <m>\relR</m>, then there must also be a connection
+    from <m>b</m> to <m>a</m>. In <xref ref="tab_rel_props">Table</xref> this is interpreted as <q>no one-way streets</q>
+    and while that's not quite what it says, that <em>is</em> the effect of this definition.
+    Since <em>if</em> a connection exists in one direction, there must also be a connection
+    in the other direction, it follows that we will never see a one-way connection.
+  </p>
+
+  <p>
+    Because most of the properties we are studying are defined using conditional statements
+    it is often the case that a relation has a property for vacuous reasons. When the <q>if</q> part
+    doesn't happen, there's no need for its corresponding <q>then</q> part to happen either <mdash /> the
+    conditional is still true. In the context of our discussion on the symmetry property of
+    a relation this means that the following digraph <em>is</em> the digraph of a symmetric
+    relation (although it is neither reflexive nor irreflexive).
+  </p>
+  <image source="images/6fe00a598149fe09d35b3aa7efeb23736a49259e.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/af095404b11ebde97b0de84e62dee6faf7f5d322.png"/>
+  <p>
+    Anti-symmetry is described as meaning <q>only one-way streets</q> but the definition is given
+    as:
+  </p>
+
+  <blockquote>
+  A relation <m>\relR</m> on a set <m>S</m> is <em>anti-symmetric</em> iff 
+  <m>\displaystyle \forall a,b \in S,  a \relR b \; \land b \relR a  \implies  a=b</m>.
+  </blockquote>
+
+  <p>
+    It may be hard at first to understand why the definition we use for anti-symmetry is the one above.
+    If one wanted to insure that there were never two-way connections between elements of the set it
+    might seem easier to define anti-symmetry as follows:
+  </p>
+
+  <blockquote>
+  (Alternate definition) A relation <m>\relR</m> on a set <m>S</m> is <em>anti-symmetric</em> iff 
+  <m>\displaystyle \forall a,b \in S,  a \relR b \; \implies \; b \nrelR a</m>.
+  </blockquote>
+
+  <p>
+    This definition may seem more straight-forward, but it turns out the original definition is
+    easier to use in proofs. We need to convince ourselves that the (first) definition really
+    accomplishes what we want. Namely, if a relation <m>\relR</m> satisfies the property that
+    <m>\displaystyle \forall a,b \in S,  a \relR b \; \land \; b \relR a  \implies  a=b</m>,
+    then there will not actually be any pair of elements that are related in both orders. One
+    way to think about it is this: suppose that <m>a</m> and <m>b</m> are distinct elements of <m>S</m> and
+    that both <m>a \relR b</m> and <m>b \relR a</m> are true. The property now guarantees that <m>a=b</m>
+    which contradicts the notion that <m>a</m> and <m>b</m> are distinct. This is a miniature proof
+    by contradiction; if you assume there <em>are</em> a pair of distinct elements that are
+    related in both orders you get a contradiction, so there <em>aren't</em>!
+  </p>
+
+  <p>
+    A funny thing about the anti-symmetry property is this: When it is true of a relation it
+    is <em>always</em> vacuously true! The property is engineered in such a way that when it is
+    true, it forces that the statement in its antecedent never really happens.
+  </p>
+
+  <p>
+    Transitivity is an extremely useful property as witnessed by the fact that both equivalence
+    relations and ordering relations must have this property. When speaking of the transitive
+    property of equality we say <q>Two things that are equal to a third, are equal to each other.</q>
+    When dealing with ordering we may encounter statements like the following.
+    <q>Since `Aardvark' precedes `Bulwark'
+    in the dictionary, and since `Bulwark' precedes `Catastrophe', it is plainly true that `Aardvark'
+    comes before `Catastrophe' in the dictionary.</q>
+  </p>
+
+  <p>
+    Again, the definition of transitivity involves a conditional. Also, transitivity may be viewed
+    as the most complicated of the properties we've been studying; it takes three universally
+    quantified variables to state the property.
+  </p>
+
+  <blockquote>
+  A relation <m>\relR</m> on a set <m>S</m> is <em>transitive</em> iff 
+  <m>\displaystyle \forall a,b,c \in S,  a \relR b \; \land \; b \relR c  \implies  a \relR c</m>
+  </blockquote>
+
+  <p>
+    We paraphrased transitivity as <q>Whenever there's a roundabout route, there's a direct route.</q>
+    In particular, what the definition says is that <em>if</em> there's a connection from <m>a</m> to <m>b</m> and from
+    <m>b</m> to <m>c</m> (the roundabout route from <m>a</m> to <m>c</m>) then there must be a connection from <m>a</m> to <m>c</m> (the direct
+    route).
+  </p>
+
+  <p>
+    You'll really need to watch out for relations that are transitive for vacuous reasons. So long as one
+    never has three elements <m>a</m>, <m>b</m> and <m>c</m> with <m>a \relR b</m> and <m>b \relR c</m> the statement that defines
+    transitivity is automatically true.
+  </p>
+
+  <p>
+    A very useful way of thinking about these various properties that relations may have is in terms of
+    what <em>doesn't</em> happen when a relation has them. Before we proceed, it is important that
+    you do the following
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Find logical negations for the formal properties defining each of the five
+        properties.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    If a relation <m>\relR</m> is reflexive we will never see a node that doesn't have a loop.
+  </p>
+  <image source="images/96638a5184a52adccae56c363c7e5184a46df0eb.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/af095404b11ebde97b0de84e62dee6faf7f5d322.png"/>
+  <p>
+    If a relation <m>\relR</m> is irreflexive we will never see a node that <em>does</em> have a loop!
+  </p>
+  <image source="images/e4757399a574ae944573708eb55e004b9d6a0fc4.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/70b2fa2a97ffdab75f4f77e6e448a108d9b4f088.png"/>
+  <p>
+    If a relation <m>\relR</m> is symmetric we will never see a pair of nodes that are connected in one
+    direction only.
+  </p>
+  <image source="images/86be35e54c1dec77717cd0013a89b7cc5908400a.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/ee89b18c703631850043f3e8d67898f56ba7ee2b.png"/>
+  <p>
+    If a relation <m>\relR</m> is anti-symmetric we will never see a pair of nodes that are connected in both
+    directions.
+  </p>
+  <image source="images/6f1dab30dcf5a97f03b9be5fd899782b1f556164.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/0b2f670964b3ff618917e0fc7ff85df9d2d6b1d0.png"/>
+  <p>
+    If a relation <m>\relR</m> is transitive the thing we will never see is a bit harder to describe.
+    There will never be a pair of arrows meeting head to tail <em>without</em> there also being an
+    arrow going from the tail of the first to the head of the second.
+  </p>
+  <image source="images/2f31001fc5cf799c930aa0cf45b38edf6f14bcdc.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/a96df1ef163ebbc111155410857f6261b63fafc3.png"/>
+  <exercises>
+    <exercise>
+      <statement>
+        <p>
+          Consider the relation <m>\relS</m> defined by
+          <m>\relS = \{ (x,y) \suchthat \; x \, \mbox{is smarter than}  \, y \}</m>.
+          Is <m>\relS</m> symmetric or anti-symmetric? Explain.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Consider the relation <m>\relA</m> defined by
+          <m>\relA = \{ (x,y) \suchthat \; x \, \mbox{has the same astrological sign as}  \, y \}</m>.
+          Is <m>\relA</m> symmetric or anti-symmetric? Explain.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Explain why both of the relations just described (in problems 1 and 2)
+          have the transitive property.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          For each of the five properties, name a relation that has it
+          and a relation that doesn't.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Show by counterexample that <q><m>\divides</m></q> (divisibility) is not symmetric as a relation on <m>\Integers</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove that <q><m>\divides</m></q> is an ordering relation (you must verify that it is reflexive, anti-symmetric and transitive).
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
+</section>

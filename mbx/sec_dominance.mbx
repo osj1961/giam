@@ -1,0 +1,299 @@
+
+<section xml:id="sec_dominance">
+  <title>Dominance</title>
+  <p>
+    We've said a lot about the equivalence relation
+    determined by Cantor's definition
+    of set equivalence. We've also, occasionally, written things like
+    <m>|A| \lt  |B|</m>, without being particularly clear about what that means.
+    It's now time to come clean. There is actually a (perhaps) more fundamental
+    notion used for comparing set sizes than equivalence <mdash /> dominance.
+    Dominance is an ordering relation on the class of all sets.
+    One should probably really define dominance first and then
+    define set equivalence in terms of it. We haven't followed that plan
+    for (at least) two reasons. First, many people may want to skip this
+    section <mdash /> the results of this section depend on the difficult
+    Cantor-Bernstein-Schr&#xf6;der theorem<fn>This theorem has been 
+    known for many years as the Schr&#xf6;der-Bernstein theorem, but, 
+    lately, has had Cantor's name added as well. Since Cantor proved 
+    the result before the other gentlemen this is fitting. It is also 
+    known as the Cantor-Bernstein theorem (leaving out Schr&#xf6;der) 
+    which doesn't seem very nice.</fn>. Second, we will later take the view that dominance
+    should really be considered to be an ordering relation on the set of
+    all cardinal numbers <mdash /> i.e. the equivalence classes of the set equivalence
+    relation <mdash /> not on the collection of all sets. From that perspective,
+    set equivalence really needs to be defined <em>before</em> dominance.
+  </p>
+
+  <p>
+    One set is said to dominate another if there is a function from the latter
+    <em>into</em> the former.
+    More formally, we have the following
+  </p>
+
+  <definition>
+    <statement>
+      <p>
+        If <m>A</m> and <m>B</m> are sets, we say <q><m>A</m> dominates <m>B</m></q>
+        and write <m>|A| > |B|</m> iff there is an injective function <m>f</m> with
+        domain <m>B</m> and codomain <m>A</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    It is easy to see that this relation is reflexive and transitive. The Cantor-
+    Bernstein-Schr&#xf6;der theorem proves that it is also anti-symmetric <mdash /> which
+    means dominance is an ordering relation. Be advised that there is an abuse
+    of terminology here that one must be careful about <mdash /> what are the domain
+    and range of the <q>dominance</q> relation? The definition would lead us to
+    think that sets are the things that go on either side of the <q>dominance</q>
+    relation, but the notation is a bit more honest, <q><m>|A| > |B|</m></q>
+    indicates that the
+    things really being compared are the cardinal numbers of sets (not the sets
+    themselves). Thus anti-symmetry for this relation is
+    <me>
+      (|A| > |B|) \land (|B| > |A|) \implies (|A| = |B|).
+    </me>
+  </p>
+
+  <p>
+    In other words, if <m>A</m> dominates <m>B</m> and vice versa, then <m>A</m> and <m>B</m> are
+    equivalent sets <mdash /> a strict interpretation of anti-symmetry for this relation
+    might lead to the conclusion that <m>A</m> and <m>B</m> are actually the same set, which
+    is clearly an absurdity.
+  </p>
+
+  <p>
+    Naturally, we want to prove the Cantor-Bernstein-Schr&#xf6;der theorem (which
+    we're going to start calling the C-B-S theorem for brevity), but first it'll be
+    instructive to look at some of its consequences. Once we have the C-B-S
+    theorem we get a very useful shortcut for proving set equivalences. Given
+    sets <m>A</m> and <m>B</m>, if we can find injective functions going between them in both
+    directions, we'll know that they're equivalent. So, for example, we can use
+    C-B-S to prove that the set of all infinite binary strings and the set of reals
+    in (0, 1) really are equinumerous.
+    (In case you had some remaining doubt<ellipsis /> )
+  </p>
+
+  <p>
+    It is easy to dream up an injective function from <m>(0, 1)</m>
+    to <m>{\mathbb F}_2^\infty</m> : just send a
+    real number to its binary expansion, and if there are two, make a consistent
+    choice <mdash /> let's say we'll take the non-terminating expansion.
+  </p>
+
+  <p>
+    There is a cute thought-experiment called Hilbert's Hotel that will lead
+    us to a technique for developing an injective function in the other direction.
+    Hilbert's Hotel has <m>\aleph_0</m> rooms. If any countable collection of
+    guests show up there will be enough rooms for everyone. Suppose you
+    arrive at Hilbert's hotel one dark and stormy evening and the
+    <q>No Vacancy</q> light is on <mdash /> there are already a
+    denumerable number of guests there <mdash /> every room is full. The clerk
+    sees you dejectedly considering your options, trying to think of
+    another hotel that might still have rooms when, clearly, a <em>very</em>
+    large convention is in town. He rushes out and says
+    <q>My friend, have no fear! Even though we have no vacancies,
+    there is always room for one more at our establishment.</q>
+    He goes into the office and makes the following announcement
+    on the PA system. <q>Ladies and Gentlemen, in order to accommodate
+    an incoming guest, please vacate your room and move to the room
+    numbered one higher. Thank you.</q> There
+    is an infinite amount of grumbling, but shortly you find yourself occupying
+    room number <m>1</m>.
+  </p>
+
+  <p>
+    To develop an injection from <m>{\mathbb F}_2^\infty</m> to <m>(0, 1)</m> we'll use <q>room number 1</q> to
+    separate the binary expansions that represent the same real number. Move
+    all the digits of a binary expansion down by one, and make the first digit
+    <m>0</m> for (say) the terminating expansions and <m>1</m> for the non-terminating ones.
+    Now consider these expansions as real numbers <mdash /> all the expansions that
+    previously coincided are now separated into the intervals <m>(0, 1/2)</m> and
+    <m>(1/2, 1)</m>. Notice how funny this map is, there are now
+    many, many, (infinitely-many)
+    real numbers with no preimages. For instance, only a subset of the rational
+    numbers in <m>(0, 1/2)</m> have preimages. Nevertheless, the map is injective, so
+    C-B-S tells us that <m>{\mathbb F}_2^\infty</m> and <m>(0, 1)</m> are equivalent.
+    There are quite a few different proofs of the C-B-S theorem. The one
+    Cantor himself wrote relies on the axiom of choice. The axiom of choice
+    was somewhat controversial when it was introduced, but these days most
+    mathematicians will use it without qualms. What it says (essentially) is that
+    it is possible to make an infinite number of choices. More precisely, it says
+    that if we have an infinite set consisting of non-empty sets, it is possible
+    to select an element out of each set. If there is a definable rule for picking
+    such an element (as is the case, for example, when we selected the
+    nonterminating decimal expansion whenever there was a choice in defining the
+    injection from <m>(0, 1)</m> to <m>{\mathbb F}_2^\infty</m>) the axiom of choice
+    isn't needed. The usual
+    axioms for set theory were developed by Zermelo and Frankel, so you may
+    hear people speak of the ZF axioms. If, in addition, we want to specifically
+    allow the axiom of choice, we are in the ZFC axiom system. If it's possible
+    to construct a proof for a given theorem without using the axiom of choice,
+    almost everyone would agree that that is preferable. On the other hand,
+    a proof of the C-B-S theorem, which necessarily must be able to deal with
+    uncountably infinite sets, will have to depend on some sort of notion that
+    will allow us to deal with huge infinities.
+  </p>
+
+  <p>
+    The proof we will present here<fn>We first encountered this proof 
+    in a Wikipedia article<nbsp /><xref ref="wiki-CBS" />.</fn> is attributed to Julius K&#xf6;nig.
+    K&#xf6;nig was a contemporary of Cantor's who was (initially) very
+    much respected by him. Cantor came to dislike K&#xf6;nig after the
+    latter presented a well-publicized (and ultimately wrong) lecture
+    claiming the continuum hypothesis was false.
+    Apparently the continuum hypothesis was one of Cantor's favorite ideas,
+    because he seems to have construed K&#xf6;nig's lecture as a personal attack.
+    Anyway<ellipsis />
+  </p>
+
+  <p>
+    K&#xf6;nig's proof of C-B-S doesn't use the axiom of choice, but it does have
+    its own strangeness: a function that is not necessarily computable <mdash /> that is,
+    a function for which (for certain inputs) it may not be possible to compute
+    an output in a finite amount of time! Except for this oddity,
+    K&#xf6;nig's proof
+    is probably the easiest to understand of all the proofs of C-B-S.
+    Before we get too far into the proof it is essential that we understand the
+    basic setup. The Cantor-Bernstein-Schr&#xf6;der theorem states that
+    whenever <m>A</m>
+    and <m>B</m> are sets and there are injective functions
+    <m>f : A \longrightarrow B</m> and <m>g : B \longrightarrow A</m>,
+    then it follows that <m>A</m> and <m>B</m> are equivalent. Saying <m>A</m> and <m>B</m>
+    are equivalent
+    means that we can find a bijective function between them. So, to prove
+    C-B-S, we hypothesize the two injections and somehow we must construct the
+    bijection.
+  </p>
+
+  <figure xml:id="fig_CBS_setup" >
+    <caption>Hypotheses for 
+    proving the Cantor-Bernstein-Schr&#xf6;der theorem: 
+    two sets with injective functions going both ways.</caption>
+    <image source=""/>
+  </figure>
+
+  <p>
+    <xref ref="fig_CBS_setup">Figure</xref> has a presumption in it <mdash />
+    that <m>A</m> and <m>B</m> are countable <mdash /> which
+    need not be the case. Nevertheless, it gives us a good picture to work from.
+    The basic hypotheses, that <m>A</m> and <m>B</m> are sets and we have two functions, one
+    from <m>A</m> into <m>B</m> and another from <m>B</m> into A, are shown.
+    We will have to build our bijective function in a piecewise manner.
+    If there is a non-empty intersection between <m>A</m> and <m>B</m>, we can use the
+    identity function for that part of the domain of our bijection.
+    So, without
+    loss of generality, we can presume that <m>A</m> and <m>B</m> are disjoint.
+    We can use
+    the functions <m>f</m> and <m>g</m> to create infinite sequences, which
+    alternate back and
+    forth between <m>A</m> and <m>B</m>, containing any particular element.
+    Suppose <m>a \in A</m> is an arbitrary element. Since <m>f</m> is defined
+    on all of <m>A</m>, we
+    can compute <m>f(a)</m>. Now since <m>f(a)</m> is an element of <m>B</m>, and <m>g</m> is
+    defined on all
+    of <m>B</m>, we can compute <m>g(f(a))</m>, and so on. Thus, we get the
+    infinite sequence
+    <me>
+      a,   f(a),  g(f(a)),  f(g(f(a))), \; \ldots
+    </me>
+  </p>
+
+  <p>
+    If the element <m>a</m> also happens to be the image of something under <m>g</m> (this
+    may or may not be so <mdash /> since <m>g</m> isn't necessarily onto) then we
+    can also extend
+    this sequence to the left. Indeed, it may be possible to
+    extend the sequence infinitely far to the left, or, this
+    process may stop when one of <m>f^{-1}</m> or <m>g^{-1}</m>
+    fails to be defined.
+    <me>
+      \ldots \; g^{-1}(f^{-1}(g^{-1}(a))),  f^{-1}(g^{-1}(a)),  g^{-1}(a),  a,   f(a),   g(f(a)),  f(g(f(a))),\; \ldots
+    </me>
+  </p>
+
+  <p>
+    Now, every element of the disjoint union of <m>A</m> and <m>B</m> is in one of these
+    sequences. Also, it is easy to see that these sequences are either disjoint
+    or identical. Taking these two facts together it follows that these sequences
+    form a partition of <m>A \cup B</m>. We'll define a bijection
+    <m>\phi : A \longrightarrow B</m> by deciding what it must do on these
+    sequences. There are four possibilities for how the sequences we've
+    just defined can play out. In extending them to the left, we may run
+    into a place where one of the inverse functions needed isn't
+    defined <mdash /> or not. We say a sequence is an
+    <m>A</m>-stopper, if, in extending to the left, we end
+    up on an element of <m>A</m> that has
+    no preimage under <m>g</m> (see <xref ref="fig_A-stopper">Figure</xref>). Similarly,
+    we can define a <m>B</m>-stopper.
+    If the inverse functions are always defined within a given sequence there are
+    also two possibilities; the sequence may be finite (and so it must be cyclic in
+    nature) or the sequence may be truly infinite.
+  </p>
+
+  <figure xml:id="fig_A-stopper" >
+    <caption>An <m>A</m>-stopper
+    is an infinite sequence that terminates to the left in A.</caption>
+    <image source=""/>
+  </figure>
+
+  <p>
+    Finally, here is a definition for <m>\phi</m>.
+    <me>
+      \phi(x) =  \left\{ \begin{array}{cl} g^{-1}(x) \amp  \mbox{if \(x\) is in a \(B\)-stopper}  \\ f(x) \amp  \mbox{otherwise} 
+      \end{array}  \right.
+    </me>
+  </p>
+
+  <p>
+    Notice that if a sequence is either cyclic or infinite it doesn't matter
+    whether we use <m>f</m> or <m>g^{-1}</m> since both will be
+    defined for all elements of such
+    sequences. Also, certainly <m>f</m> will work if we are in an <m>A</m>-stopper.
+    The function we've just created is perfectly well-defined, but it may take
+    arbitrarily long to determine whether we have an element of a <m>B</m>-stopper, as
+    opposed to an element of an infinite sequence. We cannot determine whether
+    we're in an infinite versus a finite sequence in a prescribed finite number of
+    steps.
+  </p>
+  <exercises>
+    <exercise>
+      <statement>
+        <p>
+          How could the clerk at the Hilbert Hotel accommodate a countable
+          number of new guests?
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>F</m> be the collection of all real-valued functions
+          defined on the real line. Find an injection from <m>\Reals</m> to <m>F</m>. Do you
+          think it is possible to find an injection going the other way? In
+          other words, do you think that <m>F</m> and <m>\Reals</m> are equivalent? Explain.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Fill in the details of the proof that dominance is an ordering relation.
+          (You may simply cite the C-B-S theorem in proving anti-symmetry.)
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          We can inject <m>\Rationals</m> into <m>\Integers</m> by sending
+          <m>\displaystyle \pm \frac{a}{b}</m> to <m>\displaystyle \pm 2^a3^b</m>.
+          Use this and another obvious injection to (in light of the C-B-S
+          theorem) reaffirm the equivalence of these sets.
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
+</section>

@@ -1,0 +1,13 @@
+
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ch_proof2">
+  <title>Proof techniques II <mdash /> Induction</title>
+  <introduction>
+    <p>
+      <em>Who was the guy who first looked at a cow and said, "I think I'll drink whatever comes out of these things when I squeeze 'em!"? <ndash />Bill Watterson</em>
+    </p>
+  </introduction>
+  <xi:include  href="sec_induct.mbx" />
+  <xi:include  href="sec_sums_prods.mbx" />
+  <xi:include  href="sec_other_pmi.mbx" />
+  <xi:include  href="sec_strong_induct.mbx" />
+</chapter>

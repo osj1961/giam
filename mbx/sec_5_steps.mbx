@@ -1,0 +1,348 @@
+
+<section xml:id="sec_5_steps">
+  <title>Five steps into the void</title>
+  <p>
+    In this section we'll talk about another Book proof also due to John
+    Conway. This proof serves as an introduction to a really powerful
+    general technique <mdash /> the idea of an invariant. An invariant is some
+    sort of quantity that one can calculate that itself doesn't change as
+    other things are changed. Of course different situations have different
+    invariant quantities.
+  </p>
+
+  <p>
+    The setup here is simple and relatively intuitive. We have a bunch
+    of checkers on a checkerboard <mdash /> in fact we have an infinite number
+    of checkers, but not filling up the whole board, they completely fill
+    an infinite half-plane which we could take to be the set
+    <me>
+      S = \{(x,y) \suchthat x \in \Integers \, \land \, y \in \Integers \, \land \, y \leq 0 \}.
+    </me>
+  </p>
+
+  <p>
+    See <xref ref="fig_the_army">Figure</xref>.
+  </p>
+
+  <figure xml:id="fig_the_army" >
+    <caption>An infinite number of
+    checkers occupying the integer lattice points such that <m>y\leq 0</m>.</caption>
+    <image source=""/>
+  </figure>
+
+  <p>
+    Think of these checkers as an army and the upper half-plane is <q>enemy
+    territory.</q> Our goal is to move one of our soldiers into enemy territory
+    as far as possible. The problem is that our <q>soldiers</q> move the
+    way checkers do, by jumping over another man (who is then removed from
+    the board). It's clear that we can get someone into enemy territory <mdash /> just take someone in the second row and jump a guy in the first row.
+    It is also easy enough to see that it is possible to get a man
+    two steps into enemy territory <mdash /> we could bring two adjacent men
+    a single step into enemy territory, have one of them jump the other
+    and then a man from the front rank can jump over him.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        The strategy just stated uses 4 men (in the sense that they are removed
+        from the board <mdash /> 5 if you count the one who ends up two steps into
+        enemy territory as well). Find a strategy for moving someone two
+        steps into enemy territory that is more efficient <mdash /> that is, involves
+        fewer jumps.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Determine the most efficient way to get a man three steps into
+        enemy territory. An actual checkers board and pieces (or some
+        coins, or rocks) might come in handy.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    We'll count the man who ends up some number of steps above the
+    <m>x</m>-axis, as well as all the pieces who get jumped and removed
+    from the board as a measure of the efficiency of a strategy.
+    If you did the last exercise correctly you should have found that
+    eight men are the minimum required to get 3 steps into enemy
+    territory. So far, the number of men required to get a given
+    distance into enemy territory seems to always be a power of
+    2.
+  </p>
+  <tabular>
+    <row>
+      <cell><hash /> of steps</cell>
+      <cell><hash /> of men</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>1</cell>
+      <cell>2</cell>
+    </row>
+    <row>
+      <cell>2</cell>
+      <cell>4</cell>
+    </row>
+    <row>
+      <cell>3</cell>
+      <cell>8</cell>
+    </row>
+  </tabular>
+  <p>
+    As a picture is sometimes literally worth one thousand words, we
+    include here 3 figures illustrating the moves necessary to put
+    a scout 1, 2 and 3 steps into the void.
+  </p>
+
+  <figure xml:id="fig_one_step" >
+    <caption>One man is sacrificed in 
+    order to move a scout one step into enemy territory.</caption>
+    <image source=""/>
+  </figure>
+
+  <figure xml:id="fig_two_steps" >
+    <caption>Three man are sacrificed in 
+    order to move a scout two steps into enemy territory.</caption>
+    <image source=""/>
+  </figure>
+
+  <p>
+    In order to show that 8 men are sufficient to get a scout 3 steps into
+    enemy territory, we show that it is possible to reproduce the configuration
+    that can place a man two steps in <mdash /> shifted up by one unit.
+  </p>
+
+  <figure xml:id="fig_three_steps" >
+    <caption>Eight men are needed to
+    get a scout 3 steps into the void.</caption>
+    <image source=""/>
+  </figure>
+
+  <p>
+    You may be surprised to learn that the pattern of 8 men which are needed to
+    get someone three steps into the void can be re-created <mdash /> shifted up by one
+    unit <mdash /> using just 12 men. This means that we can get a man 4 steps into
+    enemy territory using <m>12 + 8 = 20</m> men. You were expecting 16 weren't you?
+    (I know <em>I</em> was!)
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Determine how to get a marker 4 steps into the void.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    The <em>real</em> surprise is that it is simply impossible to get a man five
+    steps into enemy territory. So the sequence we've been looking at actually
+    goes
+    <me>
+      2, 4, 8, 20, \infty.
+    </me>
+  </p>
+
+  <p>
+    The proof of this surprising result works by using a fairly simple, but
+    clever, strategy. We assign a numerical value to a set of men that is
+    dependent on their positions <mdash /> then we show that this value never increases
+    when we make <q>checker jumping</q> moves <mdash /> finally we note that the
+    value assigned to a man in position <m>(0,5)</m> is equal to the value of the
+    entire original set of men (that is, with <em>all</em> the positions in the lower
+    half-plane occupied). This is a pretty nice strategy, but how exactly are
+    we going to assign these numerical values?
+  </p>
+
+  <p>
+    A man's value is related to his distance from the point <m>(0,5)</m> in what
+    is often called <q>the taxicab metric.</q> We don't use the straight-line
+    distance, but rather determine the number of blocks we will have to drive
+    in the north-south direction and in the east-west direction and add them
+    together. The value of a set of men is the sum of their individual values.
+    Since we need to deal with the value of the set of men that completely fills
+    the lower half-plane, we are going to have to have most of these values be
+    pretty tiny! To put it in a more mature and dignified manner: the infinite
+    sum of the values of the men in our army must be convergent.
+  </p>
+
+  <figure xml:id="fig_taxicab_distance" >
+    <caption>The taxicab distance to <m>(0,5)</m>.</caption>
+    <image source=""/>
+  </figure>
+
+  <p>
+    We've previously seen geometric series which have convergent sums. Recall
+    the formula for such a sum is
+    <me>
+      \sum_{k=0}^{\infty} ar^k   =  \frac{a}{1-r},
+    </me>
+    where <m>a</m> is the initial term of the sum and <m>r</m> is the common
+    ratio between terms.
+  </p>
+
+  <p>
+    Conway's big insight was to associate the powers of some number <m>r</m> with
+    the positions on the board <mdash /> <m>r^k</m> goes on the squares that are distance
+    <m>k</m> from the target location. If we have a man who is actually <em>at</em>
+    the target location, he will be worth <m>r^0</m> or <m>1</m>. We need to arrange for
+    two things to happen: the sum of all the powers of <m>r</m> in the initial setup
+    of the board must be less than or equal to 1, and checker-jumping moves should
+    result in the total value of a set of men going down or (at worst) staying
+    the same. These goals push us in different directions: In order for the initial sum to be less
+    than 1, we would like to choose <m>r</m> to be fairly small. In order to have checker-jumping moves we need to choose <m>r</m> to be (relatively) larger. Is there a value of <m>r</m> that does the trick? Can we find a balance between these competing
+    desires?
+  </p>
+
+  <p>
+    Think about the change in the value of our invariant as a checker jumping
+    move gets made. See <xref ref="fig_finding_r">Figure</xref>.
+  </p>
+
+  <figure xml:id="fig_finding_r" >
+    <caption>In making a checker-jump move, two men valued <m>r^{k+1}</m> and <m>r^{k+2}</m> are replaced by a single man valued <m>r^k</m>.</caption>
+    <image source=""/>
+  </figure>
+
+  <p>
+    If we choose <m>r</m> so that <m>r^{k+2} + r^{k+1} \; \leq \; r^k</m> then the
+    checker-jumping move will at worst leave the total sum fixed. Note that
+    so long as <m>r\lt 1</m> a checker-jumping move that takes us away from the target
+    position will certainly <em>decrease</em> the total sum.
+  </p>
+
+  <p>
+    As is often the case, we'll analyze the inequality by looking instead at the
+    corresponding equality. What value of <m>r</m> makes <m>r^{k+2} + r^{k+1}  =  r^k</m>?
+    The answer is that <m>r</m> must be a root of the quadratic equation <m>x^2+x-1</m>.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Do the algebra to verify the previous assertion.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        Find the value of <m>r</m> that solves the above equation.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    Hopefully you used the quadratic formula to solve the previous
+    exercise. You should of course have found two solutions, <m>-1.618033989\ldots</m>
+    and <m>.618033989\ldots</m>, these decimal approximations are actually <m>-\phi</m> and <m>1/\phi</m>, where <m>\displaystyle \phi = \frac{1+\sqrt{5}}{2}</m> is the famous <index><main>golden ratio</main></index> <q>golden ratio</q>. If we are hoping for the sum over all the occupied positions of <m>r^k</m> to be convergent, we need <m>|r|\lt 1</m>, so the negative
+    solution is extraneous and so the inequality <m>r^{k+2} + r^{k+1} \; \leq \; r^k</m>
+    is true in the interval <m>[1/\phi, 1)</m>.
+  </p>
+
+  <p>
+    Next we want to look at the value of this invariant when <q>men</q> occupy all of
+    the positions with <m>y\leq0</m>. By looking at <xref ref="fig_taxicab_distance">Figure</xref>
+    you can see that there is a single square with value <m>r^5</m>, there are 3 squares
+    with value <m>r^6</m>, there are 5 squares with value <m>r^7</m>, <em>et cetera</em>.
+    The sum, <m>S</m>, of the values of all the initially occupied positions is
+    <me>
+      S  =  r^5 \cdot \sum_{k=0}^{\infty} (2k+1) r^k.
+    </me>
+  </p>
+
+  <p>
+    We have previously seen how to solve for the value of an infinite sum involving
+    powers of <m>r</m>. In the expression above we have powers of <m>r</m> but also
+    multiplied by odd numbers. Can we solve something like this?
+  </p>
+
+  <p>
+    Let's try the same trick that works for a geometric sum. Let
+    <me>
+      T  =   \sum_{k=0}^{\infty} (2k+1) r^k  =   1 + 3r + 5r^2 + 7r^3 + \ldots.
+    </me>
+  </p>
+
+  <p>
+    Note that
+    <me>
+      rT  =   \sum_{k=0}^{\infty} (2k+1) r^{k+1}  =   r + 3r^2 + 5r^3 + 7r^4 + \ldots
+    </me>
+    and it follows that
+    <me>
+      T - rT  =   1 + 2 \sum_{k=1}^{\infty} r^{k}  =  1 + 2r + 2r^2 + 2r^3 + 2r^4 + \ldots
+    </me>
+  </p>
+
+  <p>
+    A bit more algebra (and the formula for the sum of a geometric series) leads us to
+    <me>
+      T = \frac{1}{1-r}\left( 1 + \frac{2r}{1-r} \right),
+    </me>
+    which simplifies to
+    <me>
+      T = \frac{1+r}{(1-r)^2}.
+    </me>
+  </p>
+
+  <p>
+    Finally, recall that we are really interested in <m>S = r^5 \cdot T</m>, or
+    <me>
+      S = \frac{r^5 + r^6}{(1-r)^2}.
+    </me>
+  </p>
+
+  <p>
+    It is interesting to proceed from this expression for <m>S</m>,
+    using the fact that <m>r</m> satisfies <m>x^2 = 1 - x</m>, to obtain the somewhat
+    amazing fact that <m>S=1</m>.
+  </p>
+
+  <p>
+    The fact that <m>S=1</m> has an extraordinary consequence.
+    In order to get a single
+    checker to the position <m>(0,5)</m> we would need to use <em>everybody</em>!
+  </p>
+
+  <p>
+    For a set consisting of just a single
+    checker positioned at <m>(0,5)</m> the value of our invariant is 1.
+    On the other hand, the set consisting of the entire army lined
+    up on and below the <m>x</m>-axis also yields a 1. Every checker move either
+    does not change the value of the invariant or reduces it. The best
+    we could possibly hope for is that there would be no need for moves
+    of the sort that reduce
+    the invariant <mdash /> nevertheless we still could not get a man to <m>(0,5)</m>
+    in a finite number of moves.
+  </p>
+  <exercises>
+    <exercise>
+      <statement>
+        <p>
+          Do the algebra (and show all your work!) to prove that invariant
+          defined in this section actually has the value 1 for the set of all the
+          men occupying the <m>x</m>-axis and the lower half-plane.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <q>Escape of the clones</q> is a nice puzzle, originally proposed by Maxim Kontsevich. The game
+          is played on an infinite checkerboard restricted to the first quadrant <mdash /> that is the squares may be
+          identified with points having integer coordinates <m>(x,y)</m> with <m>x>0</m> and <m>y>0</m>. The <q>clones</q> are markers
+          (checkers, coins, small rocks, whatever<ellipsis />) that can move in only one fashion <mdash /> if the squares immediately
+          above and to the right of a clone are empty, then it can make a <q>clone move.</q> The clone moves one space
+          up and a copy is placed in the cell one to the right. We begin with three clones occupying cells <m>(1,1), (2,1)</m> and <m>(1,2)</m> <mdash /> we'll refer to those three checkerboard squares as <q>the prison.</q> The question is this: can these
+          three clones escape the prison?
+        </p>
+
+        <p>
+          You must either demonstrate a sequence of moves that frees all three clones or provide an argument that the task is impossible.
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
+</section>

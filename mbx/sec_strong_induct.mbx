@@ -1,0 +1,126 @@
+
+<section xml:id="sec_strong_induct">
+  <title>The strong form of mathematical induction</title>
+  <p>
+    The strong form of mathematical induction (a.k.a. the principle of
+    complete induction, PCI; also a.k.a. course-of-values induction)
+    is so-called because the hypotheses one
+    uses are stronger. Instead of showing that <m>P_k \implies P_{k+1}</m> in
+    the inductive step, we get to assume that all the statements numbered
+    smaller than <m>P_{k+1}</m> are true. To make life slightly easier we'll
+    renumber things a little. The statement that needs to be proved is
+    <me>
+      \forall k (P_0 \land P_1 \land \ldots \land  P_{k-1}) \implies P_k.
+    </me>
+  </p>
+
+  <p>
+    An outline of a strong inductive proof is:
+  </p>
+  <tabular>
+    <row bottom="minor">
+      <cell></cell>
+    </row>
+    <row>
+      <cell>\begin{minipage}{.75\textwidth}
+
+      <em> Theorem</em> <m>\displaystyle \forall n \in \Naturals, \; P_n</m>
+
+
+       <em>Proof:</em> (By complete induction)
+
+       <em>Basis:</em>
+
+      <m>\vdots</m>  \begin{minipage}[c]{1.7 in} (Technically, a PCI 
+      proof doesn't require a basis.   We recommend that you show that <m>P_0</m> 
+      is true anyway.) 
+      <em>Inductive step:</em>
+
+      <m>\vdots</m>  \begin{minipage}[c]{1.7 in} (Here we must show that <m>\forall k,  \left( \bigwedge_{i=0}^{k-1} P_i \right) \implies P_{k}</m> is true.) 
+      Q.E.D.</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+    </row>
+  </tabular>
+  <p>
+    It's fairly common that we won't truly need all of the statements from <m>P_0</m>
+    to <m>P_{k-1}</m> to be true, but just one of them (and we don't know <em>a priori</em>
+    which one). The following is a classic result; the proof that all numbers
+    greater than 1 have prime factors.
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        For all natural numbers <m>n</m>, <m>n > 1</m> implies <m>n</m> has a prime
+        factor.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      (By strong induction)
+      Consider an arbitrary natural number <m>n>1</m>. If <m>n</m> is prime then <m>n</m> clearly
+      has a prime factor (itself), so suppose that <m>n</m> is not prime. By
+      definition, a composite
+      natural number can be factored, so <m>n=a \cdot b</m> for some pair of natural
+      numbers <m>a</m> and <m>b</m> which are both greater than 1. Since <m>a</m> and <m>b</m> are
+      factors of <m>n</m> both greater than 1, it follows that <m>a \lt  n</m> (it is also
+      true that <m>b \lt  n</m> but we don't need that <ellipsis />). The inductive hypothesis
+      can now be applied to deduce that <m>a</m> has a prime factor <m>p</m>. Since
+      <m>p \divides a</m> and <m>a \divides n</m>, by transitivity <m>p \divides n</m>. Thus
+      <m>n</m> has a prime factor.
+    </p>
+  </proof>
+
+  <exercises>
+    Give inductive proofs of the following
+    <exercise>
+      <statement>
+        <p>
+          A <q>postage stamp problem</q> is a problem that (typically) asks
+          us to determine what total postage values can be produced using two
+          sorts of stamps. Suppose that you have <m>3</m>\settowidth{\cwidth}{c}\divide\cwidth by2
+          \advance\cwidth by-.1pt
+          c\kern-\cwidth
+          \vrule width .1pt depth.2ex height1.2ex
+          \kern\cwidth<nbsp />stamps and <m>7</m>\settowidth{\cwidth}{c}\divide\cwidth by2
+          \advance\cwidth by-.1pt
+          c\kern-\cwidth
+          \vrule width .1pt depth.2ex height1.2ex
+          \kern\cwidth\
+          stamps, show (using strong induction) that any postage value <m>12</m>\settowidth{\cwidth}{c}\divide\cwidth by2
+          \advance\cwidth by-.1pt
+          c\kern-\cwidth
+          \vrule width .1pt depth.2ex height1.2ex
+          \kern\cwidth\
+          or higher can be achieved. That is,
+          <me>
+            \forall n \in \Naturals, n \geq 12 \; \implies \;
+            \exists x,y \in \Naturals , n = 3x + 7y.
+          </me>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Show that any integer postage of <m>12 \cents</m> or more can be made using
+          only <m>4\cents</m> and <m>5\cents</m> stamps.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The polynomial equation <m>x^2 = x+1</m> has two solutions,
+          <m>\alpha = \frac{1+\sqrt{5}}{2}</m> and <m>\beta = \frac{1-\sqrt{5}}{2}</m>.
+          Show that the Fibonacci number <m>F_n</m> is less than or equal to <m>\alpha^{n}</m>
+          for all <m>n \geq 0</m>.
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
+</section>

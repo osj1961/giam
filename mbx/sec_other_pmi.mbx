@@ -1,0 +1,564 @@
+
+<section xml:id="sec_other_pmi">
+  <title>Divisibility statements and other proofs using PMI</title>
+  <p>
+    There is a very famous result known as
+    <index><main>Fermat's little theorem</main></index>Fermat's Little Theorem.
+    This would probably be abbreviated FLT except for two things.
+    In science fiction FLT means <q>faster than light travel</q> and
+    there is <em>another</em> theorem due to Fermat that goes by
+    the initials FLT: <index><main>Fermat's last theorem</main></index>Fermat's Last Theorem.
+    Fermat's last theorem states that equations of the form <m>a^n+b^n=c^n</m>,
+    where <m>n</m> is a positive natural number,
+    only have integer solutions that are trivial (like <m>0^3+1^3=1^3</m>) when <m>n</m>
+    is greater than 2. When <m>n</m> is 1, there are lots of integer solutions.
+    When <m>n</m> is 2, there are still plenty of integer solutions <mdash /> these are the
+    so-called Pythagorean triples, for example 3,4 <ampersand /> 5 or 5,12 <ampersand /> 13.
+    It is somewhat unfair that this statement is known as Fermat's last <em>theorem</em> since he didn't prove it (or at least we can't be sure that he proved it).
+    Five years after his death, Fermat's son published a translated<fn>The
+    translation from Greek into Latin was done by Claude Bachet.</fn> version of
+    Diophantus's <em>Arithmetica</em> containing his father's notations. One of
+    those notations <mdash /> near the place where Diophantus was discussing the
+    equation <m>x^2+y^2=z^2</m> and its solution in whole numbers <mdash /> was the statement
+    of what is now known as Fermat's last theorem as well as the following claim:
+  </p>
+
+  <blockquote>
+  Cuius rei demonstrationem mirabilem sane detexi hanc marginis exiguitas non caperet.
+  </blockquote>
+
+  <p>
+    In English:
+  </p>
+
+  <blockquote>
+  I have discovered a truly remarkable proof of this that the margin of this page is too small to contain.
+  </blockquote>
+
+  <p>
+    Between 1670 and 1994 a lot of famous mathematicians worked on FLT but
+    never found the <q>demonstrationem mirabilem.</q> Finally in 1994, Andrew Wiles
+    of Princeton announced a proof of FLT, but in Wiles's own words, his is <q>a twentieth century proof</q> it can't be the proof Fermat had in mind.
+  </p>
+
+  <p>
+    These days most people believe that Fermat was mistaken. Probably he thought
+    a proof technique that works for small values of <m>n</m> could be generalized.
+    It remains a tantalizing question, can a proof of FLT using only methods
+    available in the 17th century be accomplished?
+  </p>
+
+  <p>
+    Part of the reason that so many people spent so much effort on FLT
+    over the centuries is that Fermat had an excellent record as regards
+    being correct about his theorems and proofs. The result known as Fermat's
+    little theorem is an example of a theorem and proof that Fermat got
+    right. It is probably known as his <q>little</q> theorem because its
+    statement is very short, but it is actually a fairly deep result.
+  </p>
+
+  <theorem>
+    <title>Fermat's Little Theorem</title>
+    <statement>
+      <p>
+        For every prime number <m>p</m>, and for all integers <m>x</m>, the <m>p</m>-th
+        power of <m>x</m> and <m>x</m> itself are congruent mod <m>p</m>. Symbolically:
+        <me>
+          x^p \equiv x \pmod{p}
+        </me>
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    A slight restatement of Fermat's little theorem is that <m>p</m> is
+    always a divisor of <m>x^p-x</m> (assuming <m>p</m> is a prime and <m>x</m> is an integer).
+    Math professors enjoy using their knowledge of Fermat's little theorem
+    to cook up divisibility results that can be proved using mathematical
+    induction. For example, consider the following:
+    <me>
+      \forall n \in \Naturals,  3 \divides (n^3 + 2n + 6).
+    </me>
+  </p>
+
+  <p>
+    This is really just the <m>p=3</m> case of Fermat's little theorem
+    with a little camouflage added: <m>n^3 + 2n + 6 = (n^3-n)+3(n+2)</m>.
+    But let's have a look at proving this statement using PMI.
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        <m>\forall n \in \Naturals,  3 \divides (n^3 + 2n + 6)</m>
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      (By mathematical induction)
+    </p>
+
+    <p>
+      <em>Basis:</em> Clearly <m>3 \divides 6</m>.
+    </p>
+
+    <p>
+      <em>Inductive step:</em>
+    </p>
+
+    <p>
+      (We need to show that <m>3 \divides (k^3 + 2k + 6) \; \implies \; 3 \divides ((k+1)^3 + 2(k+1) + 6</m>.)
+    </p>
+
+    <p>
+      Consider the quantity <m>(k+1)^3 + 2(k+1) + 6</m>.
+      <md>
+        <mrow>(k+1)^3 + 2(k+1) + 6</mrow>
+        <mrow>= (k^3 + 3k^2 + 3k + 1) + (2k + 2) + 6</mrow>
+        <mrow>= (k^3 + 2k + 6) + 3k^2 + 3k + 3</mrow>
+        <mrow>= (k^3 + 2k + 6) + 3(k^2 + k + 1).</mrow>
+      </md>
+    </p>
+
+    <p>
+      By the inductive hypothesis, 3 is a divisor of <m>k^3 + 2k + 6</m> so there
+      is an integer <m>m</m> such that <m>k^3 + 2k + 6 = 3m</m>.
+      Thus,
+      <md>
+        <mrow>(k+1)^3 + 2(k+1) + 6</mrow>
+        <mrow>= 3m + 3(k^2 + k + 1)</mrow>
+        <mrow>= 3(m + k^2 + k + 1).</mrow>
+      </md>
+    </p>
+
+    <p>
+      This equation shows that 3 is a divisor of <m>(k+1)^3 + 2(k+1) + 6</m>, which
+      is the desired conclusion.
+    </p>
+  </proof>
+
+  <exercise>
+    <statement>
+      <p>
+        Devise an inductive proof of the statement, <m>\forall n \in \Naturals, 5 \divides x^5+4x-10</m>.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    There is one other subtle trick for devising statements to be
+    proved by PMI that you should know about. An example should
+    suffice to make it clear. Notice that <m>7</m> is equivalent to <m>1 \pmod{6}</m>,
+    it follows that any power of <m>7</m> is also <m>1 \pmod{6}</m>. So, if we subtract
+    <m>1</m> from some power of 7 we will have a number that is divisible by <m>6</m>.
+  </p>
+
+  <p>
+    The proof (by PMI) of a statement like this requires another subtle little
+    trick. Somewhere along the way in the proof you'll need the identity <m>7=6+1</m>.
+  </p>
+
+  <theorem>
+    <statement>
+      <me>
+        \forall n \in \Naturals, \; 6 \divides 7^n-1
+      </me>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      (By PMI)
+    </p>
+
+    <p>
+      <em>Basis:</em> Note that <m>7^0-1</m> is <m>0</m> and also that <m>6 \divides 0</m>.
+    </p>
+
+    <p>
+      <em>Inductive step:</em>
+    </p>
+
+    <p>
+      (We need to show that if <m>6 \divides 7^k-1</m> then <m>6 \divides 7^{k+1}-1</m>.)
+    </p>
+
+    <p>
+      Consider the quantity <m>7^{k+1}-1</m>.
+      <md>
+        <mrow>7^{k+1}-1 = 7 \cdot 7^k -1</mrow>
+        <mrow>= (6 + 1) \cdot 7^k - 1</mrow>
+        <mrow>= 6 \cdot 7^k + 1 \cdot 7^k - 1</mrow>
+        <mrow>= 6(7^k) + (7^k - 1)</mrow>
+      </md>
+    </p>
+
+    <p>
+      By the inductive hypothesis, <m>6 \divides 7^k - 1</m> so there is
+      an integer <m>m</m> such that <m>7^k - 1 = 6m</m>. It follows that
+      <me>
+        7^{k+1}-1 = 6(7^k) + 6m.
+      </me>
+    </p>
+
+    <p>
+      So, clearly, <m>6</m> is a divisor of <m>7^{k+1}-1</m>.
+    </p>
+  </proof>
+
+  <p>
+    Mathematical induction
+    can often be used to prove inequalities. There are quite a few examples
+    of families of statements where there is an inequality for every natural
+    number. Often such statements seem to be <em>obviously</em> true and yet
+    devising a proof can be illusive. If such is the case, try using PMI.
+    One hint: it is fairly typical that the inductive step in a PMI proof
+    of an inequality will involve reasoning that isn't particularly sharp.
+    Just remember that if you have an inequality and you make the big
+    side even bigger, the resulting statement is certainly still true!
+  </p>
+
+  <p>
+    Consider the sequences <m>2^n</m> and <m>n!</m>.
+  </p>
+  <tabular>
+    <row>
+      <cell><m>n</m></cell>
+      <cell>0</cell>
+      <cell>1</cell>
+      <cell>2</cell>
+      <cell>3</cell>
+      <cell></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>2^n</m></cell>
+      <cell>1</cell>
+      <cell>2</cell>
+      <cell>4</cell>
+      <cell>8</cell>
+      <cell></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>n!</m></cell>
+      <cell>1</cell>
+      <cell>1</cell>
+      <cell>2</cell>
+      <cell>6</cell>
+      <cell></cell>
+    </row>
+  </tabular>
+  <p>
+    As the table illustrates, for small values of <m>n</m>, <m>2^n > n!</m>. But from <m>n=4</m>
+    onward the inequality is reversed.
+  </p>
+
+  <theorem>
+    <statement>
+      <me>
+        \forall n \geq 4 \in \Naturals, 2^n \lt  n!
+      </me>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      (By mathematical induction)
+    </p>
+
+    <p>
+      <em>Basis:</em> When <m>n=4</m> we have <m>2^4 \lt  4!</m>, which is certainly
+      true (<m>16 \lt  24</m>).
+    </p>
+
+    <p>
+      <em>Inductive step:</em> Suppose that <m>k</m> is a natural number
+      with <m>k > 4</m>, and that <m>2^k \lt  k!</m>. Multiply the left hand side of this
+      inequality by <m>2</m> and the right hand side by <m>k+1</m><fn>It might be 
+      smoother to justify this step by first proving the lemma that 
+      <m>\forall a,b,c,d \in {\mathbb R}^+, \; a\lt b \land c\lt d \implies ac \lt  bd</m>. </fn>
+      to get
+      <me>
+        2\cdot 2^{k} \lt  (k+1) \cdot k!.
+      </me>
+    </p>
+
+    <p>
+      So
+      <me>
+        2^{k+1} \lt  (k+1)!.
+      </me>
+    </p>
+  </proof>
+
+  <p>
+    The observant Calculus student will certainly be aware of the fact
+    that, asymptotically, exponential functions grow faster than polynomial
+    functions. That is, if you have a base <m>b</m> which is greater than 1, the
+    function <m>b^x</m> is eventually larger than any polynomial <m>p(x)</m>. This
+    may seem a bit hard to believe if <m>b=1.001</m> and <m>p(x) = 500x^{10}</m>. The
+    graph of <m>y=1.001^x</m> is practically indistinguishable from the line <m>y=1</m>
+    (at first), whereas the graph of <m>y=500x^{10}</m> has already reached the
+    astronomical value of five trillion (<m>5,000,000,000,000</m>) when <m>x</m> is just
+    <m>10</m>. Nevertheless, the exponential will eventually outstrip the polynomial.
+    We can use the methods of this section to get started on proving the fact
+    mentioned above. Consider the two sequences <m>n^2</m> and <m>2^n</m>.
+  </p>
+  <tabular>
+    <row>
+      <cell><m>n</m></cell>
+      <cell>0</cell>
+      <cell>1</cell>
+      <cell>2</cell>
+      <cell>3</cell>
+      <cell>4</cell>
+      <cell>5</cell>
+      <cell>6</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>n^2</m></cell>
+      <cell>0</cell>
+      <cell>1</cell>
+      <cell>4</cell>
+      <cell>9</cell>
+      <cell>16</cell>
+      <cell>25</cell>
+      <cell>36</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>2^n</m></cell>
+      <cell>1</cell>
+      <cell>2</cell>
+      <cell>4</cell>
+      <cell>8</cell>
+      <cell>16</cell>
+      <cell>32</cell>
+      <cell>64</cell>
+    </row>
+  </tabular>
+  <p>
+    If we think of a <q>race</q> between the sequences <m>n^2</m> and <m>2^n</m>, notice
+    that <m>2^n</m> starts out with the lead. The two sequences are tied when
+    <m>n=2</m>. Briefly, <m>n^2</m> goes into the lead but they are tied again when
+    <m>n=4</m>. After that it would appear that <m>2^n</m> recaptures the lead for good.
+    Of course we're making a rather broad presumption <mdash /> is it really true
+    that <m>n^2</m> never catches up with <m>2^n</m> again? Well, if we're right
+    then the following theorem should be provable:
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        For all natural numbers <m>n</m>, if <m>n \geq 4</m> then <m>n^2 \leq 2^n</m>.
+      </p>
+    </statement>
+  </theorem>
+
+  <blockquote>
+  <em>Proof:</em>
+
+   <em>Basis:</em> When <m>n=4</m> we have <m>4^2 \leq 2^4</m>, which is 
+  true since both numbers are 16.
+
+   <em>Inductive step:</em> (In the inductive step we assume
+  that <m>k^2 \leq 2^k</m> and then show that <m>(k+1)^2 \leq 2^{k+1}</m>.)
+
+  The inductive hypothesis tells us that
+  <me>
+    k^2 \leq 2^k.
+  </me>
+  If we add <m>2k+1</m> to the left-hand side of this inequality
+  and <m>2^k</m> to the right-hand side we will produce the desired
+  inequality.  Thus our proof will follow provided that
+  we know that <m>2k+1 \leq 2^k</m>.  Indeed, it is sufficient to show
+  that <m>2k+1 \leq k^2</m> since we already know (by the inductive
+  hypothesis) that <m>k^2 \leq 2^k</m>.
+
+  So the result remains in doubt unless you can complete the 
+  exercise that follows\ldots
+
+      Q.E.D.???
+  </blockquote>
+  <exercise>
+    <statement>
+      <p>
+        Prove the lemma: For all <m>n \in \Naturals</m>, if <m>n \geq 4</m> then
+        <m>2n+1 \leq n^2</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercises>
+    Give inductive proofs of the following
+    <exercise>
+      <statement>
+        <p>
+          <m>\forall x \in \Naturals, \; 3 \divides x^3-x</m>
+        </p>
+      </statement>
+      <hint>
+        <proof>
+        <p>
+          (by induction)
+        </p>
+
+        <p>
+          <em>Base case:</em> (<m>x=0</m>)
+        </p>
+
+        <p>
+          The base case is trivial since, when <m>x=0</m>, <m>x^3-x</m> evaluates to <m>0</m> and every natural number is a divisor of <m>0</m>.
+        </p>
+
+        <p>
+          <em>Inductive step:</em>
+        </p>
+
+        <p>
+          In the inductive step we want to show that <m>\forall k \in \Naturals, \; 3 \divides k^3 - k \; \implies \; 3 \divides (k+1)^3 - (k+1)</m>. So, let <m>k</m> be an arbitrary natural number such that <m>3 \divides k^3 - k</m>.
+        </p>
+
+        <p>
+          Consider the quantity <m>(k+1)^3 - (k+1)</m>,
+          <md>
+            <mrow>(k+1)^3 - (k+1)</mrow>
+            <mrow>= \; (k^3 + 3k^2+ 3k +1) - (k+1)</mrow>
+            <mrow>= \; (k^3 - k) + (3k^2 + 3k).</mrow>
+          </md>
+        </p>
+
+        <p>
+          By the inductive hypothesis (and the definition of divisibility), we know that there is an integer <m>q</m> such that <m>k^3-k = 3q</m>. So, by substitution, we obtain
+          <me>
+            (k+1)^3 - (k+1) \; = \; 3q + 3k^2 + 3k \; = 3 \cdot (q + k^2 + k).
+          </me>
+        </p>
+
+        <p>
+          Finally, <m>q+k^2-k</m> (being the sum of integers) is certainly an integer, so by the definition of
+          divisibility, it follows that <m>(k+1)^3 - (k+1)</m> is divisible by 3.
+        </p>
+        </proof>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>\forall x \in \Naturals, \; 3 \divides x^3+5x</m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>\forall x \in \Naturals, \; 11 \divides x^{11}+10x</m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>\forall n \in \Naturals, \; 3 \divides 4^n-1</m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>\forall n \in \Naturals, \; 6 \divides (3n^{2}+3n-12)</m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>\forall n \in \Naturals, \; 5 \divides (n^{5}-5n^{3}+14n)</m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>\forall n \in \Naturals, \; 4 \divides (13^{n}+4n-1)</m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>\forall n \in \Naturals, \; 7 \divides 8^n+6</m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>\forall n \in \Naturals, \; 6 \divides 2n^3 - 2n - 12</m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>\forall n \geq 3 \in \Naturals, \; 3n^2+3n+1 \lt  2n^3</m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>\forall n > 3 \in \Naturals, \; n^3 \lt  3^n</m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>\forall n \geq 3 \in \Naturals, \; n^{3}+3>n^{2}+3n+1</m>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          <m>\forall x \geq 4 \in \Naturals, \; x^22^x \leq 4^x</m>
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
+</section>

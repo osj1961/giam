@@ -1,0 +1,412 @@
+
+<section xml:id="sec_venn">
+  <title>Venn diagrams</title>
+  <p>
+    Hopefully, you've seen
+    <index><main>Venn diagram</main></index>Venn diagrams before, but possibly
+    you haven't thought deeply about them. Venn diagrams take
+    advantage of an obvious but important property of closed
+    curves drawn in the plane. They divide the points in the
+    plane into two sets, those that are inside the curve and
+    those that are outside! (Forget for a moment about the points
+    that are on the curve.) This seemingly obvious statement
+    is known as the
+    <index><main>Jordan curve theorem</main></index><em>Jordan curve theorem</em>, and actually
+    requires some details. A
+    <index><main>Jordan curve</main></index><em>Jordan curve</em> is the sort
+    of curve you might draw if you are required to end where
+    you began and you are required not to cross-over any portion
+    of the curve that has already been drawn. In technical
+    terms such a curve is called <em>continuous</em>, <em>simple</em>
+    and <em>closed</em>.
+    The Jordan curve theorem is one of those statements that hardly
+    seems like it needs a proof, but nevertheless, the proof of this
+    statement is probably the best-remembered work of the famous
+    French mathematician <index><main>Jordan, Camille</main></index>Camille Jordan.
+  </p>
+
+  <p>
+    The prototypical Venn diagram is the picture that looks something
+    like the view through a set of binoculars.
+  </p>
+  <image source="images/4276176ecd63eb13555dd0df31bab3c19b63331e.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/46d7069f16459bd3f24cc1e83d9514f52a9c56cc.png"/>
+  <p>
+    In a Venn diagram the
+    <index><main>universe of discourse</main></index>universe of discourse is normally drawn as
+    a rectangular region inside of which all the action occurs. Each
+    set in a Venn diagram is depicted by drawing a simple closed curve <mdash /> typically a circle, but not necessarily! For instance, if you
+    want to draw a Venn diagram that shows all the possible intersections
+    among four sets, you'll find it's impossible with (only) circles.
+  </p>
+  <image source="images/d18d471639ae50781c1e0c48606c8eba8bc024e3.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/631f918f06ee23541d93106a670c90c26a6b351e.png"/>
+  <exercise>
+    <statement>
+      <p>
+        Verify that the diagram above has regions representing all 16 possible
+        intersections of 4 sets.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    There is a certain <q>zen</q> to Venn diagrams that must be internalized,
+    but once you have done so they can be used to think very effectively
+    about the relationships between sets. The main deal is that the points
+    inside of one of the simple closed curves are not necessarily in the set <mdash /> only <em>some</em> of the points inside a simple closed curve are in the
+    set, and we don't know precisely where they are! The various simple closed
+    curves in a Venn diagram divide the universe up into a bunch of regions.
+    It might be best to think of these regions as fenced-in areas in which
+    the elements of a set mill about, much like domesticated animals
+    in their pens.
+    One of our main tools in working with Venn diagrams is to deduce that
+    certain of these regions don't contain any elements <mdash /> we then mark that
+    region with the emptyset symbol (<m>\emptyset</m>).
+  </p>
+
+  <p>
+    Here is a small example of a finite universe.
+  </p>
+  <image source="images/d41c187c9dc6a280545c82efdf62d0029f940141.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/82b4a1053d62dc47d09a91d584ae61ffe3d3985e.png"/>
+  <p>
+    And here is the same universe with some Jordan curves
+    used to encircle two subsets.
+  </p>
+  <image source="images/324e21f2b988e4618acfbf76e59e747579a94713.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/08fa5c5d53afa28a0644f289ee90b474569d4f24.png"/>
+  <p>
+    This picture might lead us to think that the set of cartoon characters
+    and the set of horses are disjoint, so we thought it would be nice
+    to add one more element to our universe in order to dispel that notion.
+  </p>
+  <image source="images/edfba53dc157bca33f9afae10e24f0814d098a93.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/8ba0c7bb3c8f000f9431acb5cdacb1838b085db6.png"/>
+  <p>
+    Suppose we have two sets <m>A</m> and <m>B</m> and we're interested
+    in proving that <m>B \subseteq A</m>. The job is done if we can show that
+    all of <m>B</m>'s elements are actually in the eye-shaped region that represents
+    the intersection <m>A \cap B</m>. It's equivalent if we can show that the
+    region marked with <m>\emptyset</m> in the following diagram is actually empty.
+  </p>
+  <image source="images/b3dd087f60ee372aa73c9dceca17b8395f83f2c2.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/4528022120716e4b7de612e57850bcae3672a7a7.png"/>
+  <p>
+    Let's put all this together. The inclusion <m>B \subseteq A</m> corresponds
+    to the logical sentence <m>M_B \implies M_A</m>. We know that implications
+    are equivalent to OR statements, so <m>M_B \implies M_A \, \cong \, 
+    {\lnot}M_B \lor M_A</m>. The notion that the region we've
+    indicated above is empty is written as <m>\overline{A} \cap B \, = \, \emptyset</m>,
+    in logical terms this is <m>{\lnot}M_A \land M_B \, \cong \, c</m>.
+    Finally, we apply DeMorgan's law and a commutation to get
+    <m>{\lnot}M_B \lor M_A \, \cong \, t</m>. You should take note of the
+    convention that when you see a logical sentence just written on the
+    page (as is the case with <m>M_B \implies M_A</m> in the first sentence
+    of this paragraph) what's being asserted is that the sentence is
+    <em>universally true</em>.
+    Thus, writing <m>M_B \implies M_A</m> is the same thing as writing
+    <m>M_B \implies M_A \, \cong \, t</m>.
+  </p>
+
+  <p>
+    One can use information that is known <em>a priori</em> when
+    drawing a Venn diagram. For instance if two sets are known
+    to be disjoint, or if one is known to be contained in the other,
+    we can draw Venn diagrams like the following.
+  </p>
+  <image source="images/a06a563c9bbd8e281104542e8025d5051f8b2405.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/921c9ce55a5be071f4505f3423c97f54909925fa.png"/>
+  <image source="images/f463b1fec349a9916c602733b3885da6a8f0c0b1.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/d6697a96aa876b0969092896d8371ddf3705f4d5.png"/>
+  <p>
+    However, both of these situations can also be dealt with
+    by working with Venn diagrams in which the sets are in
+    <index><main>general position</main></index> <em>general position</em> <mdash /> which
+    in this situation means that every possible intersection is
+    shown <mdash /> and then marking any empty regions with <m>\emptyset</m>.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        On a Venn diagram for two sets in general position, indicate
+        the empty regions when
+        <ul>
+          <li>
+            <title>a)</title>
+            <p>
+              The sets are disjoint.
+            </p>
+          </li>
+
+          <li>
+            <title>b)</title>
+            <p>
+              <m>A</m> is contained in <m>B</m>.
+            </p>
+          </li>
+        </ul>
+      </p>
+      <image source="images/7eb2ab3e317b6a6fe9c0276b9cfef8c17feaca61.png"/>
+      <p>
+        \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+        \reset@font\fontsize{#1}{#2pt}
+        \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+        \selectfont}\fi
+      </p>
+      <image source="images/921c9ce55a5be071f4505f3423c97f54909925fa.png"/>
+    </statement>
+  </exercise>
+  <p>
+    There is a connection, perhaps obvious, between the regions we
+    see in a Venn diagram with sets in general position and the recognizers
+    we studied in the section on digital logic circuits. In fact both
+    of these topics have to do with <index><main>disjunctive normal form</main></index><em>disjunctive normal form</em>. In a Venn diagram with <m>k</m> sets, we are seeing the universe
+    of discourse broken up into the union of <m>2^k</m> regions each of which
+    corresponds to an intersection of either one of the sets or its complement.
+    An arbitrary expression involving set-theoretic symbols and these <m>k</m> sets
+    is true in certain of these <m>2^k</m> regions and false in the others.
+    We have put the arbitrary expression in disjunctive normal form when
+    we express it as a union of the intersections that describe those regions.
+  </p>
+  <image source="images/a31726c7eb1b1775b10a3d4c303108f2a500a172.png"/>
+  <p>
+    \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+    \reset@font\fontsize{#1}{#2pt}
+    \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+    \selectfont}\fi
+  </p>
+  <image source="images/65fb40b67f07fd664a1eddc08093d4673ad715b0.png"/>
+  <exercises>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>A = \{1,2,4,5\}</m>, <m>B=\{2,3,4,6\}</m>, and <m>C=\{1,2,3,4\}</m>. Place each of the elements <m>1, \ldots , 6</m> in the appropriate regions of a three-set Venn diagram.
+        </p>
+
+        <p>
+          <image width="75%" source="images/3set_Venn.png" />
+        </p>
+      </statement>
+      <hint>
+        <p>
+          The center region contains <m>2</m> and <m>4</m>.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove or disprove:
+          <me>
+            ( A \cap C \; \subseteq \; B \cap C )  \implies  A \; \subseteq B
+          </me>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          What will be the implications of the region <m>A \cap \overline{B} \cap \overline{C}</m> being non-empty?
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Venn diagrams are usually made using simple closed curves
+          with no further restrictions. Try creating Venn diagrams for 3, 4 and
+          5 sets (in general position) using rectangular simple closed curves.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          I found it easier to experiment by making my drawings on graph paper. I never did
+          manage to draw the <m>5</m> set Venn diagram with just rectangles<ellipsis /> probably just a lack of persistence.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          We call a curve <em>rectilinear</em> if it is made
+          of line segments that meet at right angles. If you have ever
+          played with an Etch-a-Sketch you'll know what we mean by the term
+          <q>rectilinear.</q> The following example of a rectilinear curve may
+          also help to clarify this notion.
+        </p>
+
+        <p>
+          <image width="73%" source="images/rectilinear.png" />
+        </p>
+
+        <p>
+          Use rectilinear
+          simple closed curves to create a Venn diagram for 5 sets.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Of course, rectangles are rectilinear, so one could use the solution from the previous
+          problem (if, unlike me, you were persistant enough to find it). Otherwise,
+          start with the <m>4</m> set diagram made with rectangles and use your <m>5</m>th (rectilinear) curve to split
+          each region into <m>2</m> <mdash /> don't forget to split the region on the outside too.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Argue as to why rectilinear curves will suffice to build
+          any Venn diagram.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Fortunately the instructions don't say to <em>prove</em> that rectilinear curves will always
+          suffice, so we can be less rigorous. Try to argue as to why it will alway be possible to add one more rectilinear curve to an existing Venn diagram and split every region into two.
+        </p>
+
+        <p>
+          One might also argue that any continuous curve can be approximated using rectilinear curves. So if a Venn diagram can be constructed using continuous curves we can also get the job done with rectilinear curves.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Find the disjunctive normal form of <m>A \cap (B \cup C)</m>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          <m>(A \cap B \cap \overline{C}) \cup (A \cap \overline{B} \cap C)</m>
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Find the disjunctive normal form of <m>(A \triangle B) \triangle C</m>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          It is <m>(A \cap \overline{B} \cap \overline{C}) \cup (\overline{A} \cap B \cap \overline{C}) \cup (\overline{A} \cap \overline{B} \cap C)</m>. Now find the disjunctive normal form of
+          <m>A \triangle (B \triangle C)</m>.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The prototypes for the <em>modus ponens</em> and <em>modus tollens</em>
+          argument forms are the following:
+        </p>
+        <tabular>
+          <row>
+            <cell>\begin{minipage}{.3\textwidth}All men are mortal.  
+            Socrates is a man. 
+            Therefore Socrates is mortal.</cell>
+            <cell>and</cell>
+            <cell>\begin{minipage}{.3\textwidth}All men are mortal.  
+            Zeus is not mortal. 
+            Therefore Zeus is not a man.</cell>
+          </row>
+        </tabular>
+        <p>
+          Illustrate these arguments using Venn diagrams.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          The statement <q>All men are mortal</q> would be interpreted on a Venn diagram by showing the
+          set of <q>All men</q> as being entirely contained within the set of <q>mortal beings.</q> Socrates is an
+          element of the inner set. Zeus, on the other hand, lies outside of the outer set.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Use Venn diagrams to convince yourself of the validity of
+          the following containment statement
+          <me>
+            (A \cap B) \cup (C \cap D) \; \subseteq \; (A \cup C) \cap (B \cup D).
+          </me>
+        </p>
+
+        <p>
+          Now prove it!
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Obviously we'll need one of the <m>4</m>-set Venn diagrams.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Use Venn diagrams to show that the following set equivalence is false.
+          <me>
+            (A \cup B) \cap (C \cup D) \; = \; (A \cup C) \cap (B \cup D)
+          </me>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          After constructing Venn diagrams for both sets you should be able to see that there
+          are <m>4</m> regions where they differ. One is <m>A \cap B \cap \overline{C} \cap \overline{D}</m>.
+          What are the other three?
+        </p>
+      </hint>
+    </exercise>
+  </exercises>
+</section>

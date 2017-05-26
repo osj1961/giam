@@ -39,29 +39,27 @@
   <p>
     Examples:
     <ol>
-      <li>
+      \end{exercise}
+      <exercise>
         <title>i)</title>
-        <p>
-          <m>P(x)</m> = <q><m>2^{2^x}+1</m> is a prime.</q>
-        </p>
-      </li>
-
-      <li>
+        <statement>
+          <p>
+            <m>P(x)</m> = <q><m>2^{2^x}+1</m> is a prime.</q>
+          </p>
+        </statement>
+      </exercise>
+      <exercise>
         <title>ii)</title>
-        <p>
-          <m>Q(x,y)</m> = <q><m>x</m> is prime or <m>y</m> is a divisor of <m>x</m>.</q>
-        </p>
-      </li>
-
-      <li>
-        <title>iii)</title>
-        <p>
-          <m>L(f,c,l)</m> = <q>The function <m>f</m> has limit <m>l</m> at <m>c</m>, if 
-          and only if, 
-          for every positive number <m>\epsilon</m>, there is a positive number <m>\delta</m> 
-          such that whenever <m>|x-c| \lt  \delta</m> it follows that <m>|f(x)-l| \lt  \epsilon</m>.</q>
-        </p>
-      </li>
+        <statement>
+          <p>
+            <m>Q(x,y)</m> = <q><m>x</m> is prime or <m>y</m> is a divisor of <m>x</m>.</q>
+          </p>
+        </statement>
+      </exercise>
+      \begin{exercise}[iii)] <m>L(f,c,l)</m> = <q>The function <m>f</m> has limit <m>l</m> at <m>c</m>, if 
+      and only if, 
+      for every positive number <m>\epsilon</m>, there is a positive number <m>\delta</m> 
+      such that whenever <m>|x-c| \lt  \delta</m> it follows that <m>|f(x)-l| \lt  \epsilon</m>.</q>
     </ol>
   </p>
 
@@ -288,7 +286,7 @@
   <p>
     Writing down the contrapositive of a logical statement will often involve finding the
     negation of a quantified sentence. Proof by contradiction also requires you to be able to
-    negate a logical statement in order to even get started. Let's try a one.
+    negate a logical statement in order to even get started. Let's try one.
   </p>
 
   <p>
@@ -355,6 +353,8 @@
     name doesn't start with `M'.
   </p>
   <exercises>
+    \begin{enumerate}
+    \end{exercise}
     <exercise>
       <statement>
         <p>

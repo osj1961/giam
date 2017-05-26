@@ -1,0 +1,729 @@
+
+<section xml:id="sec_parity">
+  <title>Parity and Counting arguments</title>
+  <p>
+    This section is concerned with two very powerful elements of the
+    proof-making arsenal: <q>Parity</q> is a way of referring to the result of
+    an even/odd calculation; Counting arguments most often take the form of
+    counting some collection in two different ways <mdash /> and then comparing
+    those results. These techniques have little to do with one another,
+    but when they are applicable they tend to produce really elegant little
+    arguments.
+  </p>
+
+  <p>
+    In (very) early computers and business machines, paper cards were used to
+    store information. A so-called <index><main>punch card</main></index><q>punch card</q> or
+    <index><main>Hollerith card</main></index> <q>Hollerith card</q> was used to store
+    binary information by means of holes punched into it. Paper tape
+    was also used in a similar fashion. A typical paper tape format would
+    involve 8 positions in rows across the tape that might or might not be
+    punched, often a column of smaller holes would appear as well which
+    did not store information but were used to drive the tape through the
+    reading mechanism on a sprocket. Tapes and cards could be <q>read</q> either
+    by small sets of electrical contacts which would touch through a punched
+    hole or be kept separate if the position wasn't punched, or by using a
+    photo-detector to sense whether light could pass through the hole or not.
+    The mechanisms for reading and writing on these paper media were amazingly
+    accurate, and allowed early data processing machines to use just a couple
+    of large file cabinets to store what now fits in a jump drive one can
+    wear on a necklace. (About 10 or 12 cabinets could hold a gigabyte
+    of data).
+  </p>
+
+  <p>
+    Paper media was ideally suited to storing binary information, but of course
+    most of the real data people needed to store and process would be
+    <index><main>alphanumeric</main></index>alphanumeric<fn><q>Alphanumeric</q> is a somewhat
+    antiquated term that refers to information containing both alphabetic 
+    characters and numeric characters <mdash /> as well as punctuation marks, etc.</fn>.
+    There were several encoding schemes that served to translate between the
+    character sets that people commonly used and the binary numerals that could
+    be stored on paper. One of these schemes still survives today <mdash /> <index><main>ASCII</main></index>ASCII.
+    The American Standard Code for Information Interchange uses 7-bit binary
+    numerals to represent characters, so it contains 128 different symbols.
+    This is more than enough to represent both upper- and lower-case
+    letters, the 10 numerals, and the punctuation marks <mdash /> many of the
+    remaining spots in the ASCII code were used to contain so-called
+    <q>control characters</q> that were associated with functionality that
+    appeared on old-fashioned teletype equipment <mdash /> things like <q>ring the bell,</q>
+    <q>move the carriage backwards one space,</q> <q>move the carriage
+    to the next line,</q> etc. These control characters are why modern
+    keyboards still have a modifier key labeled <q>Ctrl</q> on them. The
+    following listing gives the decimal and binary numerals from 0 to 127
+    and the ASCII characters associated with them <mdash /> the non-printing and
+    control characters have a 2 or 3 letter mnemonic designation.
+  </p>
+  <tabular>
+    \=0  \=0000 0000   \=<c>NUL</c>   \=64  \=0100 0000  \=<c>@</c>  
+ 
+    \>1 \>0000 0001 \><c>SOH</c>   \>65 \>0100 0001 \><c>A</c>  
+ 
+    \>2 \>0000 0010 \><c>STX</c>   \>66 \>0100 0010 \><c>B</c>  
+ 
+    \>3 \>0000 0011 \><c>ETX</c>   \>67 \>0100 0011 \><c>C</c>  
+ 
+    \>4 \>0000 0100 \><c>EOT</c>   \>68 \>0100 0100 \><c>D</c>  
+ 
+    \>5 \>0000 0101 \><c>ENQ</c>   \>69 \>0100 0101 \><c>E</c>  
+ 
+    \>6 \>0000 0110 \><c>ACK</c>   \>70 \>0100 0110 \><c>F</c>  
+ 
+    \>7 \>0000 0111 \><c>BEL</c>   \>71 \>0100 0111 \><c>G</c>  
+ 
+    \>8 \>0000 1000 \><c>BS</c>    \>72 \>0100 1000 \><c>H</c>  
+ 
+    \>9 \>0000 1001 \><c>TAB</c>   \>73 \>0100 1001 \><c>I</c>  
+ 
+    \>10 \>0000 1010 \><c>LF</c>   \>74 \>0100 1010 \><c>J</c>  
+ 
+    \>11 \>0000 1011 \><c>VT</c>   \>75 \>0100 1011 \><c>K</c>  
+ 
+    \>12 \>0000 1100 \><c>FF</c>   \>76 \>0100 1100 \><c>L</c>  
+ 
+    \>13 \>0000 1101 \><c>CR</c>   \>77 \>0100 1101 \><c>M</c>  
+ 
+    \>14 \>0000 1110 \><c>SO</c>   \>78 \>0100 1110 \><c>N</c>  
+ 
+    \>15 \>0000 1111 \><c>SI</c>   \>79 \>0100 1111 \><c>O</c>  
+ 
+    \>16 \>0001 0000 \><c>DLE</c>  \>80 \>0101 0000 \><c>P</c>  
+ 
+    \>17 \>0001 0001 \><c>DC1</c>  \>81 \>0101 0001 \><c>Q</c>  
+ 
+    \>18 \>0001 0010 \><c>DC2</c>  \>82 \>0101 0010 \><c>R</c>  
+ 
+    \>19 \>0001 0011 \><c>DC3</c>  \>83 \>0101 0011 \><c>S</c>  
+ 
+    \>20 \>0001 0100 \><c>DC4</c>  \>84 \>0101 0100 \><c>T</c>  
+ 
+    \>21 \>0001 0101 \><c>NAK</c>  \>85 \>0101 0101 \><c>U</c>  
+ 
+    \>22 \>0001 0110 \><c>SYN</c>  \>86 \>0101 0110 \><c>V</c>  
+ 
+    \>23 \>0001 0111 \><c>ETB</c>  \>87 \>0101 0111 \><c>W</c>  
+ 
+    \>24 \>0001 1000 \><c>CAN</c>  \>88 \>0101 1000 \><c>X</c>  
+ 
+    \>25 \>0001 1001 \><c>EM</c>   \>89 \>0101 1001 \><c>Y</c>  
+ 
+    \>26 \>0001 1010 \><c>SUB</c>  \>90 \>0101 1010 \><c>Z</c>  
+ 
+    \>27 \>0001 1011 \><c>ESC</c>  \>91 \>0101 1011 \><c>[</c>  
+ 
+    \>28 \>0001 1100 \><c>FS</c>   \>92 \>0101 1100 \><c>\</c>  
+ 
+    \>29 \>0001 1101 \><c>GS</c>   \>93 \>0101 1101 \><c>]</c>  
+ 
+    \>30 \>0001 1110 \><c>RS</c>   \>94 \>0101 1110 \><c>^</c>  
+ 
+    \>31 \>0001 1111 \><c>US</c>   \>95 \>0101 1111 \><c>_</c>  
+ 
+    \>32 \>0010 0000 \>    \>96 \>0110 0000 \><c>`</c>  
+ 
+    \>33 \>0010 0001 \><c>!</c>    \>97 \>0110 0001 \><c>a</c>  
+ 
+    \>34 \>0010 0010 \><c>"</c>    \>98 \>0110 0010 \><c>b</c>  
+ 
+    \>35 \>0010 0011 \><c>#</c>    \>99 \>0110 0011 \><c>c</c>  
+ 
+    \>36 \>0010 0100 \><c>$</c>   \>100 \>0110 0100 \><c>d</c>  
+ 
+    \>37 \>0010 0101 \><c>%</c>   \>101 \>0110 0101 \><c>e</c>  
+ 
+    \>38 \>0010 0110 \><c>&amp;</c>   \>102 \>0110 0110 \><c>f</c>  
+ 
+    \>39 \>0010 0111 \><c>'</c>   \>103 \>0110 0111 \><c>g</c>  
+ 
+    \>40 \>0010 1000 \><c>(</c>   \>104 \>0110 1000 \><c>h</c>  
+ 
+    \>41 \>0010 1001 \><c>)</c>   \>105 \>0110 1001 \><c>i</c>  
+ 
+    \>42 \>0010 1010 \><c>*</c>   \>106 \>0110 1010 \><c>j</c>  
+ 
+    \>43 \>0010 1011 \>+   \>107 \>0110 1011 \><c>k</c>  
+ 
+    \>44 \>0010 1100 \><c>,</c>   \>108 \>0110 1100 \><c>l</c>  
+ 
+    \>45 \>0010 1101 \><c>-</c>   \>109 \>0110 1101 \><c>m</c>  
+ 
+    \>46 \>0010 1110 \><c>.</c>   \>110 \>0110 1110 \><c>n</c>  
+ 
+    \>47 \>0010 1111 \><c>/</c>   \>111 \>0110 1111 \><c>o</c>  
+ 
+    \>48 \>0011 0000 \><c>0</c>   \>112 \>0111 0000 \><c>p</c>  
+ 
+    \>49 \>0011 0001 \><c>1</c>   \>113 \>0111 0001 \><c>q</c>  
+ 
+    \>50 \>0011 0010 \><c>2</c>   \>114 \>0111 0010 \><c>r</c>  
+ 
+    \>51 \>0011 0011 \><c>3</c>   \>115 \>0111 0011 \><c>s</c>  
+ 
+    \>52 \>0011 0100 \><c>4</c>   \>116 \>0111 0100 \><c>t</c>  
+ 
+    \>53 \>0011 0101 \><c>5</c>   \>117 \>0111 0101 \><c>u</c>  
+ 
+    \>54 \>0011 0110 \><c>6</c>   \>118 \>0111 0110 \><c>v</c>  
+ 
+    \>55 \>0011 0111 \><c>7</c>   \>119 \>0111 0111 \><c>w</c>  
+ 
+    \>56 \>0011 1000 \><c>8</c>   \>120 \>0111 1000 \><c>x</c>  
+ 
+    \>57 \>0011 1001 \><c>9</c>   \>121 \>0111 1001 \><c>y</c>  
+ 
+    \>58 \>0011 1010 \><c>:</c>   \>122 \>0111 1010 \><c>z</c>  
+ 
+    \>59 \>0011 1011 \><c>;</c>   \>123 \>0111 1011 \><c>{</c>  
+ 
+    \>60 \>0011 1100 \><c>&lt;</c>   \>124 \>0111 1100 \><c>|</c>  
+ 
+    \>61 \>0011 1101 \><c>=</c>   \>125 \>0111 1101 \><c>}</c>  
+ 
+    \>62 \>0011 1110 \><c>></c>   \>126 \>0111 1110 \><c>&#126;</c>  
+ 
+    \>63 \>0011 1111 \><c>?</c>   \>127 \>0111 1111 \><c>DEL</c>
+  </tabular>
+  <p>
+    Now it only takes 7 bits to encode the 128 possible values in the
+    ASCII system, which can easily be verified by noticing that the left-most
+    bits in all of the binary representations above are 0. Most computers
+    use 8 bit words or <q>bytes</q> as their basic units of information, and the
+    fact that the ASCII code only requires 7 bits lead someone to think up
+    a use for that additional bit. It became a <q>parity check bit.</q> If the
+    seven bits of an ASCII encoding have an odd number of 1's, the parity
+    check bit is set to 1 <mdash /> otherwise, it is set to 0. The result of this
+    is that, subsequently, all of the 8 bit words that encode ASCII data will have
+    an even number of 1's. This is an example of a so-called <index><main>error detecting code</main></index> error detecting
+    code known as the <q>even code</q> or the <index><main>parity check code</main></index><q>parity check code.</q> If
+    data is sent over a noisy telecommunications channel, or is stored in
+    fallible computer memory, there is some small but calculable probability
+    that there will be a <q>bit error.</q> For instance, one computer might
+    send 10000111 (which is the ASCII code that says <q>ring the bell</q>) but
+    another machine across the network might receive 10100111 (the 3rd bit from
+    the left has been received in error) now if we are only looking at the
+    rightmost seven bits we will think that the ASCII code for a single quote
+    has been received, but if we note that this piece of received data has an
+    odd number of ones we'll realize that something is amiss. There are other
+    more advanced coding schemes that will let us not only <em>detect</em> an
+    error, but (within limits) <em>correct</em> it as well! This rather amazing
+    feat is what makes wireless telephony (not to mention communications
+    with deep space probes <mdash /> whoops! I mentioned it) work.
+  </p>
+
+  <p>
+    The concept of parity can be used in many settings to prove some
+    fairly remarkable results.
+  </p>
+
+  <p>
+    In <xref ref="sec_eq_rel">Section</xref> we introduced the idea of a graph. This
+    notion was first used by <index><main>Euler, Leonhard</main></index> Leonhard Euler to solve
+    a recreational math problem posed by the citizens of
+    <index><main>K&#xf6;nigsberg</main></index>K&#xf6;nigsberg, Prussia (this is the city now known
+    as <index><main>Kaliningrad</main></index> Kaliningrad, Russia.) K&#xf6;nigsberg was situated
+    at a place where two branches of the <index><main>Pregel, Pregolya</main></index> Pregel river<fn>Today, this river is known as the Pregolya.</fn> come together <mdash /> there is also
+    a large island situated near this confluence. By Euler's time, the city of
+    K&#xf6;nigsberg covered this island as well as the north and south banks of the
+    river and also the promontory where the branches came together. A network of
+    seven bridges had been constructed to connect all these land masses. The
+    townsfolk are alleged to have become enthralled by the question of whether it
+    was possible to leave one's home and take a walk through town
+    which crossed each of the bridges exactly once and, finally, return to one's
+    home.
+  </p>
+
+  <figure xml:id="fig_kon_map" >
+    <caption>A simplified map of K&#xf6;nigsberg, Prussia
+    circa 1736.</caption>
+    <image source=""/>
+  </figure>
+
+  <p>
+    Euler settled the question (it can't be done) be converting the map of
+    K&#xf6;nigsberg into a graph and then making some simple observations about
+    the parities of the nodes in this graph. The <index><main>degree</main></index> degree of a node
+    in a graph is the number of edges that are incident with it (if a so-called
+    <q>loop edge</q> is present it adds two to the node's degree). The <q>parity
+    of a node</q> is shorthand for the <q>parity of the <em>degree</em> of the node.</q>
+  </p>
+
+  <figure xml:id="fig_kon_graph" >
+    <caption>Euler's solution of the <q>seven
+    bridges of K&#xf6;nigsberg problem</q> involved representing the town
+    as an undirected graph.</caption>
+    <image source=""/>
+  </figure>
+
+  <p>
+    The graph of K&#xf6;nigsberg has 4 nodes: one of degree 5 and three of degree
+    3. All the nodes are odd. Would it be possible to either modify
+    K&#xf6;nigsberg or come up with an entirely new graph having some even nodes?
+    Well, the answer to that is easy <mdash /> just tear down one of the bridges, and two
+    of the nodes will have their degree changed by one; they'll both become even.
+    Notice that, by removing one edge, we effected the parity of two nodes. Is
+    it possible to create a graph with four nodes in which just one of them is
+    even? More generally, given any short list of natural numbers, is it
+    possible to draw a graph whose degrees are the listed numbers?
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Try drawing graphs having the following lists of vertex degrees.
+        (In some cases it will be impossible<ellipsis />)
+        <ul>
+          <li>
+            <title>-</title>
+            <p>
+              <m>\{1,1,2,3,3\}</m>
+            </p>
+          </li>
+
+          <li>
+            <title>-</title>
+            <p>
+              <m>\{1,2,3,5\}</m>
+            </p>
+          </li>
+
+          <li>
+            <title>-</title>
+            <p>
+              <m>\{1,2,3,4\}</m>
+            </p>
+          </li>
+
+          <li>
+            <title>-</title>
+            <p>
+              <m>\{4,4,4,4,5\}</m>
+            </p>
+          </li>
+
+          <li>
+            <title>-</title>
+            <p>
+              <m>\{3,3,3,3\}</m>
+            </p>
+          </li>
+
+          <li>
+            <title>-</title>
+            <p>
+              <m>\{3,3,3,3,3\}</m>
+            </p>
+          </li>
+        </ul>
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    When it is possible to create a graph with a specified list
+    of vertex degrees, it is usually easy to do. Of course, when
+    it's impossible you struggle a bit<ellipsis />
+    To help get things rolling (just in case you haven't
+    really done the exercise) I'll give a hint <mdash /> for the first list it
+    is possible to draw a graph, for the second it is not.
+    Can you distinguish the pattern? What makes one list
+    of vertex degrees reasonable and another not?
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        (If you didn't do the last exercise, stop being such a lame-o and
+        try it now. BTW, if you <em>did</em> do it, good for you! You can
+        either join with me now in sneering at all those people who are scurrying
+        back to do the last one, or try the following:)
+      </p>
+
+      <p>
+        Figure out a way to distinguish a sequence of numbers that <em>can</em> be
+        the degree sequence of some graph from the sequences that cannot be.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    Okay, now if you're reading this sentence you should know that every
+    other list of vertex degrees above is impossible, you should have graphs
+    drawn in the margin here for the 1st, 3rd and 5th degree sequences, and
+    you may have discovered some version of the following
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        In an undirected graph, the number of vertices having an odd degree is even.
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    A slightly pithier statement is: All graphs have an even number of
+    odd nodes.
+  </p>
+
+  <p>
+    We'll leave the proof of this theorem to the exercises but most of the
+    work is done in proving the following equivalent result.
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        In an undirected graph the sum of the degrees of the vertices is even.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      The sum of the degrees of all the vertices in a graph <m>G</m>,
+      <me>
+        \sum_{v\in V(G)} \deg(v),
+      </me>
+      counts every edge of <m>G</m> exactly twice.
+    </p>
+
+    <p>
+      Thus,
+      <me>
+        \sum_{v\in V(G)} \deg(v) = 2 \cdot |E(G)|.
+      </me>
+    </p>
+
+    <p>
+      In particular we see that this sum is even.
+    </p>
+  </proof>
+
+  <p>
+    The question of whether a graph having a given list of vertex degrees
+    can exist comes down to an elegant little argument using both of the
+    techniques in the title of this section. We count the edge set of the
+    graph in two ways <mdash /> once in the usual fashion and once by summing the
+    vertex degrees; we also note that since this latter count is actually
+    a double count we can bring in the concept of parity.
+  </p>
+
+  <p>
+    Another perfectly lovely argument involving parity arises in questions
+    concerning whether or not it is possible to tile a pruned chessboard
+    with dominoes. We've seen dominoes before in <xref ref="sec_induct">Section</xref>
+    and we're just hoping you've run across chessboards before. Usually
+    a chessboard is 8 <times /> 8, but we would like to adopt a more
+    liberal interpretation that a chessboard can be any rectangular grid
+    of squares we might choose.<fn>The game known as <q>draughts</q> in the
+    UK and <q>checkers</q> in the US is played on an <m>8 \times 8</m> board, but 
+    (for example) international draughts is played on a <m>10 \times 10</m> 
+    board and Canadian checkers is played on a <m>12 \times 12</m> board.</fn>
+    Suppose that we have a supply of dominoes that are of just the right
+    size that if they are laid on a chessboard they perfectly cover two
+    adjacent squares. Our first question is quite simple. Is it possible
+    to perfectly tile an <m>m \times n</m> chessboard with such dominoes?
+  </p>
+
+  <p>
+    First let's specify the question a bit more. By <q>perfectly tiling</q>
+    a chessboard we mean that every domino lies (fully) on the board,
+    covering precisely two squares, and that every square of the board
+    is covered by a domino.
+  </p>
+
+  <p>
+    The answer is straightforward. If at least one of <m>m</m> or <m>n</m> is even
+    it can be done. A necessary condition is that the number of squares
+    be even (since every domino covers two squares) and so, if both <m>m</m>
+    and <m>n</m> are odd we will be out of luck.
+  </p>
+
+  <p>
+    A <q>pruned board</q> is obtained by either literally removing some of the
+    squares or perhaps by marking them as being off limits in some way.
+    When we ask questions about perfect tilings of pruned chessboards things
+    get more interesting and the notion of parity can be used in several
+    ways.
+  </p>
+
+  <p>
+    Here are two tiling problems regarding square chessboards:
+    <ol>
+      <li>
+        <p>
+          An even-sided square board (e.g. an ordinary <m>8 \times 8</m> board) 
+          with diagonally opposite corners pruned.
+        </p>
+      </li>
+
+      <li>
+        <p>
+          An odd-sided board with one square pruned.
+        </p>
+      </li>
+    </ol>
+  </p>
+
+  <p>
+    Both of these situations satisfy the basic necessary condition that
+    the number of squares on the board must be even. You may be able
+    to determine another <q>parity</q> approach to these tiling problems
+    by attempting the following
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Below are two five-by-five chessboards each having a single
+        square pruned. One can be tiled by dominoes and the other
+        cannot. Which is which?
+      </p>
+      <image source="images/75665324278ffbbf27adb71f6ca2d4837a3d688f.png"/>
+      <p>
+        \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+        \reset@font\fontsize{#1}{#2pt}
+        \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+        \selectfont}\fi
+      </p>
+      <image source="images/675394a25987b08e74c280fd8ce87ef848bcb39e.png"/>
+    </statement>
+  </exercise>
+  <p>
+    The pattern of black and white squares on a chessboard is an
+    example of a sort of artificial parity, if we number the squares
+    of the board appropriately then the odd squares will be white and
+    the even squares will be black. We are used to chessboards having
+    this alternating black/white pattern on them, but nothing about these
+    tiling problems required that structure<fn>Nothing about chess
+    requires this structure either, but it does let us do some error checking.
+    For instance, bishops always end up on the same color they left from and 
+    knights always switch colors as they move.</fn> If we were used to monochromatic chessboards, we might never solve the previous two problems <mdash /> unless
+    of course we invented the coloring scheme in order to solve them.
+    An odd-by-odd chessboard has more squares of one color than of the other.
+    An odd-by-odd chessboard needs to have a square pruned in order for it to
+    be possible for it to be tiled by dominoes <mdash /> but if the wrong colored
+    square is pruned it will <em>still</em> be impossible. Each domino covers
+    two squares <mdash /> one of each color! (So the pruned board must have the
+    same number of white squares as black.)
+  </p>
+
+  <p>
+    We'll close this section with another example of the technique of
+    counting in two ways.
+  </p>
+
+  <p>
+    A <index><main>magic square</main></index> magic square of order <m>n</m> is a square
+    <m>n \times n</m> array
+    containing the numbers <m>1, 2, 3, \ldots , n^2</m>. The numbers must
+    be arranged in such a way that every row and every column sum to
+    the same number <mdash /> this value is known as the magic sum.
+  </p>
+
+  <p>
+    For example, the following is an order <m>3</m> magic square.
+  </p>
+  <tabular>
+    <row>
+      <cell>1</cell>
+      <cell>6</cell>
+      <cell>8</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>5</cell>
+      <cell>7</cell>
+      <cell>3</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>9</cell>
+      <cell>2</cell>
+      <cell>4</cell>
+    </row>
+  </tabular>
+  <p>
+    The definition of a magic square requires that the rows and columns sum to
+    the same number but says nothing about what that number must be.
+    It is conceivable that we could produce magic squares (of the same order)
+    having different magic sums. This is <em>conceivable</em>, but in fact the
+    magic sum is determined completely by <m>n</m>.
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        A magic square of order <m>n</m> has a magic sum equal to <m>\displaystyle\frac{n^3+n}{2}</m>.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      We count the total of the entries in the magic square in two ways.
+      The sum of all the entries in the magic square is
+      <me>
+        S = 1 + 2 + 3 + \ldots + n^2.
+      </me>
+    </p>
+
+    <p>
+      Using the formula for the sum of the first <m>k</m> naturals ( <m>\sum_{i=1}^k i = \frac{k^2+k}{2}</m>) and evaluating at <m>n^2</m> gives
+      <me>
+        S = \frac{n^4 + n^2}{2}.
+      </me>
+    </p>
+
+    <p>
+      On the other hand, if the magic sum is <m>M</m>, then each of the <m>n</m> rows has
+      numbers in it which sum to <m>M</m> so
+      <me>
+        S = nM.
+      </me>
+    </p>
+
+    <p>
+      By equating these different expressions for <m>S</m> and solving for <m>M</m>, we
+      prove the desired result:
+      <me>
+        nM = \frac{n^4 + n^2}{2},
+      </me>
+      therefore
+      <me>
+        M = \frac{n^3 + n}{2}.
+      </me>
+    </p>
+  </proof>
+
+  <exercises>
+    <exercise>
+      <statement>
+        <p>
+          A walking tour of K&#xf6;nigsberg such as is described in this section,
+          or more generally, a circuit through an arbitrary graph that crosses each
+          edge precisely once and begins and ends at the same node is known as
+          an <index><main>Eulerian circuit</main></index> <em>Eulerian circuit</em>. An <index><main>Eulerian
+          path</main></index> <em>Eulerian path</em> also crosses every edge of a graph exactly
+          once but it begins and ends at distinct nodes. For each of the following
+          graphs determine whether an Eulerian circuit or path is possible, and if so,
+          draw it.
+        </p>
+        <image source="images/a7d986cae4d4d5c0cb948b3e01b7606fc1f41eab.png"/>
+        <p>
+          \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+          \reset@font\fontsize{#1}{#2pt}
+          \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+          \selectfont}\fi
+        </p>
+        <image source="images/4461cde0210cf133596dbce7efe450f102dab7fd.png"/>
+        <image source="images/cd46b99c4d10ad6c0d4af135a1ffa5c672809007.png"/>
+        <p>
+          \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+          \reset@font\fontsize{#1}{#2pt}
+          \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+          \selectfont}\fi
+        </p>
+        <image source="images/77ac096ebf55735f4e0a8dc2130808ca45660f67.png"/>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Complete the proof of the fact that <q>Every graph has an even number
+          of odd nodes.</q>
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Provide an argument as to why an <m>8 \times 8</m> chessboard with
+          two squares pruned from diagonally opposite corners cannot be tiled
+          with dominoes.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove that, if <m>n</m> is odd, any <m>n \times n</m> chessboard with
+          a square the same color as one of its corners pruned can be tiled by
+          dominoes.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The five <index><main>tetromino</main></index> tetrominoes (familiar to players of the video game
+          Tetris) are relatives of dominoes made up of four small squares.
+        </p>
+        <image source="images/11ff9b9516b6755feae7776cdfcca33b4a4ccfc9.png"/>
+        <p>
+          \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+          \reset@font\fontsize{#1}{#2pt}
+          \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+          \selectfont}\fi
+        </p>
+        <image source="images/c344d4bdfbbc67bde0f52aea9d5b854eb5cced81.png"/>
+        <p>
+          All together these five tetrominoes contain 20 squares
+          so it is conceivable that they could be used to tile a <m>4 \times 5</m>
+          chessboard. Prove that this is actually impossible.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          State necessary and sufficient conditions for the existence of
+          an Eulerian circuit in a graph.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          State necessary and sufficient conditions for the existence of
+          an Eulerian path in a graph.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Construct magic squares of order 4 and 5.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          A magic hexagon of order 2 would consist of filling-in
+          the numbers from 1 to 7 in the hexagonal array below. The magic
+          condition means that each of the 9 <q>lines</q> of adjacent hexagons
+          would have the same sum. Is this possible?
+        </p>
+        <image source="images/0e8e91be65645eb1923722fabd8a1771b6e94fc1.png"/>
+        <p>
+          \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+          \reset@font\fontsize{#1}{#2pt}
+          \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+          \selectfont}\fi
+        </p>
+        <image source="images/965be1a6b2010b563cbd3180324730c987344bd9.png"/>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Is there a magic hexagon of order 3?
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
+</section>

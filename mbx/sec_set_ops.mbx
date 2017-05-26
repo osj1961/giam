@@ -1,0 +1,883 @@
+
+<section xml:id="sec_set_ops">
+  <title>Set operations</title>
+  <p>
+    In this section we'll continue to develop the correspondence between
+    Logic and Set theory.
+  </p>
+
+  <p>
+    The logical connectors <m>\land</m> and <m>\lor</m> correspond to the set-theoretic
+    notions of
+    <index><main>union</main></index>union (<m>\cup</m>) and
+    <index><main>intersection</main></index>intersection (<m>\cap</m>). The symbols are
+    designed to provide a mnemonic for the correspondence; the Set theory
+    symbols are just rounded versions of those from Logic.
+  </p>
+
+  <p>
+    Explicitly, if <m>P(x)</m> and <m>Q(x)</m> are open sentences, then
+    the <em>union</em> of the corresponding truth sets <m>S_P</m> and <m>S_Q</m>
+    is defined by
+    <me>
+      S_P \cup S_Q \; = \{ x \in U \suchthat P(x) \lor Q(x) \}.
+    </me>
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Suppose two sets <m>A</m> and <m>B</m> are given. Re-express the previous
+        definition of <q>union</q> using their membership criteria, <m>M_A(x) =</m>
+        <q><m>x \in A</m></q> and <m>M_B(x) =</m> <q><m>x \in B</m>.</q>
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    The union of more than two sets can be expressed using a big union
+    symbol. For example, consider the family of real intervals defined
+    by <m>I_n = (n,n+1]</m>.<fn>The elements 
+    of <m>I_n</m> can also be distinguished as the solution sets of 
+    the inequalities <m>n \lt  x \leq n+1</m>.</fn>
+    There's an interval for every integer <m>n</m>. Also, every real number is in
+    one of these intervals. The previous sentence can be expressed as
+    <me>
+      \Reals \; = \; \bigcup_{n\in\Integers} I_n.
+    </me>
+  </p>
+
+  <p>
+    The intersection of two sets is conceptualized as <q>what they have in common</q>
+    but the precise definition is found by considering conjunctions,
+    <me>
+      A \cap B \; = \; \{ x \in U \suchthat x \in A \; \land \; x \in B \}.
+    </me>
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        With reference to two open sentences <m>P(x)</m> and <m>Q(x)</m>, define the
+        intersection of their truth sets, <m>S_P \cap S_Q</m>.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    There is also a <q>big</q> version of the intersection symbol. Using
+    the same family of intervals as before,
+    <me>
+      \mbox{\(\emptyset\)}  \; = \; \bigcap_{n\in\Integers} I_n.
+    </me>
+  </p>
+
+  <p>
+    Of course the intersection of any distinct pair of these intervals is empty
+    so the statement above isn't particularly strong.
+  </p>
+
+  <p>
+    Negation in Logic corresponds to
+    complementation in Set theory. The
+    <index><main>complement</main></index><em>complement</em> of a set <m>A</m> is usually denoted by <m>\overline{A}</m>
+    (although some prefer a superscript <m>c</m> <mdash /> as in <m>A^c</m>), this is the set
+    of all things that <em>aren't</em> in <m>A</m>. In thinking about complementation
+    one quickly sees why the importance of working within a well-defined
+    universal set is stressed. Consider the set of all math textbooks.
+    Obviously the complement of this set would contain texts in English,
+    Engineering and Evolution <mdash /> but that statement is implicitly
+    assuming that the universe of discourse is <q>textbooks.</q> It's equally
+    valid to say that a very long sequence of zeros and ones, a luscious
+    red strawberry, and the number <m>\sqrt{\pi}</m>
+    are not math textbooks and so
+    these things are all elements of the complement of the set of all math
+    textbooks. What is really a concern for us is the issue of whether or not
+    the complement of a set is well-defined, that is, can we tell for sure
+    whether a given item is or is not in the complement of a set. This
+    question is decidable exactly when the membership question for the
+    original set is decidable. Many people think that the main
+    reason for working within a fixed universal set is that we then
+    have well-defined complements. The real reason that we accept
+    this restriction is to ensure that both membership criteria,
+    <m>M_A(x)</m> and <m>M_{\overline{A}}(x)</m>, are decidable open sentences.
+    As an example of the sort of strangeness that can crop up, consider that
+    during the time that I, as the author of this book, was writing the
+    last paragraph, this text was nothing more than a very long
+    sequence of zeros and ones in the memory of my computer<ellipsis />
+  </p>
+
+  <p>
+    Every rule that we learned in <xref ref="ch_logic">Chapter</xref>
+    (see <xref ref="tab_bool_equiv">Table</xref>) has a set-theoretic equivalent.
+    These set-theoretic versions are
+    expressed using equalities (i.e. the symbol <m>=</m> in between two sets) which
+    is actually a little bit funny if you think about it. We normally
+    use <m>=</m> to mean that two numbers or variables have the same numerical
+    magnitude, as in <m>12^2 = 144</m>, we are doing something altogether
+    different when we use that symbol between two sets, as in <m>\{1,2,3\}=
+    \{\sqrt{1},\sqrt{4},\sqrt{9}\}</m>, but people seem to be used to this
+    so there's no sense in quibbling.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Develop a useful definition for set equality. In other words,
+        come up with a (quantified) logical statement that means the
+        same thing as <q><m>A = B</m></q> for two arbitrary sets <m>A</m> and <m>B</m>.
+      </p>
+    </statement>
+  </exercise>
+  <exercise>
+    <statement>
+      <p>
+        What symbol in Logic should go between the membership criteria
+        <m>M_A(x)</m> and <m>M_B(x)</m> if <m>A</m> and <m>B</m> are equal sets?
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    In <xref ref="tab_set_equiv">Table</xref> the rules governing the interactions
+    between the set theoretic operations are collected.
+  </p>
+
+  <p>
+    We are now in a position somewhat similar to when we jumped from
+    proving logical assertions with truth tables to doing two-column
+    proofs. We have two different approaches for showing that two
+    sets are equal. We can do a so-called <q>element chasing</q> proof
+    (to show <m>A=B</m>, assume <m>x \in A</m> and prove <m>x \in B</m> and then vice versa).
+    Or, we can construct a proof using the basic set equalities given
+    in <xref ref="tab_set_equiv">Table</xref>. Often the latter can take the form
+    of a two-column proof.
+  </p>
+
+  <table xml:id="tab_set_equiv" >
+    <caption>Basic set theoretic equalities.</caption>
+    <tabular>
+      <row>
+        <cell></cell>
+        <cell>\begin{minipage}{.35\textwidth} Intersectionversion</cell>
+        <cell>\begin{minipage}{.35\textwidth} Unionversion</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Commutative</cell>
+      </row>
+      <row>
+        <cell>laws</cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cap B = B \cap A</m></cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cup B = B \cup A</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Associative</cell>
+      </row>
+      <row>
+        <cell>laws</cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cap (B \cap C)</m><m>= (A \cap B) \cap C</m></cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cup (B \cup C)</m> <m>= (A \cup B) \cup C</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Distributive</cell>
+      </row>
+      <row>
+        <cell>laws</cell>
+        <cell>\begin{minipage}{.35\textwidth} 
+        <m>A \cap (B \cup C) =</m> <m>(A \cap B) \cup (A \cap C)</m></cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cup (B \cap C) =</m> <m>(A \cup B) \cap (A \cup C)</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>DeMorgan's</cell>
+      </row>
+      <row>
+        <cell>laws</cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>\overline{A \cap B}</m> <m>= \; \overline{A} \cup \overline{B}</m></cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>\overline{A \cup B}</m><m>= \; \overline{A} \cap \overline{B}</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Double</cell>
+      </row>
+      <row>
+        <cell>complement</cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>\overline{\overline{A}} \; = \; A</m></cell>
+        <cell>\begin{minipage}{.35\textwidth} same</cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Complementarity</cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cap \overline{A} \; = \; \emptyset</m></cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cup \overline{A} \; = \; U</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Identity</cell>
+      </row>
+      <row>
+        <cell>laws</cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cap U = A</m></cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cup \emptyset = A</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Domination</cell>
+        <cell>\begin{minipage}{.35\textwidth}  <m>A \cap \emptyset = \emptyset</m></cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cup U = U</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Idempotence</cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cap A = A</m></cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cup A = A</m></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>Absorption</cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cap (A \cup B) = A</m></cell>
+        <cell>\begin{minipage}{.35\textwidth} <m>A \cup (A \cap B) = A</m></cell>
+      </row>
+    </tabular>
+    <index><main>set theoretic equalities</main></index>
+  </table>
+
+  <p>
+    Before we proceed much further in our study of set theory it would be a
+    good idea to give you an example. We're going to prove the same assertion
+    in two different ways <mdash /> once via element chasing and once using the
+    basic set theoretic equalities from <xref ref="tab_set_equiv">Table</xref>.
+  </p>
+
+  <p>
+    The statement we'll prove is <m>A \cup B \; = \; A \cup (\overline{A} \cap B)</m>.
+  </p>
+
+  <p>
+    First, by chasing elements:
+  </p>
+
+  <proof>
+    <p>
+      Suppose <m>x</m> is an element of <m>A \cup B</m>. By the definition of union we
+      know that
+      <me>
+        x \in A \lor x \in B.
+      </me>
+    </p>
+
+    <p>
+      The conjunctive identity law and the
+      fact that <m>x \in A \lor x \notin A</m> is a tautology gives us an equivalent
+      logical statement:
+      <me>
+        (x \in A \lor x \notin A) \land (x \in A \lor x \in B).
+      </me>
+    </p>
+
+    <p>
+      Finally, this last statement is equivalent to
+      <me>
+        x \in A \lor (x \notin A \land x \in B)
+      </me>
+      which is the definition of <m>x \in A \cup (\overline{A} \cap B)</m>.
+    </p>
+
+    <p>
+      On the other hand, if we assume that <m>x \in A \cup (\overline{A} \cap B)</m>, it follows that
+      <me>
+        x \in A \lor (x \notin A \land x \in B).
+      </me>
+    </p>
+
+    <p>
+      Applying the distributive law, disjunctive complementarity and the identity law,
+      in sequence we obtain
+      <md>
+        <mrow>x \in A \lor (x \notin A \land x \in B)</mrow>
+        <mrow>\cong (x \in A \lor x \notin A) \land (x \in A \lor x \in B)</mrow>
+        <mrow>\cong t \land (x \in A \lor x \in B)</mrow>
+        <mrow>\cong x \in A \lor x \in B</mrow>
+      </md>
+    </p>
+
+    <p>
+      The last statement in this chain of logical equivalences provides the definition of <m>x \in A \cup B</m>.
+    </p>
+  </proof>
+
+  <p>
+    A two-column proof of the same statement looks like this:
+  </p>
+
+  <proof>
+    <tabular>
+      <row>
+        <cell></cell>
+        <cell><m>A \cup B</m></cell>
+        <cell></cell>
+        <cell>Given</cell>
+      </row>
+      <row>
+        <cell><m>=</m></cell>
+        <cell><m>U \cap (A \cup B)</m></cell>
+        <cell></cell>
+        <cell>Identity law</cell>
+      </row>
+      <row>
+        <cell><m>=</m></cell>
+        <cell><m>(A \cup \overline{A}) \cap (A \cup B)</m></cell>
+        <cell></cell>
+        <cell>Complementarity</cell>
+      </row>
+      <row>
+        <cell><m>=</m></cell>
+        <cell><m>(A \cup (\overline{A} \cap B)</m></cell>
+        <cell></cell>
+        <cell>Distributive law</cell>
+      </row>
+    </tabular>
+  </proof>
+
+  <p>
+    There are some notions within Set theory that don't have any clear
+    parallels in Logic. One of these is essentially a generalization
+    of the concept of <q>complements.</q> If you think of the set <m>\overline{A}</m>
+    as being the difference between the universal set <m>U</m> and the set <m>A</m>
+    you are on the right track. The
+    <index><main>difference (of sets)</main></index><em>difference</em> between two sets is written
+    <m>A \setminus B</m> (sadly, sometimes this is denoted using the ordinary
+    subtraction symbol <m>A-B</m>) and is defined by
+    <me>
+      A \setminus B = A \cap \overline{B}.
+    </me>
+  </p>
+
+  <p>
+    The difference, <m>A \setminus B</m>, consists of those elements of <m>A</m> that aren't in <m>B</m>. In some developments of Set theory, the difference of sets is
+    defined first and then complementation is defined by <m>\overline{A} = U \setminus A</m>.
+  </p>
+
+  <p>
+    The difference of sets (like the difference of real numbers) is not a
+    commutative operation. In other words <m>A \setminus B \neq B \setminus A</m>
+    (in general). It is possible to define an operation that acts somewhat
+    like the difference, but that <em>is</em> commutative. The
+    <index><main>symmetric difference</main></index><em>symmetric difference</em>
+    of two sets is denoted using a
+    triangle (really a capital Greek delta)
+    <me>
+      A \triangle B = (A \setminus B) \cup (B\setminus A).
+    </me>
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Show that <m>A \triangle B = (A \cup B) \setminus (A \cap B)</m>.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    Come on! You read right past that exercise without even pausing!
+  </p>
+
+  <p>
+    What? You say you <em>did</em> try it and it was too hard?
+  </p>
+
+  <p>
+    Okay, just for you (and this time only) I've prepared an aid to
+    help you through<ellipsis />
+  </p>
+
+  <p>
+    On the next page is a two-column proof of the result you need to
+    prove, but the lines of the proof are all scrambled.
+    Make a copy and cut out all the pieces and then glue them together
+    into a valid proof.
+  </p>
+
+  <p>
+    So, no more excuses, just do it!
+  </p>
+  <tabular>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>= (A \cap \overline{B}) \cup (B \cap \overline{A})</m></cell>
+      <cell>identity law</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>= (A \cup B) \cap \overline{(A \cap B)}</m></cell>
+      <cell>def. of relative difference</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>(A \cup B) \setminus (A \cap B)</m></cell>
+      <cell>Given</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>= ((A \cap \overline{A}) \cup (A \cap \overline{B})) \cup ((B \cap \overline{A}) \cup (B \cap \overline{B}))</m></cell>
+      <cell>distributive law</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>= (A \setminus B) \cup (B \setminus A)</m></cell>
+      <cell>def. of relative difference</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>= (A \cap \overline{(A \cap B)}) \cup (B \cap \overline{(A \cap B)})</m></cell>
+      <cell>distributive law</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>= A \triangle B</m></cell>
+      <cell>def. of symmetric difference</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>= (A \cap (\overline{A} \cup \overline{B}) \cup (B \cap (\overline{A} \cup \overline{B}))</m></cell>
+      <cell>DeMorgan's law</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>= (\emptyset \cup (A \cap \overline{B})) \cup ((B \cap \overline{A}) \cup \emptyset)</m></cell>
+      <cell>complementarity</cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+  </tabular>
+  <exercises>
+    <exercise>
+    <statement>
+      <p>
+        Let <m>A = \{1, 2, \{1, 2\}, b\}</m> and let <m>B=\{a, b, \{1, 2\} \}</m>.
+        Find the following:
+        <ol>
+          \end{exercise}
+          <exercise>
+            <p>
+              <m>A \cap B</m>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              <m>\{ b,  \{1, 2\} \}</m>
+            </p>
+          </hint>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>A \cup B</m>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              <m>\{1, 2, a, b, \{1, 2\} \}</m>
+            </p>
+          </hint>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>A \setminus B</m>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              <m>\{ 1, 2 \}</m>
+            </p>
+          </hint>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>B \setminus A</m>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              <m>\{ a \}</m>
+            </p>
+          </hint>
+        </exercise>
+        \begin{exercise}  <m>A \triangle B</m>
+        <hint>
+          <p>
+            <m>\{ 1, 2, a \}</m>
+          </p>
+        </hint>
+      </ol>
+    </p>
+    </exercise>
+    <exercise>
+    <statement>
+      <p>
+        In a standard deck of playing cards one can distinguish sets
+        based on face-value and/or suit. Let <m>A, 2, \ldots 9, 10, J, Q</m> and <m>K</m>
+        represent the sets of cards having the various face-values. Also, let
+        <m>\heartsuit</m>, <m>\spadesuit</m>, <m>\clubsuit</m> and <m>\diamondsuit</m> be the
+        sets of cards having the possible suits. Find the following
+        <ol>
+          \end{exercise}
+          <exercise>
+            <p>
+              <m>A \cap \heartsuit</m>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              This is just the ace of hearts.
+            </p>
+          </hint>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>A \cup \heartsuit</m>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              All of the hearts and the other three aces
+            </p>
+          </hint>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>J \cap (\spadesuit \cup \heartsuit)</m>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              These two cards are known as the one-eyed jacks.
+            </p>
+          </hint>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>K \cap \heartsuit</m>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              The king of hearts, a.k.a. the suicide king.
+            </p>
+          </hint>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>A \cap K</m>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              <m>\emptyset</m>
+            </p>
+          </hint>
+        </exercise>
+        \begin{exercise} <m>A \cup K</m>
+        <hint>
+          <p>
+            Eight cards: all four kings and all four aces.
+          </p>
+        </hint>
+      </ol>
+    </p>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The following is a screenshot from the computational geometry program OpenSCAD (very hand for making models for 3-d printing<ellipsis />) In computational geometry we use the basice set operations together
+          with a few other types of transformations to create interesting models using simple components. Across the top of the image below we see 3 sets of points in <m>\Reals^3</m>, a ball, a sort of 3-dimensional plus sign, and a disk. Let's call the ball <m>A</m>, the plus sign <m>B</m> and the disk <m>C</m>. The nine shapes shown below them are made from <m>A</m>, <m>B</m> and <m>C</m> using union, intersection and set difference. Identify them!
+        </p>
+
+        <p>
+          <image width="37%" source="images/set_ops.png" />
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+    <statement>
+      <p>
+        Do element-chasing proofs (show that an element is in the left-hand side if and only if it is in the right-hand side) to prove each of the following set equalities.
+        <ol>
+          \end{exercise}
+          <exercise>
+            <p>
+              <m>\overline{A\cap B} \; = \; \overline{A}\cup\overline{B}</m>
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>A\cup B \; = \; A\cup(\overline{A}\cap B)</m>
+            </p>
+          </statement>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>
+              <m>A\triangle B \; = \; (A\cup B)\setminus(A\cap B)</m>
+            </p>
+          </statement>
+        </exercise>
+        \begin{exercise} <m>(A\cup B)\setminus C \; = \; (A\setminus C)\cup(B\setminus C)</m>
+      </ol>
+    </p>
+    <hint>
+      <p>
+        Here's the first one (although I'm omiting justifications for each step.
+        <md>
+          <mrow>x \in \overline{A\cap B}</mrow>
+          <mrow>\iff \; {\lnot}(x \in A\cap B)</mrow>
+          <mrow>\iff \; {\lnot}(x \in A \; \land \; x \in B)</mrow>
+          <mrow>\iff \; {\lnot}(x \in A) \; \lor \; {\lnot}(x \in B)</mrow>
+          <mrow>\iff \; x \in \overline{A}  \; \lor \; x \in \overline{B}</mrow>
+          <mrow>\iff \; x \in \overline{A} \cup \overline{B}</mrow>
+        </md>
+      </p>
+    </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          For each positive integer <m>n</m>, we'll define an interval <m>I_n</m>
+          by
+          <me>
+            I_n = [-n, 1/n).
+          </me>
+        </p>
+
+        <p>
+          Find the union and intersection of all the intervals in this infinite family.
+          <me>
+            \bigcup_{n \in \Naturals} I_n  =
+          </me>
+          <me>
+            \bigcap_{n \in \Naturals} I_n  =
+          </me>
+        </p>
+      </statement>
+      <hint>
+        <p>
+          To better understand what is going on, first figure out what the first three or four
+          intervals actually are.
+          <me>
+            I_1 \; = \; \underline{}
+          </me>
+          <me>
+            I_2 \; = \; \underline{}
+          </me>
+          <me>
+            I_3 \; = \; \underline{}
+          </me>
+          <me>
+            I_4 \; = \; \underline{}
+          </me>
+        </p>
+
+        <p>
+          Any negative real number <m>r</m> will be in the intersection only if <m>r \geq -1</m>. Certainly <m>0</m> is in
+          the intersection since it is in each of the intervals. Are there any positive numbers in the intersection?
+        </p>
+
+        <p>
+          In order to be in the union a real number just needs to be in <em>one</em> of the intervals.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          There is a set <m>X</m> such that, for all sets <m>A</m>, we have
+          <m>X \triangle A = A</m>. What is <m>X</m>?
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          There is a set <m>Y</m> such that, for all sets <m>A</m>, we have
+          <m>Y \triangle A = \overline{A}</m>. What is <m>Y</m>?
+        </p>
+      </statement>
+      <hint>
+        <p>
+          One of the answers to the last two questions is <m>\emptyset</m> and the other is <m>U</m>. Decide
+          which is which.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          In proving a set-theoretic identity, we are basically showing that
+          two sets are equal. One reasonable way to proceed is to show that
+          each is contained in the other. Prove that
+          <m>A \cap (B \cup C) = (A \cap B) \cup (A \cap C)</m> by showing that
+          <m>A \cap (B \cup C) \subseteq (A \cap B) \cup (A \cap C)</m> and
+          <m>(A \cap B) \cup (A \cap C) \subseteq A \cap (B \cup C)</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove that
+          <m>A \cup (B \cap C) = (A \cup B) \cap (A \cup C)</m> by showing that
+          <m>A \cup (B \cap C) \subseteq (A \cup B) \cap (A \cup C)</m> and
+          <m>(A \cup B) \cap (A \cup C) \subseteq A \cup (B \cap C)</m>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          This exercise, as well as the previous one, is really just about converting set-theoretic
+          statements into their logical equivalents, applying some rules of logic that we've already verified,
+          and then returning to a set-theoretic version of things.
+        </p>
+      </hint>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove the set-theoretic versions of DeMorgan's laws using the technique
+          discussed in the previous problems.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The previous technique (showing that <m>A=B</m> by arguing that
+          <m>A \subseteq B \; \land \; B \subseteq A</m>) will have an outline something like
+        </p>
+
+        <proof>
+        <p>
+          First we will show that <m>A \subseteq B</m>.
+          Towards that end, suppose <m>x \in A</m>.
+        </p>
+
+        <p>
+          <m>\vdots</m>
+        </p>
+
+        <p>
+          Thus <m>x \in B</m>.
+        </p>
+
+        <p>
+          Now, we will show that <m>B \subseteq A</m>.
+          Suppose that <m>x \in B</m>.
+        </p>
+
+        <p>
+          <m>\vdots</m>
+        </p>
+
+        <p>
+          Thus <m>x \in A</m>.
+        </p>
+
+        <p>
+          Therefore <m>A \subseteq B \; \land \; B \subseteq A</m> so we conclude that <m>A=B</m>.
+        </p>
+        </proof>
+
+        <p>
+          Formulate a proof that <m>A \triangle B \; = \; (A \cup B) \setminus (A \cap B)</m> that follows this outline.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          The definition of <m>A \triangle B</m> is <m>(A\setminus B) \cup (B\setminus A)</m>. The definition of
+          <m>X \setminus Y</m> is <m>X \cap \overline{Y}</m>. Restating things in terms of <m>\cap</m> and <m>\cup</m> (and complementation) should help. So your first few lines should be:
+        </p>
+
+        <blockquote>
+        Suppose <m>x \in  A \triangle B</m>.  
+ 
+        Then, by definition, <m>x \in (A\setminus B) \cup (B\setminus A)</m>.
+ 
+         So, <m>x \in (A \cap \overline{B}) \cup (B \cap \overline{A})</m>.
+   
+        <m>\vdots</m>
+        </blockquote>
+      </hint>
+    </exercise>
+  </exercises>
+</section>

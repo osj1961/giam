@@ -1,0 +1,294 @@
+
+<section xml:id="sec_morley">
+  <title>Morley's miracle</title>
+  <p>
+    Probably you have heard of the impossibility of trisecting an angle.
+    (Hold on for a quick rant about the importance of understanding your
+    hypotheses<ellipsis />) What's <em>actually</em> true is that you can't trisect
+    a generic angle if you accept the restriction of using the old-fashioned
+    tools of Euclidean geometry: the compass and straight-edge. There
+    are a lot of constructions that can't be done using just a
+    straight-edge and compass <mdash /> angle trisection, duplication of a cube<fn>Duplicating the cube 
+    is also known as the Delian problem <mdash /> the problem comes from a pronouncement
+    by the oracle of Apollo at Delos that a plague afflicting the Athenians would
+    be lifted if they built an altar to Apollo that was twice as big as the 
+    existing altar.  The existing altar was a cube, one meter on a side, so they
+    carefully built a two meter cube <mdash /> but the plague raged on.  Apparently what
+    Apollo wanted was a cube that had double the <em>volume</em> of the 
+    present altar <mdash /> it's side length would have to be 
+    <m>\sqrt[3]{2} \approx 1.25992</m> and since this was Greece and it was around 
+    430 B.C. and there were no electronic calculators, they were basically
+    just screwed.</fn>, squaring a circle, constructing a regular heptagon, <em>et cetera</em>.
+  </p>
+
+  <p>
+    If you allow yourself to use a <em>ruler</em> <mdash /> i.e. a straight-edge with
+    marks on it (indeed you really only need two marks a unit distance apart)
+    then angle trisection <em>can</em> be done via what is known as a
+    <index><main>neusis construction</main></index>neusis construction.
+    Nevertheless, because of the central place of Euclid's <em>Elements</em> in
+    mathematical training throughout the centuries, and thereby, a very
+    strong predilection towards that which <em>is</em> possible via compass and straight-edge
+    alone, it is perhaps not surprising that a perfectly beautiful result that
+    involved trisecting angles went undiscovered until 1899, when Frank Morley
+    stated his Trisector Theorem. There is much more to this result than we will
+    state here <mdash /> so much more that the name <q>Morley's Miracle</q> that has been
+    given to the Trisector theorem is truly justified <mdash /> but even the simple,
+    initial part of this beautiful theory is arguably miraculous! To learn more
+    about <index><main>Morley's theorem</main></index>Morley's theorem and its extension see<nbsp /><nbsp /><xref ref="lighthouse" />.
+  </p>
+
+  <p>
+    So, let's state the theorem!
+  </p>
+
+  <p>
+    Start with an arbitrary triangle <m>{\triangle}ABC</m>. Trisect each of its angles
+    to obtain a diagram something like that in <xref ref="fig_morley_setup">Figure</xref>.
+  </p>
+
+  <figure xml:id="fig_morley_setup" >
+    <caption>The setup for Morley's 
+    Miracle <mdash /> start with an arbitrary triangle and trisect each of 
+    its angles.</caption>
+    <image source=""/>
+  </figure>
+
+  <p>
+    The six angle trisectors that we've just drawn intersect one another
+    in quite a few points.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        You could literally count the number of intersection points between the
+        angle trisectors on the diagram, but you should also be able to count them
+        (perhaps we should say <q>double-count them</q>) combinatorially. Give it
+        a try!
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    Among the points of intersection of the angle trisectors there are three
+    that we will single out <mdash /> the intersections of adjacent trisectors.
+    In <xref ref="fig_morley_1st_triangle">Figure</xref> the intersection of adjacent trisectors
+    are indicated, additionally, we have connected them together to form a
+    small triangle in the center of our original triangle.
+  </p>
+
+  <figure xml:id="fig_morley_1st_triangle" >
+    <caption>A triangle is formed whose vertices 
+    are the intersections of the adjacent trisectors of the angles of 
+    <m>{\triangle}ABC</m>.</caption>
+    <image source=""/>
+  </figure>
+
+  <p>
+    Are you ready for the miraculous part? Okay, here goes!
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        The points of intersection of the adjacent trisectors in an arbitrary
+        triangle <m>{\triangle}ABC</m> form the vertices of an equilateral triangle.
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    In other words, that little blue triangle in
+    <xref ref="fig_morley_1st_triangle">Figure</xref>
+    that kind of <em>looks</em> like it might be equilateral actually does have
+    all three sides equal to one another. Furthermore, it doesn't matter what
+    triangle we start with, if we do the construction above we'll get
+    a perfect <m>60^\circ - 60^\circ - 60^\circ</m> triangle in the middle!
+  </p>
+
+  <p>
+    Sources differ, but it is not clear whether Morley ever proved his
+    theorem. The first valid proof (according to R. K. Guy in<nbsp /><nbsp /><xref ref="lighthouse" />
+    was published in 1909 by M. Satyanarayana<nbsp /><nbsp /><xref ref="satyana" />. There are now
+    <em>many</em> other proofs known, for instance the cut-the-knot website
+    (<c>http://www.cut-the-knot.org/</c>) exposits no less than nine different
+    proofs. The proof by Satyanarayana used trigonometry. The proof we'll
+    look at here is arguably the shortest ever produced and it is due to
+    <index><main>Conway, John</main></index>John Conway. It is definitely a <q>Book proof</q>!
+  </p>
+
+  <p>
+    Let us suppose that an arbitrary triangle <m>{\triangle}ABC</m> is given.
+    We want to show that the triangle whose vertices are the intersections
+    of the adjacent trisectors is equilateral <mdash /> this triangle will be
+    referred to as the <index><main>Morley triangle</main></index><em>Morley triangle</em>.
+    Let's also denote by
+    <m>A</m>, <m>B</m> and <m>C</m> the measures of the angles of <m>{\triangle}ABC</m>. (This
+    is what is generally known as an <q>abuse of notation</q> <mdash /> we are intentionally
+    confounding the vertices (<m>A</m>, <m>B</m> and <m>C</m>) of the triangle with the
+    measure of the angles at those vertices.) It turns out that it is
+    fairly hard to reason from our knowledge of what the angles <m>A</m>, <m>B</m> and <m>C</m>
+    are to deduce that the Morley triangle is equilateral. How does the
+    following plan sound: suppose we construct a triangle, that definitely
+    <em>does</em> have an equilateral Morley triangle, whose angles also happen
+    to be <m>A</m>, <m>B</m> and <m>C</m>. Such a triangle would be
+    <index><main>similarity transform</main></index>
+    similar<fn>In Geometry, two objects are said to be <em>similar</em> 
+    if one can be made to exactly coincide with the other after a series of 
+    rigid translations, rotations and scalings.  In other words, they have 
+    the same shape if you allow for differences in scale and are allowed to 
+    slide them around and spin them about as needed.</fn>
+    to the original
+    triangle <m>{\triangle}ABC</m> <mdash /> if we follow the <index><main>similarity transform</main></index>
+    similarity transform from the
+    constructed triangle back to <m>{\triangle}ABC</m> we will see that their
+    Morley triangles must coincide; thus if one is equilateral so is the other!
+  </p>
+
+  <p>
+    One of the features of Conway's proof that leads to its great succinctness
+    and beauty is his introduction of some very nice notation.
+    Since we are dealing with angle trisectors, let <m>a</m>, <m>b</m> and <m>c</m> be
+    angles such that <m>3a=A</m>, <m>3b=B</m> and <m>3c=C</m>. Furthermore, let a superscript
+    star denote the angle that is <m>\pi/3</m> (or <m>60^\circ</m> if you prefer) greater
+    than a given angle. So, for example,
+    <me>
+      a^\star = a + \pi/3
+    </me>
+    and
+    <me>
+      a^{\star\star} = a + 2\pi/3.
+    </me>
+  </p>
+
+  <p>
+    Now, notice that the sum <m>a+b+c</m> must be <m>\pi/3</m>. This is an
+    immediate consequence of <m>A+B+C=\pi</m> which is true for any triangle
+    in the plane. It follows that by distributing two stars amongst
+    the three numbers <m>a</m>, <m>b</m> and <m>c</m> we will come up with three
+    quantities which sum to <m>\pi</m>. In other words, there are
+    Euclidean triangles having the following
+    triples as their vertex angles:
+  </p>
+  <tabular>
+    <row>
+      <cell><m>(a, b, c^{\star\star})</m></cell>
+      <cell><m>(a, b^\star, c^\star)</m></cell>
+    </row>
+    <row>
+      <cell><m>(a, b^{\star\star}, c)</m></cell>
+      <cell><m>(a^\star, b^\star, c)</m></cell>
+    </row>
+    <row>
+      <cell><m>(a^{\star\star}, b, c)</m></cell>
+      <cell><m>(a^\star, b, c^\star)</m></cell>
+    </row>
+  </tabular>
+  <exercise>
+    <statement>
+      <p>
+        What would a triangle whose vertex angles are <m>(0^\star, 0^\star, 0^\star)</m>
+        be?
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    In a nutshell, Conway's proof consists of starting with an equilateral
+    triangle of unit side length, adding appropriately scaled versions of the
+    six triangles above and ending up with a figure (having an equilateral
+    Morley triangle) similar to <m>{\triangle}ABC</m>. The generic picture is
+    given in <xref ref="fig_morley_conway_puzzle">Figure</xref>. Before we can really
+    count this argument as a proof, we need to say a bit more about what
+    the phrase <q>appropriately scaled</q> means. In order to appropriately
+    scale the triangles (the small acute ones) that appear green in <xref ref="fig_morley_conway_puzzle">Figure</xref>
+    we have a relatively easy job <mdash /> just scale them so that the side
+    opposite the trisected angle has length one; that way they will join
+    perfectly with the central equilateral triangle.
+  </p>
+
+  <figure xml:id="fig_morley_conway_puzzle" >
+    <caption>Conway's proof involves putting 
+    these pieces together to obtain a triangle (with an equilateral
+    Morley triangle) that is similar to  
+    <m>{\triangle}ABC</m>.</caption>
+    <image source=""/>
+  </figure>
+
+  <p>
+    The triangles (these are the larger obtuse ones) that appear purple in <xref ref="fig_morley_conway_puzzle"></xref> are
+    a bit more puzzling. Ostensibly, we have two different jobs to accomplish <mdash /> we must scale them so that both of the edges that they will share
+    with green triangles have the correct lengths. How do we know
+    that this won't require two different scaling factors? Conway also
+    developed an elegant argument that handles this question as well.
+    Consider the purple triangle at the bottom of the
+    diagram in <xref ref="fig_morley_conway_puzzle">Figure</xref> <mdash /> it has vertex
+    angles <m>(a,b,c^{\star\star})</m>. It is possible to construct triangles
+    similar (via reflections) to the adjacent green triangles
+    <m>(a, b^\star, c^\star)</m> and <m>(a^\star, b, c^\star)</m> <em>inside</em> of
+    triangle <m>(a,b,c^{\star\star})</m>. To do this just construct two lines that
+    go through the top vertex (where the angle <m>c^{\star\star}</m> is) that cut
+    the opposite edge at the angle <m>c^\star</m> in the two possible senses <mdash /> these two lines
+    will coincide if it should happen that <m>c^\star</m> is precisely <m>\pi/2</m>
+    but generally there will be two and it is evident that the two line
+    segments formed have the same length. We scale the purple triangle so
+    that this common length will be 1. See <xref ref="fig_morley_conway_puzzle_scaling">Figure</xref>.
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        If it should happen that <m>c^\star = \pi/2</m>, what can we
+        say about <m>C</m>?
+      </p>
+    </statement>
+  </exercise>
+
+  <figure xml:id="fig_morley_conway_puzzle_scaling" >
+    <caption>The scaling factor for
+    the obtuse triangles in Conway's puzzle proof is determined so that 
+    the segments constructed in there midsts have unit length.</caption>
+    <image source=""/>
+  </figure>
+
+  <p>
+    Of course the other two obtuse triangles can be handled in a similar way.
+  </p>
+  <exercises>
+    <exercise>
+      <statement>
+        <p>
+          What value should we get if we sum all of the
+          angles that appear around one of the interior vertices in the
+          finished diagram? Verify that all three have the correct sum.
+        </p>
+        <image source="images/662f1ae3e7724a0731a3ffa7c1b59961bdb42156.png"/>
+        <p>
+          \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+          \reset@font\fontsize{#1}{#2pt}
+          \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+          \selectfont}\fi
+        </p>
+        <image source="images/6fce182d123d3d04330ed0c8e5e823b5449d7ffa.png"/>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          In this section we talked about similarity. Two figures in
+          the plane are
+          similar if it is possible to turn one into the other
+          by a sequence of mappings: a translation, a rotation and a scaling.
+        </p>
+
+        <p>
+          Geometric similarity is an equivalence relation. To fix our
+          notation, let <m>T(x,y)</m> represent a generic translation, <m>R(x,y)</m> a rotation
+          and <m>S(x,y)</m> a scaling <mdash /> thus a generic similarity is a function from
+          <m>\Reals^2</m> to <m>\Reals^2</m> that can be written in the form <m>S(R(T(x,y)))</m>.
+        </p>
+
+        <p>
+          Discuss the three properties of an equivalence relation (reflexivity, symmetry and transitivity) in terms of geometric similarity.
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
+</section>

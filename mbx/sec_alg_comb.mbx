@@ -1,0 +1,686 @@
+
+<section xml:id="sec_alg_comb">
+  <title>The algebra of combinations</title>
+  <p>
+    Earlier in this chapter we determined the number of <m>k</m>-subsets of a set
+    of size <m>n</m>. These numbers, denoted by <m>C(n,k) = nCk = \binom{n}{k}</m>
+    and determined by the formula <m>\frac{n!}{k!(n-k)!}</m> are known as binomial
+    coefficients. It seems likely that you will have already seen the arrangement
+    of these binomial coefficients into a triangular array <mdash /> known as
+    <index><main>Pascal's triangle</main></index> Pascal's triangle, but if not<ellipsis />
+  </p>
+  <tabular>
+    <row>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell>1</cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell>1</cell>
+      <cell></cell>
+      <cell>1</cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell>1</cell>
+      <cell></cell>
+      <cell>2</cell>
+      <cell></cell>
+      <cell>1</cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell>1</cell>
+      <cell></cell>
+      <cell>3</cell>
+      <cell></cell>
+      <cell>3</cell>
+      <cell></cell>
+      <cell>1</cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell></cell>
+      <cell>1</cell>
+      <cell></cell>
+      <cell>4</cell>
+      <cell></cell>
+      <cell>6</cell>
+      <cell></cell>
+      <cell>4</cell>
+      <cell></cell>
+      <cell>1</cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell>1</cell>
+      <cell></cell>
+      <cell>5</cell>
+      <cell></cell>
+      <cell>10</cell>
+      <cell></cell>
+      <cell>10</cell>
+      <cell></cell>
+      <cell>5</cell>
+      <cell></cell>
+      <cell>1</cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>1</cell>
+      <cell></cell>
+      <cell>6</cell>
+      <cell></cell>
+      <cell>15</cell>
+      <cell></cell>
+      <cell>20</cell>
+      <cell></cell>
+      <cell>15</cell>
+      <cell></cell>
+      <cell>6</cell>
+      <cell></cell>
+      <cell>1</cell>
+    </row>
+  </tabular>
+  <p>
+    <em>et cetera.</em>
+  </p>
+
+  <p>
+    The thing that makes this triangle so nice and that leads to the
+    strange name <q>binomial coefficients</q> for the number of <m>k</m>-combinations
+    of an <m>n</m>-set is that you can use the triangle to (very quickly) compute
+    powers of binomials.
+  </p>
+
+  <p>
+    A <index><main>binomial</main></index><em>binomial</em> is a polynomial with two terms.
+    Things like <m>(x+y)</m>, <m>(x+1)</m> and <m>(x^7+x^3)</m> all count as binomials
+    but to keep things simple just think about <m>(x+y)</m>. If you need to
+    compute a large power of <m>(x+y)</m> you can just multiply it out, for
+    example, think of finding the 6th power of <m>(x+y)</m>.
+  </p>
+
+  <p>
+    We can use the F.O.I.L rule to find <m>(x+y)^2 = x^2 + 2xy + y^2</m>.
+    Then <m>(x+y)^3 =  (x+y) \cdot (x+y)^2 = (x+y) \cdot  (x^2 + 2xy + y^2)</m>.
+  </p>
+
+  <p>
+    You can compute that last product either by using the distributive law
+    or the table method:
+  </p>
+  <tabular>
+    <row>
+      <cell></cell>
+      <cell><m>x^2</m></cell>
+      <cell><m>+ 2xy</m></cell>
+      <cell><m>+ y^2</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>x</m></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>+ y</m></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+  </tabular>
+  <p>
+    Either way, the answer should be <m>(x+y)^3 = x^3 + 3x^2y + 3xy^2 + y^3</m>.
+  </p>
+
+  <p>
+    Finally the sixth power is the square of the cube thus
+    <md>
+      <mrow>(x+y)^6 = (x+y)^3 \cdot (x+y)^3</mrow>
+      <mrow>= (x^3 + 3x^2y + 3xy^2 + y^3) \cdot (x^3 + 3x^2y + 3xy^2 + y^3)</mrow>
+    </md>
+  </p>
+
+  <p>
+    For this product I wouldn't even <em>think</em> about the distributive
+    law, I'd jump to the table method right away:
+  </p>
+  <tabular>
+    <row>
+      <cell></cell>
+      <cell><m>x^3</m></cell>
+      <cell><m>+ 3x^2y</m></cell>
+      <cell><m>+ 3xy^2</m></cell>
+      <cell><m>+ y^3</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>x^3</m></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>+ 3x^2y</m></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>+ 3xy^2</m></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>+ y^3</m></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+      <cell></cell>
+    </row>
+  </tabular>
+  <p>
+    In the end you should obtain
+    <me>
+      x^6 + 6 x^5y + 15 x^4y^2 + 20 x^3y^3 + 15 x^2y^4 + 6 xy^5 + y^6.
+    </me>
+  </p>
+
+  <p>
+    Now all of this is a lot of work and it's really much easier
+    to notice the form of the answer: The exponent on <m>x</m> starts at 6 and descends
+    with each successive term down to 0. The exponent on <m>y</m> starts at 0
+    and ascends to 6. The coefficients in the answer are the numbers in the
+    sixth row of Pascal's triangle.
+  </p>
+
+  <p>
+    Finally, the form of Pascal's triangle makes it really easy to extend.
+    A number in the interior of the triangle is always the sum of the two
+    above it (on either side). Numbers that aren't in the interior of the
+    triangle are always 1.
+  </p>
+
+  <p>
+    We showed rows 0 through 6 above. Rows 7 and 8 are
+  </p>
+  <tabular>
+    <row>
+      <cell></cell>
+      <cell>1</cell>
+      <cell></cell>
+      <cell>7</cell>
+      <cell></cell>
+      <cell>21</cell>
+      <cell></cell>
+      <cell>35</cell>
+      <cell></cell>
+      <cell>35</cell>
+      <cell></cell>
+      <cell>21</cell>
+      <cell></cell>
+      <cell>7</cell>
+      <cell></cell>
+      <cell>1</cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell>1</cell>
+      <cell></cell>
+      <cell>8</cell>
+      <cell></cell>
+      <cell>28</cell>
+      <cell></cell>
+      <cell>56</cell>
+      <cell></cell>
+      <cell>70</cell>
+      <cell></cell>
+      <cell>56</cell>
+      <cell></cell>
+      <cell>28</cell>
+      <cell></cell>
+      <cell>8</cell>
+      <cell></cell>
+      <cell>1.</cell>
+    </row>
+  </tabular>
+  <p>
+    With this information in hand, it becomes nothing more than a matter of copying
+    down the answer to compute
+    <me>
+      (x+y)^8 =  x^8 + 8x^7y + 28x^6y^2 + 56x^5y^3 + 70x^4y^4 + 56x^3y^5 + 28x^2y^6 + 8xy^7 + y^8.
+    </me>
+  </p>
+  <exercise>
+    <statement>
+      <p>
+        Given the method using Pascal's triangle for computing <m>(x+y)^n</m> we can
+        use substitution to determine more general binomial powers.
+      </p>
+
+      <p>
+        Find <m>(x^4 + x^2)^5</m>.
+      </p>
+    </statement>
+  </exercise>
+  <p>
+    All of the above hinges on the fact that one can compute a binomial
+    coefficient by summing the two that appear to either side and above it
+    in Pascal's triangle. This fact is the fundamental relationship
+    between binomial coefficients <mdash /> it is usually called Pascal's formula.
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        For all natural numbers <m>n</m> and <m>k</m> with <m>0 \lt  k \leq n</m>,
+        <me>
+          \binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}.
+        </me>
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    We are going to prove it twice.
+  </p>
+
+  <proof>
+    <p>
+      (The first proof is a combinatorial argument.)
+    </p>
+
+    <p>
+      There are <m>\binom{n}{k}</m> subsets of size <m>k</m> of the set <m>N = \{1, 2, 3, \ldots, n\}</m>.
+      We will partition these <m>k</m>-subsets into two disjoint cases: those that contain
+      the final number, <m>n</m>, and those that do not.
+    </p>
+
+    <p>
+      Let
+      <me>
+        A = \{ S \subseteq N \suchthat |S| = k \; \land \; n \notin S \}
+      </me>
+      and, let
+      <me>
+        B = \{ S \subseteq N \suchthat |S| = k \; \land \; n \in S \}.
+      </me>
+    </p>
+
+    <p>
+      Since the number <m>n</m> is either in a <m>k</m>-subset or it isn't, these sets
+      are disjoint and exhaustive. So the addition rule tells us that
+      <me>
+        \binom{n}{k} = |A| + |B|.
+      </me>
+    </p>
+
+    <p>
+      The set <m>A</m> is really just the set of all <m>k</m>-subsets of the <m>(n-1)</m>-set
+      <m>\{1, 2, 3, \ldots, n-1 \}</m>, so <m>|A| = \binom{n-1}{k}</m>.
+    </p>
+
+    <p>
+      Any of the sets in <m>B</m> can be obtained by adjoining the element <m>n</m> to
+      a <m>k-1</m> subset of the <m>(n-1)</m>-set
+      <m>\{1, 2, 3, \ldots, n-1 \}</m>, so <m>|B| = \binom{n-1}{k-1}</m>.
+    </p>
+
+    <p>
+      Substituting gives us the desired result.
+    </p>
+  </proof>
+
+  <proof>
+    <p>
+      (The second proof is algebraic in nature.)
+    </p>
+
+    <p>
+      Consider the sum
+      <me>
+        \binom{n-1}{k} + \binom{n-1}{k-1}.
+      </me>
+    </p>
+
+    <p>
+      Applying the formula we deduced in <xref ref="sec_counting">Section</xref>
+      we get
+      <md>
+        <mrow>\binom{n-1}{k} + \binom{n-1}{k-1}</mrow>
+        <mrow>= \frac{(n-1)!}{k! (n-1-k)!}  + \frac{(n-1)!}{(k-1)! ((n-1)-(k-1))!}</mrow>
+        <mrow>= \frac{(n-1)!}{k! (n-k-1)!}  + \frac{(n-1)!}{(k-1)! (n-k)!}</mrow>
+      </md>
+    </p>
+
+    <p>
+      A common denominator for these fractions is <m>k!(n-k)!</m>. (We will have
+      to multiply the top and bottom of the first fraction by <m>(n-k)</m> and the
+      top and bottom of the second fraction by <m>k</m>.)
+      <md>
+        <mrow>= \frac{(n-k)(n-1)!}{k! (n-k) (n-k-1)!}  + \frac{k (n-1)!}{k (k-1)! (n-k)!}</mrow>
+        <mrow>= \frac{(n-k)(n-1)!}{k! (n-k)!}  + \frac{k (n-1)!}{k! (n-k)!}</mrow>
+        <mrow>= \frac{(n-k)(n-1)! + k (n-1)!}{k! (n-k)!}</mrow>
+        <mrow>= \frac{(n-k+k)(n-1)!}{k! (n-k)!}</mrow>
+        <mrow>= \frac{(n)(n-1)!}{k! (n-k)!}</mrow>
+        <mrow>= \frac{n!}{k! (n-k)!}.</mrow>
+      </md>
+    </p>
+
+    <p>
+      We recognize the final expression as the definition of <m>\binom{n}{k}</m>,
+      so we have proved that
+      <me>
+        \binom{n-1}{k} + \binom{n-1}{k-1} = \binom{n}{k}.
+      </me>
+    </p>
+  </proof>
+
+  <p>
+    There are quite a few other identities concerning binomial coefficients
+    that can also be proved in (at least) two ways. We will provide one
+    or two
+    other examples and leave the rest to you in the exercises for this section.
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        For all natural numbers <m>n</m> and <m>k</m> with <m>0 \lt  k \leq n</m>,
+        <me>
+          k \cdot \binom{n}{k} = n \cdot \binom{n-1}{k-1}.
+        </me>
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    Let's try a purely algebraic approach first.
+  </p>
+
+  <proof>
+    <p>
+      Using the formula for the value of a binomial coefficient
+      we get
+      <me>
+        k \cdot \binom{n}{k} = k \cdot \frac{n!}{k! (n-k)!}.
+      </me>
+    </p>
+
+    <p>
+      We can do some cancellation to obtain
+      <me>
+        k \cdot \binom{n}{k} = \frac{n!}{(k-1)! (n-k)!}.
+      </me>
+    </p>
+
+    <p>
+      Finally we factor-out an <m>n</m> to obtain
+      <me>
+        k \cdot \binom{n}{k} = n \cdot \frac{(n-1)!}{(k-1)! (n-k)!},
+      </me>
+      since <m>(n-k)</m> is the same thing as <m>((n-1)-(k-1))</m> we have
+      <me>
+        k \cdot \binom{n}{k} = n \cdot \frac{(n-1)!}{(k-1)!((n-1)-(k-1))!} 
+        = n \cdot \binom{n-1}{k-1}
+      </me>
+    </p>
+  </proof>
+
+  <p>
+    A combinatorial argument usually involves counting <em>something</em>
+    in two ways. What could that something be? Well, if you see a
+    product in some formula you should try to imagine what the
+    multiplication rule would say in that particular circumstance.
+  </p>
+
+  <proof>
+    <p>
+      Consider the collection of all subsets of size <m>k</m> taken from
+      <m>N = \{1, 2, 3, \ldots, n\}</m> in which one of the elements has
+      been marked to distinguish it from the others in some way.<fn>
+      For example, a committee of <m>k</m> individuals one of whom has been 
+      chosen as chairperson, is an example of the kind of entity we are 
+      discussing.</fn>
+    </p>
+
+    <p>
+      We can count this collection in two ways using the multiplication rule.
+    </p>
+
+    <p>
+      Firstly, we could select a <m>k</m>-subset in <m>\binom{n}{k}</m> ways and then from
+      among the <m>k</m> elements of the subset we could select one to be marked.
+      By this analysis there are <m>\binom{n}{k} \cdot k</m> elements in our
+      collection.
+    </p>
+
+    <p>
+      Secondly, we could select an element from the <m>n</m>-set which will be
+      the <q>marked</q> element of our subset, and then choose the additional
+      <m>k-1</m> elements from the remaining <m>n-1</m> elements of the <m>n</m>-set.
+      By this analysis there are <m>n \cdot \binom{n-1}{k-1}</m> elements in
+      the collection we have been discussing.
+    </p>
+
+    <p>
+      Thus,
+      <me>
+        k \cdot \binom{n}{k} = n \cdot \binom{n-1}{k-1}
+      </me>
+    </p>
+  </proof>
+
+  <p>
+    The final result that we'll talk about actually has (at least) three proofs.
+    One of which suffers from the fault that it is <q>like swatting a fly
+    with a sledge hammer.</q>
+  </p>
+
+  <p>
+    The result concerns the sum of all the numbers in some
+    row of Pascal's triangle.
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        For all natural numbers <m>n</m> and <m>k</m> with <m>0 \lt  k \leq n</m>,
+        <me>
+          \sum_{k=0}^n \binom{n}{k} = 2^n
+        </me>
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    Our sledge hammer is a powerful result known as the binomial theorem
+    which is a formalized statement of the material we began this section
+    with.
+  </p>
+
+  <theorem>
+    <title>The Binomial Theorem</title>
+    <statement>
+      <p>
+        For all natural numbers <m>n</m>, and real numbers <m>x</m> and <m>y</m>,
+        <me>
+          (x+y)^n = \sum_{k=0}^{n} \binom{n}{k} x^{n-k}y^k.
+        </me>
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    We won't be proving this result just now. But, the following proof
+    is a proof of the previous theorem using this more powerful result.
+  </p>
+
+  <proof>
+    <p>
+      Substitute <m>x=y=1</m> in the binomial theorem.
+    </p>
+  </proof>
+
+  <p>
+    Our second proof will be combinatorial.
+    Let us re-iterate that a combinatorial proof usually consists of
+    counting some collection in two different ways. The formula
+    we have in this example contains a sum, so we should search for
+    a collection of things that can be counted using the addition
+    rule.
+  </p>
+
+  <proof>
+    <p>
+      The set of all subsets of <m>N = \{1, 2, 3, \ldots, n\}</m>, which we
+      denote by <m>{\mathcal P}(N)</m>, can be partitioned into <m>n+1</m> sets based
+      on the sizes of the subsets,
+      <me>
+        {\mathcal P}(N) = S_0 \cup S_1 \cup S_2 \cup \ldots \cup S_n,
+      </me>
+      where <m>S_k = \{ S \suchthat S \subseteq N \; \land \; |S| = k \}</m>
+      for <m>0 \leq k \leq n</m>. Since no subset of <m>N</m> can appear in two different
+      parts of the partition (a subset's size is unique) and every subset of <m>N</m>
+      appears in one of the parts of the partition (the sizes of subsets are
+      all in the range from <m>0</m> to <m>n</m>). The addition principle tells us that
+      <me>
+        |{\mathcal P}(N)|  =  |S_0| \;+\; |S_1| \;+\;\cup |S_2| \;+\; \ldots \;+\; |S_n|.
+      </me>
+    </p>
+
+    <p>
+      We have previously proved that <m>|{\mathcal P}(N)| = 2^n</m> and we know that
+      <m>|S_k| = \binom{n}{k}</m> so it follows that
+      <me>
+        2^n = \binom{n}{0} + \binom{n}{1} +\binom{n}{2} + \ldots + \binom{n}{n}.
+      </me>
+    </p>
+  </proof>
+
+  <exercises>
+    <exercise>
+      <statement>
+        <p>
+          Use the binomial theorem (with <m>x=1000</m> and <m>y=1</m>) to calculate
+          <m>1001^6</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Find <m>(2x+3)^5</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Find <m>(x^2+y^2)^6</m>.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The following diagram contains a 3-dimensional analog of
+          Pascal's triangle that we might call <q>Pascal's tetrahedron.</q>
+          What would the next layer look like?
+        </p>
+        <image source="images/cb6058c0f87c49e703a7e6580d546f4e9382e00d.png"/>
+        <p>
+          \ifx\SetFigFont\undefined\gdef\SetFigFont#1#2#3#4#5{
+          \reset@font\fontsize{#1}{#2pt}
+          \fontfamily{#3}\fontseries{#4}\fontshape{#5}
+          \selectfont}\fi
+        </p>
+        <image source="images/e039ca027fbc0b5a0d5926f26e3b2934ccd1c2a7.png"/>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          The student government at Lagrange High consists of 24 members chosen
+          from amongst the general student body of 210. Additionally, there
+          is a steering committee of 5 members chosen from amongst those in
+          student government. Use the multiplication rule to determine two different
+          formulas for the total number of possible governance structures.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove the identity
+          <me>
+            \binom{n}{k} \cdot \binom{k}{r} \; = \; \binom{n}{r} \cdot \binom{n-r}{k-r}
+          </me>
+          combinatorially.
+        </p>
+      </statement>
+    </exercise>
+    <exercise>
+      <statement>
+        <p>
+          Prove the binomial theorem.
+          <me>
+            \forall n \in \Naturals, \; \forall x,y \in \Reals, \; 
+            (x+y)^n \; = \; \sum_{k=0}^n \binom{n}{k} x^{n-k}y^k
+          </me>
+        </p>
+      </statement>
+    </exercise>
+  </exercises>
+</section>

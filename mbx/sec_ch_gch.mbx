@@ -1,0 +1,206 @@
+
+<section xml:id="sec_ch_gch">
+  <title>The continuum hypothesis and the generalized continuum hypothesis</title>
+  <p>
+    The word <q>continuum</q> in the title of this section is used to indicate sets of
+    points that have a certain continuity property. For example, in a real interval
+    it is possible to move from one point to another, in a smooth fashion, without
+    ever leaving the interval. In a range of rational numbers this is not possible,
+    because there are irrational values in between every pair of rationals. There
+    are many sets that behave as a continuum <mdash /> the intervals (a, b) or [a, b], the
+    entire real line <m>\Reals</m>, the x-y plane <m>\Reals \times \Reals</m>, a volume in 3-dimensional space (or
+    for that matter the entire space <m>\Reals^3</m>). It turns out that all of these sets have
+    the same size.
+  </p>
+
+  <p>
+    The cardinality of the continuum, denoted <em>c</em>, is the cardinality of all of the
+    sets above.
+  </p>
+
+  <p>
+    In the previous section we mentioned the continuum hypothesis and how
+    angry Cantor became when someone (K&#xf6;nig) tried to prove it
+    was false. In this section we'll delve a little deeper into what the
+    continuum hypothesis says and even take a look at CH's big brother, GCH.
+    Before doing so, it seems like a good idea to look into the equivalences
+    we've asserted about all those sets above which (if you trust us) have the
+    cardinality <em>c</em>.
+  </p>
+
+  <p>
+    We've already seen that an interval is equivalent to the entire
+    real line but the notion that the entire infinite Cartesian plane has no more
+    points in it than an interval one inch long defies our intuition. Our conception
+    of dimensionality leads us to think that things of higher dimension must be
+    larger than those of lower dimension. This preconception is false as we can see
+    by demonstrating that a <m>1 \times 1</m> square can be put in one-to-one correspondence
+    with the unit interval.
+    Let <m>S = \{ (x, y) \suchthat 0 \lt  x \lt  1 \land  0 \lt  y \lt  1 \}</m> and let <m>I</m> be
+    the open unit interval <m>(0, 1)</m>. We can use the Cantor-Bernstein-Schroeder
+    theorem to show that <m>S</m> and <m>I</m> are equinumerous <mdash /> we just need to find
+    injections from <m>I</m> to <m>S</m> and vice versa. Given an element <m>r</m> in <m>I</m> we
+    can map it injectively to the point <m>(r, r)</m> in <m>S</m>. To go in the other
+    direction, consider a point <m>(a, b)</m> in <m>S</m>
+    and write out the decimal expansions of <m>a</m> and <m>b</m>:
+    <me>
+      a = 0.a_1a_2a_3a_4a_5\ldots
+    </me>
+    <me>
+      b = 0.b_1b_2b_3b_4b_5\ldots
+    </me>
+    as usual, if there are two decimal expansions for <m>a</m> and/or <m>b</m> we
+    will make a consistent choice <mdash /> say the infinite one.
+  </p>
+
+  <p>
+    From these decimal expansions, we can create the decimal expansion of
+    a number in <m>I</m> by interleaving the digits of <m>a</m> and <m>b</m>. Let
+    <me>
+      s = 0.a_1b_1a_2b_2a_3b_3 \ldots
+    </me>
+    be the image of <m>(a, b)</m>. If two different points get mapped to the same
+    value <m>s</m> then both points have <m>x</m> and <m>y</m> coordinates that agree in
+    every position of
+    their decimal expansion (so they must really be equal).
+    It is a little bit harder to create a bijective function from <m>S</m> to <m>I</m>
+    (and thus
+    to show the equivalence directly, without appealing to C-B-S). The problem
+    is that, once again, we need to deal with the non-uniqueness of decimal
+    representations of real numbers. If we make the choice that, whenever there
+    is a choice to be made, we will use the non-terminating decimal expansions
+    for our real numbers there will be elements of <m>I</m> not in the image of the map
+    determined by interleaving digits (for example <m>0.15401050902060503</m> is the
+    interleaving of the digits after the decimal point in
+    <m>\pi = 3.141592653\ldots</m> and <m>1/2 = 0.5</m>, this is clearly an element of
+    <m>I</m> but it can't be in the image of our
+    map since <m>1/2</m> should be represented by <m>0.4\overline{9}</m> according to
+    our convention. If
+    we try other conventions for dealing with the non-uniqueness it is possible
+    to find other examples that show simple interleaving will not be surjective.
+    A slightly more subtle approach is required.
+  </p>
+
+  <p>
+    Presume that all decimal expansions are non-terminating (as we can,
+    WLOG) and use the following approach:
+    Write out the decimal expansion of the coordinates of a point <m>(a, b)</m> in
+    <m>S</m>. Form the digits into blocks with as many 0's as possible followed by a
+    non-zero digit. Finally, interleave these blocks.
+  </p>
+
+  <p>
+    For example if
+    <me>
+      a = 0.124520047019902 \ldots
+    </me>
+    and
+    <me>
+      b = 0.004015648000031 \ldots
+    </me>
+    we would separate the digits into blocks as follows:
+    <me>
+      a = 0.1  2  4  5 2  004 7 01 9  9  02 \ldots
+    </me>
+    and
+    <me>
+      b = 0.004  01   5   6   4   8   00003   1 \ldots
+    </me>
+    and the number formed by interleaving them would be
+    <me>
+      s = 0.10042014556240048 \ldots
+    </me>
+  </p>
+
+  <p>
+    We've shown that the unit square, <m>S</m>, and the unit interval, <m>I</m>, have the
+    same cardinality. These arguments can be extended to show that all of <m>R \times R</m> also has this cardinality (<em>c</em>).
+  </p>
+
+  <p>
+    So now let's turn to the continuum hypothesis.
+  </p>
+
+  <p>
+    We mentioned earlier in this chapter that the cardinality of <m>\Naturals</m> is
+    denoted <m>\aleph_0</m>. The fact that that capital letter aleph is wearing a
+    subscript ought to make you wonder what other aleph-sub-something-or-others
+    there are out there. What is <m>\aleph_1</m>? What about <m>\aleph_2</m>? Cantor
+    presumed that there was a sequence of cardinal numbers (which is itself, of course, infinite) that give all of the possible infinities. The smallest infinite set that anyone seems to be able to imagine is <m>\Naturals</m>, so Cantor called
+    that cardinality <m>\aleph_0</m>. What ever the <q>next</q> infinite cardinal is, is
+    called <m>\aleph_1</m>. It's conceivable that there actually isn't a <q>next</q> infinite cardinal after <m>\aleph_0</m> <mdash /> it might be the case that the collection of
+    infinite cardinal numbers isn't well-ordered! In any case, if there <em>is</em> a
+    <q>next</q> infinite cardinal, what is it? Cantor's theorem shows that there is
+    a way to build <em>some</em> infinite cardinal bigger than <m>\aleph_0</m> <mdash /> just
+    apply the power set construction. The continuum hypothesis just says that this
+    bigger cardinality that we get by applying the power set construction <em>is</em> that <q>next</q> cardinality we've been talking about.
+  </p>
+
+  <p>
+    To re-iterate, we've shown that the power set of <m>\Naturals</m> is equivalent
+    to the interval <m>(0,1)</m> which is one of the sets whose cardinality is <em>c</em>.
+    So the continuum hypothesis, the thing that got Georg Cantor so very heated up,
+    comes down to asserting that
+    <me>
+      \aleph_1 = \mathbf{ c}.
+    </me>
+  </p>
+
+  <p>
+    There really should be a big question mark over that. A <em>really</em> big
+    question mark. It turns out that the continuum hypothesis lives in a really
+    weird world<ellipsis /> To this day, no one has the least notion of whether it
+    is true or false. But wait! That's not all! The real weirdness is that it
+    would appear to be <em>impossible</em> to decide. Well, that's not <em>so</em> bad <mdash /> after all, we talked about undecidable sentences way back in the beginning
+    of Chapter 2. Okay, so here's the ultimate weirdness. It has been <em>proved</em> that one can't prove the continuum hypothesis. It has also been <em>proved</em> that one can't disprove the continuum hypothesis.
+  </p>
+
+  <p>
+    Having reached this stage in a book about proving things I hope that the
+    last two sentences in the previous paragraph caused some thought along the
+    lines of <q>well, ok, with respect to what axioms?</q> to run through your
+    head. So, if you did think something along those lines pat yourself on the
+    back. And if you <em>didn't</em> then recognize that you need to start thinking
+    that way <mdash /> things are proved or disproved only in a relative way, it depends
+    what axioms you allow yourself to work with. The usual axioms for mathematics
+    are called ZFC; the Zermelo-Frankel set theory axioms together with the
+    axiom of choice. The <q>ultimate weirdness</q> we've been describing about
+    the continuum hypothesis is a result due to a gentleman named <index><main>Cohen, Paul</main></index> Paul Cohen that says <q>CH is independent of ZFC.</q> More pedantically <mdash /> it is impossible to either prove or disprove the continuum hypothesis within
+    the framework of the ZFC axiom system.
+  </p>
+
+  <p>
+    It would be really nice to end this chapter by mentioning Paul Cohen, but there
+    is one last thing we'd like to accomplish <mdash /> explain what GCH means. So
+    here goes.
+  </p>
+
+  <p>
+    The generalized continuum hypothesis says that the power set construction
+    is basically the only way to get from one infinite cardinality to the next.
+    In other words GCH says that not only does <m>{\mathcal P}(\Naturals)</m> have the
+    cardinality known as <m>\aleph_1</m>, but every other aleph number can be realized
+    by applying the power set construction a bunch of times. Some people would
+    express this symbolically by writing
+    <me>
+      \forall n \in \Naturals,  \aleph_{n+1} = 2^{\aleph_n}.
+    </me>
+  </p>
+
+  <p>
+    I'd really rather not bring this chapter to a close with that monstrosity
+    so instead I think I'll just say
+  </p>
+
+  <p>
+    Paul Cohen.
+  </p>
+
+  <p>
+    Hah! I did it! I ended the chapter by sayi<ellipsis /> Hunh? Oh.
+  </p>
+
+  <p>
+    Paul Cohen.
+  </p>
+</section>
