@@ -1,0 +1,10 @@
+If you are in a unix/linux environment, there is a Makefile.  Just cd to the top-level directory of the repo and run 'make'.
+If you make changes to the included graphics you'll also need to update the 'figures' sub-directory.  Cd to giam/figures and 
+recreate the Makefile using the 'fig4latex' script (then run make).
+
+On other operating systems you can either install a development environment that includes TeX/LaTeX, fig2dev and (of course) make
+(I've taken this approach successfully on a Mac) or just do things 'by hand'.  In particular if you want to make changes that only 
+effect the text (as opposed to graphics), it is relatively easy.  Just download a LaTeX distribution, and use it to recompile GIAM.tex
+in the top-level folder.
+
+Also, consider submitting your changes as a pull-request.  Then your changes will shortly be available in the pre-compiled version.
