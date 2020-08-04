@@ -1,0 +1,105 @@
+\documentclass{amsart}
+%\usepackage{}
+\renewcommand{\baselinestretch}{1.5}
+\addtolength{\textwidth}{.2in}
+\input{../my_latex_definitions.tex}
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large Activity 9 -- Introduction to Proof}
+\centerline{\large conditionals}
+
+\bigskip
+\Large
+
+
+\begin{enumerate}
+
+\item Let $P = $ ``the number is even,'' and let $Q =$ ``the number is divisible by 4.''  Which conditional is true?  $P \implies Q$ or $Q \implies P$ ?  
+
+\vfill
+
+\item Express ``If $p$ is a prime, then $p$ is odd'' as a disjunction.
+
+\vfill
+
+\item Express the negation of ``If $x$ is $0 \mod 12$, then $x$ is odd'' as a conjunction.
+
+\vfill
+
+\item What conditional sentence is equivalent to $A \lor B$?
+
+\vfill
+
+\item What conditional sentence is the negation of $A \land B$?
+
+\vfill
+
+\newpage
+
+\item You will sometimes hear the terms {\em necessary} and {\em sufficient} used when discussing the statements that are part of a conditional.  
+
+A necessary condition is one that must be true in order for another statement to be true.  For example, it is necessary that I have detergent so that I can do the laundry.
+
+A sufficient condition for another is one that guarantees the other's truth. For example, seeing the clean, folded clothes is sufficient to know that I've done the laundry.
+
+Consider the lawnmower example.  Which is a sufficient condition to know that the lawnmower's engine is running, and which is a neccesary condition?
+
+\begin{itemize}
+\item There is gas in the tank
+\item I can hear the motor.
+\end{itemize}
+
+\vspace{.5in}
+
+\item Suppose $P \implies Q$ is true.  Which of the following are correct?
+
+\begin{itemize}
+\item $P$ is a necessary condition for $Q$.
+\item $Q$ is a necessary condition for $P$
+\item $P$ is a sufficient condition for $Q$.
+\item $Q$ is a sufficient condition for $P$
+\end{itemize}
+
+\vfill
+
+\newpage
+
+\item Suppose $X$ is the statement ``Major Tom is alive.''  (And let's further suppose that we're sure who is meant by ``Major Tom'' so it's not ambiguous.)  Here are two additional statements about Major Tom:
+
+\begin{align*}
+ & A = \mbox{``The atmosphere in Major Tom's capsule contains oxygen''} \\
+ & B = \mbox{``I can hear Major Tom's heartbeat on the monitor''} \\
+\end{align*}
+
+Which is the necessary condition and which is the sufficient condition to know that $X$ is true?
+
+\vfill
+
+\item If $S$ is a sufficient condition for $X$, and $N$ is a necessary condition for $X$, which is correct?
+\[ S \implies X \implies N \]
+\[ N \implies X \implies S \]
+
+If $P$ is necessary {\em and} sufficient for $X$ what symbol can we place between them?
+
+\vfill
+
+\newpage
+
+\item If a natural number $n$ is even, by definition we know that $n = 2k$ for some integer $k$.  Then, by simple algebra it follows that $n^2 = (2k)^2 = 4k^2 = 2(2k^2)$ and since $(2k^2)$ is clearly an integer, we get that $n^2$ is even.
+
+That was a more-or-less accurate proof of the conditional 
+
+\[ (n \; \mbox{is even}) \implies (n^2 \; \mbox{is even}). \]
+
+What are the converse, inverse and contrapositive of this conditional?  (Hint: Be sure to write, e.g., ``$n$ is odd'' rather than ``it's not the case that $n$ is even'' when negating the parts of this conditional.)
+
+\vfill
+
+
+
+\end{enumerate}
+
+
+\end{document}

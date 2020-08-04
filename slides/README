@@ -1,0 +1,10 @@
+The Makefile in this directory will create both a Beamer slide deck and a "handouts" version.
+
+Use
+ 	make filename.pdf
+
+to get the standard slides, and
+
+	make filename-handouts.pdf 
+
+to get the handouts version.

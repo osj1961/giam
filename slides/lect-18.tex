@@ -1,0 +1,377 @@
+%\documentclass[handout,landscape]{beamer}
+\documentclass[landscape]{beamer}
+%\hypersetup{pdfpagemode=FullScreen}
+\mode<handout>
+{
+  \usepackage{pgf}
+  \usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{6 on 1 boxed}
+{
+  \edef\pgfpageoptionheight{\the\paperheight} 
+  \edef\pgfpageoptionwidth{\the\paperwidth}
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=6,%
+    physical height=\pgfpageoptionheight,%
+    physical width=\pgfpageoptionwidth%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{2}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{3}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{4}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{5}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{6}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+}
+
+
+  \pgfpagesuselayout{6 on 1 boxed}[letterpaper, border shrink=5mm]
+  \nofiles
+}
+
+\usepackage{listings}
+%\lstset{language=TeX}
+\usepackage{multimedia}
+\usepackage[normalem]{ulem}
+%\usepackage{amssymb}
+
+\usepackage{ifthen}
+
+%\usecolortheme[named=Purple]{structure} 
+%\usetheme{Copenhagen}
+\usetheme{Warsaw} 
+\usecolortheme{seahorse}
+\useoutertheme{infolines} 
+%\usetheme[height=7mm]{Rochester} 
+%\setbeamertemplate{items}[ball] 
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+%\setbeamertemplate{navigation symbols}{} 
+\author{Joe Fields}
+\title{Introduction to Proof} 
+%\subtitle{}
+\date{Lecture 18 (GIAM \S 3.5)}
+\institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
+
+\input{my_latex_definitions.tex}
+
+\newcommand{\vs}{\rule{0pt}{12pt}}
+\newcommand{\notimplies}{\;\not\!\!\!\implies}
+
+%\def\mycommand{\setlength{\abovedisplayskip}{-12pt}%
+%\setlength{\belowdisplayskip}{-12pt}%
+%\setlength{\abovedisplayshortskip}{0pt}%
+%\setlength{\belowdisplayshortskip}{0pt}}
+
+%\let\oldselectfont\selectfont
+%\def\selectfont{\oldselectfont\mycommand}
+
+%\mycommand
+
+\AtBeginSection[]
+{
+ \begin{frame}{Table of Contents} 
+  \tableofcontents[currentsection]
+ \end{frame}
+}
+
+%%%% SAVE %%%%
+%{ %magic to get a full screen image...
+%\setbeamertemplate{navigation symbols}{}  % hide navigation buttons 
+%\setbeamertemplate{background canvas}{\centerline{\includegraphics 
+%	[height=\paperheight]{Cantor_4.jpeg}}}
+%\begin{frame}[plain]
+%\rule{0pt}{0pt}
+%\end{frame} 
+%} %end of magic
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\section{intro}
+
+\begin{frame}{intro}
+\begin{itemize}
+\item Exhaustion vs. Cases \pause
+\item Exhaustion means literally check that the statement is true for {\em every} element of the universe of discourse. \pause
+\item This is impossible if the universe is infinite. \pause
+\item Cases means divide the universe up into a finite number of sets (which may be infinite themselves) and essentially do a seperate proof for each.\pause
+\item Tons of things can be proved by using the partition of $\Integers$ into even and odd.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{introducing tautologies}
+\begin{itemize}
+\item Let's examine a truth table for the statement $A \implies t$. \pause
+
+\begin{center}
+\begin{tabular}{c|c|c}
+$A$  & $t$ & $A \implies t$ \\ \hline
+T & T & T \\
+$\phi$ & T & T \\
+\end{tabular}
+\end{center}
+\pause
+
+\item This means that {\em any} statement implies a tautology. \pause
+\item {\em That} means that you are always free to create a new line in a proof if it is tautological! 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{dilemma}
+\begin{itemize}
+\item Recall the rule of inference known as `constructive dilemma.' \pause
+
+\begin{center}
+\begin{tabular}{cl}
+ & $A \implies B$ \\
+ & $C \implies D$ \\ 
+ & $A \lor C$ \\ \hline
+$\therefore$ & $B \lor D$ \\
+\end{tabular}
+\end{center}
+\pause
+
+\item A special case of this occurs when $C = \lnot A$, and $B$ and $D$ are equal. \pause
+
+\begin{center}
+\begin{tabular}{cl}
+ & $A \implies B$ \\
+ & $\lnot A \implies B$ \\ 
+ & $A \lor \lnot A$ \\ \hline
+$\therefore$ & $B$ \\
+\end{tabular}
+\end{center}
+\pause
+
+\item The line that says $A \lor \lnot A$ is a tautology. \pause You can add such a thing at any point in a proof.
+\end{itemize}
+\end{frame}
+
+\section{some dilemmas}
+
+\begin{frame}{parity}
+\begin{itemize}
+\item $\displaystyle \forall x \in \Integers, \; x^2+x \; \mbox{is even}$. \pause
+\item Let's unveil a proof step by step:\pause
+\begin{itemize}
+\item Suppose $x$ is a particular but arbitrarily chosen integer. \pause
+\item Note that $x$ is either even or odd. \pause \only<5>{\tiny (that was me introducing a tautology)} \pause \pause
+\item When $x$ is even, $x^2 + x$ is the sum of two even numbers, \newline \rule{12pt}{0pt} hence, it is even. \pause
+\item When $x$ is odd, $x^2 + x$ is the sum of two odd numbers, \newline \rule{12pt}{0pt} hence it is even.\pause
+\item Therefore, $x^2+x$ is even.\pause
+\item \hfill Q.E.D. 
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{trichotomy}
+\begin{itemize}
+\item Not too long ago we needed the fact that $\displaystyle \forall x \in \Reals, \; x^2 \geq 0$. \pause
+\item Here we go again: \pause
+\begin{itemize}
+\item Suppose $x$ is a particular but arbitrarily chosen real number. \pause
+\item Note that either $x\geq 0$ or $x<0$. \pause
+\item When $x \geq 0$ then $x^2 \geq 0$. \pause
+\item When $x < 0$ then $x^2 > 0$. \pause \newline \rule{12pt}{0pt} (Since the product of two negative numbers is positive.) \pause
+\item Therefore, $x^2 \geq 0$. \hfill Q.E.D. \pause
+\end{itemize}
+\item This proof could have used the partition of $\Reals$ into three parts: positive, negative and zero. \pause
+\item That is known as the `trichotomy property.' \pause
+\item The $x^2 > 0$ vs. $x^2 \geq 0$ issue.
+\end{itemize}
+\end{frame}
+
+\section{cases}
+
+\begin{frame}{squares mod 4}
+\begin{itemize}
+\item The value of a square, reduced mod 4, is never $2$ or $3$. \pause
+\item $\displaystyle \forall n \in \Integers, \; n^2 \mod 4 \, = \, 0 \quad \mbox{or} \quad n^2 \mod 4 \, = \, 1$ \pause
+\item There are two equivalent ways to talk about the cases: \pause
+\begin{itemize} 
+\item The value of $n \mod 4$ is in $\{0,1,2,3\}$. \pause
+\item $n$ is of the form $4q+k$ where $k$ is in $\{0,1,2,3\}$.\pause
+\end{itemize}
+\end{itemize}
+\begin{thm*}
+$\displaystyle \forall n \in \Integers, \exists q \in \Integers, \; n^2 = 4q \; \lor \; n^2 = 4q+1$
+\end{thm*}
+
+\end{frame}
+
+\begin{frame}{4 cases}
+
+{\em Proof:} Consider the 4 cases we obtain from the quotient remainder theorem. \pause
+\begin{enumerate}
+\item ($n=4k$) When $n=4k$ we have $n^2 = 16k^2 = 4(4k^2)$. Since $4k^2$ is an integer, we have $n^2=4q$ with $q = 4k^2$. \pause
+\item ($n=4k+1$) When $n=4k+1$ we have $n^2 = 16k^2 + 8k + 1 = 4(4k^2+2k) +1 $.  Since $4k^2+2k$ is an integer, we have $n^2=4q+1$ with $q = 4k^2+2k$. \pause
+\item ($n=4k+2$) When $n=4k+2$ we have $n^2 = 16k^2 + 16k + 4 = 4(4k^2+4k+1) $.  Since $4k^2+4k+1$ is an integer, we have $n^2=4q$ with $q = 4k^2+4k+1$. \pause
+\item ($n=4k+3$) When $n=4k+3$ we have $n^2 = 16k^2 + 24k + 9 = 4(4k^2+6k+2)+1 $.  Since $4k^2+6k+2$ is an integer, we have $n^2=4q+1$ with $q = 4k^2+6k+2$. \pause
+\end{enumerate}
+Since these cases are exhaustive, and the desired conclusion holds in each of them, the proof is complete.
+\hfill Q.E.D
+
+\end{frame}
+
+\begin{frame}{more succinctly}
+\begin{thm*}
+$\displaystyle \forall n \in \Integers, \exists q \in \Integers, \; n^2 = 4q \; \lor \; n^2 = 4q+1$
+\end{thm*}
+\pause
+\begin{proof} 
+Consider the 2 cases: $n$ is even, or, $n$ is odd.\pause
+\begin{enumerate}
+\item ($n$ is even) When $n$ is even there is an integer $k$ such that $n=2k$. Then $n^2=(2k)^2=4k^2$ so $n^2$ is of the form $4q$ where $q=k^2$. \pause
+\item ($n$ is odd) When $n$ is odd there is an integer $k$ such that $n=2k+1$. Then $n^2=(2k+1)^2=4k^2+4k+1$ so $n^2$ is of the form $4q$ where $q=k^2+k$. \pause
+\end{enumerate}
+Since these cases are exhaustive, and the desired conclusion holds in each of them, the proof is complete.
+\end{proof}
+\end{frame}
+
+\begin{frame}{notes}
+\begin{itemize}
+\item It's okay to re-use a variable in the cases. \pause
+\item Each case should stand as a seperate argument. \pause
+\item Definitely try to find an approach that uses the least possible number of cases. \pause
+\item ``Everything should be made as simple as possible, but no simpler.'' \pause
+\item ``The other cases are similar.''
+\end{itemize}
+\end{frame}
+
+
+\section{some exhaustion}
+
+\begin{frame}{intro}
+\begin{itemize}
+\item Exhaustion can be natural or artificial. \pause
+\item When the universe of discourse is actually finite, I call that natural. \pause
+\item By `artificial' I mean situtations where the universe of discourse is not finite, but some statement has been 
+verified up to a certain point. \pause
+\end{itemize}
+\end{frame}
+
+\begin{frame}{four 4's}
+\begin{itemize}
+\item This is a classic puzzle that dates to the 19th century. \pause
+\item Write four 4's in a row and place mathematical operations between them and attempt to produce as many natural numbers as you can. \pause
+\item It turns out that if you allow parentheses and $+$, $-$, $\times$ and $\div$ you can get everything from $0$ 
+to $9$. \pause
+\item $10$ and $11$ require us to allow $\sqrt{\phantom{x}}$ and factorials, respectively.
+\item There's a nice Numberphile video:  \href{https://youtu.be/Noo4lN-vSvw}{https://youtu.be/Noo4lN-vSvw}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{proof}
+\begin{itemize}
+\item So here's an exhaustive proof that using just parentheses and $+$, $-$, $\times$ and $\div$, the four 4's puzzle is solvable from $0$ to $9$: \pause
+
+\begin{align*}
+ 0  & =  4 - 4 + 4 - 4 &  \\
+ 1  & =  4 \div 4 + 4 - 4 & \\
+ 2  & =  4 - (4 + 4) \div 4  & \\
+ 3  & =  (4 \times 4 - 4) \div 4 & \\
+ 4  & =  4 \times (4 - 4) + 4 & \\
+ 5  & =  (4 + 4 \times 4) \div 4 & \\
+ 6  & =  (4 + 4) \div 4 + 4  & \\
+ 7  & =  4 + 4 - 4 \div 4  & \\
+ 8  & =  4 \div 4 \times (4 + 4) &  \\
+ 9  & =  4 \div 4 + 4 + 4  & \\
+\end{align*}
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{comments}
+\begin{itemize}
+\item If we add $\sqrt{\phantom{x}}$ and $\log$ to the allowable operations you can get {\em every} natural number! \pause
+\item See that Numberphile video. \pause
+\item So I guess that was the `artificial' sort of proof by exhaustion. \pause
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Goldbach's conjecture}
+\begin{itemize}
+\item Actually, Euler's strengthening of Goldbach's conjecture. \pause
+\item Every even number greater than 2 may be written as the sum of two primes. \pause
+\item The statement has been verified for every even number from $4$ to $4 \times 10^{18}$. \pause
+\item Goldbach's comet. \href{https://en.wikipedia.org/wiki/Goldbach's_comet}{wikipedia.org}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{not too exhausting}
+\begin{itemize}
+\item So, we can verify Goldbach's conjecture for $4 \leq 2n \leq 20$ exhaustively. \pause
+\item This is one of those `artificial' exhaustive proofs; we're just arbitrarily choosing an upper limit of $20$. \pause
+
+\begin{align*}
+ 4  & =  2+2 &  \\
+ 6  & =  3+3 & \\
+ 8  & =  3+5 & \\
+ 10  & = 3+7 & \\
+ 12 & =  5+7 & \\
+ 14  & = 3+11 & \\
+ 16  & = 3+13 & \\
+ 18  & = 5+13 & \\
+ 20 & =  3+17 &  \\
+\end{align*}
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{graph pebbling}
+\begin{itemize}
+\item Graph pebbling questions give an example of where the universe of discourse is a legit finite set. \pause
+\item Proving a graph pebbling number can be done by exhaustion. \pause
+\end{itemize}
+\end{frame}
+
+\end{document}

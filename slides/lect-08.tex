@@ -1,0 +1,253 @@
+%\documentclass[handout,landscape]{beamer}
+\documentclass[landscape]{beamer}
+%\hypersetup{pdfpagemode=FullScreen}
+\mode<handout>
+{
+  \usepackage{pgf}
+  \usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{6 on 1 boxed}
+{
+  \edef\pgfpageoptionheight{\the\paperheight} 
+  \edef\pgfpageoptionwidth{\the\paperwidth}
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=6,%
+    physical height=\pgfpageoptionheight,%
+    physical width=\pgfpageoptionwidth%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{2}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{3}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{4}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{5}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{6}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+}
+
+
+  \pgfpagesuselayout{6 on 1 boxed}[letterpaper, border shrink=5mm]
+  \nofiles
+}
+
+\usepackage{listings}
+%\lstset{language=TeX}
+\usepackage{multimedia}
+\usepackage[normalem]{ulem}
+\usepackage{amssymb}
+
+%\usecolortheme[named=Purple]{structure} 
+%\usetheme{Copenhagen}
+\usetheme{Warsaw} 
+\usecolortheme{seahorse}
+\useoutertheme{infolines} 
+%\usetheme[height=7mm]{Rochester} 
+%\setbeamertemplate{items}[ball] 
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+%\setbeamertemplate{navigation symbols}{} 
+\author{Joe Fields}
+\title{Introduction to Proof} 
+%\subtitle{}
+\date{Lecture 8 (GIAM \S 2.1)}
+\institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
+
+\input{my_latex_definitions.tex}
+
+\newcommand{\vs}{\rule{0pt}{12pt}}
+
+\AtBeginSection[]
+{
+ \begin{frame}{Table of Contents} 
+  \tableofcontents[currentsection]
+ \end{frame}
+}
+
+%%%% SAVE %%%%
+%{ %magic to get a full screen image...
+%\setbeamertemplate{navigation symbols}{}  % hide navigation buttons 
+%\setbeamertemplate{background canvas}{\centerline{\includegraphics 
+%	[height=\paperheight]{Cantor_4.jpeg}}}
+%\begin{frame}[plain]
+%\rule{0pt}{0pt}
+%\end{frame} 
+%} %end of magic
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+
+\section{intro}
+
+\begin{frame}{atomic concepts}
+\begin{itemize}
+\item the dictionary problem \pause
+\item undefined terms \pause
+\item points and lines and points on lines \pause (See Euclid) 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{postulates}
+\begin{itemize}
+\item Sentences involving the undefined terms that can't be proved. \pause
+\item Euclid had 5 ``postulates'' and 5 ``common notions.'' \pause
+\item Axioms
+\end{itemize}
+\end{frame}
+
+\begin{frame}{atomic concepts in logic}
+\begin{itemize}
+\item True and False 
+\item Sentences
+\end{itemize}
+\end{frame}
+
+\begin{frame}{statements}
+\begin{itemize}
+\item A sentence that is either True or False.\pause
+\item Ambiguity \pause
+\item Undecideability 
+\end{itemize}
+\end{frame}
+
+\section{connectors}
+
+\begin{frame}{compound statements}
+\begin{itemize}
+\item And and but. \pause
+\item ``They turned off my electricity, but I paid the bill!'' \pause
+\item Or \pause
+\item ``Close the door or bugs will get in the house.'' \pause
+\item Conjunction and Disjunction
+\end{itemize}
+\end{frame}
+
+\begin{frame}{predicate variables}
+\begin{itemize}
+\item We can use variables to stand for entire sentences. \pause
+\item Example $P =$ ``The electricity has been shut off.'' and $Q =$ ``The electric bill was paid.'' \pause
+\item We use the symbols $\land$ and $\lor$ to hook predicates together to make more complicated {\em compound sentences}. \pause
+\item $\land$ -- conjunction -- and \pause
+\item $\lor$ -- disjunction -- or \pause
+\item $P \land Q$ is the same as ``They turned off my electricity, but I paid the bill!''
+\end{itemize}
+\end{frame}
+
+\begin{frame}{truth tables}
+\begin{itemize}
+\item There are four possibilities for the truth or falsity of a pair of unrelated statements.\pause
+\item We use the symbols $T$ and $\phi$ for true and false (respectively). \pause
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{c|c}
+The sun is shining \; & \; It is raining \\ \hline
+T & T \\
+T & $\phi$ \\
+ $\phi$ & T \\
+ $\phi$ &  $\phi$ \\
+\end{tabular}
+\end{center}
+
+\end{frame}
+
+\begin{frame}{using truth tables}
+\begin{itemize}
+\item conjunction \pause
+\item disjunction \pause
+\item negation
+\end{itemize}
+\end{frame}
+
+\section{a new kind of algebra}
+
+\begin{frame}{Boolean algebra}
+\begin{itemize}
+\item Precedence of operators in ordinary algebra. \pause PEMDAS \pause
+\item Multiplication is repeated addition. \pause
+\item Exponentiation is repeated multiplication. \pause
+\item The logical connectors $\land$ and $\lor$ don't have a predefined precedence. \pause
+\item Logical negation ($\lnot$) binds more tightly than the others. \pause
+\item Takeaway: use parentheses to ensure you communicate what you really mean.\pause
+\item $A \land B \lor C$ ???
+\end{itemize}
+\end{frame}
+
+\begin{frame}{digital logic circuits}
+\begin{itemize}
+\item Series connections implement AND. \pause
+\item Parallel connections implement OR. \pause
+\item The non-exclusive or. \pause
+\end{itemize}
+
+\begin{center}
+\input{gates.tex}
+\end{center}
+\end{frame}
+
+\begin{frame}{Understanding laws via logic circuits}
+\begin{itemize}
+\item Commutative law 
+\item Associative law -- leads to a shorthand with multiple input gates \pause
+\item Distributive law
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Getting a specified output}
+\begin{itemize}
+\item Recognizers \pause
+\item Disjunctive normal form \pause (the OR of a bunch of ANDs) \pause
+\item Figure 2.5 in GIAM
+\end{itemize}
+\end{frame}
+
+
+
+\end{document}

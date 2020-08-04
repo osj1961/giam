@@ -1,0 +1,68 @@
+\documentclass{amsart}
+\usepackage{amssymb}
+\renewcommand{\baselinestretch}{1.5}
+\addtolength{\textwidth}{.2in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1in}
+
+\usepackage{ifthen}
+
+\input{my_latex_definitions.tex}
+
+\addtolength{\abovedisplayskip}{0pt}
+\addtolength{\belowdisplayskip}{24pt}
+\addtolength{\abovedisplayshortskip}{0pt}
+\addtolength{\belowdisplayshortskip}{44pt}
+
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large Activity 17 -- Introduction to Proof}
+\centerline{\large disproofs}
+
+\bigskip
+\Large
+
+Prove the statements that are true and disprove the ones that are false.
+
+\vspace{.3in}
+
+\begin{enumerate}
+
+\item $ \displaystyle \forall \; x, y \in \Reals, \; ( x \notin \Rationals \, \land \, y \notin \Rationals ) \; \implies \; xy \notin \Rationals$.
+
+\vfill
+
+\item $\displaystyle \forall \; x,y \in {\mathbb Z}, \; ( x \; \mbox{ is odd } \;
+\wedge \; y \; \mbox{ is odd }) \; \implies \; xy \; \mbox{ is odd }$
+
+\vfill
+
+\item For all integers $a$, $b$, and $c$, if $a \nmid b$ and $a \nmid c$ then $a \nmid b+c$.
+
+\vfill
+
+\item For all integers $a$, $b$, and $c$, if $a \nmid b$ and $a \nmid c$ then $a \nmid bc$.
+
+\vfill
+
+\item $ \displaystyle \forall \; x, y \in \Reals, \; \lfloor x \rfloor \cdot \lceil y \rceil \; = \; \lceil x \rceil \cdot \lfloor y \rfloor $.
+
+\vfill
+
+\item $ \displaystyle \forall \; a, b, c \in \Integers, \; a \mid b \; \implies \; a \mid bc$.
+
+\vfill
+
+\item $ \displaystyle \forall \; m, n \in \Integers, \; n \mid m^2 \; \implies \; n \mid m$.
+
+\vfill
+
+\item If the quadratic equation $ax^2+bx+c \; = \; 0$ has two real solutions (where $a$, $b$ and $c$ are real) then $ac < 0$.
+
+\vfill
+
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,79 @@
+\documentclass{amsart}
+%\usepackage{}
+\renewcommand{\baselinestretch}{1.5}
+\addtolength{\textwidth}{.2in}
+\input{../my_latex_definitions.tex}
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large Activity 11 -- Introduction to Proof}
+\centerline{\large logical equivalence}
+
+\bigskip
+\Large
+
+It may be useful to have a copy of the table of basic logical equivalences handy while working on these.  In addition to the equivalences in the table, recall the following:
+
+$A \iff B \; \cong \; (A \implies B) \land (B \implies A)$ 
+
+and $A \implies B \; \cong \; \lnot A \lor B$.
+
+\vspace{.2in}
+
+\begin{enumerate}
+
+\item Fill in the right-hand column with explanations for each step in the following two column proof.
+
+We want to show that $(A \lor \lnot B) \land (B \lor \lnot A)$ is logically equivalent to $(A \land B) \lor (\lnot B \land \lnot A)$.
+
+\vspace{.5in}
+
+\hspace{-1in} \begin{tabular}{c | c}
+$(A \lor \lnot B) \land (B \lor \lnot A)$ & \rule{2.5in}{0in} \\
+\rule{0pt}{18pt} & \\
+$((A \lor \lnot B) \land B) \lor (A \lor \lnot B) \land \lnot A)$ & \\
+\rule{0pt}{18pt} & \\
+$((A \land B) \lor (\lnot B \land B) ) \lor (A \lor \lnot B) \land \lnot A)$ & \\
+\rule{0pt}{18pt} & \\
+$((A \land B) \lor (\lnot B \land B) ) \lor ((A \land \lnot A) \lor (\lnot B \land \lnot A)) $ & \\
+\rule{0pt}{18pt} & \\
+$((A \land B) \lor c ) \lor (c \lor (\lnot B \land \lnot A)) $ & \\
+\rule{0pt}{18pt} & \\
+$(A \land B)  \lor (\lnot B \land \lnot A) $ & \\
+\end{tabular}
+
+\vspace{.5in}
+
+\newpage
+
+\item Fill in the rest of the left-hand column with logical expressions in the following two column proof.
+
+We want to show that $ A \lor ({\lnot}A \land B) \; \cong \; A \lor B $.
+\vspace{.5in}
+
+\hspace{-1in} \begin{tabular}{c | c}
+\rule{2.5in}{0in} & \rule{2.5in}{0in} \\
+ $ A \lor ({\lnot}A \land B)$ & Given \\
+\rule{0pt}{18pt} & \\
+ & Distributive law \\
+\rule{0pt}{18pt} & \\
+ & Complementarity \\
+\rule{0pt}{18pt} & \\
+ & Identity law
+\end{tabular}
+
+\vspace{.75in}
+
+\item Create two column proofs for the following:
+
+\begin{enumerate}
+\item \rule[-8pt]{0pt}{36pt} $((A \land B) \lor  (\lnot A \land B)  ) \land (A \land B) \; \cong \; A \land B $
+\item \rule[-8pt]{0pt}{36pt} $A \; \cong \; A \land ((A \lor {\lnot}B) \lor (A \lor B))$
+\item \rule[-8pt]{0pt}{36pt} ${\lnot}(A \land B) \land {\lnot}(A \land C) \; \cong \; {\lnot}A \lor ({\lnot}B \land {\lnot}C)$
+\item \rule[-8pt]{0pt}{36pt} $ A \iff B \; \cong \; (A \land B) \lor (\lnot A \land \lnot B)$
+\end{enumerate}
+ 
+\end{enumerate}
+
+\end{document}

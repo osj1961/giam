@@ -1,0 +1,196 @@
+\documentclass{amsart}
+%\usepackage{}
+\renewcommand{\baselinestretch}{1.5}
+\addtolength{\textwidth}{.2in}
+\input{../my_latex_definitions.tex}
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large Activity 8 -- Introduction to Proof}
+\centerline{\large logic}
+
+\bigskip
+\Large
+
+
+\begin{enumerate}
+\item Which of the following sentences are statements?  For those which are not, is there a way to modify them so that they are?
+
+\begin{enumerate}
+\item The domain of the divisibility relation is $\Integers$.
+\item $x$ is a prime number.
+\item The range of the divisibility relation is $\Reals$.
+\item This sentence is false.
+\end{enumerate}
+
+\vspace{.2in}
+
+\item Several compound sentences can be constructed using either the $\land$ or the $\lor$ operator together with $\lnot$'s on the predicate variables.  (For example, $\lnot A \lor B$ or $\lnot A \land \lnot B$.)  Assuming that $A$ and $B$ appear in that order, there are 8 such sentences. 
+List them.
+
+\vfill
+
+\newpage
+
+\item A shortcut to figuring out the truth tables of sentences like the ones from the previous problem is this:  ``Or'' statements are {\em false} in exactly one row,  ``And'' statements are 
+{\em true} in exactly one row.  
+
+We take the ordering of the rows of a 2-variable truth table to be:
+
+\begin{center}
+\begin{tabular}{r|c|c}
+ & \rule{12pt}{0pt} $A$ \rule{12pt}{0pt} & \rule{12pt}{0pt} $B$ \rule{12pt}{0pt} \\ \hline
+row 1: \rule{12pt}{0pt} & T & T \\
+row 2: \rule{12pt}{0pt} & T & $\phi$ \\
+row 3: \rule{12pt}{0pt} &  $\phi$ & T \\
+row 4: \rule{12pt}{0pt} &  $\phi$ &  $\phi$ \\
+\end{tabular}
+\end{center}
+
+\vspace{.3in}
+
+With the above convention what row number(s) are the following sentences true in?
+
+\begin{enumerate}
+\item $A \land B$
+\item $A \land \lnot B$
+\item $\lnot A \land B$
+\end{enumerate}
+
+\vspace{.3in}
+
+What row noumbers are the following false in?
+
+\begin{enumerate}
+\item $\lnot A \lor B$
+\item $A \lor \lnot B$
+\item $\lnot A \lor \lnot B$
+\end{enumerate}
+
+\newpage
+
+\item Now we should be ready to create all 8 truth tables for the statements from problem 2. I've pre-filled the skeletons of the tables to ease your burden.
+
+\vspace{.3in}
+
+\hspace{-1 in}\begin{tabular}{cccc} 
+\begin{tabular}{c|c|c}
+ $A$ & $B$  &  $A\land B$ \\ \hline
+T & T & \\
+T & $\phi$ & \\
+$\phi$ & T & \\
+$\phi$ &  $\phi$ & \\
+\end{tabular}
+\rule{6pt}{0pt} & \rule{6pt}{0pt}
+\begin{tabular}{c|c|c}
+ $A$  & $B$  & $A\land \lnot B$  \\ \hline
+T & T & \\
+T & $\phi$ & \\
+$\phi$ & T & \\
+$\phi$ &  $\phi$ & \\
+\end{tabular}
+\rule{6pt}{0pt} & \rule{6pt}{0pt}
+\begin{tabular}{c|c|c}
+ $A$ &  $B$ &  $\lnot A \land B$\\ \hline
+T & T & \\
+T & $\phi$ & \\
+$\phi$ & T & \\
+$\phi$ &  $\phi$ & \\
+\end{tabular}
+\rule{6pt}{0pt} & \rule{6pt}{0pt}
+\begin{tabular}{c|c|c}
+$A$ &  $B$  &  $\lnot A \land \lnot B$ \\ \hline
+T & T & \\
+T & $\phi$ & \\
+$\phi$ & T & \\
+$\phi$ &  $\phi$ & \\
+\end{tabular}
+\\
+\rule{0pt}{36pt} & & & \\
+\begin{tabular}{c|c|c}
+ $A$ & $B$  &  $A\lor B$ \\ \hline
+T & T & \\
+T & $\phi$ & \\
+$\phi$ & T & \\
+$\phi$ &  $\phi$ & \\
+\end{tabular}
+\rule{6pt}{0pt} & \rule{6pt}{0pt}
+\begin{tabular}{c|c|c}
+ $A$  & $B$  & $A\lor \lnot B$  \\ \hline
+T & T & \\
+T & $\phi$ & \\
+$\phi$ & T & \\
+$\phi$ &  $\phi$ & \\
+\end{tabular}
+\rule{6pt}{0pt} & \rule{6pt}{0pt}
+\begin{tabular}{c|c|c}
+ $A$ &  $B$ &  $\lnot A \lor B$\\ \hline
+T & T & \\
+T & $\phi$ & \\
+$\phi$ & T & \\
+$\phi$ &  $\phi$ & \\
+\end{tabular}
+\rule{6pt}{0pt} & \rule{6pt}{0pt}
+\begin{tabular}{c|c|c}
+$A$ &  $B$  &  $\lnot A \lor \lnot B$ \\ \hline
+T & T & \\
+T & $\phi$ & \\
+$\phi$ & T & \\
+$\phi$ &  $\phi$ & \\
+\end{tabular}
+\\
+\end{tabular}
+
+\vspace{.5in}
+
+\item Create a truth table for $A \land (A \lor B)$
+
+\vfill
+
+\newpage
+
+\item Create a truth table for $A \lor (A \land B)$
+
+\vfill
+
+\item Comparing the last two problems, what do you notice?
+
+\vspace{1 in}
+
+\item Draw the digital logic diagram for $A \land (A \lor B)$ and $A \lor (A \land B)$.  How could they be simplified?
+
+\vfill
+
+\newpage
+
+\item In the video we mentioned the {\em exclusive or} operator which is true when exactly one of its inputs is true.  Usually, exclusive or is notated thusly: $A \oplus B$.
+
+Using the notion of {\em disjunctive normal form}\footnote{Recall that disjunctive normal form consists of the ``or'' of a bunch of ``and'' statements that recognize the rows we want to be true.} determine an expression that only uses $\land$, $\lor$ and $\lnot$ that is equivalent to $A \oplus B$.
+
+\vfill
+
+
+\item Construct a digital logic diagram -- using the disjunctive normal form concept -- for the following truth table.  Challenge: A much simpler logic diagram is possible.  Can you find it?
+
+\vspace{.2in}
+
+\begin{tabular}{c|c|c||c}
+ $A$ &  $B$ &  $C$ & ???\\ \hline
+T & T & T & $\phi$ \\
+T & T & $\phi$ & T \\
+T & $\phi$ & T & $\phi$ \\
+T & $\phi$ &  $\phi$ & T\\
+$\phi$ & T & T & $\phi$\\
+$\phi$ & T & $\phi$ & $\phi$\\
+$\phi$ & $\phi$ & T & $\phi$\\
+$\phi$ & $\phi$ &  $\phi$ & $\phi$\\
+\end{tabular}
+
+
+\vfill
+
+\end{enumerate}
+
+
+\end{document}

@@ -1,0 +1,82 @@
+\documentclass{amsart}
+\usepackage{amssymb}
+\renewcommand{\baselinestretch}{1.5}
+\addtolength{\textwidth}{.2in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1in}
+
+\usepackage{ifthen}
+
+\input{my_latex_definitions.tex}
+
+\addtolength{\abovedisplayskip}{0pt}
+\addtolength{\belowdisplayskip}{24pt}
+\addtolength{\abovedisplayshortskip}{0pt}
+\addtolength{\belowdisplayshortskip}{44pt}
+
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large Activity 16 -- Introduction to Proof}
+\centerline{\large indirect arguments}
+
+\bigskip
+\Large
+
+
+\begin{enumerate}
+
+\item Prior to starting a proof by contradiction you must first determine the logical negation of the statement you are hoping to prove.  Find negations of the following.
+\begin{enumerate}
+\item \rule[-6pt]{0pt}{24pt} There are infinitely-many natural number $p$ such that $p$ is prime and $p+2$ is prime.
+\item \rule[-6pt]{0pt}{24pt} $\displaystyle \forall n \in \Naturals, \; n^3 \; \mbox{is even} \; \implies \; n \; \mbox{is even} $
+\item \rule[-6pt]{0pt}{24pt} $\displaystyle \forall n \in \Naturals, \; ( n \geq 2 ) \; \implies (\exists p,q \in \mbox{Primes}, \; p+q \, = \, 2n$
+\end{enumerate}
+
+\vfill
+
+\item Proofs by contradiction and by contraposition are considered equivalent because, if you have a proof of one sort, you can recast it as the other sort.  If we are trying to prove a universal conditional sentence $\forall x, P(x) \implies Q(x)$,
+a proof by contradiction consists in showing that $\forall x, (P(x) \land \lnot Q(x)) \implies c$, while a proof by contraposition consists of showing that  $\forall x, \lnot Q(x) \implies \lnot P(x)$.
+
+Use a truth table to determine whether $(P \land \lnot Q) \implies c$ and $\lnot Q \implies \lnot P$ are equivalent.
+
+\vfill
+
+\vfill
+
+\newpage
+
+\item Devise a proof by contraposition and a proof by contradiction for item (b) in problem 1.
+
+\vfill
+
+\item Show, by contradiction, that there is no smallest positive real number.
+
+\vfill
+
+\newpage
+
+\item Show that $\displaystyle \forall x, y \in \Reals, (x \in \Rationals \; \land \; xy \notin \Rationals) \; \implies \; y \notin \Rationals$.
+
+\vfill
+
+\item Prove that $\displaystyle \forall x, y \in \Integers, \; (x >1 ) \; \implies \; ( x \nmid y \; \lor \; x \nmid y+1 )$
+
+\vfill
+
+\newpage
+
+\item Let's do one that's not an indirect argument.  (Just to mix things up a little.) The squares of natural numbers can only have certain values mod 4. In particular, $\forall x \in \Naturals, \; x^2 \mod{4} = 0 \; \mbox{or} \; x^2 \mod{4} = 1$.  You can prove this by looking at two possibilities: either $x$ is even, or $x$ is odd.
+
+\vfill
+
+\item A \emph{Pythagorean triple} is a set of three
+natural numbers, $a$, $b$ and $c$, that satisfy the Pythagorean theorem: $a^2 + b^2 = c^2$.   Prove that, in a
+Pythagorean triple, at least one of $a$ and $b$ is even. (Use contradiction -- it will involve the statement we just proved in problem 7.
+
+\vfill
+
+\end{enumerate}
+
+\end{document}

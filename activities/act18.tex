@@ -1,0 +1,86 @@
+\documentclass{amsart}
+\usepackage{amssymb}
+\renewcommand{\baselinestretch}{1.5}
+\addtolength{\textwidth}{.2in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1in}
+
+\usepackage{ifthen}
+
+\input{my_latex_definitions.tex}
+
+\addtolength{\abovedisplayskip}{0pt}
+\addtolength{\belowdisplayskip}{24pt}
+\addtolength{\abovedisplayshortskip}{0pt}
+\addtolength{\belowdisplayshortskip}{44pt}
+
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large Activity 18 -- Introduction to Proof}
+\centerline{\large cases and exhaustion}
+
+\bigskip
+\Large
+
+
+\begin{enumerate}
+
+\item Redo the proof that $\forall x \in \Reals, \; x^2 \geq 0$, using the trichotomy property and proof by cases. 
+
+\vfill
+
+\item We discussed two different ways to talk about the cases, when the cases come from the quotient remainder theorem.
+
+For example,
+
+\begin{itemize}
+\item[\bf Case 2:] ($x$ is of the form $4q+1$)
+\end{itemize}
+\noindent vs.
+\begin{itemize}
+\item[\bf Case 2:] ($x mod 4 \; = \; 1$ )
+\end{itemize}
+
+Use the 2nd approach to redo the proof by cases that squares are either $0$ or $1 \mod 4$.
+
+\vfill
+
+\newpage
+
+\item In the four four's puzzle if we allow factorials ($!$) and squareroots ($\sqrt{\phantom{x}}$) it is possible to find expressions for many more whole numbers.  $10$ is pretty doable, $11$ is quite hard!  How many more can you do?
+
+\vfill
+
+\item Do an exhaustive proof that for all pairs of primes $p$ and $q$, with $p < q \leq 13$, 
+\[ p^q \mod{q} \; = \; p  \]
+
+\vfill
+
+\newpage
+
+\item If we're working in $\!\!\mod{p}$ arithmetic, where $p$ is a prime, about half of the potential residues $\{0,1,2, \ldots p-1\}$ occur as the values of squares.  For example, in $\mod{5}$ arithmetic, squares are always in $\{0,1,4\}$.  The modular values that can be squares are called {\em quadratic residues}.  Determine what are the quadratic residues in $\mod{7}$ arithmetic, and prove your answer with a proof by cases.
+
+\vfill
+
+\item (GIAM \S 3.5 \# 7) Lagrange's theorem on representation of integers as sums of squares
+says that every positive integer can be expressed as the sum of at most 
+$4$ squares.  For example, $79 = 7^2 + 5^2 + 2^2 + 1^2$.  Show (exhaustively) 
+that $15$ can not be represented using fewer than $4$ squares.
+
+\vfill 
+
+\newpage
+
+\item How many numbers less than 30 cannot be represented using fewer than $4$ squares?
+
+\vfill
+
+\item The graph $C_4$ has 4 nodes that are connected in a circular fashion.  What is it's pebbling number?
+
+\vfill
+
+\end{enumerate}
+
+\end{document}

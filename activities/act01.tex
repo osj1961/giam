@@ -1,0 +1,110 @@
+\documentclass{amsart}
+%\usepackage{}
+\renewcommand{\baselinestretch}{1.5}
+
+\input{../my_latex_definitions.tex}
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large Activity 1 -- Introduction to Proof}
+\bigskip
+\Large
+
+In Section 1.1 of GIAM and in the video we introduced 5 sets:
+
+\[ \Naturals, \quad \Integers, \quad \Rationals, \quad \Reals, \quad \mbox{and} \quad \Complexes. \]
+
+\begin{enumerate}
+\item Describe each of these in your own words.
+
+\vfill
+
+\item Explain why every integer is also a member of $\Rationals$.
+
+\vfill
+
+\newpage
+
+\item Use sage to complete Exercise 6 from section 1.1 of GIAM
+
+\vfill
+
+\item Can you find a rational number whose decimal expansion contains a repeating pattern of any given length?  For concreteness, try length 13.
+
+\vfill
+
+\newpage
+
+\item How many real numbers that are not rational numbers can you name?
+
+\vfill
+
+\item Let's explore how to find the fraction of whole numbers that corresponds to a decimal number with a repeating pattern in its decimal expansion.
+Suppose $x$ is a number that has such a repeating pattern.  If you multiply $x$ by 10 the result just has the decimal point shifted by 1 position.  If you multiply $x$ by $10^k$ the decimal point gets moved by $k$ positions.  Use this idea to ``line up'' the repeating patterns of $x$ and $x \cdot 10^k$ so that subtraction leads to a simple result.  Finally, solve for $x$.
+
+Use the above to express the following numbers as fractions with integer entries.  Be sure to reduce your answers to lowest terms.
+
+\begin{enumerate}
+\item \rule{0pt}{36pt} $0.\overline{273}$ 
+\item \rule{0pt}{36pt} $3.\overline{142857}$ 
+\item \rule{0pt}{36pt} $1.\overline{006993}$ 
+\end{enumerate}
+
+\newpage
+
+\item Apply the process from the previous problem to express $0.\overline{9} \; = \; 0.999999\ldots$ as a rational number.  Is there something strange about this result?
+
+\vfill
+
+\vfill
+
+\item Add and multiply the following pairs of complex numbers.
+
+\begin{enumerate}
+\item \rule{0pt}{36pt} $ 1 + 2i \; \& \; 3 + i $
+\item \rule{0pt}{36pt} $ 3 - 2i \; \& \; 4 + i $
+\item \rule{0pt}{36pt} $ 5 - 6i \; \& \; 5 + 6i $
+\end{enumerate}
+
+\vfill
+
+\newpage
+
+\item Two complex numbers are called {\em conjugates} when their real parts are equal and their imaginary parts are negatives.  The last problem in the previous exercise involves two numbers that are conjugates.  Notice that the product of two conjugates will always be real.  (Why?) We can use this idea to simplify fractions involving complex numbers which means we can effectively also do division with complex numbers.  Multiply both the numerator and denomenator of the following fraction by the appropriate conjugate so that it simplifies.  (You can verify your result using either sage or your calculator.)
+
+\[ \frac{3+i}{1-i} \]
+
+\vfill
+
+\item (Exercise 1.1.4 from GIAM) The ``see and say'' sequence is produced by first writing a 1, 
+then iterating the following procedure:  look at the previous entry 
+and say how many entries there are of each integer and write down what 
+you just said.  The first several terms of the ``see and say'' sequence 
+are $1, 11, 21, 1112, 3112, 211213, 312213, 212223, \ldots$.  Comment on the
+rationality (or irrationality) of the number whose decimal digits are obtained 
+by concatenating the ``see and say'' sequence.
+
+\[ 0.1112111123112211213... \]
+
+\vfill
+
+\newpage
+
+
+\item The sequence defined in the previous problem just looks at the totality of the numbers of each digit, and eventually it gets stuck when it encounters a number that is its own description. (Did you discover that? What does that say about the rationality of the number whose decimal digits are obtained 
+by concatenating the ``see and say'' sequence?
+
+In the original ``see and say'' sequence, we speak the descriptions of groups of digits as we encounter them (reading left to right). So we get 
+
+\[ 1, \; 11, \; 21, \; 1211, \; 111221, \; 312211, \; 13112221, \; \ldots \]
+
+Does this version ever get stuck?  Explain why or why not.
+
+\vfill
+
+
+
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,284 @@
+%\documentclass[handout,landscape]{beamer}
+\documentclass[landscape]{beamer}
+%\hypersetup{pdfpagemode=FullScreen}
+\mode<handout>
+{
+  \usepackage{pgf}
+  \usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{6 on 1 boxed}
+{
+  \edef\pgfpageoptionheight{\the\paperheight} 
+  \edef\pgfpageoptionwidth{\the\paperwidth}
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=6,%
+    physical height=\pgfpageoptionheight,%
+    physical width=\pgfpageoptionwidth%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{2}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{3}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{4}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{5}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{6}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+}
+
+
+  \pgfpagesuselayout{6 on 1 boxed}[letterpaper, border shrink=5mm]
+  \nofiles
+}
+
+\usepackage{listings}
+%\lstset{language=TeX}
+\usepackage{multimedia}
+\usepackage[normalem]{ulem}
+\usepackage{amssymb}
+
+%\usecolortheme[named=Purple]{structure} 
+%\usetheme{Copenhagen}
+\usetheme{Warsaw} 
+\usecolortheme{seahorse}
+\useoutertheme{infolines} 
+%\usetheme[height=7mm]{Rochester} 
+%\setbeamertemplate{items}[ball] 
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+%\setbeamertemplate{navigation symbols}{} 
+\author{Joe Fields}
+\title{Introduction to Proof} 
+%\subtitle{}
+\date{Lecture 10 (GIAM \S 2.3)}
+\institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
+
+\input{my_latex_definitions.tex}
+
+\newcommand{\vs}{\rule{0pt}{12pt}}
+
+\AtBeginSection[]
+{
+ \begin{frame}{Table of Contents} 
+  \tableofcontents[currentsection]
+ \end{frame}
+}
+
+%%%% SAVE %%%%
+%{ %magic to get a full screen image...
+%\setbeamertemplate{navigation symbols}{}  % hide navigation buttons 
+%\setbeamertemplate{background canvas}{\centerline{\includegraphics 
+%	[height=\paperheight]{Cantor_4.jpeg}}}
+%\begin{frame}[plain]
+%\rule{0pt}{0pt}
+%\end{frame} 
+%} %end of magic
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+
+\section{basics and notation}
+
+\begin{frame}{logical equivalence}
+\begin{itemize}
+\item In the last section we said that a conditional and its contrapositive are the same. \pause
+\item What exactly does that mean?\pause
+\item Literally that in every row of a truth table they have the same value.\pause
+\item We call this {\em logical equivalence}.\pause
+\item There are two notations: $\iff$ and $\; \cong \;$. \pause
+\end{itemize}
+\end{frame}
+
+\begin{frame}{more on equivalence}
+\begin{itemize}
+\item Don't write $(A \implies B) = (\lnot B \implies \lnot A)$. \pause Since `$=$' already has a job. \pause
+\item You can either write $(A \implies B) \iff (\lnot B \implies \lnot A)$, \pause (Actually this is probably the most popular notation.) \pause
+\item or, $(A \implies B) \; \cong \; (\lnot B \implies \lnot A)$. \pause (We'll use this for the most part.) 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{truth tables}
+\begin{itemize}
+\item It turns out that lots of compound sentences are equivalent. \pause
+\item In every possible scenario they have the same truth value. \pause
+\item Example: $A\lor B$ and $A \lor (\lnot A \land B)$.\pause
+\item Make a truth table! \pause
+\item You can stop and say they're inequivalent when you first encounter a place where they don't match. \pause
+\item If they match in every row, then you've proved that they are equivalent.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{or maybe not}
+\begin{itemize}
+\item Creating truth tables to verify a logical equivalence is an instance of something known as an {\em exhaustive proof}. \pause
+\item We'll do quite a few of these in the beginning, but they tend to get tedious.\pause
+\item In the next section we're going to develop some ``algebraic moves'' that we can use to transform one side of an equivalence into the other. \pause
+\item But first\textellipsis
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Examples}
+\begin{itemize}
+\item Show that $A \land (A \lor B)$ is equivalent to $(A \land B) \lor A$. \pause
+\item Show that $A \land (B \lor \lnot A)$ is equivalent to $(A \land B)$. \pause
+\item Show that $\lnot (A \implies B)$ is equivalent to $(A \land \lnot B)$. 
+\end{itemize}
+\end{frame}
+
+\section{proving equivalences}
+
+\begin{frame}{basic logical equivalences}
+\begin{itemize}
+\item Instead of truth tables, we'll look at developing some basic ``rules of algebra'' \pause
+\item Then we'll transform the LHS of a proposed equivalence into the RHS, using a sequence of approved steps.\pause
+\item The basic logical equivalences are in Table~2.2 on page 83 in GIAM.  \pause
+\item There's also a link to a single-page handout version in the video description.  
+\end{itemize}
+\end{frame}
+
+\begin{frame}{commutative and associative laws}
+\begin{itemize}
+\item We saw these briefly in section 2.1 \pause
+\item Both $\land$ and $\lor$ satisfy the commutative property. \pause (So you can change the physical order ``on the page'') \pause
+\item Both $\land$ and $\lor$ satisfy the associative property. \pause (So you can re-parenthesize any way you want.) \pause  
+\item Note that commutativity is about spatial order and associativity is about temporal order. \pause
+\item Linguistics \pause
+\item Logic diagrams
+\end{itemize}
+\end{frame}
+
+\begin{frame}{distributive laws}
+\begin{itemize}
+\item In ordinary algebra, when does an operation distribute over another? \pause
+\item addition, multiplication and exponents. \pause
+\item $a(b+c) = ab + ac$ and $(ab)^n = a^n\cdot b^n$, but $(a+b)^n \neq a^n + b^n$ \pause
+\item Calculus teachers have a name for the classic mistake: $(x+y)^2 = x^2 + y^2$ \pause \hspace{4ex} The freshman's fallacy. \pause
+\item Operations that are 'repeated' versions distribute over the `unrepeated' version. \pause
+\end{itemize}
+\end{frame}
+
+\begin{frame}{distributive laws in logic}
+\begin{itemize}
+\item Conjunction distributes over disjunction.\pause
+\item Disjunction distributes over conjunction.\pause
+\item Note: There must be two {\em different} operations. \pause
+\item There's no distribution here:  
+\[ A \land (B \land C) \] 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{DeMorgan's Laws}
+\begin{itemize}
+\item Thinking about truth tables. \pause
+\item A conjunction is true in just one row of a truth table. \pause
+\item So the negation of a conjunction is false in just one row. \pause \newline
+(And true in the other 3.) \pause
+\item So a conjunction's negation is a disjunction. \pause (and {\em vice versa}) \pause
+\item This means that the following reasonable looking thing: \pause \newline
+$\displaystyle \lnot (A \land B) \quad = \quad \lnot A \land \lnot B $ \pause \hspace{4ex} IS WRONG!!! \pause
+\item The correct thing is known as DeMorgan's laws -- you not only ditribute the negation sign, you also change the operator.\pause
+\item Algebraic analog.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{double negatives}
+\begin{itemize}
+\item $ \lnot(\lnot A) \; \cong \; A$ \pause
+\end{itemize}
+\end{frame}
+
+\begin{frame}{t and c}
+\begin{itemize}
+\item  Some new symbols: write $t$ for a statement that is always true,\pause \newline
+and write $c$ for a statement that is always false. \pause
+\item tautologies and contradictions \pause
+\item Complementarity\pause
+\item Identity laws\pause
+\item Domination
+\end{itemize}
+\end{frame}
+
+\begin{frame}{wrapping up}
+\begin{itemize}
+\item Idempotence \pause
+\item There's really no such thing as exponentiation in the algebra of Logic.\pause
+\item Absorption \pause
+\item A weapon of last resort?
+\item One thing not on the list that's often needed is the equivalence of a conditional and the related disjunction. \pause
+\[ A \implies B \quad \; \cong \; \quad \lnot A \lor B \]
+\end{itemize}
+\end{frame}
+
+\section{IKK}
+
+\begin{frame}{Smullyan}
+\begin{itemize}
+\item Raymond Smullyan \pause
+\item Origin story of ``Knights and Knaves'' \pause
+\item Knights always speak honestly. \pause (They make true statements.) \pause
+\item Knaves always speak falsely. \pause
+\item We usually don't know who is a Knight and who is a Knave. \pause 
+\item So the puzzle is often merely to figure out what sorts of people we're dealing with.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Locke and Demosthenes}
+\begin{itemize}
+\item Locke says, ``Demosthenes is a knave.'' 
+\item Demosthenes says ``Locke and I are knights.'' \pause
+\item Often we can resolve things by examining what the consequences are of both possibilities for one of the people.\pause
+\item Focus on Locke. \pause
+\item Or you could focus on Demosthenes.
+\end{itemize}
+\end{frame}
+
+\end{document}
+
+\end{document}

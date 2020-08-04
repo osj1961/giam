@@ -1,0 +1,253 @@
+%\documentclass[handout,landscape]{beamer}
+\documentclass[landscape]{beamer}
+%\hypersetup{pdfpagemode=FullScreen}
+\mode<handout>
+{
+  \usepackage{pgf}
+  \usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{6 on 1 boxed}
+{
+  \edef\pgfpageoptionheight{\the\paperheight} 
+  \edef\pgfpageoptionwidth{\the\paperwidth}
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=6,%
+    physical height=\pgfpageoptionheight,%
+    physical width=\pgfpageoptionwidth%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{2}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{3}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{4}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{5}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{6}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+}
+
+
+  \pgfpagesuselayout{6 on 1 boxed}[letterpaper, border shrink=5mm]
+  \nofiles
+}
+
+\usepackage{listings}
+%\lstset{language=TeX}
+\usepackage{multimedia}
+\usepackage[normalem]{ulem}
+%\usepackage{amssymb}
+
+\usepackage{ifthen}
+
+%\usecolortheme[named=Purple]{structure} 
+%\usetheme{Copenhagen}
+\usetheme{Warsaw} 
+\usecolortheme{seahorse}
+\useoutertheme{infolines} 
+%\usetheme[height=7mm]{Rochester} 
+%\setbeamertemplate{items}[ball] 
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+%\setbeamertemplate{navigation symbols}{} 
+\author{Joe Fields}
+\title{Introduction to Proof} 
+%\subtitle{}
+\date{Lecture 19 (GIAM \S 3.6) \newline proving existential statements}
+\institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
+
+\input{my_latex_definitions.tex}
+
+\newcommand{\vs}{\rule{0pt}{12pt}}
+\newcommand{\notimplies}{\;\not\!\!\!\implies}
+
+%\def\mycommand{\setlength{\abovedisplayskip}{-12pt}%
+%\setlength{\belowdisplayskip}{-12pt}%
+%\setlength{\abovedisplayshortskip}{0pt}%
+%\setlength{\belowdisplayshortskip}{0pt}}
+
+%\let\oldselectfont\selectfont
+%\def\selectfont{\oldselectfont\mycommand}
+
+%\mycommand
+
+\AtBeginSection[]
+{
+ \begin{frame}{Table of Contents} 
+  \tableofcontents[currentsection]
+ \end{frame}
+}
+
+%%%% SAVE %%%%
+%{ %magic to get a full screen image...
+%\setbeamertemplate{navigation symbols}{}  % hide navigation buttons 
+%\setbeamertemplate{background canvas}{\centerline{\includegraphics 
+%	[height=\paperheight]{Cantor_4.jpeg}}}
+%\begin{frame}[plain]
+%\rule{0pt}{0pt}
+%\end{frame} 
+%} %end of magic
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\section{philosophy}
+
+\begin{frame}{intro}
+\begin{itemize}
+\item Proving an existential statement is the same thing as disproving a universal statement. \pause
+\item Disproving an existential statement is the same thing as proving a universal statement. \pause
+\item We could probably just skip this section\textellipsis \pause
+\item Sometimes there is more emphasis on the existential. \pause
+\item Missouri, the ``show me'' state.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{some quickies}
+\begin{itemize}
+\item There is an even prime. \pause
+\item There is a Fibonacci number that is a perfect square.\pause
+\item There is a magic number.
+\end{itemize}
+\end{frame}
+
+\section{examples}
+
+\begin{frame}{ivt}
+\begin{itemize}
+\item The Intermediate Value Theorem tells us that if $f(x)$ is a continuous function whose domain contains an interval $[a,b]$ then for every real number $r$ that lies between $f(a)$ and $f(b)$, there is an $x \in (a,b)$ such that $f(x) = r$. \pause
+\item A common use of IVT is to prove the existance of a root (a.k.a. zero) for some function $f(x)$. \pause
+\item If you can show that $f(a)$ is positive and that $f(b)$ is negative (or vice versa) then IVT guarantees
+that at some point $x \in (a,b)$ we will have $f(x) = 0$. \pause
+\item For instance, consider $f(x) = x^3 - 2$. All polynomial functions are continuous so $f(x)$ satisfies that hypothesis.  Since $f(1) = -1$ and $f(2) = 6$ it follows from IVT that there is an $x$ in $(1,2)$ where $f(x)=0$. \pause
+\item Congratulations, we've just shown that $\sqrt[3]{2}$ lies somewhere in $(1,2)$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{a dilemma approach}
+\begin{itemize}
+\item Question: do you think that an irrational number raised to an irrational power could possibly be rational? \pause
+\item It certainly seems unlikely! \pause
+\item Weirdly, it is actually true that $\displaystyle \exists \alpha, \beta \in \Reals, \; \alpha \notin \Rationals \, \land \, \beta \notin \Rationals \, \land \, \alpha^\beta \in \Rationals$. \pause
+\item The weirdest thing of all is that we know this to be true, but we have no idea what $\alpha$ and $\beta$ are!
+\end{itemize}
+\end{frame}
+
+\begin{frame}{my favorite proof}
+\begin{itemize}
+\item Is $\sqrt{2}^{\sqrt{2}}$ rational? \pause
+\item If so, then we are done -- let $\alpha = \beta = \sqrt{2}$. \pause
+\item If not, then let $\alpha = \sqrt{2}^{\sqrt{2}}$ and let $\beta = \sqrt{2}$. \pause
+\item Note that $\alpha^\beta \, = \, \left( \sqrt{2}^{\sqrt{2}} \right)^{\sqrt{2}}  \, = \, \sqrt{2}^{\left(\sqrt{2}\cdot \sqrt{2}\right)} \, = \, \sqrt{2}^2 \, = \, 2$ which is clearly rational.
+\end{itemize}
+\end{frame}
+
+\section{well-ordering principle}
+
+\begin{frame}{wop}
+\begin{itemize}
+\item A set is said to have the wop if every subset of it must have a least element. \pause
+\item $\Naturals$ has the wop. \pause $\Integers$ doesn't have the wop. \pause 
+\item $\Rationals^+$ also doesn't have wop.  \pause Think about the rational numbers in $(0,1)$. \pause Can we name a smallest member?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{wop 2}
+\begin{itemize}
+\item Since the naturals have the well-ordering principle, any subset of the naturals will automagically have a least element. \pause Even if we can't currently say what it is! \pause
+\item In 2013, Yitang Zhang proved that there are infinitely many pairs of consecutive primes that differ by $70,\!000,\!000$. \pause
+\item This tells us that there is some smallest natural number that occurs infinitely often as the gap between consecutive primes. \pause
+\item What Zhang did was to prove the so-called bounded gaps conjecture. \pause
+\item The state of the art has improved somewhat, currently we know that a gap of $246$ occurs infinitely often among primes.  \pause
+\item But we still don't know what the smallest gap that occurs infinitely often is. \pause
+\item If it is 2, that's the twin prime conjecture. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{vampires}
+\begin{itemize}
+\item A \emph{vampire number} 
+is a 
+$2n$ digit number $v$ that factors as $v=xy$
+where $x$ and $y$ are $n$ digit numbers and the digits of $v$ are the 
+precisely the digits in $x$ and $y$ (counting repetitions) in some order.  The numbers $x$ and $y$
+are known as the ``fangs'' of $v$.  To eliminate trivial
+cases, both fangs may not end with zeros. \pause
+\item In the book it notes that $125460 = 204 \cdot 615 $ is a 6 digit vampire number \pause \newline
+-- so the set of vampire numbers is non-empty \pause \newline
+-- so wop guarantees that there is a smallest 6 digit vampire number \pause \newline
+-- but what is it? \pause
+\item Let's code\textellipsis  
+\end{itemize}
+\end{frame}
+
+\section{unique existance}
+
+\begin{frame}{basics}
+\begin{itemize}
+\item An exclamation point after the existential quantifier is used to say ``there exists a unique\textellipsis'' \pause
+\item Example: \pause \newline
+\[ \forall n, d \in \Naturals, \; \exists ! q \in \Naturals, \; \exists ! r \in \Naturals, \; \mbox{such that} \; n=qd+r \; \land \; 0 \leq r < d \] 
+\pause
+\item A unique existence proof usually has two parts: \pause
+\item Show existence. \pause
+\item Show that if two such things exist we get a contradiction. \pause
+\item So there's a mini proof by contradiction in there.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{example}
+\begin{itemize}
+\item The gcd of two natural numbers is unique. \pause
+\item The gcd of $a$ and $b$ is the unique smallest positive number in the $\Integers$-module generated by $a$ and $b$. \pause
+\item See Figure 3.4 in GIAM
+\end{itemize}
+\end{frame}
+
+
+\end{document}

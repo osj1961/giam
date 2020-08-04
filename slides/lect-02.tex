@@ -1,0 +1,234 @@
+%\documentclass[handout,landscape]{beamer}
+\documentclass[landscape]{beamer}
+\hypersetup{pdfpagemode=FullScreen}
+\mode<handout>
+{
+  \usepackage{pgf}
+  \usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{6 on 1 boxed}
+{
+  \edef\pgfpageoptionheight{\the\paperheight} 
+  \edef\pgfpageoptionwidth{\the\paperwidth}
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=6,%
+    physical height=\pgfpageoptionheight,%
+    physical width=\pgfpageoptionwidth%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{2}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{3}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{4}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{5}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{6}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+}
+
+
+  \pgfpagesuselayout{6 on 1 boxed}[letterpaper, border shrink=5mm]
+  \nofiles
+}
+
+\usepackage{listings}
+%\lstset{language=TeX}
+\usepackage{multimedia}
+\usepackage[normalem]{ulem}
+\usepackage{amssymb}
+
+%\usecolortheme[named=Purple]{structure} 
+%\usetheme{Copenhagen}
+\usetheme{Warsaw} 
+\usecolortheme{seahorse}
+\useoutertheme{infolines} 
+%\usetheme[height=7mm]{Rochester} 
+%\setbeamertemplate{items}[ball] 
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+%\setbeamertemplate{navigation symbols}{} 
+\author{Joe Fields}
+\title{Introduction to Proof} 
+%\subtitle{}
+\date{Lecture 2}
+\institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
+
+\input{../my_latex_definitions.tex}
+
+\newcommand{\vs}{\rule{0pt}{12pt}}
+
+\AtBeginSection[]
+{
+ \begin{frame}{Table of Contents} 
+  \tableofcontents[currentsection]
+ \end{frame}
+}
+
+%%%% SAVE %%%%
+%{ %magic to get a full screen image...
+%\setbeamertemplate{navigation symbols}{}  % hide navigation buttons 
+%\setbeamertemplate{background canvas}{\centerline{\includegraphics 
+%	[height=\paperheight]{Cantor_4.jpeg}}}
+%\begin{frame}[plain]
+%\rule{0pt}{0pt}
+%\end{frame} 
+%} %end of magic
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\section{last time}
+
+\begin{frame}{a bit of finishing up}
+\begin{itemize}
+\item An additional resource: Overleaf -- \href{https://www.overleaf.com/}{https://www.overleaf.com/} \pause
+\item The geometric character of complex multiplication. \pause
+\end{itemize}
+\end{frame}
+
+\begin{frame}{polar form and complex multiplication}
+\begin{itemize}
+\item Arg and Mod of a complex number.\pause
+\item When multiplying, the Mods get multiplied and the Args get added.\pause
+\item Example: $(1+2i) \cdot (2+i)$\pause
+\item A truly weird use of $e$:  \newline
+a complex number with Mod $r$ and Arg $\theta$ can be written as \textellipsis \pause
+\[ re^{i\theta}. \]
+\end{itemize}
+\end{frame}
+
+
+\section{definitions}
+
+\begin{frame}{is 0 even?}
+\begin{itemize}
+\item Is 0 an even number? \pause
+\item Well what should the definition of ``even'' be? \pause
+\item A number is even if it is exactly twice some other number. \pause
+\item Right, so $2\pi \approx 6.283185$ is even because it's twice $\pi$? \pause
+\item What's our universe of discourse? \pause
+\item Okay, so ``a natural number is even if it is exactly twice some other number.'' \pause
+\item Sorry, that makes $3$ even since it is exactly twice $1.5$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{yes, 0 is even}
+\begin{itemize}
+\item Okay, so both the number and the thing it's the double of must be natural numbers? \pause
+\item Actually, it's perfectly reasonable to talk about {\em negative} even numbers. \pause
+\item An integer $x$ is even if it is exactly twice some integer $y$. \pause
+\item Notice that I also dropped the word ``other''?\pause
+\item We're used to the double of some number being different - but there's no reason to insist on that! \pause
+\item So what is $0$ the double of?
+  
+\end{itemize}
+\end{frame}
+
+\begin{frame}{precise definitions are critical}
+\begin{itemize}
+\item Notice how we resolved the question of $0$'s evenness, not by thinking much about $0$, but rather, by refining our understanding of what the word ``even'' should mean. \pause
+\item Precise definitions are one of the factors that make mathematics so powerful. \pause
+\item Notice that there is an insurmountable problem though! \pause 
+\item When we define new concepts we must define them in terms of things we already know. \pause
+\item And those things must be defined in terms of more primitive concepts. \pause
+\item And so on \textellipsis \pause
+\end{itemize}
+\end{frame}
+
+\begin{frame}{alternative definitions have to be consistent}
+\begin{itemize}
+\item Often mathematicians develop multiple definitions for the same concept. \pause
+\item Some things may be easier to prove using an alternative definition. \pause
+\item If two or more definitions exist for some concept we have to prove that they really define the same thing! \pause
+\item TFAE
+\end{itemize}
+\end{frame}
+
+\section{primes}
+
+\begin{frame}{primes}
+\begin{itemize}
+\item An integer $p$ is prime if it is bigger than 1 and its only divisors are 1 and itself. \pause
+\item An integer $p$ is prime if it is bigger than 1 and if it divides a product $xy$, then it must either divide $x$ or $y$ (or both). \pause
+\item Those are equivalent definitions.\pause
+\item Doing the TFAE proof is a little beyond our scope right now.\pause 
+\item The second definition can be adapted to other more abstract settings - Ring theory.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{finding primes}
+\begin{itemize}
+\item The Sieve of Eratosthenes. \pause
+\item The idea is to ``sieve out'' (i.e. remove) all of the non-primes in successive stages while simultaneously identifying the primes. \pause
+\item Begin with the entire set of positive integers $\Zplus$. \pause
+\item The first stage is to just cross off 1. \pause
+\item In successive stages you circle the smallest non-sieved entry (thus identifying the next prime) and cross off all of its multiples. \pause
+\item See Figure 1.1.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Eratosthenes}
+\begin{itemize}
+\item Head Librarian at the great Library of Alexandria. \pause
+\item Nickname: Beta \pause
+\item Knew the world was round and determined its circumference about 1700 years before Columbus. \pause
+\item Further reading: the MacTutor Histoy of Math Archive -- \href{https://mathshistory.st-andrews.ac.uk/}{https://mathshistory.st-andrews.ac.uk/}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{more fun with primes}
+\begin{itemize}
+\item The book contains two interesting (but false) conjectures about primes. \pause
+\item Conjecture 1: Whenever $p$ is a prime, $2^p-1$ is also a prime. \pause
+\item Conjecture 2: The values of the polynomial $x^2-31x+257$ (at integer inputs) are always prime.\pause
+\item Let's investigate these a bit using sage. 
+\end{itemize}
+\end{frame}
+
+\end{document}

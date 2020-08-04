@@ -1,0 +1,93 @@
+\documentclass{amsart}
+%\usepackage{}
+\renewcommand{\baselinestretch}{1.5}
+\addtolength{\textwidth}{.2in}
+\input{../my_latex_definitions.tex}
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large Activity 6 -- Introduction to Proof}
+\centerline{\large irrational numbers}
+
+\bigskip
+\Large
+
+
+\begin{enumerate}
+\item Which of the following pairs of numbers are relatively prime? Do as many as you can ``by hand,'' but feel free to use sage for the tougher ones.
+
+\vspace{.1in}
+
+\begin{tabular}{cccc}
+ & \rule{72pt}{0pt} & \rule{72pt}{0pt} & \rule{72pt}{0pt} \\
+\rule[-15pt]{0pt}{44pt} & $52$ \& $143$ &  $7$ \& $112$ & $2457$ \& $1265$\\
+\rule[-15pt]{0pt}{44pt} & $59$ \& $69$ & $10000$ \& $101$ & $5183$ \& $4189$ \\
+\rule[-15pt]{0pt}{44pt} & $256$ \& $243$ & $13706$ \& $14861$ & $999$ \& $1000$ \\
+\end{tabular}
+
+\rule{0pt}{0pt}
+
+\vspace{.1in}
+
+\rule{0pt}{0pt}
+
+\item True or False: A number and its immediate successor (i.e. $n$ and $n+1$) are always relatively prime. Explain your answer. (Hint: it may be better to think about $n \mod d$ rather than $d\divides n$ for this.)
+
+\vfill
+
+\item True or False: A number and its successor's successor (i.e. $n$ and $n+2$) are never relatively prime. Explain your answer.
+
+\vfill
+
+\item Play around (with sage or your calculator) and find a criterion for when the squareroot of an integer is irrational.
+
+\vfill
+
+\newpage
+
+\item Recall the lemma we used as part of the proof of the irrationality of $\sqrt{2}$:
+
+\[ \forall x \in \Integers, \quad \mbox{if} \; x^2 \; \mbox{is even, then } \; x \; \mbox{is even}. \]
+
+This can be restated using the divisibility symbol as:
+
+\[ \forall x \in \Integers, \quad \mbox{if} \; 2 \divides x^2 \; \mbox{then } \; 2\divides x. \]
+
+State the lemma that we'd need for making a similar proof (to that of Hippassus) which shows that  $\sqrt{3}$ is irrational.
+
+\vfill
+
+\item A similar change (substituting 4 for 2) gives:
+
+\[ \forall x \in \Integers, \quad \mbox{if} \; 4 \divides x^2 \; \mbox{then } \; 4\divides x. \]
+
+\noindent but this lemma is false!  Provide a counterexample and explain what this has to do with your answer to \# 4.
+
+\vfill
+
+\newpage
+
+\item A variant of Hippasus' proof involves slightly weakening the ``relatively prime'' restriction on the numerator and denomenator of a fraction.  The variant would start with:
+
+\begin{quote} 
+{\em Suppose to the contrary that $\displaystyle \sqrt{2} = \frac{a}{b}$ where $a$ and $b$ are integers which are not both even.}
+\end{quote}
+
+How would you end this version of the proof? The middle part of the argument would stay the same. You just need to finish the sentence that begins with ``Finally, we have arrived at the desired absurdity because\textellipsis''
+
+\vfill
+
+\item Try writing a proof that $\sqrt{3}$ is irrational using the lemma 
+
+\[ \forall x \in \Integers, \; \mbox{if} \; 3 \divides x^2 \; \mbox{then } \; 3 \divides x. \]
+
+\noindent and the variant approach from the previous problem.
+
+\vfill
+
+
+
+\end{enumerate}
+
+\end{document}

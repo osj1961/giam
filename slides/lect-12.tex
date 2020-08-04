@@ -1,0 +1,304 @@
+%\documentclass[handout,landscape]{beamer}
+\documentclass[landscape]{beamer}
+%\hypersetup{pdfpagemode=FullScreen}
+\mode<handout>
+{
+  \usepackage{pgf}
+  \usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{6 on 1 boxed}
+{
+  \edef\pgfpageoptionheight{\the\paperheight} 
+  \edef\pgfpageoptionwidth{\the\paperwidth}
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=6,%
+    physical height=\pgfpageoptionheight,%
+    physical width=\pgfpageoptionwidth%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{2}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{3}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{4}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{5}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{6}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+}
+
+
+  \pgfpagesuselayout{6 on 1 boxed}[letterpaper, border shrink=5mm]
+  \nofiles
+}
+
+\usepackage{listings}
+%\lstset{language=TeX}
+\usepackage{multimedia}
+\usepackage[normalem]{ulem}
+\usepackage{amssymb}
+
+%\usecolortheme[named=Purple]{structure} 
+%\usetheme{Copenhagen}
+\usetheme{Warsaw} 
+\usecolortheme{seahorse}
+\useoutertheme{infolines} 
+%\usetheme[height=7mm]{Rochester} 
+%\setbeamertemplate{items}[ball] 
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+%\setbeamertemplate{navigation symbols}{} 
+\author{Joe Fields}
+\title{Introduction to Proof} 
+%\subtitle{}
+\date{Lecture 12 (GIAM \S 2.5)}
+\institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
+
+\input{my_latex_definitions.tex}
+
+\newcommand{\vs}{\rule{0pt}{12pt}}
+
+\AtBeginSection[]
+{
+ \begin{frame}{Table of Contents} 
+  \tableofcontents[currentsection]
+ \end{frame}
+}
+
+%%%% SAVE %%%%
+%{ %magic to get a full screen image...
+%\setbeamertemplate{navigation symbols}{}  % hide navigation buttons 
+%\setbeamertemplate{background canvas}{\centerline{\includegraphics 
+%	[height=\paperheight]{Cantor_4.jpeg}}}
+%\begin{frame}[plain]
+%\rule{0pt}{0pt}
+%\end{frame} 
+%} %end of magic
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+
+\section{Quantified sentences}
+
+\begin{frame}{a motivating example}
+\begin{itemize}
+\item Consider the difference between the following\pause
+\begin{itemize}
+\item $x$ is a prime number less than 100.\pause
+\item There are precisely 25 prime numbers less than 100.\pause
+\end{itemize}
+\item The first is ambiguous.\pause
+\item The second is a statement.\pause
+\item You can change ambiguous things into statements by asking ``How many?''
+\end{itemize}
+\end{frame}
+
+\begin{frame}{quantifiers revisited}
+\begin{itemize}
+\item If the answer to ``How many?'' is ``All of them!'' \pause
+\item \hspace{.2in} You've got something that should be universally quantified.\pause
+\item If the answer to ``How many?'' is ``Not sure, but at least some of them\textellipsis'' \pause
+\item \hspace{.2in} You've got something that should be existentially quantified.\pause
+\item Takeaway: Quantifiers are one way to turn ambiguous sentences in logical statements.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{open sentences}
+\begin{itemize}
+\item An {\em open sentence} is a sentence that involves variables.\pause
+\item Example: Let $P(x,y) \; = \; x < y$\pause
+\item As it stands, $P(x,y)$ is just ambiguous -- we can't tell which is bigger unless you tell us what $x$ and $y$ are!\pause
+\item But add some quantifiers and you get a statement: \pause
+\item $\forall x \in \Reals, \exists y \in \Reals, P(x,y)$ \pause
+\item For every real number $x$, there is a real number $y$ that's bigger than it. \pause 
+\item $\forall x \in \Reals, \forall y \in \Reals, P(x,y)$ \pause is also a statement (a false one!) \pause
+\item $\exists x \in \Reals, \exists y \in \Reals, P(x,y)$ \pause ???
+\end{itemize}
+\end{frame}
+
+\begin{frame}{bound variables}
+\begin{itemize}
+\item When a variable is in the scope of a quantifier we call it {\em bound}.\pause
+\item If all of the variables in a sentence are bound, the sentence is a statement.\pause
+\item Sentences with some variables that remain unbound are often seen in definitions\pause
+\end{itemize}
+\end{frame}
+
+\begin{frame}{examples}
+\begin{itemize}
+\item The sentence $\exists y, x<y$ has one bound variable ($y$) and one unbound variable ($x$). \pause
+\item Notice that this sentence defines some concept?\pause
+\item It tells us that $x$ is finite!\pause
+\item Here are a few examples taken from the book:\pause
+\begin{itemize}
+\item[i)] $P(x)$ = ``$2^{2^x}+1$ is a prime.'' \pause
+
+\item[ii)] $Q(x,y)$ = ``$x$ is prime or $y$ is a divisor of $x$.'' \pause
+
+\item[iii)] $L(f,c,l)$ = ``The function $f$ has limit $l$ at $c$, if 
+and only if, 
+for every positive number $\epsilon$, there is a positive number $\delta$ 
+such that whenever $|x-c| < \delta$ it follows that $|f(x)-l| < \epsilon$.''  
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\section{examples}
+
+\begin{frame}{Fermat numbers}
+\begin{itemize}
+\item $P(x)$ = ``$2^{2^x}+1$ is a prime.'' \pause
+\item There are no quantifiers, often when that happens we implicitly assume universal quantification.\pause
+\item So, ``$\forall x \in \Naturals, \; 2^{2^x}+1$ is a prime'' would be the likely interpretation.\pause
+\item Sadly that's not true \pause
+\item If we let $U \; = \; \{0,1,2,3,4\}$, then ``$\forall x \in U, \; 2^{2^x}+1$ is a prime'' \pause
+\item Notice that we could re-express that as $P(0) \land P(1) \land P(2) \land P(3) \land P(4)$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Euler}
+\begin{itemize}
+\item Fermat probably computed that $F_5=4294967297$, but \ldots \pause
+\item Fermat died in 1665. \pause
+\item Euler looked at this issue around 1732 and found that $641 \divides F_5$. \pause
+\item In the meantime, John Napier had invented his ``bones'' which were a mechanical aid to calculation.  Perhaps Euler was able to enlist a squad of minions to do all the tedious trial division using the bones. \pause
+\item But, Euler did have a reputation for being a lightning-fast mental calculator\textellipsis
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Definition of a limit}
+\begin{itemize}
+\item $L(f,c,l)$ = ``The function $f$ has limit $l$ at $c$, if 
+and only if, 
+for every positive number $\epsilon$, there is a positive number $\delta$ 
+such that whenever $|x-c| < \delta$ it follows that $|f(x)-l| < \epsilon$.''  \pause
+\item Unbound variables are $f$, $c$ and $l$. \pause ($x$, $\delta$ and $\epsilon$ are bound.)\pause
+\item Let's do the translation to symbols:\pause
+\item $ \lim_{x\rightarrow c} f(x) \, = \, l \quad \iff $ \newline
+\rule{72pt}{0pt} $\forall \epsilon>0 \, \exists \delta>0 \, \forall x \, (|x-c| < \delta) \implies (|f(x)-l| < \epsilon). $
+\end{itemize}
+\end{frame}
+
+\section{Quantifiers as logical connectives}
+
+\begin{frame}{universals and conjunctions}
+\begin{itemize}
+\item When we're dealing with a finite universe, (like $U \; = \; \{0,1,2,3,4\}$ in the Fermat numbers example.) \pause
+\item A universally quantified sentence means the same thing as a conjunction involving all the members of the universe.\pause
+\item $\forall x \in U, \; P(x)$ just means $P(0) \land P(1) \land P(2) \land P(3) \land P(4)$.\pause
+\item There's even a way to denote the conjunction of infinitely many statements\pause 
+\item Let $F(n)$ be ``n has a factorization into prime power factors.'' \pause
+\item $\displaystyle \forall n \in \Naturals, \; F(n)$ means the same thing as $\displaystyle \bigwedge_{n \in \Naturals} F(n)$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{existentials and disjunctions}
+\begin{itemize}
+\item The disjunction of a bunch of statements will be true when any one of the statements is true.\pause
+\item An existentially quantified sentence means the same thing as a disjunction involving all the members of the universe.\pause
+\item An example from GIAM:
+\begin{quote}
+Find a four digit number that
+is an integer multiple of its reversal. The sentence that states that this question has a solution is
+
+\[
+\exists abcd \in {\mathbb Z},  \exists k \in {\mathbb Z}, abcd = k\cdot dcba
+\]
+
+This could be expressed instead as the disjunction of 9000 statements, or more 
+compactly as
+
+\[
+\bigvee_{1000\leq abcd \leq 9999}  \exists k \in {\mathbb Z}, abcd = k\cdot dcba.
+\]
+
+\end{quote}
+\end{itemize}
+\end{frame}
+
+\section{A recreational problem}
+
+\begin{frame}{check {\em how} many cases!?!}
+\begin{itemize}
+\item Let's just go straight over to CoCalc shall we?
+\end{itemize}
+\end{frame}
+
+\section{Negating quantified sentences}
+
+\begin{frame}{generalising DeMorgan}
+\begin{itemize}
+\item A generalized version of DeMorgan's laws\pause
+\item \rule[-6pt]{0pt}{24pt} $ \lnot ( \forall x \in U, P(x)) \; \cong \; \exists x \in U, \lnot P(x) $\pause \newline
+ \rule[-6pt]{0pt}{24pt} $ \lnot ( \exists x \in U, P(x)) \; \cong \; \forall x \in U, \lnot P(x) $\pause
+\item Watch what happens when there are multiple quantifiers!\pause
+\item \rule[-6pt]{0pt}{24pt} $ \lnot ( \forall x \in U, \, \exists y \in U, \; P(x,y) )$ \pause \newline
+\rule[-6pt]{0pt}{24pt} $ \exists x \in U, \; \lnot ( \exists y \in U, \; P(x,y) )$ \pause \newline
+\rule[-6pt]{0pt}{24pt} $ \exists x \in U, \; \forall y \in U, \; \lnot P(x,y) $ \pause
+\item In brief: switch every quantifier and negate the statement that comes after.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{generalising DeMorgan}
+\begin{itemize}
+\item Recall the statement that we use to define the concept of the limit? \pause
+\item \rule[-6pt]{0pt}{24pt} $ \forall \epsilon>0, \, \exists \delta>0, \, \forall x, \, (|x-c| < \delta) \implies (|f(x)-l| < \epsilon). $ \pause
+\item How do we show that the limit of $f$ as $x$ approaches $c$ is not $l$ ? \pause
+\item \rule[-6pt]{0pt}{24pt} $ \lim_{x\rightarrow c} f(x) \, \neq \, l \quad \iff $ \pause
+\rule[-6pt]{0pt}{24pt} $ \lnot ( \forall \epsilon>0, \, \exists \delta>0, \, \forall x, \, (|x-c| < \delta) \implies (|f(x)-l| < \epsilon) )$ \pause
+\item This is equivalent to \newline
+\rule[-6pt]{0pt}{24pt} $ \exists \epsilon>0, \, \forall \delta>0, \, \exists x, \,  \lnot ( (|x-c| < \delta) \implies (|f(x)-l| < \epsilon) )$ \pause
+\item We're almost there, we just need to remember how to negate a conditional\textellipsis \pause \newline
+\rule[-6pt]{0pt}{24pt} $ \exists \epsilon>0, \, \forall \delta>0, \, \exists x, \,   (|x-c| < \delta ) \land (|f(x)-l| \geq \epsilon) )$
+\end{itemize}
+\end{frame}
+
+\end{document}
+
+\end{document}

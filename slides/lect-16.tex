@@ -1,0 +1,269 @@
+%\documentclass[handout,landscape]{beamer}
+\documentclass[landscape]{beamer}
+%\hypersetup{pdfpagemode=FullScreen}
+\mode<handout>
+{
+  \usepackage{pgf}
+  \usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{6 on 1 boxed}
+{
+  \edef\pgfpageoptionheight{\the\paperheight} 
+  \edef\pgfpageoptionwidth{\the\paperwidth}
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=6,%
+    physical height=\pgfpageoptionheight,%
+    physical width=\pgfpageoptionwidth%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{2}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{3}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{4}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{5}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{6}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+}
+
+
+  \pgfpagesuselayout{6 on 1 boxed}[letterpaper, border shrink=5mm]
+  \nofiles
+}
+
+\usepackage{listings}
+%\lstset{language=TeX}
+\usepackage{multimedia}
+\usepackage[normalem]{ulem}
+\usepackage{amssymb}
+
+\usepackage{ifthen}
+
+%\usecolortheme[named=Purple]{structure} 
+%\usetheme{Copenhagen}
+\usetheme{Warsaw} 
+\usecolortheme{seahorse}
+\useoutertheme{infolines} 
+%\usetheme[height=7mm]{Rochester} 
+%\setbeamertemplate{items}[ball] 
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+%\setbeamertemplate{navigation symbols}{} 
+\author{Joe Fields}
+\title{Introduction to Proof} 
+%\subtitle{}
+\date{Lecture 16 (GIAM \S 3.3)}
+\institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
+
+\input{my_latex_definitions.tex}
+
+\newcommand{\vs}{\rule{0pt}{12pt}}
+
+%\def\mycommand{\setlength{\abovedisplayskip}{-12pt}%
+%\setlength{\belowdisplayskip}{-12pt}%
+%\setlength{\abovedisplayshortskip}{0pt}%
+%\setlength{\belowdisplayshortskip}{0pt}}
+
+%\let\oldselectfont\selectfont
+%\def\selectfont{\oldselectfont\mycommand}
+
+%\mycommand
+
+\AtBeginSection[]
+{
+ \begin{frame}{Table of Contents} 
+  \tableofcontents[currentsection]
+ \end{frame}
+}
+
+%%%% SAVE %%%%
+%{ %magic to get a full screen image...
+%\setbeamertemplate{navigation symbols}{}  % hide navigation buttons 
+%\setbeamertemplate{background canvas}{\centerline{\includegraphics 
+%	[height=\paperheight]{Cantor_4.jpeg}}}
+%\begin{frame}[plain]
+%\rule{0pt}{0pt}
+%\end{frame} 
+%} %end of magic
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\section{contradiction}
+
+\begin{frame}{layout}
+\begin{itemize}
+\item  Assume the conclusion you wish to prove is actually false.\pause
+\item From that premise deduce a complete absurdity (i.e. a contradiction) \pause
+\item Since $\lnot P$ is equivalent to $c$ we deduce that $P \cong t$. \pause
+\item Back in chapter 1 we saw a proof of this type -- the proof that $\sqrt{2}$ is not rational. \pause
+\item Next we'll look at this theorem: \pause
+\begin{thm} (Euclid) The set of all prime numbers is infinite.
+\end{thm}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{infinitely many primes}
+
+\noindent {\em Proof:}
+
+\noindent Suppose on the contrary that there are only a finite number
+of primes.  This finite set of prime numbers could, in principle, be listed
+in ascending order.
+
+\[  \{ p_1, p_2, p_3, \ldots , p_n \} \]
+
+Consider the number $N$ formed by adding 1 to the product of all of these 
+primes.
+
+\[ N = 1 + \prod_{k=1}^n p_k \]
+
+\end{frame}
+
+\begin{frame}{infinitely many primes (cont.)}
+
+Clearly, $N$ is much larger than the largest prime $p_n$, so $N$ cannot
+be a prime number itself.  Thus $N$ must be a product of some of the 
+primes in the list.  Suppose that $p_j$ is one of the primes that 
+divides $N$.  Now notice that, by construction, $N$ would leave remainder
+$1$ upon division by $p_j$.  This is a contradiction since we cannot have
+both $p_j \divides N$ and $p_j \nmid N$. 
+
+Since the supposition that there are only finitely many primes leads to
+a contradiction, there must indeed be an infinite number of primes.
+
+\hspace{\fill} Q.E.D.
+
+\end{frame}
+
+\begin{frame}{a short digression}
+\begin{itemize}
+\item The notation $p\#$ is used for the product of all the primes up to and including $p$. \pause
+\item This is pronounced ``$p$ prime-orial.'' \pause
+\item The number $N$ in our proof could have been expressed as $p_n\# + 1$. \pause
+\item An incorrect (but somehow attractive) way to end the proof might be ``$N$ must be a prime since it isn't divisible by any of the known primes, so we've discovered a prime larger than the largest prime.  Which is a contradiction.'' \pause
+\item This isn't quite right because while $N$ implies the existence of primes bigger than $p_n$, it's not necessary for $N$ itself to be prime. \pause
+\item But is it? \pause Let's use CoCalc.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{another example}
+\begin{itemize}
+\item  There is no largest integer. \pause
+
+\noindent {\em Proof:}
+
+Suppose (by way of contradiction) that there is a largest integer $L$.   
+Then $L \in \Integers$ and $\forall z \in \Integers, L \geq z$.
+Consider the quantity $L+1$.  Clearly $L+1$ is an integer (because it is the sum of two integers) and also
+$L+1 > L$.   This is a contradiction so the original supposition is false.   Hence there is no largest integer.
+
+\hspace{\fill} Q.E.D.
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{yet another example}
+\begin{itemize}
+\item  Prove that the sum of a rational and an irrational 
+number is irrational.\pause
+
+\noindent {\em Proof:}
+
+\noindent Suppose (by way of contradiction) that $x$ is a rational number, that $y$ is an irrational number, and that $x+y$ is rational. 
+Note that $y = (x+y) - x$ is the difference of two rational numbers.  By a previous result, the difference of rational numbers is rational. This is a contradiction since it is impossible for $y$ to be both rational and irrational, so the original supposition is false.   Hence the sum of a rational and an irrational 
+number must be irrational.
+
+\hspace{\fill} Q.E.D.
+
+
+\end{itemize}
+\end{frame}
+
+\section{contrapositives}
+
+\begin{frame}{layout}
+\begin{itemize}
+\item  You'll start with an opening sentence that says something like:\pause \newline
+
+``We will instead consider the equivalent statement (contrapositive of whatever we really want to prove).'' \pause
+\item Then we just do a regular direct proof of that contrapositive statement.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{a long anticipated lemma proof}
+\begin{itemize}
+\item  Recall the lemma we wanted for the proof that $\sqrt{2} \notin \Rationals$ ? \pause
+\item $ \displaystyle \forall x \in \Integers, \; x^2 \; \mbox{is even} \; \implies \; x \;  \mbox{is even.} $ \pause \newline
+\noindent {\em Proof:} \newline
+\noindent We will instead consider the equivalent statement,
+\[ \forall x \in \Integers, \; x \; \mbox{is odd} \; \implies \; x^2 \;  \mbox{is odd.}  \]
+\noindent (This is the contrapositive of the desired result.) \newline
+\end{itemize}
+\end{frame}
+
+\begin{frame}{lemma (cont.)}
+
+Suppose that $x$ is a particular, but arbitrary odd number.  By the definition of `odd' we know that there is an integer $k$ such that $x = 2k+1$.  Note that $x^2 = (2k+1)^2 = 4k^2+4k+1$, by substitution and simple algebra.  Finally, we see that $x^2 = 2(2k^2+2k) + 1$ satisfies the definition of `odd' because $2k^2 + 2k$ is the sum of products of integers, which is an integer.
+
+\hspace{\fill} Q.E.D.
+\end{frame}
+
+\section{some LaTeX hints}
+
+\begin{frame}{environments}
+\begin{itemize}
+\item Environments are used to typeset things of the same type in a reusable way. \pause
+\item Let's open up Overleaf and check out the theorem and proof environments.
+\end{itemize}
+\end{frame}
+
+
+
+\end{document}

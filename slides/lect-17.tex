@@ -1,0 +1,285 @@
+%\documentclass[handout,landscape]{beamer}
+\documentclass[landscape]{beamer}
+%\hypersetup{pdfpagemode=FullScreen}
+\mode<handout>
+{
+  \usepackage{pgf}
+  \usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{6 on 1 boxed}
+{
+  \edef\pgfpageoptionheight{\the\paperheight} 
+  \edef\pgfpageoptionwidth{\the\paperwidth}
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=6,%
+    physical height=\pgfpageoptionheight,%
+    physical width=\pgfpageoptionwidth%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{2}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{3}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{4}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{5}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{6}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+}
+
+
+  \pgfpagesuselayout{6 on 1 boxed}[letterpaper, border shrink=5mm]
+  \nofiles
+}
+
+\usepackage{listings}
+%\lstset{language=TeX}
+\usepackage{multimedia}
+\usepackage[normalem]{ulem}
+\usepackage{amssymb}
+
+\usepackage{ifthen}
+
+%\usecolortheme[named=Purple]{structure} 
+%\usetheme{Copenhagen}
+\usetheme{Warsaw} 
+\usecolortheme{seahorse}
+\useoutertheme{infolines} 
+%\usetheme[height=7mm]{Rochester} 
+%\setbeamertemplate{items}[ball] 
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+%\setbeamertemplate{navigation symbols}{} 
+\author{Joe Fields}
+\title{Introduction to Proof} 
+%\subtitle{}
+\date{Lecture 17 (GIAM \S 3.4)}
+\institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
+
+\input{my_latex_definitions.tex}
+
+\newcommand{\vs}{\rule{0pt}{12pt}}
+\newcommand{\notimplies}{\;\not\!\!\!\implies}
+
+%\def\mycommand{\setlength{\abovedisplayskip}{-12pt}%
+%\setlength{\belowdisplayskip}{-12pt}%
+%\setlength{\abovedisplayshortskip}{0pt}%
+%\setlength{\belowdisplayshortskip}{0pt}}
+
+%\let\oldselectfont\selectfont
+%\def\selectfont{\oldselectfont\mycommand}
+
+%\mycommand
+
+\AtBeginSection[]
+{
+ \begin{frame}{Table of Contents} 
+  \tableofcontents[currentsection]
+ \end{frame}
+}
+
+%%%% SAVE %%%%
+%{ %magic to get a full screen image...
+%\setbeamertemplate{navigation symbols}{}  % hide navigation buttons 
+%\setbeamertemplate{background canvas}{\centerline{\includegraphics 
+%	[height=\paperheight]{Cantor_4.jpeg}}}
+%\begin{frame}[plain]
+%\rule{0pt}{0pt}
+%\end{frame} 
+%} %end of magic
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\section{distinguishing true from false}
+
+\begin{frame}{intro}
+\begin{itemize}
+\item The need to develop a good ``lie detector.'' \pause
+\item We don't want to waste our time trying to prove false statements! \pause
+\item You should feel free to experiment -- try the statement out with small values for the variables. \pause
+\item Use a CAS if working by hand is too difficult.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{a wrong distr. law}
+\begin{itemize}
+\item $\forall a,b,c \in \Reals, \; (b+c)^a \, \only<1-2>{=} \only<3->{\neq} \, b^a + c^a$ \pause
+\item Unfortunately, this is not true. \pause \pause Unfortunately, that's not true either. \pause
+\item Here is a table of smallish values for $a$, $b$, and $c$ which lends evidence that the statement above actually is true: \pause
+
+\begin{tabular}{ccc|c|c|c}
+\rule{6pt}{0pt} $a$ \rule{6pt}{0pt} & \rule{6pt}{0pt} $b$ \rule{6pt}{0pt} & \rule{6pt}{0pt} $c$ \rule{6pt}{0pt} & \rule{6pt}{0pt} $(b+c)^a$ \rule{6pt}{0pt} & \rule{6pt}{0pt} $b^a + c^a$ \rule{6pt}{0pt} & \rule{6pt}{0pt} equal? \rule{6pt}{0pt} \\ \hline
+\rule[-4pt]{0pt}{20pt} $1$ & $1$ & $2$ & $3$ & $3$ & $\checkmark$ \\
+\rule[-4pt]{0pt}{20pt} $1$ & $3$ & $4$ & $7$ & $7$ & $\checkmark$ \\
+\rule[-4pt]{0pt}{20pt} $2$ & $0$ & $3$ & $9$ & $9$ & $\checkmark$ \\
+\rule[-4pt]{0pt}{20pt} $5$ & $2$ & $0$ & $32$ & $32$ & $\checkmark$ \\
+\end{tabular}
+\pause
+
+\item Try to find some values of $a$, $b$ and $c$ that {\em do} provide a counterexample.
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{another false ``theorem''}
+\begin{itemize}
+\item $\forall a,b,c \in \Integers, \; a \mid bc \; \only<1-2>{\implies} \only<3->{\,\notimplies} \; ( a \mid b \, \lor \, a \mid c )$ \pause
+\item Also, not true.\pause \pause
+\item Another pile of misleading evidence: \pause
+
+\begin{center}
+\begin{tabular}{ccc|c|c}
+\rule[-4pt]{0pt}{20pt}\rule{6pt}{0pt}$a$\rule{6pt}{0pt} & \rule{6pt}{0pt}$b$\rule{6pt}{0pt} & \rule{6pt}{0pt}$c$\rule{6pt}{0pt} & \rule{6pt}{0pt}$a \divides bc$ ?\rule{6pt}{0pt} & \rule{6pt}{0pt}$ a \divides b \, \lor \, a \divides c $ ? \rule{6pt}{0pt}\\ \hline
+\rule[-4pt]{0pt}{20pt}2 & 7 & 6 & yes & yes \\  
+\rule[-4pt]{0pt}{20pt}2 & 4 & 5 & yes & yes \\  
+\rule[-4pt]{0pt}{20pt}3 & 12 & 11 & yes & yes \\
+\rule[-4pt]{0pt}{20pt}3 & 5 & 15 & yes & yes \\
+\rule[-4pt]{0pt}{20pt}5 & 4 & 15 & yes & yes \\
+\rule[-4pt]{0pt}{20pt}5 & 10 & 3 & yes & yes \\
+\rule[-4pt]{0pt}{20pt}7 & 2 & 14 & yes & yes \\
+\end{tabular}
+\end{center}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{why is he trying to lead us astray?}
+\begin{itemize}
+\item $\forall n \in \Integers^+, \; n^2 - 79n + 1601 \; \mbox{is prime} $ \pause
+\item You guessed it\textellipsis \pause
+\item Let's use a computer this time.
+\end{itemize}
+\end{frame}
+
+\section{disproofs}
+
+\begin{frame}{philosophy}
+\begin{itemize}
+\item Disproving a statement $X$ is the same thing as {\em proving} $\lnot X$.\pause
+\item To disprove a universally quantified statement \pause 
+\[ \forall x, \; P(x). \] \pause
+We need to prove the negation, which is existentially quantified, \pause
+\[ \exists x, \; \lnot P(x). \] \pause
+\item And {\em vice versa}. \pause
+\item So disproving an existential is just a regular old proof. \pause
+\item And disproving a universal is just about finding an example \pause \newline
+(Because of the role it's playing we call it a {\em counterexample}.)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{example}
+\begin{itemize}
+\item Remember how we checked out whether $p\# + 1$ was always prime on Sage? \pause
+\item Disprove the following ``theorem''
+\begin{thm*}
+\[ \forall p \in \mbox{Primes}, \; p\# + 1 \; \mbox{is prime.} \]
+\end{thm*}
+\pause
+
+\item This statement is false.  A counterexample is $p=13$, since $13\# + 1 \; = \; 30031$ and $30031 \, = \, 59\cdot 509$ is composite. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{another example}
+\begin{itemize}
+\item A sum is said to be {\em alternating} if the signs of successive terms are always opposite. \pause
+\item For example $1-4+9-16+25-36$ is an alternating sum. \pause
+\item Let $A(n)$ be the alternating sum of factorials, starting with $n!$ and descending to $\pm 1!$\pause
+\begin{thm*}
+\[ \forall n \in \Integers, \; n>2 \; \implies \; A(n) \; \mbox{is prime} \]
+\end{thm*}
+\pause
+\item First let's explore in sage. \pause
+\item Here's the formal disproof: \pause \newline
+This statement is false.  A counterexample is $n=9$, where the alternating sum is $9!-8!+7!- \cdots +1! \; = \; 326981$ which factors as $79\cdot 4139$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{A final exploration}
+\begin{itemize}
+\item The following two statements give alternative possibilities since they are negations. \pause
+\begin{itemize}
+\item The sum of any two irrational numbers is irrational. \pause
+\item There are two irrational numbers whose sum is rational. \pause
+\end{itemize}
+\item Hint: If a number is irrational, isn't its negative also irrational?  \pause That's actually a pretty huge hint.\pause
+\item Okay, when you put it that way\textellipsis
+
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{A final exploration}
+\begin{itemize}
+
+\item The sum of any two irrational numbers is irrational. \pause \newline
+This statement is false since $\sqrt{3}$ and $-\sqrt{3}$ are both irrational, but their sum is $0$ which is clearly rational. \pause
+
+\begin{thm*}
+There are two irrational numbers whose sum is rational. 
+\end{thm*}
+\pause 
+For example, $1+\sqrt{2}$ and $1-\sqrt{2}$ are one such pair. 
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{A final word}
+\begin{itemize}
+
+\item Caution:  You very seldom prove things by providing an example! \pause 
+\item That only worked in the last example because the statement was existentially quantified. \pause
+\item Disproof by counterexample happens all the time! \pause 
+\item Proof by example is so uncommon that it is often used as a criticism.
+
+\end{itemize}
+\end{frame}
+
+
+
+\end{document}

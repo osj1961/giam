@@ -1,0 +1,275 @@
+%\documentclass[handout,landscape]{beamer}
+\documentclass[landscape]{beamer}
+\hypersetup{pdfpagemode=FullScreen}
+\mode<handout>
+{
+  \usepackage{pgf}
+  \usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{6 on 1 boxed}
+{
+  \edef\pgfpageoptionheight{\the\paperheight} 
+  \edef\pgfpageoptionwidth{\the\paperwidth}
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=6,%
+    physical height=\pgfpageoptionheight,%
+    physical width=\pgfpageoptionwidth%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{2}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{3}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{4}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{5}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{6}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+}
+
+
+  \pgfpagesuselayout{6 on 1 boxed}[letterpaper, border shrink=5mm]
+  \nofiles
+}
+
+\usepackage{listings}
+%\lstset{language=TeX}
+\usepackage{multimedia}
+\usepackage[normalem]{ulem}
+\usepackage{amssymb}
+
+%\usecolortheme[named=Purple]{structure} 
+%\usetheme{Copenhagen}
+\usetheme{Warsaw} 
+\usecolortheme{seahorse}
+\useoutertheme{infolines} 
+%\usetheme[height=7mm]{Rochester} 
+%\setbeamertemplate{items}[ball] 
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+%\setbeamertemplate{navigation symbols}{} 
+\author{Joe Fields}
+\title{Introduction to Proof} 
+%\subtitle{}
+\date{Lecture 1}
+\institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
+
+\input{../my_latex_definitions.tex}
+
+\newcommand{\vs}{\rule{0pt}{12pt}}
+
+\AtBeginSection[]
+{
+ \begin{frame}{Table of Contents} 
+  \tableofcontents[currentsection]
+ \end{frame}
+}
+
+%%%% SAVE %%%%
+%{ %magic to get a full screen image...
+%\setbeamertemplate{navigation symbols}{}  % hide navigation buttons 
+%\setbeamertemplate{background canvas}{\centerline{\includegraphics 
+%	[height=\paperheight]{Cantor_4.jpeg}}}
+%\begin{frame}[plain]
+%\rule{0pt}{0pt}
+%\end{frame} 
+%} %end of magic
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\section{intro}
+
+\begin{frame}{purpose/philosophy}
+\begin{itemize}
+\item The change from calculation to proof\pause
+\item A transition \textellipsis
+\end{itemize}
+\end{frame}
+
+\begin{frame}{the flipped classroom}
+\begin{itemize}
+\item Listening to lectures (a passive activity) happens at home. \pause
+\item ``Homework'' (an active activity where you might need a hint or two from your prof.) happens during class time. \pause 
+\item Typically you'll also have actual homework (done at home) too. \pause
+\end{itemize}
+\end{frame}
+
+\begin{frame}{open educational resources}
+\begin{itemize}
+\item A descendent of the open source software movement.\pause
+\item Free as in beer / free as in speech \pause
+\item Major advantage: all students have access to the text on day 1. \pause
+\item Another advantage: Professors can grab the source and modify the book to suit their tastes.\pause
+\item You can contribute! 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{layout of the book}
+\begin{itemize}
+\item Recursive structure - topics are revisited with increasing levels of rigor. \pause
+\item Chapter 1 contains most of the key ideas for the course (but not much detail). \pause
+\item Objects of study (Logic, Sets, Relations \& Functions, Cardinality) are interspersed with chapters about proof techniques. 
+\end{itemize}
+\end{frame}
+
+\section{resources} 
+
+\begin{frame}{the book}
+\begin{itemize}
+\item Pdf available at GitHub for free. \href{http://osj1961.github.io/giam/}{http://osj1961.github.io/giam/} \pause
+\item Source code is also available at Github.  
+\item Listed at the American Institute of Mathematics - Open Textbook Inititative. \href{https://aimath.org/textbooks/approved-textbooks/}{https://aimath.org/textbooks/approved-textbooks/} \pause
+\item Also available on Amazon.com for \$16 if you're wedded to dead-tree versions. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{computational aids}
+\begin{itemize}
+\item A calculator \pause
+\item sage - a computer algebra system \pause
+\item desmos - for graphing \pause
+\item geogebra - for geometric constructions 
+\end{itemize}
+\end{frame}
+
+\section{section 1.1}
+
+\begin{frame}{basic sets}
+\begin{itemize}
+\item The naturals $\Naturals$. \pause 
+      (We include $0$ as a natural number.) \pause
+\item The integers $\Integers$. \pause
+\item The rational numbers $\Rationals$. \pause
+\item The real numbers $\Reals$. \pause
+\item The complex numbers $\Complexes$. 
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{roster form vs. set-builder notation}
+\begin{itemize}
+\item Roster form is simply a listing of the elements in a set. \pause
+\item For example, $\{ \heartsuit, \spadesuit, \diamondsuit, \clubsuit \}$ is the set of so-called ``suits'' in a standard deck of playing cards. \pause
+\item Note the use of the curly braces -- sets are always denoted with curly braces.\pause
+\item In set-builder notation we don't list everything, instead we name some property that elements of the set must satisfy. \pause
+\item Example: $\{ x \suchthat 1 \leq x \leq 4 \}$.\pause
+\item Problem: What kind of number is $x$ ? \pause
+\item Solution: Always specify a {\em universe of discourse}. \pause
+\item $\{ x \in \Reals \suchthat 1 \leq x \leq 4 \}$ and $\{ x \in \Integers \suchthat 1 \leq x \leq 4 \}$ are very different sets!
+\end{itemize}
+\end{frame}
+
+\begin{frame}{reading set-builder notation}
+
+\vspace{.1in}
+
+\begin{tabular}{c|c|c}
+\rule[-10pt]{0pt}{22pt} $\Rationals$ & $=$ & $\{$  \\ \hline
+\rule[-6pt]{0pt}{22pt} The rational numbers & are defined to be & the set of all\\
+\end{tabular}
+
+\vspace{.1in}
+
+\begin{tabular}{c|c}
+\rule[-10pt]{0pt}{22pt} $\displaystyle \frac{a}{b}$ & $\suchthat$ \\ \hline
+\rule[-6pt]{0pt}{22pt} fractions of the form $a$ over $b$ & such that \\
+\end{tabular}
+
+\vspace{.1in}
+
+\begin{tabular}{c|c|c}
+\rule[-10pt]{0pt}{22pt} $a \in \Integers$ & and & $b \in \Integers$ \\ \hline
+\rule[-6pt]{0pt}{22pt} $a$ is an element of the integers & and & $b$ is an
+element of the integers \\
+\end{tabular}
+
+\vspace{.1in}
+
+\begin{tabular}{c|c|c}
+\rule[-10pt]{0pt}{22pt} and & $b \neq 0$ & $\}$ \\ \hline
+\rule[-6pt]{0pt}{22pt} and & $b$ is nonzero. & (the final curly brace
+is silent) \\
+\end{tabular}
+
+\end{frame}
+
+
+\begin{frame}{operations in Q}
+\begin{itemize}
+\item First: NOT EVERY REAL NUMBER CAN BE EXPRESSED AS A FRACTION!!! \pause
+\item The Ancient Greeks were initially confused about this but eventually realized that $\Rationals \neq \Reals$.  (They didn't have a clue about $\Complexes$.)
+\item Products, Sums and Mediants in $\Rationals$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{operations in C}
+\begin{itemize}
+\item Products and Sums in $\Complexes$. \pause
+\item Algebraically -- componentwise addition and the FLOI rule. \pause
+\item Geometrically -- addition works like vectors - multiplication is \textellipsis \pause
+ interesting.
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{trichotomy}
+\begin{itemize}
+\item Contrast with {\em dichotomy}. \pause
+\item To cut into three parts. \pause
+\item The trichotomy property of the reals is:  Every real number is either positive, negative or zero. \pause
+\item The subsets of $\Reals$ inherit this property. \pause (Although it's kinda weak for $\Naturals$.) \pause
+\item There are fairly standard ways to denote the sets restricted to some of these parts. \pause
+
+\[  \Reals^+ \quad \Reals^- \quad \Rnoneg \quad \Reals^\ast \]
+
+\end{itemize}
+\end{frame}
+
+
+\end{document}

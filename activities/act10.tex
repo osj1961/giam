@@ -1,0 +1,115 @@
+\documentclass{amsart}
+%\usepackage{}
+\renewcommand{\baselinestretch}{1.5}
+\addtolength{\textwidth}{.2in}
+\input{../my_latex_definitions.tex}
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large Activity 10 -- Introduction to Proof}
+\centerline{\large logical equivalence}
+
+\bigskip
+\Large
+
+
+\begin{enumerate}
+
+\item What are the contrapositive and the equivalent disjunction of 
+\[ \lnot P \implies Q? \] 
+
+\vfill
+
+\item Suppose $X$ and $Y$ are compound statements that are equivalent. (They may involve many variables so the truth table could be enormous.)  What will a truth table for $X \iff Y$ look like?
+
+
+\vfill
+
+\item The patterns of $T$'s and $\phi$'s that we use in the initial columns of a truth table has a recursive structure.
+
+When there is a single variable it look like $\left| \begin{array}{c} T \\ \phi \end{array} \right|$.  To build the next one (two variables) you put two copies of this above one another and prefix the top one with $T$'s and the bottom one with $\phi$'s.
+
+Complete the setup of the following truth table with 3 variables using this recursive idea.
+
+\begin{tabular}{c|cc||c}
+\rule{4pt}{0pt} $A$ \rule{4pt}{0pt} & \rule{4pt}{0pt} $B$ \rule{4pt}{0pt} & \rule{4pt}{0pt} $C$ \rule{4pt}{0pt} & \rule{18pt}{0pt} ? \rule{18pt}{0pt} \\ \hline
+ & $T$ & $T$ & \\
+ & $T$ & $\phi$ & \\
+ & $\phi$ & $T$ & \\
+ & $\phi$ & $\phi$ & \\ \hline
+ & & & \\
+ & & & \\
+ & & & \\
+ & & & \\
+\end{tabular}
+
+\vfill
+
+Challenge: can you create a truth table with 4 variables (16 rows!)
+
+\vfill
+
+\newpage
+
+\item The following truth table has all the elements you'll need to verify the distributive property of $\land$ over $\lor$. Fill it in.
+
+\vspace{.3in}
+
+\hspace{-1in}\begin{tabular}{c|cc||c|c|c||c|c}
+\rule{4pt}{0pt} $A$ \rule{4pt}{0pt} & \rule{4pt}{0pt} $B$ \rule{4pt}{0pt} & \rule{4pt}{0pt} $C$ \rule{4pt}{0pt} & \rule{4pt}{0pt} $B \lor C$ \rule{4pt}{0pt} & \rule{4pt}{0pt} $A \land B$ \rule{4pt}{0pt} & \rule{4pt}{0pt} $A \land C$ \rule{4pt}{0pt} & \rule{4pt}{0pt} $A \land (B \lor C)$ \rule{4pt}{0pt} & \rule{4pt}{0pt} $(A \land B) \lor (A \land C)$ \rule{4pt}{0pt} \\ \hline
+ \rule[-4pt]{0pt}{20pt} $T$ & $T$ & $T$ & & & & & \\
+ \rule[-4pt]{0pt}{20pt} $T$ & $T$ & $\phi$ & & & & & \\
+ \rule[-4pt]{0pt}{20pt} $T$ & $\phi$ & $T$ & & & & & \\
+ \rule[-4pt]{0pt}{20pt} $T$ & $\phi$ & $\phi$ & & & & & \\ \hline
+ \rule[-4pt]{0pt}{20pt} $\phi$ & $T$ & $T$ & & & & & \\
+ \rule[-4pt]{0pt}{20pt} $\phi$ & $T$ & $\phi$ & & & & & \\
+ \rule[-4pt]{0pt}{20pt} $\phi$ & $\phi$ & $T$ & & & & & \\
+ \rule[-4pt]{0pt}{20pt} $\phi$ & $\phi$ & $\phi$ & & & & & \\
+\end{tabular}
+
+\vspace{.3in}
+
+\item Verify both versions of DeMorgan's law using truth tables.
+
+\vfill
+
+\newpage
+
+\item Use DeMorgan's law(s) to find negations of the following.
+
+\vspace{.3in}
+
+\begin{enumerate}
+\item \rule[-4pt]{0pt}{20pt} $ A \lor \lnot B $
+\item \rule[-4pt]{0pt}{20pt} $ \lnot A \land B $
+\item \rule[-4pt]{0pt}{20pt} $ \lnot A \lor \lnot B $
+\end{enumerate}
+
+\vspace{.3in}
+
+\item Each of the following can be evaluated using one of the Domination, Identity or Complimentarity laws.
+Evaluate and also state which law was used. (The last one needs two.)
+\vspace{.3in}
+
+\begin{enumerate}
+\item \rule[-4pt]{0pt}{20pt} $ A \lor \lnot A $ %comp
+\item \rule[-4pt]{0pt}{20pt} $ c \land B $ % dom
+\item \rule[-4pt]{0pt}{20pt} $ c \lor \lnot B $ %ident
+\item \rule[-4pt]{0pt}{20pt} $ t \land C$ %ident
+\item \rule[-4pt]{0pt}{20pt} $ B \land \lnot B $ %comp
+\item \rule[-4pt]{0pt}{20pt} $ (A \lor \lnot A) \lor C $ % comp & dom
+
+\end{enumerate}
+
+\vspace{.3in}
+
+\item Here's a statement that can be massively simplified using the absorption law (if you look at it the right way).
+
+\[ (A \land B) \lor ( (\lnot A \lor (A \land C) )   \land (A \land B) ). \]
+
+\vfill
+
+\end{enumerate}
+
+\end{document}

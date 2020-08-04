@@ -1,0 +1,218 @@
+\ifdefined\ishandout
+  \documentclass[handout,landscape]{beamer} 
+\else
+  \documentclass[landscape]{beamer}
+\fi
+
+%\hypersetup{pdfpagemode=FullScreen} %Enabling this option will cause the slides to go full-screen on opening
+
+\mode<handout>
+{
+  \usepackage{pgf}
+  \usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{6 on 1 boxed}
+{
+  \edef\pgfpageoptionheight{\the\paperheight} 
+  \edef\pgfpageoptionwidth{\the\paperwidth}
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=6,%
+    physical height=\pgfpageoptionheight,%
+    physical width=\pgfpageoptionwidth%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{2}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{3}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{4}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{5}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{6}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+}
+
+
+  \pgfpagesuselayout{6 on 1 boxed}[letterpaper, border shrink=5mm]
+  \nofiles
+}
+
+\usepackage{listings}
+\usepackage{multimedia}
+\usepackage[normalem]{ulem}
+\usepackage{ifthen}
+
+\usetheme{Warsaw} 
+\usecolortheme{seahorse}
+\useoutertheme{infolines} 
+
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+
+\author{Joe Fields}
+\title{Introduction to Proof} 
+
+\date{Lecture 20 (GIAM \S 4.1) \newline basic notions of set theory}
+\institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
+
+\input{my_latex_definitions.tex}
+
+\newcommand{\vs}{\rule{0pt}{12pt}}
+\newcommand{\notimplies}{\;\not\!\!\!\implies}
+
+\AtBeginSection[]
+{
+ \begin{frame}{Table of Contents} 
+  \tableofcontents[currentsection]
+ \end{frame}
+}
+
+%%%% SAVE %%%%
+%{ %magic to get a full screen image...
+%\setbeamertemplate{navigation symbols}{}  % hide navigation buttons 
+%\setbeamertemplate{background canvas}{\centerline{\includegraphics 
+%	[height=\paperheight]{Cantor_4.jpeg}}}
+%\begin{frame}[plain]
+%\rule{0pt}{0pt}
+%\end{frame} 
+%} %end of magic
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\section{abstract nonsense}
+
+\begin{frame}{intro}
+\begin{itemize}
+\item Category theory \pause
+\item \href{https://www.amazon.com/Categories-Working-Mathematician-Graduate-Mathematics/dp/1441931236}{{\em Categories for the Working Mathematician}} by Saunders Mac Lane.\pause
+\item We must choose a specific {\em universe of discourse} \pause
+\item Equivalence between Logic and Set Theory\pause
+\item Undefined terms:\pause \newline
+\begin{tabular}{cccc}
+	\rule[-6pt]{0pt}{24pt} \rule{12pt}{0pt} True \rule{12pt}{0pt} & \rule{12pt}{0pt}  False \rule{12pt}{0pt} & \rule{12pt}{0pt}  statement \rule{12pt}{0pt} & \rule{12pt}{0pt} sentence \rule{12pt}{0pt}  \\ \pause
+	\rule[-6pt]{0pt}{24pt}In   & Out   & set       & \rule{12pt}{0pt} collection \rule{12pt}{0pt} \\
+\end{tabular}
+\end{itemize}
+\end{frame}
+
+\section{sets}
+
+\begin{frame}{sets and statements}
+\begin{itemize}
+\item The statement $P(x)$ corresponds to the set $S$ that consists of the elements of our universe that make $P(x)$ true. \pause
+\item $S$ is called the {\em truth set} of $P(x)$ and $P(x)$ is known as the {\em membership criterion} for $S$ \pause
+\item Example:  with $\Naturals$ as the universe, and $P(x) = $ ``$x$ is even'' we have $S = \{ 0, 2, 4, 6, \ldots \}$.\pause 
+\item In GIAM a subscript notation is used to indicate these relationships.\pause
+\begin{itemize}
+  \item If we have a set $A$ given first, the membership criterion is denoted $M_A(x)$.\pause
+  \item If a logical open statement $P(x)$ is given first, we denote its truth set $S_P$.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{how to think about sets}
+\begin{itemize}
+\item sets are unordered -- think of tossing items into a box not lining them up in a filing cabinet\pause
+\item set membership is a logical statement -- so we know {\em for sure} whether a particular element of the universe is in a set (or not).\pause
+\item membership is binary -- an element is either in, or not in a set.  It can't be in more than once.\pause
+\item in a computer: sorted lists with no duplicates. \pause
+\item example on page 168. \pause
+\item Unordered implies it's okay to re-arrange them (so, in particular, we can sort them).
+\end{itemize}
+\end{frame}
+
+\section{multisets}
+
+\begin{frame}{multisets}
+\begin{itemize}
+\item A multiset is a set where each element can be present multiple times.\pause
+\item Each element of a multiset has a {\em repetition number} (which can be $\infty$).\pause
+\item The MISSISSIPPI puzzle\pause
+\item Vampire numbers: \pause \newline
+A vampire number is a $2n$ digit number $v$ that factors as $v = xy$ where
+$x$ and $y$ are $n$ digit numbers and the multiset of the digits of v is the union of the
+multisets of the digits in x and y.
+\end{itemize}
+\end{frame}
+
+\section{power sets}
+
+\begin{frame}{subsets}
+\begin{itemize}
+\item Given a universe $U$ we can create subsets of $U$ by selecting some number of $U$'s elements. \pause
+\item $1$ element: a singleton set. \pause
+\item $2$ elements: a 2-set.\pause
+\item {\em no} elements: {\bf the} empty set\pause
+\item The {\em power set} of a set is the set of all of its subsets.
+\end{itemize}
+\end{frame}
+
+\section{computing}
+
+\begin{frame}{sage}
+\begin{itemize}
+\item Let's go to CoCalc to investigate power sets. \pause
+\item There are a few other set theoretic concepts we can look at in sage. (cardinality, union and intersection). \pause
+\item On the programming side we'll give an introduction to iterators. \pause
+\end{itemize}
+\end{frame}
+
+\section{wrap-up}
+
+\begin{frame}{holiday prankery}
+\begin{itemize}
+\item We indicate the empty set either by $\emptyset$ or $\{\phantom{1}\}$.  \pause
+\item It's wrong to write $\{\emptyset\}$. \pause
+\item That's giving someone a present that, when unwrapped contains another present that, when unwrapped contains nothing. \pause
+\item A very different level of prankery from merely giving an empty box.\pause
+\item Also, notice that $x$ and $\{x\}$ are completely different. 
+\end{itemize}
+\end{frame}
+
+\end{document}

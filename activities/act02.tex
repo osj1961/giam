@@ -1,0 +1,82 @@
+\documentclass{amsart}
+%\usepackage{}
+\renewcommand{\baselinestretch}{1.5}
+
+\input{../my_latex_definitions.tex}
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large Activity 2 -- Introduction to Proof}
+\centerline{\large Definitions and Primes}
+
+\bigskip
+\Large
+
+
+\begin{enumerate}
+\item The odd numbers could be defined by:
+
+An integer $n$ is {\em odd} when there is another integer $k$ such that $n \, = \, 2k+1$.
+
+But it would also be fine to use:
+
+An integer $n$ is {\em odd} when there is another integer $k$ such that $n \, = \, 2k-1$.
+
+Explain why these definitions are equivalent.  Can you produce yet another definition for ``odd''?
+
+\vfill
+
+\item To show that a number $x$ is prime (using the original definition) we need to examine all the potential divisors of $x$ and show that none of them (except $1$ and $x$) actually divide evenly into $x$.  This process is known as trial division.  On the surface it seems we'd need to do trial division for every number from $2$ to $x-1$.  Can we shorten that list?
+
+\vfill 
+
+\newpage
+
+\item Carry out the Sieve of Eratosthenes only using the primes you find in the first row of the table.  If the table were larger, what would the smallest un-sieved composite number be? 
+
+\begin{tabular}{cccccccccc}
+\rule{24pt}{0pt} & \rule{24pt}{0pt} & \rule{24pt}{0pt} &
+\rule{24pt}{0pt} & \rule{24pt}{0pt} & \rule{24pt}{0pt} & 
+\rule{24pt}{0pt} & \rule{24pt}{0pt} & \rule{24pt}{0pt} &
+\rule{24pt}{0pt} \\
+\rule[-5pt]{0pt}{24pt} 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+\rule[-5pt]{0pt}{24pt} 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 \\
+\rule[-5pt]{0pt}{24pt} 21 & 22 & 23 & 24 & 25 & 26 & 27 & 28 & 29 & 30 \\
+\rule[-5pt]{0pt}{24pt} 31 & 32 & 33 & 34 & 35 & 36 & 37 & 38 & 39 & 40 \\
+\rule[-5pt]{0pt}{24pt} 41 & 42 & 43 & 44 & 45 & 46 & 47 & 48 & 49 & 50 \\
+\rule[-5pt]{0pt}{24pt} 51 & 52 & 53 & 54 & 55 & 56 & 57 & 58 & 59 & 60 \\ 
+\rule[-5pt]{0pt}{24pt} 61 & 62 & 63 & 64 & 65 & 66 & 67 & 68 & 69 & 70 \\
+\rule[-5pt]{0pt}{24pt} 71 & 72 & 73 & 74 & 75 & 76 & 77 & 78 & 79 & 80 \\
+\rule[-5pt]{0pt}{24pt} 81 & 82 & 83 & 84 & 85 & 86 & 87 & 88 & 89 & 90 \\
+\rule[-5pt]{0pt}{24pt} 91 & 92 & 93 & 94 & 95 & 96 & 97 & 98 & 99 & 100
+\end{tabular}
+
+\vspace{.5in}
+
+\item Suppose you wanted to discover all of the primes $\leq 1000$.  What primes would you need to use in the sieve?
+
+\vfill
+
+\item Figure out what's going on in the prime ``table'' on page 16 of GIAM.  Hint: why are the column headings labeled T and the row headings labeled H?
+
+\vfill
+
+\newpage
+
+\item Use the prime table to find the twin primes between 4900 and 5000. 
+
+\vfill
+
+\item In a sage cell type \hspace{12pt} {\tt range?} \hspace{12pt}.  (This is how you get help on a sage function.)  Now use a for loop and the {\tt is\_prime} function to verify your answer from the previous question.
+
+\vfill
+
+\item A Fermat number is a number of the form $2^{2^n}+1$.  The famous mathematician Pierre de Fermat conjectured that they were all prime.  Explore this conjecture, at first by hand, and when the numbers get too big switch to sage.
+
+\vfill
+
+
+\end{enumerate}
+
+\end{document}

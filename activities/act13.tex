@@ -1,0 +1,177 @@
+\documentclass{amsart}
+\usepackage{amssymb}
+\renewcommand{\baselinestretch}{1.5}
+\addtolength{\textwidth}{.2in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1in}
+\input{../my_latex_definitions.tex}
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large Activity 13 -- Introduction to Proof}
+\centerline{\large arguments and the rules of inference}
+
+\bigskip
+\Large
+
+
+\begin{enumerate}
+
+\item Use a truth table to verify Disjunctive Addition. (Note that the sole hypothesis already appears in the initial setup portion of the table.) Be sure to indicate the critical rows and verify that the conclusion is true in them.
+
+\vspace{.2in}
+
+\begin{tabular}{c|c||c}
+\rule[-6pt]{0pt}{24pt} \rule{8pt}{0pt} $A$ \rule{8pt}{0pt} & \rule{8pt}{0pt} $B$ \rule{8pt}{0pt} & \rule{8pt}{0pt} $A \lor B$ \rule{8pt}{0pt}  \\ \hline
+\rule[-6pt]{0pt}{24pt} $T$    & $T$    & \\
+\rule[-6pt]{0pt}{24pt} $T$    & $\phi$ & \\
+\rule[-6pt]{0pt}{24pt} $\phi$ & $T$    & \\
+\rule[-6pt]{0pt}{24pt} $\phi$ & $\phi$ & \\
+\end{tabular}
+
+\vfill
+
+\item Use a truth table to verify Modus Ponens.  Indicate the critical rows and verify that the conclusion is true in them.
+Again, we're seeing a scenario where one of the hypotheses is already present (in the first column) -- {\em and} the conclusion is also already present (in column two).  As a truth table we just have the usual truth table for $A \implies B$, so it's particularly crucial that we clearly indicate the critical rows and verify that the conclusion is true in each of them. (Or else it looks like we're only giving a truth table for a conditional rather than verifying an argument form.)
+
+\vspace{.2in}
+
+\begin{tabular}{c|c||c}
+\rule[-6pt]{0pt}{24pt} \rule{8pt}{0pt} $A$ \rule{8pt}{0pt} & \rule{8pt}{0pt} $B$ \rule{8pt}{0pt} & \rule{8pt}{0pt} $A \implies B$ \rule{8pt}{0pt}  \\ \hline
+\rule[-6pt]{0pt}{24pt} $T$    & $T$    & \\
+\rule[-6pt]{0pt}{24pt} $T$    & $\phi$ & \\
+\rule[-6pt]{0pt}{24pt} $\phi$ & $T$    & \\
+\rule[-6pt]{0pt}{24pt} $\phi$ & $\phi$ & \\
+\end{tabular}
+
+\vfill
+
+\newpage
+
+\item Create a two-column proof that Conjunctive Simplification is a valid rule of inference.
+
+In general we need to show that something is a tautology.  Namely, the conjunction of all the hypotheses implying the conclusion should be equivalent to $t$. Since there's only one hypothesis in this argument you can drop the ``conjunction'' part.
+
+\vfill
+
+\newpage
+
+\item Fill in the following truth table and use it to verify Hypothetical Syllogism.
+
+\vspace{.2in}
+
+\hspace{-.5in}
+\begin{tabular}{c|c|c||c|c||c}
+\rule[-6pt]{0pt}{24pt} \rule{8pt}{0pt} $A$ \rule{8pt}{0pt} & \rule{8pt}{0pt} $B$ \rule{8pt}{0pt} & \rule{8pt}{0pt} $C$ \rule{8pt}{0pt} & \rule{8pt}{0pt} $A \implies B$ \rule{8pt}{0pt} & \rule{8pt}{0pt} $B \implies C$ \rule{8pt}{0pt} & \rule{8pt}{0pt} $A \implies C$ \rule{8pt}{0pt} \\ \hline
+\rule[-6pt]{0pt}{24pt} $T$    & $T$    & $T$    & & & \\
+\rule[-6pt]{0pt}{24pt} $T$    & $T$    & $\phi$ & & & \\
+\rule[-6pt]{0pt}{24pt} $T$    & $\phi$ & $T$    & & & \\
+\rule[-6pt]{0pt}{24pt} $T$    & $\phi$ & $\phi$ & & & \\ \hline
+\rule[-6pt]{0pt}{24pt} $\phi$ & $T$    & $T$    & & & \\
+\rule[-6pt]{0pt}{24pt} $\phi$ & $T$    & $\phi$ & & & \\
+\rule[-6pt]{0pt}{24pt} $\phi$ & $\phi$ & $T$    & & & \\
+\rule[-6pt]{0pt}{24pt} $\phi$ & $\phi$ & $\phi$ & & & \\
+\end{tabular}
+
+\vspace{.5in}
+
+\item If you re-express all of the conditional sentences in hypothetical syllogism with their equivalent disjunctions
+you will create a new(ish) rule of inference.  Write this new rule down.  (This will help you with the next problem.)
+
+\vfill
+
+\newpage
+
+\item Re-verify Hypothetical Syllogism by creating a two-column proof for the following equivalence.
+
+\[ \left( ( (A\, \implies\, B) \; \land \; (B\, \implies\, C )) \; \implies \;(A\, \implies \,C) \right) \quad \cong \quad t \]
+
+\vfill
+
+
+\newpage
+
+\item Below is a rule of inference that might be called extended elimination.
+
+\begin{tabular}{cl}
+ & $(A \lor B) \lor C$ \\
+ & ${\lnot}A$ \\
+ & ${\lnot}B$ \\ \hline
+$\therefore$ & $C$ \\
+\end{tabular}
+
+Use the truth table below (which has thoughtfully been filled in by some kind soul) to verify that this rule is valid.
+
+Note that the argument's 
+premises are in columns 4,5, and 6 and the conclusion is in the right-most column.  
+
+\vspace{.5in}
+
+\begin{tabular}{|c|c|c||c|c|c||c|} \hline
+\rule[-8pt]{0pt}{30pt}$A$ & $B$ & $C$ & $(A \lor B) \lor C$ & \rule{20pt}{0pt} ${\lnot}A$ \rule{20pt}{0pt} & \rule{20pt}{0pt} ${\lnot}B$ \rule{20pt}{0pt} & \rule{20pt}{0pt} $C$ \rule{20pt}{0pt} \\ \hline
+\rule[-8pt]{0pt}{30pt}$T$ & $T$ & $T$ & $T$ & $\phi$ & $\phi$ & $T$  \\ \hline
+\rule[-8pt]{0pt}{30pt}$T$ & $T$ & $\phi$  & $T$ & $\phi$ & $\phi$ & $\phi$   \\ \hline
+\rule[-8pt]{0pt}{30pt}$T$ & $\phi$  & $T$ & $T$ & $\phi$ & $T$  & $T$  \\ \hline
+\rule[-8pt]{0pt}{30pt}$T$ & $\phi$  & $\phi$  & $T$ & $\phi$ & $T$ & $\phi$   \\  \hline
+\rule[-8pt]{0pt}{30pt}$\phi$  & $T$ & $T$ & $T$ & $T$ & $\phi$ &  $T$ \\ \hline
+\rule[-8pt]{0pt}{30pt}$\phi$  & $T$ & $\phi$  & $T$ & $T$ & $\phi$ & $\phi$  \\ \hline
+\rule[-8pt]{0pt}{30pt}$\phi$  & $\phi$  & $T$ & $T$ & $T$ & $T$ & $T$  \\ \hline
+\rule[-8pt]{0pt}{30pt}$\phi$  & $\phi$  & $\phi$  & $\phi$ & $T$ & $T$ & $\phi$  \\  \hline
+\end{tabular}
+
+
+\newpage
+
+\item Use symbols to write the logical form of the following arguments.
+  If they are valid, identify the rule of inference that guarantees
+  validity. Otherwise, state whether the converse or the inverse error
+  has been made. 
+
+\begin{quote}
+ If a substance is metallic, it is a solid at room temperature. \newline
+ Mercury is not a solid at room temperature. \newline
+ Therefore, Mercury is not metallic.
+\end{quote}
+
+\vfill
+
+
+\begin{quote}
+ If a student does all of the homework, they will pass the class.\newline
+ Jennifer passed the class.\newline
+ Therefore, Jennifer did all of the homework.
+\end{quote}
+
+\vfill
+
+\begin{quote}
+  If a number's units digit is $0$ it cannot be a prime.\newline
+  The number $10$'s units digit is $0$. \newline
+  Therefore, the number $10$ is not a prime. \newline
+\end{quote}
+
+\vfill
+
+\begin{quote}
+  If a person is guilty of a crime then they are in prison. \newline 
+  George is not in prison. \newline 
+  Therefore, George is not guilty of a crime. 
+\end{quote}
+
+\vfill
+
+
+\newpage
+
+\item Recall that there are two ingredients we need for an argument to be sound:
+\begin{enumerate}
+\item[i)] The form of the argument must be correct. (We call the argument {\em valid} if it's form is correct.)
+\item[ii)] The premises must all be true.  (A valid argument with a false premise is unsound.) 
+\end{enumerate}
+
+Comment on whether the arguments in the previous problem are sound.  Do they have valid form?  Are the premises actually true?
+
+\end{enumerate}
+
+\end{document}

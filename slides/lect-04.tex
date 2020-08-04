@@ -1,0 +1,331 @@
+%\documentclass[handout,landscape]{beamer}
+\documentclass[landscape]{beamer}
+\hypersetup{pdfpagemode=FullScreen}
+\mode<handout>
+{
+  \usepackage{pgf}
+  \usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{6 on 1 boxed}
+{
+  \edef\pgfpageoptionheight{\the\paperheight} 
+  \edef\pgfpageoptionwidth{\the\paperwidth}
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=6,%
+    physical height=\pgfpageoptionheight,%
+    physical width=\pgfpageoptionwidth%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{2}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{3}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{4}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{5}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{6}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+}
+
+
+  \pgfpagesuselayout{6 on 1 boxed}[letterpaper, border shrink=5mm]
+  \nofiles
+}
+
+\usepackage{listings}
+%\lstset{language=TeX}
+\usepackage{multimedia}
+\usepackage[normalem]{ulem}
+\usepackage{amssymb}
+
+%\usecolortheme[named=Purple]{structure} 
+%\usetheme{Copenhagen}
+\usetheme{Warsaw} 
+\usecolortheme{seahorse}
+\useoutertheme{infolines} 
+%\usetheme[height=7mm]{Rochester} 
+%\setbeamertemplate{items}[ball] 
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+%\setbeamertemplate{navigation symbols}{} 
+\author{Joe Fields}
+\title{Introduction to Proof} 
+%\subtitle{}
+\date{Lecture 4}
+\institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
+
+\input{my_latex_definitions.tex}
+
+\newcommand{\vs}{\rule{0pt}{12pt}}
+
+\AtBeginSection[]
+{
+ \begin{frame}{Table of Contents} 
+  \tableofcontents[currentsection]
+ \end{frame}
+}
+
+%%%% SAVE %%%%
+%{ %magic to get a full screen image...
+%\setbeamertemplate{navigation symbols}{}  % hide navigation buttons 
+%\setbeamertemplate{background canvas}{\centerline{\includegraphics 
+%	[height=\paperheight]{Cantor_4.jpeg}}}
+%\begin{frame}[plain]
+%\rule{0pt}{0pt}
+%\end{frame} 
+%} %end of magic
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+
+\section{even and odd}
+
+\begin{frame}{even}
+\begin{itemize}
+\item We've played with the concept of ``even'' a few times so far, but now we're ready to give a precise definition using standard mathematical notation. \pause
+\item \rule{0pt}{18pt} In words: \newline
+An integer $n$ is even exactly when there is an integer $m$ such that $n = 2m$. \pause
+
+\item \rule{0pt}{18pt} In notation: \newline
+An integer $n$ is even \hspace{8pt} $\iff$ \hspace{8pt}  $\exists m \in \Integers, \; n = 2m$. \pause
+
+\item \rule{0pt}{18pt} Notice that ``exactly when'' has become a two-headed arrow, ``there is'' has turned into the existential quantifier $\exists$, and ``such that'' was totally eliminated.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{odd}
+\begin{itemize}
+\item \rule{0pt}{18pt} In words: \newline
+An integer $n$ is odd exactly when there is an integer $m$ such that $n = 2m+1$. \pause
+
+\item \rule{0pt}{18pt} In notation: \newline
+An integer $n$ is odd \hspace{8pt} $\iff$ \hspace{8pt}  $\exists m \in \Integers, \; n = 2m+1$. \pause
+
+\end{itemize}
+\end{frame}
+
+\section{decimal and base-n notation}
+
+\begin{frame}{base 10}
+\begin{itemize}
+\item We need to highlight something that you're so very familiar with that you probably have ceased noticing it.  (Like the ``Are fish aware of water'' conundrum.) \pause
+\item When you write down a number, like (just for example) 147, you are using place notation. \pause
+\item Place notation allows us to write arbitrarily large numbers using just 10 symbols. \pause
+\item The number 147 really means $1\cdot 100 + 4\cdot 10 + 7$. \pause
+\item We can also rewrite the position values using exponents: $1\cdot 10^2 + 4\cdot 10^1 + 7\cdot 10^0$.\pause
+\end{itemize}
+\end{frame}
+
+\begin{frame}{overcoming prejudice}
+\begin{itemize}
+\item The powers of 10 in the forgoing are a result of human beings having 10 fingers. \pause
+\item People might reasonably have used 5 or even 20 as the base of our numbering scheme. \pause
+\item In ancient Babylon they actually used a base of 60 for their numbers!  There remain remnants of this to the current day.  (60 minutes in an hour, 360 degrees in a circle\textellipsis) \pause
+\end{itemize}
+\end{frame}
+
+\begin{frame}{}
+\begin{itemize}
+\item Let's try counting in base-5. \pause
+\item Little twelve-toes. \pause
+\item Numbers in an arbitrary base $b$:
+
+\[ x_n \ldots x_2 x_1 x_0 \quad \mbox{means} \quad x_n\cdot b^n + \ldots + x_2\cdot b^2 + x_1 \cdot b^1 + x_0 \cdot b^0 \]
+\pause
+
+\item Use a subscript to indicate the base if you're using something besdides 10: 
+
+\[ 12345_7 \quad = \quad 1\cdot 7^4 + 2\cdot 7^3 + 3\cdot 7^2 + 4\cdot 7 + 5 \quad = \quad 3267 \]
+
+\pause
+
+\item In base $b$ the digits run from 0 to $b-1$ (Because $b$ itself will be written like 10: $10_b$ \pause  
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{CS bases}
+\begin{itemize}
+\item binary \pause
+
+digits are just 0 and 1 \pause
+
+\item octal \pause
+
+digits are in $\{0, 1, 2, 3, 4, 5, 6, 7 \}$ \pause
+
+\item hexa-decimal \pause
+
+digits are 0--9 and then A--F.
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{conversions}
+\begin{itemize}
+\item To go from some unusual base to decimal, just use the meaning of place value. \pause
+\item Example: $123_5$ means $1\cdot 5^2 + 2 \cdot 5 + 3$ \hspace{12pt} that last thing can just be calculated as an ordinary base 10 number (it's 38.) \pause
+\item To go from decimal to another base you can use the repeated division algorithm. Be careful, you'll find the digits of your answer in reverse order. \pause 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{CS conversions}
+\begin{itemize}
+\item For the bases common in CS you can use binary as a {\em lingua franca} \pause
+\item See the table on page 33.
+\end{itemize}
+\end{frame}
+
+\section{divisibility}
+
+\begin{frame}{gazinta}
+\begin{itemize}
+\item There is a very succinct notation for the situation where one number divides evenly into another.\pause
+
+\item $7 \divides 42$ means that there is no remainder if you try to divide $7$ into $42$. \pause
+\item Notice how the order of the numbers is flipped around (as well as $\mid$ vs. $/$) when you compare the actual division to the divisibility question.\newline
+
+$7\divides 42$ is TRUE \hspace{.3in} $42/7$ is SIX \pause
+
+\item Similarly, \newline
+
+$5 \divides 37$ is FALSE, \hspace{.1in}while\hspace{.1in} $37/5$ is $7.4$
+ \end{itemize}
+\end{frame}
+
+\begin{frame}{definition}
+\begin{itemize}
+\item The formal definition of the divisibility symbol actually avoids doing division at all! \pause
+\item \rule{0pt}{18pt}  $d \divides n$ \hspace{8pt} $\iff$ \hspace{8pt}  $\exists k \in \Integers, \; n = kd$. \pause
+\item Pop Quiz!  What number $k$ must exist to show that $7\divides 91$ is true? 
+\end{itemize}
+\end{frame}
+
+
+\section{floor and ceiling}
+
+\begin{frame}{rounding up}
+\begin{itemize}
+\item The {\em ceiling} notation looks rather like absolute value bars.  Note the additional marks at the top of the bars. \pause
+\item $\lceil \pi \rceil \; = \; 4$ \pause
+\item The basic idea is to use ceiling notation where rounding up is appropriate. \pause
+
+\item The formal definition is:
+
+$ \displaystyle \forall x \in \Reals, y = \lceil x \rceil$ \hspace{8pt} $\iff$ \hspace{8pt} $y \in \Integers \; \mbox{and} \; y-1 < x \leq y$ \pause
+
+\item (Translaton) 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{rounding down}
+\begin{itemize}
+\item The {\em floor} notation is similar. \pause
+\item $\lfloor \pi \rfloor \; = \; 3$ \pause
+\item The formal definition is:
+
+$ \displaystyle \forall x \in \Reals, y = \lfloor x \rfloor$ \hspace{8pt} $\iff$ \hspace{8pt} $y \in \Integers \; \mbox{and} \; y \leq x < y+1$ \pause
+\end{itemize}
+\end{frame}
+
+
+\section{div and mod}
+
+\begin{frame}{}
+\begin{itemize}
+\item When we're thinking about dividing a number $n$ by a divisor $d$, there are standard ways to refer to the quotient and remainder we get. \pause
+\item Suppose dividing $n$ by $d$ results in a quotient $q$ and a remainder $r$. \pause
+\item We write $n \mod d$ for the remainder and $n \,\mbox{div}\, d$ for the quotient. \pause
+\item Examples: $17 \mod 5 = 2$ and $37 \mod 6 = 1$. \pause
+\item Note that $n \mod d = 0$ is equivalent to $d\divides n$.
+\end{itemize}
+\end{frame}
+
+\section{binomial coefficients}
+
+\begin{frame}{Pascal's triangle}
+
+\centerline{
+\begin{tabular}{ccccccccccccc}
+ &   &   &   &   &   & 1 &   &   &   &   &   & \\
+ &   &   &   &   & 1 &   & 1 &   &   &   &   & \\
+ &   &   &   & 1 &   & 2 &   & 1 &   &   &   & \\ 
+ &   &   & 1 &   & 3 &   & 3 &   & 1 &   &   & \\
+ &   & 1 &   & 4 &   & 6 &   & 4 &   & 1 &   & \\
+ & 1 &   & 5 &   &10 &   &10 &   & 5 &   & 1 & \\
+1&   & 6 &   &15 &   &20 &   &15 &   & 6 &   & 1
+\end{tabular}
+}
+\end{frame}
+
+
+\begin{frame}{choose}
+\begin{itemize}
+\item Both the ``columns'' and the rows of Pascal's triangle are numbered starting at 0. \pause
+\item The columns are actually slanted at a fairly large angle.  We could square up the triangle but -- tradition\textellipsis \pause
+\item The entry in row $n$ and column $k$ is written $\displaystyle \binom{n}{k}$. \pause
+\item It looks like someone left out a fraction bar, but don't be tempted to add one, this is something different! \pause
+\item The symbol  $\displaystyle \binom{n}{k}$ is pronounced ``n choose k.''  It counts the number of ways we could choose $k$ things from a set of size $n$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{a formula}
+\begin{itemize}
+\item Fortunately there is a formula, but unfortunately it's written in terms of factorials. \pause
+\item The factorial of a number $n$ is written $n!$. The value of $n!$ is the product of all the integers between $1$ and $n$. \pause
+\item For example $7! \; = \; 7\cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 \; = \; 5040$. \pause 
+\item Finally, the formula for the ``choose'' numbers:
+
+\[ \binom{n}{k} \quad = \quad \frac{n!}{k! (n-k)!}. \]
+\pause 
+\item Or you can use your calculator. 
+\end{itemize}
+\end{frame}
+
+\end{document}

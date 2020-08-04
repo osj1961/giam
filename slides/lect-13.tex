@@ -1,0 +1,387 @@
+%\documentclass[handout,landscape]{beamer}
+\documentclass[landscape]{beamer}
+%\hypersetup{pdfpagemode=FullScreen}
+\mode<handout>
+{
+  \usepackage{pgf}
+  \usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{6 on 1 boxed}
+{
+  \edef\pgfpageoptionheight{\the\paperheight} 
+  \edef\pgfpageoptionwidth{\the\paperwidth}
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=6,%
+    physical height=\pgfpageoptionheight,%
+    physical width=\pgfpageoptionwidth%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{2}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{3}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{4}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{5}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{6}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+}
+
+
+  \pgfpagesuselayout{6 on 1 boxed}[letterpaper, border shrink=5mm]
+  \nofiles
+}
+
+\usepackage{listings}
+%\lstset{language=TeX}
+\usepackage{multimedia}
+\usepackage[normalem]{ulem}
+\usepackage{amssymb}
+
+%\usecolortheme[named=Purple]{structure} 
+%\usetheme{Copenhagen}
+\usetheme{Warsaw} 
+\usecolortheme{seahorse}
+\useoutertheme{infolines} 
+%\usetheme[height=7mm]{Rochester} 
+%\setbeamertemplate{items}[ball] 
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+%\setbeamertemplate{navigation symbols}{} 
+\author{Joe Fields}
+\title{Introduction to Proof} 
+%\subtitle{}
+\date{Lecture 13 (GIAM \S 2.6 \& 2.7)}
+\institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
+
+\input{my_latex_definitions.tex}
+
+\newcommand{\vs}{\rule{0pt}{12pt}}
+
+\AtBeginSection[]
+{
+ \begin{frame}{Table of Contents} 
+  \tableofcontents[currentsection]
+ \end{frame}
+}
+
+%%%% SAVE %%%%
+%{ %magic to get a full screen image...
+%\setbeamertemplate{navigation symbols}{}  % hide navigation buttons 
+%\setbeamertemplate{background canvas}{\centerline{\includegraphics 
+%	[height=\paperheight]{Cantor_4.jpeg}}}
+%\begin{frame}[plain]
+%\rule{0pt}{0pt}
+%\end{frame} 
+%} %end of magic
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\section{Arguments}
+
+\begin{frame}{deduction vs induction}
+\begin{itemize}
+\item Induction is the more natural process. \pause
+\item It's about seeing patterns and coming to the conclusion that those patterns will continue. \pause
+\item ``I've eaten those red berries many times and I've always been sick afterwards\textellipsis \pause \newline
+I shouldn't eat the red berries.'' \pause
+\item Deduction is less natural, we need to learn to apply it. \pause
+\item Deduction is about chaining logical consequences together to reach a conclusion. \pause
+\item ``The badger has sharp claws and teeth.  Sharp claws and teeth won't feel good on my face. If I poke the badger with this stick\textellipsis \pause \newline
+I shouldn't poke the badger.''
+\end{itemize}
+\end{frame}
+
+\begin{frame}{is this the right place for an argument?}
+\begin{itemize}
+\item Monty Python's Argument Clinic sketch. \pause \href{https://youtu.be/xpAvcGcEc0k}{https://youtu.be/xpAvcGcEc0k} \pause
+\item ``a connected series of statements designed to establish a definite proposition'' \pause
+\item More or less the correct definition of an argument (in Logic and Philosophy, not in Sports)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{arguing convincingly}
+\begin{itemize}
+\item A proof is nothing more than a convincing formal argument. \pause
+\item An argument is just a collection of statements. \pause (3 kinds) \pause
+\item Hypotheses\pause -- statements that we treat as definitely true (at least for the current situation). \pause
+\item Deductions\pause -- statements that are deduced from statements that come before them (hypotheses and earlier deductions) \pause
+\item Conclusion\pause -- the conclusion is the whole point of the argument. It is the ``definite proposition'' that the ``connected series of statements'' was designed to ``establish.'' \pause
+\item The conclusion is also a deduction -- the final one.
+\end{itemize}
+\end{frame}
+
+\section{rules of inference}
+
+\begin{frame}{inference}
+\begin{itemize}
+\item Inference is the process of making a deduction \pause (so ``infer'' and ``deduce'' are synonyms). \pause
+\item The rules of inference are a small collection of mini arguments that give us a formal scheme for inferring something from earlier statements. \pause
+\item They're the glue that holds our ``connected series of statements'' together.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Some almost trivial arguments}
+\begin{itemize}
+\item Conjunctive simplification \pause 
+\newline 
+
+\begin{center}
+\begin{tabular}{cl}
+ & $A \land B$ \\ \hline
+$\therefore$ & $A$ \\
+\end{tabular}
+\end{center}
+\pause 
+
+\item The format we use for a rule of inference is like that. A bunch of hypotheses (one to a line) appear above a horizontal line, the symbol $\therefore$ (which stands for the word ``therefore'') and the conclusion are below the horizontal line. \pause
+\item Conjuntive simplication has just one hypothesis (but often there are two or more) \pause
+\item Disjunctive addition also has a single hypothesis. \pause \newline
+
+\begin{center}
+\begin{tabular}{cl}
+ & $A$ \\ \hline
+$\therefore$ & $A \lor B$ \\
+\end{tabular}
+\end{center}
+\pause
+
+\item These two are pretty lame. \pause But you still need them from time to time!
+
+\end{itemize}
+\end{frame}
+
+\section{syllogisms}
+
+\begin{frame}{somewhat less trivially...}
+\begin{itemize}
+\item A {\em syllogism} is a mini argument with two hypotheses. \pause
+\item Many of the rules of inference are syllogisms. \pause
+\item We previously mentioned the syllogistic form:
+
+\begin{center}
+\begin{tabular}{cl}
+ & All men are mortal \\ 
+ & Socrates is a man \\ \hline
+$\therefore$ & Socrates is a mortal \\
+\end{tabular}
+\end{center}
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{modus ponens}
+\begin{itemize}
+\item Modus ponens is the generalization of that argument about Socrates. \pause
+\item Think of it as:
+
+\begin{center}
+\begin{tabular}{cl}
+ & If $x$ is a human, then $x$ is mortal. \\
+ & Socrates is human. \\ \hline
+$\therefore$ & Socrates is mortal.\\
+\end{tabular}
+\end{center}
+\pause
+
+\item Made completely abstract, it looks like: \pause
+
+\begin{center}
+\begin{tabular}{cl}
+ & $A \implies B$ \\
+ & $A$ \\ \hline
+$\therefore$ & $B$\\
+\end{tabular}
+\end{center}
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{terminology}
+\begin{itemize}
+\item The conditional in modus ponens is known as the {\em major premise}. \pause
+\item The other hypothesis is called the {\em minor premise}. \pause
+\item There are variants that have to do with quantifiers \pause
+\item Modus Ponens, \pause Universal Modus Ponens, \pause the Particular Form of Universal Modus Ponens. \pause
+\item The Socrates argument is actually P.F.U.M.P.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{UMP and PFUMP}
+\begin{itemize}
+\item The particular form of universal modus ponens is: \pause \newline
+
+\begin{center}
+\begin{tabular}{cl}
+ & $ \forall x \in U, \; A(x) \implies B(x)$ \\
+ & $A(p)$ (where $p$ is a particular element of $U$) \\ \hline
+$\therefore$ & $B(p)$\\
+\end{tabular}
+\end{center}
+
+\pause
+
+\item Full on {\em Universal} modus ponens is somewhat less common because the hypotheses are quite strong. \pause
+
+\begin{center}
+\begin{tabular}{cl}
+ & $ \forall x \in U, \; A(x) \implies B(x)$ \\
+ & $ \forall x \in U, \; A(x)$  \\ \hline
+$\therefore$ & $\forall x \in U, \; B(x)$\\
+\end{tabular}
+\end{center}
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{trust but verify}
+\begin{itemize}
+\item There are two ways we can verify a rule of inference. \pause
+\item Using a truth table. \pause (we'll come back to this\textellipsis) \pause
+\item Showing that it is equivalent to a tautology. \pause
+\item For example modus ponens can be re-expressed as: \pause \newline
+$ ( (A \implies B) \land A ) \implies B $. \pause
+\item is that tautological?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{a truth table approach}
+\begin{itemize}
+\item Construct a truth table with columns for {\em all} of the statements in the argument you're analyzing. \pause
+\item Mark the rows where all of the hypotheses are true. \pause (We call these the {\em critical rows}.) \pause
+\item Verify that the conclusion is true in all of the critical rows. \pause
+\item We'll use this approach on our next syllogism.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{modus tollens}
+\begin{itemize}
+\item {\em Modus tollens} is sometimes called the method of denial. \pause \newline
+(Similarly, {\em modus ponens} is sometimes called the method of affirming.) \pause
+\item It has the same major premise as {\em modus ponens}. \pause
+\item Here's the particular form of universal modus tollens: \pause \newline
+
+\begin{center}
+\begin{tabular}{cl}
+ & $ \forall x \in U, \; A(x) \implies B(x)$ \\
+ & $\lnot B(p)$  \\ \hline
+$\therefore$ & $ \lnot A(p)$\\
+\end{tabular}
+\end{center}
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{a truth table approach}
+\begin{itemize}
+\item Let's verify!
+\end{itemize}
+\end{frame}
+
+\begin{frame}{a whirlwind tour}
+\begin{itemize}
+\item There's a link to a handout in the video description. \pause
+\item Let's look briefly at each of the rules of inference. \pause
+\item Table 2.3 in GIAM.
+\end{itemize}
+\end{frame}
+
+\section{common errors}
+
+\begin{frame}{so common}
+\begin{itemize}
+\item There are a couple of errors that are made so frequently that logicians have names for them. \pause
+\item These have to do with messing up a {\em modus ponens} or {\em modus tollens} style argument. \pause
+\item The errors are named after the change that would need to be made to the major premise to get {\em modus ponens}. \pause
+\item The converse error is:
+
+\begin{center}
+\begin{tabular}{cl}
+ & $A \implies B$ \\
+ & $B$ \\ \hline
+$\therefore$ & $A$\\
+\end{tabular}
+\end{center}
+
+\pause
+
+\item ``All fish live in water, dolphins live in water, therefore dolphins are fish.''
+\end{itemize}
+\end{frame}
+
+\begin{frame}{the inverse error}
+\begin{itemize}
+\item Essentially, a person who has made the converse error has mistaken a conditional for its converse. \pause
+\item If one confuses a statement for its inverse, you get the inverse error: \pause
+
+\begin{center}
+\begin{tabular}{cl}
+ & $A \implies B$ \\
+ & $\lnot A$ \\ \hline
+$\therefore$ & $\lnot B$\\
+\end{tabular}
+\end{center}
+
+\pause
+\item ``If you install solar panels your electric bill will go down.  Jim did not install solar panels therefore his electric bill did not go down.'' \pause
+
+\item Notice that if we replace the major premise with its inverse we get {\em modus ponens} \pause (in a thin disguise). \pause
+
+\begin{center}
+\begin{tabular}{cl}
+ & $\lnot A \implies \lnot B$ \\
+ & $\lnot A$ \\ \hline
+$\therefore$ & $\lnot B$\\
+\end{tabular}
+\end{center}
+
+ 
+\end{itemize}
+\end{frame}
+\end{document}

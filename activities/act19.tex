@@ -1,0 +1,91 @@
+\documentclass{amsart}
+\usepackage{amssymb}
+\renewcommand{\baselinestretch}{1.5}
+\addtolength{\textwidth}{.2in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1in}
+
+\usepackage{ifthen}
+
+\input{my_latex_definitions.tex}
+
+\addtolength{\abovedisplayskip}{0pt}
+\addtolength{\belowdisplayskip}{24pt}
+\addtolength{\abovedisplayshortskip}{0pt}
+\addtolength{\belowdisplayshortskip}{44pt}
+
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large Activity 19 -- Introduction to Proof}
+\centerline{\large proofs and disproofs of existentials}
+
+\bigskip
+\Large
+
+
+\begin{enumerate}
+
+\item Is there a Fibonacci number that is a perfect cube?
+
+\vfill
+
+\item Partition numbers count the number of ways we can write a number $n$ as a sum (we don't count different orderings of the same sum).   We denote the partition numbers by $p(n)$.  By convention, $p(0)$ is defined to be 1 ($p(1)$ is also 1).  As a more interesting example, $p(4) = 5$ since there are 5 distinct ways to write 4 as a sum: $4$, $3+1$, $2+2$, $2+1+1$ and $1+1+1+1$.  The partition numbers are A000041 in the OEIS.
+
+After the first two 1's the values of $p(n)$ are all prime (at first).  Prove that there is a non-prime partition number, $p(n)$ with $n \geq 2$.
+
+\vfill
+
+\item Show that there is a 4 digit vampire number.
+
+\vfill
+
+\newpage
+
+\centerline{\bf Review problems for chapter 3.}
+
+\item Use proof by exhaustion to show that there are no 2 digit vampire numbers.
+
+\vfill
+
+\item Prove
+\[ \forall a, b, c \in \Integers, \; ( a \mid b \, \land \, b \mid c ) \implies a \mid c. \]
+
+\vfill
+
+\newpage
+
+\item Prove 
+\[ \forall a, b \in \Integers, \; ( a \mid b \, \land \, b \mid a ) \implies a=b. \]
+
+\vfill 
+
+\item Prove 
+\[ \forall x \in \Reals, \; x^5 < x^4 \; \implies 8 > 5x+3. \]
+
+\vfill
+
+\newpage
+
+\item Prove that for all integers $a, b,$ and $c$, if $a \mid b$ and $a \mid (b+c)$, then
+$a|c$.
+
+\vfill
+
+\item Show that $\binom{n}{k} \cdot \binom{k}{r} \; = \; \binom{n}{r} \cdot \binom{n-r}{k-r}$ (for all integers $r$, $k$ and $n$ with $r \leq k \leq n$). 
+
+\vfill
+
+\newpage
+
+\item Referring to the partition numbers defined in problem 2, we say a partition has ``odd parts'' if all the numbers in the sum are odd.  We say a partition has ``distinct parts'' if all the numbers in the sum are different from one another.  It is a general fact that the number of partitions of $n$ into odd parts is equal to the number of partitions of $n$ into distinct parts. 
+(Frankly, that is really weird\textellipsis)
+
+Show exhaustively that the number of partitions of 7 into odd parts is equal to the number of partitions of 7 into distinct parts.
+
+\vfill
+
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,211 @@
+%\documentclass[handout,landscape]{beamer}
+\documentclass[landscape]{beamer}
+\hypersetup{pdfpagemode=FullScreen}
+\mode<handout>
+{
+  \usepackage{pgf}
+  \usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{6 on 1 boxed}
+{
+  \edef\pgfpageoptionheight{\the\paperheight} 
+  \edef\pgfpageoptionwidth{\the\paperwidth}
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=6,%
+    physical height=\pgfpageoptionheight,%
+    physical width=\pgfpageoptionwidth%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{2}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{3}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{4}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{5}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{6}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+}
+
+
+  \pgfpagesuselayout{6 on 1 boxed}[letterpaper, border shrink=5mm]
+  \nofiles
+}
+
+\usepackage{listings}
+%\lstset{language=TeX}
+\usepackage{multimedia}
+\usepackage[normalem]{ulem}
+\usepackage{amssymb}
+
+%\usecolortheme[named=Purple]{structure} 
+%\usetheme{Copenhagen}
+\usetheme{Warsaw} 
+\usecolortheme{seahorse}
+\useoutertheme{infolines} 
+%\usetheme[height=7mm]{Rochester} 
+%\setbeamertemplate{items}[ball] 
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+%\setbeamertemplate{navigation symbols}{} 
+\author{Joe Fields}
+\title{Introduction to Proof} 
+%\subtitle{}
+\date{Lecture 3}
+\institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
+
+\input{my_latex_definitions.tex}
+
+\newcommand{\vs}{\rule{0pt}{12pt}}
+
+\AtBeginSection[]
+{
+ \begin{frame}{Table of Contents} 
+  \tableofcontents[currentsection]
+ \end{frame}
+}
+
+%%%% SAVE %%%%
+%{ %magic to get a full screen image...
+%\setbeamertemplate{navigation symbols}{}  % hide navigation buttons 
+%\setbeamertemplate{background canvas}{\centerline{\includegraphics 
+%	[height=\paperheight]{Cantor_4.jpeg}}}
+%\begin{frame}[plain]
+%\rule{0pt}{0pt}
+%\end{frame} 
+%} %end of magic
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+
+\section{sometimes, always, never}
+
+\begin{frame}{valar morgulis}
+\begin{itemize}
+\item In the classic text on Logic by Aristotle there is an argument that begins \newline
+``All men are mortal.'' \pause
+\item That is perhaps the first case of {\em universal quantification}\textellipsis \newline 
+\pause 
+ a fancy way to say that some statement is true for every thing in a universe of discourse.\pause
+\item ``All men are mortal'' is almost certainly true, but what do you need to do to show that a universally quantified sentence is false?\pause
+\item Consider ``All primes are odd.''  Which prime tells us that this claim is false?  Do we need to show that all primes are even? \pause
+\item Or is it enough to notice that 2 is both prime and even (which is odd\textellipsis) 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{never}
+\begin{itemize}
+\item Notice that sentences that use ``never'' are also universal.
+\item For instance, ``We can never have nice things'' has the same meaning as ``it's always the case that our rotten kids will destroy anything nice that we get.''
+\end{itemize}
+\end{frame}
+
+\begin{frame}{sometimes}
+\begin{itemize}
+\item Finally there are things that are true some of the time. \pause
+\item ``Some days it's not worth getting out of bed.'' \pause
+\item If you always felt that way it'd be pretty sad, but everybody is going to have ``one of those days'' on occassion.\pause
+\item ``Some primes are even'' is true because 2 exists. \pause
+\item Similarly, ``All primes are odd'' is false because 2 exists.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{notation}
+\begin{itemize}
+\item We have special notation for quantifiers. \pause
+\item The {\em universal quantifier} is $\forall$.  The upside-down A may be thought of as an abbreviation for the words ``for all'' or ``for every.'' \pause
+\item The {\em existential quantifier} is $\exists$.  The backwards E is shorthand for the words ``there is'' or ``there exists.'' \pause
+\end{itemize}
+\end{frame}
+
+\begin{frame}{examples}
+\begin{itemize}
+\item In the following examples we'll let $P$ be the set of all people\pause
+\item \rule{0pt}{24pt} $\displaystyle \forall x \in P, \; \exists y \in P, \; x \, \mbox{loves} \, y$. \newline \pause
+(everybody loves somebody) \pause
+\item \rule{0pt}{24pt} $\displaystyle \exists y \in P, \; \forall x \in P, \; x \, \mbox{loves} \, y$. \pause \newline
+(there's somebody that everybody loves -- maybe Helen of Troy?)\pause
+
+\item \rule{0pt}{24pt} $\displaystyle \exists x \in P, \; \forall y \in P, \; x \, \mbox{loves} \, y$. \newline \pause
+(Don Juan\textellipsis) \pause
+
+\item \rule{0pt}{24pt} The takeaway here is that the order in which we use quantifiers is important!
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Johnny Carson}
+\begin{itemize}
+\item Johnny Carson was one of the first late-night television hosts. \pause
+\item A joke from one of his opening monologues illustrates the importance of order with quantifiers: \pause
+\item ``I read a news article that said there's a woman in America having a baby every 5 minutes \textellipsis '' \pause
+\item ``Shouldn't somebody stop her?''
+\end{itemize}
+\end{frame}
+
+\begin{frame}{some more serious examples}
+\begin{itemize}
+\item \rule{0pt}{24pt} $\displaystyle \forall x \in \Reals, \; \exists y \in \Reals, \; xy = 1 $ \pause
+\item This says that every real number has a multiplicative inverse. \pause
+\item So, is that a true statement? \pause
+\item \rule{0pt}{24pt} $\displaystyle \exists x \in \Reals, \; \forall y \in \Reals, \; xy = 0 $ \pause
+\item This says there's a real number that {\em annihilates} every real number. \pause
+\item Is that a true statement? \pause
+\item The two of these together may explain why we have the notation $\Reals^\ast$ for the set of all non-zero real numbers.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{typesetting these symbols}
+\begin{itemize}
+\item Let's jump over to Overleaf and I'll illustrate how to typeset the quantifier symbols in \LaTeX. \pause
+\item To get $\forall$ you have to type {\tt \$\textbackslash forall\$} \pause
+\item To get $\exists$ you have to type {\tt \$\textbackslash exists\$}
+\end{itemize}
+\end{frame}
+
+\end{document}

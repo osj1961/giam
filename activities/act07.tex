@@ -1,0 +1,92 @@
+\documentclass{amsart}
+%\usepackage{}
+\renewcommand{\baselinestretch}{1.5}
+\addtolength{\textwidth}{.2in}
+\input{../my_latex_definitions.tex}
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large Activity 7 -- Introduction to Proof}
+\centerline{\large relations}
+
+\bigskip
+\Large
+
+
+\begin{enumerate}
+\item Which of the following are true?
+
+\vspace{.1in}
+
+\begin{tabular}{cccc}
+ & \rule{72pt}{0pt} & \rule{72pt}{0pt} & \rule{72pt}{0pt} \\
+\rule[-15pt]{0pt}{44pt} & $13 \divides 52$ &  $3 < 1$ & $24 \geq 5$\\
+\rule[-15pt]{0pt}{44pt} & $5>9$ & $1 \in \{1,2,3\}$ & $1=0.\overline{9}$ \\
+\rule[-15pt]{0pt}{44pt} & $243 \leq 243$ & $\displaystyle 3 \divides \frac{42}{7}$ & $19 \equiv 13 \pmod{7}$ \\
+\end{tabular}
+
+\rule{0pt}{0pt}
+
+\vspace{.1in}
+
+\rule{0pt}{0pt}
+
+\item What are all of the ordered pairs in the $<$ relation restricted to the set $\{0,1,2,3,4\}$ ?
+
+\vfill
+
+\item What are the domain, range and codomain of the previous problem's relation?
+
+\vfill
+
+\newpage
+
+\item Let's create our own relation.  Let $\relR$ be defined by
+
+\[ x \relR y \quad \iff \quad 7 \divides (x-y). \]
+
+Let's suppose the domain and codomain of $\relR$ are both $\Integers$.
+
+Name 5 pairs of integers that are in $\relR$ and 5 pairs that are not.
+
+\vfill
+
+\item A fairly trivial relation on the real numbers might be stated in words as: ``$x$ and $y$ are related when they have the same sign.''  For the sake of consistency, let's treat $0$ seperately, so possible signs are $-$, $+$, and $0$.  What does the graph of this relation look like?
+
+\vfill
+
+\item Here's an example of a relation that works with words rather than numbers.  Let  
+$x\mbox{\textsf L}y$ be the relation ``$x$ comes before $y$ in the dictionary.''  Find three things (pairs of words) that are in $\mbox{\textsf L}$.  (FYI, the official name for dictionary order is {\em lexicographic order} hence the choice of letter $\mbox{\textsf L}$.)
+
+\vfill
+
+\newpage
+
+\item Some relations are known as ``reflexive'' this means that a thing is always related to itself.  Characterize the graphs of reflexive relations on the real numbers.
+
+\vfill
+
+\item There's a well-known property of $=$ that is often paraphrased as ``two things that are equal to a third must be equal to one another.''  This is known as the transitive property. Which of the relations we've seen in this worksheet (including the ones we created ourselves) have the transitive property?
+
+\vfill
+
+\item The property that an integer is either even or odd is known as its {\em parity}.  We can create a relation $\mbox{\textsf P}$ that is true when its inputs have the same parity.
+
+\[ x \mbox{\textsf P} y \quad \iff \quad x \; \mbox{and} \; y \; \mbox{are both even} \; \mbox{or} \; x \; \mbox{and} \; y \; \mbox{are both odd}. \] 
+
+Try restating the lemma from the previous section 
+
+\[  \left( \forall x \in \Integers, \quad \mbox{if} \; x^2 \; \mbox{is even, then } \; x \; \mbox{is even}. \right) \]
+
+\noindent using $\mbox{\textsf P}$.  
+
+\vfill
+
+\item Of course the statement you created in the previous problem will be stronger since it deals with odd numbers as well as even ones.  Is it still true?
+
+\vfill
+
+\end{enumerate}
+
+\end{document}

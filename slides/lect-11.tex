@@ -1,0 +1,188 @@
+%\documentclass[handout,landscape]{beamer}
+\documentclass[landscape]{beamer}
+%\hypersetup{pdfpagemode=FullScreen}
+\mode<handout>
+{
+  \usepackage{pgf}
+  \usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{6 on 1 boxed}
+{
+  \edef\pgfpageoptionheight{\the\paperheight} 
+  \edef\pgfpageoptionwidth{\the\paperwidth}
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=6,%
+    physical height=\pgfpageoptionheight,%
+    physical width=\pgfpageoptionwidth%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{2}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{3}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{4}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{5}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{6}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+}
+
+
+  \pgfpagesuselayout{6 on 1 boxed}[letterpaper, border shrink=5mm]
+  \nofiles
+}
+
+\usepackage{listings}
+%\lstset{language=TeX}
+\usepackage{multimedia}
+\usepackage[normalem]{ulem}
+\usepackage{amssymb}
+
+%\usecolortheme[named=Purple]{structure} 
+%\usetheme{Copenhagen}
+\usetheme{Warsaw} 
+\usecolortheme{seahorse}
+\useoutertheme{infolines} 
+%\usetheme[height=7mm]{Rochester} 
+%\setbeamertemplate{items}[ball] 
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+%\setbeamertemplate{navigation symbols}{} 
+\author{Joe Fields}
+\title{Introduction to Proof} 
+%\subtitle{}
+\date{Lecture 11 (GIAM \S 2.4)}
+\institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
+
+\input{my_latex_definitions.tex}
+
+\newcommand{\vs}{\rule{0pt}{12pt}}
+
+\AtBeginSection[]
+{
+ \begin{frame}{Table of Contents} 
+  \tableofcontents[currentsection]
+ \end{frame}
+}
+
+%%%% SAVE %%%%
+%{ %magic to get a full screen image...
+%\setbeamertemplate{navigation symbols}{}  % hide navigation buttons 
+%\setbeamertemplate{background canvas}{\centerline{\includegraphics 
+%	[height=\paperheight]{Cantor_4.jpeg}}}
+%\begin{frame}[plain]
+%\rule{0pt}{0pt}
+%\end{frame} 
+%} %end of magic
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+
+\section{two-column proofs}
+
+\begin{frame}{intro}
+\begin{itemize}
+\item Suitable for arguments that can be separated out into a sequence of basic operations.\pause
+\item Usually used for showing two things are equivalent (or even equal) \pause
+\item Our first examples are in Logic, \pause but there are two-column approaches in Algebra, Set theory, Relations, etc. \pause
+\item Show your work in one column, explain your work in the other.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{advice}
+\begin{itemize}
+\item Try to work in a step-by-step fashion. \pause
+\item Everything should be made as simple as possible, but no simpler!\pause
+\item If you need to switch two pairs of things around (commutative law) and regroup several parentheses (associative law)\pause \newline most people would do that all in one step. \pause
+\item Watch out for circular reasoning! \pause
+\item Or even the appearance of circular reasoning! \pause
+\item ``We want to show'' sentences.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{finding ``the best'' argument}
+\begin{itemize}
+\item A subsidiary goal is to come up with the shortest possible argument. \pause
+\item Just don't shorten by leaving out, or combining, essential steps. \pause
+\item When in doubt, err on the side of pedantry.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{example}
+\begin{itemize}
+\item We'll show that $A \land (A \lor B) \; \cong \; A \lor (A \land B)$ in two ways.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{more examples}
+\begin{itemize}
+\item \rule{0pt}{24pt} (GIAM pg 89) \hspace{3ex} $A \land (B \lor \lnot A) \cong (A \land B)$
+\item \rule{0pt}{24pt} $A \; \cong \; A \land ((A \lor {\lnot}B) \lor (A \lor B))$
+\item \rule{0pt}{24pt} $(A \land B) \; \implies C \; \cong \; \lnot A \lor (\lnot B \lor C) $
+\item \rule{0pt}{24pt} $(\lnot A  \; \implies \; (B \land C) \; \cong \;  (A \lor B) \land (A \lor C) $
+
+\end{itemize}
+\end{frame}
+
+\section{LaTeX}
+
+\begin{frame}{overleaf}
+\begin{itemize}
+\item Note: you can also install LaTeX on your personal computer. \pause
+\item We'll use the {\tt amsmath} package. \pause
+\item Cheat sheet. \pause
+\item The Greek alphabet. \pause
+\item Writing a two-column proof in LaTeX \pause
+
+\end{itemize}
+\end{frame}
+
+\end{document}
+
+\end{document}

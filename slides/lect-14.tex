@@ -1,0 +1,419 @@
+%\documentclass[handout,landscape]{beamer}
+\documentclass[landscape]{beamer}
+%\hypersetup{pdfpagemode=FullScreen}
+\mode<handout>
+{
+  \usepackage{pgf}
+  \usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{6 on 1 boxed}
+{
+  \edef\pgfpageoptionheight{\the\paperheight} 
+  \edef\pgfpageoptionwidth{\the\paperwidth}
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=6,%
+    physical height=\pgfpageoptionheight,%
+    physical width=\pgfpageoptionwidth%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{2}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{3}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{4}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{5}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{6}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+}
+
+
+  \pgfpagesuselayout{6 on 1 boxed}[letterpaper, border shrink=5mm]
+  \nofiles
+}
+
+\usepackage{listings}
+%\lstset{language=TeX}
+\usepackage{multimedia}
+\usepackage[normalem]{ulem}
+\usepackage{amssymb}
+
+%\usecolortheme[named=Purple]{structure} 
+%\usetheme{Copenhagen}
+\usetheme{Warsaw} 
+\usecolortheme{seahorse}
+\useoutertheme{infolines} 
+%\usetheme[height=7mm]{Rochester} 
+%\setbeamertemplate{items}[ball] 
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+%\setbeamertemplate{navigation symbols}{} 
+\author{Joe Fields}
+\title{Introduction to Proof} 
+%\subtitle{}
+\date{Lecture 14 (GIAM \S 3.1)}
+\institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
+
+\input{my_latex_definitions.tex}
+
+\newcommand{\vs}{\rule{0pt}{12pt}}
+
+\def\mycommand{\setlength{\abovedisplayskip}{4pt}%
+\setlength{\belowdisplayskip}{-12pt}%
+\setlength{\abovedisplayshortskip}{0pt}%
+\setlength{\belowdisplayshortskip}{0pt}}
+
+\let\oldselectfont\selectfont
+\def\selectfont{\oldselectfont\mycommand}
+
+\mycommand
+
+\AtBeginSection[]
+{
+ \begin{frame}{Table of Contents} 
+  \tableofcontents[currentsection]
+ \end{frame}
+}
+
+%%%% SAVE %%%%
+%{ %magic to get a full screen image...
+%\setbeamertemplate{navigation symbols}{}  % hide navigation buttons 
+%\setbeamertemplate{background canvas}{\centerline{\includegraphics 
+%	[height=\paperheight]{Cantor_4.jpeg}}}
+%\begin{frame}[plain]
+%\rule{0pt}{0pt}
+%\end{frame} 
+%} %end of magic
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\section{exploring a motivating example}
+
+\begin{frame}{the product of 4 consecutive numbers}
+\begin{itemize}
+\item The product of 4 consecutive natural numbers is always one less than a square. \pause
+\item Explore! \pause
+\item Process: what hypotheses can we use? \pause
+\item Try reframing the statement as a UCS. \pause (Universal Conditional Sentence) \pause
+\item The antecedant is your hypothesis! \pause (at least it's one of them) 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{refining the statement}
+\begin{itemize}
+\item We want to refine the statement of the theorem until it's precise enough (and simple enough) that we can prove it. \pause
+\[ \forall a,b,c,d \in \Integers, (\mbox{a,b,c,d  consecutive}) 
+\implies \exists k \in \Integers, a{\cdot}b{\cdot}c{\cdot}d = k^2 -1 
+\]
+\pause
+\item Are all of those variables really necessary? \pause
+\[ \forall a \in \Integers, \exists k \in \Integers, a(a+1)(a+2)(a+3) = k^2 - 1. \]
+\end{itemize}
+\end{frame}
+
+\begin{frame}{can we prove it now?}
+\begin{itemize}
+\item Notice that our final formulation is about finding (there exists) $k$ that works for a particular $a$. \pause
+\item See page 121. \pause
+\item Well, that came out of left field!
+\end{itemize}
+\end{frame}
+
+\begin{frame}{what the what?}
+\begin{itemize}
+\item There're at least two possible routes to discovering that $k=a^2+3a+1$ will do the trick. \pause
+\item Guess and check. \pause 
+\item Algebra. \pause 
+\item Both of these give us opportunities for expanding your analytical toolkits.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Algebra}
+\begin{itemize}
+\item One impediment is that we need to find the product of $a$, $a+1$, $a+2$ and $a+3$. \pause
+\item You can use FOIL to multiply these in pairs, but you're left with a binomial times a trinomial. \pause
+\item Often people are taught to ``just grind through the distributive law'' to form such products. \pause
+\item The table method is easier: \pause
+
+\begin{tabular}{c|ccc}
+\rule[-6pt]{0pt}{20pt} & \rule{12pt}{0pt} $a^2$ \rule{12pt}{0pt}  & \rule{12pt}{0pt} $5a$ \rule{12pt}{0pt} & \rule{12pt}{0pt} $6$ \rule{12pt}{0pt} \\ \hline
+\rule[-6pt]{0pt}{24pt} $a^2$ & \uncover<7->{ $a^4$ }& \uncover<8->{ $5a^3$ } & \uncover<9->{ $6a^2$ }\\
+\rule[-6pt]{0pt}{24pt} $a$ & \uncover<10->{ $a^3$ } & \uncover<11->{ $5a^2$ } & \uncover<12->{ $6a$ }\\
+\end{tabular}
+
+\uncover<13->{
+\item  Notice that the like terms appear on diagonals of the table. \pause
+}
+
+\uncover<14->{
+\[ a^4 \; + \; 6a^3 \; + \; 11a^2 \; + \; 6a \]
+}
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{square root of a polynomial?}
+\begin{itemize}
+\item So we need to figure out a polynomial whose square is 
+\[ a^4 \; + \; 6a^3 \; + \; 11a^2 \; + \; 6a \; + \; 1. \] \pause
+\item Notice that it will have to be a quadratic. \pause
+\item The leading term will have to be $a^2$. \pause
+\item The constant term will be 1 (or $-1$). \pause
+\item Those considerations mean it will be of the form $x^2 + mx + 1$. \pause
+\item Another chance to use a table! \pause
+
+\vspace{.2in}
+
+\begin{tabular}{c|ccc}
+\rule[-6pt]{0pt}{20pt} & \rule{12pt}{0pt} $a^2$ \rule{12pt}{0pt}  & \rule{12pt}{0pt} $ma$ \rule{12pt}{0pt} & \rule{12pt}{0pt} $1$ \rule{12pt}{0pt} \\ \hline
+\rule[-6pt]{0pt}{24pt} $a^2$ & \uncover<7->{ $a^4$ }& \uncover<8->{ $ma^3$ } & \uncover<9->{ $a^2$ }\\
+\rule[-6pt]{0pt}{24pt} $ma$ & \uncover<10->{ $ma^3$ } & \uncover<11->{ $m^2a^2$ } & \uncover<12->{ $ma$ }\\
+\rule[-6pt]{0pt}{24pt} $1$ & \uncover<13->{ $a^2$ } & \uncover<14->{ $ma$ } & \uncover<15->{ $1$ }\\
+\end{tabular}
+
+\uncover<16->{
+\[ a^4 + 2ma^3 + (m^2+2)a^2 + (2m)a + 1 \]
+}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{guess and check}
+\begin{itemize}
+\item By experiment we can find the first several values of the sequence in question. \pause
+
+\begin{tabular}{c|c|c}
+\rule[-6pt]{0pt}{20pt} \rule{12pt}{0pt} $a$ \rule{12pt}{0pt} & $a(a+1)(a+2)(a+3)+1$ & \rule{12pt}{0pt} $k$ \rule{12pt}{0pt} \\ \hline
+1 & 25 & 5 \\
+2 & 121 & 11 \\
+3 & 361 & 19 \\
+4 & 841 & 29 \\
+$\vdots$ & $\vdots$ & $\vdots$ \\
+\end{tabular}
+\pause
+\item A common way to analyze a sequence is to form a ``difference table.'' \pause \newline
+Write the terms of the sequence in a row -- and under them, write the differences between consecutive terms. \pause
+
+\vspace{.2in}
+
+\begin{tabular}{cccccccc}
+\rule[-6pt]{0pt}{20pt} 5 &   & 11 &   & 19 &    & 29 & \\
+\rule[-6pt]{0pt}{20pt}   & 6 &    & 8 &    & 10 &    & \\
+\end{tabular}
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{vive la difference!}
+\begin{itemize}
+
+\item If the pattern doesn't become apparent, write the differences between the differences in a 3rd row. \pause
+
+\vspace{.1in}
+
+\begin{tabular}{cccccccc}
+\rule[-6pt]{0pt}{20pt} 5 &   & 11 &   & 19 &    & 29 & \\
+\rule[-6pt]{0pt}{20pt}   & 6 &    & 8 &    & 10 &    & \\
+\rule[-6pt]{0pt}{20pt}   &   &  2 &   &  2 &    & 2? & \\
+\end{tabular}
+\pause
+
+\vspace{.1in}
+
+\item Each row in a difference table is analogous to a derivative in Calculus. \pause
+
+\item The first row is $f(x)$, the second row is similar to $f'(x)$, the 3rd row is analogous to $f''(x)$, {\em et cetera}.\pause
+\item We seem to be looking at an $f(x)$ whose 2nd derivative is the constant 2. \pause
+\item This is a clue that the given sequence is related to $x^2$. \pause
+
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{more difference}
+\begin{itemize}
+\item By thinking about squares we see that the sequence can be rewritten as a square plus something small.\pause
+
+\begin{tabular}{cccccccc}
+\rule[-6pt]{0pt}{20pt} \uncover<2>{5} \uncover<3->{4+1} &   & \uncover<2>{11} \uncover<3->{9+2}&   & \uncover<2>{19}\uncover<3->{16+3} &    & \uncover<2>{29}\uncover<3->{25+4} & \\
+\end{tabular}
+\pause
+
+\pause
+
+\item Can you see that this is $(a+1)^2 + a$ ?
+
+\end{itemize}
+\end{frame}
+
+\section{direct proofs}
+
+\begin{frame}{}
+\begin{itemize}
+\item First: Proofs require good, precise definitions of the terms involved. \pause
+\item See table 3.1 in GIAM.  There is a link in the video description to a handout.\pause
+\item Convert the statements of theorems to UCS's whenever possible. \pause This helps you clarify what the hypotheses are. \pause
+\item The method we use for direct proofs is known as ``generalizing from the generic particular.''
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{g.f.t.g.p.}
+\begin{itemize}
+\item Suppose you are trying to prove  $\displaystyle \forall x \in U, \; P(x)\, \implies \, Q(x)$. \pause
+\item If, for any element $y \in U$, the statement $P(y)$ is false, the conditional $P(y)\, \implies \, Q(y)$ is vacuously true. \pause So we don't need to worry about those\textellipsis \pause
+\item We concentrate instead on particular elements of $U$ that make $P$ true! \pause But we don't want to make any other presumptions. \pause That's the ``generic particular.'' \pause
+\item See the outline on page 125.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{what goes on in the dots}
+\begin{itemize}
+\item Often the interior of a direct proof will have the following character: \pause
+\item You'll use the definition of whatever property the ``generic particular'' has, so that you can re-express that property in more familiar terms. \pause
+\item You'll work with this version of the property until\textellipsis \pause
+\item Finally you use a definition again to convert back to the language of the desired conclusion.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{a trivial example}
+\begin{itemize}
+\item Let's prove that the sum of two odd numbers is even. \pause
+
+\vfill
+
+\begin{quote}
+{\em Proof:} Suppose that $x$ and $y$ are particular, but arbitarily chosen odd numbers.  By the definition of odd, it follows that there are integers $m$ and $n$ such that $x=2m+1$ and $y=2n+1$.  Thus, $x+y \; = \; (2m+1) + (2n+1) \; = \; 2(m+n+1)$.  Since $m+n+1$ is an integer, it follows (by the definition of even) that $x+y$ is even.
+
+\hspace{\fill} Q.E.D. 
+\end{quote}
+
+\vfill
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{a proof about floor}
+\begin{itemize}
+\item We previously saw that this is {\bf not} true: \pause
+
+\[ \forall x, y \in \Reals, \; \lfloor x + y \rfloor \; = \; \lfloor x \rfloor \; + \; \lfloor y \rfloor. \] \pause
+
+\item For example if $x=y=1.9$ we get $\displaystyle \lfloor x + y \rfloor \; = \; 3$, but  $\displaystyle \lfloor x \rfloor \; + \; \lfloor y \rfloor \; = \; 2$. \pause
+
+\item However, when one of the number is an integer it works! \pause
+
+\begin{thm}
+\[ \forall x \in \Reals, \, \forall n \in \Integers, \, 
+\lfloor x + n \rfloor = \lfloor x \rfloor + n \]
+\end{thm}
+\pause
+\item Let's trace through the proof. It appears on page 128. 
+\end{itemize}
+\end{frame}
+
+\section{Advice}
+
+\begin{frame}{some tips}
+\begin{itemize}
+\item Page 128 in GIAM
+\end{itemize}
+\end{frame}
+
+\begin{frame}{tools}
+\begin{itemize}
+\item What tools are we allowed to use? \pause
+\begin{itemize}
+\item Axioms \pause
+\item Definitions \pause
+\item Previous results \pause
+\end{itemize}
+\item For now, the definitions handout has all the definitions you'll need. \pause \newline
+You should make every effort to memorize these! \pause \newline
+(And in your future mathematical work, make it a practice to memorize the definitions.) \pause
+\item Axioms \pause
+\begin{itemize}
+\item Euclid's ``common notions'' \pause
+\item Closure axioms \pause
+\item Peano axioms \pause \newline
+(You'll seldom need to appeal to these, but you should know they exist.)
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{closure}
+\begin{itemize}
+\item We say ``a set is closed'' under some operation, when the result of the operation always winds up back in the set. \pause
+\item For instance $\Rationals$ is closed under multiplication because the product of two rational numbers is again a rational number. \pause
+\item Another example, $\Reals^\ast$ is closed under division because the one problematic real number ($0$) is not in the set, and the quotient of two non-zero real numbers is a non-zero real number. \pause
+\item Some closure statements are taken to be axioms, others are provable so there is no need to treat them as axioms. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{more on closure}
+\begin{itemize}
+\item For example we'll take as an axiom that $\Naturals$ is closed under $+$, with that as a starting point, one could prove that $\Naturals$ is closed under $\cdot$ (multiplication).  \pause While we won't ask you to do the proof, you can now regard the statement that ``the product of two natural numbers is a natural number'' as a previous result. \pause
+\item Closure of $\Integers$ under both addition and multiplicaton are also taken as axiomatic. \pause
+\item You're asked to prove that $\Rationals$ is closed under both addition and multiplicaton in the exercises for this section. \pause \newline
+You can use the closure axioms for $\Integers$ while doing these proofs. \pause \newline
+And afterwards you can treat them as ``previous results''!
+\end{itemize}
+\end{frame}
+
+\begin{frame}{a closure compendium}
+\begin{itemize}
+\item The natural numbers ($\Naturals$) are closed under $+$ and $\cdot$ (but not $-$ or $\div$) \pause
+\item The integers ($\Integers$) are closed under $+$, $\cdot$ and $-$ (but not under $\div$) \pause
+\item The rationals ($\Rationals$) are closed under $+$, $-$, $\cdot$ and $\div$ (with a single well-known exception).\pause
+\item The reals ($\Reals$) are closed under $+$, $-$, $\cdot$ and $\div$ \pause (again, except for division by $0$.)\pause
+\item The complex numbers ($\Complexes$) are closed under $+$, $-$, $\cdot$ and $\div$ \pause (yeah, yeah, except $0$.)\pause
+\item We take the closure statements for $\Naturals$, $\Integers$ and $\Reals$ as axioms, and the statements for $\Rationals$ and $\Complexes$ as things that we must prove (using the statements that are axioms.)
+\end{itemize}
+\end{frame}
+
+\end{document}

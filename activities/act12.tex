@@ -1,0 +1,97 @@
+\documentclass{amsart}
+%\usepackage{}
+\renewcommand{\baselinestretch}{1.5}
+\addtolength{\textwidth}{.2in}
+\input{../my_latex_definitions.tex}
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large Activity 12 -- Introduction to Proof}
+\centerline{\large working with quantified statements}
+
+\bigskip
+\Large
+
+
+\begin{enumerate}
+
+\item Go to the Online Encyclopedia of Integer Sequences (OEIS) and search for the sequence of Fermat numbers. (You actually enter the first several numbers in the sequence into the search bar.)
+
+\vspace{.5in}
+
+\item Use OEIS to get information about another sequence of numbers (of your choosing).  Take note that each sequence in OEIS has a unique identifier -- they start with an A.  Also notice that there is a section of references for each sequence. If you are ever doing a research project or a thesis and feel stuck, OEIS (in particular following up on the references within it) can be a great way to break the logjam!
+
+\vspace{.5in}
+
+\item Identify the bound and unbound variables in the following open sentence. For the bound variable what word or phrase let us determine their quantification?
+
+A function $f$ from $\Reals$ to $\Reals$ is {\em continuous at a point} $p \in \Reals$ if and only if given any real number $\epsilon > 0$ there exists a real number $\delta > 0$ such that, if $|p - x| < \delta$ then $|f(p) - f(x)| < \epsilon$.
+
+\vspace{.5in}
+
+\item Find the negation of 
+
+$\exists n \in \Naturals, \; $n$ \; \mbox{is prime} \; \land \; 2n+1 \; \mbox{is prime}$
+
+\vspace{.5in}
+
+\item A {\em repunit} is a natural number whose decimal expansion consists of all ones.  Use CoCalc to investigate the following:
+
+\[ \forall n \in \Naturals, \; n \; \mbox{is a repunit} \; \implies \; n \; \mbox{is prime.} \]
+
+\vspace{.1in}
+
+Do you see any pattern in when a repunit is prime?  You could enter the indices of the first several prime repunits into OEIS\textellipsis
+
+\vspace{.5in}
+
+
+
+\item A {\em Mersenne prime} is a number of the form $2^k - 1$ which is prime.  What is the formal negation of 
+
+\[ \forall n \in \Naturals, \, \left( \exists k \in \Naturals, \; n=2^k-1 \right) \; \implies \; n \; \mbox{is prime.} \]
+
+
+\vspace{1in}
+
+\item Use Cocalc to find a counterexample to the conjecture in the previous problem.
+
+\vspace{.1in}
+
+Do you see any pattern in when a Mersenne number is prime?  Try using OEIS.
+
+\vspace{.5in}
+
+\item A \index{Sophie Germain prime} \emph{Sophie Germain prime} is a prime number $p$
+such that the corresponding odd number $2p+1$ is also a prime.  For example 11 is a 
+Sophie Germain prime since $23 = 2\cdot 11 + 1$ is also prime.  Almost all Sophie Germain
+primes are congruent to $5 \pmod{6}$, nevertheless, there are exceptions -- so the
+statement ``There are Sophie Germain primes that are not 5 mod 6.'' is true.  Verify this.
+
+\vfill
+
+\item Let $U$ be the set of primes that are less than $12$.  Let $P(n)$ be the sentence ``$n$ is a Sophie Germain prime.''
+
+\begin{enumerate}
+\item Write out $U$ in roster form.
+
+\vspace{.5in}
+
+\item Write $\displaystyle \forall n \in U, \; P(n)$ as an equivalent conjunction.
+
+\vspace{.5in}
+
+\item Find the formal negation of the universal sentence above, also write this as an equivalent disjunction.
+
+\vspace{.5 in}
+
+\item Which of the two statements above is the true one?
+
+\vspace{.5in}
+
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}

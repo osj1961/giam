@@ -1,0 +1,271 @@
+%\documentclass[handout,landscape]{beamer}
+\documentclass[landscape]{beamer}
+%\hypersetup{pdfpagemode=FullScreen}
+\mode<handout>
+{
+  \usepackage{pgf}
+  \usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{6 on 1 boxed}
+{
+  \edef\pgfpageoptionheight{\the\paperheight} 
+  \edef\pgfpageoptionwidth{\the\paperwidth}
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=6,%
+    physical height=\pgfpageoptionheight,%
+    physical width=\pgfpageoptionwidth%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{2}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{3}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{4}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{5}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{6}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+}
+
+
+  \pgfpagesuselayout{6 on 1 boxed}[letterpaper, border shrink=5mm]
+  \nofiles
+}
+
+\usepackage{listings}
+%\lstset{language=TeX}
+\usepackage{multimedia}
+\usepackage[normalem]{ulem}
+\usepackage{amssymb}
+
+%\usecolortheme[named=Purple]{structure} 
+%\usetheme{Copenhagen}
+\usetheme{Warsaw} 
+\usecolortheme{seahorse}
+\useoutertheme{infolines} 
+%\usetheme[height=7mm]{Rochester} 
+%\setbeamertemplate{items}[ball] 
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+%\setbeamertemplate{navigation symbols}{} 
+\author{Joe Fields}
+\title{Introduction to Proof} 
+%\subtitle{}
+\date{Lecture 7}
+\institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
+
+\input{my_latex_definitions.tex}
+
+\newcommand{\vs}{\rule{0pt}{12pt}}
+
+\AtBeginSection[]
+{
+ \begin{frame}{Table of Contents} 
+  \tableofcontents[currentsection]
+ \end{frame}
+}
+
+%%%% SAVE %%%%
+%{ %magic to get a full screen image...
+%\setbeamertemplate{navigation symbols}{}  % hide navigation buttons 
+%\setbeamertemplate{background canvas}{\centerline{\includegraphics 
+%	[height=\paperheight]{Cantor_4.jpeg}}}
+%\begin{frame}[plain]
+%\rule{0pt}{0pt}
+%\end{frame} 
+%} %end of magic
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+
+\section{intro}
+
+\begin{frame}{functional relationships}
+\begin{itemize}
+\item A moving object's energy is given by $E=mv^2$.\pause
+\item If the mass is fixed, we say there's a {\em functional relationship} between $v$ and $E$\pause
+\item We use the term {\em relation} when there's a relationship but it's not necessarily functional. \pause (although it could be.) \pause
+\item Relations are Boolean things -- if you provide them with inputs you'll either get True or False. \pause
+\item At first we usually think of relations as being between {\em two} things, like $x<y$, but there are other options!
+\end{itemize}
+\end{frame}
+
+\section{binary relations}
+
+\begin{frame}{first example}
+\begin{itemize}
+\item $x < y$ \pause
+\item What does the graph look like? \pause
+\item equivalence to a set of ordered pairs. \pause
+\item the graph {\em is} the relation! \pause 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{negations}
+\begin{itemize}
+\item If we have a given relation (for example $x < y$) there is another relation that gives exactly the opposite answer.  If $x$ isn't less than $y$ this other relation will be true, and if $x$ {\em is} less than $y$ the new thing will be false.  Do you know what it is? \pause
+\item $x \geq y$ \pause
+\item Let's compare their graphs.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{what relations do we know so far?}
+\begin{itemize}
+\item In the last slide we saw that relations naturally come in pairs. \pause
+\item For example, $<$ and $\geq$. \pause
+\item What other relations do we know and what are their corresponding negations? \pause
+\item Just think about what symbols we know that produce a True/False thing when inserted between 2 numbers.\pause
+\item $=, \; <, \; >, \; \leq, \; \geq, \; \divides $
+\end{itemize}
+\end{frame}
+
+\section{some sets related to relations}
+\begin{frame}{}
+\begin{itemize}
+\item Some relations ($\in$ is a prime example) have different sorts of things on the left and right. \pause
+\item The set of things that appear on the left of a relation symbol is called the {\em domain} of the relation. \pause You've certainly encountered the word ``domain'' when talking about functions -- it's the same thing here. \pause
+\item The set of things that may appear on the right of a relation symbol is called the {\em codomain} of the relation. \pause
+\item If we denote the relation $\relR$, then we write $\Dom{\relR}$ and $\Cod{\relR}$ (respectively) for the domain and codomain. \pause
+\item Bonus points: Did anyone notice the one-word difference between the descriptions of domain and codomain?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{range}
+\begin{itemize}
+\item There is an inherent assymetry in the way the mathematical world approaches the sets related to a relation. \pause
+\item For the items on the right-hand side of the relation we have both the codomain (the things that {\em might} appear) and another set. \pause
+\item The {\em range} of a relation $\relR$ is the set of things which actually do appear somewhere as a right-hand side. \pause
+\item On the left-hand side we don't make a distinction between the things that might appear and the things that actually do appear. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{arbitrary relations}
+\begin{itemize}
+\item Any arbitrary set of points in the plane may be regarded as a relation whose domain and range consist of real numbers. \pause
+\item As a consequence every function is a relation. \pause
+\item The inverses of functions (even when they fail VLT) are also relations. \pause
+\item But we are free to define literally any subset of the plane and say it's contents constitute a relation.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{a non-graphical example}
+\begin{itemize}
+\item There are plenty of examples where graphing a relation is not the best choice. \pause
+\item Consider the `$\divides$' relation on the set $\{2,  \ldots , 12\}. $\pause
+\item The graph is just a smattering of points in the plane, it's just as informative to simply list them all.\pause
+\item 
+\begin{align*}
+& \{ (2,2), (2,4), (2,6), (2,8), (2,10), (2,12), \\
+& (3,3), (3,6), (3,9), (3,12), \\ 
+& (4,4), (4, 8), (4,12) \\
+& (5,5), (5,10), \\
+& (6,6), (6,12), \\
+& (7,7), (8,8), (9,9), (10,10), (11,11), (12,12) \} 
+\end{align*}
+\pause
+\item Domain, range, codomain?  \pause What's the negation?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{other examples}
+\begin{itemize}
+\item Define a relation $\relR$ by
+
+\[ x \relR y \quad \iff \quad x^2+y^2 \leq 1 \]
+
+\pause
+
+\item As a set, $\relR$ is the boundary, together with the interior, of the unit circle. \pause 
+
+\item Often we create unusual relations by combining the more basic sorts, for instance
+
+\[ x-1 \leq y < x+1. \]
+\pause
+
+\item Compound inequalities are either True or False too!
+\end{itemize}
+\end{frame}
+
+\section{ternary relations}
+
+\begin{frame}{}
+\begin{itemize}
+\item If there are three variables involved in a relation then the relation may be thought of as a subset of $3$-dimensional space. \pause
+\item An example might be the relation where $x$, $y$ and $z$ appear in the natural order:
+
+\[ x < y < z. \]
+\pause
+\item Such things can be very difficult to visualize. \pause
+\item Fortunately, often there's no need!
+\end{itemize}
+\end{frame}
+
+\begin{frame}{betweenness}
+\begin{itemize}
+\item The betweenness relation, applies to triples of points that lie on a line. \pause
+\item We write $A \ast B \ast C$ if $B$ lies on the segment determined by $A$ and $C$. \pause
+\item Notice that $A$ and $C$ behave symmetrically in the betweenness relation, so if 
+$A \ast B \ast C$ is true, then so is $C \ast B \ast A$, and {\em vice versa}. \pause
+\item If we have a geometrical diagram with a finite number of points, there are only so many possible triples of points that can satisfy ``betweenness.'' 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{a quaternary relation}
+\begin{itemize}
+\item The idea we ran into recently of when two fractions represent the same rational number leads to a quaternary relation on $\Naturals$. \pause
+\item In other words a subset of $4$-dimensional space. (Good luck trying to visualize it!) \pause
+\item Two fraction $a/b$ and $c/d$ are equal when $ad=bc$. (cross-multiplication) \pause
+\item So the relation we're after is 
+\[ \relR \quad = \quad \{ (x,y,z,w) \in \Reals^4 \; \suchthat \; x,y,z,w \in \Naturals, \; \mbox{and} \; xw=yz \}. \]
+\end{itemize}
+\end{frame}
+
+
+
+\end{document}

@@ -1,0 +1,305 @@
+%\documentclass[handout,landscape]{beamer}
+\documentclass[landscape]{beamer}
+%\hypersetup{pdfpagemode=FullScreen}
+\mode<handout>
+{
+  \usepackage{pgf}
+  \usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{6 on 1 boxed}
+{
+  \edef\pgfpageoptionheight{\the\paperheight} 
+  \edef\pgfpageoptionwidth{\the\paperwidth}
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=6,%
+    physical height=\pgfpageoptionheight,%
+    physical width=\pgfpageoptionwidth%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{2}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{3}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{4}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{5}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{6}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+}
+
+
+  \pgfpagesuselayout{6 on 1 boxed}[letterpaper, border shrink=5mm]
+  \nofiles
+}
+
+\usepackage{listings}
+%\lstset{language=TeX}
+\usepackage{multimedia}
+\usepackage[normalem]{ulem}
+\usepackage{amssymb}
+
+%\usecolortheme[named=Purple]{structure} 
+%\usetheme{Copenhagen}
+\usetheme{Warsaw} 
+\usecolortheme{seahorse}
+\useoutertheme{infolines} 
+%\usetheme[height=7mm]{Rochester} 
+%\setbeamertemplate{items}[ball] 
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+%\setbeamertemplate{navigation symbols}{} 
+\author{Joe Fields}
+\title{Introduction to Proof} 
+%\subtitle{}
+\date{Lecture 6}
+\institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
+
+\input{my_latex_definitions.tex}
+
+\newcommand{\vs}{\rule{0pt}{12pt}}
+
+\AtBeginSection[]
+{
+ \begin{frame}{Table of Contents} 
+  \tableofcontents[currentsection]
+ \end{frame}
+}
+
+%%%% SAVE %%%%
+%{ %magic to get a full screen image...
+%\setbeamertemplate{navigation symbols}{}  % hide navigation buttons 
+%\setbeamertemplate{background canvas}{\centerline{\includegraphics 
+%	[height=\paperheight]{Cantor_4.jpeg}}}
+%\begin{frame}[plain]
+%\rule{0pt}{0pt}
+%\end{frame} 
+%} %end of magic
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+
+\section{{\em no} divisors in common?}
+
+\begin{frame}{gcd equals one}
+\begin{itemize}
+\item Notice that since $1$ is a divisor of any integer, there's always at least $1$ as a common entry in two number's lists of divisors. \pause
+\item Does it actually happen that for some values of $a$ and $b$, $\gcd{a}{b} = 1$? \pause
+\item Sure!  For example if $a$ and $b$ are both prime.\pause
+\item This also happens when the numbers are not prime but their factorizations don't have any primes in common. \pause
+\item Example: $33$ and $35$. \pause
+\item Or $41,140$ and $46,683$???
+\end{itemize}
+\end{frame}
+
+\begin{frame}{relative primality}
+\begin{itemize}
+\item When $\gcd{a}{b} = 1$, we say that $a$ and $b$ are {\em relatively prime}. \pause
+\item Of course two distinct prime numbers will be relatively prime, but there are other possibilities\textellipsis \pause
+\item Notice that when a fraction is in lowest terms (aka simplest form), the numerator and denomenator will be relatively prime.\pause
+\item Example: $\displaystyle \frac{186}{210} $ \pause \hspace{.1in} $\displaystyle = \; \frac{31}{35}.$ 
+\end{itemize}
+\end{frame}
+
+\section{be rational}
+
+\begin{frame}{Righting a wrong}
+\begin{itemize}
+\item The definition we gave for the rational numbers:
+
+\[  \Rationals = \{ \frac{a}{b} \suchthat a \in \Integers \; \mbox{and} \;
+b \in \Integers \; \mbox{and} \; b \neq 0 \} \]
+
+\noindent has an issue. \pause
+
+\item We're failing to take account of the fact that the same rational number can be written in multiple ways. \pause
+
+\item In a sense this is okay since when duplicates occur in a set we automatically drop them. \pause
+
+\item But in another sense it's problematic because how are we supposed to know that $2/3$ and $4/6$ are actually the same?  (I know you know they're the same, but shouldn't the definition of $\Rationals$ be the place where issues like that get sorted?) \pause
+
+\item The final officially approved version of $\Rationals$:
+
+\[  \Rationals = \{ \frac{a}{b} \suchthat a \in \Integers \; \mbox{and} \;
+b \in \Integers \; \mbox{and} \; b \neq 0 \; \mbox{and} \; \gcd{a}{b} = 1 \} \]
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Another translation job}
+\begin{itemize}
+\item Let's practice parsing math into english: \pause
+
+\vspace{.2in}
+
+\begin{tabular}{c|c|c}
+\rule[-10pt]{0pt}{22pt} $\Rationals$ & $=$ & $\{$  \\ \hline
+\rule[-6pt]{0pt}{22pt} The rational numbers & are defined to be & the set of all\\
+\end{tabular}
+
+\vspace{.2in}
+
+\begin{tabular}{c|c|c}
+\rule[-10pt]{0pt}{22pt} $\displaystyle \frac{a}{b}$ & $\suchthat$ & $a,b \in \Integers$ \\ \hline
+\rule[-6pt]{0pt}{22pt} fractions of the form $a$ over $b$ & such that
+& $a$ and $b$ are integers \\
+\end{tabular}
+
+\vspace{.2in}
+
+\begin{tabular}{c|c|c|c|c}
+\rule[-10pt]{0pt}{22pt} and & $b \neq 0$ & and & $\gcd{a}{b}=1$ & $\}$
+\\ \hline
+\rule[-6pt]{0pt}{22pt}  and & $b$ is non-zero & and & $a$ and $b$ are relatively prime. &  \\
+\end{tabular}
+
+\end{itemize}
+\end{frame}
+
+\section{Hippasus of Metapontum}
+
+
+\begin{frame}{are there irrational numbers?}
+\begin{itemize}
+\item Pythagoras -- ``all is number'' \pause
+\item For quite a while people believed that the rational numbers were the biggest set of numbers we needed -- in other words they thought all physical quantities (lengths, weights, areas, etc) were rational.\pause
+\item You probably {\em believe} in irrational numbers (real numbers that aren't rational) because you know that the decimal expansion of things like $\pi$ and $\sqrt{3}/2$ don't have a repeating pattern. \pause
+\item But if you're being honest with yourself, you probably just took somebody's word for that.\pause
+\item Hippasus {\em proved it!} (at least for $\sqrt{2}$) \pause
+\item and then what happened?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{an elegant argument}
+\begin{itemize}
+\item G.H. Hardy -- {\em A Mathematician's Apology}. \pause
+\item Available in many formats at the Internet Archive.\newline
+\href{https://archive.org/details/AMathematiciansApology/}{https://archive.org/details/AMathematiciansApology/} \pause
+\item The proof that we're about to see is one of two that Hardy chose to illustrate the concept of {\em elegance}. \pause
+\item The basic form of the argument is {\em reductio ad absurdam}. \pause
+\item `Proof by contradiction' in modern parlance.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{lemmas}
+\begin{itemize}
+\item What's yellow and equivalent to the axiom of choice? \pause
+\item Zorn's lemma. \pause
+\item A {\em lemma} is a result that is often proved only for the purpose of proving something else. \pause
+\item It doesn't necessarily mean that it is of lower status than a {\em theorem}\textellipsis
+\pause
+\item For Hippasus' proof we need a lemma that connects the evenness of a square to the evenness of the corresponding (unsquared) number. \pause
+\item $\displaystyle \forall x \in \Naturals, \; \mbox{if} \; x^2 \; \mbox{is even, then} \; x \mbox{is even}.$ \pause
+\item sage 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{the proof}
+
+\begin{theorem}
+$\sqrt{2} \notin \Rationals$
+\end{theorem}
+
+\emph{Proof:}
+Suppose to the contrary that $\sqrt{2}$ {\em is} a rational number.
+Then by the definition of the set of rational numbers, we know that
+there are integers 
+$a$ and $b$ having the following properties: 
+$\displaystyle \sqrt{2} = \frac{a}{b}$ and $\gcd{a}{b} = 1$.  
+
+Consider the expression $\displaystyle \sqrt{2} = \frac{a}{b}$.   
+By squaring both sides of this we obtain
+
+\[ 2 = \frac{a^2}{b^2}. \]
+
+This last expression can be rearranged to give
+
+\begin{equation*}
+a^2 = 2 b^2
+\end{equation*}
+\end{frame}
+
+\begin{frame}{cont}
+
+An immediate consequence of this last equation is that $a^2$ is an
+even number.  Using the lemma, we deduce that $a$ is an even
+integer and hence that there is an integer $m$ such that $a=2m$.
+Substituting this last expression into the previous equation gives
+
+\begin{equation*}
+(2m)^2 = 2 b^2,
+\end{equation*}
+
+thus,
+
+\begin{equation*}
+4m^2 = 2 b^2,
+\end{equation*}
+
+\end{frame}
+
+\begin{frame}{cont}
+
+so
+
+\begin{equation*}
+2m^2 = b^2.
+\end{equation*}
+
+This tells us that $b^2$ is even, and hence (by the lemma), $b$ is even.
+
+Finally, we have arrived at the desired absurdity because if $a$ and
+$b$ are both even then $\gcd{a}{b} \geq 2$, but, on the other hand,
+one of our initial assumptions is that $\gcd{a}{b} = 1$. 
+
+\rule{0pt}{0pt} \newline \rule{0pt}{15pt} \hfill Q.E.D.
+
+\end{frame}
+
+
+\end{document}

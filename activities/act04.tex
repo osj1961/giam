@@ -1,0 +1,129 @@
+\documentclass{amsart}
+%\usepackage{}
+\renewcommand{\baselinestretch}{1.5}
+
+\input{../my_latex_definitions.tex}
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large Activity 4 -- Introduction to Proof}
+\centerline{\large Definitions of Elementary Number Theory}
+
+\bigskip
+\Large
+
+
+\begin{enumerate}
+\item What integer must exist in order to show that 42 is even?
+\vfill
+
+\item What integer must exist to show that 17 is odd?
+\vfill
+
+\item Try writing a formal argument that the sum of an even and an odd integer must be odd.
+\vfill
+
+\item If we want to write numbers in base-12, we'll need have single digits for all of the numbers from 0 to 11.  We can certainly reuse 0 through 9, let's use $\delta$ and $\epsilon$ for 10 and 11.  In the little 12 toes schoolhouse rock episode these are pronounced ``dec'' and ``ell'' respectively.
+\begin{enumerate}
+\item What base-12 number comes immediately after $\epsilon \epsilon \epsilon_{12}$ ?
+\vfill
+
+\item What base-12 number comes immediately before $\epsilon \epsilon \epsilon_{12}$ ?
+\vfill
+
+\item Suppose I tell you that the decimal number 99 translates to $83_{12}$ in base-12.  What is 100 in base-12?  In contrast, what decimal corresponds to $100_{12}$?
+\vfill
+
+\end{enumerate}
+
+\newpage
+
+\item In using the definition of place value to reinterpret a base-12 number in decimal, we have to use the base-10 equivalents for the digits.
+\[ \delta_{12} \; = \; 10_{10} \quad \mbox{and} \quad \epsilon_{12} \; = \; 11_{10} \]
+So what is the decimal value of $89\delta\epsilon_{12}$ ?
+
+\vfill
+
+\item Recall that in hexadecimal, the digits are in 
+\[ \{0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F\} \]
+\noindent which correspond to the decimal numbers 1 through 15.  In hexadecimal, $F$ ``acts like 9.''  Use this to say what the decimal value of $FFFF_{16}$ is.
+
+\vfill 
+
+\item Circle the divisibility statements that are true:
+
+\centerline{
+\begin{tabular}{cccc}
+ & \rule{72pt}{0pt} & \rule{72pt}{0pt} & \rule{72pt}{0pt} \\
+\rule[-15pt]{0pt}{44pt} & $5\divides 100$ &  $7 \divides 43 $ & $11 \divides 77$ \\
+\rule[-15pt]{0pt}{44pt} & $1\divides 2$ & $21 \divides 0$ & $3 \divides 322$ \\
+\rule[-15pt]{0pt}{44pt} & $8\divides 64$ & $22 \divides 11$ & $3 \divides 321$ \\
+\end{tabular}
+}
+
+\vspace{.4in}
+
+\newpage
+
+\item Is it true that $0$ divides all integers?  Is $0\divides 0$ true?
+
+\vfill
+
+\item Suppose you are taking down Christmas decorations and you have 79 ornaments that need to be stored in boxes that hold 12 ornaments each.  Use either a floor or a ceiling computation to determine the number of boxes that will be needed.
+
+\vfill 
+
+\item What is the value of $\lfloor \lceil \pi \rceil \rfloor$ ?  Can you simplify  $\lfloor \lceil x \rceil \rfloor$ in general?
+
+\vfill
+
+
+\item Calculate the following:
+
+\begin{enumerate}
+\item \rule[-12pt]{0pt}{36pt} $17 \mod 5$ 
+\item \rule[-12pt]{0pt}{36pt} $77 \mod 5$ 
+\item \rule[-12pt]{0pt}{36pt} $25 \mod 12$ 
+\item \rule[-12pt]{0pt}{36pt} $99 \mod 7$ 
+\item \rule[-12pt]{0pt}{36pt} $10003 \mod 1000$ 
+\end{enumerate}
+
+\vspace{.2 in}
+
+\newpage
+
+\item Recall that the notation $n \mod d$ is used for the remainder obtained when we divide $n$ by $d$.  What is $(n \mod d) \mod d$ ?
+
+\vfill
+
+\item Complete the table:
+
+\centerline{
+\begin{tabular}{c|c}
+\rule[-6pt]{0pt}{24pt}$n$ & \rule{12pt}{0pt} $n!$ \rule{12pt}{0pt} \\ \hline
+\rule[-6pt]{0pt}{24pt} 0 & \\
+\rule[-6pt]{0pt}{24pt} 1 & \\
+\rule[-6pt]{0pt}{24pt} 2 & \\
+\rule[-6pt]{0pt}{24pt} 3 & \\
+\rule[-6pt]{0pt}{24pt} 4 & \\
+\rule[-6pt]{0pt}{24pt} 5 & \\
+\rule[-6pt]{0pt}{24pt} 6 & \\
+\rule[-6pt]{0pt}{24pt} 7 & \\
+\end{tabular}
+}
+
+\vspace{.2in}
+
+\item Which binomial coefficient would be obtained by simplifying the following fraction?
+
+\[ \frac{10!}{4! \cdot 6!} \]
+
+Is there another correct answer?
+
+\vfill
+
+
+\end{enumerate}
+
+\end{document}

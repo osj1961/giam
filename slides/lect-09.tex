@@ -1,0 +1,366 @@
+%\documentclass[handout,landscape]{beamer}
+\documentclass[landscape]{beamer}
+%\hypersetup{pdfpagemode=FullScreen}
+\mode<handout>
+{
+  \usepackage{pgf}
+  \usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{6 on 1 boxed}
+{
+  \edef\pgfpageoptionheight{\the\paperheight} 
+  \edef\pgfpageoptionwidth{\the\paperwidth}
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=6,%
+    physical height=\pgfpageoptionheight,%
+    physical width=\pgfpageoptionwidth%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{2}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{3}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{4}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{5}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{6}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+}
+
+
+  \pgfpagesuselayout{6 on 1 boxed}[letterpaper, border shrink=5mm]
+  \nofiles
+}
+
+\usepackage{listings}
+%\lstset{language=TeX}
+\usepackage{multimedia}
+\usepackage[normalem]{ulem}
+\usepackage{amssymb}
+
+%\usecolortheme[named=Purple]{structure} 
+%\usetheme{Copenhagen}
+\usetheme{Warsaw} 
+\usecolortheme{seahorse}
+\useoutertheme{infolines} 
+%\usetheme[height=7mm]{Rochester} 
+%\setbeamertemplate{items}[ball] 
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+%\setbeamertemplate{navigation symbols}{} 
+\author{Joe Fields}
+\title{Introduction to Proof} 
+%\subtitle{}
+\date{Lecture 9 (GIAM \S 2.2)}
+\institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
+
+\input{my_latex_definitions.tex}
+
+\newcommand{\vs}{\rule{0pt}{12pt}}
+
+\AtBeginSection[]
+{
+ \begin{frame}{Table of Contents} 
+  \tableofcontents[currentsection]
+ \end{frame}
+}
+
+%%%% SAVE %%%%
+%{ %magic to get a full screen image...
+%\setbeamertemplate{navigation symbols}{}  % hide navigation buttons 
+%\setbeamertemplate{background canvas}{\centerline{\includegraphics 
+%	[height=\paperheight]{Cantor_4.jpeg}}}
+%\begin{frame}[plain]
+%\rule{0pt}{0pt}
+%\end{frame} 
+%} %end of magic
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+
+\section{conditionals}
+
+\begin{frame}{A implies B}
+\begin{itemize}
+\item ``If they have eggs, get a dozen'' \pause
+\item The ``If A then B'' construct we saw in the section on algorithms was for {\em conditional execution}. \pause
+\item For instance, ``If the second input is $0$ print an error message and exit.'' \pause
+\item Here, in the section on Logic we want to think of it instead as a way to hook statements together to get new statements. \pause
+\item We use the symbol $\implies$ as infix notation for this ``hookup.'' \pause
+\item The result ($A \implies B$) must be a Boolean. \pause Either true or false. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{terminology}
+\begin{itemize}
+\item The statments on either side of the $\implies$ arrow have names. \pause
+\item $A$ is the {\em antecedant}. \pause \newline
+Many people (me included) call it the ``if part.'' \pause
+\item $B$ is known as the {\em consequent}. \pause \newline 
+a.k.a. the ``then part.'' \pause
+\item It also sounds more grown up to call the whole statement a {\em conditional}. \pause \newline 
+As opposed to an ``if-then sentence.'' \pause
+\item You can use the word ``implies'' as a direct substitute for the $\implies$ arrow.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{truth table}
+\begin{itemize}
+\item When a conditional is true, truth of the antecedant will force truth of the consequent.\pause
+\item I often mentally convert $A \implies B$ into ``When $A$ is true, it forces $B$ to be true.\pause
+\begin{center}
+\begin{tabular}{c|c||c}
+$A$ & $B$ & $A \implies B$ \\ \hline
+T & T & \uncover<4->{T} \\
+T & $\phi$ & \uncover<5->{$\phi$} \\
+ $\phi$ & T & \uncover<6->{T} \\
+ $\phi$ & $\phi$ & \uncover<6->{T} \\
+\end{tabular}
+\end{center}
+\end{itemize}
+
+
+\end{frame}
+
+\begin{frame}{the equivalent disjunction}
+\begin{itemize}
+\item What other statement would have the same truth values as $A \implies B$? \pause
+\item Since there are 3 T's and only 1 $\phi$, we need a disjunction. \pause (the OR connector). \pause
+\item It's clearly not just $A \lor B$, that would have its one $\phi$ in row 4 not row 2. \pause
+\item We did this in the activity for lecture 8. \pause 
+\item It's $\lnot A \lor B$. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{or else}
+\begin{itemize}
+\item Have you ever heard someone use the word ``or'' when issuing a threat? \pause
+\item Usually, threats are if-then sorts of things -- if you do or don't do something then some terrible consequence will ensue. \pause
+\item ``If you stay out past 11, you'll be grounded.'' \pause
+\item ``Get home by 11, or you're grounded.'' \pause
+\item Notice that if the first is $A \implies B$, the other is $\lnot A \lor B$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{vacuous truth}
+\begin{itemize}
+\item A conditional sentence is {\em vacuously true} when the antecedant is false. \pause
+\item In that scenario, it doesn't matter what the truth values of the consequent are. \pause
+\item We're talking about the bottom two rows of the conditional's truth table. \pause
+\item You can prove that an if-then statement is true by just showing that the if part {\em never happens}!
+\end{itemize}
+\end{frame}
+
+\section{biconditionals}
+
+\begin{frame}{exactly when}
+\begin{itemize}
+\item When $ (A \implies B) \land (B \implies A) $ \pause
+\item we write $A \iff B$. \pause
+\item This is known as the {\em biconditional}.\pause
+\item Of course, we've seen this symbol already as shorthand for ``exactly when'' in definitions.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{truth table}
+\begin{center}
+\begin{tabular}{c|c||c}
+$A$ & $B$ & $A \iff B$ \\ \hline
+T & T & T \\
+T & $\phi$ & $\phi$ \\
+ $\phi$ & T & $\phi$ \\
+ $\phi$ & $\phi$ & T \\
+\end{tabular}
+\end{center}
+\pause
+\begin{itemize}
+\item Perhaps we should note that this is what your Mom meant when she said \newline
+``You can have dessert if you finish your vegetables'' when you were little.
+\end{itemize}
+
+\end{frame}
+
+
+\section{other related statements}
+
+\begin{frame}{converse}
+\begin{itemize}
+\item The second conditional we see in the definition of $\iff$ \pause
+\item When $A \implies B$ is given, it's {\em converse} is $B \implies A$. \pause
+\item This is a two-way street so it might be better to say ``the two conditionals are converses.'' \pause
+\item It's a common error to mistake a conditional for its converse.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{lawnmower man}
+\begin{itemize}
+\item Consider the predicates $A =$ ``There's gas in the tank'' and $B =$ ``the motor runs.'' \pause
+\item $A \implies B$ would mean ``If there's gas in the tank, the motor will run.''\pause
+\item $B \implies A$ would mean ``If the motor runs, there is gas in the tank.''\pause
+\item Are these the same? \pause
+\item $A \implies B$ is an expression of confidence.  Maybe I know my lawnmower is well-maintained, so I'm sure that -- provided it's got fuel -- it will start.\pause
+\item $B \implies A$ is more about objective reality, it's saying that if the motor is already running, we know there must at least be {\em some} gas in the tank! \pause (Unless we have one of those scary demonically possessed lawnmowers\textellipsis) 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{truth tables}
+\begin{center}
+\begin{tabular}{ccc}
+\begin{tabular}{c|c||c}
+$A$ & $B$ & $A \implies B$ \\ \hline
+T & T & T \\
+T & $\phi$ & $\phi$ \\
+ $\phi$ & T & T\\
+ $\phi$ & $\phi$ & T \\
+\end{tabular}
+& \rule{36pt}{0pt} &
+\begin{tabular}{c|c||c}
+$A$ & $B$ & $B \implies A$ \\ \hline
+T & T & T \\
+T & $\phi$ & T \\
+ $\phi$ & T & $\phi$ \\
+ $\phi$ & $\phi$ & T \\
+\end{tabular}
+\end{tabular}
+\end{center}
+\pause
+
+\begin{itemize}
+\item Locate the rows where each is vacuously true. \pause
+\item Notice that if we ``and'' the two of these we get ``exactly when''
+\end{itemize}
+\end{frame}
+
+\begin{frame}{inverse}
+\begin{itemize}
+\item Another common mistake is to think that we might get the negation of a conditional like so: \pause
+
+\[ \lnot ( A \implies B ) \quad \mbox{is} \quad \lnot A \implies \lnot B \]
+
+\pause
+
+\item but that is just wrong! \pause
+\item Why? \pause
+\item We call $\lnot A \implies \lnot B$ the {\em inverse} of $A \implies B$. \pause \newline
+(Or say that ``$A \implies B$ and $\lnot A \implies \lnot B$ are inverses.'')
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{btw}
+\begin{itemize}
+\item So if the inverse {\em isn't} the right way to negate a conditional, what is? \pause
+\item Think about the truth table. \pause
+
+\begin{center}
+\begin{tabular}{c|c||c|c}
+$A$ & $B$ & $A \implies B$ & $\lnot (A \implies B)$ \\ \hline
+T & T & T & \uncover<4->{$\phi$} \\
+T & $\phi$ & $\phi$ & \uncover<5->{T}  \\
+ $\phi$ & T & T & \uncover<6->{$\phi$}\\
+ $\phi$ & $\phi$ & T & \uncover<7->{$\phi$}\\
+\end{tabular}
+\end{center}
+\pause \pause \pause \pause \pause
+\item One T in row 2. \pause
+\item Which ``and'' sentence is that? \pause
+\item Calling \xout{BS} out an error.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{two wrongs}
+\begin{itemize}
+
+\item If you both converse-ify and inverse-ify a conditional you get something with exactly the same meaning. \pause
+\item In this instance two wrongs {\em do} make a right! \pause
+\item The {\em contrapositive} of the conditional $A \implies B$ is $\lnot B \implies \lnot A$. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{contrapositives}
+\begin{itemize}
+\item An example: ``If it just rained, the ground will be wet'' \newline
+and ``If the ground isn't wet, it didn't just rain.'' \pause
+\item Two conditionals that are contrapositives have identical patterns of $T$'s and $\phi$'s in their truth tables.  We call such things {\em equivalent}. \pause
+\item Often one or the other is more usable in a proof. \pause
+\item ``If you're stuck, try taking the contrapositive.''
+\end{itemize}
+\end{frame}
+
+\begin{frame}{truth table}
+
+\begin{center}
+\begin{tabular}{c|c||c|c}
+$A$ & $B$ & $A \implies B$ & $\lnot B \implies \lnot A$ \\ \hline
+T & T & T & \uncover<3->{T} \\
+T & $\phi$ & $\phi$ & \uncover<7->{$\phi$}  \\
+ $\phi$ & T & T & \uncover<3->{T}\\
+ $\phi$ & $\phi$ & T & \uncover<5->{T}\\
+\end{tabular}
+\end{center}
+
+\pause
+\begin{itemize}
+\item Which positions are vacuously true? \pause \pause
+\item When is it true because both sides are true? \pause \pause
+\item The remaining position must be false. \pause \pause \newline
+(It's a conditional after all -- they always have 3 T's and 1 $\phi$.)
+\end{itemize}
+\end{frame}
+
+\section{relationships}
+
+\begin{frame}{converse, inverse and contrapositive}
+\begin{itemize}
+\item Look at Table 2.1 in GIAM. \pause
+\item Advice: watch out for thinking about if-then's in terms of causality.
+\end{itemize}
+\end{frame}
+
+\end{document}

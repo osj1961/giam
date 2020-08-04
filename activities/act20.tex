@@ -1,0 +1,92 @@
+\documentclass{amsart}
+\usepackage{amssymb}
+\renewcommand{\baselinestretch}{1.5}
+\addtolength{\textwidth}{.2in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1in}
+
+\usepackage{ifthen}
+
+\input{my_latex_definitions.tex}
+
+\addtolength{\abovedisplayskip}{0pt}
+\addtolength{\belowdisplayskip}{24pt}
+\addtolength{\abovedisplayshortskip}{0pt}
+\addtolength{\belowdisplayshortskip}{44pt}
+
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large Activity 20 -- Introduction to Proof}
+\centerline{\large intro to set theory}
+
+\bigskip
+\Large
+
+
+\begin{enumerate}
+
+\item What is the truth set of $P(x) = $ ``$x$ is divisible by $3$ and $x$ is a square'' ?
+
+\vfill
+
+\item What logical open sentence corresponds to the set 
+
+\[ A = \{ 1, 5, 9, 13, 17, 21, \ldots \} ? \]
+
+\vfill
+
+\item What are the cardinalities (i.e. sizes, i.e. how many elements?) of the following sets?
+
+\[  \{1,2,3,4\} \qquad \{1,2,\{3,4\}\} \qquad \{\{1,2\},\{3,4\}\} \qquad \{\{1,2,3,4\}\}  \]
+
+\vfill
+
+\newpage
+
+\item Which of the following are equal?
+
+\hspace{-1.25in}\begin{tabular}{llllllll}
+ & \rule{1.1in}{0pt} &  & \rule{1.1in}{0pt} &  & \rule{1.1in}{0pt} & & \rule{1.1in}{0pt} \\
+\rule[-6pt]{0pt}{24pt} (i) & $\{1,2\}$ & (ii) & $\{2\}$ & (iii) & $\{1,2,3,4\}$ & (iv) & $\{1,2,\{3,4\}\}$ \\
+\rule[-6pt]{0pt}{24pt} (v) & $\{2,2,2\}$ & (vi) & $\{1,3,2,4\}$ & (vii) & $\{2,\{2,2\}\}$ & (viii) & $\{1,2,1,2\}$\\
+\rule[-6pt]{0pt}{24pt} (ix) & $\{2,1\}$ & (x) & $\{1,2,\{4,3\}\}$ & (xi) & $\{4,3,2,1,2,3,4\}$ & (xii) & $\{\{2\},2\}$ \\
+\rule[-6pt]{0pt}{24pt} (xiii) & $\{\{4,3\},2,1\}$ & (xiv) & $\{1,2,1\}$ & (xv) & $\{2,2\}$ & (xvi) & $\{2,1,\{3,4\}\}$\\
+\end{tabular}
+
+\vfill
+
+
+
+\item In Logic we defined two special statements, $c$ and $t$, contradiction and tautology.  Supposing we are working in an unspecified universal set $U$, what are the Set Theory equivalents to $c$ and $t$?
+
+\vfill
+
+\item Complete the suggested exercise in the text by writing out the power sets of $\{1,2,3\}$, $\{1,2\}$, $\{1\}$ and $\emptyset$.  Conjecture a formula for the cardinality of ${\mathcal P}(\{1,2,3,\ldots n\})$.
+
+\vfill
+
+\newpage
+
+\item The power set of $\{1, 2, 3, 4, 5\}$ will consist of sets having cardinalities between $0$ (the empty set) and $5$ (the entire set).  For each cardinality, give an example of a subset of $\{1, 2, 3, 4, 5\}$ having that cardinality and state how many subsets of $\{1, 2, 3, 4, 5\}$ will have that cardinality.
+
+\vfill
+
+\item Some of the sets in a power set are contained in others.  Create a graph (the sort of diagram we used in the pebbling number problems) that has nodes labelled by the elements of the power set of $\{1,2\}$ and edges (i.e. connections) between nodes where one set is contained in the other.
+
+\vfill
+
+\newpage
+
+\item Make a diagram similar to the one in the previous problem, but with nodes labelled by divisors of $15$, and edges where one number divides another. 
+
+\vfill
+
+\item Is there a sets/inclusion graph\footnote{as in problem 8}  that corresponds to the numbers/divisibility graph\footnote{as in problem 9} for the divisors of $12$?  If so, what is a set?  If not, explain why not.
+
+\vfill
+
+\end{enumerate}
+
+\end{document}

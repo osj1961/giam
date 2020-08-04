@@ -1,0 +1,26 @@
+\documentclass{beamer}
+\geometry{papersize={8.5in,11in}}
+\begin{document}
+
+%\thispagestyle{empty}
+\begin{frame}
+\begin{gather*}
+ (f(x)\cdot g(x))'  \\
+\rule{0pt}{24pt} \\
+ \lim_{h\longrightarrow 0} \frac{f(x+h)\cdot g(x+h) \; - \; f(x)\cdot g(x)}{h} \\ 
+\rule{0pt}{24pt} \\
+ \lim_{h\longrightarrow 0} \frac{f(x+h) \cdot g(x+h) \, - \, f(x) \cdot g(x+h) \, + \, f(x) \cdot g(x+h) \, - \, f(x) \cdot g(x)}{h} \\
+\rule{0pt}{24pt} \\
+\lim_{h\longrightarrow 0} \frac{f(x+h)\cdot g(x+h) - f(x) \cdot g(x+h)}{h} \quad + \quad \lim_{h\longrightarrow 0} \frac{f(x) \cdot g(x+h) - f(x) \cdot g(x)}{h} \\
+ \rule{0pt}{24pt}\\
+\left( \lim_{h\longrightarrow 0} \frac{f(x+h)-f(x)}{h}  \cdot g(x+h) \right) \quad + \quad f(x) \cdot \left( \lim_{h\longrightarrow 0} \frac{g(x+h)-g(x)}{h}  \right) \\
+\rule{0pt}{24pt} \\
+\left( \lim_{h\longrightarrow 0} \frac{f(x+h)-f(x)}{h} \right) \cdot \left( \lim_{h\longrightarrow 0} g(x+h) \right) \quad + \quad f(x) \cdot \left( \lim_{h\longrightarrow 0} \frac{g(x+h)-g(x)}{h} \right) \\
+\rule{0pt}{24pt} \\
+\left( \lim_{h\longrightarrow 0} \frac{f(x+h)-f(x)}{h} \right) \cdot g(x) \quad + \quad f(x) \cdot \left( \lim_{h\longrightarrow 0} \frac{g(x+h)-g(x)}{h} \right) \\
+\rule{0pt}{24pt} \\
+ f'(x) \cdot g(x) \; + \; f(x) \cdot g'(x) \\
+\end{gather*}
+\end{frame}
+\end{document}
+

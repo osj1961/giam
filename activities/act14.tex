@@ -1,0 +1,121 @@
+\documentclass{amsart}
+\usepackage{amssymb}
+\renewcommand{\baselinestretch}{1.5}
+\addtolength{\textwidth}{.2in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1in}
+\input{../my_latex_definitions.tex}
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large Activity 14 -- Introduction to Proof}
+\centerline{\large direct proofs}
+
+\bigskip
+\Large
+
+
+\begin{enumerate}
+
+\item Use the table method to multiply $x^3 + 3x^2 + 3x + 1$ and $x^2 + 2x + 1$
+
+\vfill
+
+\item Use a difference table to help you deduce a formula for the sequence
+
+\[ 1 \qquad 3 \qquad 7 \qquad 13 \qquad 21 \qquad 31 \qquad \ldots \]
+
+
+\vfill
+
+\newpage
+
+\item The square of an odd number is always odd.
+
+Re-express this more formally (as a universal conditional sentence).
+
+\vfill
+
+\item From the previous problem we should know that the initial line of a proof of that statement will be
+
+\begin{quote}
+Suppose that $x$ is a particular, but arbitrarily chosen odd integer. 
+\end{quote}
+
+What is the second line?
+
+\vfill
+
+\item Write a complete proof of 
+
+\[ \forall x \in \Integers, \; x \; \mbox{is odd} \; \implies x^2 \; \mbox{is odd.} \]
+
+
+\vfill
+
+\vfill
+
+\newpage
+
+\item The informal statement ``the sum of an odd and an even is odd'' can be expressed with mathematical formalism as
+
+\[ \forall x,y \in \Integers, \; ( x \; \mbox{is odd} \; \land \; y \; \mbox{is even}) \quad \implies \quad x+y \; \mbox{is odd.} \]
+
+What is the first line of a proof of this statement?
+
+\vfill
+
+\item Write a complete proof of the statement in the previous problem.
+
+\vfill
+
+\vfill
+
+\newpage
+
+\item There are quite a few ``small words'' and phrases that are used in connecting the statements in a formal proof.
+
+Add as many words or phrases as you can to the following lists.
+
+\begin{enumerate}
+\item \rule{0pt}{30pt} When adding a new deduction:
+
+Therefore \rule{36pt}{0pt} Then \rule{36pt}{0pt} It follows that 
+
+
+\item \rule{0pt}{30pt} When introducing something new:
+
+Consider \rule{36pt}{0pt} Observe that \rule{36pt}{0pt} 
+
+\item \rule{0pt}{30pt} Introducing a ``we want to show'' sentence:
+
+We want to show that \rule{36pt}{0pt} The desired conclusion is that 
+
+\end{enumerate}
+
+\vspace{.5in}
+
+\item Did your proof that the sum of an odd and an even is odd use connecting language?  If not, write it a second time here and include some ``Thus''s and ``Therefore''s (and maybe a ``since'' or two).
+
+\vfill
+
+\newpage
+
+\item Recall that complex numbers are expressions of the form $a + bi$, where $a$ and $b$ are real numbers and $i^2 = -1$.  A proof that the complex numbers are closed under multiplication would have a fairly weak hypothesis:  That two ``particular but arbitrary'' complex numbers are given. In writing up such a proof you would need the closure axioms for $\Reals$ (in particular that sums, products and differences of real numbers are real numbers) and some basic rules of algebra (e.g. the FOIL rule).
+
+I'll give you the first two statements and you finish.
+
+\vspace{.5in}
+
+{\em Proof:} Suppose that $x$ and $y$ are particular, but arbitrarily chosen complex numbers.  Since $x$ and $y$ are complex numbers it follows that there are real numbers $a$, $b$, $c$ and $d$ such that
+
+\[ x \; = \; a+bi \quad \mbox{and} \quad y \; = \; c+di \qquad ( \mbox{where} \; i \; \mbox{satisfies} \; i^2 = -1). \]
+
+
+
+\vfill
+
+\end{enumerate}
+
+\end{document}

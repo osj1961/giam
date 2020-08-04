@@ -1,0 +1,417 @@
+%\documentclass[handout,landscape]{beamer}
+\documentclass[landscape]{beamer}
+%\hypersetup{pdfpagemode=FullScreen}
+\mode<handout>
+{
+  \usepackage{pgf}
+  \usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{6 on 1 boxed}
+{
+  \edef\pgfpageoptionheight{\the\paperheight} 
+  \edef\pgfpageoptionwidth{\the\paperwidth}
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=6,%
+    physical height=\pgfpageoptionheight,%
+    physical width=\pgfpageoptionwidth%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{2}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{3}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{4}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{5}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{6}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+}
+
+
+  \pgfpagesuselayout{6 on 1 boxed}[letterpaper, border shrink=5mm]
+  \nofiles
+}
+
+\usepackage{listings}
+%\lstset{language=TeX}
+\usepackage{multimedia}
+\usepackage[normalem]{ulem}
+\usepackage{amssymb}
+
+%\usecolortheme[named=Purple]{structure} 
+%\usetheme{Copenhagen}
+\usetheme{Warsaw} 
+\usecolortheme{seahorse}
+\useoutertheme{infolines} 
+%\usetheme[height=7mm]{Rochester} 
+%\setbeamertemplate{items}[ball] 
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+%\setbeamertemplate{navigation symbols}{} 
+\author{Joe Fields}
+\title{Introduction to Proof} 
+%\subtitle{}
+\date{Lecture 15 (GIAM \S 3.2)}
+\institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
+
+\input{my_latex_definitions.tex}
+
+\newcommand{\vs}{\rule{0pt}{12pt}}
+
+\def\mycommand{\setlength{\abovedisplayskip}{-12pt}%
+\setlength{\belowdisplayskip}{-12pt}%
+\setlength{\abovedisplayshortskip}{0pt}%
+\setlength{\belowdisplayshortskip}{0pt}}
+
+\let\oldselectfont\selectfont
+\def\selectfont{\oldselectfont\mycommand}
+
+\mycommand
+
+\AtBeginSection[]
+{
+ \begin{frame}{Table of Contents} 
+  \tableofcontents[currentsection]
+ \end{frame}
+}
+
+%%%% SAVE %%%%
+%{ %magic to get a full screen image...
+%\setbeamertemplate{navigation symbols}{}  % hide navigation buttons 
+%\setbeamertemplate{background canvas}{\centerline{\includegraphics 
+%	[height=\paperheight]{Cantor_4.jpeg}}}
+%\begin{frame}[plain]
+%\rule{0pt}{0pt}
+%\end{frame} 
+%} %end of magic
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\section{The forward-backward method}
+
+\begin{frame}{try backing in}
+\begin{itemize}
+\item ``If you get stuck, try working backwards'' \pause
+\item Ideally, a proof looks like this: \pause
+\begin{enumerate}
+\item[0)] Hypothesis \pause (although there may be several of these) \pause
+\item[1)] Deduction 1 \pause
+\item[2)] Deduction 2 \pause 
+\item[3)] Deduction 3 \pause \newline
+\rule{24pt}{0pt} $\displaystyle \vdots$  \pause
+\item[n)] Conclusion \pause \rule{12pt}{0pt} $=$ Deduction $n$ \pause
+\end{enumerate}
+\item Each deduction is implied ($\implies$) by the statements prior to it.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{stuck?}
+\begin{itemize}
+\item If you're stuck at Deduction $k$, and don't see any way forward towards the conclusion\textellipsis \pause
+\item Maybe you can figure out a Deduction $n-1$ \pause \newline
+\rule{.2in}{0in} a statement that implies the conclusion. \pause
+\item At least you'll have closed up the gap! \pause
+\item Recognize that the deduction are often connected via $\iff$ \pause \newline
+\rule{.2in}{0in} (which is great if you're working backwards!) \pause
+\item If not, try to intentionally make converse errors ;-) 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{back and forth}
+\begin{itemize}
+\item Sometimes you can reason from the conclusion all the way back to the hypotheses. \pause
+\item If not, try working a little from the beginning, then a little from the end, and so on\textellipsis \pause
+\item Hopefully you'll be able to meet somewhere in the middle. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{the write up}
+\begin{itemize}
+\item Note that everything we've discussed so far is about discovering the proof.\pause
+\item Think of it as ``scratch work''! \pause
+\item Every proof must, in the end, proceed from hypotheses to conclusion. \pause
+\item IN THE FORWARD ORDER! \pause
+\item Make sure your write-up goes in the forward direction.
+\end{itemize}
+\end{frame}
+
+\section{understanding AM and GM}
+
+\begin{frame}{a classic example}
+\begin{itemize}
+\item ``The arithmetic mean, geometric mean inequality.''\pause
+\item You are probably quite familiar with the ``arithmetic mean,'' \pause \newline
+that's just a fancy way to say ``average.'' \pause
+\item If the two numbers are $x$ and $y$, the arithmetic mean is $(x+y)/2$. \pause
+\item If you think of moving each operation up one in the difficulty heirarchy, \pause
+\item adding becomes multiplying \pause \newline 
+and dividing by 2 (or multiplying by $1/2$) becomes raising to the $1/2$ power. \pause
+\item So we get $\sqrt{xy}$. \pause The Greeks called this the {\em geometric mean}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{why geometric?}
+\begin{itemize}
+\item Desmos animation \pause
+\item If you have an $x$ by $y$ rectangle, then it has the same area as an $s$ by $s$ square, provided that $s=\sqrt{xy}$. \pause
+\item Also, notice that $s$ will lie in between $x$ and $y$, so it does something rather like the ordinary mean.\pause
+\item There are actually {\em many} ways of finding a number that lies in between two others! \pause
+\item BTW, notice that the geometric mean would be  nonsensical if one of $x$ or $y$ were negative. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{filling in holes}
+\begin{itemize}
+\item You may have heard the terms arithmetic and geometric applied to sequences. \pause
+\item In an arithmetic sequence there is a common difference between succesive terms. \pause \newline
+(A difference table for such a sequence will have just two rows.) \pause
+\item A geometric sequence has a common ratio between terms. \pause \newline
+(P.S. This gives us another way to analyze a sequence where each row contains the ratio of the terms in the row above.) \pause
+\item An arithmetic sequence has the form $a+bx$. \pause A geometric sequence has the form $a\cdot b^x$. \pause
+\item These usages are related to the ones for means.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{how?}
+\begin{itemize}
+
+
+\item If you have a missing entry in an arithmetic sequence you can fill it in using the arithmetic mean. \pause
+
+\item Example:
+
+\[ 7 \qquad 10 \qquad 13 \qquad \underline{\hspace{.3in}} \qquad 19 \qquad 22 \qquad 25 \]
+\pause
+
+\item The blank should be filled-in with $(13+19)/2 \; = \; 16$. \pause
+
+\item If you have a missing entry in an geometric sequence you can fill it in using the geometric mean. \pause
+
+\item Example:
+
+\[ 3 \qquad 6 \qquad 12 \qquad \underline{\hspace{.3in}} \qquad 48 \qquad 96 \qquad 192 \]
+
+\pause
+
+\item The blank should be filled-in with $\sqrt{12 \cdot 48} \; = \; \sqrt{576} \; = \; 24$. 
+
+\end{itemize}
+\end{frame}
+
+\section{the AM-GM inequality}
+
+\begin{frame}{first, what is it?}
+\begin{itemize}
+\item The AM-GM inequality states that the arithmetic mean is usually bigger than the geometric mean.\pause
+\item Notice that both means give the same result when $x=y$. \pause
+\item So
+
+\[ \frac{a+b}{2} \; \, \geq \, \; \sqrt{ab} \]
+
+\pause 
+
+\item Because of the weirdness that the geometric mean encounters with negative numbers under the radical, \pause \newline
+(and because the result is simply not true when both numbers are negative!) \pause \newline
+We need to restrict the universe of discourse. \pause
+
+\item Here's the formal statement: \pause
+
+\[ \forall\; x, y \, \in \Reals^+, \; \frac{x+y}{2} \; \, \geq \, \; \sqrt{xy} \]
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{prove it!}
+\begin{itemize}
+\item Well, here's the problem, the only hypotheses we can use are that $x$ and $y$ are positive.\pause
+\item A common thing to do when there are two variables is to say that we may as well assume that one of them is the smaller one. \pause
+\item WLOG \pause \hspace{.2in} (without loss of generality) \pause
+\item ``There is no loss in generality in assuming that $x \geq y$.'' \pause
+\item Other than that, how can we possibly move forward? \pause \newline
+\centerline{\tiny Try working backwards from the conclusion.}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{okay, here goes}
+
+\begin{tabular}{ccrcl}
+\uncover<1->{ \rule[-6pt]{0pt}{24pt} &            & $\frac{x+y}{2}$ & $\, \geq \,$ & $\sqrt{xy}$   \\ }
+\uncover<2->{ \rule[-6pt]{0pt}{24pt} & $\iff \; $ & $x+y$           & $\, \geq \,$ & $2\sqrt{xy}$  \\ }
+\uncover<3->{ \rule[-6pt]{0pt}{24pt} & $\iff \; $ & $(x+y)^2$       & $\, \geq \,$ & $4xy$   \\  }
+\uncover<4->{ \rule[-6pt]{0pt}{24pt} & $\iff \; $ & $x^2+2xy+y^2$   & $\, \geq \,$ & $4xy$  \\ }
+\uncover<5->{ \rule[-6pt]{0pt}{24pt} & $\iff \; $ & $x^2-2xy+y^2$   & $\, \geq \,$ & $0$ \\ }
+\end{tabular}
+
+\end{frame}
+
+\begin{frame}{finishing up}
+\begin{itemize}
+\item In GIAM, it says ``whoa, we're done!'' when it gets to $a^2-2ab+b^2 \, \geq \, 0$ \pause
+\item Here's one more step: \pause
+
+\[ \iff \; (x-y)^2 \, \geq \, 0 \] 
+
+\pause
+
+\item In our proof we'll need to introduce the tautology \pause \newline
+that $(x-y)^2 \geq 0$.  
+\item This is a statement that is true for all real numbers $x$ and $y$. \pause
+\item The proof of this is something we'll highlight in the section on ``Proof by cases,'' \pause \newline 
+it is an easy consequence of the trichotomy property of $\Reals$. \pause
+\item But, for now, don't we all believe that the smallest a square can be (in the real numbers) is $0$?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{really finishing up}
+
+
+{\em Proof:} Suppose that $x$ and $y$ are particular, but arbitrarily chosen real numbers.  Without loss of general
+$x \geq y$, so $x-y \geq 0$.  Note that the square of $x-y$ is the square of a real number so it satisfies $(x-y)^2 \geq 0$.
+
+Thus 
+\begin{align*}
+ &         & (x-y)^2 \, \geq \, 0 \\
+ & \iff \; & x^2-2xy+y^2 \, \geq \, 0 \\
+ & \iff \; & x^2+2xy+y^2 \, \geq \, 4xy \\
+ & \iff \; & (x+y)^2 \, \geq \, 4xy \\
+ & \iff \; & x+y \, \, \geq \, \, 2\sqrt{xy} \\
+ & \iff \; & \frac{x+y}{2} \, \geq \, \sqrt{xy}, 
+\end{align*}
+
+\hspace{\fill} Q.E.D.
+
+\end{frame}
+
+\begin{frame}{should we double-check?}
+\begin{itemize}
+\item Absolutely! We should always double check! \pause
+\item Since our deductions were made in the wrong direction, \pause \newline
+there's the potential that what we thought was a $\iff$ is really a $\implies$ and its converse is false. \pause
+\item To me the suspicious step is when we took the square root on both sides of an inequality. \pause
+\item Is it actually true that (for positive numbers $A$ and $B$) $A \geq B \; \implies \; \sqrt{A} \geq \sqrt{B}$? 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{yep, we're good}
+\begin{itemize}
+\item So, yes, it's true that $A \geq B \; \implies \; \sqrt{A} \geq \sqrt{B}$. \pause
+\item Let's look at the graph on Desmos.
+\end{itemize}
+\end{frame}
+ 
+\begin{frame}{can we finally sort out how inequalities work?}
+\begin{itemize}
+\item If you apply a strictly increasing function to both sides of an inequality, \pause \newline
+the sense of the inequality remains the same. \pause
+\item If you apply a strictly decreasing function to both sides of an inequality, \pause \newline
+the sense of the inequality is reversed. \pause \newline
+(If the function is not monotonic, you just can't use it!)\pause 
+\item This is why ``you have to switch the inequality if you multiply by a negative.'' \pause
+\item Also, for instance, squaring both sides of an inequality is generally invalid. \pause \newline
+(Although if you're working in $\Reals^+$ it's okay.) 
+\end{itemize}
+\end{frame}
+
+\section{more examples}
+
+\begin{frame}{party like it's 1999}
+\begin{itemize}
+\item Which fraction is bigger? \pause
+
+\[ \frac{1999}{2000} \quad \mbox{vs.} \quad \frac{2000}{2001} \] \pause
+
+\item Let me point out that you could generalize this.  We're looking at the $x=2000$ case of 
+
+\[ \frac{x-1}{x} \quad \mbox{vs.} \quad \frac{x}{x+1}. \] \pause
+
+\item I don't really know what the conclusion will be yet. \pause (Does ``vs.'' get replaced by $<$ or $>$ ?) \pause
+\item It's okay, we can still ``work backwards from the conclusion'' and figure it out later. \pause
+\item But, since we replaced $2000$ with $x$ we've introduced a potential problem. \pause What if $x$ was $0$ or $-1$? \pause
+\item Let's add the hypothesis that $x>0$.
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{hmmm\textellipsis}
+\begin{itemize}
+\item Since $x>0$ it follows that $x+1>0$ \pause (this is known as weakening the inequality) \pause
+\item Thus it's fine to ``cross-multiply.'' \pause \newline
+Because that really just means multiplying both sides of the inequality by $x$ and by $x+1$. \pause \newline
+And they're both positive. \pause
+\item So we have 
+
+\[ (x-1)\cdot(x+1) \quad \mbox{vs.} \quad x\cdot x, \] 
+
+\pause
+
+\noindent so, 
+
+\[ x^2-1 \quad \mbox{vs.} \quad x^2.  \] 
+\pause
+
+\item Clearly the ``vs.'' should be $<$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{the product rule}
+\begin{itemize}
+\item Exercise 8, in Section 3.2 asks us to use the forward-backward approach in proving the product rule for derivatives.\pause
+\item This is the rule that says $(f(x)\cdot g(x))' \; = \; f'(x)\cdot g(x) \, + \, f(x)\cdot g'(x)$. \pause
+\item Previously you may not have taken much notice of this, but there is a hypothesis! \pause
+\item The product rule is only valid if $f(x)$ and $g(x)$ are differentiable at $x$. \pause 
+\item Recall that ``differentiability implies continuity.'' \pause (we'll need this at one point)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{a scattered proof}
+We're going low-tech for this.
+\end{frame}
+
+
+\end{document}
