@@ -1,0 +1,103 @@
+\documentclass{amsart}
+\usepackage{amssymb}
+\renewcommand{\baselinestretch}{1.5}
+\addtolength{\textwidth}{.2in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1in}
+
+\usepackage{ifthen}
+
+\input{my_latex_definitions.tex}
+
+\addtolength{\abovedisplayskip}{0pt}
+\addtolength{\belowdisplayskip}{24pt}
+\addtolength{\abovedisplayshortskip}{0pt}
+\addtolength{\belowdisplayshortskip}{44pt}
+
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large Activity 21 -- Introduction to Proof}
+\centerline{\large containment}
+
+\bigskip
+\Large
+
+
+\begin{enumerate}
+
+\item Name three elements of $\Naturals$.  
+
+\vfill
+
+\item Name three subsets of $\Naturals$. 
+
+\vfill
+
+\item The empty set, $\emptyset$ is contained in every set $A$ (regardless of $A$'s contents).  Why?
+
+\vfill
+
+\item Let $A$ be the set $\{ \emptyset, 1, 2, \{3, 4, 5\} \}$.
+Mark the following statements True or False.
+
+\begin{tabular}{lcl}
+\rule{0pt}{60pt}a)  $\emptyset \subseteq A$ & \rule{72pt}{0pt} & b)  $\emptyset \in A$ \\
+\rule{0pt}{60pt}c)  $ \{1\} \subseteq A$ & & d) $ \{3, 4, 5\}  \subseteq A$ \\
+\rule[-60pt]{0pt}{120pt}e)  $ \{ \emptyset \} \subseteq A$ & & f) $\{ 1, 2 \} \in A$\\
+\end{tabular}
+
+\newpage
+
+\item Insert either $\in$ or $\subseteq$ in the blanks in the following 
+sentences (in order to produce true sentences).
+
+\vspace{.1in}
+
+\begin{tabular}{lcl}
+\rule{0pt}{16pt}i) $1$ \underline{\rule{36pt}{0pt}} $\{3, 2, 1, \{a, b\}\}$ & \rule{36pt}{0pt} & iii) $\{a, b\}$  \underline{\rule{36pt}{0pt}} $\{3, 2, 1, \{a, b\}\}$ \\
+\rule{0pt}{16pt}ii) $\{a\}$ \underline{\rule{36pt}{0pt}} $\{a, \{a, b\}\}$ & &
+iv) $\{\{a, b\}\}$  \underline{\rule{36pt}{0pt}} $\{a, \{a, b\}\}$ \\
+\end{tabular}
+
+\vspace{.2in}
+
+
+\item A number is called {\em doubly even} if it is divisible by $4$.  Let $D$ denote the set of doubly-even natural numbers, and let $E$ denote the set of even natural numbers.  Which set is a subset of the other?
+
+\vfill
+
+\item The membership criteria for the sets $D$ and $E$ in the previous question are $M_D = 4 \divides x$ and $M_E = 2 \divides x$ respectively.  Which logical statement implies the other?
+
+\vfill
+
+\item The following incomplete diagram illustrates the correspondence between Set Theory (in the top row) and Logic (in the bottom row).  Fill in the missing symbols.
+
+\begin{center}
+\begin{tabular}{ccc}
+\rule[-12pt]{0pt}{36pt} \rule{18pt}{0pt} $D$ \rule{18pt}{0pt} & \rule{18pt}{0pt} $\subseteq$ \rule{18pt}{0pt} & \rule{40pt}{0pt}  \\
+\rule[-12pt]{0pt}{36pt}$\updownarrow$ & $\updownarrow$ & $\updownarrow$ \\
+\rule[-12pt]{0pt}{36pt}  &    & $M_E(x)$ 
+\end{tabular}
+\end{center}
+
+\vspace{.5in}
+
+\newpage
+
+\item Name a superset of $\Naturals$.
+
+\vfill
+
+\item Name a superset of $\Reals$.
+
+\vfill
+
+\item In the next lecture we'll talk about set equality.  How would you describe a reasonable way to determine if two sets are ``the same''?
+
+\vfill
+
+\end{enumerate}
+
+\end{document}
