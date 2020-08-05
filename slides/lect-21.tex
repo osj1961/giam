@@ -1,0 +1,233 @@
+\ifdefined\ishandout
+  \documentclass[handout,landscape]{beamer} 
+\else
+  \documentclass[landscape]{beamer}
+\fi
+
+%\hypersetup{pdfpagemode=FullScreen} %Enabling this option will cause the slides to go full-screen on opening
+
+\mode<handout>
+{
+  \usepackage{pgf}
+  \usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{6 on 1 boxed}
+{
+  \edef\pgfpageoptionheight{\the\paperheight} 
+  \edef\pgfpageoptionwidth{\the\paperwidth}
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=6,%
+    physical height=\pgfpageoptionheight,%
+    physical width=\pgfpageoptionwidth%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{2}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{3}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{4}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{5}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{6}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+}
+
+
+  \pgfpagesuselayout{6 on 1 boxed}[letterpaper, border shrink=5mm]
+  \nofiles
+}
+
+\usepackage{listings}
+\usepackage{multimedia}
+\usepackage[normalem]{ulem}
+\usepackage{ifthen}
+
+\usetheme{Warsaw} 
+\usecolortheme{seahorse}
+\useoutertheme{infolines} 
+
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+
+\author{Joe Fields}
+\title{Introduction to Proof} 
+
+\date{Lecture 21 (GIAM \S 4.2) \newline containment}
+\institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
+
+\input{my_latex_definitions.tex}
+
+\newcommand{\vs}{\rule{0pt}{12pt}}
+\newcommand{\notimplies}{\;\not\!\!\!\implies}
+
+\AtBeginSection[]
+{
+ \begin{frame}{Table of Contents} 
+  \tableofcontents[currentsection]
+ \end{frame}
+}
+
+%%%% SAVE %%%%
+%{ %magic to get a full screen image...
+%\setbeamertemplate{navigation symbols}{}  % hide navigation buttons 
+%\setbeamertemplate{background canvas}{\centerline{\includegraphics 
+%	[height=\paperheight]{Cantor_4.jpeg}}}
+%\begin{frame}[plain]
+%\rule{0pt}{0pt}
+%\end{frame} 
+%} %end of magic
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\section{element vs subset}
+
+\begin{frame}{}
+\begin{itemize}
+\item Sometimes sets contain other sets. \pause
+\item It's pretty clear that we shouldn't have a set that contained itself.\pause
+\item Top-level commas are the ones inside the outer french braces, but not inside any other braces.\pause
+\item Here's the power set of $\{1,2\}$ with the top-level commas indicated: \pause
+
+\setlength{\tabcolsep}{0pt}
+\begin{tabular}{clclclc}
+$\left\{ \emptyset \right.$ & , & $\{1\}$ & , & $\{2\}$ & , & $\left. \{1,2\} \right\}$ \\
+ & $\uparrow$ & & $\uparrow$ & & $\uparrow$ & \\
+\end{tabular}
+\setlength{\tabcolsep}{6pt}
+\pause
+\item The things in between the top-level commas are the {\em elements} of the set.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{an example}
+\begin{itemize}
+\item Use the ``$\in$'' sign for elements. \pause
+\item Suppose $A = \{ 1, 2, \{3, 4\}\}$. \pause
+\item It's correct to write $1 \in A$. \pause
+\item It's also correct to write $\{3, 4\} \in A$. \pause
+\item But it's wrong to write $3 \in A$. \pause (It's not in $A$, it's in one of $A$'s elements!) 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{inclusion vs membership}
+\begin{itemize}
+\item The ``$\in$'' sign denotes a relation called ``membership.'' \pause
+\item Another way something can be in a set is called ``containment.'' \pause
+\item A set $A$ is contained in a set $B$ if all of $A$'s elements are members of $B$. \pause
+\item The symbol for ``is contained in'' is $\subseteq$. \pause
+\item The things on either side of $\subseteq$ must both be sets. \pause \newline
+$3 \in \Naturals$ is a sensible mathematical statement, \pause \newline
+$3 \subseteq \Naturals$ is nonsensical. \pause
+\item Exercise on page 172.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{variations on a theme}
+\begin{itemize}
+\item The symbol $\subseteq$ is a rounded version of $\leq$. \pause
+\item Hungry alligators. \pause
+\item If $A$ is definitely completely inside of $B$ we write $A \subset B$. \pause
+\item These symbols are reversible.
+\item If $A \supseteq B$ we say $A$ is a {\em superset} of $B$.
+\end{itemize}
+\end{frame}
+
+\section{containment and implications}
+
+\begin{frame}{more on the logic-set correspondence}
+\begin{itemize}
+\item Consider the numbers between 10 and 30 that are $1\mod 4$: \pause \newline
+\[ A = \{13, 17, 21, 25, 29\}. \] \pause
+\item The membership criterion for $A$ is $M_A = $ ``$10 \leq x \leq 30 \; \land \; x \mod 4 = 1  $''
+\item Next consider the set of all odd numbers in the same range: \pause \newline
+\[ B = \{11, 13, 15, 17, 19, 21, 23, 25, 27, 29 \}. \] \pause
+\item Which set is contained in the other? \pause
+\item Clearly, $A \subseteq B$. \pause
+\item How are their corresponding membership criteria related? \pause
+\item $M_A \implies M_B$ \hspace{.1in} or \hspace{.1in} $M_B \implies M_A$ ? \pause
+\item ???
+\end{itemize}
+\end{frame}
+
+\begin{frame}{strength of statements}
+\begin{itemize}
+\item When a statement $P$ implies a statement $Q$ we can think of $P$ as being ``stronger.'' \pause
+\item Compare ``being a 4th power'' to ``being a square.'' \pause
+\item More formally, suppose $P(x) = $ ``$\exists k \in Integers, \; x=k^4$,'' \pause \newline
+and $Q(x) = $ ``$\exists k \in \Integers, \; x=k^2$,'' \pause 
+\item $\forall x \in \Integers, \; P(x) \implies Q(x)$ \pause
+\item If you're a 4th power you're automatically a square -- being a fourth power is a bigger deal!\pause
+\item So, if $A = \{0, 1, 16, 81, 256 \ldots \}$ is the set of fourth powers \pause \newline
+and $B = \{0, 1, 4, 9, 16, \ldots \}$ is the set of squares. \pause
+\item Being in $A$ automatically gets you into $B$. \pause
+\item Think about exclusive clubs. \pause The smaller set is actually the ``stronger'' thing. \pause
+\item Groucho Marx
+\end{itemize}
+\end{frame}
+
+\section{computing}
+
+\begin{frame}{CoCalc}
+\begin{itemize}
+\item Sage sets have member functions for checking the subset/superset relation
+\item There's an infix operator ``in'' that does the job of $\in$.
+\end{itemize}
+\end{frame}
+
+\section{typesetting}
+
+\begin{frame}{Overleaf}
+\begin{itemize}
+\item Curly braces appear as part of the language constructs, so how do we get actual french braces to appear. 
+\item Getting braces to match the size of the stuff inside.
+\item The names of commands for $\subseteq$ and friends. (amssymb package)
+\end{itemize}
+\end{frame}
+
+\end{document}
