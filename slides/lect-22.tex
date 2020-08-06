@@ -127,18 +127,146 @@
 
 \section{union, intersection and complementation}
 
-\begin{frame}{}
+\begin{frame}{definitions}
 \begin{itemize}
-\item 
+\item Given two sets, if we glom all the elements together into one big set that's the union. \pause
+\item If we look only at the elements that they have in common, that's the intersection. \pause
+\item The symbols for union and intersection ($\cup$ and $\cap$) are simply rounded versions of $\vee$ and $\wedge$. \pause
+\item This shows us the correspondence: \pause \newline
+ {\em union} ($\cup$) corresponds with  {\em or} ($\vee$) \pause \newline
+and  {\em intersection} ($\cap$) corresponds with  {\em and} ($\wedge$). 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{an example}
+\begin{itemize}
+\item Example: Let the universe be $U = \{0,1,2, \ldots 10 \}$.  Define $A = \{x \in U \suchthat\; x \; \mbox{is prime} \}$ and let $B = \{x \in U \suchthat\; 3 \divides x \}$. \pause
+\item So $A = \{2, 3, 5, 7\}$ \pause and $B = \{0,3,6,9\}$. \pause
+\item Then $A \cup B \; = \; \{ 0, 2, 3, 5, 6, 7, 9 \}$ \pause \hspace{.2in} and $A \cap B \; = \; \{ 3 \}$. \pause
+\item Notice that $A \cup B$ consists of those elements of $U$ that are either prime OR a multiple of 3. \pause
+\item Also, $A \cap B$ consists of those elements of $U$ that are  prime AND a multiple of 3.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{a 2nd example}
+\begin{itemize}
+\item Let's keep the universal set $U = \{0,1,2, \ldots 10 \}$. \pause
+\item Let $A = \{x \in U \suchthat\; x \; \mbox{is a perfect square} \}$ and let $B = \{x \in U \suchthat\; x \; \mbox{is even} \}$. \pause
+\item So $A = \{0,1,4,9\}$ \pause and $B = \{0,2,4,6,8,10\}$. \pause
+\item Then $A \cup B \; = \; \{ 0, 1, 2, 4, 6, 8, 9, 10 \}$ \pause \hspace{.2in} and $A \cap B \; = \; \{ 0, 4 \}$. \pause
+\item Notice that $A \cup B$ consists of those elements of $U$ that are either a square OR even. \pause
+\item Also, $A \cap B$ consists of those elements of $U$ that are a square AND even.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{formal definitions}
+\begin{itemize}
+\item Suppose that $A$ is a set with membership criterion $P(x)$, \pause \newline
+so $A = \{ x \in U \suchthat P(x)\}$. \pause
+\item Similarly, suppose that $B$ is a set with membership criterion $Q(x)$, \pause \newline
+so $B = \{ x \in U \suchthat Q(x)\}$. \pause
+\item We define $A \cap B$ via the logical conjunction: \pause \newline
+$A \cap B = \{ x \in U \suchthat P(x) \, \land\, Q(x)\}$. \pause
+\item In a similar fashion, we define $A \cup B$ via the logical disjunction: \pause \newline
+$A \cup B = \{ x \in U \suchthat P(x) \, \lor\, Q(x)\}$. \pause
+\item Since $P(x)$ is literally identical in meaning to ``$x \in A$'' and likewise, $Q(x) = $ ``$x \in B$'', \pause 
+\item \rule{0pt}{18pt}$A \cap B = \{ x \in U \suchthat\; x \in A \, \land \, x \in B \}$ and \pause \rule{0pt}{18pt}$A \cup B = \{ x \in U \suchthat \; x \in A \, \lor \, x \in B \}$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{big versions}
+\begin{itemize}
+\item Because of the way $\cup$ and $\cap$ are defined it's almost immediate that they satisfy the same rules (associative, commutative, distributive, etc) as $\lor$ and $\land$. \pause
+\item Because of associativity, there's no ambiguity in doing the union or intersection of lots of sets all at once. \pause
+\item So we can use ``big'' versions of $\cup$ and $\cap$ and a notation like sigma notation for sums. \pause
+\item As an example, \newline
+\[ \bigcup_{n=2}^{\infty} [1/n, 1] \] \pause
+is the union of an infinite number of intervals. \pause
+\item Just for fun, guess if $0$ is in the previous union.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{what about not?}
+\begin{itemize}
+\item We've seen the set theoretic versions of disjunction and conjunction. \pause
+\item What about logical negation? \pause
+\item Suppose that $A$ is a set with membership criterion $P(x)$. \pause 
+\item What set has membership criterion $\lnot P(x)$? \pause 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{example}
+\begin{itemize}
+\item Example: Let the universe be $U = \{0,1,2, \ldots 10 \}$.  Define $A = \{x \in U \suchthat x \; \mbox{is prime} \}$. \pause
+\item So, in this example $P(x)$ is ``$x$ is prime.'' \pause \newline
+Which means that $\lnot P(x)$ would be ``$x$ is not prime.'' \pause
+\item What set is that? \pause It consists of all the things in $U$ that are {\em not} in $A$! \pause
+\item We call such a set the {\em complement} of $A$ and denote it by $\overline{A}$. \pause \newline
+(Other common notations for the complement are $A^c$ and $A'$.) \pause
+\item Here's the formal definition: \pause \newline
+Given a fixed universal set $U$ and a set $A \subseteq U$, with membership criterion $M_A(x)$, \pause
+\[ \overline{A} \; = \; \{ x \in U \suchthat\; \lnot M_A(x) \}. \] \pause
+\item Or, \hspace{.3in} $\displaystyle \overline{A} \; = \; \{ x \in U \suchthat\; x \notin A \}$.
 \end{itemize}
 \end{frame}
 
 \section{equal sets - set identities}
 
+\begin{frame}{when are two sets equal}
+\begin{itemize}
+\item We'll delve deeper into this question in the next lecture (particularly into proving that sets are equal to one another.) \pause
+\item But, the idea of $=$ for sets is essentially the same thing as $\iff$ \newline (or $\cong$) for statments. \pause
+\item Two sets are equal if their membership criteria are logically equivalent. \pause
+\item It may be more direct to think about their elements. If $A=B$, then any element of $A$ must also be an element of $B$, and vice versa: any element of $B$ must also be an element of $A$. \pause 
+\item The phrase ``any element of $A$ must also be an element of $B$'' is the same thing as $A \subseteq B$. \pause \newline
+similarly (by the vice versa part) we have $B \subseteq A$. \pause
+\item Recapping: \pause $A = B$ is equivalent to $A \subseteq B \; \land \; B \subseteq A$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{set identities}
+\begin{itemize}
+\item There is a link to a handout in the video description. \pause
+\item It may seem rather redundant -- every logical equivalence from Logic has a Set Theoretic identity that corresponds to it. \pause
+\item The proofs of these are fairly tedious. They all follow the same pattern: \pause 
+\item Convert a set theoretic expression into a logical one -- apply one of the rules from Chapter 2 -- convert back to a set theoretic form. \pause
+\item In today's activity you'll practice a few of these. \pause
+\item For now, let's just examine the handout.
+
+\end{itemize}
+\end{frame}
+
 \section{other operations}
+
+\begin{frame}{relative difference}
+\begin{itemize}
+\item Everything in $A$ that's not in $B$. \pause Denoted by $A \setminus B$.\pause
+\item Definition: $A \setminus B \; = \; A \cap \overline{B}$.\pause
+\item Like ordinary subtraction this is {\em not} a commutative operation!\pause
+\item $A \setminus B \; \neq \; B \setminus A$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{symmetric difference}
+\begin{itemize}
+\item We can create a commutative operation by forming the union of both relative differences. \pause
+\item $A \triangle B \; = \; (A \setminus B) \, \cup \, (B \setminus A)$. \pause
+\item This is known as the symmetric difference.
+\item Exercise on page 183 in GIAM
+\end{itemize}
+\end{frame}
 
 \section{3-d solid modelling}
 
-\section{double inclusion proofs}
+\begin{frame}{}
+\begin{itemize}
+\item OpenSCAD
+\item Thingiverse
+\item Some physical models
+\item Henry Segerman
+\end{itemize}
+\end{frame}
+
+
 
 \end{document}
