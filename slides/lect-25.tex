@@ -1,0 +1,222 @@
+\ifdefined\ishandout
+  \documentclass[handout,landscape]{beamer} 
+\else
+  \documentclass[landscape]{beamer}
+\fi
+
+%\hypersetup{pdfpagemode=FullScreen} %Enabling this option will cause the slides to go full-screen on opening
+
+\mode<handout>
+{
+  \usepackage{pgf}
+  \usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{6 on 1 boxed}
+{
+  \edef\pgfpageoptionheight{\the\paperheight} 
+  \edef\pgfpageoptionwidth{\the\paperwidth}
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=6,%
+    physical height=\pgfpageoptionheight,%
+    physical width=\pgfpageoptionwidth%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{2}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{3}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{4}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{5}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{6}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+}
+
+
+  \pgfpagesuselayout{6 on 1 boxed}[letterpaper, border shrink=5mm]
+  \nofiles
+}
+
+\usepackage{listings}
+\usepackage{multimedia}
+\usepackage[normalem]{ulem}
+\usepackage{ifthen}
+
+\usetheme{Warsaw} 
+\usecolortheme{seahorse}
+\useoutertheme{infolines} 
+
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+
+\author{Joe Fields}
+\title{Introduction to Proof} 
+
+\date{Lecture 25 (GIAM \S 5.1) \newline the principle of mathematical induction}
+\institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
+
+\input{my_latex_definitions.tex}
+
+\newcommand{\vs}{\rule{0pt}{12pt}}
+\newcommand{\notimplies}{\;\not\!\!\!\implies}
+
+\AtBeginSection[]
+{
+ \begin{frame}{Table of Contents} 
+  \tableofcontents[currentsection]
+ \end{frame}
+}
+
+%%%% SAVE %%%%
+%{ %magic to get a full screen image...
+%\setbeamertemplate{navigation symbols}{}  % hide navigation buttons 
+%\setbeamertemplate{background canvas}{\centerline{\includegraphics 
+%	[height=\paperheight]{Cantor_4.jpeg}}}
+%\begin{frame}[plain]
+%\rule{0pt}{0pt}
+%\end{frame} 
+%} %end of magic
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\section{pmi}
+
+\begin{frame}{intro}
+\begin{itemize}
+\item The Principle of Mathematical Induction (PMI) \pause
+\item One of the most useful proof techniques. \pause
+\item Some advice for \href{https://www.maa.org/math-competitions/putnam-competition}{Putnam Exam} participants.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{the Peano axioms}
+\begin{itemize}
+\item The Peano axioms originally had 1 as the smallest natural number and included some of Euclid's common notions. \pause
+\item Modern treatments use 0 as the smallest natural number and drop Peano's 2nd through 5th axioms. \pause 
+\item The axioms are stated in terms of a successor function $s(x)$ which outputs the next natural number after $x$. \pause \newline (Informally, think of $s(x) = x+1$.) \pause
+\end{itemize}
+\begin{enumerate}
+\item $0\in \Naturals$. \pause
+\item $\forall n \in \Naturals, \; S(n) \in \Naturals$ \pause
+\item $\forall n, m \in \Naturals, \; m = n \; \iff \; S(m) = S(n)$. \pause
+\item $\forall n \in \Naturals, S(n) \neq 0$.\pause \newline
+And: \pause
+\item If $A$ is a set such that
+\begin{enumerate}
+\item[i)] $0 \in A$, and
+\item[ii)]  $\forall n, \; n \in A \; \implies \; S(n) \in A$,
+\end{enumerate}
+then $A$ contains every natural number.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{axiom 9}
+\begin{itemize}
+\item Peano's 9th axiom (the 5th one in the modern formulation we've presented) is called the induction axiom. \pause
+\item The 9th axiom justifies the method of ``proof by mathecatical induction.''  \pause
+\item We can restate the 9th axiom in terms of logical open sentences (rather than sets): \pause \newline
+Given an infinite family of logical statements, one for each natural number: $P_0$, $P_1$, $P_2$, $P_3, \ldots$ \pause \newline
+They are all true provided
+\begin{enumerate}
+\item[i)] $P_0$ is true, and
+\item[ii)]  $\forall k \in \Naturals, \; P_k \; \implies \; P_{k+1}$.
+\end{enumerate}
+\pause
+\item The domino analogy.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{caveats/concerns}
+\begin{itemize}
+\item We don't have to start at $0$. \pause
+\item The indices on the $P$'s could be anything with a first element and a way to compute the next. \pause
+\item For instance you could have a statement that you want to prove for every even number greater than or equal to 6. \pause
+\item Issue about circular reasoning
+\end{itemize}
+\end{frame}
+
+\begin{frame}{outline and terminology}
+\begin{itemize}
+\item See the outline on page 208 in GIAM. \pause
+\item The first part (basis) is a.k.a. the ``base case.'' \pause
+\item The second part (inductive step) amounts to proving a UCS. \pause
+\item The antecedant is called the {\em inductive hypothesis}. \pause
+\item The consequent is called the {\em inductive conclusion}.
+\end{itemize}
+\end{frame}
+
+
+\section{examples}
+
+\begin{frame}{power sets again}
+\begin{itemize}
+\item $|{\mathcal P}(A)| = 2^{|A|}$ \pause
+\item See page 209
+\end{itemize}
+\end{frame}
+
+\begin{frame}{advice}
+\begin{itemize}
+\item See page 210
+\end{itemize}
+\end{frame}
+
+\begin{frame}{a final example}
+\begin{itemize}
+\item the Klee art gallery theorem\pause
+\item How many edges in a fully triangulated polygonal curve? \pause
+\item Lemma: A fully triangulated polygonal curve must have a leaf. \pause
+\item Proof by induction.
+\end{itemize}
+\end{frame}
+
+
+
+\end{document}

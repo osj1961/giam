@@ -1,0 +1,484 @@
+\ifdefined\ishandout
+  \documentclass[handout,landscape]{beamer} 
+\else
+  \documentclass[landscape]{beamer}
+\fi
+
+%\hypersetup{pdfpagemode=FullScreen} %Enabling this option will cause the slides to go full-screen on opening
+
+\mode<handout>
+{
+  \usepackage{pgf}
+  \usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{6 on 1 boxed}
+{
+  \edef\pgfpageoptionheight{\the\paperheight} 
+  \edef\pgfpageoptionwidth{\the\paperwidth}
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=6,%
+    physical height=\pgfpageoptionheight,%
+    physical width=\pgfpageoptionwidth%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{2}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{3}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{4}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{5}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{6}
+  {%
+    border code=\pgfsetlinewidth{2pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+}
+
+
+  \pgfpagesuselayout{6 on 1 boxed}[letterpaper, border shrink=5mm]
+  \nofiles
+}
+
+\usepackage{listings}
+\usepackage{multimedia}
+\usepackage[normalem]{ulem}
+\usepackage{ifthen}
+
+\usetheme{Warsaw} 
+\usecolortheme{seahorse}
+\useoutertheme{infolines} 
+
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+
+\author{Joe Fields}
+\title{Introduction to Proof} 
+
+\date{Lecture 26 (GIAM \S 5.2) \newline formulas for sums and products}
+\institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
+
+\input{my_latex_definitions.tex}
+
+\newcommand{\vs}{\rule{0pt}{12pt}}
+\newcommand{\notimplies}{\;\not\!\!\!\implies}
+\newcommand{\dx}{\,\mbox{d}x}
+
+\AtBeginSection[]
+{
+ \begin{frame}{Table of Contents} 
+  \tableofcontents[currentsection]
+ \end{frame}
+}
+
+%%%% SAVE %%%%
+%{ %magic to get a full screen image...
+%\setbeamertemplate{navigation symbols}{}  % hide navigation buttons 
+%\setbeamertemplate{background canvas}{\centerline{\includegraphics 
+%	[height=\paperheight]{Cantor_4.jpeg}}}
+%\begin{frame}[plain]
+%\rule{0pt}{0pt}
+%\end{frame} 
+%} %end of magic
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\section{motivation}
+
+\begin{frame}{Gauss in elementary school}
+\begin{itemize}
+\item Was it a punishment? \pause
+\item The class was tasked with adding all of the numbers from 1 to 100. \pause
+\item This was 1784, so imagine the tools involved. \pause
+\item Pairing 1 with 100, 2 with 99 and so on.\pause
+\item Only works because 100 is even.\pause
+\item Write the sum twice: \pause
+\begin{tabular}{ccccccccc}
+$1$ & $+$ & $2$ & $+$ & $3$ & $+$ & \textellipsis & $+$ & $n$ \\
+$n$ & + & $n-1$ & + & $n-2$ & + & \textellipsis & + & $1$ \\
+\end{tabular} \pause
+\item There are $n$ columns each totalling $n+1$, and that's the double of our sum, so \pause
+\[  \sum_{k=1}^n k \; = \; \frac{1}{2} n(n+1). \]
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Riemann sums}
+\begin{itemize}
+\item Linearity of integrals:
+\[ \int a\cdot f(x) + b \cdot g(x) \dx \; = \;  a \int f(x) \dx \, +  \, b \int g(x) \dx \] \pause
+\item We can get the integral of any polynomial provided we know the integral of the powers of $x$. \pause
+\item The generalization of Gauss's trick gives \newline
+\[ \sum_{j=1}^n j \; = \; \frac{n (n+1)}{2} \] \pause
+\item That gives us the integral of $x$. \pause
+\item Desmos \pause
+\item We need formulas for the sum of squares, cubes and so on.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{formulas for Riemann sums}
+\begin{itemize}
+\item First powers:
+\[ \sum_{k=1}^n k \; = \; \frac{1}{2} n(n+1) \] \pause
+\item Squares:
+\[ \sum_{k=1}^n k^2 \; = \; \frac{1}{6} n(n+1)(2n+1) \] \pause
+\item Cubes:
+\[ \sum_{k=1}^n k^3 \; = \; \frac{1}{4} n^2(n+1)^2 \] \pause
+\item A nice memory aid is that the last one is the square of first one. 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Bernoulli}
+\begin{itemize}
+\item Jacob Bernoulli may have taken this too far\textellipsis \pause
+\item He developed a table of formulas for the sums of powers up through the 10th powers.\pause
+\item He also showed how similar formulas could be developed for even higher powers using ``Bernoulli numbers". \pause 
+\item This is the 10th power formula: \newline
+\hspace{-1in}$\frac{1}{66} n(n+1)(2n+1)(n^2+n-1)(3n^6+9n^5+2n^4-11n^3+3n^2+10n-5)$
+\pause
+\item ``With the help of this table, it took me less than half of a quarter of an hour to find that the tenth powers of the first 1000 numbers being added together will yield the sum 91,409,924,241,424,243,424,241,924,242,500.'' \pause
+\item That's a pretty fancy computation to complete in 7.5 minutes -- by hand!
+\end{itemize}
+\end{frame}
+
+\section{two approaches}
+
+\begin{frame}{use the IH along the way}
+\begin{itemize}
+\item There are two general strategies for completing the inductive step. \pause
+\item You can take a sum whose upper limit is $k+1$ and seperate it into two parts: \pause
+\[ \sum_{j=1}^{k+1} f(j) \; = \; f(k+1) \; + \; \sum_{j=1}^{k} f(j) \] \pause
+\item That's the sum from stage $k$ plus a final term. \pause
+\item The inductive hypothesis applies to the sum from stage $k$. \pause
+\item In this approach you're generally working with expressions not equalities.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{start with the IH}
+\begin{itemize}
+\item An alternative approach is to just begin with the inductive hypothesis. \pause
+\item Then figure out what to add to both sides to wind up with the inductive conclusion. \pause
+\item This will usually end up using the same algebraic steps as the previous method.\pause \newline
+(Just organized differently.) \pause
+\item Either approach is fine. It's a matter of taste. \pause
+\item In this approach you're generally working with equalities rather than expressions.
+\end{itemize}
+\end{frame}
+
+\section{examples}
+
+\begin{frame}{Gauss's formula}
+\begin{thm*} 
+$$ \forall n \in \Naturals^+, \; \sum_{j=1}^{n} j \; = \; \frac{n(n+1)}{2} $$.
+\end{thm*}
+{\em Proof:} We proceed by induction on $n$.
+
+\noindent {\bf Basis: }  Both the sum and the formula evaluate to 1 when $n=1$:
+
+\[ \sum_{j=1}^{1} j \; = \; 1, \]
+
+and 
+
+\[ \left. \frac{n(n+1)}{2} \right|_{n=1} \; = \; 1. \]
+
+\end{frame}
+
+\begin{frame}{continued}
+
+\noindent {\bf Inductive step: }  Consider the sum
+
+\[ \sum_{j=1}^{k+1} j. \]
+
+We can separate out the last term of this sum.
+
+\[ = (k+1) + \sum_{j=1}^{k} j \]
+
+Next, we can use the inductive hypothesis to replace the sum (the part 
+that goes from 1 to $k$) with a formula. So 
+
+\end{frame}
+
+\begin{frame}{continued}
+
+\begin{align*}
+\uncover<1->{   \sum_{j=1}^{k+1} j \; }
+\uncover<2->{   = & \; (k+1) + \sum_{j=1}^{k} j \\ }
+\uncover<3->{  = & \; (k+1) + \frac{k(k+1)}{2} \\ }
+\uncover<4->{  = & \; \frac{2(k+1)}{2} + \frac{k(k+1)}{2} \\ }
+\uncover<5->{  = & \; \frac{2(k+1) + k(k+1)}{2} \\ }
+\uncover<6->{  = & \; \frac{(k+1) \cdot (k+2)}{2}. \\ }
+\end{align*}
+\uncover<7->{\hfill {\em Q.E.D.} }
+
+\end{frame}
+
+\begin{frame}{once more with feeling}
+\begin{itemize}
+\item Let's use the alternative approach to prove this a second time. \pause
+\item The base case is the same, so we'll jump straight to the inductive step. \pause
+\end{itemize}
+
+\noindent {\bf Inductive step: }
+The inductive hypothesis is 
+
+\[ \sum_{j=1}^{k} j  \; = \; \frac{k(k+1)}{2}. \]
+
+\pause
+
+Adding $k+1$ to both sides of this yields
+
+\[ (k+1) \, + \, \sum_{j=1}^{k} j  \; = \; (k+1) \, + \, \frac{k(k+1)}{2}. \]
+
+\end{frame}
+
+\begin{frame}{continued}
+Thus 
+\begin{align*}
+\uncover<1->{ \sum_{j=1}^{k+1} j  \; &= (k+1) \, + \, \frac{k(k+1)}{2} \\}
+\uncover<2->{ &= \; \frac{2(k+1)}{2} \, + \, \frac{k(k+1)}{2}. \\}
+\uncover<3->{                        &= \; \frac{(k+1)(k+2)}{2}. \\}
+\end{align*}
+\uncover<4->{\hfill {\em Q.E.D.} }
+
+\end{frame}
+
+\begin{frame}{what to add?}
+\begin{itemize}
+\item A particularly pernicious beginner's error is to get stuck in the habit of adding $k+1$ to both sides. \pause
+\item Don't do that! \pause
+\item That's what we added in the last proof, but that's basically the only time we'll do that. \pause
+\item The thing you need to add is the $k+1$-st term of the sum.  Apply whatever the formula for the summand is to $k+1$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{sum of cubes}
+\begin{thm*} 
+$$ \forall n \in \Naturals^+, \; \sum_{j=1}^{n} j^3 \; = \; \frac{n^2(n+1)^2}{4} $$.
+\end{thm*}
+{\em Proof:} We proceed by induction on $n$.
+
+\noindent {\bf Basis: }  Both the sum and the formula evaluate to 1 when $n=1$:
+
+\[ \sum_{j=1}^{1} j^3 \; = \; 1, \]
+
+and 
+
+\[ \left. \frac{n^2(n+1)^2}{4} \right|_{n=1} \; = \; 1. \]
+
+\end{frame}
+
+\begin{frame}{continued}
+\noindent {\bf Inductive step: }
+The inductive hypothesis is 
+
+\[ \sum_{j=1}^{k} j^3  \; = \; \frac{k^2(k+1)^2}{4}. \]
+
+\pause
+
+We want to show that 
+
+\[ \sum_{j=1}^{k+1} j^3  \; = \; \frac{(k+1)^2(k+2)^2}{4}. \]
+\end{frame}
+
+\begin{frame}{continued}
+Adding $(k+1)^3$ to both sides of the inductive hypothesis gives
+
+\[ (k+1)^3 \, + \, \sum_{j=1}^{k} j^3  \;  = \; (k+1)^3 \, + \, \frac{k^2(k+1)^2}{4}.\]
+
+Thus,
+\begin{align*}
+\uncover<2->{ \sum_{j=1}^{k+1} j^3  \;  & = \; (k+1)^3 \, + \, \frac{k^2(k+1)^2}{4} \\ }
+\uncover<3->{  & = \; \frac{4(k+1)^3 \, + \, k^2(k+1)^2}{4} \\ }
+\uncover<4->{  & = \; \frac{(k+1)^2 \cdot (4(k+1) \, + \, k^2)}{4} \\} 
+\uncover<5->{  & = \; \frac{(k+1)^2 \cdot (k^2 + 4k + 4) }{4} \\ }
+\uncover<6->{  & = \; \frac{(k+1)^2 \cdot (k+2)^2 }{4} \\ }
+\end{align*}
+\uncover<7->{\hfill {\em Q.E.D.} }
+
+\end{frame}
+
+\begin{frame}
+\begin{itemize}
+\item Execise 1 in \S 5.1 had you investigating the truth of 
+
+\[ \sum_{j=0}^n 4j+1 = 2n^2 + 3n + 1. \] \pause
+
+\item Let's prove it now using mathematical induction.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{proof}
+\begin{thm*}
+\[ \forall n \in \Naturals,\; \sum_{j=0}^n 4j+1 \, = \, 2n^2 + 3n + 1. \]
+\end{thm*}
+\pause
+
+{\em Proof:} We proceed by induction on $n$. \pause
+
+\noindent {\bf Basis: }  Both the sum and the formula evaluate to 1 when $n=0$:
+
+\[ \sum_{j=0}^{0} 4j+1 \; = \; 1, \]
+
+\pause
+
+and 
+
+\[ \left. 2n^2+3n+1 \right|_{n=0} \; = \; 1. \]
+\end{frame}
+
+\begin{frame}{continued}
+\noindent {\bf Inductive step: }
+The inductive hypothesis is 
+
+\[ \sum_{j=0}^{k} 4j+1  \; = \; 2k^2+3k+1. \]
+
+\pause
+
+We want to show that 
+
+\[ \sum_{j=0}^{k+1} 4j+1  \; = \; 2(k+1)^2+3(k+1)+1 \; = \; 2k^2 + 7k + 6 . \]
+
+\end{frame}
+
+\begin{frame}{continued}
+Adding $4(k+1)+1$ to both sides of the inductive hypothesis gives 
+
+\[ (4(k+1)+1) \, + \, \sum_{j=0}^{k} 4j+1  \; = \; (4(k+1)+1) \, + \, 2k^2+3k+1. \]
+
+\pause 
+
+Thus,
+\begin{align*}
+\uncover<2->{ \sum_{j=0}^{k+1} 4j+1 \; &= \; (4(k+1)+1) \, + \, (2k^2+3k+1) \\}
+\uncover<3->{ &= \; (4k+5) \, + \, (2k^2+3k+1) \\}
+\uncover<4->{ &= \; 2k^2+7k+6 \\}
+\end{align*}
+
+\uncover<5->{\hfill {\em Q.E.D.} }
+\end{frame}
+
+\begin{frame}{a product}
+\begin{itemize}
+\item Formulas for products work pretty much the same as formulas for sums. \pause
+\item The only difference is that we'll multiply by the $k+1$-st term rather than adding it. \pause
+\item Here's a nice example we can practice on:\pause
+\end{itemize}
+
+\begin{thm*}
+\[ \forall n \in \Naturals^+, \; \prod_{j=1}^n \frac{j}{j+1} \; = \; \frac{1}{n+1}. \]
+\end{thm*} 
+\end{frame}
+
+\begin{frame}{proof}
+
+{\em Proof:} We proceed by induction on $n$. \pause
+
+\noindent {\bf Basis: }
+When $n=1$, we have
+
+\[ \prod_{j=1}^n \frac{j}{j+1} \; = \; \frac{1}{2}, \]
+
+\pause
+
+and 
+
+\[ \left. \frac{1}{n+1} \right|_{n=1} \; = \; \frac{1}{2}. \]
+
+\end{frame}
+
+\begin{frame}{continued}
+\noindent {\bf Inductive step: }
+The inductive hypothesis is 
+
+\[ \prod_{j=1}^k \frac{j}{j+1} \; = \; \frac{1}{k+1}. \]
+
+\pause
+
+We want to show that 
+
+\[  \prod_{j=1}^{k+1} \frac{j}{j+1} \; = \; \frac{1}{k+2}.\]
+
+\end{frame}
+
+\begin{frame}{continued}
+
+Consider the product
+
+\[ \prod_{j=1}^{k+1} \frac{j}{j+1}. \]
+
+\pause
+
+Note that 
+
+\[ \prod_{j=1}^{k+1} \frac{j}{j+1} \quad = \quad \left( \frac{k+1}{k+2} \right) \; \cdot \; \prod_{j=1}^k \frac{j}{j+1}. \]
+
+\pause
+
+Using the inductive hypothesis we get 
+\begin{align*}
+\uncover<3->{ \prod_{j=1}^{k+1} \frac{j}{j+1} \; & = \; \frac{k+1}{k+2} \cdot \frac{1}{k+1} \\ }
+\uncover<4->{ & = \; \frac{1}{k+2} \\}
+\end{align*}
+\uncover<5->{\noindent as desired.
+\pause
+\hfill {\em Q.E.D.} }
+\end{frame}
+
+\section{concluding remarks}
+
+\begin{frame}{final thoughts}
+\begin{itemize}
+\item Be careful to seperate out the computations you do in the base case. \pause
+\item You don't have to do a WWTS sentence (but it certainly doesn't hurt!).  \pause \newline
+At least write the inductive conclusion down somewhere on scrap paper. \pause
+\item Try organizing proofs in both of the ways we've illustrated. \pause \newline
+  Some proofs will lend themselves better to one or the other style, so be able to do both. \pause \newline
+ (It's okay to pick a favorite.) \pause
+\item Practice! \pause There's no way to really get the ``zen'' of doing an inductive proof without doing lots of inductive proofs.
+
+\end{itemize}
+\end{frame}
+
+\end{document}

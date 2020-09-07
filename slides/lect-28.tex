@@ -1,0 +1,328 @@
+\ifdefined\ishandout
+  \documentclass[handout,landscape]{beamer} 
+\else
+  \documentclass[landscape]{beamer}
+\fi
+
+%\hypersetup{pdfpagemode=FullScreen} %Enabling this option will cause the slides to go full-screen on opening
+
+\mode<handout>
+{
+  \usepackage{pgf}
+  \usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{6 on 1 boxed}
+{
+  \edef\pgfpageoptionheight{\the\paperheight} 
+  \edef\pgfpageoptionwidth{\the\paperwidth}
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=6,%
+    physical height=\pgfpageoptionheight,%
+    physical width=\pgfpageoptionwidth%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    border code=\pgfsetlinewidth{1pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{2}
+  {%
+    border code=\pgfsetlinewidth{1pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{3}
+  {%
+    border code=\pgfsetlinewidth{1pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{4}
+  {%
+    border code=\pgfsetlinewidth{1pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{5}
+  {%
+    border code=\pgfsetlinewidth{1pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{6}
+  {%
+    border code=\pgfsetlinewidth{1pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+}
+
+
+  \pgfpagesuselayout{6 on 1 boxed}[letterpaper, border shrink=5mm]
+  \nofiles
+}
+
+\usepackage{listings}
+\usepackage{multimedia}
+\usepackage[normalem]{ulem}
+\usepackage{ifthen}
+\usepackage{textcomp}
+
+\usetheme{Warsaw} 
+\usecolortheme{seahorse}
+\useoutertheme{infolines} 
+
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+
+\author{Joe Fields}
+\title{Introduction to Proof} 
+
+\date{Lecture 28 (GIAM \S 5.4) \newline the strong form of mathematical induction}
+\institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
+
+\input{my_latex_definitions.tex}
+
+\newcommand{\vs}{\rule{0pt}{11pt}}
+\newcommand{\notimplies}{\;\not\!\!\!\implies}
+\newcommand{\dx}{\,\mbox{d}x}
+
+\AtBeginSection[]
+{
+ \begin{frame}{Table of Contents} 
+  \tableofcontents[currentsection]
+ \end{frame}
+}
+
+%%%% SAVE %%%%
+%{ %magic to get a full screen image...
+%\setbeamertemplate{navigation symbols}{}  % hide navigation buttons 
+%\setbeamertemplate{background canvas}{\centerline{\includegraphics 
+%	[height=\paperheight]{Cantor_4.jpeg}}}
+%\begin{frame}[plain]
+%\rule{0pt}{0pt}
+%\end{frame} 
+%} %end of magic
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\section{intro}
+
+\begin{frame}{strong induction}
+\begin{itemize}
+\item Strong induction goes by many names: \pause
+\begin{itemize}
+\item Strong induction. \pause
+\item Complete induction. \pause
+\item Course of values induction. \pause
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{the principle of complete induction}
+\begin{itemize}
+\item $ \displaystyle \forall k (P_0 \land P_1 \land \ldots \land  P_{k-1}) \implies P_k. $
+\item PMI and PCI are logically equivalent. \pause
+\item Nevertheless, there are times when PCI is much more convenient. \pause
+\item You get to use the truth of {\em all} the statements prior to $P_n$ to prove it. \pause
+\item That's what makes it ``strong'' -- the hypotheses are much stronger!
+\end{itemize}
+\end{frame}
+
+\begin{frame}{outline}
+\begin{center}
+\begin{tabular}{|c|} \hline
+\rule{16pt}{0pt}\begin{minipage}{.75\textwidth}
+
+\rule{0pt}{16pt}{\bf \large Theorem} $ \displaystyle \forall n \in \Naturals, \; P_n $
+\medskip
+
+\rule{0pt}{20pt} {\em Proof:} (By complete induction)
+
+\noindent {\bf Basis:}
+
+\begin{center}
+$\vdots$ \rule{36pt}{0pt} \begin{minipage}[c]{2.3 in} (Technically, a PCI %
+proof doesn't require a basis.   We recommend that you show that $P_0$ %
+is true anyway.) \end{minipage}
+\end{center}
+
+\noindent {\bf Inductive step:}
+
+\begin{center}
+$\vdots$ \rule{36pt}{0pt} \begin{minipage}[c]{2.3 in} (Here we must show that $\forall k,  \left( \bigwedge_{i=0}^{k-1} P_i \right) \implies P_{k}$ is true.) \end{minipage}
+\end{center}
+
+\rule{0pt}{0pt} \hspace{\fill} Q.E.D. \rule[-10pt]{0pt}{16pt}
+\end{minipage} \rule{16pt}{0pt} \\ \hline
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{an issue}
+\begin{itemize}
+\item When $n=0$ in a PCI proof the inductive step looks like this: \pause
+\item (The conjunction of an empty set of statements) \rule{1pt}{0pt} $\implies \; P_0$. \pause
+\item The conjunction of {\em no} statements should be equivalent to the identity for conjunction. \pause
+\item So if you do the inductive step in a strong induction argument correctly it should include the case where $P_0$ is implied by a tautology.\pause
+\item This is really the base case! \pause
+\item It's so easy to overlook this that I recommend doing a seperate base case, even though technically it isn't necessary.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{equivalent?}
+\begin{itemize}
+\item If a statement can be proved by ordinary induction, then it can certainly be proved by strong induction. \pause
+\item In the strong induction version you know that all the statements from $P_0$ to $P_{n-1}$ are true,\pause \newline
+ so in particular you know that $P_{n-1}$ is true \pause \newline
+so you can just use the ordinary induction argument from there. \pause
+\item To show the other implication we need to create a new statement family that's related to the $P$'s: \pause
+\[ Q_k \; = \; \forall i \in \{0, \ldots k\}, \; P_i \; \mbox{is true.} \] \pause
+\item Proving $Q_{k-1} \implies Q_k$ is really the same thing as the strong induction argument, but the $Q$ statement family can be proved using ordinary induction!
+\end{itemize}
+\end{frame}
+
+\section{examples}
+
+\begin{frame}{The fundamental theorem of arithmetic}
+\begin{itemize}
+\item Many areas of mathematics have something called the ``fundamental theorem.'' \pause
+\item The fundamental theorem of calculus is
+\[ \int_a^b f(x) \dx \; = \; F(b) - F(a), \; \mbox{where} \; F(x) \; \mbox{is an antiderivative of} \; f(x).\] \pause
+\item The fundamental theorem of algebra is that every polynomial with real coeffiecients can be factored into a product of linear and irreducible quadratic terms. \pause
+\item The fundamental theorem of arithmetic is that every positive integer has a unique representation as a product of prime powers. 
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{comments}
+\begin{itemize}
+\item Strong induction is necessary in proving the fundamental theorem of arithmetic because the prime factorization of $k$ and $k-1$ have nothing to do with one another! \pause
+\item To get started on proving the fundamental theorem of arithmetic we first prove a lemma: \pause
+\end{itemize}
+
+\begin{lem*}
+For every natural number $n$, if $n>1$, then $n$ has a prime factor.
+\end{lem*}
+\end{frame}
+
+\begin{frame}{proof}
+\begin{proof} (By strong induction)
+Consider an arbitrary natural number $n>1$.  If $n$ is prime then $n$ clearly
+has a prime factor (itself), so suppose that $n$ is not prime.  By 
+definition, a composite
+natural number can be factored, so $n=a \cdot b$ for some pair of natural
+numbers $a$ and $b$ which are both greater than 1.  Since $a$ and $b$ are  
+factors of $n$ both greater than 1, it follows that $a < n$ (it is also 
+true that $b < n$ but we don't need that \ldots).  The inductive hypothesis
+can now be applied to deduce that $a$ has a prime factor $p$.  Since
+$p \divides a$ and $a \divides n$, by transitivity $p \divides n$.  Thus
+$n$ has a prime factor.
+\end{proof}
+\end{frame}
+
+\begin{frame}{recurrences}
+\begin{itemize}
+\item Most people have heard of the Fibonacci numbers, which are defined recursively by 
+\[ F_{n} \; = \; F_{n-1} \, + \, F_{n-2}. \] \pause
+\item There are {\em many} other sequences of numbers that are also defined recursively. \pause
+\item When proving something about such a sequence it will be handy to know that that something is true for all the earlier values used in the recurrence! \pause 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{a formula}
+\begin{itemize}
+\item This example has been carefully cooked up so that the numbers work out nicely.\pause
+\item A sequence is defined recursively by the formula
+\[ X_n \; = \; X_{n-1} \, + \, 2X_{n-2}. \] \pause
+\item ``The next number is the sum of the previous and twice the one before that.''
+\item The initial values $X_0 = 2$ and $X_1 = 1$ are also given to get things started. \pause
+\item From there we can use the recursion to find $X_2 = 5$, $X_3 = 7$, $X_4 = 17$, {\em et cetera}. \pause
+\item It turns out that there is a relatively easy formula for this sequence: \pause
+\[ X_n \; = \; 2^n \, + \, (-1)^n. \]
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{the result}
+\begin{thm*}
+\[ \forall n \in \Naturals, \; n \geq 2 \; \implies \; X_n  \; = \; 2^n \, + \, (-1)^n. \]
+\end{thm*}
+\pause
+\begin{itemize}
+\item Let's prove that using PCI. \pause
+\item Notice that issue about base cases in a PCI proof is present.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{proof}
+\begin{itemize}
+\item Notice that when $n=2$ the recursion for $X_n$ refers to values that are not covered by the theorem. \pause
+\item We note that $X_0 = 2$ and that is also equal to $2^0+(-1)^0$. Additionally, note that $X_1 = 1$ and that is also equal to $2^1 + (-1)^1$. \pause
+\item Suppose $k \geq 3$ is an integer such that for all $j<k$ we have $X_j = 2^j+(-1)^j$. \pause
+\item In particular we need that $X_{k-1} = 2^{k-1}+(-1)^{k-1}$ and $X_{k-2} = 2^{k-2}+(-1)^{k-2}$. \pause
+\item Then, 
+\end{itemize}
+\end{frame}
+
+\begin{frame}{proof continued}
+\begin{align*}
+X_k \; &= \; X_{k-1} \, + \, 2 X_{k-2} & & \mbox{the given recurrence} \\
+       &= \; (2^{k-1}\,+\,(-1)^{k-1}) \; + \; 2(2^{k-2}\,+\,(-1)^{k-2}) & & \mbox{by the inductive hypothesis}\\
+       &= \; (2^{k-1}\,+\,2(2^{k-2})) \; + \; ((-1)^{k-1}\,+\,2(-1)^{k-2}) & & \mbox{algebra}\\
+       &= \; (2^{k-1}\,+\,2^{k-1}) \; + \; (-1)^{k-2}((-1)^1\,+\,2) & & \mbox{more algebra}\\
+       &= \; (2^{k}) \; + \; (-1)^{k-2}(1) & & \mbox{more more algebra}\\
+       &= \; (2^{k}) \; + \; (-1)^{k-2}(-1)^2 & & \mbox{more more more algebra}\\
+       &= \; (2^{k}) \; + \; (-1)^{k} & & \mbox{as desired}\\
+\end{align*}
+
+\hfill {\em Q.E.D.}
+
+\end{frame}
+
+\begin{frame}{usps}
+\begin{itemize}
+\item A postage stamp problem involves showing that given two types of stamps we can use them to achieve any amount of postage. \pause
+\item There will be ``holes'' early on -- postages that can't be achieved exactly. \pause
+\item But after some a finite number of initial misses, every postage can be achieved. \pause
+\item For instance consider the postages that can be created using $3$\textcent\rule{1pt}{0pt} and $5$\textcent\rule{1pt}{0pt} stamps: \pause
+\[ \{ 0, 3, 5, 6, 8, 9, 10, 11, \ldots \} \] \pause
+\item As soon as we have three consecutive achievable postages we get everything. \pause \newline
+(we can add some number $3$\textcent\rule{1pt}{0pt} stamps to one of those to get any larger value.)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{proof}
+\begin{thm*}
+Any postage greater than $7$\textcent\rule{1pt}{0pt} can be achieved exactly using only $3$\textcent\rule{1pt}{0pt} and $5$\textcent\rule{1pt}{0pt} stamps.
+\end{thm*} \pause
+\begin{itemize}
+\item The proof can be completed using PCI. \pause
+\item A simpler approach (IMHO) is to combine ordinary induction with the three exhaustive cases, $x=3k+8$, $x=3k+9$ and $x=3k+10$.
+\end{itemize}
+
+\end{frame}
+
+\end{document}
