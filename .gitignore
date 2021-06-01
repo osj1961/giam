@@ -1,5 +1,8 @@
 
 figures/SAVE.fig
+figures/*.pdf
+figures/*.eps
+figures/*.tex
 **.aux
 **.blg
 **.dvi
