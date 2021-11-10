@@ -1,0 +1,113 @@
+\documentclass{amsart}
+\usepackage{amssymb}
+\renewcommand{\baselinestretch}{1.5}
+\addtolength{\textwidth}{.2in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1in}
+
+\usepackage{ifthen}
+\usepackage{graphicx}
+
+\input{../my_latex_definitions.tex}
+
+\addtolength{\abovedisplayskip}{0pt}
+\addtolength{\belowdisplayskip}{24pt}
+\addtolength{\abovedisplayshortskip}{0pt}
+\addtolength{\belowdisplayshortskip}{48pt}
+
+\newcommand{\vsp}{\rule[-12pt]{0pt}{48pt}}
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large Activity 27 -- Introduction to Proof}
+\centerline{\large divisibility statements and other proofs using PMI}
+
+\bigskip
+\Large
+
+
+\begin{enumerate}
+
+\item Verify the base cases in inductive proofs of the following.  (Assume the universe of discourse is $\Naturals$.)
+
+\begin{enumerate}
+	\item \vsp $\displaystyle 3 \divides x^3 + 5x - 6$
+	\item \vsp $\displaystyle 5 \divides 2x^5 - 7x + 10$
+	\item \vsp $\displaystyle 5 \divides 6^x + 4$
+	\item \vsp $\displaystyle 11 \divides 12^x + x^11 - x + 10$
+\end{enumerate}
+
+\vsp
+
+\item In the problems that follow you will often need the binomial coefficients.  Write out Pascal's triangle up to the 7th row here.
+
+\vfill
+
+\newpage
+
+\item Use induction to prove that
+
+\[ \forall n \in \Naturals,  3 \divides n^3 - n \]
+
+\vfill
+
+\item Use induction to prove that
+
+\[ \forall n \in \Naturals,  5 \divides n^5 - n \]
+
+\vfill
+
+\newpage
+
+\item Use induction to prove that
+
+\[ \forall n \in \Naturals,  7 \divides n^7 - n \]
+
+\vfill
+
+\item Find a counterexample to
+
+\[ \forall n \in \Naturals,  4 \divides n^4 - n \]
+
+\vfill
+
+\newpage
+
+\item Use induction to prove that
+
+\[ \forall n \in \Naturals, 5 \divides n^5 - 5n^3 + 9n. \]
+
+\vfill
+
+\item Use induction to prove that
+
+\[ \forall n \in \Naturals, 7 \divides 8^n - 1 . \]
+
+\vfill
+
+\newpage
+
+\item A {\em Charmichael number} is a composite integer that, nevertheless
+satisfies Fermat’s little theorem. The smallest Charmichael number
+is $561$. So, for every $x$, with $0 \leq x < 561$, it follows that $x^{561} - x \equiv 0 \pmod{561}$.
+
+While number like $2^{561}$ are far too large for your calculator, they
+can be computed in sage in a tiny fraction of a second.
+Use a loop in sage to verify that 561 is indeed a Carmichael
+number. (Recall that \% is the sage “mod” operator.)
+
+\vfill
+
+\item Suppose $n$ is a natural number such that $(x+1)^n \equiv  x^n+1 \pmod{n}$.
+
+Use induction to show that
+
+\[ \forall x \in \Naturals, \; x^n  \equiv x \pmod {n}.  \]
+
+\vfill
+
+\end{enumerate}
+
+
+\end{document}
