@@ -94,7 +94,7 @@
 \author{Joe Fields}
 \title{Introduction to Proof} 
 
-\date{Lecture 29 (GIAM \S 6.1) \newline relations}
+\date{Lecture 30 (GIAM \S 6.2) \newline properties of relations}
 \institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
 
 \input{my_latex_definitions.tex}
@@ -129,48 +129,89 @@
 
 \section{intro}
 
-\begin{frame}{what is a relation?}
+\begin{frame}{where are we heading?}
 \begin{itemize}
-\item Sometimes a symbol between two things means ``do an operation.'' \pause
-\item Other times it means ``check a condition.'' \pause
-\item Example: $3+4$ means ``add 3 and 4'' of course the answer is a number (7) \pause
-\item Other example: $3=4$ means ``check if 3 and 4 are the same'' and here the answer is a boolean (FALSE)\pause
+\item Two relations stand out as models of important behavior.\pause
+\item $=$ and $\leq$ \pause
+\item Relations that behave more or less the same way as $=$ are called equivalence relations. \pause
+\item Relations that work the same way as $\leq$ are called ordering relations. \pause
+\item If we can determine that some novel relation is one of these two types there is a lot of machinery that can be brought to bear.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{where is a relation?}
+\begin{frame}{what make you so special?}
 \begin{itemize}
-\item Most of the relation symbols we know get numbers on both sides. \pause
-\item $=$,  $\neq$, $<$, $\leq$, $>$, $\geq$ \pause
-\item Some of the relation symbols we know get sets on either side \pause
-\item $=$, $\subseteq$, $\supseteq$ \pause
-\item One of the relation symbols we know gets different things on either side. \pause
-\item $\in$
+\item The features that cause $=$ to be so useful come down to just 3 properties. \pause
+\item So equivalence relations are relations that have these 3 properties.\pause
+\item Ordering relations are also defined by 3 properties -- the ones that $\leq$ satisfies. \pause
+\item So the plan is to lay out a compendium of properties that relations may or may not have.\pause
+\item And (of course) we'll need to prove it when they do.\pause
+\item Then we'll proceed to define equivalence relations and ordering relations.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{an arrow diagram}
-Here's a way to visualize the $\mid$ relation which is going {\em from} the set $\{1,2,3,6\}$ {\em to} itself.
-
-\begin{center}
-\input{first_relation.tex}
-\end{center}   
-\end{frame}
-\begin{frame}{another arrow diagram}
-Here's a way to visualize the $\in$ relation which is going {\em from} the set $\{1,2,3\}$ {\em to} its power set.
-
-\begin{center}
-\input{first_relation-alt.tex}
-\end{center}   
-\end{frame}
-
-
-\begin{frame}{who is a relation}
+\begin{frame}{properties}
 \begin{itemize}
-\item Fundamentally, the identity of a relation is tied to the set of ordered pairs that make it true.\pause
-\item 
+\item Reflexivity \pause
+\item Irreflexivity \pause
+\item Symmetry \pause
+\item Anti-symmetry \pause
+\item Transitivity \pause
+\item See the table one page 250 in GIAM.
+\end{itemize}
+
+\end{frame}
+
+\section{equivalence relations and ordering relations}
+
+\begin{frame}{equivalence relations}
+
+Equivalence relations are
+\begin{itemize}
+\item reflexive
+\item symmetric
+\item transitive
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{ordering relations}
+
+Ordering relations are
+\begin{itemize}
+\item reflexive
+\item anti-symmetric
+\item transitive
 \end{itemize}
 \end{frame}
+
+\section{visualizations}
+
+\begin{frame}{graphs in the plane}
+\begin{enumerate}
+\item Graphs of reflexive relations on $\Reals$ contain the line $y=x$. \pause
+\item Graphs of symmetric relations on $\Reals$ are, uhmmm, symmetric. \pause
+\item Is it clear what happens with anti-symmetry? \pause
+\item Transitivity is hard. (Go to Desmos.)
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{What's IN the digraph}
+\begin{itemize}
+\item Loops\pause
+\item Two-way connections\pause
+\item One-way connections\pause
+\item Short cuts
+\end{itemize}
+\end{frame}
+
+\begin{frame}{What's NOT in the digraph}
+\begin{itemize}
+\item Let's first do the exercise on page 253. \pause
+\item Starts on page 254.
+\end{itemize}
+\end{frame}
+
 
 
 \end{document}
