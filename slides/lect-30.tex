@@ -94,7 +94,7 @@
 \author{Joe Fields}
 \title{Introduction to Proof} 
 
-\date{Lecture 34 (GIAM \S 6.6) \newline special functions}
+\date{Lecture 30 (GIAM \S 6.2) \newline properties of relations}
 \institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
 
 \input{my_latex_definitions.tex}
@@ -127,37 +127,91 @@
   \titlepage
 \end{frame}
 
-\section{more about restrictions}
+\section{intro}
 
-\begin{frame}{how to notate a restriction}
+\begin{frame}{where are we heading?}
 \begin{itemize}
-  \item Use a vertical line after the function w/ the new domain as a subscript. \pause
-  \item Generically, that would be
-  \[ \restrict{f}{D} \] \pause
-  \item In a particular instance, if we want to restrict the sine function so that it becomes 1-1: \pause
-  \[ \restrict{\sin}{[-\pi/2, \pi/2]} \] \pause
-  \item You can also include formulae and inequalities in this sort of notation: \pause
-  \[ \restrict{x^2}{x \geq 0} \] \pause
+\item Two relations stand out as models of important behavior.\pause
+\item $=$ and $\leq$ \pause
+\item Relations that behave more or less the same way as $=$ are called equivalence relations. \pause
+\item Relations that work the same way as $\leq$ are called ordering relations. \pause
+\item If we can determine that some novel relation is one of these two types there is a lot of machinery that can be brought to bear.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{what make you so special?}
+\begin{itemize}
+\item The features that cause $=$ to be so useful come down to just 3 properties. \pause
+\item So equivalence relations are relations that have these 3 properties.\pause
+\item Ordering relations are also defined by 3 properties -- the ones that $\leq$ satisfies. \pause
+\item So the plan is to lay out a compendium of properties that relations may or may not have.\pause
+\item And (of course) we'll need to prove it when they do.\pause
+\item Then we'll proceed to define equivalence relations and ordering relations.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{properties}
+\begin{itemize}
+\item Reflexivity \pause
+\item Irreflexivity \pause
+\item Symmetry \pause
+\item Anti-symmetry \pause
+\item Transitivity \pause
+\item See the table one page 250 in GIAM.
+\end{itemize}
+
+\end{frame}
+
+\section{equivalence relations and ordering relations}
+
+\begin{frame}{equivalence relations}
+
+Equivalence relations are
+\begin{itemize}
+\item reflexive
+\item symmetric
+\item transitive
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{ordering relations}
+
+Ordering relations are
+\begin{itemize}
+\item reflexive
+\item anti-symmetric
+\item transitive
+\end{itemize}
+\end{frame}
+
+\section{visualizations}
+
+\begin{frame}{graphs in the plane}
+\begin{enumerate}
+\item Graphs of reflexive relations on $\Reals$ contain the line $y=x$. \pause
+\item Graphs of symmetric relations on $\Reals$ are, uhmmm, symmetric. \pause
+\item Is it clear what happens with anti-symmetry? \pause
+\item Transitivity is hard. (Go to Desmos.)
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{What's IN the digraph}
+\begin{itemize}
+\item Loops\pause
+\item Two-way connections\pause
+\item One-way connections\pause
+\item Short cuts
+\end{itemize}
+\end{frame}
+
+\begin{frame}{What's NOT in the digraph}
+\begin{itemize}
+\item Let's first do the exercise on page 253. \pause
+\item Starts on page 254.
 \end{itemize}
 \end{frame}
 
 
-\begin{frame}{domains??}
-\begin{itemize}
-  \item What is the domain of a composition? \pause
-  \item Recalling that $f \circ g$ means ``do g first then apply f to that.'' \pause
-  \item If an input isn't in the domain of $g$ we can't even get started. \pause
-  \item So $\Dom{f \circ g} \; \subseteq \; \Dom{g}$
-\end{itemize}
-\end{frame}
 
-
-
-\section{right and left inverses}
-
-\section{inverse trig functions}
-
-\section{projections}
-
-\section{set theoretic functions}
 \end{document}

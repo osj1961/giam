@@ -18,3 +18,5 @@ figures/*.tex
 **.snm
 **.synctex.gz
 **.toc
+**.fig.bak
+**.eps

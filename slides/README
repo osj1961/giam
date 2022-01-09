@@ -8,3 +8,9 @@ to get the standard slides, and
 	make filename-handouts.pdf 
 
 to get the handouts version.
+
+There is also a rule for processing "LaTeX + PDF" figures.  Use
+
+	make figure_filename.tex
+	
+to get both the .tex and the .pdf.  This presumes the existance of figure_filename.fig in this directory.

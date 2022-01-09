@@ -1078,7 +1078,7 @@ definition of a function.
 \begin{defi}
 If $A$ and $B$ are sets, then $f$ is a function from $A$ to $B$ (which
 is expressed symbolically by $f:A\longrightarrow B$), if and only if
-$f$ is a subset of $A\times B$, $\Dom{f}=A$ and $((a,b) \in f \; \land \; (a,c) \in f \; \implies \; b=c$.
+$f$ is a subset of $A\times B$, $\Dom{f}=A$ and $((a,b) \in f \; \land \; (a,c) \in f) \; \implies \; b=c$.
 \end{defi}
 
 Recapping, a function \emph{must} have its domain equal to the set $A$
@@ -1211,14 +1211,14 @@ be injective, but by deducing that $x_1=x_2$ we are contradicting that
 presumption and so, are showing that $f$ is indeed an injection.
 
 Let's start by looking at a very simple example, 
-$f(x)=2x-1; \; x \in \Naturals$.  Clearly this function 
+$f(x)=2x-1; \; x \in \Zplus$.  Clearly this function 
 is not a surjection if we are thinking that $\Cod{f}=\Naturals$
 since the outputs are always odd.  Let ${\mathcal O} = \{1, 3, 5, 7, \ldots \}$
 be the set of odd naturals.
 
 \begin{thm}
-The function $f:\Naturals \longrightarrow {\mathcal O}$ defined by
-$f(x) = 2x-1$ is a bijection from $\Naturals$ to ${\mathcal O}$.
+The function $f:\Zplus \longrightarrow {\mathcal O}$ defined by
+$f(x) = 2x-1$ is a bijection from $\Zplus$ to ${\mathcal O}$.
 \end{thm}
 
 \begin{proof}
@@ -1238,12 +1238,12 @@ and simple algebra leads to $x_1=x_2$.
 For a slightly more complicated example 
 consider the function from $\Naturals$ to $\Integers$ defined by
 
-\[ f(x) = \left\{ \begin{array}{cl} x/2 & \mbox{if $x$ is even} \\ -(x-1)/2 & \mbox{if $x$ is odd} \end{array} \right. \]
+\[ f(x) = \left\{ \begin{array}{cl} x/2 & \mbox{if $x$ is even} \\ -(x+1)/2 & \mbox{if $x$ is odd} \end{array} \right. \]
 
 This function does quite a handy little job, it matches up the natural
 numbers and the integers in pairs.  Every even natural gets matched with
-a positive integer and every odd natural (except 1) gets matched with a 
-negative integer (1 gets paired with 0).  This function is really doing 
+a non-negative integer and every odd natural gets matched with a 
+negative integer.  This function is really doing 
 something remarkable -- common sense would seem to indicate that the integers
 must be a larger set than the naturals (after all $\Naturals$ is completely
 contained inside of $\Integers$), but the function $f$ defined above serves
@@ -1258,16 +1258,16 @@ First we will show that $f$ is surjective.
  
 It suffices to find a preimage for an arbitrary element of $\Integers$.
 Suppose that $y$ is a particular but arbitrarily chosen integer.  There 
-are two cases to consider: $y\leq 0$ and $y>0$.
+are two cases to consider: $y<0$ and $y\geq0$.
 
-If $y>0$ then $x=2y$ is a preimage for $y$.  This follows easily since
+If $y\geq0$ then $x=2y$ is a preimage for $y$.  This follows easily since
 $x=2y$ is obviously even and so $x$'s image will be
 defined by the first case in the definition of $f$.  Thus $f(x) = f(2y) =
 (2y)/2 = y$.
 
-If $y \leq 0$ then $x=1-2y$ is a preimage for $y$.  Clearly, $1-2y$ is odd
+If $y < 0$ then $x=-(1+2y)$ is a preimage for $y$.  Clearly, $-(1+2y)$ is odd
 whenever $y$ is an integer, thus this value for $x$ will fall into the second 
-case in the definition of $f$.  So, $f(x) = f(1-2y) = -((1-2y)-1)/2 = -(-2y)/2 = y$.
+case in the definition of $f$.  So, $f(x) = f(-(1+2y)) = -(-(1+2y)+1)/2 = -(-2y)/2 = y$.
 
 Since the cases $y>0$ and $y\leq 0$ are exhaustive (that is, every $y$ in 
 $\Integers$ falls into one or the other of these cases), and we have found

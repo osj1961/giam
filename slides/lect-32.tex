@@ -94,7 +94,7 @@
 \author{Joe Fields}
 \title{Introduction to Proof} 
 
-\date{Lecture 34 (GIAM \S 6.6) \newline special functions}
+\date{Lecture 32 (GIAM \S 6.4) \newline ordering relations}
 \institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
 
 \input{my_latex_definitions.tex}
@@ -127,37 +127,108 @@
   \titlepage
 \end{frame}
 
-\section{more about restrictions}
+\section{intro}
 
-\begin{frame}{how to notate a restriction}
+\begin{frame}{what is an ordering relation?}
 \begin{itemize}
-  \item Use a vertical line after the function w/ the new domain as a subscript. \pause
-  \item Generically, that would be
-  \[ \restrict{f}{D} \] \pause
-  \item In a particular instance, if we want to restrict the sine function so that it becomes 1-1: \pause
-  \[ \restrict{\sin}{[-\pi/2, \pi/2]} \] \pause
-  \item You can also include formulae and inequalities in this sort of notation: \pause
-  \[ \restrict{x^2}{x \geq 0} \] \pause
+\item Total vs. partial orders.\pause
+\item Comparability.\pause
+\item Modeled after $\leq$ (except some things may not be comparable).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{the official definition}
+\begin{itemize}
+\item A relation $\relR$ on a set $S$ is an ordering relation if it is:\pause
+\item Reflexive,\pause
+\item Anti-symmetric,\pause
+\item and Transitive.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{the other official definition}
+\begin{itemize}
+\item A relation $\relR$ on a set $S$ is a strict ordering relation if it is:\pause
+\item Irreflexive,\pause
+\item Anti-symmetric,\pause
+\item and Transitive. \pause
+\item These are also known as {\em irreflexive ordering relations} for obvious reasons.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{posets}
+\begin{itemize}
+\item Partially ordered sets -- posets \pause
+\item A {\em poset} is a set $S$ together with a relation $\relR$ on $S$ that is an ordering relation\pause
+\item Exercise 1 in Section 6.4 (on page 273 in GIAM).
 \end{itemize}
 \end{frame}
 
 
-\begin{frame}{domains??}
+\begin{frame}{an example}
 \begin{itemize}
-  \item What is the domain of a composition? \pause
-  \item Recalling that $f \circ g$ means ``do g first then apply f to that.'' \pause
-  \item If an input isn't in the domain of $g$ we can't even get started. \pause
-  \item So $\Dom{f \circ g} \; \subseteq \; \Dom{g}$
+\item My favorite ordering relation (after $\leq$) is the divisibility relation. \pause
+\item (Note: this is not the strict sort.)\pause
+\item Divisors of 12 (on page 267 in GIAM).
 \end{itemize}
 \end{frame}
 
+\section{Hasse diagrams}
 
+\begin{frame}{features}
+\begin{itemize}
+\item vertical position determines the direction\pause
+\item drop all the loops\pause
+\item don't show connections that can be deduced because of transitivity.
+\end{itemize}
+\end{frame}
 
-\section{right and left inverses}
+\begin{frame}{examples}
+\begin{itemize}
+\item See pages 269 and 270 in GIAM.
+\end{itemize}
+\end{frame}
 
-\section{inverse trig functions}
+\begin{frame}{graded posets}
+\begin{itemize}
+\item Often one can find a function that determines the heights in a Hasse diagram.\pause
+\item A graded poset consist of a set $S$, an ordering relation $\relR$ on $S$, and a function $\phi$ whose domain is $S$.\pause
+\item If $x \neq y$ and $x \relR y$ then $\phi(x) < \phi(y)$ \pause
+\item This property tells us that things that are mapped to the same value by $\phi$ can't be comparable.\pause
+\item See the example on page 271
+\end{itemize}
+\end{frame}
 
-\section{projections}
+\section{terminology}
 
-\section{set theoretic functions}
+\begin{frame}{chains and antichains}
+\begin{itemize}
+\item A \emph{chain} in a poset is a subset of the elements, all 
+of which are comparable. \pause
+\item An {\em antichain} in a poset is a subset
+of the elements, none of which are comparable.\pause
+\item Maximality -- A chain is {\em maximal} if it can't be added to. \pause
+\item ditto for anti-chains.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{special elements}
+\begin{itemize}
+\item cover \pause (a.k.a. immediate successor) \pause
+\item Maximality -- an {\em element} is maximal if it doesn't have a cover.\pause
+\item An element is {\em minimal} if it doesn't cover anything.\pause
+\item top/bottom \pause (a.k.a. greatest element and least element). \pause
+\item This should remind you of relative and absolute maxima and minima. \pause
+\item Exercise 2 in Section 6.4.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{hypercubes}
+\begin{itemize}
+\item The power set of a set partially ordered by $\subseteq$ \pause
+\item This is a graded poset with $\phi(A) = |A|$.
+\item Let's draw a few.
+\end{itemize}
+\end{frame}
+
 \end{document}

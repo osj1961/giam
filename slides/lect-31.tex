@@ -1,0 +1,281 @@
+\ifdefined\ishandout
+  \documentclass[handout,landscape]{beamer} 
+\else
+  \documentclass[landscape]{beamer}
+\fi
+
+%\hypersetup{pdfpagemode=FullScreen} %Enabling this option will cause the slides to go full-screen on opening
+
+\mode<handout>
+{
+  \usepackage{pgf}
+  \usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{6 on 1 boxed}
+{
+  \edef\pgfpageoptionheight{\the\paperheight} 
+  \edef\pgfpageoptionwidth{\the\paperwidth}
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=6,%
+    physical height=\pgfpageoptionheight,%
+    physical width=\pgfpageoptionwidth%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    border code=\pgfsetlinewidth{1pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{2}
+  {%
+    border code=\pgfsetlinewidth{1pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{3}
+  {%
+    border code=\pgfsetlinewidth{1pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{4}
+  {%
+    border code=\pgfsetlinewidth{1pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{5}
+  {%
+    border code=\pgfsetlinewidth{1pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{6}
+  {%
+    border code=\pgfsetlinewidth{1pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+}
+
+
+  \pgfpagesuselayout{6 on 1 boxed}[letterpaper, border shrink=5mm]
+  \nofiles
+}
+
+\usepackage{listings}
+\usepackage{multimedia}
+\usepackage[normalem]{ulem}
+\usepackage{ifthen}
+\usepackage{textcomp}
+
+\usetheme{Warsaw} 
+\usecolortheme{seahorse}
+\useoutertheme{infolines} 
+
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+
+\author{Joe Fields}
+\title{Introduction to Proof} 
+
+\date{Lecture 31 (GIAM \S 6.3) \newline equivalence relations}
+\institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
+
+\input{my_latex_definitions.tex}
+
+\newcommand{\vs}{\rule{0pt}{11pt}}
+\newcommand{\notimplies}{\;\not\!\!\!\implies}
+\newcommand{\dx}{\,\mbox{d}x}
+
+\AtBeginSection[]
+{
+ \begin{frame}{Table of Contents} 
+  \tableofcontents[currentsection]
+ \end{frame}
+}
+
+%%%% SAVE %%%%
+%{ %magic to get a full screen image...
+%\setbeamertemplate{navigation symbols}{}  % hide navigation buttons 
+%\setbeamertemplate{background canvas}{\centerline{\includegraphics 
+%	[height=\paperheight]{Cantor_4.jpeg}}}
+%\begin{frame}[plain]
+%\rule{0pt}{0pt}
+%\end{frame} 
+%} %end of magic
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\section{intro}
+
+\begin{frame}{what is an equivalence relation?}
+\begin{itemize}
+\item Equals light\pause
+\item Usually some feature is highlighted while others are lost. \pause
+\item I have dozens of screwdrivers - none of them are equal (they all have slightly different uses) but if I just need a poking device, they are all equivalent.  \pause
+\end{itemize}
+\end{frame}
+
+\begin{frame}{the official definition}
+\begin{itemize}
+\item A relation $\relR$ on a set $S$ is an equivalence relation if it is:\pause
+\item Reflexive,\pause
+\item Symmetric,\pause
+\item and Transitive.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{an example}
+\begin{itemize}
+\item Consider the relation $\equiv_3$ defined by
+
+\[ x \equiv_3 y \quad \iff \quad x \mod{3} \; = \; y \mod{3} \] \pause
+\item Proving that this is reflexive, symmetric and transitive is easy since it is defined using ordinary $=$ (which is reflexive, symmetric and transitive).  \pause
+\item Let's do this proof on the whiteboard.
+\end{itemize}
+\end{frame}
+
+\section{equivalence classes}
+
+\begin{frame}{informal intro}
+\begin{itemize}
+\item In the example of my extensive tool collection, my screwdrivers all ended up in the ``poking devices'' equivalence class.  My hammers would all end up in the ``smashing devices'' equivalence class, {\em et cetera}. \pause
+\item In the $\equiv_3$ example, there is an equivalence class for each possible remainder mod 3. \pause
+\[ \overline{0} \; = \; \{0, 3, 6, 9, \ldots \} \]
+\[ \overline{1} \; = \; \{1, 4, 7, 10, \ldots \} \]
+\[ \overline{2} \; = \; \{2, 5, 8, 11, \ldots \} \]
+\pause
+
+\item Equivalence classes contain all the things that can be treated as one (because they are equivalent under the relation). \pause
+\end{itemize}
+\end{frame}
+
+\begin{frame}{formal definition}
+\begin{itemize}
+\item Given an equivalence relation $\relR$ on a set $S$, and an element $x \in S$, the {\em equivalence class of $x$} is 
+
+\[ \{ y \in S \suchthat y \relR x \} \]
+\pause
+
+\item Notice that (at a minimum) the equivalence class of $x$ will contain $x$ itself. \pause Why? \pause
+\item The notation for equivalence classes isn't completely standardized. \pause
+\item A popular choice would be $\overline{x}$, but you will often see $x/\relR$ too. \pause
+\item Try to keep in mind that $\overline{x}$ refers to an entire {\em set} of things. \pause
+\item $x \in S$ but $\overline{x} \subseteq S$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{one ring to rule them all}
+\begin{itemize}
+\item Every element of $S$ defines an equivalence class, \pause
+\item but every element of an equivalence class defines that very same equivalence class!\pause
+\item To refer to the entire collection of equivalence classes we write $S/\relR$. \pause
+\item Example: For $\equiv_3$ on $\Integers$. There are three equivalence classes, but there is some wiggle room concerning what we call them:
+\pause
+
+\[ \Integers /\!\equiv_3 \quad = \quad \{ \overline{0}, \overline{1}, \overline{2} \} \]
+
+\pause
+
+but also
+
+\[ \Integers / \equiv_3 \; = \; \{ \overline{-1}, \overline{0}, \overline{1} \}. \]
+
+\pause
+
+\item Notice that $\overline{2} \; = \;\overline{-1}$ since they are the same set - all the things that have remainder 2 when divided by 3. 
+\end{itemize}
+\end{frame}
+  
+\section{partitions}
+
+\begin{frame}{a motivating example}
+\begin{itemize}
+\item Let's take a look at the equivalence classes for $\equiv_5$ \pause
+\begin{align*}
+ \overline{0} \; &= \; \{ \ldots -10, -5, 0, 5, 10, \ldots \} \\
+ \overline{1} \; &= \; \{ \ldots \rule{4pt}{0pt} -9, -4, 1, 6, 11, \ldots \} \\
+ \overline{2} \; &= \; \{ \ldots \rule{4pt}{0pt}-8, -3, 2, 7, 12, \ldots \} \\
+ \overline{3} \; &= \; \{ \ldots \rule{4pt}{0pt}-7, -2, 3, 8, 13, \ldots \} \\
+ \overline{4} \; &= \; \{ \ldots \rule{4pt}{0pt}-6, -1, 4, 9, 14, \ldots \} \\
+ \end{align*}
+ \pause
+\item Notice two things: 
+\begin{enumerate}
+  \item Every integer is in one of these sets.
+  \item There is no overlap between them.
+\end{enumerate}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{what is a partition?}
+\begin{itemize}
+\item A {\em partition of a set $S$} is a set $P$ (whose elements are subsets of $S$) such that \pause
+\bigskip
+
+\begin{enumerate}
+  \item $ \displaystyle S \; = \; \bigcup_{X \in P} X$ \pause
+  \item \rule{0pt}{24pt} $ \displaystyle \forall X, Y \in P, X \neq Y \implies X\cap Y = \emptyset $
+\end{enumerate}
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{an example}
+\begin{itemize}
+\item Consider the relation $\relS$ on $\Reals$ which we use to say that two numbers have the same sign. \pause
+\bigskip
+\item The equivalence classes for this relation are $\Reals^+$, $\Reals^-$, and $\{0\}$. \pause
+\item The partition of the real numbers into positive, negative and zero is the basic idea of the trichotomy property.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{another example}
+\begin{itemize}
+\item Graph isomorphism. \pause
+\bigskip
+\item Graphs (this is a new usage of an old word -- we don't mean $y=x^2$) \pause \newline
+are a mathematical model for things that have connections between them. \pause
+\item A graph consists of two sets $V$ and $E$ -- known respectively as vertices and edges. \pause
+\item There is also a relation from $E$ to $V$ that connects an edge to its two endpoints. \pause
+\item Suppose $V = \{a, b\}$, $E = \{e \}$ and the edge-endpoint relation is $\{ (e,a), (e,b) \}$ \pause
+\item That was a very complicated way to describe a pretty simple object.
+
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{continued}
+\begin{itemize}
+\item Two graph are isomorphic when there is a mapping that takes vertices to vertices, edges to edges and preserves the edge-endpoint relation. \pause
+\bigskip
+\item This is much easier done than said! \pause
+\item Etymology -- isomorphic means ``equal shape'' \pause
+\item Having ``equal shapes'' determine a set of equivalence classes (although in this instance they might better be called isomorphism classes). \pause
+\item Examples of isomorphism classes: $K_n$, $C_n$, $P_n$, $W_n$ (draw pictures).
+
+\end{itemize}
+\end{frame}
+
+\end{document}
