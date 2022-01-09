@@ -1,0 +1,93 @@
+\documentclass{amsart}
+\usepackage{amssymb}
+\renewcommand{\baselinestretch}{1.5}
+\addtolength{\textwidth}{.2in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1in}
+
+\usepackage{ifthen}
+\usepackage{graphicx}
+
+\input{../my_latex_definitions.tex}
+
+\addtolength{\abovedisplayskip}{0pt}
+\addtolength{\belowdisplayskip}{24pt}
+\addtolength{\abovedisplayshortskip}{0pt}
+\addtolength{\belowdisplayshortskip}{48pt}
+
+\newcommand{\vsp}{\rule[-12pt]{0pt}{48pt}}
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large Activity 30 -- Introduction to Proof}
+\centerline{\large properties of relations}
+
+\bigskip
+\Large
+
+
+\begin{enumerate}
+	
+\item Name a relation that is irreflexive, anti-symmetric, and transitive.
+
+\vfill
+
+\item (Exercise \# 4 in Section 6.2 of GIAM) For each of the five properties, name a relation that has it and a relation that doesn’t.
+
+\vfill
+
+\item Consider the relation $\relR$ defined by 
+
+\[ x \relR y \quad \iff \quad x \pmod{3} \; = \; y \pmod{3} . \]
+
+Show that $\relR$ is reflexive.
+
+\vfill
+
+\newpage
+
+\item Show that $\relR$ from the previous problem is symmetric.
+
+\vfill
+
+\item To show that $\relR$ (defined in problem 2) is transitive we need to assume that there are 3 arbitrary integers, $a$, $b$, and $c$ such that $a \relR b$ and $b \relR c$.  From that setup we must deduce that $a \relR c$.
+
+Use the definition of $\relR$ to write down precisely what needs to be shown to prove that this relation is transitive.
+
+\vfill 
+
+\newpage
+
+\item Critique the following proof that $\relR$ is transitive.
+
+\begin{proof} Suppose that $a$, $b$ and $c$ are integers such that 
+ $a \pmod{3} \; = \; b \pmod{3}$ and $ b \pmod{3} \; = \; c \pmod{3}$.  It follows that $ a \pmod{3} \; = \; c \pmod{3}$ because of ``reasons.''
+\end{proof}
+
+\vfill
+
+
+\item In the last worksheet we defined a relation on $\Reals$ by $x \relR y \; \iff x^2 - y^2 \; = \; 0$.  Verify that this relation is reflexive and symmetric by looking at its graph.  Prove that it is also transitive. 
+
+\vfill
+
+\newpage
+
+\item Define a relation $L$ on the set of all words in the English language via
+
+\[ xLy \quad \iff \quad x \; \mbox{comes before} \; y \; \mbox{in the dictionary}. \]
+
+Which of the 5 properties does $L$ have?
+
+\vfill
+
+\item Let $S$ be the power set of $\{1, 2, 3 \}$ and consider the $\subseteq$ relation on $S$.  Informally verify that this is an ordering relation.  (Which three properties must we check?)
+
+
+\vfill
+
+\end{enumerate}
+
+
+\end{document}

@@ -1,0 +1,231 @@
+\ifdefined\ishandout
+  \documentclass[handout,landscape]{beamer} 
+\else
+  \documentclass[landscape]{beamer}
+\fi
+
+%\hypersetup{pdfpagemode=FullScreen} %Enabling this option will cause the slides to go full-screen on opening
+
+\mode<handout>
+{
+  \usepackage{pgf}
+  \usepackage{pgfpages}
+
+\pgfpagesdeclarelayout{6 on 1 boxed}
+{
+  \edef\pgfpageoptionheight{\the\paperheight} 
+  \edef\pgfpageoptionwidth{\the\paperwidth}
+  \edef\pgfpageoptionborder{0pt}
+}
+{
+  \pgfpagesphysicalpageoptions
+  {%
+    logical pages=6,%
+    physical height=\pgfpageoptionheight,%
+    physical width=\pgfpageoptionwidth%
+  }
+  \pgfpageslogicalpageoptions{1}
+  {%
+    border code=\pgfsetlinewidth{1pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{2}
+  {%
+    border code=\pgfsetlinewidth{1pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.833\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{3}
+  {%
+    border code=\pgfsetlinewidth{1pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{4}
+  {%
+    border code=\pgfsetlinewidth{1pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.5\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{5}
+  {%
+    border code=\pgfsetlinewidth{1pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.25\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+  \pgfpageslogicalpageoptions{6}
+  {%
+    border code=\pgfsetlinewidth{1pt}\pgfstroke,%
+    border shrink=\pgfpageoptionborder,%
+    resized width=.5\pgfphysicalwidth,%
+    resized height=.5\pgfphysicalheight,%
+    center=\pgfpoint{.75\pgfphysicalwidth}{.167\pgfphysicalheight}%
+  }%
+}
+
+
+  \pgfpagesuselayout{6 on 1 boxed}[letterpaper, border shrink=5mm]
+  \nofiles
+}
+
+\usepackage{listings}
+\usepackage{multimedia}
+\usepackage[normalem]{ulem}
+\usepackage{ifthen}
+\usepackage{textcomp}
+
+\usetheme{Warsaw} 
+\usecolortheme{seahorse}
+\useoutertheme{infolines} 
+
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+
+\author{Joe Fields}
+\title{Introduction to Proof} 
+
+\date{Lecture 34 (GIAM \S 6.6) \newline special functions}
+\institute[SCSU]{ {\tt fieldsj1@southernct.edu} }
+
+\input{my_latex_definitions.tex}
+
+\newcommand{\vs}{\rule{0pt}{11pt}}
+\newcommand{\notimplies}{\;\not\!\!\!\implies}
+\newcommand{\dx}{\,\mbox{d}x}
+
+\AtBeginSection[]
+{
+ \begin{frame}{Table of Contents} 
+  \tableofcontents[currentsection]
+ \end{frame}
+}
+
+%%%% SAVE %%%%
+%{ %magic to get a full screen image...
+%\setbeamertemplate{navigation symbols}{}  % hide navigation buttons 
+%\setbeamertemplate{background canvas}{\centerline{\includegraphics 
+%	[height=\paperheight]{Cantor_4.jpeg}}}
+%\begin{frame}[plain]
+%\rule{0pt}{0pt}
+%\end{frame} 
+%} %end of magic
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\section{more about restrictions}
+
+\begin{frame}{how to notate a restriction}
+\begin{itemize}
+  \item Use a vertical line after the function w/ the new domain as a subscript. \pause
+  \item Generically, that would be
+  \[ \restrict{f}{D} \] \pause
+  \item In a particular instance, if we want to restrict the sine function so that it becomes 1-1: \pause
+  \[ \restrict{\sin}{[-\pi/2, \pi/2]} \] \pause
+  \item You can also include formulae and inequalities in this sort of notation: \pause
+  \[ \restrict{x^2}{x \geq 0} \] \pause
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{domains??}
+\begin{itemize}
+  \item What is the domain of a composition? \pause
+  \item Recalling that $f \circ g$ means ``do g first then apply f to that.'' \pause
+  \item If an input isn't in the domain of $g$ we can't even get started. \pause
+  \item So $\Dom{f \circ g} \; \subseteq \; \Dom{g}$ \pause
+  \item Why wasn't that an equals sign?  ( $=$ vs $\subseteq$ )
+\end{itemize}
+\end{frame}
+
+
+
+\section{right and left inverses}
+
+\begin{frame}{what is an inverse?}
+	\begin{itemize}
+		\item What is the inverse of a given function $f$? \pause
+		\item One answer: It's a function $g$ that undoes whatever $f$ does. \pause
+		\item $x^2$ and $\sqrt{x}$ are great prototypes to consider. \pause
+		\item What exactly is meant by these two compositions?
+		\[ \sqrt{x^2} \quad \mbox{and} \quad \sqrt{x}^2 \] \pause
+		\item Which one of those is ``$x$''  \pause
+		\item Each order of composition has its issues.  One has a reduced domain, and one has a formula which is not just $x$. \pause
+		\item Given a function $f$ if $f\circ g$ has formula $x$ (restricted to some domain) then $g$ is a left inverse for $f$.  If $g \circ f (x) = x$ on whatever domain it's defined on, then $g$ is a right inverse of $f$
+	\end{itemize}
+\end{frame}
+
+\section{inverse trig functions}
+
+\begin{frame}{SOHCATOA}
+	\begin{itemize}
+		\item For each of the six trig functions let's do the following: \pause
+		\begin{enumerate}
+			\item Figure out a domain so the restricted function is $1-1$. \pause
+			\item Plot the function and its inverse. \pause
+			\item Decide if that was a left or right inverse. 
+		\end{enumerate}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{hyperbolic}
+	\begin{itemize}
+		\item Lets try the same thing for the hyperbolic trig functions.
+	\end{itemize}
+\end{frame}
+
+\section{projections}
+
+\begin{frame}{squooshes}
+	\begin{itemize}
+		\item Think about the process of determining the range of a function from looking at its graph. \pause
+		\item You imagine squooshing it onto the y-axis and see what you get. \pause
+		\item This approach can be formalized using the projection functions. \pause
+		
+		\[  \pi_1 (x,y) = x \quad \mbox{and} \quad \pi_2(x,y) = y. \] \pause
+		
+		\item Both of these are functions from $\Reals^2$ to $\Reals$
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{unsquooshes}
+	\begin{itemize}
+		\item How can you undo a projection?  \pause
+		\item It's impossible! \pause
+		\item Okay, then is there something that projections undo? \pause
+		
+		\[  d(x) \; = \; (x,x)  \] \pause
+		
+		\item Which order of composition (of $d$ and, say, $\pi_1$) gives an identity function and what is it's domain?
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{the mysterious ``third'' dimension}
+	\begin{itemize}
+		\item Let's look at OpenSCAD
+	\end{itemize}
+\end{frame}
+
+\section{set theoretic functions}
+
+\begin{frame}{set stuff}
+	\begin{itemize}
+		\item GIAM page 293.
+	\end{itemize}
+\end{frame}
+
+\end{document}

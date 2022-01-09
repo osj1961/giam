@@ -1,0 +1,96 @@
+\documentclass{amsart}
+\usepackage{amssymb}
+\renewcommand{\baselinestretch}{1.5}
+\addtolength{\textwidth}{.2in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1in}
+
+\usepackage{ifthen}
+\usepackage{graphicx}
+
+\input{../my_latex_definitions.tex}
+
+\addtolength{\abovedisplayskip}{0pt}
+\addtolength{\belowdisplayskip}{24pt}
+\addtolength{\abovedisplayshortskip}{0pt}
+\addtolength{\belowdisplayshortskip}{48pt}
+\newcommand{\vsp}{\rule[-12pt]{0pt}{48pt}}
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large Activity 33 -- Introduction to Proof}
+\centerline{\large functions}
+
+\bigskip
+\Large
+
+
+\begin{enumerate}
+	
+\item (Exercise 1 in GIAM section 6.5) 
+
+\vfill
+
+\item Verify that $\relA$ is reflexive, symmetric, and transitive.
+
+\vfill
+
+\vfill
+
+\newpage
+
+\item Consider the generic ``equivalence mod $m$'' relation:
+
+\[ x \relR y \quad \iff \quad x \mod{m} \; = \; y \mod{m} . \]
+
+Show that $\relR$ is reflexive, symmetric and transitive.  
+
+\vfill
+
+\newpage
+
+
+\item In the book we defined the function $sf(n)$ which returns $n$ divided by the largest perfect square that divides $n$.  For example $sf(20) = 5$ since $4$ is the largest perfect square that divides $20$, and $20/4 = 5$ 
+
+Use the $sf$ function to define a relation:
+
+\[ x \relS y \quad \iff \quad sf(x) = sf(y) \]
+
+Show that $\relS$ is an equivalence relation on $\Naturals$.
+
+\vfill 
+
+\newpage
+
+\item Continuing with the relation $\relS$ defined in problem 4, notice that for any number $x$ that actually is a perfect square, $sf(x) = 1$.  Given this, what is $\overline{1}$?
+
+\vfill
+
+
+\item (Still working with the relation from problem 4.)  Many different natural numbers can be used as a ``label'' for the equivalence classes under $\relS$.  For instance $\overline{2}$, $\overline{8}$ and $\overline{18}$ all denote the same equivalence class -- let's follow the convention of always using the smallest such label.  Characterize these reduced representatives for the equivalence classes.
+
+\vfill
+
+\newpage
+
+\item Define a relation $\relQ$ on the set of all finite sets by
+
+\[ A \relQ B \quad \iff \quad  |A| = |B| \]
+
+What are the equivalence classes under $\relQ$?
+
+\vfill
+
+\item Do problem 3 in GIAM section 6.3.
+
+\vfill
+
+\item Do problem 4 in GIAM section 6.3.
+
+\vfill
+
+\end{enumerate}
+
+
+\end{document}

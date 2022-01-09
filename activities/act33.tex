@@ -1,0 +1,102 @@
+\documentclass{amsart}
+\usepackage{amssymb}
+\renewcommand{\baselinestretch}{1.5}
+\addtolength{\textwidth}{.2in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1in}
+
+\usepackage{ifthen}
+\usepackage{graphicx}
+
+\input{../my_latex_definitions.tex}
+
+\addtolength{\abovedisplayskip}{0pt}
+\addtolength{\belowdisplayskip}{24pt}
+\addtolength{\abovedisplayshortskip}{0pt}
+\addtolength{\belowdisplayshortskip}{48pt}
+
+\newcommand{\vsp}{\rule[-12pt]{0pt}{48pt}}
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large Activity 33 -- Introduction to Proof}
+\centerline{\large functions}
+
+\bigskip
+\Large
+
+
+\begin{enumerate}
+\item When a function is presented without specifying the domain, the default rule is to assume that the domain is the largest possible set of real numbers for which the function is defined.  By the default rule, what is the domain of $f(x)=1/x$ ?
+
+\vfill
+
+\vfill
+
+\item (Exercise 1 in section 6.5 of GIAM) For each of the following functions, give its domain, range and a possible codomain.
+\begin{enumerate}
+	\item \vsp $f(x) = \sin{(x)}$
+	\item \vsp $g(x) = e^x$
+	\item \vsp $h(x) = x^2$
+	\item \vsp $m(x) = \frac{x^2+1}{x^2-1}$
+	\item \vsp $n(x) = \lfloor x \rfloor$
+	\item \vsp $p(x) = \langle \cos{(x)}, \sin{(x)} \rangle $
+\end{enumerate}
+
+\vfill
+
+\newpage
+
+\item Deduce a formula for a bijective function that gives a correspondence between the odd numbers and the positive squares:
+
+\[ \{1, 3, 5, 7, 9, \ldots \} \]
+
+\noindent and
+
+\[ \{1, 4, 9, 16, 25, \ldots \} \]
+
+
+\newpage
+
+
+\item Consider the function 
+
+\[ m:\Integers \longrightarrow \{0, 1, 2, 3, 4, 5, 6 \} \]
+
+\noindent defined by
+
+\[ m(z) = z\mod 7. \]
+
+
+What is the image of the set of perfect squares ($S = \{ 0, 1, 4, 9, 16, \ldots \} $) under $m$?
+
+\vfill 
+
+What is the preimage $2$?
+
+\vfill
+
+\item Show that the natural exponential function is a surjection onto $(0, \infty)$.
+
+\vfill
+
+\newpage
+
+\item Recall that the hyperbolic sine function, $\sinh{(t)}$, is defined by 
+
+\[ \sinh{(t)} \; = \; \frac{e^t - e^{-t}}{2}. \]
+
+Show that $\sinh{}$ is an injection.
+
+\vfill
+
+\item Show that $\sinh{}$ is also a surjection.
+
+\vfill
+
+
+\end{enumerate}
+
+
+\end{document}

@@ -1,0 +1,78 @@
+\documentclass{amsart}
+\usepackage{amssymb}
+\renewcommand{\baselinestretch}{1.5}
+\addtolength{\textwidth}{.2in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1in}
+
+\usepackage{ifthen}
+\usepackage{graphicx}
+
+\input{../my_latex_definitions.tex}
+
+\addtolength{\abovedisplayskip}{0pt}
+\addtolength{\belowdisplayskip}{24pt}
+\addtolength{\abovedisplayshortskip}{0pt}
+\addtolength{\belowdisplayshortskip}{48pt}
+
+\newcommand{\vsp}{\rule[-12pt]{0pt}{48pt}}
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large Activity 29 -- Introduction to Proof}
+\centerline{\large relations}
+
+\bigskip
+\Large
+
+
+\begin{enumerate}
+\item There is a relation from the set of people to the set of colors that can be defined loosely by: $x\relR y$ if and only if $x$'s favorite color is $y$.  Suppose the set of people is just $\{ Abby, Bob, Cindy, Dave, Ella\} $.  Further, suppose that Bob and Ella both like blue, Abby and Cindy like pink, and Dave prefers green.
+Draw this relation using a Venn diagram with arrows.
+
+\vfill
+
+\newpage
+
+\item Below is the Venn-diagram-with-arrows picture for a small subset of the ``people and the cheeses they like'' relation.  
+\bigskip
+
+\centerline{\includegraphics[scale=.5]{relation_pic.png}}
+\medskip
+
+Who doesn't like any cheese?  What disgusting cheese is not liked by anyone? What changes would need to be made to this scenario to produce a relation that was a function?
+
+\vfill
+
+\item Write the relation in the last problem as a set of ordered pairs.
+
+\vfill
+
+\newpage
+
+\item Define a relation on $\Reals$ by $x \relR y \; \iff x^2 = y^2$.   Use set-builder notation to write $\relR$ as a set of ordered pairs and sketch a graph of $\relR$ as a subset of the Cartesian plane.
+
+\vfill
+
+
+\item Define a relation on $\Reals$ by $x \relR y \; \iff x^2 - y^2 \; = \; 1$. Sketch a graph of $\relR$ as a subset of the Cartesian plane.
+
+\vfill
+
+\newpage
+
+\item Consider the following set of trigonometric functions:
+
+\[ A \; = \; \{ \cos{(x)}, \sin{(x)}, -\cos{(x)}, -\sin{(x)} \}. \]
+
+Give the digraph (with vertex set $A$) of the relation 
+
+\[ \relR \; = \; \{ (f(x),g(x) ) \suchthat g(x) = f'(x) \}. \]
+
+\vfill
+
+\end{enumerate}
+
+
+\end{document}
