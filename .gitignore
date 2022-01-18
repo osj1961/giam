@@ -20,3 +20,4 @@ figures/*.tex
 **.toc
 **.fig.bak
 **.eps
+.DS_Store
