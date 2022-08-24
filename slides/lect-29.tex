@@ -134,7 +134,7 @@
 \item Sometimes a symbol between two things means ``do an operation.'' \pause
 \item Other times it means ``check a condition.'' \pause
 \item Example: $3+4$ means ``add 3 and 4'' of course the answer is a number (7) \pause
-\item Other example: $3=4$ means ``check if 3 and 4 are the same'' and here the answer is a boolean (FALSE)\pause
+\item Other example: $3=4$ means ``check if 3 and 4 are the same'' and here the answer is a boolean (FALSE).
 \end{itemize}
 \end{frame}
 
@@ -150,14 +150,15 @@
 \end{frame}
 
 \begin{frame}{an arrow diagram}
-Here's a way to visualize the $\mid$ relation which is going {\em from} the set $\{1,2,3,6\}$ {\em to} itself.
+Here's a way to visualize the $\mid$ relation which is going {\em from} the set $\{1,2,3,6\}$ {\em to} itself. \pause
 
 \begin{center}
 \input{first_relation.tex}
 \end{center}   
 \end{frame}
+
 \begin{frame}{another arrow diagram}
-Here's a way to visualize the $\in$ relation which is going {\em from} the set $\{1,2,3\}$ {\em to} its power set.
+Here's a way to visualize the $\in$ relation which is going {\em from} the set $\{1,2,3\}$ {\em to} its power set. \pause
 
 \begin{center}
 \input{first_relation-alt.tex}
@@ -167,23 +168,137 @@ Here's a way to visualize the $\in$ relation which is going {\em from} the set $
 
 \begin{frame}{who is a relation}
 \begin{itemize}
+\item Remember the roster form for a set? \pause
+\item Some would say that the best way to describe a set is to give its roster form. \pause
+\item In the same spirit, how can we best describe a relation? \pause
 \item Fundamentally, the identity of a relation is tied to the set of ordered pairs that make it true.\pause
-\item So, in studying relations, we are actually studying {\em sets}! \pause
-\item It's just that the sets have the further restriction that they consist of ordered pairs. \pause
-\item In the ``beating a dead horse'' vein\textellipsis \pause
-A relation {em literally is} a set containing ordered pairs.
+\item So, for example, the relation where we were looking at the divisors of 6 might best be represented by the following set: \pause
+
+\[ \{ (1,1), (1,2), (1,3), (1,6), (2,2), (2,6), (3,3), (3,6), (6,6) \} \]
+
 \end{itemize}
 \end{frame}
 
-\begin{frame}{getting formal}
-	\begin{itemize}
-		\item Recall, the Cartesian product of two sets $A$ and $B$ is \pause
-		\[ A \times B \; = \; \{ (a,b) \, \suchthat \, a \in A \; \land \; b \in B \} \] \pause
-		\item In words, $A \times B$ consists of {\em all} the pairs where the first element comes from $A$, and the second element comes from $B$. \pause
-		\item Notice that $A \times B$ is a relation, and that it is maximal in the sense that every other relation is a subset of it. \pause
-		\item This discussion motivates the formal definition: \pause 
-		A relation $\relR$ from a set $A$ to a set $B$ is a subset of $A \times B$.  
-	\end{itemize}
+\section{Cartesian products}
+
+\begin{frame}{cogito ergo sum}
+\begin{itemize}
+\item Since relations are best understood as sets of ordered pairs \pause
+\item we need to know about ordered pairs. \pause
+\item The $x-y$ plane may be the best exemplar. \pause
+\item A digression about Ren\'{e} DesCartes\textellipsis
+\end{itemize}
 \end{frame}
 
+\begin{frame}{Artoo}
+\begin{itemize}
+\item $\displaystyle A \times B \; = \; \{ (a,b) \suchthat a \in A \, \land \, b \in B \} $ \pause
+\item The special case where $A = B = \Reals$ is the Cartesian plane
+\item By analogy with ordinary multiplication we get a way to interpret powers of a set. \pause
+\item $\displaystyle \Reals^2 \, = \, \Reals \times \Reals$ \pause
+\item $\displaystyle \Reals^3 \, = \, \Reals \times \Reals \times \Reals$ \pause
+\item Anyway, the generic deal is that {\em any} subset of a Cartesian product is a relation.
+\end{itemize}
+\end{frame}
+
+\section{notation}
+
+\begin{frame}{the fix is in}
+\begin{itemize}
+\item We use infix notation (stick the relation symbol in between its arguments) \pause
+\item When we're dealing with an abstract relation on a set $S$ it is just a subset of $S^2$. \pause
+\item $\displaystyle  \relR \, \subseteq \, S \times S$. \pause
+\item Just treat the name of the relation just like it was a $<$ sign! \pause
+\item So $a \relR b$ just means that $(a,b)$ is one of the pairs in $\relR$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{a special case}
+\begin{itemize}
+\item Functions are just relations that satisfy an additional property. \pause \newline
+(Basically, the vertical line test.) \pause
+\item Suppose $f$ is a function. \pause
+(A real-valued function of a real variable.) \pause
+\item We could presumably write $xfy$ to mean that $x$ gets mapped to $y$ by the function $f$. \pause
+\item Nobody does that! \pause
+\item For functions we use Euler notation rather than infix notation. \pause
+\item $y = f(x)$ is the the same thing as saying the pair $(x,y)$ is in the relation $f$.
+
+\end{itemize}
+\end{frame}
+
+
+\section{composition and inverses}
+
+\begin{frame}{}
+\begin{itemize}
+\item There are a couple of operations you are certainly familiar with in the ``functions'' setting:\pause
+\item Composition and Inverses. \pause
+\item Composition -- Like hooking $\sqrt{x}$ and $3x+1$ together to get $\sqrt{3x+1}$. \pause \newline
+Or, $3\sqrt{x}+1$ if you do it other way around\textellipsis \pause 
+\item Inverses -- Like how $e^x$ and $\ln{(x)}$ undo one another. \pause
+\item These make sense for relations too.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{switching things around}
+\begin{itemize}
+\item Consider the input/output pairs that happen when $f$ and its inverse $f^{-1}$ are applied to numbers. \pause
+\item If $f(a) = b$ then $f^{-1}(b) = a$.  \pause And vice versa. \pause
+\item If we we-write that using infix notation we get 
+\[ afb \, \iff \, bf^{-1}a. \] \pause
+\item This gives us a hint how the inverse of an arbitrary relation should work. \newline
+Here are two versions: \pause
+\item $\displaystyle a \relR b \, \iff b \, \relR^{-1} a$ \pause
+
+\centerline{or,} \pause
+
+\item $\displaystyle \relR^{-1} \, = \, \{ (b,a) \suchthat (a,b) \in \relR \}$ \pause
+\end{itemize}
+\end{frame}
+
+\begin{frame}{hooking things up}
+\begin{itemize}
+\item When you compose two functions, say $f(g(x))$, you need to first compute $g(x)$ \pause \newline
+{\em then} apply $f$ to that intermediate result. \pause
+\item To compose two relations, we focus on this idea of the ``intermediate result.'' \pause
+\item The picture to keep in your mind's eye is: \pause
+
+\begin{center}
+\input{comp_of_rels.tex}
+\end{center}
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{composition}
+\begin{itemize}
+\item Be mindful of the reversal of order!\pause
+\item $\relR$ is a relation from $A$ to $B$, and $\relS$ is a relation from $B$ to $C$. \pause
+\item (Alternatively, we might say $\relR \subseteq A \times B$ and $\relS \subseteq B \times C$.) \pause
+\item The composition goes from $A$ to $C$. \pause
+\item Is the thing we've been picturing $\relR \circ \relS$ or is it $\relS \circ \relR$? \pause
+\item Again, think back to the function notation. \pause \newline
+$f \circ g (x) \; = \; f(g(x))$ and, written in that order, it is $g$ that is applied first to $x$. \pause
+\item The composition of relations we've been looking at has $\relR$ first, so it is written $\relS \circ \relR$. \pause
+\item Danger!
+\end{itemize}
+\end{frame}
+
+\begin{frame}{composition 2}
+\begin{itemize}
+\item Alright! So. Most of the time (all of the time in GIAM) we read compositions right-to-left.\pause
+\item Here's the formal definition: \pause
+
+Suppose $\relR$ is a relation from $A$ to $B$ and $\relS$ is a relation from $B$ to $C$, then $\relS \circ \relR$ is a relation from $A$ to $C$ defined by \pause
+
+\[ \relS \circ \relR \; = \; \{ (a,c) \in \, A \times C \, \suchthat \; \exists b \in B, \; (a,b) \in \relR \; \land \; (b,c) \in \relS \}. \]
+\pause
+
+\item You may also express the same thing using infix notation: \pause
+
+\[ a(S\circ R)c \; \iff \; \exists b \in B, \; a\relR b \; \land \; b\relS c.\]
+
+\end{itemize}
+\end{frame}
 \end{document}
