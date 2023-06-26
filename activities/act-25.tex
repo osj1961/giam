@@ -1,0 +1,152 @@
+\documentclass{amsart}
+
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{graphicx}
+
+\hypersetup{colorlinks=true}
+
+\addtolength{\topmargin}{-.5 in}
+\addtolength{\textheight}{.5 in}
+\addtolength{\oddsidemargin}{-.5 in}
+\addtolength{\evensidemargin}{-.5 in}
+\addtolength{\textwidth}{1 in}
+
+\newcommand{\arcsec}{ {\rm arcsec}}
+\newcommand{\arccsc}{ {\rm arccsc}}
+\newcommand{\arccot}{ {\rm arccot}}
+\newcommand{\diff}{\frac{\mbox{d}}{\mbox{d}x}\,}
+\newcommand{\dx}{\;\mbox{d}x}
+\newcommand{\dy}{\;\mbox{d}y}
+\newcommand{\dz}{\;\mbox{d}z}
+
+\newcommand{\dr}{\;\mbox{d}r}
+\newcommand{\ds}{\;\mbox{d}s}
+\newcommand{\dt}{\;\mbox{d}t}
+
+\newcommand{\dtheta}{\;\mbox{d}\theta}
+\newcommand{\dphi}{\;\mbox{d}\phi}
+\newcommand{\drho}{\;\mbox{d}\rho}
+\newcommand{\dA}{\;\mbox{d}A}
+\newcommand{\dV}{\;\mbox{d}V}
+
+\newcommand{\Integers}{ {\mathbb Z} }
+\newcommand{\Rationals}{ {\mathbb Q} }
+\newcommand{\Reals}{ {\mathbb R} }
+
+\newcommand{\vs}{\rule[-24pt]{0pt}{60pt}}
+
+\pagestyle{empty}
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large \bf Activity -- MAT 252 -- Spring 2020}
+\bigskip
+\centerline{\large \bf November 18, 2020}
+
+\Large
+
+
+The flux-divergence form of Green's theorem tells us that an integral of 
+normal flow (a.k.a. flux) taken around the boundary
+of a region,
+
+\[ \int_C \vec{F} \cdot \vec{n} \; \mbox{d}s, \]
+
+is equal to the integral of the divergence of the vector field taken 
+over the region
+
+\[ \int\int_R f_x + g_y  \; \dA , \]
+
+\noindent where $f$ and $g$ are the components of the vector field $\vec{F}$.
+
+\vfill
+
+The flow-curl form of Green's theorem tells us that an integral of 
+tangential flow (usually just called flow) taken around the boundary
+of a region,
+
+\[ \int_C \vec{F} \cdot \vec{T} \; \mbox{d}s, \]
+
+is equal to the integral of the $k$-component of the curl of the vector field taken 
+over the region
+
+\[ \int\int_R g_x - f_y  \; \dA , \]
+
+\noindent where $f$ and $g$ are the components of the vector field $\vec{F}$.
+
+\vfill
+
+\newpage
+
+\begin{enumerate}
+
+\item Calculate the flow integral ($\int F \cdot T \ds$) of the
+vector field $\vec{F} = \langle y, -x \rangle$ around the unit circle
+$\langle \cos{(t)}, \sin{(t)} \rangle$ for $0 \leq t \leq 2\pi$.
+
+\vfill
+
+\vfill
+
+\item What double integral should give us the same result?
+
+\vfill
+
+\newpage
+
+\item Calculate the flux integral ($\int F \cdot n \mbox{d}s$) of the 
+vector field $\langle x, y \rangle$ over the square path whose vertices
+are $(1,1)$, $(-1,1)$, $(-1,-1)$ and $(1,-1)$. 
+
+\vfill
+
+\vfill
+
+\item What double integral should give us the same result?
+
+\vfill
+
+\newpage
+
+\item Use Green's theorem to find the flux integral 
+
+\[ \int_C \vec{F} \cdot \vec{n} \mbox{d}s \]
+
+\noindent where $F$ is the vector field $\langle x, y \rangle$ and $C$
+is the closed path made up by following the curve $y=x^2-1$ from
+$(-1,0)$ to $(1,0)$ and then following the curve $y = 1 - x^2$ back to
+$(-1,0)$.
+
+
+\newpage
+
+\item Use Green's theorem to find the flow integral 
+
+\[ \oint_C \vec{F} \cdot \vec{T} \ds \]
+
+\noindent where $F$ is the vector field $\langle x^2+y, 2x-y^2 \rangle$ and $C$
+is the closed path made up by following the curve $y=x^3$ from
+$(0,0)$ to $(1,1)$ and then following the curve $y = x^2$ back to
+$(0,0)$. 
+
+
+\newpage
+
+
+\item Use Green's theorem to find the path integral 
+
+\[ \int_C \vec{F} \cdot \vec{n} \; \mbox{d}s, \]
+
+where $\vec{F} = \langle x, y \rangle$ and $C$ is the unit circle 
+given parametrically by $\langle \cos{(t)}, \sin{(t)} \rangle$ for
+$0 \leq t \leq 2\pi$.  (Note that the outward normal vector is equal to the
+position vector on this curve.)
+
+\vfill
+
+\end{enumerate}
+
+\end{document}
+

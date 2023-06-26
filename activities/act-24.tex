@@ -1,0 +1,122 @@
+\documentclass{amsart}
+
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{graphicx}
+
+\hypersetup{colorlinks=true}
+
+\addtolength{\topmargin}{-.5 in}
+\addtolength{\textheight}{.5 in}
+\addtolength{\oddsidemargin}{-.5 in}
+\addtolength{\evensidemargin}{-.5 in}
+\addtolength{\textwidth}{1 in}
+
+\newcommand{\arcsec}{ {\rm arcsec}}
+\newcommand{\arccsc}{ {\rm arccsc}}
+\newcommand{\arccot}{ {\rm arccot}}
+\newcommand{\diff}{\frac{\mbox{d}}{\mbox{d}x}\,}
+\newcommand{\dx}{\;\mbox{d}x}
+\newcommand{\dy}{\;\mbox{d}y}
+\newcommand{\dz}{\;\mbox{d}z}
+
+\newcommand{\dr}{\;\mbox{d}r}
+\newcommand{\ds}{\;\mbox{d}s}
+\newcommand{\dt}{\;\mbox{d}t}
+
+\newcommand{\dtheta}{\;\mbox{d}\theta}
+\newcommand{\dphi}{\;\mbox{d}\phi}
+\newcommand{\drho}{\;\mbox{d}\rho}
+\newcommand{\dA}{\;\mbox{d}A}
+\newcommand{\dV}{\;\mbox{d}V}
+
+\newcommand{\Integers}{ {\mathbb Z} }
+\newcommand{\Rationals}{ {\mathbb Q} }
+\newcommand{\Reals}{ {\mathbb R} }
+
+\newcommand{\vs}{\rule[-24pt]{0pt}{60pt}}
+
+\pagestyle{empty}
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large \bf Activity -- MAT 252 -- Spring 2020}
+\bigskip
+\centerline{\large \bf November 16, 2020}
+
+\Large
+
+\begin{enumerate}
+
+\item Recall that, in rewriting a line integral so that it is an integral with respect to $t$ rather than $s$ we use the relations
+
+\[ \ds \; = \; | \vec{r}'(t) | \dt \]
+
+and
+
+\[ \vec{T}(t) \; = \; \frac{\vec{r}'(t) }{ |\vec{r}'(t) | }. \] 
+
+Use both of these to re-express $\int \vec{F} \cdot \vec{T} \ds$ in a simpler form.
+
+\vfill
+
+\item When the curve $\mathcal C$ is the boundary of a contiguous region in the plane, when we integrate $\int \vec{F} \cdot \vec{T} \ds$ all the way around $\mathcal C$ we get a number known as the {\em circulation} of $\vec{F}$.  
+
+Find the circulation of $\vec{F} \; = \; \langle y, -x \rangle$ around the curve given by $\vec{r}(t) \; = \; \langle \cos t, \sin t \rangle$ where $0 \leq t \leq 2\pi$.  Note that the curve is oriented counter-clockwise.  Is the circulation of the vector field clockwise or counter-clockwise?
+
+\vfill
+
+\newpage
+
+\item The work done (or required) in moving an object through a force field is
+
+\[ \int_{\mathcal C} \vec{F} \cdot \vec{T} \ds \] 
+
+If the force field is $F(x,y) = \langle 0, -9.8 \rangle$ (i.e. the force of gravity on a 1kg mass), determine the work done in moving the mass from $(0,0)$ to $(2,4)$ along the curve $y=x^2$. 
+
+\vfill
+
+
+\item Sometimes a line integral is best handled by breaking it up into individual pieces.  Suppose $\mathcal C$ consists of two line segments, one from $(0,0)$ to $(2,1)$ and the other from $(2,1)$ to $(2, 3)$.   Find 
+$\int \vec{F} \cdot \vec{T} \ds$ where $\vec{F}(x,y) \; = \; \langle x, y \rangle$.
+
+\vfill
+
+\newpage
+
+\item Like the circulation, there is a special case of a line integral that computes a physical quantity about a vector field that is defined over a region.  The {\em outward flux} of a vector field is the extent to which the flow goes across the boundary of the region.  This is related to the idea of conservation of mass.  If more flow is crossing the boundary of the region going outward than is crossing the boundary of the region going inward, we might be curious as to where the extra matter is coming from!   To compute the outward flux we must first discover an outward pointing normal vector for the curve.  If $\mathcal C$ is the unit circle with it's usual orientation, what is an outward pointing unit vector?
+
+\vfill
+
+
+
+\item If $\mathcal C$ is the boundary of the square whose vertices are $(0,0)$, $(1,0)$, $(1,1)$ and $(0,1)$ and the vector field $\vec{F} \; = \; \langle y, x \rangle$, we can break the integral around the boundary of the unit square into 4 separate line integrals which have relatively obvious outward normals.
+
+Find 
+\[ \int_{\mathcal C} \vec{F} \cdot \vec{n} \ds \] 
+
+\noindent where $\mathcal C$ is the square we just described.
+
+\vfill
+
+\newpage
+
+\item Suppose $\vec{F}(x,y) \; = \; \langle 2x e^y, x^2 e^y \rangle$.  Find a scalar potential function for $\vec{F}$.
+
+\vfill
+
+
+
+\item Suppose $\vec{F}$ is the vector field from the previous problem, and $\mathcal C$ is the portion of the parabola $y=x^2$ between $(-1,1)$ and $(2,4)$.  Calculate 
+
+\[ \int_{\mathcal C} \vec{F} \cdot \vec{T} \ds \] 
+
+\noindent in two ways:  directly, and by using the Fundamental Theorem of Line Integrals.
+
+\vfill
+
+\end{enumerate}
+
+\end{document}
+

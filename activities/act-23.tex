@@ -1,0 +1,89 @@
+\documentclass{amsart}
+
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{graphicx}
+
+\hypersetup{colorlinks=true}
+
+\addtolength{\topmargin}{-.5 in}
+\addtolength{\textheight}{.5 in}
+\addtolength{\oddsidemargin}{-.5 in}
+\addtolength{\evensidemargin}{-.5 in}
+\addtolength{\textwidth}{1 in}
+
+\newcommand{\arcsec}{ {\rm arcsec}}
+\newcommand{\arccsc}{ {\rm arccsc}}
+\newcommand{\arccot}{ {\rm arccot}}
+\newcommand{\diff}{\frac{\mbox{d}}{\mbox{d}x}\,}
+\newcommand{\dx}{\;\mbox{d}x}
+\newcommand{\dy}{\;\mbox{d}y}
+\newcommand{\dz}{\;\mbox{d}z}
+
+\newcommand{\dr}{\;\mbox{d}r}
+\newcommand{\dtheta}{\;\mbox{d}\theta}
+\newcommand{\dphi}{\;\mbox{d}\phi}
+\newcommand{\drho}{\;\mbox{d}\rho}
+\newcommand{\dA}{\;\mbox{d}A}
+\newcommand{\dV}{\;\mbox{d}V}
+
+\newcommand{\Integers}{ {\mathbb Z} }
+\newcommand{\Rationals}{ {\mathbb Q} }
+\newcommand{\Reals}{ {\mathbb R} }
+
+\newcommand{\vs}{\rule[-24pt]{0pt}{60pt}}
+
+\pagestyle{empty}
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large \bf Activity -- MAT 252 -- Spring 2020}
+\bigskip
+\centerline{\large \bf November  11, 2020}
+
+\Large
+
+\begin{enumerate}
+
+\item To describe a vector field in 2-d we must specify two functions that each have two inputs.  Try to get a sense of what the vector field $F=\langle f(x,y), g(x,y) \rangle$ looks like by plotting scaled down vectors at each of the grid points (points with integer coordinates) with $-2 \leq x \leq 2$ and $-2 \leq y \leq 2$ where $f(x,y) = x+y$ and $g(x,y) = x-y$.
+
+
+\vfill
+
+\item Try to guess what the component functions are for the following vector field.
+
+\vspace{.2in}
+
+\includegraphics{vf1.png}
+
+
+
+\newpage
+
+\item One way to get a vector field is to start with a function $f(x,y)$ and determine its gradient.  The gradient is a vector field whose components are $f_x$ and $f_y$.  What scalar function has the vector field $\langle 2x, 2y \rangle$ as its gradient?
+
+\vfill
+
+\item Give an example of a vector field that is not the gradient of any scalar function.
+
+\vfill
+
+\item There is a collection of curves that is known as the ``streamlines'' for any vector field.  They are curves that always follow in the direction of the arrows.  Draw several of the streamlines for the following vector field.
+
+\vspace{.2in}
+
+\includegraphics{vf2.png}
+
+\newpage
+
+\item The vector field in the previous question was the gradient of $f(x,y) = x^2 - y^2$.  Below is a contour plot for $f(x,y)$.  Conjecture how the streamlines of the gradient are related to the contours of the function.
+
+\vspace{.2in}
+
+\includegraphics{cp1.png}
+
+\end{enumerate}
+
+\end{document}
+
