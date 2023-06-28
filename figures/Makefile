@@ -2,7 +2,7 @@
 # fig4latex makefile
 #
 
-all: general_Venn.tex 4set_Venn.tex 3rd_relation.tex Monge_circle_setup_2.tex divisors_of_72.tex Venn_showing_implies.tex total_order.tex gates.tex equiv_intervals.tex Euc_alg_flowchart.tex assoc_disj.tex interval_n_semicircle.tex containment_Venn.tex not_transitive.tex not_irreflexive.tex dist_2x3+4.tex rectilinear.tex Cantor_snake.tex 2nd_relation_v2.tex recognizers.tex graph_o_sine.tex dist_or_o_and.tex Pascals_tetrahedron.tex not_reflexive.tex partial_order.tex composite_relation.tex first_relation.tex series.tex petersen_iso.tex A-stopper.tex Morley_setup.tex full_house_w_large_pair.tex 2set_Venn.tex Taxicab_distance.tex not_anti-symmetric.tex Morley_1st_triangle.tex straight_trominoe.tex konigsberg.tex assoc_conj.tex Eratosthenes.tex 2nd_relation.tex vacuously_symmetric.tex vert_arrows.tex odd_pruned_chessboards.tex Morley_Conway_puzzle_scaling.tex graph_examples.tex five_tetrominoes.tex horiz_arrows.tex Hasse_for_subsets.tex pebbling.tex binary_reps.tex star.tex Z-module.tex tic-tac-toe_analysis.tex dist_and_o_or.tex CBS_setup.tex silly_universe.tex 4set_Venn_alt.tex DeMorgan.tex not_symmetric.tex triangular_numbers.tex Void-finding_r.tex pebbling_move.tex RollTopDesk.tex disjoint_Venn.tex first_Venn.tex 3_ands.tex comm_disj.tex transistor.tex six_dice.tex silly_w_sets.tex Morley_Conway_puzzle.tex Two_steps_into_void.tex Hasse_diagram.tex less_than_on_RxR.tex Morley_finished.tex magic_hexagon.tex parallel.tex Cantor_snake_again.tex Three_steps_into_void.tex Non-isosceles.tex Euler_circuit_problems_b.tex 3set_Venn_gen_pos.tex comm_conj.tex div_alg_flowchart.tex betweenness_example.tex Euler_circuit_problems_a.tex sci-pap-roc.tex generic_function.tex square_n_squareroot.tex Monge_circle_setup.tex Luxembourg.tex if-then_flowchart.tex ecosystem.tex matchstick_puzzle.tex The_Army.tex 3set_Venn.tex logic_circuit.tex silly_w_counter_ex.tex One_step_into_void.tex L-shaped_trominoe.tex kon_graph.tex 0-3_dim_cubes.tex full_house_w_small_pair.tex
+all: general_Venn.tex 4set_Venn.tex 3rd_relation.tex Monge_circle_setup_2.tex divisors_of_72.tex Venn_showing_implies.tex total_order.tex gates.tex equiv_intervals.tex Euc_alg_flowchart.tex assoc_disj.tex interval_n_semicircle.tex containment_Venn.tex not_transitive.tex not_irreflexive.tex dist_2x3+4.tex rectilinear.tex Cantor_snake.tex 2nd_relation_v2.tex recognizers.tex graph_o_sine.tex dist_or_o_and.tex Pascals_tetrahedron.tex not_reflexive.tex partial_order.tex composite_relation.tex first_relation.tex series.tex petersen_iso.tex A-stopper.tex Morley_setup.tex full_house_w_large_pair.tex 2set_Venn.tex Taxicab_distance.tex not_anti-symmetric.tex Morley_1st_triangle.tex straight_trominoe.tex konigsberg.tex assoc_conj.tex Eratosthenes.tex 2nd_relation.tex vacuously_symmetric.tex vert_arrows.tex odd_pruned_chessboards.tex Morley_Conway_puzzle_scaling.tex graph_examples.tex five_tetrominoes.tex horiz_arrows.tex Hasse_for_subsets.tex pebbling.tex binary_reps.tex star.tex Z-module.tex divides_on_NxN.tex tic-tac-toe_analysis.tex dist_and_o_or.tex CBS_setup.tex silly_universe.tex 4set_Venn_alt.tex DeMorgan.tex not_symmetric.tex triangular_numbers.tex Void-finding_r.tex pebbling_move.tex RollTopDesk.tex disjoint_Venn.tex first_Venn.tex 3_ands.tex comm_disj.tex transistor.tex six_dice.tex silly_w_sets.tex Morley_Conway_puzzle.tex Two_steps_into_void.tex Hasse_diagram.tex less_than_on_RxR.tex Morley_finished.tex magic_hexagon.tex parallel.tex Cantor_snake_again.tex Three_steps_into_void.tex Non-isosceles.tex Euler_circuit_problems_b.tex 3set_Venn_gen_pos.tex comm_conj.tex div_alg_flowchart.tex betweenness_example.tex Euler_circuit_problems_a.tex sci-pap-roc.tex generic_function.tex square_n_squareroot.tex Monge_circle_setup.tex Luxembourg.tex if-then_flowchart.tex ecosystem.tex matchstick_puzzle.tex The_Army.tex 3set_Venn.tex logic_circuit.tex silly_w_counter_ex.tex One_step_into_void.tex L-shaped_trominoe.tex kon_graph.tex 0-3_dim_cubes.tex full_house_w_small_pair.tex
 
 # translation into pstex
 
@@ -797,6 +797,21 @@ Z-module.eps: Z-module.fig
 
 clean::
 	rm -f Z-module.tex Z-module.eps Z-module.pdf
+
+
+# translation into pstex
+
+divides_on_NxN.tex: divides_on_NxN.pdf 
+	fig2dev -L pstex_t -p figures/divides_on_NxN.pdf -m 1 divides_on_NxN.fig > divides_on_NxN.tex
+
+divides_on_NxN.pdf: divides_on_NxN.eps 
+	epstopdf divides_on_NxN.eps
+
+divides_on_NxN.eps: divides_on_NxN.fig 
+	fig2dev -L pstex -m 1 divides_on_NxN.fig > divides_on_NxN.eps
+
+clean::
+	rm -f divides_on_NxN.tex divides_on_NxN.eps divides_on_NxN.pdf
 
 
 # translation into pstex

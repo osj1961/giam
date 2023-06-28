@@ -2,12 +2,13 @@ all: GIAM.pdf GIAM-hw.pdf GIAM-solutions_manual.pdf
 
 GIAM.pdf: GIAM.aux
 	pdflatex GIAM
-GIAM.aux: *.tex */*.tex *.ind
+GIAM.aux: *.tex */*.tex
 	cd figures; make
 	pdflatex GIAM
 	pdflatex GIAM
 	makeindex GIAM
 	bibtex GIAM
+	pdflatex GIAM
 GIAM-hw.pdf: GIAM-hw.aux
 	pdflatex GIAM-hw
 GIAM-hw.aux: *.tex */*.tex
