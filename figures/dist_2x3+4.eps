@@ -1,9 +1,9 @@
-%!PS-Adobe-2.0 EPSF-2.0
+%!PS-Adobe-3.0 EPSF-3.0
 %%Title: dist_2x3+4.fig
-%%Creator: fig2dev Version 3.2 Patchlevel 5a
-%%CreationDate: Tue Sep 28 00:54:24 2010
+%%Creator: fig2dev Version 3.2.8b
+%%CreationDate: 2023-06-26 22:30:16
 %%BoundingBox: 0 0 194 95
-%Magnification: 1.0000
+%%Magnification: 1.0000
 %%EndComments
 %%BeginProlog
 /$F2psDict 200 dict def
@@ -11,37 +11,7 @@ $F2psDict begin
 $F2psDict /mtrx matrix put
 /col-1 {0 setgray} bind def
 /col0 {0.000 0.000 0.000 srgb} bind def
-/col1 {0.000 0.000 1.000 srgb} bind def
-/col2 {0.000 1.000 0.000 srgb} bind def
-/col3 {0.000 1.000 1.000 srgb} bind def
-/col4 {1.000 0.000 0.000 srgb} bind def
-/col5 {1.000 0.000 1.000 srgb} bind def
-/col6 {1.000 1.000 0.000 srgb} bind def
 /col7 {1.000 1.000 1.000 srgb} bind def
-/col8 {0.000 0.000 0.560 srgb} bind def
-/col9 {0.000 0.000 0.690 srgb} bind def
-/col10 {0.000 0.000 0.820 srgb} bind def
-/col11 {0.530 0.810 1.000 srgb} bind def
-/col12 {0.000 0.560 0.000 srgb} bind def
-/col13 {0.000 0.690 0.000 srgb} bind def
-/col14 {0.000 0.820 0.000 srgb} bind def
-/col15 {0.000 0.560 0.560 srgb} bind def
-/col16 {0.000 0.690 0.690 srgb} bind def
-/col17 {0.000 0.820 0.820 srgb} bind def
-/col18 {0.560 0.000 0.000 srgb} bind def
-/col19 {0.690 0.000 0.000 srgb} bind def
-/col20 {0.820 0.000 0.000 srgb} bind def
-/col21 {0.560 0.000 0.560 srgb} bind def
-/col22 {0.690 0.000 0.690 srgb} bind def
-/col23 {0.820 0.000 0.820 srgb} bind def
-/col24 {0.500 0.190 0.000 srgb} bind def
-/col25 {0.630 0.250 0.000 srgb} bind def
-/col26 {0.750 0.380 0.000 srgb} bind def
-/col27 {1.000 0.500 0.500 srgb} bind def
-/col28 {1.000 0.630 0.630 srgb} bind def
-/col29 {1.000 0.750 0.750 srgb} bind def
-/col30 {1.000 0.880 0.880 srgb} bind def
-/col31 {1.000 0.840 0.000 srgb} bind def
 
 end
 
@@ -52,6 +22,7 @@ end
 /sa {save} bind def
 /rs {restore} bind def
 /l {lineto} bind def
+/rl {rlineto} bind def
 /m {moveto} bind def
 /rm {rmoveto} bind def
 /n {newpath} bind def
@@ -76,6 +47,7 @@ end
   bind def
 /shd {dup dup currentrgbcolor 4 -2 roll mul 4 -2 roll mul
   4 -2 roll mul srgb} bind def
+/xfig_image {image Data flushfile} def
  /DrawEllipse {
 	/endangle exch def
 	/startangle exch def
@@ -93,10 +65,10 @@ end
 /$F2psEnd {$F2psEnteredState restore end} def
 
 /pageheader {
-save
-newpath 0 95 moveto 0 0 lineto 194 0 lineto 194 95 lineto closepath clip newpath
--67.4 310.6 translate
-1 -1 scale
+sa
+n 0 95 m 0 0 l 194 0 l 194 95 l cp clip
+-67.4 310.6 tr
+1 -1 sc
 $F2psBegin
 10 setmiterlimit
 0 slj 0 slc
@@ -115,25 +87,21 @@ pageheader
 % here starts figure with depth 50
 % Ellipse
 7.500 slw
+0 slc
 n 1530 4035 225 150 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 3075 4050 225 150 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 4050 4050 225 150 0 360 DrawEllipse gs col0 s gr
-
 % Polyline
 0 slj
-0 slc
 0.000 slw
 n 1125 3600 m 4350 3600 l 4350 5175 l 1125 5175 l
- cp 
-% Polyline
+ cp % Polyline
 2 slj
 7.500 slw
 gs  clippath
-3794 4336 m 3931 4212 l 3890 4167 l 3753 4291 l 3753 4291 l 3885 4213 l 3794 4336 l cp
+3900 4190 m 3910 4200 l 3795 4337 l 3797 4294 l 3754 4292 l cp
 eoclip
 n 1575 4200 m 1577 4202 l 1580 4205 l 1586 4211 l 1597 4221 l 1611 4236 l
  1630 4254 l 1654 4277 l 1682 4304 l 1715 4335 l 1752 4370 l
@@ -150,15 +118,14 @@ n 1575 4200 m 1577 4202 l 1580 4205 l 1586 4211 l 1597 4221 l 1611 4236 l
  3752 4335 l 3786 4304 l 3816 4277 l 3841 4254 l 3862 4236 l
  3877 4221 l
  3900 4200 l gs col0 s gr gr
-
 % arrowhead
 0 slj
-n 3794 4336 m 3885 4213 l 3753 4291 l 3796 4293 l 3794 4336 l 
+n 3795 4337 m 3885 4213 l 3754 4292 l 3797 4294 l 3795 4337 l 
  cp gs 0.00 setgray ef gr  col0 s
 % Polyline
 2 slj
 gs  clippath
-2909 4347 m 3032 4208 l 2987 4168 l 2864 4307 l 2864 4307 l 2987 4215 l 2909 4347 l cp
+2999 4190 m 3010 4199 l 2910 4347 l 2907 4305 l 2865 4307 l cp
 eoclip
 n 1575 4200 m 1577 4202 l 1581 4205 l 1589 4212 l 1601 4222 l 1618 4236 l
  1640 4255 l 1666 4277 l 1697 4302 l 1731 4330 l 1769 4360 l
@@ -172,10 +139,9 @@ n 1575 4200 m 1577 4202 l 1581 4205 l 1589 4212 l 1601 4222 l 1618 4236 l
  2831 4384 l 2863 4351 l 2892 4320 l 2919 4291 l 2942 4265 l
  2961 4244 l 2976 4227 l
  3000 4200 l gs col0 s gr gr
-
 % arrowhead
 0 slj
-n 2909 4347 m 2987 4215 l 2864 4307 l 2907 4304 l 2909 4347 l 
+n 2910 4347 m 2987 4215 l 2865 4307 l 2907 4305 l 2910 4347 l 
  cp gs 0.00 setgray ef gr  col0 s
 % here ends figure;
 pagefooter

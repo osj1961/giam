@@ -10,3 +10,6 @@
 	fig2dev -L pstex -m 1 $*.fig >$*.eps
 	epstopdf $*.eps
 	fig2dev -L pstex_t -p $*.pdf -m 1 $*.fig > $*.tex
+
+clean:
+	rm *.pdf *.dvi *.log *.aux *.nav *.out *.snm *.toc *.eps *.bak

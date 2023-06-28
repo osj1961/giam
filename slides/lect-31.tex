@@ -152,8 +152,39 @@
 
 \[ x \equiv_3 y \quad \iff \quad x \mod{3} \; = \; y \mod{3} \] \pause
 \item Proving that this is reflexive, symmetric and transitive is easy since it is defined using ordinary $=$ (which is reflexive, symmetric and transitive).  \pause
-\item Let's do this proof on the whiteboard.
+\item Let's do this proof\textellipsis
 \end{itemize}
+\end{frame}
+
+\begin{frame}{proof}
+\begin{thm*}
+The relation $\equiv_3$ is an equivalence relation.
+\end{thm*} \pause
+
+\begin{quote} \emph{Proof:}
+
+We must show that $\equiv_3$ is reflexive, symmetric and transitive. Note that the domain of $\equiv_3$ is $\Integers$.
+\pause
+
+\begin{itemize}
+\item[reflexive] Suppose $x$ is an arbitrary integer.  Since $x \pmod{3} \; = \; x \pmod{3}$ (by the reflexive property of equality) it follows from the definition that $x \equiv_3 x$.  Thus, $\equiv_3$ is reflexive. \pause
+\item[symmetric] Suppose that $x$ and $y$ are arbitrary integers.  We must show that if $x \equiv_3 y$, then $y \equiv_3 x$, so let's additionally assume that $x \equiv_3 y$.  By the definition of $\equiv_3$, it follows that $x \pmod{3} \; = \; y \pmod{3}$.  By the symmetric property of equality we know that $y \pmod{3} \; = \; x \pmod{3}$, and from {\em that} it follows that $y \equiv_3 x$.  Thus, $\equiv_3$ is symmetric.
+\end{itemize}
+\end{quote}
+\end{frame}
+
+\begin{frame}{more proof}
+
+\begin{quote}
+\begin{itemize}
+\item[transitive] Suppose that $x$, $y$ and $z$ are arbitrary integers.  We must show that if $x \equiv_3 y$ and $y \equiv_3 z$ then $x \equiv_3 z$. So we make the further assumptions that $x \equiv_3 y$ and $y \equiv_3 z$.  Since $x \equiv_3 y$, it follows that $x \pmod{3} \; = \; y \pmod{3}$.  Similarly, since $y \equiv_3 z$, it follows that $y \pmod{3} \; = \; z \pmod{3}$.  By the transitive property of equality, it now follows that $x \pmod{3} \; = \; z \pmod{3}$, and from that we deduce that $x \equiv_3 z$. Thus, $\equiv_3$ is transitive. \pause
+\end{itemize}
+
+Since we have shown that $\equiv_3$ is reflexive, symmetric and transitive, we have proved that it is an equivalence relation.
+
+\rule{0pt}{0pt} \newline \rule{0pt}{15pt} \hfill Q.E.D. 
+
+\end{quote}
 \end{frame}
 
 \section{equivalence classes}

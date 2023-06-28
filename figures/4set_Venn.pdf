@@ -1,25 +1,18 @@
-%PDF-1.4
+%PDF-1.5
 %Çì¢
+%%Invocation: gs -q -dSAFER -dNOPAUSE -dBATCH -dCompatibilityLevel=1.5 -sDEVICE=pdfwrite -sOutputFile=? -dPDFSETTINGS#/prepress -dMaxSubsetPct=100 -dSubsetFonts=true -dEmbedAllFonts=true -dAutoRotatePages#/None -
 5 0 obj
 <</Length 6 0 R/Filter /FlateDecode>>
 stream
-xœURKr!İ{
-O@DôYgr+5ÙÌ"É"×
-veªÍ£û}@¿rÌe=ñôrÓ|ÿI$ÿ¦ı-ß^¢ŒmTèùˆ¹i¦J
-b¸Ôø%ê™F+Ğu8äÖ€G¿xvÕ™NƒŠ0çÃ&®
-íHšéøFcg:ÔÿqgúLï‰¹È
-Vk÷ë0O6âP†åİÔ3H¨47”®vs=ü€!?S`Â‚{G›Ëšá¨odâ—ûnD¶C~îãâX~²tmœÀ}ÅÙ+Ó
-XmÇ˜qÔ¾K%„Ğ›·Q›e8Œ€!h¿:&B…µË`’
--ß¥µÅ·hD–C}§AûÌÈÎÎOÃ1võ+Õ„—«í‡ñ»×+W·\eĞÅYuèÍ´Œ}ƒzß.ÈÂ‡W4N² ?õğš×å­’‡äïk•|Ooé‚å¢şendstream
+xœUR;nD!ì9'°°±9Aêl€"¥Ù"irı0(«-Ö3zóÁğ`.óÿã™*HşM‹Ì·Ä…(cë,?1W ÍTIA—ŸÄ<RoLû†Üp·«»x»t*"Àœš¸*´ch¤“Äêt¤ÿëô•>s‘Y¬VÛGØX»g²»2Ìì¦»ƒ4z¡§¡40º‰§}À°)0aÁµ£«æ2ÏpÜró›¾ˆèvÄ¯Õ÷qH±Ï<™¾~œÀ6ë¬•i¬¾cÌØ«­Á[	!XÛ4jóG0ıÓ‰Paî2”¤B3wzÆìõ#-ˆèr¤¯Uã6hİùİíÛØM÷“jÂ€3Õw†İõ¶çÙË¼W@ét5s¿‘¾ŞÂQÙÊØv¼|dqš…øµè.¯y>Ş*™±Kşùtê=ıLø endstream
 endobj
 6 0 obj
-336
+326
 endobj
 4 0 obj
 <</Type/Page/MediaBox [0 0 366 321]
 /Parent 3 0 R
 /Resources<</ProcSet[/PDF]
-/ExtGState 8 0 R
 >>
 /Contents 5 0 R
 >>
@@ -32,29 +25,22 @@ endobj
 endobj
 1 0 obj
 <</Type /Catalog /Pages 3 0 R
-/Metadata 9 0 R
+/Metadata 7 0 R
 >>
 endobj
 7 0 obj
-<</Type/ExtGState
-/OPM 1>>endobj
-8 0 obj
-<</R7
-7 0 R>>
-endobj
-9 0 obj
 <</Type/Metadata
-/Subtype/XML/Length 1339>>stream
+/Subtype/XML/Length 1192>>stream
 <?xpacket begin='ï»¿' id='W5M0MpCehiHzreSzNTczkc9d'?>
 <?adobe-xap-filters esc="CRLF"?>
 <x:xmpmeta xmlns:x='adobe:ns:meta/' x:xmptk='XMP toolkit 2.9.1-13, framework 1.6'>
 <rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' xmlns:iX='http://ns.adobe.com/iX/1.0/'>
-<rdf:Description rdf:about='f80f0130-02d8-11eb-0000-d309337cd0cf' xmlns:pdf='http://ns.adobe.com/pdf/1.3/' pdf:Producer='GPL Ghostscript 8.71'/>
-<rdf:Description rdf:about='f80f0130-02d8-11eb-0000-d309337cd0cf' xmlns:xmp='http://ns.adobe.com/xap/1.0/'><xmp:ModifyDate>2010-09-28T00:54:05-04:00</xmp:ModifyDate>
-<xmp:CreateDate>2010-09-28T00:54:05-04:00</xmp:CreateDate>
-<xmp:CreatorTool>fig2dev Version 3.2 Patchlevel 5a</xmp:CreatorTool></rdf:Description>
-<rdf:Description rdf:about='f80f0130-02d8-11eb-0000-d309337cd0cf' xmlns:xapMM='http://ns.adobe.com/xap/1.0/mm/' xapMM:DocumentID='f80f0130-02d8-11eb-0000-d309337cd0cf'/>
-<rdf:Description rdf:about='f80f0130-02d8-11eb-0000-d309337cd0cf' xmlns:dc='http://purl.org/dc/elements/1.1/' dc:format='application/pdf'><dc:title><rdf:Alt><rdf:li xml:lang='x-default'>4set_Venn.fig</rdf:li></rdf:Alt></dc:title></rdf:Description>
+<rdf:Description rdf:about="" xmlns:pdf='http://ns.adobe.com/pdf/1.3/' pdf:Producer='GPL Ghostscript 10.00.0'/>
+<rdf:Description rdf:about="" xmlns:xmp='http://ns.adobe.com/xap/1.0/'><xmp:ModifyDate>2023-06-26T22:30:16-04:00</xmp:ModifyDate>
+<xmp:CreateDate>2023-06-26T22:30:16-04:00</xmp:CreateDate>
+<xmp:CreatorTool>fig2dev Version 3.2.8b</xmp:CreatorTool></rdf:Description>
+<rdf:Description rdf:about="" xmlns:xapMM='http://ns.adobe.com/xap/1.0/mm/' xapMM:DocumentID='uuid:19edb6fa-4caf-11f9-0000-93ed9b3eea9b'/>
+<rdf:Description rdf:about="" xmlns:dc='http://purl.org/dc/elements/1.1/' dc:format='application/pdf'><dc:title><rdf:Alt><rdf:li xml:lang='x-default'>4set_Venn.fig</rdf:li></rdf:Alt></dc:title></rdf:Description>
 </rdf:RDF>
 </x:xmpmeta>
                                                                         
@@ -63,27 +49,25 @@ endobj
 endstream
 endobj
 2 0 obj
-<</Producer(GPL Ghostscript 8.71)
-/CreationDate(D:20100928005405-04'00')
-/ModDate(D:20100928005405-04'00')
+<</Producer(GPL Ghostscript 10.00.0)
+/CreationDate(D:20230626223016-04'00')
+/ModDate(D:20230626223016-04'00')
 /Title(4set_Venn.fig)
-/Creator(fig2dev Version 3.2 Patchlevel 5a)>>endobj
+/Creator(fig2dev Version 3.2.8b)>>endobj
 xref
-0 10
+0 8
 0000000000 65535 f 
-0000000630 00000 n 
-0000002179 00000 n 
-0000000571 00000 n 
-0000000440 00000 n 
-0000000015 00000 n 
-0000000421 00000 n 
-0000000694 00000 n 
-0000000735 00000 n 
-0000000764 00000 n 
+0000000816 00000 n 
+0000002148 00000 n 
+0000000757 00000 n 
+0000000643 00000 n 
+0000000228 00000 n 
+0000000624 00000 n 
+0000000880 00000 n 
 trailer
-<< /Size 10 /Root 1 0 R /Info 2 0 R
-/ID [<2C0B797D4FD1367B2660C211A371FDAE><2C0B797D4FD1367B2660C211A371FDAE>]
+<< /Size 8 /Root 1 0 R /Info 2 0 R
+/ID [<6E7A7F492A877569D25DD1A6B9EB82FD><6E7A7F492A877569D25DD1A6B9EB82FD>]
 >>
 startxref
-2368
+2329
 %%EOF

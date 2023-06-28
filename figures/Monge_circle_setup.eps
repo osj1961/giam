@@ -1,9 +1,9 @@
-%!PS-Adobe-2.0 EPSF-2.0
+%!PS-Adobe-3.0 EPSF-3.0
 %%Title: Monge_circle_setup.fig
-%%Creator: fig2dev Version 3.2 Patchlevel 5a
-%%CreationDate: Tue Sep 28 00:54:03 2010
+%%Creator: fig2dev Version 3.2.8b
+%%CreationDate: 2023-06-26 22:30:14
 %%BoundingBox: 0 0 197 190
-%Magnification: 1.0000
+%%Magnification: 1.0000
 %%EndComments
 %%BeginProlog
 /$F2psDict 200 dict def
@@ -11,37 +11,7 @@ $F2psDict begin
 $F2psDict /mtrx matrix put
 /col-1 {0 setgray} bind def
 /col0 {0.000 0.000 0.000 srgb} bind def
-/col1 {0.000 0.000 1.000 srgb} bind def
-/col2 {0.000 1.000 0.000 srgb} bind def
-/col3 {0.000 1.000 1.000 srgb} bind def
-/col4 {1.000 0.000 0.000 srgb} bind def
-/col5 {1.000 0.000 1.000 srgb} bind def
-/col6 {1.000 1.000 0.000 srgb} bind def
 /col7 {1.000 1.000 1.000 srgb} bind def
-/col8 {0.000 0.000 0.560 srgb} bind def
-/col9 {0.000 0.000 0.690 srgb} bind def
-/col10 {0.000 0.000 0.820 srgb} bind def
-/col11 {0.530 0.810 1.000 srgb} bind def
-/col12 {0.000 0.560 0.000 srgb} bind def
-/col13 {0.000 0.690 0.000 srgb} bind def
-/col14 {0.000 0.820 0.000 srgb} bind def
-/col15 {0.000 0.560 0.560 srgb} bind def
-/col16 {0.000 0.690 0.690 srgb} bind def
-/col17 {0.000 0.820 0.820 srgb} bind def
-/col18 {0.560 0.000 0.000 srgb} bind def
-/col19 {0.690 0.000 0.000 srgb} bind def
-/col20 {0.820 0.000 0.000 srgb} bind def
-/col21 {0.560 0.000 0.560 srgb} bind def
-/col22 {0.690 0.000 0.690 srgb} bind def
-/col23 {0.820 0.000 0.820 srgb} bind def
-/col24 {0.500 0.190 0.000 srgb} bind def
-/col25 {0.630 0.250 0.000 srgb} bind def
-/col26 {0.750 0.380 0.000 srgb} bind def
-/col27 {1.000 0.500 0.500 srgb} bind def
-/col28 {1.000 0.630 0.630 srgb} bind def
-/col29 {1.000 0.750 0.750 srgb} bind def
-/col30 {1.000 0.880 0.880 srgb} bind def
-/col31 {1.000 0.840 0.000 srgb} bind def
 
 end
 
@@ -52,6 +22,7 @@ end
 /sa {save} bind def
 /rs {restore} bind def
 /l {lineto} bind def
+/rl {rlineto} bind def
 /m {moveto} bind def
 /rm {rmoveto} bind def
 /n {newpath} bind def
@@ -76,6 +47,7 @@ end
   bind def
 /shd {dup dup currentrgbcolor 4 -2 roll mul 4 -2 roll mul
   4 -2 roll mul srgb} bind def
+/xfig_image {image Data flushfile} def
  /DrawEllipse {
 	/endangle exch def
 	/startangle exch def
@@ -93,10 +65,10 @@ end
 /$F2psEnd {$F2psEnteredState restore end} def
 
 /pageheader {
-save
-newpath 0 190 moveto 0 0 lineto 197 0 lineto 197 190 lineto closepath clip newpath
--172.7 240.5 translate
-1 -1 scale
+sa
+n 0 190 m 0 0 l 197 0 l 197 190 l cp clip
+-172.7 240.5 tr
+1 -1 sc
 $F2psBegin
 10 setmiterlimit
 0 slj 0 slc
@@ -115,23 +87,18 @@ pageheader
 % here starts figure with depth 50
 % Ellipse
 7.500 slw
+0 slc
 n 5043 1955 1097 1096 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 3540 3080 654 654 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 4873 3528 227 227 0 360 DrawEllipse gs col0 s gr
-
 % Polyline
 0 slj
-0 slc
 n 2990 3721 m
- 5981 3786 l gs col0 s gr 
-% Polyline
+ 5981 3786 l gs col0 s gr % Polyline
 n 3569 2283 m
- 5891 3996 l gs col0 s gr 
-% here ends figure;
+ 5891 3996 l gs col0 s gr % here ends figure;
 pagefooter
 showpage
 %%Trailer

@@ -143,9 +143,11 @@
 \item Most of the relation symbols we know get numbers on both sides. \pause
 \item $=$,  $\neq$, $<$, $\leq$, $>$, $\geq$ \pause
 \item Some of the relation symbols we know get sets on either side \pause
-\item $=$, $\subseteq$, $\supseteq$ \pause
+\item $=$, $\subseteq$, $\supseteq$ \pause \newline
+(these are known as {\em homogeneous} relations.) \pause
 \item One of the relation symbols we know gets different things on either side. \pause
-\item $\in$
+\item $\in$ \pause \newline
+(this is an example of a {\em heterogeneous} relation.)
 \end{itemize}
 \end{frame}
 
@@ -212,6 +214,22 @@ Here's a way to visualize the $\in$ relation which is going {\em from} the set $
 \item So $a \relR b$ just means that $(a,b)$ is one of the pairs in $\relR$.
 \end{itemize}
 \end{frame}
+
+\begin{frame}{some formality}
+\begin{itemize}
+
+\item Given two sets $A$ and $B$, \pause (which need not be distinct\textellipsis) \pause
+\item and an arbitrary subset $\relR \subseteq A \times B$, \pause
+\item we define a relation by $a \relR b \; \iff \; (a,b) \in \relR$. \pause
+\item We call $A$ the {\em domain} of $\relR$, \pause \newline
+      and $B$ the {\em codomain} of $\relR$. \pause
+\item There is a distinction between the sets $A$ and $B$, and the subsets of those sets that actually appear in the ordered pairs in $\relR$. \pause
+\item $\displaystyle \{x \in A \suchthat \exists y \in B, (x,y) \in \relR \}$ is known as the {\em active domain} of $\relR$. \pause (caveat about functions.) \pause
+\item The similar thing on the codomain side is called (as it is with functions) the {\em range} of $\relR$.
+
+\end{itemize}
+\end{frame}
+
 
 \begin{frame}{a special case}
 \begin{itemize}

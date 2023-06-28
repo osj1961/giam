@@ -1,9 +1,9 @@
-%!PS-Adobe-2.0 EPSF-2.0
+%!PS-Adobe-3.0 EPSF-3.0
 %%Title: square_n_squareroot.fig
-%%Creator: fig2dev Version 3.2 Patchlevel 5a
-%%CreationDate: Tue Sep 28 00:54:39 2010
+%%Creator: fig2dev Version 3.2.8b
+%%CreationDate: 2023-06-26 22:30:17
 %%BoundingBox: 0 0 340 146
-%Magnification: 1.0000
+%%Magnification: 1.0000
 %%EndComments
 %%BeginProlog
 /$F2psDict 200 dict def
@@ -11,37 +11,7 @@ $F2psDict begin
 $F2psDict /mtrx matrix put
 /col-1 {0 setgray} bind def
 /col0 {0.000 0.000 0.000 srgb} bind def
-/col1 {0.000 0.000 1.000 srgb} bind def
-/col2 {0.000 1.000 0.000 srgb} bind def
-/col3 {0.000 1.000 1.000 srgb} bind def
-/col4 {1.000 0.000 0.000 srgb} bind def
-/col5 {1.000 0.000 1.000 srgb} bind def
-/col6 {1.000 1.000 0.000 srgb} bind def
 /col7 {1.000 1.000 1.000 srgb} bind def
-/col8 {0.000 0.000 0.560 srgb} bind def
-/col9 {0.000 0.000 0.690 srgb} bind def
-/col10 {0.000 0.000 0.820 srgb} bind def
-/col11 {0.530 0.810 1.000 srgb} bind def
-/col12 {0.000 0.560 0.000 srgb} bind def
-/col13 {0.000 0.690 0.000 srgb} bind def
-/col14 {0.000 0.820 0.000 srgb} bind def
-/col15 {0.000 0.560 0.560 srgb} bind def
-/col16 {0.000 0.690 0.690 srgb} bind def
-/col17 {0.000 0.820 0.820 srgb} bind def
-/col18 {0.560 0.000 0.000 srgb} bind def
-/col19 {0.690 0.000 0.000 srgb} bind def
-/col20 {0.820 0.000 0.000 srgb} bind def
-/col21 {0.560 0.000 0.560 srgb} bind def
-/col22 {0.690 0.000 0.690 srgb} bind def
-/col23 {0.820 0.000 0.820 srgb} bind def
-/col24 {0.500 0.190 0.000 srgb} bind def
-/col25 {0.630 0.250 0.000 srgb} bind def
-/col26 {0.750 0.380 0.000 srgb} bind def
-/col27 {1.000 0.500 0.500 srgb} bind def
-/col28 {1.000 0.630 0.630 srgb} bind def
-/col29 {1.000 0.750 0.750 srgb} bind def
-/col30 {1.000 0.880 0.880 srgb} bind def
-/col31 {1.000 0.840 0.000 srgb} bind def
 
 end
 
@@ -52,6 +22,7 @@ end
 /sa {save} bind def
 /rs {restore} bind def
 /l {lineto} bind def
+/rl {rlineto} bind def
 /m {moveto} bind def
 /rm {rmoveto} bind def
 /n {newpath} bind def
@@ -76,14 +47,15 @@ end
   bind def
 /shd {dup dup currentrgbcolor 4 -2 roll mul 4 -2 roll mul
   4 -2 roll mul srgb} bind def
+/xfig_image {image Data flushfile} def
 /$F2psBegin {$F2psDict begin /$F2psEnteredState save def} def
 /$F2psEnd {$F2psEnteredState restore end} def
 
 /pageheader {
-save
-newpath 0 146 moveto 0 0 lineto 340 0 lineto 340 146 lineto closepath clip newpath
--143.3 216.7 translate
-1 -1 scale
+sa
+n 0 146 m 0 0 l 340 0 l 340 146 l cp clip
+-143.3 216.7 tr
+1 -1 sc
 $F2psBegin
 10 setmiterlimit
 0 slj 0 slc
@@ -105,17 +77,13 @@ pageheader
 0 slc
 7.500 slw
 n 3600 1200 m
- 3600 3600 l gs col0 s gr 
-% Polyline
+ 3600 3600 l gs col0 s gr % Polyline
 n 2400 2925 m
- 4800 2925 l gs col0 s gr 
-% Polyline
+ 4800 2925 l gs col0 s gr % Polyline
 n 5250 2925 m
- 7650 2925 l gs col0 s gr 
-% Polyline
+ 7650 2925 l gs col0 s gr % Polyline
 n 6450 1200 m
- 6450 3600 l gs col0 s gr 
-% Polyline
+ 6450 3600 l gs col0 s gr % Polyline
 2 slj
 15.000 slw
 n 2550 1350 m 2550 1351 l 2551 1354 l 2552 1358 l 2554 1366 l 2557 1376 l
@@ -143,8 +111,7 @@ n 2550 1350 m 2550 1351 l 2551 1354 l 2552 1358 l 2554 1366 l 2557 1376 l
  4607 1509 l 4615 1479 l 4623 1452 l 4629 1428 l 4635 1407 l
  4640 1390 l 4643 1376 l 4646 1366 l 4648 1358 l 4649 1354 l
  4650 1351 l
- 4650 1350 l gs col0 s gr 
-% Polyline
+ 4650 1350 l gs col0 s gr % Polyline
 n 8025 1875 m 8024 1875 l 8021 1876 l 8017 1877 l 8009 1879 l 7999 1882 l
  7985 1885 l 7968 1890 l 7947 1896 l 7923 1902 l 7896 1910 l
  7866 1918 l 7833 1928 l 7797 1938 l 7760 1949 l 7721 1961 l
@@ -163,8 +130,7 @@ n 8025 1875 m 8024 1875 l 8021 1876 l 8017 1877 l 8009 1879 l 7999 1882 l
  6759 3421 l 6785 3442 l 6810 3461 l 6832 3477 l 6851 3491 l
  6868 3502 l 6880 3511 l 6889 3518 l 6895 3522 l 6899 3524 l
 
- 6900 3525 l gs col0 s gr 
-% here ends figure;
+ 6900 3525 l gs col0 s gr % here ends figure;
 pagefooter
 showpage
 %%Trailer

@@ -14,3 +14,5 @@ There is also a rule for processing "LaTeX + PDF" figures.  Use
 	make figure_filename.tex
 	
 to get both the .tex and the .pdf.  This presumes the existance of figure_filename.fig in this directory.
+
+Finally, the "clean" target clears out all the generated files (the .tex files created by the "LaTeX + PDF" process should also be rm-ed - but that's hard... Just do it by hand so they don't end up on GitHub.)

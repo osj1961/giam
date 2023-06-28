@@ -1,9 +1,9 @@
-%!PS-Adobe-2.0 EPSF-2.0
+%!PS-Adobe-3.0 EPSF-3.0
 %%Title: Cantor_snake.fig
-%%Creator: fig2dev Version 3.2 Patchlevel 5a
-%%CreationDate: Tue Sep 28 00:54:41 2010
+%%Creator: fig2dev Version 3.2.8b
+%%CreationDate: 2023-06-26 22:30:23
 %%BoundingBox: 0 0 357 315
-%Magnification: 1.0000
+%%Magnification: 1.0000
 %%EndComments
 %%BeginProlog
 /$F2psDict 200 dict def
@@ -11,37 +11,7 @@ $F2psDict begin
 $F2psDict /mtrx matrix put
 /col-1 {0 setgray} bind def
 /col0 {0.000 0.000 0.000 srgb} bind def
-/col1 {0.000 0.000 1.000 srgb} bind def
-/col2 {0.000 1.000 0.000 srgb} bind def
-/col3 {0.000 1.000 1.000 srgb} bind def
-/col4 {1.000 0.000 0.000 srgb} bind def
-/col5 {1.000 0.000 1.000 srgb} bind def
-/col6 {1.000 1.000 0.000 srgb} bind def
 /col7 {1.000 1.000 1.000 srgb} bind def
-/col8 {0.000 0.000 0.560 srgb} bind def
-/col9 {0.000 0.000 0.690 srgb} bind def
-/col10 {0.000 0.000 0.820 srgb} bind def
-/col11 {0.530 0.810 1.000 srgb} bind def
-/col12 {0.000 0.560 0.000 srgb} bind def
-/col13 {0.000 0.690 0.000 srgb} bind def
-/col14 {0.000 0.820 0.000 srgb} bind def
-/col15 {0.000 0.560 0.560 srgb} bind def
-/col16 {0.000 0.690 0.690 srgb} bind def
-/col17 {0.000 0.820 0.820 srgb} bind def
-/col18 {0.560 0.000 0.000 srgb} bind def
-/col19 {0.690 0.000 0.000 srgb} bind def
-/col20 {0.820 0.000 0.000 srgb} bind def
-/col21 {0.560 0.000 0.560 srgb} bind def
-/col22 {0.690 0.000 0.690 srgb} bind def
-/col23 {0.820 0.000 0.820 srgb} bind def
-/col24 {0.500 0.190 0.000 srgb} bind def
-/col25 {0.630 0.250 0.000 srgb} bind def
-/col26 {0.750 0.380 0.000 srgb} bind def
-/col27 {1.000 0.500 0.500 srgb} bind def
-/col28 {1.000 0.630 0.630 srgb} bind def
-/col29 {1.000 0.750 0.750 srgb} bind def
-/col30 {1.000 0.880 0.880 srgb} bind def
-/col31 {1.000 0.840 0.000 srgb} bind def
 
 end
 
@@ -52,6 +22,7 @@ end
 /sa {save} bind def
 /rs {restore} bind def
 /l {lineto} bind def
+/rl {rlineto} bind def
 /m {moveto} bind def
 /rm {rmoveto} bind def
 /n {newpath} bind def
@@ -76,6 +47,7 @@ end
   bind def
 /shd {dup dup currentrgbcolor 4 -2 roll mul 4 -2 roll mul
   4 -2 roll mul srgb} bind def
+/xfig_image {image Data flushfile} def
  /DrawEllipse {
 	/endangle exch def
 	/startangle exch def
@@ -93,10 +65,10 @@ end
 /$F2psEnd {$F2psEnteredState restore end} def
 
 /pageheader {
-save
-newpath 0 315 moveto 0 0 lineto 357 0 lineto 357 315 lineto closepath clip newpath
--71.3 359.8 translate
-1 -1 scale
+sa
+n 0 315 m 0 0 l 357 0 l 357 315 l cp clip
+-71.3 359.8 tr
+1 -1 sc
 $F2psBegin
 10 setmiterlimit
 0 slj 0 slc
@@ -118,148 +90,103 @@ pageheader
 0 slc
 n 1425.0 2175.0 212.1 -135.0000 45.0000 arcn
 gs col0 s gr
-
 % Arc
 n 1425.0 3375.0 212.1 -135.0000 45.0000 arcn
 gs col0 s gr
-
 % Arc
 n 1425.0 5775.0 212.1 -135.0000 45.0000 arcn
 gs col0 s gr
-
 % Arc
 n 1425.0 4575.0 212.1 -135.0000 45.0000 arcn
 gs col0 s gr
-
 % Arc
 n 3225.0 975.0 212.1 -135.0000 45.0000 arc
 gs col0 s gr
-
 % Arc
 n 4425.0 975.0 212.1 -135.0000 45.0000 arc
 gs col0 s gr
-
 % Arc
 n 5625.0 975.0 212.1 -135.0000 45.0000 arc
 gs col0 s gr
-
 % Arc
 n 6825.0 975.0 212.1 -135.0000 45.0000 arc
 gs col0 s gr
-
 % Ellipse
 n 1930 1460 212 212 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 2550 1460 212 212 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 3750 1460 212 212 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 4350 1460 212 212 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 4950 1460 212 212 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 5495 1460 212 212 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 6150 1460 212 212 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 6750 1460 212 212 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 3150 1460 212 212 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 2550 2025 212 212 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 2550 2625 212 212 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 2550 3225 212 212 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 2550 3825 212 212 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 2550 4460 212 212 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 2550 5025 212 212 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 3150 2625 212 212 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 3150 3825 212 212 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 3750 2025 212 212 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 3750 3199 212 212 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 3750 3825 212 212 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 4350 2625 212 212 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 4350 3825 212 212 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 4950 2025 212 212 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 4950 2625 212 212 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 4950 3225 212 212 0 360 DrawEllipse gs col0 s gr
-
 % Ellipse
 n 6150 2025 212 212 0 360 DrawEllipse gs col0 s gr
-
 % Polyline
 0 slj
 n 1500 900 m
- 1500 5925 l gs col0 s gr 
-% Polyline
+ 1500 5925 l gs col0 s gr % Polyline
 n 1200 1200 m
- 7125 1200 l gs col0 s gr 
-% Polyline
+ 7125 1200 l gs col0 s gr % Polyline
 n 2175 1125 m
- 1275 2025 l gs col0 s gr 
-% Polyline
+ 1275 2025 l gs col0 s gr % Polyline
 n 3075 825 m
- 1575 2325 l gs col0 s gr 
-% Polyline
+ 1575 2325 l gs col0 s gr % Polyline
 n 3375 1125 m
- 1275 3225 l gs col0 s gr 
-% Polyline
+ 1275 3225 l gs col0 s gr % Polyline
 n 4275 825 m
- 1575 3525 l gs col0 s gr 
-% Polyline
+ 1575 3525 l gs col0 s gr % Polyline
 n 4575 1125 m
- 1275 4425 l gs col0 s gr 
-% Polyline
+ 1275 4425 l gs col0 s gr % Polyline
 n 5775 1125 m
- 1275 5625 l gs col0 s gr 
-% Polyline
+ 1275 5625 l gs col0 s gr % Polyline
 n 6675 825 m
- 1575 5925 l gs col0 s gr 
-% Polyline
+ 1575 5925 l gs col0 s gr % Polyline
 n 6975 1125 m
- 3450 4650 l gs col0 s gr 
-% Polyline
+ 3450 4650 l gs col0 s gr % Polyline
 n 5475 825 m
- 1575 4725 l gs col0 s gr 
-% Polyline
+ 1575 4725 l gs col0 s gr % Polyline
  [15 45] 45 sd
 n 3450 4650 m
  3150 4950 l gs col0 s gr  [] 0 sd

@@ -1,9 +1,9 @@
-%!PS-Adobe-2.0 EPSF-2.0
+%!PS-Adobe-3.0 EPSF-3.0
 %%Title: A-stopper.fig
-%%Creator: fig2dev Version 3.2 Patchlevel 5a
-%%CreationDate: Tue Sep 28 00:54:01 2010
+%%Creator: fig2dev Version 3.2.8b
+%%CreationDate: 2023-06-26 22:30:18
 %%BoundingBox: 0 0 214 456
-%Magnification: 1.0000
+%%Magnification: 1.0000
 %%EndComments
 %%BeginProlog
 /$F2psDict 200 dict def
@@ -12,36 +12,9 @@ $F2psDict /mtrx matrix put
 /col-1 {0 setgray} bind def
 /col0 {0.000 0.000 0.000 srgb} bind def
 /col1 {0.000 0.000 1.000 srgb} bind def
-/col2 {0.000 1.000 0.000 srgb} bind def
-/col3 {0.000 1.000 1.000 srgb} bind def
 /col4 {1.000 0.000 0.000 srgb} bind def
-/col5 {1.000 0.000 1.000 srgb} bind def
 /col6 {1.000 1.000 0.000 srgb} bind def
 /col7 {1.000 1.000 1.000 srgb} bind def
-/col8 {0.000 0.000 0.560 srgb} bind def
-/col9 {0.000 0.000 0.690 srgb} bind def
-/col10 {0.000 0.000 0.820 srgb} bind def
-/col11 {0.530 0.810 1.000 srgb} bind def
-/col12 {0.000 0.560 0.000 srgb} bind def
-/col13 {0.000 0.690 0.000 srgb} bind def
-/col14 {0.000 0.820 0.000 srgb} bind def
-/col15 {0.000 0.560 0.560 srgb} bind def
-/col16 {0.000 0.690 0.690 srgb} bind def
-/col17 {0.000 0.820 0.820 srgb} bind def
-/col18 {0.560 0.000 0.000 srgb} bind def
-/col19 {0.690 0.000 0.000 srgb} bind def
-/col20 {0.820 0.000 0.000 srgb} bind def
-/col21 {0.560 0.000 0.560 srgb} bind def
-/col22 {0.690 0.000 0.690 srgb} bind def
-/col23 {0.820 0.000 0.820 srgb} bind def
-/col24 {0.500 0.190 0.000 srgb} bind def
-/col25 {0.630 0.250 0.000 srgb} bind def
-/col26 {0.750 0.380 0.000 srgb} bind def
-/col27 {1.000 0.500 0.500 srgb} bind def
-/col28 {1.000 0.630 0.630 srgb} bind def
-/col29 {1.000 0.750 0.750 srgb} bind def
-/col30 {1.000 0.880 0.880 srgb} bind def
-/col31 {1.000 0.840 0.000 srgb} bind def
 
 end
 
@@ -52,6 +25,7 @@ end
 /sa {save} bind def
 /rs {restore} bind def
 /l {lineto} bind def
+/rl {rlineto} bind def
 /m {moveto} bind def
 /rm {rmoveto} bind def
 /n {newpath} bind def
@@ -76,6 +50,7 @@ end
   bind def
 /shd {dup dup currentrgbcolor 4 -2 roll mul 4 -2 roll mul
   4 -2 roll mul srgb} bind def
+/xfig_image {image Data flushfile} def
  /DrawEllipse {
 	/endangle exch def
 	/startangle exch def
@@ -93,10 +68,10 @@ end
 /$F2psEnd {$F2psEnteredState restore end} def
 
 /pageheader {
-save
-newpath 0 456 moveto 0 0 lineto 214 0 lineto 214 456 lineto closepath clip newpath
--71.1 514.1 translate
-1 -1 scale
+sa
+n 0 456 m 0 0 l 214 0 l 214 456 l cp clip
+-71.1 514.1 tr
+1 -1 sc
 $F2psBegin
 10 setmiterlimit
 0 slj 0 slc
@@ -121,219 +96,171 @@ n 1518 1364 m 4705 1364 l 4705 1624 l 2225 2111 l 4718 2584 l 4705 2804 l
  1811 4541 l 3785 8559 l 3435 8559 l 1465 4565 l 1465 4405 l
  4211 2778 l 1505 2211 l 1511 1978 l 3405 1604 l 1518 1618 l
 
- cp gs col6 1.00 shd ef gr 
-% Polyline
+ cp gs col6 1.00 shd ef gr % Polyline
 7.500 slw
 gs  clippath
-4330 1530 m 4515 1530 l 4515 1470 l 4330 1470 l 4330 1470 l 4480 1500 l 4330 1530 l cp
+4507 1493 m 4507 1507 l 4330 1530 l 4360 1500 l 4330 1470 l cp
 eoclip
 n 1650 1500 m
- 4500 1500 l gs 0.00 setgray ef gr gs col4 s gr gr
-
+ 4500 1500 l gs col4 s gr gr
 % arrowhead
 n 4330 1530 m 4480 1500 l 4330 1470 l 4360 1500 l 4330 1530 l 
  cp gs col4 1.00 shd ef gr  col4 s
 % Polyline
 gs  clippath
-4328 2694 m 4508 2732 l 4520 2673 l 4340 2635 l 4340 2635 l 4481 2696 l 4328 2694 l cp
+4508 2695 m 4505 2708 l 4328 2694 l 4363 2671 l 4340 2636 l cp
 eoclip
 n 1650 2100 m
- 4500 2700 l gs 0.00 setgray ef gr gs col4 s gr gr
-
+ 4500 2700 l gs col4 s gr gr
 % arrowhead
-n 4328 2694 m 4481 2696 l 4340 2635 l 4363 2671 l 4328 2694 l 
+n 4328 2694 m 4481 2696 l 4340 2636 l 4363 2671 l 4328 2694 l 
  cp gs col4 1.00 shd ef gr  col4 s
 % Polyline
 gs  clippath
-4339 4362 m 4497 4458 l 4528 4407 l 4370 4311 l 4370 4311 l 4483 4415 l 4339 4362 l cp
+4509 4423 m 4502 4434 l 4339 4363 l 4380 4353 l 4370 4311 l cp
 eoclip
 n 1650 2700 m
- 4500 4425 l gs 0.00 setgray ef gr gs col4 s gr gr
-
+ 4500 4425 l gs col4 s gr gr
 % arrowhead
-n 4339 4362 m 4483 4415 l 4370 4311 l 4380 4352 l 4339 4362 l 
+n 4339 4363 m 4483 4415 l 4370 4311 l 4380 4353 l 4339 4363 l 
  cp gs col4 1.00 shd ef gr  col4 s
 % Polyline
 gs  clippath
-4370 6712 m 4486 6855 l 4532 6817 l 4417 6674 l 4417 6674 l 4488 6810 l 4370 6712 l cp
+4509 6826 m 4499 6834 l 4370 6712 l 4412 6716 l 4417 6674 l cp
 eoclip
 n 1650 3300 m
- 4500 6825 l gs 0.00 setgray ef gr gs col4 s gr gr
-
+ 4500 6825 l gs col4 s gr gr
 % arrowhead
 n 4370 6712 m 4488 6810 l 4417 6674 l 4412 6716 l 4370 6712 l 
  cp gs col4 1.00 shd ef gr  col4 s
 % Polyline
 gs  clippath
-1884 2035 m 1704 2073 l 1716 2132 l 1896 2094 l 1896 2094 l 1744 2096 l 1884 2035 l cp
+1720 2108 m 1717 2095 l 1885 2036 l 1862 2071 l 1897 2094 l cp
 eoclip
 n 4575 1500 m
- 1725 2100 l gs 0.00 setgray ef gr gs col1 s gr gr
-
+ 1725 2100 l gs col1 s gr gr
 % arrowhead
-n 1884 2035 m 1744 2096 l 1896 2094 l 1861 2071 l 1884 2035 l 
+n 1885 2036 m 1744 2096 l 1897 2094 l 1862 2071 l 1885 2036 l 
  cp gs col1 1.00 shd ef gr  col1 s
 % Polyline
 gs  clippath
-1869 3206 m 1699 3278 l 1722 3333 l 1892 3261 l 1892 3261 l 1743 3292 l 1869 3206 l cp
+1721 3309 m 1716 3296 l 1870 3206 l 1854 3246 l 1893 3262 l cp
 eoclip
 n 4575 2100 m
- 1725 3300 l gs 0.00 setgray ef gr gs col1 s gr gr
-
+ 1725 3300 l gs col1 s gr gr
 % arrowhead
-n 1869 3206 m 1743 3292 l 1892 3261 l 1853 3245 l 1869 3206 l 
+n 1870 3206 m 1743 3292 l 1893 3262 l 1854 3246 l 1870 3206 l 
  cp gs col1 1.00 shd ef gr  col1 s
 % Polyline
 gs  clippath
-1854 4311 m 1696 4407 l 1727 4458 l 1885 4362 l 1885 4362 l 1742 4415 l 1854 4311 l cp
+1723 4434 m 1716 4423 l 1855 4311 l 1845 4353 l 1886 4363 l cp
 eoclip
 n 4575 2700 m
- 1725 4425 l gs 0.00 setgray ef gr gs col1 s gr gr
-
+ 1725 4425 l gs col1 s gr gr
 % arrowhead
-n 1854 4311 m 1742 4415 l 1885 4362 l 1844 4352 l 1854 4311 l 
+n 1855 4311 m 1742 4415 l 1886 4363 l 1845 4353 l 1855 4311 l 
  cp gs col1 1.00 shd ef gr  col1 s
 % Polyline
 gs  clippath
-1837 5493 m 1694 5611 l 1732 5657 l 1875 5540 l 1875 5540 l 1740 5612 l 1837 5493 l cp
+1724 5634 m 1716 5624 l 1838 5494 l 1833 5537 l 1876 5541 l cp
 eoclip
 n 4575 3300 m
- 1725 5625 l gs 0.00 setgray ef gr gs col1 s gr gr
-
+ 1725 5625 l gs col1 s gr gr
 % arrowhead
-n 1837 5493 m 1740 5612 l 1875 5540 l 1832 5536 l 1837 5493 l 
+n 1838 5494 m 1740 5612 l 1876 5541 l 1833 5537 l 1838 5494 l 
  cp gs col1 1.00 shd ef gr  col1 s
 % Polyline
 gs  clippath
-1747 6757 m 1618 6889 l 1661 6931 l 1790 6799 l 1790 6799 l 1664 6886 l 1747 6757 l cp
+1650 6910 m 1640 6900 l 1747 6757 l 1748 6800 l 1790 6799 l cp
 eoclip
 n 4575 3900 m
- 1650 6900 l gs 0.00 setgray ef gr gs col1 s gr gr
-
+ 1650 6900 l gs col1 s gr gr
 % arrowhead
-n 1747 6757 m 1664 6886 l 1790 6799 l 1747 6800 l 1747 6757 l 
+n 1747 6757 m 1664 6886 l 1790 6799 l 1748 6800 l 1747 6757 l 
  cp gs col1 1.00 shd ef gr  col1 s
 % Polyline
 gs  clippath
-1807 7874 m 1692 8017 l 1738 8055 l 1854 7912 l 1854 7912 l 1737 8010 l 1807 7874 l cp
+1726 8034 m 1716 8026 l 1808 7874 l 1813 7916 l 1855 7912 l cp
 eoclip
 n 4575 4500 m
- 1725 8025 l gs 0.00 setgray ef gr gs col1 s gr gr
-
+ 1725 8025 l gs col1 s gr gr
 % arrowhead
-n 1807 7874 m 1737 8010 l 1854 7912 l 1812 7916 l 1807 7874 l 
+n 1808 7874 m 1737 8010 l 1855 7912 l 1813 7916 l 1808 7874 l 
  cp gs col1 1.00 shd ef gr  col1 s
 % Polyline
 n 4575 5100 m
- 2400 8550 l gs 0.00 setgray ef gr gs col1 s gr 
-% Polyline
+ 2400 8550 l gs col1 s gr % Polyline
 n 4575 5700 m
- 3150 8550 l gs 0.00 setgray ef gr gs col1 s gr 
-% Polyline
+ 3150 8550 l gs col1 s gr % Polyline
 n 4575 6300 m
- 3750 8550 l gs 0.00 setgray ef gr gs col1 s gr 
-% Polyline
+ 3750 8550 l gs col1 s gr % Polyline
 n 4575 6900 m
- 4125 8550 l gs 0.00 setgray ef gr gs col1 s gr 
-% Polyline
+ 4125 8550 l gs col1 s gr % Polyline
 n 4575 7500 m
- 4350 8550 l gs 0.00 setgray ef gr gs col1 s gr 
-% Polyline
+ 4350 8550 l gs col1 s gr % Polyline
 n 4575 8100 m
- 4487 8553 l gs 0.00 setgray ef gr gs col1 s gr 
-% Polyline
+ 4487 8553 l gs col1 s gr % Polyline
 n 1650 3900 m
- 4527 8557 l gs 0.00 setgray ef gr gs col4 s gr 
-% Polyline
+ 4527 8557 l gs col4 s gr % Polyline
 n 1650 4500 m
- 3600 8550 l gs 0.00 setgray ef gr gs col4 s gr 
-% Polyline
+ 3600 8550 l gs col4 s gr % Polyline
 n 1650 5100 m
- 2925 8550 l gs 0.00 setgray ef gr gs col4 s gr 
-% Polyline
+ 2925 8550 l gs col4 s gr % Polyline
 n 1650 5700 m
- 2475 8550 l gs 0.00 setgray ef gr gs col4 s gr 
-% Polyline
+ 2475 8550 l gs col4 s gr % Polyline
 n 1650 6900 m
- 2025 8550 l gs 0.00 setgray ef gr gs col4 s gr 
-% Polyline
+ 2025 8550 l gs col4 s gr % Polyline
 n 1650 7500 m
- 1865 8553 l gs 0.00 setgray ef gr gs col4 s gr 
-% Polyline
+ 1865 8553 l gs col4 s gr % Polyline
 n 1650 8100 m
- 1700 8540 l gs 0.00 setgray ef gr gs col4 s gr 
-% Ellipse
+ 1700 8540 l gs col4 s gr % Ellipse
 n 1650 1500 75 75 0 360 DrawEllipse gs 0.00 setgray ef gr gs col0 s gr
-
 % Ellipse
 n 1650 2100 75 75 0 360 DrawEllipse gs 0.00 setgray ef gr gs col0 s gr
-
 % Ellipse
 n 1650 2700 75 75 0 360 DrawEllipse gs 0.00 setgray ef gr gs col0 s gr
-
 % Ellipse
 n 1650 3300 75 75 0 360 DrawEllipse gs 0.00 setgray ef gr gs col0 s gr
-
 % Ellipse
 n 1650 3900 75 75 0 360 DrawEllipse gs 0.00 setgray ef gr gs col0 s gr
-
 % Ellipse
 n 1650 4500 75 75 0 360 DrawEllipse gs 0.00 setgray ef gr gs col0 s gr
-
 % Ellipse
 n 1650 5100 75 75 0 360 DrawEllipse gs 0.00 setgray ef gr gs col0 s gr
-
 % Ellipse
 n 1650 8100 75 75 0 360 DrawEllipse gs 0.00 setgray ef gr gs col0 s gr
-
 % Ellipse
 n 4575 1500 75 75 0 360 DrawEllipse gs 0.00 setgray ef gr gs col0 s gr
-
 % Ellipse
 n 4575 2100 75 75 0 360 DrawEllipse gs 0.00 setgray ef gr gs col0 s gr
-
 % Ellipse
 n 4575 2700 75 75 0 360 DrawEllipse gs 0.00 setgray ef gr gs col0 s gr
-
 % Ellipse
 n 4575 3300 75 75 0 360 DrawEllipse gs 0.00 setgray ef gr gs col0 s gr
-
 % Ellipse
 n 4575 3900 75 75 0 360 DrawEllipse gs 0.00 setgray ef gr gs col0 s gr
-
 % Ellipse
 n 4575 4500 75 75 0 360 DrawEllipse gs 0.00 setgray ef gr gs col0 s gr
-
 % Ellipse
 n 4575 5100 75 75 0 360 DrawEllipse gs 0.00 setgray ef gr gs col0 s gr
-
 % Ellipse
 n 4575 8100 75 75 0 360 DrawEllipse gs 0.00 setgray ef gr gs col0 s gr
-
 % Ellipse
 n 1650 5700 75 75 0 360 DrawEllipse gs 0.00 setgray ef gr gs col0 s gr
-
 % Ellipse
 n 1650 6300 75 75 0 360 DrawEllipse gs 0.00 setgray ef gr gs col0 s gr
-
 % Ellipse
 n 1650 6900 75 75 0 360 DrawEllipse gs 0.00 setgray ef gr gs col0 s gr
-
 % Ellipse
 n 1650 7500 75 75 0 360 DrawEllipse gs 0.00 setgray ef gr gs col0 s gr
-
 % Ellipse
 n 4575 5700 75 75 0 360 DrawEllipse gs 0.00 setgray ef gr gs col0 s gr
-
 % Ellipse
 n 4575 6300 75 75 0 360 DrawEllipse gs 0.00 setgray ef gr gs col0 s gr
-
 % Ellipse
 n 4575 6900 75 75 0 360 DrawEllipse gs 0.00 setgray ef gr gs col0 s gr
-
 % Ellipse
 n 4575 7500 75 75 0 360 DrawEllipse gs 0.00 setgray ef gr gs col0 s gr
-
 % here ends figure;
 pagefooter
 showpage
