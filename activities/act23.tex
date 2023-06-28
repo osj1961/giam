@@ -1,0 +1,150 @@
+\documentclass{amsart}
+\usepackage{amssymb}
+\renewcommand{\baselinestretch}{1.5}
+\addtolength{\textwidth}{.2in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1in}
+
+\usepackage{ifthen}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\input{my_latex_definitions.tex}
+
+\addtolength{\abovedisplayskip}{0pt}
+\addtolength{\belowdisplayskip}{24pt}
+\addtolength{\abovedisplayshortskip}{0pt}
+\addtolength{\belowdisplayshortskip}{48pt}
+
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large Activity 23 -- Introduction to Proof}
+\centerline{\large Venn diagrams}
+
+\bigskip
+\Large
+
+
+\begin{enumerate}
+
+\item Use the double inclusion strategy to prove that $A \setminus (B \cap C) \; = \;
+A \setminus B \, \cup \,  A \setminus C$
+
+\vfill
+
+\newpage
+
+\item Let $A = \{1, 2, 3, 4, 5, 6, 7\}$ and $B = \{2, 4, 6, 8, 10\}$. Write these
+element in the appropriate regions in a Venn diagram for two sets.
+\medskip
+
+\input{2set_Venn.tex}
+\medskip
+
+\item On the 3-set Venn diagrams below shade the regions that corre-
+spond to $A \cap (B \cup C)$ on the left and $(A \cap B) \cup (A \cap C)$ on the right.
+\medskip
+
+\centerline{
+\begin{tabular}{ccc}
+\input{3set_Venn-sm.tex} & \hspace{.25in} & \input{3set_Venn-sm.tex} \\
+\end{tabular}
+}
+
+\newpage
+
+\item Determine set-theoretic expressions for the shaded regions in the
+Venn diagrams below.
+\medskip
+
+\centerline{
+\begin{tabular}{ccc}
+\input{3set_Venn-A.tex} & \hspace{.25in} & \input{3set_Venn-B.tex} \\
+\end{tabular}
+}
+
+\vfill
+
+\item Use rectilinear Jordan curves (simple closed curves made up of
+horizontal and vertical line segments) to create a Venn diagram for
+4 sets in general position.
+
+\vfill
+
+\vfill
+
+\newpage
+
+\item We can visualize the modus ponens argument form by placing
+Socrates in the appropriate region and imposing the “All men are
+mortal” condition by indicating a region on the diagram that must
+be empty. Do it.
+
+\vspace{.2in}
+
+\input{2set_Venn-modus_ponens.tex}
+\medskip
+
+\newpage
+
+\item In a similar fashion, create a visualization for the modus tollens
+argument form:
+
+\vspace{.2in}
+
+\begin{tabular}{c}
+All men are mortal \\
+Zeus is not mortal \\ \hline
+$\therefore$ Zeus is not a man
+\end{tabular}
+
+\vspace{.2in}
+
+
+\input{2set_Venn-modus_ponens.tex}
+\medskip
+
+\newpage
+
+\item Construct a Venn diagram for 4 sets using rectangles. (This is
+slightly tougher than problem 5.)
+
+\vfill
+
+
+
+\item Use a Venn diagram for 4 sets to convince yourself of the validity
+of the following containment statement
+
+\[
+(A \cap B) \, \cup \, (C \cap D) \; \subseteq \; (A \cup C) \, \cap \, (B \cup D).
+\]
+
+\vfill
+
+\newpage
+
+\item Use a Venn diagram to show that the following proposed set iden-
+tity is false.
+
+\[
+\overline{A} \cap (B \cup C) = (B \cup C) \setminus (A \cap C)
+\]
+
+How could we use the intuition we developed from the Venn
+diagram to construct a legitimate disproof? 
+\medskip
+
+\centerline{\input{3set_Venn.tex}}
+
+\newpage
+
+\item Illustrate the absorption laws for sets on Venn diagrams.
+
+
+\end{enumerate}
+
+
+\end{document}
