@@ -1,0 +1,11 @@
+The source files for the figures in this directory end in .fig they must be edited with the rather antiquated XFig utility.
+
+If changes are made to the existing graphics just run "make"
+
+If new graphics are created you'll need to recreate the Makefile with
+
+	fig4latex -d figures -p
+
+then run "make"
+
+The process of "making" the graphics for inclusion into LaTeX depends on your installation having "fig2dev" and "epstopdf".
