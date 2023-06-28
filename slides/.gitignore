@@ -1,8 +1,3 @@
-
-figures/SAVE.fig
-figures/*.pdf
-figures/**.eps
-figures/*.tex
 **.aux
 **.blg
 **.dvi
@@ -20,4 +15,4 @@ figures/*.tex
 **.toc
 **.fig.bak
 .DS_Store
-*.eps
+**.eps
