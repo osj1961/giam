@@ -1,0 +1,185 @@
+\documentclass{amsart}
+\usepackage{amssymb}
+\renewcommand{\baselinestretch}{1.5}
+\addtolength{\textwidth}{.2in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1in}
+
+\usepackage{ifthen}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\input{my_latex_definitions.tex}
+
+\addtolength{\abovedisplayskip}{0pt}
+\addtolength{\belowdisplayskip}{24pt}
+\addtolength{\abovedisplayshortskip}{0pt}
+\addtolength{\belowdisplayshortskip}{48pt}
+
+\newcommand{\hs}{\rule{18pt}{0pt}}
+\newcommand{\vs}{\rule[-16pt]{0pt}{32pt}}
+
+\begin{document}
+\thispagestyle{empty}
+
+\centerline{\Large Activity 26 -- Introduction to Proof}
+\centerline{\large formulas for sums and products}
+
+\bigskip
+\Large
+
+
+\begin{enumerate}
+\item Complete the following tables about sums of squares.
+\bigskip
+
+\begin{tabular}{c|c}
+\vs\hs $n$ \hs & \hs $\displaystyle \sum_{j=1}^n \, j^2$ \hs \\ \hline
+\vs $1$ & $1$ \\
+\vs $2$ & \\
+\vs $3$ & \\
+\vs $4$ & \\
+\end{tabular}
+\hspace{.5in}
+\begin{tabular}{c|c}
+\vs \hs $n$ \hs & \hs $\displaystyle \frac{n(n + 1)(2n + 1)}{6}$ \hs \\ \hline
+\vs $1$ & $1$ \\
+\vs $2$ & \\
+\vs $3$ & \\
+\vs $4$ & \\
+\end{tabular}
+
+\vspace{.3in}
+
+\item The base case for an inductive proof that
+
+\[ \sum_{j=1}^n \, j^2 \; = \; \frac{n(n + 1)(2n + 1)}{6}\]
+
+really just consists of noticing that the first rows in the two tables
+above are identical. Write the base case formally.
+
+\vfill
+
+\newpage
+
+\item The inductive step in a proof that
+
+\[ \sum_{j=1}^n \, j^2 \; = \; \frac{n(n + 1)(2n + 1)}{6}\]
+
+involves verifying the following equality
+
+\[ (k + 1)^2 \, + \, \frac{n(n + 1)(2n + 1)}{6} \; = \; 
+\frac{(k + 1)((k + 1) + 1)(2(k + 1) + 1)}{6}
+\]
+
+or (after simplifying the right-hand side)
+
+\[ (k + 1)^2 \, + \, \frac{n(n + 1)(2n + 1)}{6} \; = \; 
+\frac{(k + 1)(k + 2)(2k + 3)}{6}
+\]
+
+\noindent Do it! (Try to take advantage of the factored form as much as
+possible.)
+
+\vfill
+
+\newpage
+
+\item Put the last problems together and write a complete inductive proof
+of the formula for the sum of squares.
+
+\vfill
+
+\newpage
+
+\item The image below illustrates that a perfect square can be decom-
+posed into a sum of odd numbers. (The L-shaped things are a
+visual representation for odd numbers. Do you see why?)
+\bigskip
+
+\centerline{ \input{L-decomp.tex} }
+\bigskip
+
+Notice that the number of terms in the sum is the quantity that is
+squared, so
+
+\[ \forall n \in \Naturals, \; \sum_{i=0}^n \, 2i+1 \; = \; (n+1)^2 \]
+
+\noindent (Since a sum that goes from $0$ to $n$ has $n + 1$ terms.)
+
+\noindent What will we need to add to both sides of the inductive hypothesis?
+
+\vspace{.75in}
+
+Work out the algebraic part in the inductive step:
+
+\[(n + 1)^2 + \underline{\hspace{.75in}} \; = \; ((n + 1) + 1)^2 \] 
+
+\vfill
+
+\newpage
+
+\item The triangular numbers are the numbers that can be expressed as
+triangular arrays of points.
+\bigskip
+
+\centerline{ \input{triangular_numbers.tex} }
+\bigskip
+
+Let $T_n$ represent the $n$-th triangular number. So $T_1 = 1$, $T_2 = 3$,
+$T_3 = 6$, {\em et cetera}.
+
+Each triangular number can be thought of as a sum, which allows
+us to deduce a formula for $T_n$.  What is it?
+
+\vfill
+
+\item Find a formula for the sum
+
+\[ \sum_{j=1}^n \; T_j, \]
+
+\noindent and prove it using mathematical induction.
+
+\vfill
+
+\newpage
+
+\item A {\em hexagonal number} is one that can be represented by a hexagonal
+array of dots. A formula for the hexagonal numbers is
+
+\[ H_n \, = \, 3n^2 - 3n + 1. \]
+
+Find a formula for the sum
+
+\[
+\sum_{j=1}^n \, H_j 
+\] 
+
+\noindent and prove it using mathematical induction.
+
+\vfill
+
+\newpage
+
+\item (Exercise 5 in GIAM \S 5.2) Prove the following formula for a prod-
+uct.
+
+\[ \prod_{i=2}^n \, \left( 1 - \frac{1}{i} \right) \; = \; \frac{1}{n}  \]
+
+\vfill
+
+\newpage
+
+\item Here is a formula for the sum of the first $n$ fourth powers
+
+\[ \frac{n \cdot (n + 1) \cdot (2n + 1) \cdot (3n^2 + 3n - 1)}{30}. \]
+
+Prove it using induction.
+
+\vfill
+
+
+\end{enumerate}
+
+
+\end{document}
