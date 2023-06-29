@@ -2,7 +2,7 @@
 # fig4latex makefile
 #
 
-all: 3set_Venn-sm.tex 3set_Venn-A.tex 2set_Venn.tex 2set_Venn-modus_ponens.tex 3set_Venn.tex 3set_Venn-B.tex
+all: 3set_Venn-sm.tex triangular_numbers.tex 3set_Venn-A.tex 2set_Venn.tex 2set_Venn-modus_ponens.tex 3set_Venn.tex L-decomp.tex 3set_Venn-B.tex
 
 # translation into pstex
 
@@ -17,6 +17,21 @@ all: 3set_Venn-sm.tex 3set_Venn-A.tex 2set_Venn.tex 2set_Venn-modus_ponens.tex 3
 
 clean::
 	rm -f 3set_Venn-sm.tex 3set_Venn-sm.eps 3set_Venn-sm.pdf
+
+
+# translation into pstex
+
+triangular_numbers.tex: triangular_numbers.pdf 
+	fig2dev -L pstex_t -p ./triangular_numbers.pdf -m 1 triangular_numbers.fig > triangular_numbers.tex
+
+triangular_numbers.pdf: triangular_numbers.eps 
+	epstopdf triangular_numbers.eps
+
+triangular_numbers.eps: triangular_numbers.fig 
+	fig2dev -L pstex -m 1 triangular_numbers.fig > triangular_numbers.eps
+
+clean::
+	rm -f triangular_numbers.tex triangular_numbers.eps triangular_numbers.pdf
 
 
 # translation into pstex
@@ -77,6 +92,21 @@ clean::
 
 clean::
 	rm -f 3set_Venn.tex 3set_Venn.eps 3set_Venn.pdf
+
+
+# translation into pstex
+
+L-decomp.tex: L-decomp.pdf 
+	fig2dev -L pstex_t -p ./L-decomp.pdf -m 1 L-decomp.fig > L-decomp.tex
+
+L-decomp.pdf: L-decomp.eps 
+	epstopdf L-decomp.eps
+
+L-decomp.eps: L-decomp.fig 
+	fig2dev -L pstex -m 1 L-decomp.fig > L-decomp.eps
+
+clean::
+	rm -f L-decomp.tex L-decomp.eps L-decomp.pdf
 
 
 # translation into pstex
