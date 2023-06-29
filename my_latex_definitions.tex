@@ -44,13 +44,14 @@
 \newcommand{\hint}[1]{\ifthenelse{\boolean{InHints}}{ {\par \hspace{12pt} \color[rgb]{0,0,1} #1 } }{}}
 \newcommand{\inlinehint}[1]{\ifthenelse{\boolean{InHints}}{ { \color[rgb]{0,0,1} #1 } }{}}
 
-\newlength{\cwidth}
-\newcommand{\cents}{\settowidth{\cwidth}{c}%
-\divide\cwidth by2
-\advance\cwidth by-.1pt
-c\kern-\cwidth
-\vrule width .1pt depth.2ex height1.2ex
-\kern 3\cwidth}
+%\newlength{\cwidth}
+%\newcommand{\cents}{\settowidth{\cwidth}{c}%
+%\divide\cwidth by2
+%\advance\cwidth by-.1pt
+%c\kern-\cwidth
+%\vrule width .1pt depth.2ex height1.2ex
+%\kern 3\cwidth}
+\newcommand{\cents}{\textcent\kern 5pt}
 
 \newcommand{\sageprompt}{ {\tt sage$>$} }
 \newcommand{\tab}{\rule{20pt}{0pt}}
