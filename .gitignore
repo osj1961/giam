@@ -6,6 +6,7 @@ figures/*.tex
 **.aux
 **.blg
 **.dvi
+**.bbl
 **.idx
 **.ilg
 **.ind
@@ -20,4 +21,7 @@ figures/*.tex
 **.toc
 **.fig.bak
 .DS_Store
-*.eps
+**.eps
+!GIAM.pdf
+!GIAM-hw.pdf
+!GIAM-solutions_manual.pdf
