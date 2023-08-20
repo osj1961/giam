@@ -77,9 +77,9 @@ of logical statements.  If we have a sequence of statements, (one
 for each natural number) $P_0$, $P_1$, $P_2$, $P_3$, \ldots  we
 can prove them \emph{all} to be true using PMI.  We have to do two
 things.   First -- and this is usually the easy part -- we must show 
-that $P_0$ is true (i.e. the first domino \emph{will} get knocked over).
+that $P_0$ is true (i.e.\ the first domino \emph{will} get knocked over).
 Second, we must show, for every possible value of $k$, $P_k \implies P_{k+1}$
-(i.e. each domino will knock down its successor).  These two parts 
+(i.e.\ each domino will knock down its successor).  These two parts 
 of an inductive proof are known, respectively, as the \emph{basis}
 and the \emph{inductive step}. 
 
@@ -165,7 +165,7 @@ that $A = \emptyset$.  The power set of $\emptyset$ is $\{ \emptyset \}$
 which is a set having 1 element.  Note that $2^0 = 1$.
    
 \noindent {\bf Inductive step:}  Suppose that $A$ is a finite set with $|A| = k+1$.  Choose some particular element of $A$, say $a$, and note that
-we can divide the subsets of $A$ (i.e. elements of ${\mathcal P}(A)$) into
+we can divide the subsets of $A$ (i.e.\ elements of ${\mathcal P}(A)$) into
 two categories, those that contain $a$ and those that don't.
 
 Let $S_1 = \{ X \in {\mathcal P}(A) \suchthat a \in X \}$ and let
@@ -215,7 +215,7 @@ We'll close this section with a short discussion about nothing.
 When we first introduced the natural numbers ($\Naturals$) in Chapter~\ref{ch:intro} we decided to follow the convention that the smallest natural number is 1.
 You may have noticed that the Peano axioms mentioned in the beginning of this
 section treat $0$ as the smallest natural number.  So, from here on out we
-are going to switch things up and side with Dr. Peano.  That is, from now
+are going to switch things up and side with Dr.\ Peano.  That is, from now
 on we will use the convention
 
 \[\Naturals \, = \, \{ 0, 1, 2, 3, \ldots \} \]
@@ -474,7 +474,7 @@ the box above containing our scratch work?  (Except in the reverse order.)
 We'll end this section by demonstrating one more use of this technique.
 This time we'll look at a formula for a product rather than a sum.
 
-\begin{thm} $$\forall n \geq 2 \in \Integers, \prod_{j=2}^n \left( 1 - \frac{1}{j^2} \right) \;  = \; \frac{n+1}{2n}. $$
+\begin{thm} $$\forall n \geq 2 \in \Integers, \prod_{j=2}^n \left( 1 - \frac{1}{j^2} \right) \;  = \; \frac{n+1}{2n}.$$
 \end{thm}
 
 Before preceding with the proof let's look at an example (although this 
@@ -815,8 +815,8 @@ $2n+1 \leq n^2$.
 \section{The strong form of mathematical induction}
 \label{sec:strong_induct}
 
-The strong form of mathematical induction (a.k.a. the principle of
-complete induction, PCI; also a.k.a. course-of-values induction) 
+The strong form of mathematical induction (a.k.a.\ the principle of
+complete induction, PCI; also a.k.a.\ course-of-values induction) 
 is so-called because the hypotheses one
 uses are stronger.  Instead of showing that $P_k \implies P_{k+1}$ in
 the inductive step, we get to assume that all the statements numbered

@@ -142,7 +142,7 @@
 \begin{frame}{DeMorgan's}
 \begin{thm*}
 For all sets $A$ and $B$ contained in a universal set $U$,
-$ \overline{A \cup B} \; = \; \overline{A} \cap \overline{B}. $
+$ \overline{A \cup B} \; = \; \overline{A} \cap \overline{B}.$
 \end{thm*}
 {\em Proof:}
 \begin{quote}
@@ -150,11 +150,11 @@ First we will show that $\overline{A \cup B} \; \subseteq \; \overline{A} \cap \
 Towards that end, suppose $x \in \overline{A \cup B}$. 
 \begin{align*}
  &      & x \in \overline{A \cup B} \rule{48pt}{0pt} & \mbox{Given} & \\
- & \implies & \lnot (x \in (A \cup B)) \rule{48pt}{0pt} & \mbox{Def. of complement} & \\
- & \implies & \lnot (x \in A \, \lor \, x \in B) \rule{48pt}{0pt} & \mbox{Def. of union} & \\
+ & \implies & \lnot (x \in (A \cup B)) \rule{48pt}{0pt} & \mbox{Def.\ of complement} & \\
+ & \implies & \lnot (x \in A \, \lor \, x \in B) \rule{48pt}{0pt} & \mbox{Def.\ of union} & \\
  & \implies & \lnot (x \in A) \, \land  \, \lnot (x \in B) \rule{48pt}{0pt} & \mbox{disjunctive version of DeMorgan's law } & \\
- & \implies &  (x \in \overline{A}) \, \land  \, (x \in \overline{B}) \rule{48pt}{0pt} & \mbox{Def. of complement} & \\
- & \implies &  x \in ( \overline{A} \, \cap \, \overline{B}) \rule{48pt}{0pt} & \mbox{Def. of intersection} & \\
+ & \implies &  (x \in \overline{A}) \, \land  \, (x \in \overline{B}) \rule{48pt}{0pt} & \mbox{Def.\ of complement} & \\
+ & \implies &  x \in ( \overline{A} \, \cap \, \overline{B}) \rule{48pt}{0pt} & \mbox{Def.\ of intersection} & \\
 \end{align*}
 
 (continued)
@@ -167,11 +167,11 @@ Next we will show that $\overline{A} \cap \overline{B} \; \subseteq \; \overline
 Suppose $x \in \overline{A} \cap \overline{B}$.
 \begin{align*}
  &          &  x \in ( \overline{A} \, \cap \, \overline{B}) \rule{48pt}{0pt} & \mbox{Given} & \\
- & \implies &  (x \in \overline{A}) \, \land  \, (x \in \overline{B}) \rule{48pt}{0pt} & \mbox{Def. of intersection} & \\
- & \implies & \lnot (x \in A) \, \land  \, \lnot (x \in B) \rule{48pt}{0pt} & \mbox{Def. of complement } & \\
+ & \implies &  (x \in \overline{A}) \, \land  \, (x \in \overline{B}) \rule{48pt}{0pt} & \mbox{Def.\ of intersection} & \\
+ & \implies & \lnot (x \in A) \, \land  \, \lnot (x \in B) \rule{48pt}{0pt} & \mbox{Def.\ of complement } & \\
  & \implies & \lnot (x \in A \, \lor \, x \in B) \rule{48pt}{0pt} & \mbox{disjunctive version of DeMorgan's law} & \\
- & \implies & \lnot (x \in (A \cup B)) \rule{48pt}{0pt} & \mbox{Def. of union} & \\
- & \implies & x \in \overline{A \cup B} \rule{48pt}{0pt} & \mbox{Def. of complement} & \\
+ & \implies & \lnot (x \in (A \cup B)) \rule{48pt}{0pt} & \mbox{Def.\ of union} & \\
+ & \implies & x \in \overline{A \cup B} \rule{48pt}{0pt} & \mbox{Def.\ of complement} & \\
 \end{align*}
 
 \rule{0pt}{0pt} \hfill {\em Q.E.D} 

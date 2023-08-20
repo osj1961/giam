@@ -22,7 +22,7 @@ the most important is probably $=$, but there are lots: $\neq$, $<$, $\leq$,
 $>$, $\geq$ all work this way -- if we place them between two numbers
 we get a Boolean thing, it's either true or false.  If, instead of numbers, 
 we think of placing sets on either side of a relation symbol, then
- $=$, $\subseteq$  and $\supseteq$ are valid relation symbols. If we think 
+ $=$, $\subseteq$  and $\supseteq$ are valid relation symbols.  If we think 
 of placing logical expressions on either side of a relation then, 
 honestly, \emph{any} of the logical symbols is a relation, but we normally
 think of $\land$ and $\lor$ as operators and give things like $\equiv$, 
@@ -172,7 +172,7 @@ given in Figure~\ref{fig:lt_graph}.
 \input{figures/less_than_on_RxR.tex}
 \end{center}
 \caption[The graph of the ``less than'' relation.]{The ``less than'' relation %
-can be viewed as a subset of $\Reals \times \Reals$, i.e. it can be graphed.}
+can be viewed as a subset of $\Reals \times \Reals$, i.e.\ it can be graphed.}
 \label{fig:lt_graph} 
 \end{figure}
   
@@ -195,7 +195,7 @@ have a certain nice property.  For the moment, we'll just note that
 some of the operations that you are used to using with functions
 also apply with relations.  When one function ``undoes'' what another
 function ``does'' we say the functions are inverses.  For example,
-the function $f(x)=2x$ (i.e. doubling) and the function $g(x)=x/2$ (halving)
+the function $f(x)=2x$ (i.e.\ doubling) and the function $g(x)=x/2$ (halving)
 are inverse functions because, no matter what number we start with, if we
 double it and then halve that result, we end up with the original number.
 The \index{inverse, of a relation}inverse of a relation $\relR$ is written $\relR^{-1}$ and it consists of
@@ -692,7 +692,7 @@ We'll end this section with an example of an equivalence relation that
 doesn't ``inherit'' the three properties from equality.  
 
 A \index{graph} \emph{graph} is a mathematical structure consisting of
-two sets, a set $V$ of points (a.k.a. vertices) and a set\footnote{Technically, $E$ is a so-called
+two sets, a set $V$ of points (a.k.a.\ vertices) and a set\footnote{Technically, $E$ is a so-called
 multiset in many instances -- there may be several edges that connect the same pair of vertices.} $E$ of edges.
 The elements of $E$ may be either ordered or unordered pairs from $V$. 
 If $E$ consists of ordered pairs we have a \index{digraph} 
@@ -727,14 +727,14 @@ Which pairs are isomorphic?
 This word ``isomorphic'' has a nice etymology.  It means ``same shape.''  Two graphs are
 isomorphic if they have the same shape.  We don't have the tools right now to do a formal
 proof (in fact we need to look at some further prerequisites before we can really precisely
-define isomorphism), but isomorphism of graphs is an equivalence relation. Let's at least 
+define isomorphism), but isomorphism of graphs is an equivalence relation.  Let's at least 
 verify this informally.
 
 {\bf Reflexivity}  Is a graph isomorphic to itself?  That is, does a graph have the ``same 
 shape'' as itself?  Clearly!
 
 {\bf Symmetry}  If graph $A$ is isomorphic to graph $B$, is it also the case that graph $B$
-is isomorphic to graph $A$?  I.e. if $A$ has the ``same shape'' as $B$, doesn't $B$ have the
+is isomorphic to graph $A$?  I.e.\ if $A$ has the ``same shape'' as $B$, doesn't $B$ have the
 same shape as $A$?  Of course!
 
 {\bf Transitivity}  Well \ldots the answer here is going to be ``Naturally!'' but let's wait
@@ -767,7 +767,7 @@ We would really like to take the contrary position -- we always
 root for the underdog -- but one of our favorite ordering
 relation (divisibility) is reflexive and it would be eliminated
 if we made the other choice\footnote{If you insist on making the other %
-choice, you will have a ``strict ordering relation'' a.k.a. an ``irreflexive %
+choice, you will have a ``strict ordering relation'' a.k.a.\ an ``irreflexive %
 ordering relation''}.  So\ldots
 
 \begin{defi}
@@ -785,7 +785,7 @@ to compare complex numbers, but it can be placed between reals or
 any of the sets of numbers that are contained in $\Reals$.)  Most
 ordering relations only create what is known as a \index{partial order}
 \emph{partial order} on the sets they act on.  In a total ordering
-(a.k.a. a linear ordering) every pair of elements can be compared
+(a.k.a.\ a linear ordering) every pair of elements can be compared
 and we can use the ordering relation to decide which order they go
 in.  In a partial ordering there may be elements that are incomparable.
 
@@ -914,7 +914,7 @@ we show the poset of divisors of $72$ and indicate the grading.
 \input{figures/divisors_of_72.tex}
 \caption[Hasse diagram of divisors of 72.]{Hasse %
 diagram for the divisors of $72$, partially ordered by %
-divisibility. This is a graded poset.}
+divisibility.  This is a graded poset.}
 \label{fig:divisors_of_72} 
 \end{figure}
 
@@ -1037,14 +1037,14 @@ have been calling $A$ does not have a name.  In fact, the formal
 definition of the term ``function'' has been rigged so that there
 is no difference between the sets $A$ and $A'$.  This seems a shame,
 if you think of range and domain as being primary, doesn't it seem
-odd that we have a way to refer to a superset of the range (i.e. the 
+odd that we have a way to refer to a superset of the range (i.e.\ the 
 codomain) but no way of referring to a superset of the domain?
 
 Nevertheless, this is just the way it is \ldots  There is only one
 set on the input side -- the domain of our function. 
 
 The domain of
-any relation is expressed by writing $\Dom{\relR}$. Which is 
+any relation is expressed by writing $\Dom{\relR}$.  Which is 
 defined as follows.
 
 \begin{defi}
@@ -1070,7 +1070,7 @@ $f(x)=2x$ defined on $\Reals$ is a completely different animal from
 the function $f(x)=2x$ defined on $\Naturals$.  If you really want to
 specify a function precisely you must give its domain as well as a 
 formula for it.  Usually, one does this by writing a formula, then a 
-semicolon, then the domain.  (E.g. $f(x)=x^2; \quad x \geq 0$.)
+semicolon, then the domain.  (E.g.\ $f(x)=x^2; \quad x \geq 0$.)
 
 Okay, so, finally, we are prepared to give the real
 definition of a function.
@@ -1222,7 +1222,7 @@ $f(x) = 2x-1$ is a bijection from $\Zplus$ to ${\mathcal O}$.
 \end{thm}
 
 \begin{proof}
-First we will show that $f$ is surjective. Consider an arbitrary element
+First we will show that $f$ is surjective.  Consider an arbitrary element
 $y$ of the set $\mathcal O$.  Since $y \in {\mathcal O}$ it follows that
 $y$ is both positive and odd.  Thus there is an integer $k$, such that 
 $y=2k+1$, but also $y>0$.  From this it follows that  $2k+1 >0$ and so
@@ -1290,7 +1290,7 @@ values are equal, we have $-(x_1-1)/2 = -(x_2-1)/2$.  A bit more
 algebra (doubling, negating and adding one to both sides) leads to 
 $x_1=x_2$. 
 
-If $x_1$ and $x_2$ have opposite parity, we will assume w.l.o.g. that 
+If $x_1$ and $x_2$ have opposite parity, we will assume w.l.o.g.\ that 
 $x_1$ is even and $x_2$ is odd.  The equality $f(x_1)=f(x_2)$ becomes
 $x_1/2 = -(x_2-1)/2$.  Note that $x_1 \geq 2$ so $f(x_1) = x_1/2 \geq 1$.
 Also, note that $x_2 \geq 1$ so 
@@ -1357,7 +1357,7 @@ $\sin{x}$ fails HLT pretty badly; any horizontal line $y=c$ with
 $-1 \leq c \leq 1$ will hit $\sin{x}$ infinitely many times.  But look!
 Right here on my calculator is a button labeled ``$\sin^{-1}$.''\footnote{It 
 might be labeled ``asin'' instead.  The old-style way to refer to the inverse
-of a trig. function was arc-whatever.  So the inverse of sine was arcsine,
+of a trig.\ function was arc-whatever.  So the inverse of sine was arcsine,
 the inverse of tangent was arctangent.}  This apparent contradiction
 can be resolved using the notion of restriction.
 
@@ -1411,7 +1411,7 @@ $[-1,1]$ and $[-\pi/2, \pi/2]$.
 
 Notice that if we choose a number $x$ in the range $-1 \leq x \leq 1$ and apply
 the inverse sine function to it, we will get a number between $-\pi/2$ and 
-$\pi/2$ -- i.e. a number we can interpret as an \emph{angle} in radian measure.
+$\pi/2$ -- i.e.\ a number we can interpret as an \emph{angle} in radian measure.
 If we then proceed to calculate the sine of this angle, we will get back our
 original number $x$.
 

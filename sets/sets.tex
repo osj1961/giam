@@ -284,7 +284,7 @@ that embody the membership question -- thus it corresponds to single
 sentences in Logic.  The ``set containment'' symbol $\subseteq$ goes
 between two \emph{sets} and so whatever it corresponds to in Logic
 should be something that can appropriately be inserted between two
-sentences. Let's run through a short example to figure out what that
+sentences.  Let's run through a short example to figure out what that
 might be.   To keep things
 simple we'll work inside the universal set $U=\{ 1, 2, 3, \ldots 50 \}$.
 Let $T$ be the subset of $U$ consisting of those numbers that are 
@@ -320,7 +320,7 @@ than another if it puts more conditions on the elements that would make
 it true.  For example, ``$x$ is doubly-even'' is stronger than 
 ``$x$ is (merely) even.''   Now, the stronger statement implies the weaker
 (assuming of course that they are stronger and weaker versions of the 
-same idea).  If a number is doubly-even (i.e. divisible by 4) then it
+same idea).  If a number is doubly-even (i.e.\ divisible by 4) then it
 is certainly even -- but the converse is certainly not true, $6$ is even
 but \emph{not} doubly-even.  Think of all this in terms of sets now.
 Which set contains the other, the set of doubly-even numbers or the set
@@ -455,7 +455,7 @@ sequence of zeros and ones in the memory of my computer\ldots
 Every rule that we learned in Chapter~\ref{ch:logic} 
 (see Table~\ref{tab:bool_equiv}) has a set-theoretic equivalent.  
 These set-theoretic versions are
-expressed using equalities (i.e. the symbol $=$ in between two sets) which
+expressed using equalities (i.e.\ the symbol $=$ in between two sets) which
 is actually a little bit funny if you think about it.  We normally
 use $=$ to mean that two numbers or variables have the same numerical
 magnitude, as in $12^2 = 144$, we are doing something altogether
@@ -604,12 +604,12 @@ So, no more excuses, just do it!
 
 \begin{tabular}{|c|l|}\hline
 \rule[-16pt]{0pt}{44pt}$= (A \cap \overline{B}) \cup (B \cap \overline{A})$ & \rule{12pt}{0pt} identity law \\\hline
-\rule[-16pt]{0pt}{44pt}$= (A \cup B) \cap \overline{(A \cap B)}$ & \rule{12pt}{0pt} def. of relative difference \rule{12pt}{0pt} \\\hline
+\rule[-16pt]{0pt}{44pt}$= (A \cup B) \cap \overline{(A \cap B)}$ & \rule{12pt}{0pt} def.\ of relative difference \rule{12pt}{0pt} \\\hline
 \rule[-16pt]{0pt}{44pt}$(A \cup B) \setminus (A \cap B)$ & \rule{12pt}{0pt} Given  \\\hline
 \rule[-16pt]{0pt}{44pt}\rule{12pt}{0pt}$= ((A \cap \overline{A}) \cup (A \cap \overline{B})) \cup ((B \cap \overline{A}) \cup (B \cap \overline{B}))$ \rule{12pt}{0pt} & \rule{12pt}{0pt} distributive law  \\\hline
-\rule[-16pt]{0pt}{44pt}$= (A \setminus B) \cup (B \setminus A)$ & \rule{12pt}{0pt}  def. of relative difference \\\hline
+\rule[-16pt]{0pt}{44pt}$= (A \setminus B) \cup (B \setminus A)$ & \rule{12pt}{0pt}  def.\ of relative difference \\\hline
 \rule[-16pt]{0pt}{44pt}$= (A \cap \overline{(A \cap B)}) \cup (B \cap \overline{(A \cap B)})$ & \rule{12pt}{0pt} distributive law \\\hline
-\rule[-16pt]{0pt}{44pt}$= A \triangle B $ & \rule{12pt}{0pt} def. of symmetric difference \rule{12pt}{0pt}\\\hline
+\rule[-16pt]{0pt}{44pt}$= A \triangle B $ & \rule{12pt}{0pt} def.\ of symmetric difference \rule{12pt}{0pt}\\\hline
 \rule[-16pt]{0pt}{44pt}$= (A \cap (\overline{A} \cup \overline{B}) \cup (B \cap (\overline{A} \cup \overline{B}))$ & \rule{12pt}{0pt} DeMorgan's law \\\hline
 \rule[-16pt]{0pt}{44pt}$= (\emptyset \cup (A \cap \overline{B})) \cup ((B \cap \overline{A}) \cup \emptyset)$ & \rule{12pt}{0pt} complementarity \\\hline
 \end{tabular}
@@ -628,7 +628,7 @@ So, no more excuses, just do it!
 
 Hopefully, you've seen 
 \index{Venn diagram}Venn diagrams before, but possibly 
-you haven't thought deeply about them. Venn diagrams take 
+you haven't thought deeply about them.  Venn diagrams take 
 advantage of an obvious but important property of closed 
 curves drawn in the plane.  They divide the points in the
 plane into two sets, those that are inside the curve and

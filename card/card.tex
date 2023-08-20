@@ -12,15 +12,15 @@ to get the job done.'' --George Carlin}
 
 We have seen several interesting examples of equivalence relations 
 already, and in this section we will explore one more: we'll say two sets are equivalent
-if they have the same number of elements. Usually, an equivalence relation
+if they have the same number of elements.  Usually, an equivalence relation
 has the effect that it highlights one characteristic of the objects being studied,
-while ignoring all the others. Equivalence of sets brings the issue of size (a.k.a.
+while ignoring all the others.  Equivalence of sets brings the issue of size (a.k.a.
 cardinality) into sharp focus while, at the same time, it forgets all about the
-many other features of sets. Sets that are equivalent (under the relation we
+many other features of sets.  Sets that are equivalent (under the relation we
 are discussing) are sometimes said to be \index{equinumerous}
 \emph{equinumerous}
 \footnote{Perversely, there are also those who use the term \emph{equipollent} 
-to indicate that sets are the same size. This term actually applies to 
+to indicate that sets are the same size.  This term actually applies to 
 logical statements that are deducible from one another.}.
 
 A couple of examples may be in order.
@@ -34,29 +34,29 @@ singleton set is a set having just one element.}
 is equivalent to every other singleton set.
 \end{itemize}
 
-Hopefully these examples are relatively self-evident. Unfortunately, that
+Hopefully these examples are relatively self-evident.  Unfortunately, that
 very self-evidence may tend to make you think that this notion of equivalence
 isn't all that interesting ---  nothing could be further from the truth! The
 notion of equivalence of sets becomes really interesting when we study infinite
-sets. Once we have the right definition in hand we will be able to prove
-some truly amazing results. For instance, the sets $\Naturals$ and $\Rationals$ turn out to be equivalent. Since the naturals are wholly contained in the rationals this is (to say the least) counter-intuitive! Coming up with the ``right'' definition for this concept is crucial.
+sets.  Once we have the right definition in hand we will be able to prove
+some truly amazing results.  For instance, the sets $\Naturals$ and $\Rationals$ turn out to be equivalent.  Since the naturals are wholly contained in the rationals this is (to say the least) counter-intuitive! Coming up with the ``right'' definition for this concept is crucial.
 
 We could make the following:
 \begin{defi}
-(Well . . . not quite.) For all sets $A$ and $B$, we say $A$ and $B$ are
+(Well\textellipsis not quite.) For all sets $A$ and $B$, we say $A$ and $B$ are
 equivalent, and write $A \equiv B$ iff $|A| = |B|$.
 \end{defi}
 
-The problem with this definition is that it is circular. We're trying to
+The problem with this definition is that it is circular.  We're trying to
 come up with an equivalence relation so that the equivalence classes will
-represent the various cardinalities of sets (i.e. their sizes) and we 
-define the relation in terms of cardinalities. We won't get anything new 
+represent the various cardinalities of sets (i.e.\ their sizes) and we 
+define the relation in terms of cardinalities.  We won't get anything new 
 from this.
 
 Georg Cantor was the first person to develop the modern notion of the
-equivalence of sets. His early work used the notion implicitly, but when he
+equivalence of sets.  His early work used the notion implicitly, but when he
 finally developed the concept of one-to-one correspondences in an explicit
-way he was able to prove some amazing facts. The phrase ``one-to-one correspondence''
+way he was able to prove some amazing facts.  The phrase ``one-to-one correspondence''
 has a fairly impressive ring to it, but one can discover what it
 means by just thinking carefully about what it means to count something.
 
@@ -67,14 +67,14 @@ we count this set (and presumably come up with a total of 7 notes)? We first
 point at `do' while saying `one,' then point at `re' while saying `two,' 
 et cetera.
 In a technical sense we are creating a one-to-one correspondence between the
-set containing the seven syllables and the special set $\{1, 2, 3, 4, 5, 6, 7\}$. You should notice that this one-to-one correspondence is by no means unique. For
+set containing the seven syllables and the special set $\{1, 2, 3, 4, 5, 6, 7\}$.  You should notice that this one-to-one correspondence is by no means unique.  For
 instance we could have counted the syllables in reverse --- a descending scale,
-or in some funny order -- a little melody using each note once. The fact that
+or in some funny order -- a little melody using each note once.  The fact that
 there are seven syllables in the solmization of the major scale is equivalent
 to saying that there exists a one-to-one correspondence between the syllables
-and the special set $\{1, 2, 3, 4, 5, 6, 7\}$.  Saying ``there exists'' in this situation may seem a bit weak since in fact there are $7! = 5040$ correspondences, but ``there exists'' is what we really want here. What exactly is a one-to-one
+and the special set $\{1, 2, 3, 4, 5, 6, 7\}$.  Saying ``there exists'' in this situation may seem a bit weak since in fact there are $7! = 5040$ correspondences, but ``there exists'' is what we really want here.  What exactly is a one-to-one
 correspondence? Well, we've actually seen such things before -- a one-to-one
-correspondence is really just a bijective function between two sets. We're
+correspondence is really just a bijective function between two sets.  We're
 finally ready to write a definition that Georg Cantor would approve of.
 
 \begin{defi}
@@ -86,33 +86,33 @@ Somewhat more succinctly, one can just say the sets are equivalent iff
 there is a bijection between them.
 
 We are going to ask you to prove that the above definition defines an
-equivalence relation in the exercises for this section. In order to give you a
+equivalence relation in the exercises for this section.  In order to give you a
 bit of a jump start on that proof we'll outline what the proof that the relation
 is symmetric should look like.
 
 \begin{quote}
 To show that the relation is symmetric we must assume that $A$
 and $B$ are sets with $A \equiv B$ and show that this implies that
-$B \equiv A$. According to the definition above this means that we'll
-need to locate a function (that is one-to-one) from $B$ to $A$. On
+$B \equiv A$.  According to the definition above this means that we'll
+need to locate a function (that is one-to-one) from $B$ to $A$.  On
 the other hand, since it is given that $A \equiv B$, the definition tells
 us that there actually is an injective function, $f$, from $A$ to $B$.
 The inverse function $f^{-1}$ would do exactly what we'd like (namely
 form a map from B to A) assuming that we can show that $f^{-1}$
-has the right properties. We need to know that $f^{-1}$ is a function
+has the right properties.  We need to know that $f^{-1}$ is a function
 (remember that in general the inverse of a function is only a
-relation) and that it is one-to-one. That $f^{-1}$ is a function is a
-consequence of the fact that $f$ is one-to-one. That $f^{-1}$ is one-to-one
+relation) and that it is one-to-one.  That $f^{-1}$ is a function is a
+consequence of the fact that $f$ is one-to-one.  That $f^{-1}$ is one-to-one
 is a consequence of the fact that $f$ is a function.
 \end{quote}
 
-The above is just a sketch of a proof. In the exercise you'll need to fill
+The above is just a sketch of a proof.  In the exercise you'll need to fill
 in the rest of the details as well as provide similar arguments for reflexivity
 and transitivity.
 
 For each possible finite cardinality $k$, there are many, many sets having
 that cardinality, but there is one set that stands out as the most basic -- the
-set of numbers from $1$ to $k$. For each cardinality $k > 0$, we use the symbol
+set of numbers from $1$ to $k$.  For each cardinality $k > 0$, we use the symbol
 $\Naturals_k$ to indicate this set:
 
 \[ \Naturals_k \; = \; \{1, 2, 3, \ldots , k\}. \]
@@ -167,12 +167,12 @@ alter ego.)
 
 To many people the current topic will seem about as sensible as the schoolyard
 discussions just alluded to.  We are concerned with knowing whether
-one infinite set is bigger than another, or are they the same size. There are
+one infinite set is bigger than another, or are they the same size.  There are
 generally three reasons that people disdain to consider such questions.  The
 first is that, like super-heros, infinite sets are just products of the imagination.
 The second is that there can be no difference because ``infinite is infinite'' -- 
 once you get to the size we call infinity, you can't add something to that to
-get to a bigger infinity. The third is that the answers to questions like this
+get to a bigger infinity.  The third is that the answers to questions like this
 are not going to earn me big piles of money so ``who cares?''
 
 Point one is actually pretty valid.  Physicists have determined that we
@@ -188,7 +188,7 @@ of infinities in Section~\ref{sec:cantors_thm}
 
 Point three, ``who cares?'' is in some sense the toughest of all to deal with.
 Hopefully you'll enjoy the clever arguments to come for their own intrinsic
-beauty. But, if you can figure a way to make big piles of money using this
+beauty.  But, if you can figure a way to make big piles of money using this
 stuff that would be nice too.
 
 Let's get started.
@@ -207,14 +207,14 @@ The map $f : N \longrightarrow \Enoneg$ defined by $f(x) = 2x$
 is clearly a function,
 and just about as clearly, injective\footnote{If $x$ and $y$ are 
 different numbers that map to the same value, then f(x) = f(y) so
-2x = 2y. But we can cancel the 2's and derive that x = y, which is a contradiction.}.  Is the map $f$ also a surjection? In other
+2x = 2y.  But we can cancel the 2's and derive that x = y, which is a contradiction.}.  Is the map $f$ also a surjection? In other
 words, is every non-negative even number the image of some natural under
 $f$?  Given some non-negative even number $e$ we need to be able to come
 up with an $x$ such that $f(x) = e$.   Well, since $e$ is an even number, by the
 definition of ``even'' we know that there is an integer $k$ such that $e = 2k$ 
 and since $e$ is either zero or positive it follows that $k$ must also be 
-either $0$ or positive. It turns out that $k$ is actually the $x$ we 
-are searching for. Put more
+either $0$ or positive.  It turns out that $k$ is actually the $x$ we 
+are searching for.  Put more
 succinctly, every non-negative even number $2k$ has a preimage, $k$, under the
 map $f$.  So $f$ maps $\Naturals$ surjectively onto $\Enoneg$.
 Now the sets we've just considered, 
@@ -226,9 +226,9 @@ Now the sets we've just considered,
 \[ \Enoneg \; = \; \{0, 2, 4, 6, 8, 10, 12, \ldots \} \]
 
 \noindent both have the feature that they can be listed -- at 
-least in principle. There is a first element, followed by a 
+least in principle.  There is a first element, followed by a 
 second element, followed by a third element,
-et cetera, in each set. The next set we'll look at, Z, can't be listed so easily.
+et cetera, in each set.  The next set we'll look at, Z, can't be listed so easily.
 To list the integers we need to let the dot-dot-dots go both forward (towards
 positive infinity) and backwards (towards negative infinity),
 
@@ -237,7 +237,7 @@ positive infinity) and backwards (towards negative infinity),
 \noindent To show that the integers are actually equinumerous with the natural
 numbers (which is what we're about to do -- and by the way, isn't that pretty
 remarkable?) we need, essentially, to figure out a way to list the integers in
-a singly infinite list. Using the symbol $\pm$ we can arrange for a singly infinite
+a singly infinite list.  Using the symbol $\pm$ we can arrange for a singly infinite
 listing, and if you think about what the symbol $\pm$ means you'll probably
 come up with
 
@@ -275,15 +275,15 @@ fortunately that formula gives the ``right'' value.
 
 \begin{exer}
 The inverse function, $f^{-1}$, must also be defined piecewise, but
-based on whether the input is positive or negative. Define the inverse function.
+based on whether the input is positive or negative.  Define the inverse function.
 \end{exer}
 
 The examples we've done so far have shown that the integers, 
 the natural numbers and the even naturals all have the same 
-cardinality. This is the first infinite cardinal number, known 
+cardinality.  This is the first infinite cardinal number, known 
 as $\aleph_0$.  In a certain sense we could view both
 of the equivalences we've shown as demonstrating that 
-$2 \cdot \infty = \infty$. Our next example will lend 
+$2 \cdot \infty = \infty$.  Our next example will lend 
 credence to the rule: $\infty \cdot \infty = \infty$.  
 The Cartesian product of two finite sets (the set of all 
 ordered pairs with entries from the sets in question) has 
@@ -324,7 +324,7 @@ elements one after the other.}
 \end{figure}
 
 The diagram in Figure~\ref{fig:cantors_snake_2} gives a visual form of the one-to-one correspondence
-we seek. In tabular form we would have something like the following.
+we seek.  In tabular form we would have something like the following.
 \medskip
 
 \begin{tabular}{cccccccccc}
@@ -335,7 +335,7 @@ $(0, 0)$ & $(0, 1)$ & $(1, 0)$ & $(0, 2)$ & $(1, 1)$ & $(2, 0)$ & $(0, 3)$ & $(1
 \end{tabular}
 \medskip
 
-We need to produce a formula. In truth, we should really produce two
+We need to produce a formula.  In truth, we should really produce two
 formulas.  One that takes an ordered pair $(x, y)$ and produces a number $n$.
 Another that takes a number $n$ and produces an ordered pair $(x, y)$ The
 number $n$ tells us where the pair $(x, y)$ lies in our infinite listing.  
@@ -400,20 +400,20 @@ When restricted to the appropriate sets ($f$'s domain
 is restricted to $\Naturals \times \Naturals$
 and $f^{-1}$'s domain is restricted to $\Naturals$), 
 these functions are two-sided inverses
-for one another. That fact is sufficient to prove that $f$ 
+for one another.  That fact is sufficient to prove that $f$ 
 is bijective.  
 So far we have shown that the sets $\Enoneg$, $\Naturals$, $\Integers$ and 
 $\Naturals \times \Naturals$ all have
 the same cardinality ---  $\aleph_0$.  We plan to provide an argument that there
-actually are other infinite cardinals in the next section. Before leaving the
+actually are other infinite cardinals in the next section.  Before leaving the
 present topic (examples of set equivalence) we'd like to present another nice
 technique for deriving the bijective correspondences we use to show that sets
 are equivalent -- geometric constructions.
 Consider the set of points on the line segment $[0, 1]$. 
 Now consider the set
-of points on the line segment $[0, 2]$. This second line 
+of points on the line segment $[0, 2]$.  This second line 
 segment, being twice as
-long as the first, must have a lot more points on it. Right?
+long as the first, must have a lot more points on it.  Right?
 
 Well, perhaps you're getting used to this sort of thing\ldots   
 The interval $[0, 1]$ is a subset of the interval $[0, 2]$, 
@@ -423,7 +423,7 @@ We can prove that this is so using a geometric technique.
 We position the line segments appropriately
 and then use projection from a carefully chosen point to 
 develop a bijection.  Imagine both intervals as lying on 
-the $x$-axis in the $x$-$y$ plane. Shift the
+the $x$-axis in the $x$-$y$ plane.  Shift the
 smaller interval up one unit so that it lies on the line 
 $y = 1$.  Now, use projection
 from the point $(0, 2)$, to visualize the correspondence 
@@ -450,11 +450,11 @@ there are the same number of points in a variety of entities.  For example,
 consider the upper half of the unit circle (Remember the unit circle from
 Trig?  All points $(x, y)$ satisfying $x^2 + y^2 = 1$.)  This is a 
 semi-circle having a radius of 1, so the arclength of said semi-circle 
-is $\pi$. It isn't hard to imagine
+is $\pi$.  It isn't hard to imagine
 that this semi-circular arc contains the same number of points as an interval
 of length $\pi$, and we've already argued that all intervals contain the same
 number of points\ldots   But, a nice example of geometric projection ---  
-vertical projection (a.k.a. $\pi_1$) ---  can be used to show that 
+vertical projection (a.k.a.\ $\pi_1$) ---  can be used to show that 
 (for example) the interval
 $(-1, 1)$ and the portion of the unit circle lying in the upper 
 half-plane are equinumerous.
@@ -500,7 +500,7 @@ showing that the composition of two bijections is itself a bijection.  If you
 didn't make it through that exercise give it another try now, but whether
 or not you can finish that proof it should be evident what that transitivity
 means to us in the current situation.  Any pair of line segments are the same
-size -- a line segment (i.e. an interval) and a semi-circle are the same size --
+size -- a line segment (i.e.\ an interval) and a semi-circle are the same size --
 the semi-circle and an infinite line are the same size -- transitivity tells us that
 an infinitely extended line has the same number of points as (for example)
 the interval $(0, 1)$.
@@ -563,7 +563,7 @@ that there really is an infinite list containing every real number in
 the interval $(0, 1)$.
 
 Once we have an infinite list containing every real number in the interval
-$(0, 1)$ we have to face up to a second issue. What does it really mean
+$(0, 1)$ we have to face up to a second issue.  What does it really mean
 to list a particular real number? For instance if $e-2$ is in the seventh
 position on our list, is it OK to write ``$e-2$'' there or should we write
 ``0.7182818284590452354\ldots''?  Clearly it would be simpler to write 
@@ -578,19 +578,19 @@ finite expansion $0.5$ and the infinitely long expansion  $0.4\overline{9}$.
 Rather than writing something like ``$e-2$'' or ``0.7182818284590452354\ldots'',
 we are going to in fact write ``.1011011111100001010100010110001010001010 \ldots''
 In other words, we are going to write the base-2 expansions of the real numbers
-in our list. Now, the issue of non-uniqueness is still there in binary, and
+in our list.  Now, the issue of non-uniqueness is still there in binary, and
 in fact if we were to stay in base-10 it would be possible to plug a certain
 gap in our argument -- but the binary version of this argument has some
 especially nice features.
 Every binary (or for that matter decimal) expansion corresponds to a unique 
 real number, but it doesn't work out so well the other way around ---
 there are sometimes two different binary expansions that correspond to the
-same real number. There is a lovely fact that we are not going to prove (you
+same real number.  There is a lovely fact that we are not going to prove (you
 may get to see this result proved in a course in Real Analysis) that points up
-the problem. Whenever two different binary expansions represent the same
+the problem.  Whenever two different binary expansions represent the same
 real number, one of them is a terminating expansion (it ends in infinitely
 many 0's) and the other is an infinite expansion (it ends in infinitely many
-1's). We won't prove this fact, but the gist of the argument is a proof by
+1's).  We won't prove this fact, but the gist of the argument is a proof by
 contradiction --- you may be able to get the point by studying Figure~\ref{fig:binary_reps}.
 (Try to see how it would be possible to find a number in between two binary
 expansions that didn't end in all-zeros and all-ones.)
@@ -630,7 +630,7 @@ of 0's and 1's.
 So what? We need to proceed from here to find a contradiction.
 
 This argument that we've been edging towards is known as Cantor's 
-diagonalization argument. The reason for this name is that our 
+diagonalization argument.  The reason for this name is that our 
 listing of binary representations looks like an enormous table 
 of binary digits and the contradiction is deduced by looking at 
 the diagonal of this infinite-by-infinite table.
@@ -658,12 +658,12 @@ asked to write it up in the exercises, we want to point out one of the
 potential pitfalls.
 If we were to use a diagonal argument to show that $(0, 1)$ isn't countable,
 we would start by assuming that every element of $(0, 1)$ was written down in
-a list. For most real numbers in $(0, 1)$ we could write out their 
+a list.  For most real numbers in $(0, 1)$ we could write out their 
 binary representation uniquely, but for some we would have to make a 
 choice: should we write down the representation that terminates, or 
 the one that ends in infinitely-many 1's?  Suppose we choose to use 
 the terminating representations, then none of the infinite binary 
-strings that end with all 1's will be on the list. It's possible that 
+strings that end with all 1's will be on the list.  It's possible that 
 the thing we get when we complement the diagonal
 is one of these (unlisted) binary strings so we don't \emph{necessarily} 
 have a contradiction.
@@ -675,7 +675,7 @@ in binary.
 Especially since, as we've alluded to, it can be made to work in decimal.
 The reason for our apparent stubbornness is that these infinite binary
 strings do something else that's very nice.  An infinitely long binary sequence
-can be thought of as the indicator function of a subset of N. For example,
+can be thought of as the indicator function of a subset of N.  For example,
 $.001101010001$ is the indicator of $\{2, 3, 5, 7, 11\}$.
 
 \begin{exer} 
@@ -704,7 +704,7 @@ set of $\Naturals$ has an infinite cardinality strictly greater than that
 of $\Naturals$ itself.  In other words, ${\mathcal P}(\Naturals)$ is
 uncountable.
 
-What Cantor's theorem says is that this always works. If $A$ is any set,
+What Cantor's theorem says is that this always works.  If $A$ is any set,
 and ${\mathcal P}(A)$ is its power set then $|A| < |{\mathcal P}(A)|$. 
 In a way, this more general
 theorem is easier to prove than the specific case we just handled.
@@ -718,7 +718,7 @@ Suppose that there is a set $A$ that can be placed in one-to-one
 correspondence with its power set.  Then there is a bijective
 function $f : A \longrightarrow {\mathcal P}(A)$.  We will deduce 
 a contradiction by constructing a subset of $A$ 
-(i.e. a member of ${\mathcal P}(A))$ that cannot
+(i.e.\ a member of ${\mathcal P}(A))$ that cannot
 be in the range of $f$.
 
 Let $S = \{x \in A \suchthat x \notin f(x)\}$.
@@ -771,12 +771,12 @@ for (at least) two reasons.   First, many people may want to skip this
 section --- the results of this section depend on the difficult 
 Cantor-Bernstein-Schr\"{o}der theorem\footnote{This theorem has been %
 known for many years as the Schr\"{o}der-Bernstein theorem, but, %
-lately, has had Cantor's name added as well. Since Cantor proved % 
-the result before the other gentlemen this is fitting. It is also %
+lately, has had Cantor's name added as well.  Since Cantor proved % 
+the result before the other gentlemen this is fitting.  It is also %
 known as the Cantor-Bernstein theorem (leaving out Schr\"{o}der) %
 which doesn't seem very nice.}.  Second, we will later take the view that dominance
 should really be considered to be an ordering relation on the set of
-all cardinal numbers -- i.e. the equivalence classes of the set equivalence
+all cardinal numbers -- i.e.\ the equivalence classes of the set equivalence
 relation -- not on the collection of all sets.  From that perspective,
 set equivalence really needs to be defined \emph{before} dominance.
 
@@ -809,10 +809,10 @@ is clearly an absurdity.
 
 Naturally, we want to prove the Cantor-Bernstein-Schr\"{o}der theorem (which
 we're going to start calling the C-B-S theorem for brevity), but first it'll be
-instructive to look at some of its consequences. Once we have the C-B-S
-theorem we get a very useful shortcut for proving set equivalences. Given
+instructive to look at some of its consequences.  Once we have the C-B-S
+theorem we get a very useful shortcut for proving set equivalences.  Given
 sets $A$ and $B$, if we can find injective functions going between them in both
-directions, we'll know that they're equivalent. So, for example, we can use
+directions, we'll know that they're equivalent.  So, for example, we can use
 C-B-S to prove that the set of all infinite binary strings and the set of reals
 in (0, 1) really are equinumerous.  
 (In case you had some remaining doubt\ldots )
@@ -824,11 +824,11 @@ choice --- let's say we'll take the non-terminating expansion.
 
 There is a cute thought-experiment called Hilbert's Hotel that will lead
 us to a technique for developing an injective function in the other direction.
-Hilbert's Hotel has $\aleph_0$ rooms. If any countable collection of 
+Hilbert's Hotel has $\aleph_0$ rooms.  If any countable collection of 
 guests show up there will be enough rooms for everyone.   Suppose you 
 arrive at Hilbert's hotel one dark and stormy evening and the 
 ``No Vacancy'' light is on --- there are already a
-denumerable number of guests there --- every room is full. The clerk 
+denumerable number of guests there --- every room is full.  The clerk 
 sees you dejectedly considering your options, trying to think of 
 another hotel that might still have rooms when, clearly, a \emph{very} 
 large convention is in town.  He rushes out and says 
@@ -837,7 +837,7 @@ there is always room for one more at our establishment.''
 He goes into the office and makes the following announcement 
 on the PA system.  ``Ladies and Gentlemen, in order to accommodate 
 an incoming guest, please vacate your room and move to the room 
-numbered one higher. Thank you.''  There
+numbered one higher.  Thank you.''  There
 is an infinite amount of grumbling, but shortly you find yourself occupying
 room number $1$.
 
@@ -850,9 +850,9 @@ previously coincided are now separated into the intervals $(0, 1/2)$ and
 $(1/2, 1)$.  Notice how funny this map is, there are now 
 many, many, (infinitely-many) 
 real numbers with no preimages.  For instance, only a subset of the rational
-numbers in $(0, 1/2)$ have preimages. Nevertheless, the map is injective, so
+numbers in $(0, 1/2)$ have preimages.  Nevertheless, the map is injective, so
 C-B-S tells us that ${\mathbb F}_2^\infty$ and $(0, 1)$ are equivalent.
-There are quite a few different proofs of the C-B-S theorem. The one
+There are quite a few different proofs of the C-B-S theorem.  The one
 Cantor himself wrote relies on the axiom of choice.  The axiom of choice
 was somewhat controversial when it was introduced, but these days most
 mathematicians will use it without qualms.  What it says (essentially) is that
@@ -944,12 +944,12 @@ fails to be defined.
 \ldots \; g^{-1}(f^{-1}(g^{-1}(a))), \quad f^{-1}(g^{-1}(a)), \quad g^{-1}(a), \quad a, \quad  f(a), \quad  g(f(a)), \quad f(g(f(a))),\; \ldots \]
 
 Now, every element of the disjoint union of $A$ and $B$ is in one of these
-sequences. Also, it is easy to see that these sequences are either disjoint
-or identical. Taking these two facts together it follows that these sequences
+sequences.  Also, it is easy to see that these sequences are either disjoint
+or identical.  Taking these two facts together it follows that these sequences
 form a partition of $A \cup B$.  We'll define a bijection  
 $\phi : A \longrightarrow B$ by deciding what it must do on these 
 sequences.  There are four possibilities for how the sequences we've 
-just defined can play out. In extending them to the left, we may run 
+just defined can play out.  In extending them to the left, we may run 
 into a place where one of the inverse functions needed isn't 
 defined --- or not.  We say a sequence is an 
 $A$-stopper, if, in extending to the left, we end 
@@ -997,13 +997,13 @@ steps.
 \label{sec:ch_gch}
 
 The word ``continuum'' in the title of this section is used to indicate sets of
-points that have a certain continuity property. For example, in a real interval
+points that have a certain continuity property.  For example, in a real interval
 it is possible to move from one point to another, in a smooth fashion, without
-ever leaving the interval. In a range of rational numbers this is not possible,
-because there are irrational values in between every pair of rationals. There
+ever leaving the interval.  In a range of rational numbers this is not possible,
+because there are irrational values in between every pair of rationals.  There
 are many sets that behave as a continuum -- the intervals (a, b) or [a, b], the
 entire real line $\Reals$, the x-y plane $\Reals \times \Reals$, a volume in 3-dimensional space (or
-for that matter the entire space $\Reals^3$). It turns out that all of these sets have
+for that matter the entire space $\Reals^3$).  It turns out that all of these sets have
 the same size.
 
 The cardinality of the continuum, denoted {\bf c}, is the cardinality of all of the
@@ -1019,9 +1019,9 @@ cardinality {\bf c}.
 
 We've already seen that an interval is equivalent to the entire
 real line but the notion that the entire infinite Cartesian plane has no more
-points in it than an interval one inch long defies our intuition. Our conception
+points in it than an interval one inch long defies our intuition.  Our conception
 of dimensionality leads us to think that things of higher dimension must be
-larger than those of lower dimension. This preconception is false as we can see
+larger than those of lower dimension.  This preconception is false as we can see
 by demonstrating that a $1 \times 1$  square can be put in one-to-one correspondence
 with the unit interval.
 Let $S = \{ (x, y) \suchthat 0 < x < 1 \land  0 < y < 1 \}$ and let $I$ be 
@@ -1038,7 +1038,7 @@ and write out the decimal expansions of $a$ and $b$:
 will make a consistent choice -- say the infinite one.
 
 From these decimal expansions, we can create the decimal expansion of
-a number in $I$ by interleaving the digits of $a$ and $b$. Let
+a number in $I$ by interleaving the digits of $a$ and $b$.  Let
 \[ s = 0.a_1b_1a_2b_2a_3b_3 \ldots \]
 
 \noindent be the image of $(a, b)$.  If two different points get mapped to the same 
@@ -1047,9 +1047,9 @@ every position of
 their decimal expansion (so they must really be equal).  
 It is a little bit harder to create a bijective function from $S$ to $I$ 
 (and thus
-to show the equivalence directly, without appealing to C-B-S). The problem
+to show the equivalence directly, without appealing to C-B-S).  The problem
 is that, once again, we need to deal with the non-uniqueness of decimal
-representations of real numbers. If we make the choice that, whenever there
+representations of real numbers.  If we make the choice that, whenever there
 is a choice to be made, we will use the non-terminating decimal expansions
 for our real numbers there will be elements of $I$ not in the image of the map
 determined by interleaving digits (for example $0.15401050902060503$ is the
@@ -1066,7 +1066,7 @@ Presume that all decimal expansions are non-terminating (as we can,
 WLOG) and use the following approach:
 Write out the decimal expansion of the coordinates of a point $(a, b)$ in
 $S$.  Form the digits into blocks with as many 0's as possible followed by a
-non-zero digit. Finally, interleave these blocks.
+non-zero digit.  Finally, interleave these blocks.
 
 For example if
 
@@ -1089,7 +1089,7 @@ For example if
 \[ s = 0.10042014556240048 \ldots \]
 
 We've shown that the unit square, $S$, and the unit interval, $I$, have the
-same cardinality. These arguments can be extended to show that all of $R \times R$ also has this cardinality ({\bf c}).
+same cardinality.  These arguments can be extended to show that all of $R \times R$ also has this cardinality ({\bf c}).
 
 So now let's turn to the continuum hypothesis.  
 
