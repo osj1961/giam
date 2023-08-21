@@ -1,0 +1,1 @@
+Files in this directory make use of the "import" package to import the contents of my_latex_definitions.tex from the directory above.
