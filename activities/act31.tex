@@ -1,4 +1,5 @@
 \documentclass{amsart}
+\pdfminorversion=7 
 \usepackage{amssymb}
 \renewcommand{\baselinestretch}{1.5}
 \addtolength{\textwidth}{.2in}
@@ -19,8 +20,8 @@
 \begin{document}
 \thispagestyle{empty}
 
-\centerline{\Large Activity 33 -- Introduction to Proof}
-\centerline{\large functions}
+\centerline{\Large Activity 31 -- Introduction to Proof}
+\centerline{\large equivalence relations}
 
 \bigskip
 \Large
@@ -28,11 +29,11 @@
 
 \begin{enumerate}
 	
-\item (Exercise 1 in GIAM section 6.5) 
+\item (Exercise 1 in GIAM section 6.3) Consider the relation $\relA$ defined by 
+\[ \relA = \{ (x,y) \suchthat \; x \, \mbox{has the same astrological sign as} \, y \}. \]
 
-\vfill
 
-\item Verify that $\relA$ is reflexive, symmetric, and transitive.
+Verify that $\relA$ is reflexive, symmetric, and transitive.
 
 \vfill
 
@@ -82,11 +83,32 @@ What are the equivalence classes under $\relQ$?
 
 \vfill
 
-\item Do problem 3 in GIAM section 6.3.
+\item (Exercise 3 in GIAM section 6.3.)
+
+Define a relation $\relA$ on the set of all words by
+
+\[ w_1 \relA w_2 \quad \iff \quad w_1 \mbox{ is an anagram of } w_2. \]
+
+\noindent Show that $\relA$ is an equivalence relation.  (Words are anagrams
+if the letters of one can be re-arranged to form the other.  For example, `ART' and `RAT' are anagrams.)
 
 \vfill
 
-\item Do problem 4 in GIAM section 6.3.
+\newpage
+
+\item (Exercise 4 in GIAM section 6.3.)
+
+The two diagrams below both show a famous graph known as the 
+\index{Petersen graph}Petersen graph.  The picture on the 
+left is the usual representation which emphasizes its five-fold symmetry.  The picture on the right
+highlights the fact that the Petersen graph also has a three-fold symmetry.  Label the right-hand diagram
+using the same letters (A through J) in order to show that these two representations are truly isomorphic.
+
+\vspace{.2in}
+
+\rule{0pt}{0pt} \hspace{-.75in} \input{petersen_iso.tex}
+
+\vspace{.2in}
 
 \vfill
 
