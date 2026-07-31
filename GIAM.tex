@@ -1,9 +1,3 @@
-\ifx\pdfoutput\undefined % We're running regular LaTeX (not pdftex)
-\documentclass[dvips,12pt,twoside]{book}
-\RequirePackage[plainpages=false]{hyperref}
-\usepackage{color}
-\typeout{Use 'fig4latex -l' then 'make' to format graphics for regular latex}
-\else % We're running PdfTeX
 \documentclass[pdftex,12pt,twoside]{book}
 %\usepackage{thumbpdf}
 \RequirePackage[pdftex]{hyperref}
